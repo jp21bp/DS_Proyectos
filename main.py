@@ -1,4 +1,5 @@
 def main():
+    import numpy
     print("Hello from dsproyectos!")
 
 
