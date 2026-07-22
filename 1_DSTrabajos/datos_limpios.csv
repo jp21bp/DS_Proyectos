@@ -1,0 +1,743 @@
+Rating,Industry,Sector,Revenue,cada_hora,empleador,sueldo_min,sueldo_max,sueldo_promedio,titulo,senioridad,python_yn,r_yn,spark_yn,aws_yn,excel_yn,len_desc,compania,estado,HQ,tamano,ano,org,num_comps
+3.8,Aerospace & Defense,Aerospace & Defense,$50 to $100 million (USD),0,0,53,91,72.0,cientifico de datos,na,1,0,0,0,1,2536,Tecolote Research,NM,0,501-1000 ,47,privado,-1
+3.4,Health Care Services & Hospitals,Health Care,$2 to $5 billion (USD),0,0,63,112,87.5,cientifico de datos,na,1,0,0,0,0,4783,University of Maryland Medical System,MD,0,10000+ ,36,na,-1
+4.8,Security Services,Business Services,$100 to $500 million (USD),0,0,80,90,85.0,cientifico de datos,na,1,0,1,0,1,3461,KnowBe4,FL,1,501-1000 ,10,privado,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,56,97,76.5,cientifico de datos,na,1,0,0,0,0,3883,PNNL,WA,1,1001-5000 ,55,gubernamental,3
+2.9,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,86,143,114.5,cientifico de datos,na,1,0,0,0,1,2728,Affinity Solutions,NY,1,51-200 ,22,privado,3
+3.4,Real Estate,Real Estate,$1 to $2 billion (USD),0,0,71,119,95.0,cientifico de datos,na,1,0,0,1,1,3747,CyrusOne,TX,1,201-500 ,20,publico,3
+4.1,Banks & Credit Unions,Finance,Unknown / Non-Applicable,0,0,54,93,73.5,cientifico de datos,na,0,0,0,0,1,1786,ClearOne Advantage,MD,1,501-1000 ,12,privado,-1
+3.8,Consulting,Business Services,$25 to $50 million (USD),0,0,86,142,114.0,cientifico de datos,na,1,0,1,1,1,3804,Logic20/20,CA,0,201-500 ,15,privado,-1
+3.3,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,38,84,61.0,na,na,0,0,0,0,0,1538,Rochester Regional Health,NY,1,10000+ ,6,hospital,-1
+4.6,Internet,Information Technology,$100 to $500 million (USD),0,0,120,160,140.0,cientifico de datos,na,1,0,1,0,0,4574,<intent>,NY,1,51-200 ,11,privado,2
+3.5,Other Retail Stores,Retail,$1 to $2 billion (USD),0,0,126,201,163.5,cientifico de datos,na,1,0,0,0,0,2757,Wish,CA,0,501-1000 ,9,privado,-1
+4.1,Research & Development,Business Services,$1 to $2 billion (USD),0,0,64,106,85.0,cientifico de datos,na,0,0,0,0,0,3490,ManTech,VA,0,5001-10000 ,52,publico,-1
+3.2,"Department, Clothing, & Shoe Stores",Retail,$10+ billion (USD),0,0,106,172,139.0,cientifico de datos,na,0,0,0,0,0,3934,Walmart,TX,0,10000+ ,58,publico,3
+4.1,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,46,85,65.5,analysta de datos,na,1,0,1,1,1,4897,Yesler,WA,1,201-500 ,8,privado,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,83,144,113.5,cientifico de datos,na,1,0,1,0,0,3731,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+3.6,Motion Picture Production & Distribution,Media,Unknown / Non-Applicable,0,0,102,190,146.0,ingeniero de datos,na,0,0,0,0,1,1889,Audible,NJ,1,1001-5000 ,25,subsidiary,-1
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $5 million (USD),0,0,67,137,102.0,na,na,0,0,0,0,1,3639,Blueprint Medicines,MA,1,51-200 ,9,publico,3
+4.3,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,118,189,153.5,cientifico de datos,na,1,0,1,1,1,4163,h2o.ai,CA,1,201-500 ,9,privado,-1
+4.2,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,110,175,142.5,cientifico de datos,na,0,0,0,0,0,3512,Nuna,CA,1,51-200 ,10,privado,-1
+4.0,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,64,111,87.5,cientifico de datos,na,1,0,0,0,1,4397,Pinnacol Assurance,CO,1,501-1000 ,105,sin_lucro,-1
+3.2,Internet,Information Technology,Unknown / Non-Applicable,0,0,81,130,105.5,cientifico de datos,na,1,0,1,0,0,2918,Porch,WA,1,201-500 ,8,privado,3
+3.9,Insurance Agencies & Brokerages,Insurance,Unknown / Non-Applicable,0,0,73,119,96.0,cientifico de datos,senior,0,0,0,0,1,6909,Health IQ,TX,0,201-500 ,7,privado,-1
+3.8,Logistics & Supply Chain,Transportation & Logistics,Unknown / Non-Applicable,0,0,86,139,112.5,cientifico de datos,na,1,0,0,1,1,6408,Truckstop.com,IL,0,501-1000 ,25,privado,-1
+4.3,Logistics & Supply Chain,Transportation & Logistics,$10 to $25 million (USD),0,0,63,105,84.0,cientifico de datos,na,1,0,0,0,1,2907,SMC 3,KY,0,51-200 ,85,sin_lucro,-1
+4.0,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,109,177,143.0,cientifico de datos,na,1,0,0,1,0,3760,Novetta,VA,0,501-1000 ,8,privado,3
+4.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,63,110,86.5,cientifico de datos,na,1,0,0,1,1,3698,Pfizer,MA,0,10000+ ,171,publico,-1
+3.5,Banks & Credit Unions,Finance,$100 to $500 million (USD),0,0,75,124,99.5,cientifico de datos,na,1,0,1,1,1,4420,First Tech Federal Credit Union,OR,0,1001-5000 ,68,privado,-1
+3.7,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,34,61,47.5,analysta de datos,na,0,0,0,0,1,4900,The Hanover Insurance Group,MA,1,5001-10000 ,168,publico,-1
+4.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,63,105,84.0,cientifico de datos,na,0,0,0,1,1,5015,Pfizer,CT,0,10000+ ,171,publico,-1
+4.8,Security Services,Business Services,$100 to $500 million (USD),0,0,80,90,85.0,cientifico de datos,na,1,0,1,0,1,3461,KnowBe4,FL,1,501-1000 ,10,privado,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,56,97,76.5,cientifico de datos,na,1,0,0,0,0,3883,PNNL,WA,1,1001-5000 ,55,gubernamental,3
+3.6,Real Estate,Real Estate,$500 million to $1 billion (USD),0,0,72,120,96.0,cientifico de datos,na,1,0,0,0,0,3342,Amrock,MI,1,1001-5000 ,23,privado,-1
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,86,143,114.5,cientifico de datos,na,1,0,0,0,0,5045,Novartis,MA,0,10000+ ,24,publico,-1
+3.8,Telecommunications Services,Telecommunications,$2 to $5 billion (USD),0,0,93,149,121.0,cientifico de datos,na,1,0,1,0,1,2327,Juniper Networks,CA,1,5001-10000 ,24,publico,-1
+4.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,85,140,112.5,cientifico de datos,na,1,0,0,0,1,2161,New England Biolabs,MA,1,201-500 ,46,privado,3
+4.2,IT Services,Information Technology,Unknown / Non-Applicable,0,0,77,135,106.0,analysta de datos,na,1,0,0,0,1,1739,Clarity Insights,CA,0,201-500 ,12,privado,-1
+3.5,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,82,132,107.0,cientifico de datos,na,1,0,1,1,0,5000,Esri,CA,1,1001-5000 ,51,privado,1
+4.7,Aerospace & Defense,Aerospace & Defense,$100 to $500 million (USD),0,0,83,137,110.0,cientifico de datos,na,1,0,1,0,1,3703,Systems & Technology Research,MA,1,201-500 ,10,privado,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,115,180,147.5,cientifico de datos,senior,1,0,0,0,1,3555,Sartorius,CA,0,5001-10000 ,150,publico,-1
+3.5,Insurance Carriers,Insurance,$100 to $500 million (USD),0,0,74,138,106.0,ingeniero de datos,na,1,0,0,0,1,1739,Lancer Insurance,NY,1,201-500 ,35,privado,-1
+4.2,IT Services,Information Technology,$50 to $100 million (USD),0,0,64,112,88.0,analysta de datos,na,1,0,0,1,1,3053,Sauce Labs,CA,1,201-500 ,12,privado,3
+3.6,-1,-1,Less than $1 million (USD),0,0,68,129,98.5,ingeniero de datos,na,0,0,0,0,1,1996,Persivia,MA,0,1-50 ,-1,privado,-1
+4.2,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,110,175,142.5,cientifico de datos,na,0,0,0,0,0,3833,Nuna,CA,1,51-200 ,10,privado,-1
+3.4,Consumer Products Manufacturing,Manufacturing,$2 to $5 billion (USD),0,0,52,113,82.5,na,na,0,0,0,1,0,3550,Edgewell Personal Care,NJ,0,5001-10000 ,5,publico,3
+4.3,Real Estate,Real Estate,$2 to $5 billion (USD),0,1,110,150,130.0,cientifico de datos,senior,1,0,1,0,1,9120,Equity Residential,IL,1,1001-5000 ,27,publico,3
+5.0,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,1,150,160,155.0,cientifico de datos,na,0,0,0,1,1,3213,BPA Services,DC,0,Unknown,-1,privado,-1
+3.7,IT Services,Information Technology,$10+ billion (USD),0,0,158,211,184.5,cientifico de datos,na,1,0,0,0,1,7286,Visa Inc.,WA,0,10000+ ,62,publico,3
+3.1,Enterprise Software & Network Solutions,Information Technology,$2 to $5 billion (USD),0,0,20,39,29.5,analysta de datos,na,0,0,0,0,1,3412,Intrado,CO,0,5001-10000 ,34,privado,-1
+4.7,Aerospace & Defense,Aerospace & Defense,$100 to $500 million (USD),0,0,56,117,86.5,na,na,0,0,0,0,0,2682,Centauri,OH,0,501-1000 ,21,privado,3
+3.7,Industrial Manufacturing,Manufacturing,$10+ billion (USD),0,0,63,99,81.0,cientifico de datos,na,0,0,0,0,0,2739,Caterpillar,IL,0,10000+ ,95,publico,3
+3.8,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,68,114,91.0,cientifico de datos,na,1,0,0,0,1,2915,Zimmerman Advertising,FL,1,501-1000 ,36,subsidiary,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,86,143,114.5,cientifico de datos,na,1,0,0,0,0,4244,Liberty Mutual Insurance,MA,1,10000+ ,108,privado,3
+4.6,Aerospace & Defense,Aerospace & Defense,$100 to $500 million (USD),0,0,41,95,68.0,analysta de datos,na,1,0,0,0,1,1629,"Torch Technologies, Inc.",AL,1,1001-5000 ,18,privado,-1
+3.7,Insurance Agencies & Brokerages,Insurance,$10+ billion (USD),0,0,86,144,115.0,cientifico de datos,na,1,0,0,0,1,4734,Swiss Re,NY,0,10000+ ,157,publico,3
+3.7,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,80,139,109.5,cientifico de datos,na,0,0,0,0,1,4448,Northrop Grumman,CA,0,10000+ ,81,publico,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,56,95,75.5,cientifico de datos,na,1,0,0,0,1,3543,Sartorius,NM,0,5001-10000 ,150,publico,-1
+4.1,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,120,189,154.5,cientifico de datos,na,1,0,1,0,1,4203,Netskope,CA,0,501-1000 ,8,privado,3
+4.7,IT Services,Information Technology,Unknown / Non-Applicable,0,0,111,176,143.5,cientifico de datos,na,1,0,1,0,0,5020,1904labs,MO,1,51-200 ,4,privado,2
+4.1,Banks & Credit Unions,Finance,Unknown / Non-Applicable,0,0,54,93,73.5,cientifico de datos,na,0,0,0,0,1,1786,ClearOne Advantage,MD,1,501-1000 ,12,privado,-1
+3.4,Real Estate,Real Estate,$1 to $2 billion (USD),0,0,71,119,95.0,cientifico de datos,na,1,0,0,1,1,3747,CyrusOne,TX,1,201-500 ,20,publico,3
+4.4,Metals Brokers,Mining & Metals,Unknown / Non-Applicable,0,0,82,132,107.0,cientifico de datos,senior,1,0,0,1,0,4804,The David J. Joseph Company,OH,1,201-500 ,135,subsidiary,-1
+4.3,Consulting,Business Services,$10 to $25 million (USD),0,0,84,146,115.0,cientifico de datos,na,1,0,1,1,0,1382,USEReady,NY,1,201-500 ,9,privado,-1
+3.8,Financial Transaction Processing,Finance,$50 to $100 million (USD),0,0,107,172,139.5,cientifico de datos,senior,0,0,0,0,0,2933,Bill.com,CA,1,501-1000 ,14,publico,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,49,85,67.0,cientifico de datos,na,0,0,0,0,0,4945,Pacific Northwest National Laboratory,WA,1,1001-5000 ,55,gubernamental,3
+3.8,Sporting Goods Stores,Retail,$5 to $10 billion (USD),0,0,61,109,85.0,cientifico de datos,na,1,0,0,0,0,2493,DICK'S Sporting Goods - Corporate,PA,1,10000+ ,72,publico,3
+2.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $5 million (USD),0,0,88,148,118.0,cientifico de datos,na,1,0,0,0,1,1939,Berg Health,MA,1,51-200 ,14,privado,-1
+4.7,Computer Hardware & Software,Information Technology,$25 to $50 million (USD),0,0,60,99,79.5,cientifico de datos,na,1,0,0,0,1,3081,Oversight Systems,GA,1,51-200 ,17,privado,-1
+3.1,Advertising & Marketing,Business Services,$100 to $500 million (USD),0,0,41,72,56.5,cientifico de datos,na,1,0,0,0,0,8397,C Space,MA,1,201-500 ,21,publico,4
+3.2,Staffing & Outsourcing,Business Services,$5 to $10 million (USD),0,0,96,161,128.5,cientifico de datos,na,1,0,1,1,0,2306,"Numeric, LLC",PA,0,1-50 ,-1,privado,-1
+4.0,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,65,130,97.5,na,na,0,0,0,0,0,2291,HP Inc.,WA,0,10000+ ,81,publico,-1
+4.4,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,52,81,66.5,asesor,na,1,0,0,0,0,1886,SpringML,IN,0,1-50 ,5,privado,-1
+3.6,Wholesale,Business Services,$10+ billion (USD),0,0,139,220,179.5,director,na,1,0,0,0,1,2903,Grainger,IL,1,10000+ ,93,publico,-1
+2.7,Research & Development,Business Services,$50 to $100 million (USD),0,0,50,102,76.0,na,na,0,0,0,0,1,2653,EAG Laboratories,MO,0,501-1000 ,42,subsidiary,-1
+3.9,IT Services,Information Technology,$100 to $500 million (USD),0,0,85,139,112.0,cientifico de datos,senior,1,0,1,0,0,4427,The Buffalo Group,VA,0,501-1000 ,10,privado,3
+3.1,Mining,Mining & Metals,$1 to $2 billion (USD),0,0,74,122,98.0,cientifico de datos,na,1,0,0,0,0,2609,Carmeuse,PA,0,1001-5000 ,160,privado,3
+4.0,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,99,157,128.0,cientifico de datos,senior,0,0,1,1,0,4295,HP Inc.,WA,0,10000+ ,81,publico,-1
+4.3,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,79,222,150.5,cientifico de datos,na,1,0,1,1,1,3405,h2o.ai,CA,1,201-500 ,9,privado,-1
+1.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10 to $25 million (USD),0,0,57,118,87.5,na,na,0,0,0,1,0,5153,GNS Healthcare,MA,1,51-200 ,20,privado,-1
+3.3,Aerospace & Defense,Aerospace & Defense,$1 to $2 billion (USD),0,0,83,137,110.0,cientifico de datos,na,1,0,0,0,1,3381,Peraton,VA,0,1001-5000 ,3,privado,-1
+4.4,IT Services,Information Technology,$500 million to $1 billion (USD),0,0,86,141,113.5,cientifico de datos,na,1,0,0,0,1,879,Pactera,CA,0,10000+ ,25,privado,3
+3.9,Health Care Services & Hospitals,Health Care,$1 to $5 million (USD),0,0,94,154,124.0,cientifico de datos,na,1,0,0,0,0,4189,Nurx,CA,1,51-200 ,4,privado,-1
+4.7,Advertising & Marketing,Business Services,$25 to $50 million (USD),0,0,37,76,56.5,analysta de datos,junior,0,0,0,0,1,4424,webfx.com,PA,1,201-500 ,23,privado,-1
+4.5,Aerospace & Defense,Aerospace & Defense,$1 to $2 billion (USD),0,0,100,160,130.0,cientifico de datos,na,1,0,0,0,1,2996,Johns Hopkins University Applied Physics Laboratory,MD,1,5001-10000 ,78,sin_lucro,3
+4.3,Computer Hardware & Software,Information Technology,$10 to $25 million (USD),0,0,55,100,77.5,analysta de datos,na,0,0,0,0,1,3682,Productive Edge,IL,1,51-200 ,12,privado,3
+4.0,Consulting,Business Services,$50 to $100 million (USD),0,0,60,114,87.0,ingeniero de datos,na,1,0,0,1,1,3819,Excella Consulting,VA,1,201-500 ,18,privado,-1
+4.4,Wholesale,Business Services,$100 to $500 million (USD),0,0,39,68,53.5,analysta de datos,na,0,0,0,0,1,1791,Gensco,WA,1,501-1000 ,72,privado,-1
+3.2,"Department, Clothing, & Shoe Stores",Retail,$10+ billion (USD),0,0,106,172,139.0,cientifico de datos,na,0,0,0,0,0,3934,Walmart,TX,0,10000+ ,58,publico,3
+3.8,Consulting,Business Services,$25 to $50 million (USD),0,0,86,142,114.0,cientifico de datos,na,1,0,1,1,1,3804,Logic20/20,CA,0,201-500 ,15,privado,-1
+4.2,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,64,107,85.5,cientifico de datos,na,1,0,1,0,1,3204,goTRG,FL,1,501-1000 ,12,privado,-1
+4.5,IT Services,Information Technology,$25 to $50 million (USD),0,0,31,65,48.0,na,na,0,0,0,0,1,2253,NMR Consulting,AL,0,51-200 ,24,privado,-1
+3.5,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,34,62,48.0,analysta de datos,na,0,0,0,0,1,2772,iSeatz,LA,1,51-200 ,21,privado,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,117,231,174.0,na,senior,0,0,0,0,1,4751,Nektar Therapeutics,CA,1,201-500 ,30,publico,3
+3.9,Financial Analytics & Research,Finance,$1 to $2 billion (USD),0,0,64,106,85.0,cientifico de datos,na,1,0,1,0,0,2380,TransUnion,GA,0,5001-10000 ,52,publico,-1
+4.7,IT Services,Information Technology,$10 to $25 million (USD),0,0,79,134,106.5,na,na,0,0,0,0,0,2723,IT Concepts,MD,0,51-200 ,17,privado,-1
+4.2,IT Services,Information Technology,$100 to $500 million (USD),0,0,52,93,72.5,analysta de datos,na,0,0,0,0,1,2337,Scientific Research Corporation,MD,0,1001-5000 ,32,privado,-1
+3.4,IT Services,Information Technology,$10+ billion (USD),0,0,55,116,85.5,na,na,0,0,0,0,0,4088,General Dynamics Information Technology,MD,0,10000+ ,24,subsidiary,3
+3.2,Federal Agencies,Government,$1 to $2 billion (USD),0,0,72,123,97.5,cientifico de datos,na,1,0,0,0,1,5342,MITRE,VA,0,5001-10000 ,62,sin_lucro,3
+3.9,IT Services,Information Technology,$100 to $500 million (USD),0,0,74,124,99.0,cientifico de datos,na,1,0,0,0,1,2588,The Buffalo Group,VA,0,501-1000 ,10,privado,3
+3.1,Insurance Carriers,Insurance,$2 to $5 billion (USD),0,0,40,73,56.5,analysta de datos,na,0,0,0,0,1,4203,DentaQuest,WI,0,1001-5000 ,19,privado,3
+4.1,IT Services,Information Technology,Unknown / Non-Applicable,0,0,102,164,133.0,cientifico de datos,na,1,0,0,0,0,5467,Redjack,MD,1,1-50 ,13,privado,-1
+3.8,Research & Development,Business Services,Unknown / Non-Applicable,0,0,89,153,121.0,cientifico de datos,na,1,0,1,0,0,3443,7Park Data,NY,1,51-200 ,8,privado,-1
+4.7,Security Services,Business Services,Unknown / Non-Applicable,0,0,61,110,85.5,cientifico de datos,na,1,0,0,0,0,3316,Rapid Response Monitoring,NY,1,501-1000 ,28,privado,3
+4.3,Education Training Services,Education,Unknown / Non-Applicable,0,0,65,110,87.5,cientifico de datos,na,1,0,0,0,0,3717,Trilogy Ed,TX,0,1001-5000 ,5,subsidiary,3
+4.2,Consulting,Business Services,Unknown / Non-Applicable,0,1,200,275,237.5,cientifico de datos,senior,1,0,0,0,1,3301,Gallup,DC,1,1001-5000 ,85,privado,3
+3.9,IT Services,Information Technology,$100 to $500 million (USD),0,0,68,123,95.5,ingeniero de datos,na,1,0,1,0,0,5483,CapTech,NC,0,1001-5000 ,23,privado,3
+3.3,Transportation Equipment Manufacturing,Manufacturing,$5 to $10 billion (USD),0,0,80,129,104.5,cientifico de datos,senior,1,0,1,1,1,4753,American Axle & Manufacturing,MI,0,10000+ ,26,publico,-1
+4.7,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,41,72,56.5,analysta de datos,na,0,0,0,0,1,5609,CentralReach,NJ,0,201-500 ,8,privado,3
+4.3,Enterprise Software & Network Solutions,Information Technology,$25 to $50 million (USD),0,0,39,71,55.0,analysta de datos,senior,0,0,0,0,1,3209,Integrate,AZ,1,201-500 ,10,privado,-1
+2.9,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,38,85,61.5,na,na,0,0,0,0,1,4917,Boys Town Hospital,NE,1,1001-5000 ,43,hospital,3
+4.5,Computer Hardware & Software,Information Technology,$100 to $500 million (USD),0,0,121,193,157.0,cientifico de datos,na,0,0,1,1,0,5139,Demandbase,CA,1,201-500 ,14,privado,3
+3.4,Internet,Information Technology,Unknown / Non-Applicable,0,0,54,102,78.0,ingeniero de datos,na,1,0,0,0,0,2232,Sapphire Digital,NJ,1,201-500 ,1,privado,2
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,83,144,113.5,cientifico de datos,na,1,0,1,0,0,3731,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+4.6,Internet,Information Technology,$100 to $500 million (USD),0,0,120,160,140.0,cientifico de datos,na,1,0,1,0,0,4574,<intent>,NY,1,51-200 ,11,privado,2
+3.2,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,102,163,132.5,cientifico de datos,na,0,0,1,0,1,3158,Formation,CA,1,51-200 ,5,privado,-1
+4.0,Computer Hardware & Software,Information Technology,$2 to $5 billion (USD),0,0,76,140,108.0,ingeniero de datos,na,1,0,1,0,0,3443,Autodesk,CA,0,5001-10000 ,38,publico,-1
+4.6,Farm Support Services,Agriculture & Forestry,$50 to $100 million (USD),0,0,60,101,80.5,cientifico de datos,na,0,0,0,0,0,741,Beck's Hybrids,IN,1,501-1000 ,83,privado,-1
+2.8,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,82,133,107.5,cientifico de datos,na,1,0,0,0,0,3899,DrFirst,MD,1,201-500 ,20,privado,-1
+4.7,Consulting,Business Services,$25 to $50 million (USD),0,0,65,125,95.0,ingeniero de datos,na,0,0,1,1,0,2896,Object Partners,MN,1,51-200 ,24,privado,2
+3.0,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,91,148,119.5,cientifico de datos,na,1,0,1,0,0,3947,L.A. Care Health Plan,CA,1,1001-5000 ,23,sin_lucro,3
+3.2,Advertising & Marketing,Business Services,$1 to $2 billion (USD),0,0,95,173,134.0,ingeniero de datos,senior,0,0,1,1,0,2620,Red Ventures,NC,0,1001-5000 ,20,privado,3
+4.4,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,77,124,100.5,cientifico de datos,na,1,0,0,0,1,4188,Quick Base,MA,1,201-500 ,21,privado,-1
+3.5,TV Broadcast & Cable Networks,Media,$500 million to $1 billion (USD),0,0,80,135,107.5,cientifico de datos,na,1,0,0,0,0,7231,The E.W. Scripps Company,OH,1,1001-5000 ,142,publico,-1
+4.0,Internet,Information Technology,Unknown / Non-Applicable,0,0,85,159,122.0,ingeniero de datos,na,1,0,1,1,0,4064,Upside Business Travel,DC,1,51-200 ,5,privado,-1
+4.3,Real Estate,Real Estate,$2 to $5 billion (USD),0,1,80,105,92.5,ingeniero de datos,na,1,0,1,0,1,8175,Equity Residential,IL,1,1001-5000 ,27,publico,3
+2.3,Research & Development,Business Services,$100 to $500 million (USD),0,0,43,81,62.0,analysta de datos,na,0,0,0,0,1,1822,Synagro,MD,1,501-1000 ,34,privado,-1
+4.0,Architectural & Engineering Services,Business Services,$25 to $50 million (USD),0,0,29,50,39.5,na,na,0,0,0,0,0,2773,Alliance Source Testing,AL,0,51-200 ,20,na,-1
+3.6,Industrial Manufacturing,Manufacturing,$100 to $500 million (USD),0,0,82,133,107.5,cientifico de datos,na,0,0,0,0,1,3987,Accuride International,CA,0,1001-5000 ,54,privado,-1
+3.8,Staffing & Outsourcing,Business Services,Unknown / Non-Applicable,0,0,26,55,40.5,gerente,na,1,0,0,1,1,4154,Full Potential Solutions,MO,1,501-1000 ,3,privado,-1
+3.7,IT Services,Information Technology,$10+ billion (USD),0,0,61,118,89.5,cientifico de datos,senior,1,0,1,0,0,5002,Visa Inc.,VA,0,10000+ ,62,publico,3
+4.4,Consulting,Business Services,$50 to $100 million (USD),0,0,60,102,81.0,cientifico de datos,na,1,0,0,1,1,3154,Maven Wave Partners,IL,1,201-500 ,12,privado,-1
+4.0,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,112,182,147.0,cientifico de datos,senior,1,0,0,1,0,3698,Novetta,VA,0,501-1000 ,8,privado,3
+3.2,Brokerage Services,Finance,$100 to $500 million (USD),0,0,64,106,85.0,cientifico de datos,na,1,0,0,0,1,3991,"First Command Financial Services, Inc.",TX,1,1001-5000 ,62,privado,3
+2.9,Consumer Products Manufacturing,Manufacturing,$1 to $2 billion (USD),0,0,51,112,81.5,na,na,0,0,0,0,1,5619,Pharmavite,CA,0,1001-5000 ,49,privado,2
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$500 million to $1 billion (USD),0,0,113,223,168.0,na,na,0,0,0,0,1,6275,BioMarin Pharmaceutical,CA,0,1001-5000 ,23,publico,3
+4.3,Aerospace & Defense,Aerospace & Defense,Unknown / Non-Applicable,0,0,72,129,100.5,ingeniero de ML,na,1,0,1,1,1,3549,Stratagem Group,CO,1,1-50 ,13,privado,-1
+3.4,Consulting,Business Services,$100 to $500 million (USD),0,0,71,123,97.0,cientifico de datos,na,1,0,1,0,1,7548,PA Consulting,NY,0,1001-5000 ,77,privado,3
+4.1,Research & Development,Business Services,$1 to $2 billion (USD),0,0,64,106,85.0,cientifico de datos,na,0,0,0,0,0,3490,ManTech,VA,0,5001-10000 ,52,publico,-1
+4.3,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,118,189,153.5,cientifico de datos,na,1,0,1,1,1,4163,h2o.ai,CA,1,201-500 ,9,privado,-1
+5.0,IT Services,Information Technology,Unknown / Non-Applicable,0,1,120,145,132.5,ingeniero de datos,na,0,0,0,0,0,688,Gridiron IT,FL,0,51-200 ,3,privado,-1
+4.3,Computer Hardware & Software,Information Technology,$10 to $25 million (USD),0,0,80,120,100.0,ingeniero de datos,na,0,0,1,0,1,3055,Productive Edge,IL,1,51-200 ,12,privado,3
+3.7,Travel Agencies,Travel & Tourism,Unknown / Non-Applicable,0,0,80,130,105.0,cientifico de datos,senior,1,0,0,0,0,3353,Evolve Vacation Rental,CO,1,201-500 ,9,privado,-1
+4.2,Religious Organizations,Non-Profit,Unknown / Non-Applicable,0,0,59,115,87.0,ingeniero de datos,na,0,0,0,1,1,3066,The Church of Jesus Christ of Latter-day Saints,UT,0,10000+ ,-1,sin_lucro,-1
+4.3,Real Estate,Real Estate,Unknown / Non-Applicable,0,0,71,136,103.5,analysta de datos,na,0,0,0,0,1,1806,Maximus Real Estate Partners,CA,1,51-200 ,7,privado,3
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,81,167,124.0,na,senior,1,0,0,0,1,6130,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,49,85,67.0,cientifico de datos,na,1,0,0,0,0,6844,PNNL,WA,1,1001-5000 ,55,gubernamental,3
+3.9,IT Services,Information Technology,$2 to $5 billion (USD),0,0,60,114,87.0,ingeniero de datos,na,0,0,0,0,0,3217,AVANADE,DC,0,10000+ ,20,privado,3
+4.3,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,71,204,137.5,cientifico de datos,na,1,0,1,1,1,3405,h2o.ai,IL,0,201-500 ,9,privado,-1
+3.8,Advertising & Marketing,Business Services,$100 to $500 million (USD),0,0,75,125,100.0,cientifico de datos,na,1,0,0,0,1,5526,PatientPoint,OH,1,201-500 ,33,privado,3
+3.8,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,77,136,106.5,ingeniero de datos,na,0,0,0,0,1,5743,BlueCross BlueShield of Tennessee,TN,1,5001-10000 ,75,sin_lucro,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,74,123,98.5,cientifico de datos,senior,0,0,0,0,0,4904,PNNL,WA,1,1001-5000 ,55,gubernamental,3
+4.8,Security Services,Business Services,$100 to $500 million (USD),0,0,44,78,61.0,analysta de datos,senior,1,0,0,0,1,2934,KnowBe4,FL,1,501-1000 ,10,privado,-1
+4.4,Consulting,Business Services,Unknown / Non-Applicable,0,0,65,148,106.5,na,senior,1,0,1,1,0,4127,KSM Consulting,IN,1,51-200 ,12,privado,-1
+3.9,Internet,Information Technology,Unknown / Non-Applicable,0,0,59,110,84.5,ingeniero de datos,na,1,0,1,0,0,2075,Cogo Labs,MA,1,51-200 ,15,privado,-1
+3.4,Consumer Products Manufacturing,Manufacturing,$2 to $5 billion (USD),0,0,85,134,109.5,gerente,na,1,0,0,0,1,2962,Church & Dwight,NJ,1,1001-5000 ,174,publico,-1
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,124,204,164.0,cientifico de datos,na,1,0,1,1,0,4414,MassMutual,MA,0,5001-10000 ,169,privado,-1
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,131,207,169.0,cientifico de datos,senior,1,0,1,0,1,7106,Genentech,CA,1,10000+ ,44,subsidiary,-1
+3.8,Telecommunications Services,Telecommunications,$2 to $5 billion (USD),0,0,110,174,142.0,cientifico de datos,senior,1,0,1,1,1,2397,Juniper Networks,CA,0,5001-10000 ,24,publico,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,52,101,76.5,na,na,0,0,0,0,1,2468,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+3.8,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,81,133,107.0,cientifico de datos,na,1,0,0,0,1,3010,Legal & General America,MD,1,501-1000 ,39,privado,-1
+3.5,Computer Hardware & Software,Information Technology,$10+ billion (USD),0,0,132,211,171.5,cientifico de datos,na,1,0,0,1,0,4486,Western Digital,CA,1,10000+ ,50,publico,2
+3.9,Insurance Agencies & Brokerages,Insurance,Unknown / Non-Applicable,0,0,73,119,96.0,cientifico de datos,senior,0,0,0,0,1,6909,Health IQ,TX,0,201-500 ,7,privado,-1
+4.2,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,110,175,142.5,cientifico de datos,na,0,0,0,0,0,3512,Nuna,CA,1,51-200 ,10,privado,-1
+4.2,Religious Organizations,Non-Profit,Unknown / Non-Applicable,0,0,74,140,107.0,ingeniero de datos,na,0,0,0,0,1,2617,The Church of Jesus Christ of Latter-day Saints,UT,0,10000+ ,-1,sin_lucro,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,100,190,145.0,na,senior,1,0,0,0,1,5391,Sunovion,MA,1,1001-5000 ,10,privado,3
+2.9,Colleges & Universities,Education,$25 to $50 million (USD),0,0,43,80,61.5,analysta de datos,senior,1,0,0,0,1,5736,National Student Clearinghouse,VA,1,201-500 ,27,sin_lucro,3
+3.6,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,1,0,34,48,41.0,na,na,0,0,0,0,0,2117,Tower Health,PA,0,5001-10000 ,3,sin_lucro,-1
+2.7,Investment Banking & Asset Management,Finance,$50 to $100 million (USD),0,0,91,149,120.0,cientifico de datos,na,1,0,0,0,0,6467,State of Wisconsin Investment Board,WI,1,51-200 ,69,gubernamental,-1
+4.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,42,82,62.0,na,na,0,0,0,0,0,5512,Rubius Therapeutics,MA,1,201-500 ,7,publico,-1
+4.0,Computer Hardware & Software,Information Technology,$2 to $5 billion (USD),0,0,116,185,150.5,cientifico de datos,senior,1,0,1,0,0,2525,Autodesk,CA,0,5001-10000 ,38,publico,-1
+4.3,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,59,116,87.5,gerente,na,0,0,0,0,1,1961,OneMagnify,MI,0,201-500 ,53,privado,-1
+4.2,Advertising & Marketing,Business Services,$25 to $50 million (USD),0,0,48,95,71.5,ingeniero de datos,na,1,0,1,1,1,10051,IZEA,FL,1,51-200 ,14,publico,2
+3.6,"Department, Clothing, & Shoe Stores",Retail,$100 to $500 million (USD),0,0,31,72,51.5,analysta de datos,na,0,0,0,0,1,4353,Vionic Group,CA,1,51-200 ,14,subsidiary,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,105,198,151.5,na,senior,0,0,0,0,1,5801,Takeda Pharmaceuticals,CA,0,10000+ ,239,publico,3
+2.8,IT Services,Information Technology,Unknown / Non-Applicable,0,0,55,100,77.5,analysta de datos,senior,1,0,0,0,1,5894,Dodge Data & Analytics,NJ,1,201-500 ,6,privado,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,98,182,140.0,principal,na,0,0,0,0,1,2309,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+3.3,Insurance Carriers,Insurance,$10 to $25 million (USD),0,0,73,124,98.5,cientifico de datos,senior,0,0,0,0,1,3239,Plymouth Rock Assurance,NJ,0,1001-5000 ,38,privado,2
+-1.0,IT Services,Information Technology,$5 to $10 million (USD),0,1,200,250,225.0,cientifico de datos,na,1,0,0,1,1,1632,CA-One Tech Cloud,CA,0,51-200 ,3,privado,-1
+3.6,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,42,68,55.0,na,na,0,0,0,0,0,2724,Beebe Healthcare,DE,1,1001-5000 ,85,sin_lucro,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,117,206,161.5,na,senior,0,0,0,0,0,1345,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+3.4,Insurance Carriers,Insurance,$1 to $2 billion (USD),0,0,111,183,147.0,cientifico de datos,senior,1,0,1,1,0,4835,Argo Group US,NY,0,1001-5000 ,72,publico,-1
+4.1,Energy,"Oil, Gas, Energy & Utilities",$1 to $2 billion (USD),0,0,44,78,61.0,analysta de datos,na,0,0,0,0,1,2886,Associated Electric Cooperative,MO,1,501-1000 ,59,privado,-1
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,81,159,120.0,ingeniero de ML,na,1,0,0,0,0,2808,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.2,Lending,Finance,$500 million to $1 billion (USD),0,0,83,166,124.5,na,na,1,0,0,0,1,1925,PennyMac,AZ,0,1001-5000 ,12,publico,3
+3.9,Financial Analytics & Research,Finance,$50 to $100 million (USD),0,0,114,182,148.0,cientifico de datos,senior,1,0,0,0,0,2364,Zest AI,CA,1,51-200 ,11,privado,-1
+4.7,Aerospace & Defense,Aerospace & Defense,$25 to $50 million (USD),0,0,42,76,59.0,analysta de datos,na,1,0,0,0,1,3088,DECISIVE ANALYTICS Corporation,AL,0,51-200 ,24,privado,2
+3.7,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,114,179,146.5,cientifico de datos,na,1,0,0,0,1,5123,The Hanover Insurance Group,MA,1,5001-10000 ,168,publico,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,60,123,91.5,na,na,0,0,0,0,1,3984,Karyopharm Therapeutics Inc.,MA,1,201-500 ,-1,publico,-1
+3.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,100,166,133.0,ingeniero de ML,senior,1,0,0,1,0,3280,Tempus Labs,IL,1,501-1000 ,5,privado,-1
+4.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $5 million (USD),0,0,108,173,140.5,cientifico de datos,na,1,0,0,1,0,4819,Recursion Pharmaceuticals,UT,1,51-200 ,7,privado,-1
+3.7,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,48,93,70.5,ingeniero de datos,na,0,0,0,0,1,3670,P2 Energy Solutions,LA,0,501-1000 ,-1,privado,-1
+3.3,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,54,115,84.5,principal,na,0,0,0,0,0,3670,Rochester Regional Health,NY,1,10000+ ,6,hospital,-1
+4.0,Computer Hardware & Software,Information Technology,$5 to $10 million (USD),0,0,60,127,93.5,na,na,0,0,0,0,1,4637,ClearEdge,MD,1,51-200 ,18,privado,-1
+4.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,90,179,134.5,na,senior,0,0,0,0,0,4438,Rubius Therapeutics,MA,1,201-500 ,7,publico,-1
+3.9,Internet,Information Technology,$10 to $25 million (USD),0,0,138,224,181.0,ingeniero de ML,na,1,0,1,0,0,2015,Tapjoy,CA,1,201-500 ,13,privado,2
+3.3,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,54,115,84.5,principal,na,0,0,0,0,0,3627,Rochester Regional Health,NY,1,10000+ ,6,hospital,-1
+4.1,Internet,Information Technology,$50 to $100 million (USD),0,1,190,220,205.0,ingeniero de datos,na,1,0,1,1,0,4037,Credit Sesame,CA,1,51-200 ,10,privado,3
+3.6,Gambling,"Arts, Entertainment & Recreation",$100 to $500 million (USD),0,0,35,62,48.5,analysta de datos,na,0,0,0,0,1,4608,San Manuel Casino,CA,1,1001-5000 ,34,privado,-1
+4.0,Health Care Services & Hospitals,Health Care,$50 to $100 million (USD),1,0,36,50,43.0,na,na,0,0,0,1,0,5160,Texas Health Huguley Hospital,TX,0,1001-5000 ,43,hospital,-1
+2.4,Food & Beverage Manufacturing,Manufacturing,$100 to $500 million (USD),0,0,39,66,52.5,na,na,0,0,0,0,0,2433,Teasdale Latin Foods,IL,0,501-1000 ,-1,privado,-1
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,81,167,124.0,ingeniero de ML,senior,0,0,0,0,0,5379,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.5,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,42,86,64.0,gerente,na,0,0,0,0,0,3846,Central California Alliance for Health,CA,1,501-1000 ,24,sin_lucro,-1
+3.0,Gas Stations,Retail,$10+ billion (USD),0,0,69,127,98.0,ingeniero de datos,senior,1,0,0,0,0,2133,Pilot Flying J Travel Centers LLC,TN,1,10000+ ,62,privado,3
+3.6,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,42,68,55.0,na,na,0,0,0,0,0,2801,Beebe Healthcare,DE,0,1001-5000 ,85,sin_lucro,-1
+3.3,Food & Beverage Manufacturing,Manufacturing,Unknown / Non-Applicable,0,0,40,68,54.0,na,na,0,0,0,0,0,2832,Palermo's Pizza,WI,1,501-1000 ,56,privado,-1
+2.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,49,113,81.0,na,na,0,0,0,0,1,3776,Advanced BioScience Laboratories,MD,1,201-500 ,59,privado,-1
+3.4,Transportation Management,Transportation & Logistics,$2 to $5 billion (USD),0,0,75,140,107.5,ingeniero de datos,senior,0,0,0,0,0,4288,Echo Global Logistics,IL,1,1001-5000 ,15,publico,3
+3.8,Logistics & Supply Chain,Transportation & Logistics,Unknown / Non-Applicable,0,0,86,139,112.5,cientifico de datos,na,1,0,0,1,1,6408,Truckstop.com,IL,0,501-1000 ,25,privado,-1
+3.7,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,66,112,89.0,cientifico de datos,na,1,0,1,0,1,5298,Lockheed Martin,VA,0,10000+ ,25,publico,3
+4.8,Insurance Carriers,Insurance,$1 to $2 billion (USD),0,0,76,125,100.5,cientifico de datos,senior,0,0,0,0,0,1806,Acuity Insurance,WI,1,1001-5000 ,95,privado,-1
+3.8,Travel Agencies,Travel & Tourism,$2 to $5 billion (USD),0,0,44,86,65.0,analysta de datos,na,0,0,0,0,1,2469,Fareportal,NY,1,1001-5000 ,18,privado,3
+3.4,Federal Agencies,Government,Unknown / Non-Applicable,1,0,30,50,40.0,na,na,0,0,0,0,0,9322,"Veterans Affairs, Veterans Health Administration",LA,0,10000+ ,90,gubernamental,-1
+4.3,Consulting,Business Services,Unknown / Non-Applicable,0,0,53,92,72.5,cientifico de datos,na,1,0,1,1,1,5775,Credera,TX,1,201-500 ,21,subsidiary,-1
+4.8,Security Services,Business Services,$100 to $500 million (USD),0,0,44,78,61.0,analysta de datos,senior,1,0,0,0,1,2934,KnowBe4,FL,1,501-1000 ,10,privado,-1
+3.4,Consumer Products Manufacturing,Manufacturing,$2 to $5 billion (USD),0,0,85,134,109.5,gerente,na,1,0,0,0,1,2962,Church & Dwight,NJ,1,1001-5000 ,174,publico,-1
+3.9,Internet,Information Technology,Unknown / Non-Applicable,0,0,59,110,84.5,ingeniero de datos,na,1,0,1,0,0,2075,Cogo Labs,MA,1,51-200 ,15,privado,-1
+3.4,Advertising & Marketing,Business Services,$10 to $25 million (USD),0,0,64,111,87.5,cientifico de datos,na,0,0,0,0,0,4082,Spectrum Communications and Consulting,IL,1,51-200 ,28,privado,-1
+3.1,Video Games,Media,$10+ billion (USD),0,0,65,120,92.5,analysta de datos,na,1,1,0,0,1,3123,NCSOFT,CA,0,1001-5000 ,23,publico,3
+3.2,Federal Agencies,Government,$1 to $2 billion (USD),0,0,60,103,81.5,cientifico de datos,na,1,0,1,0,0,3144,MITRE,VA,0,5001-10000 ,62,sin_lucro,3
+4.3,Trucking,Transportation & Logistics,Unknown / Non-Applicable,0,0,53,105,79.0,analysta de datos,na,0,0,0,0,0,1884,"Dayton Freight Lines, Inc.",OH,1,1001-5000 ,39,privado,2
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,124,204,164.0,cientifico de datos,na,1,0,1,1,0,4414,MassMutual,MA,0,5001-10000 ,169,privado,-1
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,131,207,169.0,cientifico de datos,senior,1,0,1,0,1,7106,Genentech,CA,1,10000+ ,44,subsidiary,-1
+3.8,Telecommunications Services,Telecommunications,$2 to $5 billion (USD),0,0,110,174,142.0,cientifico de datos,senior,1,0,1,1,1,2397,Juniper Networks,CA,0,5001-10000 ,24,publico,-1
+2.8,Social Assistance,Non-Profit,$50 to $100 million (USD),0,0,33,62,47.5,analysta de datos,na,0,0,0,0,1,5435,Community Action Partnership of San Luis Obispo,CA,0,501-1000 ,-1,sin_lucro,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,52,101,76.5,na,na,0,0,0,0,1,2468,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+3.4,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,48,90,69.0,analysta de datos,na,1,0,0,0,1,5483,TrueAccord,CA,1,51-200 ,7,privado,-1
+4.0,Computer Hardware & Software,Information Technology,$50 to $100 million (USD),0,0,34,64,49.0,analysta de datos,na,1,0,0,0,1,2505,DRB Systems,ID,0,201-500 ,36,privado,-1
+3.5,Computer Hardware & Software,Information Technology,$10+ billion (USD),0,0,132,211,171.5,cientifico de datos,na,1,0,0,1,0,4486,Western Digital,CA,1,10000+ ,50,publico,2
+3.8,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,81,133,107.0,cientifico de datos,na,1,0,0,0,1,3010,Legal & General America,MD,1,501-1000 ,39,privado,-1
+3.7,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,42,76,59.0,analysta de datos,na,0,0,0,0,1,2774,Corcentric,NJ,1,201-500 ,24,privado,-1
+3.5,IT Services,Information Technology,$25 to $50 million (USD),0,0,66,111,88.5,cientifico de datos,na,0,0,0,1,0,7107,U.Group,IN,0,201-500 ,1,privado,-1
+4.2,Religious Organizations,Non-Profit,Unknown / Non-Applicable,0,0,74,140,107.0,ingeniero de datos,na,0,0,0,0,1,2617,The Church of Jesus Christ of Latter-day Saints,UT,0,10000+ ,-1,sin_lucro,-1
+4.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,63,110,86.5,cientifico de datos,na,1,0,0,1,1,3698,Pfizer,MA,0,10000+ ,171,publico,-1
+4.3,Logistics & Supply Chain,Transportation & Logistics,$10 to $25 million (USD),0,0,63,105,84.0,cientifico de datos,na,1,0,0,0,1,2907,SMC 3,KY,0,51-200 ,85,sin_lucro,-1
+4.7,Consulting,Business Services,$50 to $100 million (USD),0,0,91,138,114.5,asesor,na,1,0,0,0,1,4135,Systems Evolution Inc.,NY,0,201-500 ,28,privado,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,100,190,145.0,na,senior,1,0,0,0,1,5391,Sunovion,MA,1,1001-5000 ,10,privado,3
+4.4,Internet,Information Technology,$100 to $500 million (USD),0,0,62,114,88.0,ingeniero de datos,na,1,0,1,1,1,4471,Eventbrite,TN,0,1001-5000 ,14,publico,3
+4.1,Internet,Information Technology,$100 to $500 million (USD),0,0,71,129,100.0,ingeniero de datos,na,1,0,1,1,0,4948,Centro,IL,1,501-1000 ,19,privado,3
+2.9,Colleges & Universities,Education,$25 to $50 million (USD),0,0,43,80,61.5,analysta de datos,senior,1,0,0,0,1,5736,National Student Clearinghouse,VA,1,201-500 ,27,sin_lucro,3
+2.5,Advertising & Marketing,Business Services,$1 to $2 billion (USD),0,0,74,119,96.5,cientifico de datos,na,1,0,1,0,0,4466,comScore,OR,0,1001-5000 ,21,publico,3
+4.2,Consulting,Business Services,Unknown / Non-Applicable,0,0,55,97,76.0,analysta de datos,na,1,0,0,0,1,2385,SullivanCotter,MN,0,201-500 ,28,privado,3
+3.9,Research & Development,Business Services,$100 to $500 million (USD),0,1,15,16,15.5,cientifico de datos,na,0,0,0,0,1,5019,NPD,NY,1,1001-5000 ,54,privado,-1
+4.3,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,61,106,83.5,cientifico de datos,na,1,0,0,0,1,3111,Bakery Agency,TX,1,1-50 ,10,privado,-1
+2.7,Investment Banking & Asset Management,Finance,$50 to $100 million (USD),0,0,91,149,120.0,cientifico de datos,na,1,0,0,0,0,6467,State of Wisconsin Investment Board,WI,1,51-200 ,69,gubernamental,-1
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,127,199,163.0,cientifico de datos,na,0,0,0,0,1,4502,Genentech,CA,1,10000+ ,44,subsidiary,-1
+3.4,Insurance Carriers,Insurance,Unknown / Non-Applicable,0,0,74,126,100.0,analysta de datos,na,0,0,0,1,0,4837,Blue Cross & Blue Shield of Rhode Island,RI,1,501-1000 ,81,sin_lucro,1
+3.8,Social Assistance,Non-Profit,Unknown / Non-Applicable,0,0,33,72,52.5,na,na,0,0,0,0,1,4837,Boys Town,NE,1,1001-5000 ,103,sin_lucro,3
+3.6,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,1,0,34,48,41.0,na,na,0,0,0,0,0,2117,Tower Health,PA,0,5001-10000 ,3,sin_lucro,-1
+3.3,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,37,63,50.0,analysta de datos,junior,0,0,0,0,1,4135,The HSC Health Care System,DC,1,501-1000 ,137,sin_lucro,-1
+3.4,Consulting,Business Services,$50 to $100 million (USD),0,0,67,119,93.0,ingeniero de datos,na,1,0,0,1,0,3799,Pro-Sphere Tek,TX,0,201-500 ,14,privado,-1
+3.0,Insurance Agencies & Brokerages,Insurance,$2 to $5 billion (USD),0,0,72,117,94.5,cientifico de datos,na,1,0,0,0,0,3421,Ameritas Life Insurance Corp,OH,0,1001-5000 ,133,privado,-1
+4.0,Computer Hardware & Software,Information Technology,$2 to $5 billion (USD),0,0,116,185,150.5,cientifico de datos,senior,1,0,1,0,0,2525,Autodesk,CA,0,5001-10000 ,38,publico,-1
+3.7,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,78,126,102.0,cientifico de datos,na,1,0,1,1,1,5558,Genworth,NC,0,1001-5000 ,16,publico,3
+4.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,42,82,62.0,na,na,0,0,0,0,0,5512,Rubius Therapeutics,MA,1,201-500 ,7,publico,-1
+4.3,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,59,116,87.5,gerente,na,0,0,0,0,1,1961,OneMagnify,MI,0,201-500 ,53,privado,-1
+4.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,63,105,84.0,cientifico de datos,na,0,0,0,1,1,5015,Pfizer,CT,0,10000+ ,171,publico,-1
+4.0,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,109,177,143.0,cientifico de datos,na,1,0,0,1,0,3760,Novetta,VA,0,501-1000 ,8,privado,3
+3.2,Staffing & Outsourcing,Business Services,$5 to $10 million (USD),0,0,116,194,155.0,cientifico de datos,senior,1,0,1,1,1,1817,"Numeric, LLC",PA,0,1-50 ,-1,privado,-1
+4.2,Advertising & Marketing,Business Services,$25 to $50 million (USD),0,0,48,95,71.5,ingeniero de datos,na,1,0,1,1,1,10051,IZEA,FL,1,51-200 ,14,publico,2
+3.9,Insurance Carriers,Insurance,$10 to $25 million (USD),0,0,83,133,108.0,cientifico de datos,na,1,0,1,0,0,3029,Trace Data,CA,0,51-200 ,20,privado,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,105,198,151.5,na,senior,0,0,0,0,1,5801,Takeda Pharmaceuticals,CA,0,10000+ ,239,publico,3
+3.6,"Department, Clothing, & Shoe Stores",Retail,$100 to $500 million (USD),0,0,31,72,51.5,analysta de datos,na,0,0,0,0,1,4353,Vionic Group,CA,1,51-200 ,14,subsidiary,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,98,182,140.0,principal,na,0,0,0,0,1,2309,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+2.8,IT Services,Information Technology,Unknown / Non-Applicable,0,0,55,100,77.5,analysta de datos,senior,1,0,0,0,1,5894,Dodge Data & Analytics,NJ,1,201-500 ,6,privado,-1
+4.2,Investment Banking & Asset Management,Finance,$50 to $100 million (USD),0,0,45,82,63.5,analysta de datos,na,0,0,0,0,1,2643,Clearwater Analytics,ID,1,501-1000 ,16,privado,-1
+4.0,IT Services,Information Technology,Less than $1 million (USD),0,0,83,135,109.0,cientifico de datos,na,1,0,0,0,0,714,"Tekvalley, Corp.",CA,0,1-50 ,-1,privado,-1
+3.5,Aerospace & Defense,Aerospace & Defense,$500 million to $1 billion (USD),0,0,70,122,96.0,cientifico de datos,na,1,0,0,0,0,3796,BWX Technologies,TN,0,5001-10000 ,170,publico,-1
+-1.0,IT Services,Information Technology,$5 to $10 million (USD),0,1,200,250,225.0,cientifico de datos,na,1,0,0,1,1,1632,CA-One Tech Cloud,CA,0,51-200 ,3,privado,-1
+3.2,Lending,Finance,$500 million to $1 billion (USD),0,0,70,132,101.0,ingeniero de datos,na,1,0,0,1,1,2501,PennyMac,CA,0,1001-5000 ,12,publico,3
+3.3,Insurance Carriers,Insurance,$10 to $25 million (USD),0,0,73,124,98.5,cientifico de datos,senior,0,0,0,0,1,3239,Plymouth Rock Assurance,NJ,0,1001-5000 ,38,privado,2
+3.9,Industrial Manufacturing,Manufacturing,$1 to $2 billion (USD),0,0,54,101,77.5,ingeniero de datos,na,0,0,0,0,1,3490,Vermeer,IA,1,1001-5000 ,72,privado,3
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,117,206,161.5,na,senior,0,0,0,0,0,1345,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+3.6,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,42,68,55.0,na,na,0,0,0,0,0,2724,Beebe Healthcare,DE,1,1001-5000 ,85,sin_lucro,-1
+3.4,Insurance Carriers,Insurance,$1 to $2 billion (USD),0,0,111,183,147.0,cientifico de datos,senior,1,0,1,1,0,4835,Argo Group US,NY,0,1001-5000 ,72,publico,-1
+3.5,IT Services,Information Technology,Unknown / Non-Applicable,0,0,68,112,90.0,cientifico de datos,na,1,0,0,0,1,1231,L&T Infotech,CA,0,10000+ ,23,publico,3
+4.3,Banks & Credit Unions,Finance,$5 to $10 billion (USD),0,0,42,74,58.0,analysta de datos,na,0,0,0,1,0,6600,OceanFirst Financial,NJ,0,501-1000 ,118,publico,-1
+4.1,Energy,"Oil, Gas, Energy & Utilities",$1 to $2 billion (USD),0,0,44,78,61.0,analysta de datos,na,0,0,0,0,1,2886,Associated Electric Cooperative,MO,1,501-1000 ,59,privado,-1
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,81,159,120.0,ingeniero de ML,na,1,0,0,0,0,2808,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.6,Auctions & Galleries,Retail,$500 million to $1 billion (USD),0,0,95,161,128.0,cientifico de datos,na,1,0,0,0,0,2041,Sotheby's,NY,1,1001-5000 ,276,publico,-1
+3.5,Banks & Credit Unions,Finance,$100 to $500 million (USD),0,0,75,124,99.5,cientifico de datos,na,1,0,1,1,1,4420,First Tech Federal Credit Union,OR,0,1001-5000 ,68,privado,-1
+3.6,Real Estate,Real Estate,$500 million to $1 billion (USD),0,0,72,120,96.0,cientifico de datos,na,1,0,0,0,0,3342,Amrock,MI,1,1001-5000 ,23,privado,-1
+2.3,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,76,126,101.0,cientifico de datos,na,1,0,0,0,1,1727,Vanda Pharmaceuticals,DC,1,201-500 ,17,publico,-1
+3.9,Financial Analytics & Research,Finance,$50 to $100 million (USD),0,0,114,182,148.0,cientifico de datos,senior,1,0,0,0,0,2364,Zest AI,CA,1,51-200 ,11,privado,-1
+4.0,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,108,176,142.0,cientifico de datos,senior,1,0,0,1,0,4637,Novetta,VA,0,501-1000 ,8,privado,3
+4.1,K-12 Education,Education,Unknown / Non-Applicable,0,0,130,208,169.0,cientifico de datos,senior,0,0,0,1,1,4743,CK-12 Foundation,CA,1,1-50 ,13,privado,-1
+3.2,Lending,Finance,$500 million to $1 billion (USD),0,0,83,166,124.5,na,na,1,0,0,0,1,1925,PennyMac,AZ,0,1001-5000 ,12,publico,3
+4.7,Aerospace & Defense,Aerospace & Defense,$25 to $50 million (USD),0,0,42,76,59.0,analysta de datos,na,1,0,0,0,1,3088,DECISIVE ANALYTICS Corporation,AL,0,51-200 ,24,privado,2
+4.2,Consulting,Business Services,$10 to $25 million (USD),0,0,37,68,52.5,asesor,na,1,0,0,0,0,3849,Opinion Dynamics,CA,0,51-200 ,33,privado,-1
+4.6,IT Services,Information Technology,$50 to $100 million (USD),0,0,52,99,75.5,ingeniero de datos,na,0,0,1,0,0,2047,Applied Information Sciences,TX,0,501-1000 ,38,privado,-1
+3.7,Insurance Agencies & Brokerages,Insurance,$10+ billion (USD),0,0,105,173,139.0,cientifico de datos,senior,1,0,0,0,1,4929,Swiss Re,NY,0,10000+ ,157,publico,3
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,71,134,102.5,ingeniero de datos,na,1,0,1,1,1,4475,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+4.4,Architectural & Engineering Services,Business Services,$25 to $50 million (USD),0,0,39,82,60.5,na,na,0,0,0,0,0,1934,WK Dickson,SC,0,201-500 ,91,privado,3
+3.7,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,114,179,146.5,cientifico de datos,na,1,0,0,0,1,5123,The Hanover Insurance Group,MA,1,5001-10000 ,168,publico,-1
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,88,162,125.0,na,na,0,0,0,0,1,3965,Genentech,CA,1,10000+ ,44,subsidiary,-1
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,60,102,81.0,analysta de datos,senior,1,0,0,0,0,4898,MassMutual,MA,1,5001-10000 ,169,privado,-1
+3.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,100,166,133.0,ingeniero de ML,senior,1,0,0,1,0,3280,Tempus Labs,IL,1,501-1000 ,5,privado,-1
+3.4,IT Services,Information Technology,$10+ billion (USD),0,0,55,99,77.0,analysta de datos,na,0,0,0,0,1,3256,General Dynamics Information Technology,DC,0,10000+ ,24,subsidiary,3
+4.1,Research & Development,Business Services,$1 to $2 billion (USD),0,0,67,117,92.0,ingeniero de datos,na,0,0,0,0,0,3243,ManTech,VA,1,5001-10000 ,52,publico,-1
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,92,150,121.0,cientifico de datos,senior,0,0,0,0,0,1937,Novartis,MA,0,10000+ ,24,publico,-1
+4.0,Computer Hardware & Software,Information Technology,$2 to $5 billion (USD),0,0,116,209,162.5,ingeniero de datos,na,1,0,1,0,1,2447,Autodesk,CA,0,5001-10000 ,38,publico,-1
+3.9,Research & Development,Business Services,$500 million to $1 billion (USD),0,0,38,82,60.0,na,na,0,0,0,0,0,2026,Southwest Research Institute,TX,1,1001-5000 ,73,sin_lucro,3
+-1.0,-1,-1,Unknown / Non-Applicable,0,1,85,90,87.5,na,na,1,0,0,0,1,5924,Muso,CA,1,201-500 ,-1,sin_lucro,-1
+4.4,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,62,119,90.5,ingeniero de datos,na,1,0,1,0,0,1868,SpringML,IN,0,1-50 ,5,privado,-1
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,86,143,114.5,cientifico de datos,na,1,0,0,0,0,5045,Novartis,MA,0,10000+ ,24,publico,-1
+3.8,Telecommunications Services,Telecommunications,$2 to $5 billion (USD),0,0,93,149,121.0,cientifico de datos,na,1,0,1,0,1,2327,Juniper Networks,CA,1,5001-10000 ,24,publico,-1
+2.2,Advertising & Marketing,Business Services,$50 to $100 million (USD),0,0,84,136,110.0,cientifico de datos,senior,0,0,0,0,0,6612,The Integer Group,TX,0,501-1000 ,27,subsidiary,3
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,60,123,91.5,na,na,0,0,0,0,1,3984,Karyopharm Therapeutics Inc.,MA,1,201-500 ,-1,publico,-1
+4.1,Research & Development,Business Services,$1 to $2 billion (USD),0,0,52,89,70.5,analysta de datos,na,0,0,0,0,0,4755,ManTech,VA,0,5001-10000 ,52,publico,-1
+3.7,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,48,93,70.5,ingeniero de datos,na,0,0,0,0,1,3670,P2 Energy Solutions,LA,0,501-1000 ,-1,privado,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,56,97,76.5,cientifico de datos,na,1,0,0,0,0,6411,PNNL,WA,1,1001-5000 ,55,gubernamental,3
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,65,119,92.0,ingeniero de datos,na,1,0,1,0,1,2929,MassMutual,MA,1,5001-10000 ,169,privado,-1
+4.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $5 million (USD),0,0,108,173,140.5,cientifico de datos,na,1,0,0,1,0,4819,Recursion Pharmaceuticals,UT,1,51-200 ,7,privado,-1
+3.5,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,63,101,82.0,na,na,1,0,0,0,0,4196,Esri,VA,0,1001-5000 ,51,privado,1
+3.3,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,54,115,84.5,principal,na,0,0,0,0,0,3670,Rochester Regional Health,NY,1,10000+ ,6,hospital,-1
+4.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,90,179,134.5,na,senior,0,0,0,0,0,4438,Rubius Therapeutics,MA,1,201-500 ,7,publico,-1
+3.3,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,127,202,164.5,cientifico de datos,na,0,0,0,0,0,1688,Samba TV,CA,1,201-500 ,12,privado,-1
+3.4,Telecommunications Manufacturing,Telecommunications,$50 to $100 million (USD),0,0,31,57,44.0,analysta de datos,na,0,0,0,0,0,2290,SV Microwave,FL,1,201-500 ,29,publico,-1
+4.0,Computer Hardware & Software,Information Technology,$5 to $10 million (USD),0,0,60,127,93.5,na,na,0,0,0,0,1,4637,ClearEdge,MD,1,51-200 ,18,privado,-1
+4.4,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,75,143,109.0,ingeniero de datos,na,1,0,1,0,0,2353,SpringML,VA,0,1-50 ,5,privado,-1
+3.8,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,105,194,149.5,ingeniero de datos,na,0,0,1,1,0,3297,Sumo Logic,TX,0,501-1000 ,10,privado,3
+3.5,Research & Development,Business Services,Unknown / Non-Applicable,0,0,45,86,65.5,ingeniero de datos,na,0,0,1,1,1,4582,EAB,DC,1,1001-5000 ,13,privado,-1
+3.5,Insurance Carriers,Insurance,Unknown / Non-Applicable,0,0,95,154,124.5,cientifico de datos,senior,1,0,1,0,1,3870,Brighthouse Financial,NC,1,1001-5000 ,3,publico,-1
+2.9,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,80,148,114.0,ingeniero de datos,na,1,0,1,0,0,3333,Affinity Solutions,CA,0,51-200 ,22,privado,3
+3.9,Banks & Credit Unions,Finance,Unknown / Non-Applicable,0,0,36,62,49.0,analysta de datos,na,1,0,0,0,0,3971,Citadel Federal Credit Union,PA,1,501-1000 ,83,sin_lucro,3
+3.3,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,54,115,84.5,principal,na,0,0,0,0,0,3627,Rochester Regional Health,NY,1,10000+ ,6,hospital,-1
+3.7,IT Services,Information Technology,$100 to $500 million (USD),0,0,50,92,71.0,analysta de datos,na,0,0,0,0,1,2632,CALIBRE Systems,VA,1,501-1000 ,31,privado,3
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,67,135,101.0,director,na,0,0,0,0,0,4425,MassMutual,MA,0,5001-10000 ,169,privado,-1
+3.5,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,82,132,107.0,cientifico de datos,na,1,0,1,1,0,5000,Esri,CA,1,1001-5000 ,51,privado,1
+4.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,85,140,112.5,cientifico de datos,na,1,0,0,0,1,2161,New England Biolabs,MA,1,201-500 ,46,privado,3
+3.9,Internet,Information Technology,$10 to $25 million (USD),0,0,138,224,181.0,ingeniero de ML,na,1,0,1,0,0,2015,Tapjoy,CA,1,201-500 ,13,privado,2
+3.7,Computer Hardware & Software,Information Technology,$5 to $10 billion (USD),0,0,42,80,61.0,analysta de datos,na,1,0,1,0,0,5768,Motorola Solutions,IL,1,10000+ ,92,publico,3
+4.1,Internet,Information Technology,$50 to $100 million (USD),0,1,190,220,205.0,ingeniero de datos,na,1,0,1,1,0,4037,Credit Sesame,CA,1,51-200 ,10,privado,3
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,68,139,103.5,na,na,0,0,0,0,0,5182,Reynolds American,KY,0,5001-10000 ,145,privado,-1
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,34,92,63.0,gerente,na,0,0,0,0,1,5647,MassMutual,MA,1,5001-10000 ,169,privado,-1
+3.0,IT Services,Information Technology,$10+ billion (USD),0,0,54,71,62.5,asesor,na,0,0,0,0,1,3449,Infosys,CT,0,10000+ ,39,publico,3
+3.5,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,65,124,94.5,ingeniero de datos,na,1,0,1,1,1,5743,Alignment Healthcare,CA,1,501-1000 ,7,privado,-1
+3.6,Gambling,"Arts, Entertainment & Recreation",$100 to $500 million (USD),0,0,35,62,48.5,analysta de datos,na,0,0,0,0,1,4608,San Manuel Casino,CA,1,1001-5000 ,34,privado,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,109,200,154.5,na,senior,1,0,0,0,1,4517,Sunovion,MA,1,1001-5000 ,10,privado,3
+4.0,Health Care Services & Hospitals,Health Care,$50 to $100 million (USD),1,0,36,50,43.0,na,na,0,0,0,1,0,5160,Texas Health Huguley Hospital,TX,0,1001-5000 ,43,hospital,-1
+3.7,Stock Exchanges,Finance,$500 million to $1 billion (USD),0,0,61,113,87.0,ingeniero de ML,na,1,0,0,0,1,2860,Cboe Global Markets,KS,0,501-1000 ,47,publico,-1
+2.4,Food & Beverage Manufacturing,Manufacturing,$100 to $500 million (USD),0,0,39,66,52.5,na,na,0,0,0,0,0,2433,Teasdale Latin Foods,IL,0,501-1000 ,-1,privado,-1
+3.2,Research & Development,Business Services,Unknown / Non-Applicable,0,0,43,86,64.5,ingeniero de datos,na,1,0,0,1,1,2926,Guidepoint,NY,1,501-1000 ,17,privado,3
+2.1,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,74,149,111.5,na,na,0,0,0,0,1,4300,Cerus Corporation,CA,1,201-500 ,-1,publico,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,113,196,154.5,ingeniero de datos,na,0,0,1,1,1,6817,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,81,167,124.0,ingeniero de ML,senior,0,0,0,0,0,5379,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+4.4,Consulting,Business Services,$50 to $100 million (USD),0,0,97,160,128.5,cientifico de datos,senior,1,0,0,1,1,3160,Maven Wave Partners,IL,1,201-500 ,12,privado,-1
+3.7,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,48,78,63.0,na,na,0,0,0,0,0,1945,Vail Health,CO,1,501-1000 ,54,hospital,-1
+3.5,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,42,86,64.0,gerente,na,0,0,0,0,0,3846,Central California Alliance for Health,CA,1,501-1000 ,24,sin_lucro,-1
+3.0,Gas Stations,Retail,$10+ billion (USD),0,0,69,127,98.0,ingeniero de datos,senior,1,0,0,0,0,2133,Pilot Flying J Travel Centers LLC,TN,1,10000+ ,62,privado,3
+4.2,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,110,175,142.5,cientifico de datos,na,0,0,0,0,0,3833,Nuna,CA,1,51-200 ,10,privado,-1
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,102,172,137.0,cientifico de datos,senior,1,0,0,0,0,3169,AstraZeneca,NY,0,10000+ ,107,publico,3
+4.0,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,74,124,99.0,ingeniero de datos,na,1,0,0,1,0,4701,Pinnacol Assurance,CO,1,501-1000 ,105,sin_lucro,-1
+3.3,Food & Beverage Manufacturing,Manufacturing,Unknown / Non-Applicable,0,0,40,68,54.0,na,na,0,0,0,0,0,2832,Palermo's Pizza,WI,1,501-1000 ,56,privado,-1
+4.4,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,108,171,139.5,cientifico de datos,senior,1,0,0,0,0,2518,MathWorks,MA,1,1001-5000 ,36,privado,-1
+3.4,IT Services,Information Technology,$25 to $50 million (USD),0,0,76,142,109.0,ingeniero de datos,na,0,0,0,1,0,3677,MetroStar Systems,MD,0,201-500 ,21,privado,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,202,306,254.0,director,na,1,0,0,0,0,4471,Liberty Mutual Insurance,IL,0,10000+ ,108,privado,3
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,49,97,73.0,na,na,0,0,0,0,0,3725,Audentes Therapeutics,CA,0,201-500 ,8,subsidiary,3
+2.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,49,113,81.0,na,na,0,0,0,0,1,3776,Advanced BioScience Laboratories,MD,1,201-500 ,59,privado,-1
+3.6,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,42,68,55.0,na,na,0,0,0,0,0,2801,Beebe Healthcare,DE,0,1001-5000 ,85,sin_lucro,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,65,134,99.5,na,na,0,0,0,0,1,7121,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+3.3,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,32,59,45.5,analysta de datos,na,0,0,0,0,0,2867,National Interstate,OH,1,501-1000 ,31,privado,-1
+4.5,Consulting,Business Services,$25 to $50 million (USD),0,0,87,158,122.5,ingeniero de datos,senior,1,0,1,1,0,2311,Moser Consulting,IN,1,51-200 ,24,privado,-1
+3.9,Financial Analytics & Research,Finance,$1 to $2 billion (USD),0,0,107,173,140.0,cientifico de datos,senior,1,0,0,0,1,5338,TransUnion,IL,1,5001-10000 ,52,publico,-1
+3.2,Federal Agencies,Government,$1 to $2 billion (USD),0,0,56,99,77.5,na,senior,0,0,0,0,0,3243,MITRE,VA,0,5001-10000 ,62,sin_lucro,3
+3.3,Construction,"Construction, Repair & Maintenance",Unknown / Non-Applicable,1,1,50,56,53.0,na,na,0,0,0,0,1,1848,Mcphail Associates,MA,1,1-50 ,44,privado,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,80,155,117.5,na,senior,0,0,0,0,1,7361,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+2.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$50 to $100 million (USD),0,0,43,98,70.5,na,na,0,0,0,0,0,3374,Crown Bioscience,CA,1,501-1000 ,14,privado,-1
+4.8,Computer Hardware & Software,Information Technology,$25 to $50 million (USD),0,0,45,78,61.5,gerente,na,0,0,0,0,1,3693,HOVER,CA,1,51-200 ,9,privado,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,44,96,70.0,na,na,0,0,0,0,1,4707,Q2 Solutions,NY,0,1001-5000 ,5,privado,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,50,110,80.0,na,senior,0,0,0,0,1,4613,Q2 Solutions,GA,0,1001-5000 ,5,privado,-1
+3.4,Insurance Carriers,Insurance,$100 to $500 million (USD),0,0,61,119,90.0,ingeniero de datos,na,0,0,1,0,1,2752,Arbella Insurance,MA,1,1001-5000 ,32,privado,-1
+-1.0,-1,-1,Unknown / Non-Applicable,0,1,100,140,120.0,na,na,0,0,0,0,1,3309,Kronos Bio,MA,0,Unknown,-1,privado,-1
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,56,91,73.5,na,na,0,0,0,0,1,3078,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.8,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,68,114,91.0,cientifico de datos,na,1,0,0,0,1,2915,Zimmerman Advertising,FL,1,501-1000 ,36,subsidiary,-1
+5.0,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,1,150,160,155.0,cientifico de datos,na,0,0,0,1,1,3213,BPA Services,DC,0,Unknown,-1,privado,-1
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,101,158,129.5,na,na,1,0,1,1,1,4624,MassMutual,MA,0,5001-10000 ,169,privado,-1
+4.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,125,210,167.5,cientifico de datos,senior,0,0,0,1,1,4914,Pfizer,NY,1,10000+ ,171,publico,-1
+3.8,Banks & Credit Unions,Finance,$1 to $2 billion (USD),0,0,43,77,60.0,analysta de datos,na,0,0,0,1,1,4103,Associated Banc-Corp,WI,1,1001-5000 ,150,publico,3
+3.9,Financial Analytics & Research,Finance,$50 to $100 million (USD),0,0,139,221,180.0,cientifico de datos,na,1,0,0,0,1,3199,Zest AI,CA,1,51-200 ,11,privado,-1
+3.8,Travel Agencies,Travel & Tourism,$2 to $5 billion (USD),0,0,44,86,65.0,analysta de datos,na,0,0,0,0,1,2501,Fareportal,NY,1,1001-5000 ,18,privado,3
+4.3,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,78,147,112.5,ingeniero de datos,senior,1,0,1,1,0,4577,Genesys,NC,0,5001-10000 ,30,privado,3
+1.9,"Department, Clothing, & Shoe Stores",Retail,$100 to $500 million (USD),0,0,65,110,87.5,analysta de datos,senior,1,0,0,0,1,4537,Moda Operandi,NY,1,201-500 ,10,privado,3
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,37,66,51.5,na,na,1,0,0,0,1,4323,Liberty Mutual Insurance,IN,0,10000+ ,108,privado,3
+4.7,Architectural & Engineering Services,Business Services,$10 to $25 million (USD),0,0,38,64,51.0,na,na,0,0,0,0,1,4223,QK,CA,0,51-200 ,48,privado,-1
+3.1,Banks & Credit Unions,Finance,$10+ billion (USD),0,0,43,82,62.5,na,na,1,0,0,0,1,3325,Santander,MA,0,10000+ ,164,privado,-1
+3.4,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,1,90,110,100.0,ingeniero de datos,senior,0,0,0,0,0,3889,Tivity Health,AZ,0,501-1000 ,39,publico,-1
+4.4,IT Services,Information Technology,Unknown / Non-Applicable,0,0,61,109,85.0,ingeniero de datos,na,1,0,1,1,0,2869,BRMi,VA,0,51-200 ,16,privado,-1
+3.9,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,93,151,122.0,cientifico de datos,senior,1,0,0,1,0,5647,Luminar Technologies,FL,1,201-500 ,8,privado,-1
+3.9,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,52,81,66.5,asesor,na,1,0,0,0,0,4759,"Emtec, Inc.",IL,0,501-1000 ,25,privado,-1
+4.7,Lending,Finance,Unknown / Non-Applicable,0,0,40,101,70.5,na,na,0,0,1,0,1,2708,Veterans United Home Loans,MO,1,1001-5000 ,18,privado,-1
+4.7,Security Services,Business Services,$10 to $25 million (USD),0,0,97,180,138.5,ingeniero de datos,senior,1,0,1,0,0,4854,Praetorian,TX,1,51-200 ,10,privado,-1
+3.4,Consulting,Business Services,$100 to $500 million (USD),0,0,81,134,107.5,cientifico de datos,na,0,0,1,0,1,8761,PA Consulting,MA,0,1001-5000 ,77,privado,3
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$50 to $100 million (USD),0,0,84,157,120.5,na,na,0,0,0,0,0,2683,Agios Pharmaceuticals,MA,1,501-1000 ,12,publico,-1
+2.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,49,113,81.0,na,na,0,0,0,0,0,4740,Advanced BioScience Laboratories,MD,1,201-500 ,59,privado,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,68,139,103.5,na,na,0,0,0,0,0,5169,Reynolds American,KY,0,5001-10000 ,145,privado,-1
+3.4,Transportation Management,Transportation & Logistics,$2 to $5 billion (USD),0,0,75,140,107.5,ingeniero de datos,senior,0,0,0,0,0,4288,Echo Global Logistics,IL,1,1001-5000 ,15,publico,3
+4.0,Internet,Information Technology,Unknown / Non-Applicable,0,0,121,203,162.0,ingeniero de datos,na,1,0,1,1,1,3978,Glassdoor,CA,0,1001-5000 ,13,privado,2
+3.5,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,52,85,68.5,na,na,1,0,1,0,1,3413,Esri,CA,1,1001-5000 ,51,privado,1
+3.4,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,81,140,110.5,cientifico de datos,senior,0,0,0,0,1,1735,Assurant,OH,0,10000+ ,42,publico,3
+3.7,Industrial Manufacturing,Manufacturing,$10+ billion (USD),0,0,63,99,81.0,cientifico de datos,na,0,0,0,0,0,2739,Caterpillar,IL,0,10000+ ,95,publico,3
+4.3,Real Estate,Real Estate,$2 to $5 billion (USD),0,1,110,150,130.0,cientifico de datos,senior,1,0,1,0,1,9120,Equity Residential,IL,1,1001-5000 ,27,publico,3
+3.7,Insurance Carriers,Insurance,$100 to $500 million (USD),0,0,83,148,115.5,ingeniero de datos,senior,1,0,0,0,1,6569,F&G,IA,1,201-500 ,-1,subsidiary,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,60,101,80.5,cientifico de datos,senior,0,0,0,0,0,5188,PNNL,WA,1,1001-5000 ,55,gubernamental,3
+4.6,Lending,Finance,$100 to $500 million (USD),0,0,31,55,43.0,analysta de datos,na,0,0,0,0,1,4328,GreatAmerica Financial Services,IA,1,501-1000 ,28,privado,-1
+4.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,102,178,140.0,director,na,0,0,0,0,1,5449,Acceleron Pharma,MA,1,201-500 ,17,publico,-1
+-1.0,-1,-1,Unknown / Non-Applicable,0,1,110,130,120.0,na,senior,0,0,0,0,0,3214,Kronos Bio,MA,0,Unknown,-1,privado,-1
+3.0,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,48,85,66.5,analysta de datos,senior,0,0,0,0,1,3766,AmeriHealth Caritas,PA,1,5001-10000 ,37,privado,3
+4.7,Staffing & Outsourcing,Business Services,$1 to $5 million (USD),0,0,66,123,94.5,ingeniero de datos,na,1,0,0,1,0,1504,Strategic Employment Partners,CA,0,51-200 ,14,privado,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,92,146,119.0,cientifico de datos,senior,0,0,0,0,0,5186,PNNL,WA,0,1001-5000 ,55,gubernamental,3
+3.2,Health Care Services & Hospitals,Health Care,$10+ billion (USD),1,0,42,58,50.0,na,na,0,0,0,0,0,1844,Catholic Health Initiatives,NE,0,10000+ ,24,sin_lucro,2
+2.7,Financial Transaction Processing,Finance,$2 to $5 billion (USD),1,0,20,34,27.0,analysta de datos,senior,0,0,0,0,1,4299,FLEETCOR,TN,0,5001-10000 ,20,publico,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,150,239,194.5,director,na,1,0,0,0,0,3935,Liberty Mutual Insurance,IL,0,10000+ ,108,privado,3
+3.9,Research & Development,Business Services,$500 million to $1 billion (USD),0,0,52,91,71.5,na,senior,1,0,0,1,1,2332,Southwest Research Institute,TX,1,1001-5000 ,73,sin_lucro,3
+3.7,Colleges & Universities,Education,Unknown / Non-Applicable,0,1,82,129,105.5,cientifico de datos,na,1,0,0,1,0,8734,Applied Research Laboratories,TX,1,501-1000 ,-1,universidad,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,47,101,74.0,na,senior,0,0,0,0,1,6034,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+3.7,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,49,76,62.5,analysta de datos,na,0,0,0,0,1,4774,Raytheon,AL,0,10000+ ,98,publico,-1
+4.3,Research & Development,Business Services,$500 million to $1 billion (USD),0,0,43,88,65.5,na,senior,0,0,0,0,0,2222,RTI International,NC,0,1001-5000 ,62,sin_lucro,3
+3.6,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,124,199,161.5,director,na,1,0,0,1,1,5121,TRANZACT,NJ,1,1001-5000 ,31,privado,-1
+2.1,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,52,93,72.5,analysta de datos,senior,0,0,0,0,1,1359,United BioSource,PA,1,1001-5000 ,17,na,2
+3.9,Computer Hardware & Software,Information Technology,$10 to $25 million (USD),0,0,97,181,139.0,ingeniero de datos,senior,1,0,0,1,1,4915,Figure Eight,CA,1,51-200 ,12,publico,-1
+3.9,Internet,Information Technology,$10 to $25 million (USD),0,0,100,173,136.5,ingeniero de datos,senior,0,0,0,0,0,3466,Tapjoy,CA,1,201-500 ,13,privado,2
+3.8,Travel Agencies,Travel & Tourism,$2 to $5 billion (USD),0,0,53,96,74.5,cientifico de datos,na,1,0,1,0,0,3172,Fareportal,NY,1,1001-5000 ,18,privado,3
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,65,96,80.5,na,senior,0,0,0,0,1,5749,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,56,95,75.5,cientifico de datos,na,1,0,0,0,1,3543,Sartorius,NM,0,5001-10000 ,150,publico,-1
+4.7,IT Services,Information Technology,Unknown / Non-Applicable,0,0,111,176,143.5,cientifico de datos,na,1,0,1,0,0,5020,1904labs,MO,1,51-200 ,4,privado,2
+5.0,Aerospace & Defense,Aerospace & Defense,$10 to $25 million (USD),0,0,75,127,101.0,cientifico de datos,na,1,0,0,0,0,2711,Royce Geospatial,VA,0,51-200 ,6,privado,-1
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,65,119,92.0,ingeniero de datos,na,1,0,1,0,1,2929,MassMutual,MA,1,5001-10000 ,169,privado,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,56,97,76.5,cientifico de datos,na,1,0,0,0,0,6411,PNNL,WA,1,1001-5000 ,55,gubernamental,3
+4.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $5 million (USD),0,0,108,173,140.5,cientifico de datos,na,1,0,0,1,0,4819,Recursion Pharmaceuticals,UT,1,51-200 ,7,privado,-1
+3.6,Investment Banking & Asset Management,Finance,$10+ billion (USD),0,0,94,139,116.5,cientifico de datos,na,0,0,0,0,1,3948,Citi,NJ,0,10000+ ,208,publico,-1
+4.7,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,176,289,232.5,ingeniero de ML,na,1,0,0,0,0,3855,Sage Intacct,CA,0,501-1000 ,21,subsidiary,-1
+3.5,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,92,149,120.5,cientifico de datos,na,1,0,0,0,0,2288,Scale AI,CA,1,51-200 ,4,privado,-1
+3.5,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,63,101,82.0,na,na,1,0,0,0,0,4196,Esri,VA,0,1001-5000 ,51,privado,1
+3.3,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,54,115,84.5,principal,na,0,0,0,0,0,3670,Rochester Regional Health,NY,1,10000+ ,6,hospital,-1
+2.7,IT Services,Information Technology,Unknown / Non-Applicable,0,0,118,188,153.0,cientifico de datos,na,1,0,1,1,0,6995,Change Healthcare,CA,0,10000+ ,13,publico,-1
+3.4,Internet,Information Technology,Unknown / Non-Applicable,0,0,108,146,127.0,cientifico de datos,na,1,0,1,0,0,3362,MZ,CA,1,501-1000 ,12,privado,-1
+4.7,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,65,106,85.5,cientifico de datos,na,1,0,1,0,1,3740,HG Insights,CA,1,51-200 ,10,privado,-1
+2.8,Wholesale,Business Services,$1 to $2 billion (USD),0,0,55,98,76.5,cientifico de datos,na,1,0,0,0,1,3000,"1-800-FLOWERS.COM, Inc.",NY,1,1001-5000 ,44,publico,-1
+3.5,TV Broadcast & Cable Networks,Media,$500 million to $1 billion (USD),0,0,94,162,128.0,cientifico de datos,na,1,0,1,0,0,4140,CBS Interactive,NY,0,1001-5000 ,28,subsidiary,3
+3.2,Staffing & Outsourcing,Business Services,$5 to $10 million (USD),0,0,63,120,91.5,ingeniero de datos,na,1,0,1,1,1,1484,"Numeric, LLC",PA,0,1-50 ,-1,privado,-1
+4.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,90,179,134.5,na,senior,0,0,0,0,0,4438,Rubius Therapeutics,MA,1,201-500 ,7,publico,-1
+3.3,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,127,202,164.5,cientifico de datos,na,0,0,0,0,0,1688,Samba TV,CA,1,201-500 ,12,privado,-1
+4.0,Computer Hardware & Software,Information Technology,$5 to $10 million (USD),0,0,60,127,93.5,na,na,0,0,0,0,1,4637,ClearEdge,MD,1,51-200 ,18,privado,-1
+3.4,Telecommunications Manufacturing,Telecommunications,$50 to $100 million (USD),0,0,31,57,44.0,analysta de datos,na,0,0,0,0,0,2290,SV Microwave,FL,1,201-500 ,29,publico,-1
+3.8,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,105,194,149.5,ingeniero de datos,na,0,0,1,1,0,3297,Sumo Logic,TX,0,501-1000 ,10,privado,3
+3.5,Research & Development,Business Services,Unknown / Non-Applicable,0,0,45,86,65.5,ingeniero de datos,na,0,0,1,1,1,4582,EAB,DC,1,1001-5000 ,13,privado,-1
+4.4,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,75,143,109.0,ingeniero de datos,na,1,0,1,0,0,2353,SpringML,VA,0,1-50 ,5,privado,-1
+3.7,Computer Hardware & Software,Information Technology,$50 to $100 million (USD),0,0,126,228,177.0,ingeniero de datos,na,1,0,1,1,0,3218,Samsung Research America,CA,1,1001-5000 ,32,subsidiary,3
+4.7,Aerospace & Defense,Aerospace & Defense,$100 to $500 million (USD),0,0,80,134,107.0,cientifico de datos,na,1,0,1,0,1,3703,Systems & Technology Research,VA,0,201-500 ,10,privado,-1
+4.1,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,120,189,154.5,cientifico de datos,na,1,0,1,0,1,4203,Netskope,CA,1,501-1000 ,8,privado,3
+4.0,Accounting,Accounting & Legal,Less than $1 million (USD),0,0,85,142,113.5,cientifico de datos,na,1,0,1,0,0,1034,Lorven Technologies Inc,CA,0,1-50 ,-1,privado,-1
+3.5,Insurance Carriers,Insurance,Unknown / Non-Applicable,0,0,95,154,124.5,cientifico de datos,senior,1,0,1,0,1,3870,Brighthouse Financial,NC,1,1001-5000 ,3,publico,-1
+2.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,111,176,143.5,cientifico de datos,na,1,0,0,0,1,3885,CareDx,CA,1,1-50 ,-1,privado,1
+3.9,IT Services,Information Technology,Less than $1 million (USD),0,0,87,140,113.5,cientifico de datos,na,1,0,0,0,0,2759,Serigor Inc.,CA,0,1-50 ,-1,privado,-1
+3.4,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,76,127,101.5,cientifico de datos,na,1,0,0,1,0,2882,Leidos,VA,0,10000+ ,51,publico,-1
+3.6,Health Care Products Manufacturing,Manufacturing,$2 to $5 billion (USD),0,0,54,92,73.0,analysta de datos,na,0,0,0,1,1,6513,Beckman Coulter Diagnostics,NY,0,10000+ ,85,subsidiary,3
+3.5,Consulting,Business Services,$2 to $5 billion (USD),0,0,61,100,80.5,cientifico de datos,na,1,0,0,1,0,6438,IHS Markit,NY,0,10000+ ,4,publico,2
+-1.0,-1,-1,Unknown / Non-Applicable,0,0,81,140,110.5,cientifico de datos,na,1,0,0,0,0,1838,ALIN,NY,0,Unknown,-1,privado,-1
+2.9,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,80,148,114.0,ingeniero de datos,na,1,0,1,0,0,3333,Affinity Solutions,CA,0,51-200 ,22,privado,3
+3.5,"Health, Beauty, & Fitness",Consumer Services,$5 to $10 million (USD),0,0,108,171,139.5,cientifico de datos,na,1,0,0,0,0,1131,e-IT Professionals Corp.,CA,0,51-200 ,-1,privado,-1
+4.8,IT Services,Information Technology,Unknown / Non-Applicable,0,0,112,179,145.5,cientifico de datos,na,1,0,0,0,1,2145,TechProjects,NY,0,1-50 ,9,privado,-1
+4.0,Lending,Finance,$100 to $500 million (USD),0,0,63,111,87.0,cientifico de datos,na,0,0,0,0,1,2496,Biz2Credit Inc,NY,1,201-500 ,13,privado,3
+4.2,Banks & Credit Unions,Finance,$50 to $100 million (USD),0,0,75,126,100.5,cientifico de datos,na,0,0,0,0,1,5013,PeoplesBank,MA,1,201-500 ,135,privado,-1
+3.8,Enterprise Software & Network Solutions,Information Technology,$10+ billion (USD),0,0,110,184,147.0,cientifico de datos,na,1,0,1,0,1,5478,Capgemini,NY,0,10000+ ,53,publico,3
+3.7,Insurance Carriers,Insurance,$100 to $500 million (USD),0,0,76,145,110.5,ingeniero de datos,na,1,0,0,0,1,1506,GNY Insurance Companies,NY,1,201-500 ,106,privado,3
+3.9,Banks & Credit Unions,Finance,Unknown / Non-Applicable,0,0,36,62,49.0,analysta de datos,na,1,0,0,0,0,3971,Citadel Federal Credit Union,PA,1,501-1000 ,83,sin_lucro,3
+4.6,Consulting,Business Services,$5 to $10 million (USD),0,0,70,118,94.0,cientifico de datos,na,1,0,1,1,0,2956,"Conch Technologies, Inc",MA,0,51-200 ,-1,privado,-1
+4.3,Enterprise Software & Network Solutions,Information Technology,$500 million to $1 billion (USD),0,0,94,153,123.5,cientifico de datos,senior,1,0,0,1,0,4816,Medidata Solutions,NY,1,1001-5000 ,21,publico,1
+3.3,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,54,115,84.5,principal,na,0,0,0,0,0,3627,Rochester Regional Health,NY,1,10000+ ,6,hospital,-1
+3.7,IT Services,Information Technology,$100 to $500 million (USD),0,0,50,92,71.0,analysta de datos,na,0,0,0,0,1,2632,CALIBRE Systems,VA,1,501-1000 ,31,privado,3
+4.0,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,49,97,73.0,ingeniero de datos,na,0,0,0,0,0,2195,HP Inc.,OR,0,10000+ ,81,publico,-1
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,67,135,101.0,director,na,0,0,0,0,0,4425,MassMutual,MA,0,5001-10000 ,169,privado,-1
+3.9,Internet,Information Technology,$10 to $25 million (USD),0,0,138,224,181.0,ingeniero de ML,na,1,0,1,0,0,2015,Tapjoy,CA,1,201-500 ,13,privado,2
+3.7,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,80,139,109.5,cientifico de datos,na,0,0,0,0,1,4448,Northrop Grumman,CA,0,10000+ ,81,publico,-1
+3.7,IT Services,Information Technology,$10+ billion (USD),0,0,158,211,184.5,cientifico de datos,na,1,0,0,0,1,7286,Visa Inc.,WA,0,10000+ ,62,publico,3
+3.9,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,150,180,165.0,cientifico de datos,senior,1,0,0,0,0,4815,Quartet Health,NY,1,201-500 ,6,privado,-1
+3.7,Computer Hardware & Software,Information Technology,$5 to $10 billion (USD),0,0,42,80,61.0,analysta de datos,na,1,0,1,0,0,5768,Motorola Solutions,IL,1,10000+ ,92,publico,3
+4.1,Internet,Information Technology,$50 to $100 million (USD),0,1,190,220,205.0,ingeniero de datos,na,1,0,1,1,0,4037,Credit Sesame,CA,1,51-200 ,10,privado,3
+3.1,K-12 Education,Education,$100 to $500 million (USD),0,0,42,77,59.5,analysta de datos,na,1,0,0,0,1,4348,Success Academy Charter Schools,NY,1,1001-5000 ,14,colegio,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,68,139,103.5,na,na,0,0,0,0,0,5182,Reynolds American,KY,0,5001-10000 ,145,privado,-1
+3.0,IT Services,Information Technology,$10+ billion (USD),0,0,54,71,62.5,asesor,na,0,0,0,0,1,3449,Infosys,CT,0,10000+ ,39,publico,3
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,34,92,63.0,gerente,na,0,0,0,0,1,5647,MassMutual,MA,1,5001-10000 ,169,privado,-1
+3.6,Health Care Services & Hospitals,Health Care,$10 to $25 million (USD),0,0,47,85,66.0,analysta de datos,na,0,0,0,0,1,2292,AXION Healthcare Solutions,NY,1,1-50 ,40,privado,2
+3.5,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,65,124,94.5,ingeniero de datos,na,1,0,1,1,1,5743,Alignment Healthcare,CA,1,501-1000 ,7,privado,-1
+4.2,Education Training Services,Education,Unknown / Non-Applicable,0,0,56,95,75.5,cientifico de datos,na,1,0,0,1,0,4341,ExecOnline,NY,1,51-200 ,8,privado,3
+4.0,Aerospace & Defense,Aerospace & Defense,$100 to $500 million (USD),0,0,62,112,87.0,ingeniero de ML,na,1,0,0,0,0,3127,Mteq,VA,0,501-1000 ,66,publico,2
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,107,173,140.0,cientifico de datos,senior,1,0,0,0,1,4572,AstraZeneca,MD,0,10000+ ,107,publico,3
+3.7,IT Services,Information Technology,$25 to $50 million (USD),0,0,64,108,86.0,cientifico de datos,na,1,0,0,0,1,6626,Brillient,MD,0,201-500 ,14,privado,-1
+4.4,Internet,Information Technology,Unknown / Non-Applicable,0,0,89,144,116.5,cientifico de datos,senior,1,0,0,0,0,1211,Entefy,CA,1,1-50 ,8,privado,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,109,200,154.5,na,senior,1,0,0,0,1,4517,Sunovion,MA,1,1001-5000 ,10,privado,3
+3.7,Stock Exchanges,Finance,$500 million to $1 billion (USD),0,0,61,113,87.0,ingeniero de ML,na,1,0,0,0,1,2860,Cboe Global Markets,KS,0,501-1000 ,47,publico,-1
+3.6,Gambling,"Arts, Entertainment & Recreation",$100 to $500 million (USD),0,0,35,62,48.5,analysta de datos,na,0,0,0,0,1,4608,San Manuel Casino,CA,1,1001-5000 ,34,privado,-1
+3.4,IT Services,Information Technology,$1 to $2 billion (USD),0,0,55,105,80.0,ingeniero de datos,na,1,0,1,0,1,7802,Trace3,TX,0,501-1000 ,18,privado,3
+4.0,Health Care Services & Hospitals,Health Care,$50 to $100 million (USD),1,0,36,50,43.0,na,na,0,0,0,1,0,5160,Texas Health Huguley Hospital,TX,0,1001-5000 ,43,hospital,-1
+2.4,Food & Beverage Manufacturing,Manufacturing,$100 to $500 million (USD),0,0,39,66,52.5,na,na,0,0,0,0,0,2433,Teasdale Latin Foods,IL,0,501-1000 ,-1,privado,-1
+3.7,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,135,211,173.0,cientifico de datos,na,1,0,0,0,0,5884,Northrop Grumman,CA,0,10000+ ,81,publico,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,57,80,68.5,ingeniero de datos,na,1,0,1,0,0,1230,Saama Technologies Inc,AZ,0,501-1000 ,23,privado,3
+4.4,Investment Banking & Asset Management,Finance,Unknown / Non-Applicable,0,0,129,215,172.0,cientifico de datos,na,0,0,0,0,0,3222,Two Sigma,NY,1,1001-5000 ,19,privado,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,86,143,114.5,cientifico de datos,na,1,0,0,0,0,4244,Liberty Mutual Insurance,MA,1,10000+ ,108,privado,3
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,63,127,95.0,principal,na,0,0,0,0,0,3110,AstraZeneca,MD,0,10000+ ,107,publico,3
+3.2,Federal Agencies,Government,$1 to $2 billion (USD),0,0,50,89,69.5,cientifico de datos,na,1,0,0,0,1,4478,MITRE,MA,1,5001-10000 ,62,sin_lucro,3
+3.2,Research & Development,Business Services,Unknown / Non-Applicable,0,0,43,86,64.5,ingeniero de datos,na,1,0,0,1,1,2926,Guidepoint,NY,1,501-1000 ,17,privado,3
+2.1,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,74,149,111.5,na,na,0,0,0,0,1,4300,Cerus Corporation,CA,1,201-500 ,-1,publico,-1
+4.0,Consumer Product Rental,Consumer Services,Unknown / Non-Applicable,0,0,71,124,97.5,cientifico de datos,na,1,0,0,0,1,3431,Strategic Financial Solutions,NY,1,501-1000 ,13,privado,2
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,113,196,154.5,ingeniero de datos,na,0,0,1,1,1,6817,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,81,167,124.0,ingeniero de ML,senior,0,0,0,0,0,5379,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.4,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,69,121,95.0,cientifico de datos,na,1,0,1,1,0,3111,"Remedy BPCI Partners, LLC.",NY,0,201-500 ,9,privado,2
+4.4,Consulting,Business Services,$50 to $100 million (USD),0,0,97,160,128.5,cientifico de datos,senior,1,0,0,1,1,3160,Maven Wave Partners,IL,1,201-500 ,12,privado,-1
+3.2,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,150,238,194.0,cientifico de datos,na,0,0,0,1,1,4847,The Climate Corporation,CA,1,501-1000 ,14,subsidiary,3
+3.5,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,77,132,104.5,cientifico de datos,na,1,0,1,1,1,4134,Crossix Solutions,NY,1,201-500 ,15,publico,-1
+3.7,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,48,78,63.0,na,na,0,0,0,0,0,1945,Vail Health,CO,1,501-1000 ,54,hospital,-1
+4.2,IT Services,Information Technology,Unknown / Non-Applicable,0,0,59,112,85.5,ingeniero de datos,na,1,0,0,0,1,5192,Clarity Insights,NC,0,201-500 ,12,privado,-1
+4.2,Religious Organizations,Non-Profit,Unknown / Non-Applicable,0,0,35,65,50.0,analysta de datos,na,0,0,0,1,1,4525,The Church of Jesus Christ of Latter-day Saints,UT,1,10000+ ,-1,sin_lucro,-1
+3.1,Video Games,Media,$10+ billion (USD),0,0,79,147,113.0,ingeniero de datos,na,1,0,1,1,1,2421,NCSOFT,CA,0,1001-5000 ,23,publico,3
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,62,119,90.5,na,na,0,0,0,1,0,5838,GSK,MA,0,10000+ ,190,publico,3
+4.3,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,119,187,153.0,cientifico de datos,senior,1,0,1,0,1,2095,Factual,CA,1,51-200 ,12,privado,1
+3.3,Consulting,Business Services,$2 to $5 billion (USD),0,0,90,157,123.5,analysta de datos,na,0,0,0,0,1,7383,TriNet,CA,1,1001-5000 ,32,publico,3
+3.9,Internet,Information Technology,$10 to $25 million (USD),0,0,32,62,47.0,analysta de datos,na,0,0,1,0,0,2460,Signpost,NY,1,201-500 ,10,privado,-1
+3.5,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,42,86,64.0,gerente,na,0,0,0,0,0,3846,Central California Alliance for Health,CA,1,501-1000 ,24,sin_lucro,-1
+4.0,Computer Hardware & Software,Information Technology,$5 to $10 billion (USD),0,0,116,208,162.0,na,na,1,0,0,0,1,3864,Adobe,CA,1,10000+ ,38,publico,2
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,102,172,137.0,cientifico de datos,senior,1,0,0,0,0,3169,AstraZeneca,NY,0,10000+ ,107,publico,3
+3.0,Gas Stations,Retail,$10+ billion (USD),0,0,69,127,98.0,ingeniero de datos,senior,1,0,0,0,0,2133,Pilot Flying J Travel Centers LLC,TN,1,10000+ ,62,privado,3
+3.7,Insurance Agencies & Brokerages,Insurance,$10+ billion (USD),0,0,86,144,115.0,cientifico de datos,na,1,0,0,0,1,4734,Swiss Re,NY,0,10000+ ,157,publico,3
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,102,165,133.5,cientifico de datos,senior,1,0,0,0,1,3555,Sartorius,CO,0,5001-10000 ,150,publico,-1
+4.0,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,74,124,99.0,ingeniero de datos,na,1,0,0,1,0,4701,Pinnacol Assurance,CO,1,501-1000 ,105,sin_lucro,-1
+3.3,Food & Beverage Manufacturing,Manufacturing,Unknown / Non-Applicable,0,0,40,68,54.0,na,na,0,0,0,0,0,2832,Palermo's Pizza,WI,1,501-1000 ,56,privado,-1
+3.2,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,76,142,109.0,ingeniero de datos,senior,0,0,0,1,1,1793,Equian LLC,TN,0,1001-5000 ,16,privado,-1
+3.4,IT Services,Information Technology,$25 to $50 million (USD),0,0,76,142,109.0,ingeniero de datos,na,0,0,0,1,0,3677,MetroStar Systems,MD,0,201-500 ,21,privado,-1
+4.4,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,108,171,139.5,cientifico de datos,senior,1,0,0,0,0,2518,MathWorks,MA,1,1001-5000 ,36,privado,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,202,306,254.0,director,na,1,0,0,0,0,4471,Liberty Mutual Insurance,IL,0,10000+ ,108,privado,3
+3.2,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,91,159,125.0,ingeniero de ML,na,1,0,0,1,1,3516,Information Builders,NY,1,1001-5000 ,45,privado,3
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,80,133,106.5,na,senior,1,0,0,0,0,4033,Novartis,MA,0,10000+ ,24,publico,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,49,97,73.0,na,na,0,0,0,0,0,3725,Audentes Therapeutics,CA,0,201-500 ,8,subsidiary,3
+2.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,49,113,81.0,na,na,0,0,0,0,1,3776,Advanced BioScience Laboratories,MD,1,201-500 ,59,privado,-1
+3.6,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,42,68,55.0,na,na,0,0,0,0,0,2801,Beebe Healthcare,DE,0,1001-5000 ,85,sin_lucro,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,65,134,99.5,na,na,0,0,0,0,1,7121,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+3.3,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,32,59,45.5,analysta de datos,na,0,0,0,0,0,2867,National Interstate,OH,1,501-1000 ,31,privado,-1
+3.7,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,39,69,54.0,analysta de datos,na,0,0,0,0,0,3783,The Hanover Insurance Group,MA,1,5001-10000 ,168,publico,-1
+4.5,Consulting,Business Services,$25 to $50 million (USD),0,0,87,158,122.5,ingeniero de datos,senior,1,0,1,1,0,2311,Moser Consulting,IN,1,51-200 ,24,privado,-1
+3.0,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,27,48,37.5,analysta de datos,na,0,0,0,0,1,6175,Greenway Health,FL,1,1001-5000 ,43,subsidiary,3
+3.8,Travel Agencies,Travel & Tourism,$2 to $5 billion (USD),0,0,36,71,53.5,analysta de datos,na,1,0,0,0,1,2479,Fareportal,NY,1,1001-5000 ,18,privado,3
+3.9,Financial Analytics & Research,Finance,$1 to $2 billion (USD),0,0,107,173,140.0,cientifico de datos,senior,1,0,0,0,1,5338,TransUnion,IL,1,5001-10000 ,52,publico,-1
+3.2,Federal Agencies,Government,$1 to $2 billion (USD),0,0,56,99,77.5,na,senior,0,0,0,0,0,3243,MITRE,VA,0,5001-10000 ,62,sin_lucro,3
+3.3,Construction,"Construction, Repair & Maintenance",Unknown / Non-Applicable,1,1,50,56,53.0,na,na,0,0,0,0,1,1848,Mcphail Associates,MA,1,1-50 ,44,privado,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,80,155,117.5,na,senior,0,0,0,0,1,7361,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+2.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$50 to $100 million (USD),0,0,43,98,70.5,na,na,0,0,0,0,0,3374,Crown Bioscience,CA,1,501-1000 ,14,privado,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,44,96,70.0,na,na,0,0,0,0,1,4707,Q2 Solutions,NY,0,1001-5000 ,5,privado,-1
+4.8,Computer Hardware & Software,Information Technology,$25 to $50 million (USD),0,0,45,78,61.5,gerente,na,0,0,0,0,1,3693,HOVER,CA,1,51-200 ,9,privado,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,50,110,80.0,na,senior,0,0,0,0,1,4613,Q2 Solutions,GA,0,1001-5000 ,5,privado,-1
+4.7,Computer Hardware & Software,Information Technology,$25 to $50 million (USD),0,0,60,99,79.5,cientifico de datos,na,1,0,0,0,1,3081,Oversight Systems,GA,1,51-200 ,17,privado,-1
+4.7,Computer Hardware & Software,Information Technology,$100 to $500 million (USD),0,0,130,206,168.0,cientifico de datos,na,1,0,0,0,1,3939,Confluent,CA,1,501-1000 ,6,privado,-1
+3.4,Insurance Carriers,Insurance,$100 to $500 million (USD),0,0,61,119,90.0,ingeniero de datos,na,0,0,1,0,1,2752,Arbella Insurance,MA,1,1001-5000 ,32,privado,-1
+-1.0,-1,-1,Unknown / Non-Applicable,0,1,100,140,120.0,na,na,0,0,0,0,1,3309,Kronos Bio,MA,0,Unknown,-1,privado,-1
+3.9,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,99,178,138.5,analysta de datos,senior,1,0,0,0,0,5717,Life360,CA,1,51-200 ,12,publico,-1
+3.6,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$2 to $5 billion (USD),0,0,86,137,111.5,principal,na,0,0,0,0,0,5025,IQVIA,PA,0,10000+ ,3,publico,3
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,37,100,68.5,gerente,na,0,0,0,0,1,5016,MassMutual,MA,0,5001-10000 ,169,privado,-1
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,58,111,84.5,na,senior,0,0,0,1,0,6162,GSK,MA,0,10000+ ,190,publico,3
+4.4,Internet,Information Technology,$100 to $500 million (USD),0,0,72,133,102.5,ingeniero de datos,senior,1,0,1,1,0,6130,Eventbrite,TN,0,1001-5000 ,14,publico,3
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,56,91,73.5,na,na,0,0,0,0,1,3078,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.6,Federal Agencies,Government,$50 to $100 million (USD),0,0,61,126,93.5,na,na,1,0,0,0,0,3673,Riverside Research Institute,OH,0,501-1000 ,53,sin_lucro,-1
+3.2,Staffing & Outsourcing,Business Services,$5 to $10 million (USD),0,0,95,160,127.5,gerente,na,0,0,0,0,1,1642,"Numeric, LLC",PA,0,1-50 ,-1,privado,-1
+4.2,Religious Organizations,Non-Profit,Unknown / Non-Applicable,0,0,53,91,72.0,analysta de datos,na,0,0,0,0,0,2811,The Church of Jesus Christ of Latter-day Saints,UT,1,10000+ ,-1,sin_lucro,-1
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,101,158,129.5,na,na,1,0,1,1,1,4624,MassMutual,MA,0,5001-10000 ,169,privado,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$500 million to $1 billion (USD),0,0,33,61,47.0,analysta de datos,na,1,0,0,0,1,4386,Icon Health and Fitness,UT,1,1001-5000 ,43,privado,3
+3.8,Consumer Product Rental,Consumer Services,Unknown / Non-Applicable,0,0,44,86,65.0,ingeniero de datos,na,1,0,1,1,1,3585,Shipt,AL,1,501-1000 ,6,subsidiary,-1
+3.8,Banks & Credit Unions,Finance,$1 to $2 billion (USD),0,0,43,77,60.0,analysta de datos,na,0,0,0,1,1,4103,Associated Banc-Corp,WI,1,1001-5000 ,150,publico,3
+4.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,125,210,167.5,cientifico de datos,senior,0,0,0,1,1,4914,Pfizer,NY,1,10000+ ,171,publico,-1
+3.8,Travel Agencies,Travel & Tourism,$2 to $5 billion (USD),0,0,44,86,65.0,analysta de datos,na,0,0,0,0,1,2501,Fareportal,NY,1,1001-5000 ,18,privado,3
+4.0,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,69,119,94.0,analysta de datos,senior,1,0,0,0,0,4096,Novetta,VA,0,501-1000 ,8,privado,3
+1.9,"Department, Clothing, & Shoe Stores",Retail,$100 to $500 million (USD),0,0,65,110,87.5,analysta de datos,senior,1,0,0,0,1,4537,Moda Operandi,NY,1,201-500 ,10,privado,3
+4.0,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,67,127,97.0,ingeniero de datos,senior,1,0,1,1,0,6152,Novetta,VA,0,501-1000 ,8,privado,3
+4.3,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,78,147,112.5,ingeniero de datos,senior,1,0,1,1,0,4577,Genesys,NC,0,5001-10000 ,30,privado,3
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,66,117,91.5,na,na,0,0,1,1,1,4260,MassMutual,MA,0,5001-10000 ,169,privado,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,37,66,51.5,na,na,1,0,0,0,1,4323,Liberty Mutual Insurance,IN,0,10000+ ,108,privado,3
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,86,143,114.5,cientifico de datos,na,0,0,0,0,0,1768,Novartis,MA,0,10000+ ,24,publico,-1
+4.3,Consulting,Business Services,$10 to $25 million (USD),0,0,84,146,115.0,cientifico de datos,na,1,0,1,1,0,1382,USEReady,NY,1,201-500 ,9,privado,-1
+3.2,Staffing & Outsourcing,Business Services,$5 to $10 million (USD),0,0,50,98,74.0,gerente,na,1,0,0,1,0,1790,"Numeric, LLC",PA,0,1-50 ,-1,privado,-1
+4.7,Architectural & Engineering Services,Business Services,$10 to $25 million (USD),0,0,38,64,51.0,na,na,0,0,0,0,1,4223,QK,CA,0,51-200 ,48,privado,-1
+3.4,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,1,90,110,100.0,ingeniero de datos,senior,0,0,0,0,0,3889,Tivity Health,AZ,0,501-1000 ,39,publico,-1
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,92,150,121.0,cientifico de datos,senior,0,0,0,0,0,1919,Novartis,MA,0,10000+ ,24,publico,-1
+4.5,Computer Hardware & Software,Information Technology,$100 to $500 million (USD),0,0,90,153,121.5,analysta de datos,senior,0,0,0,0,0,3726,Demandbase,CA,1,201-500 ,14,privado,3
+3.1,Banks & Credit Unions,Finance,$10+ billion (USD),0,0,43,82,62.5,na,na,1,0,0,0,1,3325,Santander,MA,0,10000+ ,164,privado,-1
+-1.0,-1,-1,-1,0,1,100,135,117.5,na,na,0,0,0,0,1,3437,Monte Rosa Therapeutics,MA,0,-1,-1,na,-1
+3.9,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,93,151,122.0,cientifico de datos,senior,1,0,0,1,0,5647,Luminar Technologies,FL,1,201-500 ,8,privado,-1
+4.4,IT Services,Information Technology,Unknown / Non-Applicable,0,0,61,109,85.0,ingeniero de datos,na,1,0,1,1,0,2869,BRMi,VA,0,51-200 ,16,privado,-1
+3.4,IT Services,Information Technology,$50 to $100 million (USD),0,0,42,79,60.5,ingeniero de datos,na,1,0,1,1,0,1214,IntraEdge,AZ,0,501-1000 ,18,privado,-1
+3.9,Financial Analytics & Research,Finance,$50 to $100 million (USD),0,0,139,221,180.0,cientifico de datos,na,1,0,0,0,1,3199,Zest AI,CA,1,51-200 ,11,privado,-1
+4.7,Lending,Finance,Unknown / Non-Applicable,0,0,40,101,70.5,na,na,0,0,1,0,1,2708,Veterans United Home Loans,MO,1,1001-5000 ,18,privado,-1
+3.3,Aerospace & Defense,Aerospace & Defense,$1 to $2 billion (USD),0,0,84,153,118.5,ingeniero de datos,na,1,0,1,0,0,3392,Peraton,VA,0,1001-5000 ,3,privado,-1
+3.9,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,52,81,66.5,asesor,na,1,0,0,0,0,4759,"Emtec, Inc.",IL,0,501-1000 ,25,privado,-1
+3.4,Consulting,Business Services,$100 to $500 million (USD),0,0,81,134,107.5,cientifico de datos,na,0,0,1,0,1,8761,PA Consulting,MA,0,1001-5000 ,77,privado,3
+4.7,Security Services,Business Services,$10 to $25 million (USD),0,0,97,180,138.5,ingeniero de datos,senior,1,0,1,0,0,4854,Praetorian,TX,1,51-200 ,10,privado,-1
+2.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,49,113,81.0,na,na,0,0,0,0,0,4740,Advanced BioScience Laboratories,MD,1,201-500 ,59,privado,-1
+3.8,Insurance Carriers,Insurance,$2 to $5 billion (USD),0,0,44,73,58.5,ingeniero de datos,na,1,0,1,0,1,2327,COUNTRY Financial,IL,1,1001-5000 ,95,privado,3
+3.4,Transportation Management,Transportation & Logistics,$2 to $5 billion (USD),0,0,75,140,107.5,ingeniero de datos,senior,0,0,0,0,0,4288,Echo Global Logistics,IL,1,1001-5000 ,15,publico,3
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$50 to $100 million (USD),0,0,84,157,120.5,na,na,0,0,0,0,0,2683,Agios Pharmaceuticals,MA,1,501-1000 ,12,publico,-1
+3.9,Internet,Information Technology,$10 to $25 million (USD),0,0,40,87,63.5,gerente,na,1,0,1,0,0,2340,Tapjoy,CA,1,201-500 ,13,privado,2
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,68,139,103.5,na,na,0,0,0,0,0,5169,Reynolds American,KY,0,5001-10000 ,145,privado,-1
+4.1,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,72,142,107.0,cientifico de datos,na,1,0,0,0,1,3329,Mentor Graphics,CA,0,5001-10000 ,39,publico,3
+3.7,Aerospace & Defense,Aerospace & Defense,$2 to $5 billion (USD),0,0,74,137,105.5,ingeniero de datos,na,1,0,1,0,0,2672,Maxar Technologies,VA,0,5001-10000 ,-1,publico,-1
+2.8,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,57,109,83.0,ingeniero de datos,na,0,0,0,0,0,3828,ICW Group,CA,1,501-1000 ,48,privado,3
+4.0,Internet,Information Technology,Unknown / Non-Applicable,0,0,121,203,162.0,ingeniero de datos,na,1,0,1,1,1,3978,Glassdoor,CA,0,1001-5000 ,13,privado,2
+3.5,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,52,85,68.5,na,na,1,0,1,0,1,3413,Esri,CA,1,1001-5000 ,51,privado,1
+3.4,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,81,140,110.5,cientifico de datos,senior,0,0,0,0,1,1735,Assurant,OH,0,10000+ ,42,publico,3
+3.7,Insurance Carriers,Insurance,$100 to $500 million (USD),0,0,83,148,115.5,ingeniero de datos,senior,1,0,0,0,1,6569,F&G,IA,1,201-500 ,-1,subsidiary,-1
+3.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,59,116,87.5,na,na,0,0,0,0,1,4586,Exelixis,CA,1,501-1000 ,26,publico,3
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,60,101,80.5,cientifico de datos,senior,0,0,0,0,0,5188,PNNL,WA,1,1001-5000 ,55,gubernamental,3
+4.6,Lending,Finance,$100 to $500 million (USD),0,0,31,55,43.0,analysta de datos,na,0,0,0,0,1,4328,GreatAmerica Financial Services,IA,1,501-1000 ,28,privado,-1
+4.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,102,178,140.0,director,na,0,0,0,0,1,5449,Acceleron Pharma,MA,1,201-500 ,17,publico,-1
+4.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,136,208,172.0,director,na,0,0,0,1,0,5701,Pfizer,MA,0,10000+ ,171,publico,-1
+-1.0,-1,-1,Unknown / Non-Applicable,0,1,110,130,120.0,na,senior,0,0,0,0,0,3214,Kronos Bio,MA,0,Unknown,-1,privado,-1
+3.0,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,48,85,66.5,analysta de datos,senior,0,0,0,0,1,3766,AmeriHealth Caritas,PA,1,5001-10000 ,37,privado,3
+3.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,71,129,100.0,na,senior,0,0,0,0,1,7777,Exelixis,CA,1,501-1000 ,26,publico,3
+4.7,Staffing & Outsourcing,Business Services,$1 to $5 million (USD),0,0,66,123,94.5,ingeniero de datos,na,1,0,0,1,0,1504,Strategic Employment Partners,CA,0,51-200 ,14,privado,-1
+4.2,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,171,272,221.5,gerente,na,1,0,0,0,1,4951,Grand Rounds,CA,1,501-1000 ,9,privado,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,92,146,119.0,cientifico de datos,senior,0,0,0,0,0,5186,PNNL,WA,0,1001-5000 ,55,gubernamental,3
+3.5,Consulting,Business Services,$50 to $100 million (USD),0,0,65,126,95.5,ingeniero de datos,na,1,0,0,0,0,3119,"SPINS, LLC",IL,1,201-500 ,25,privado,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,150,239,194.5,director,na,1,0,0,0,0,3935,Liberty Mutual Insurance,IL,0,10000+ ,108,privado,3
+3.2,Health Care Services & Hospitals,Health Care,$10+ billion (USD),1,0,42,58,50.0,na,na,0,0,0,0,0,1844,Catholic Health Initiatives,NE,0,10000+ ,24,sin_lucro,2
+2.7,Financial Transaction Processing,Finance,$2 to $5 billion (USD),1,0,20,34,27.0,analysta de datos,senior,0,0,0,0,1,4299,FLEETCOR,TN,0,5001-10000 ,20,publico,-1
+3.3,Brokerage Services,Finance,$1 to $2 billion (USD),0,0,118,228,173.0,analysta de datos,senior,1,0,0,0,1,4183,DTCC,NJ,0,1001-5000 ,47,privado,-1
+3.7,Colleges & Universities,Education,Unknown / Non-Applicable,0,1,82,129,105.5,cientifico de datos,na,1,0,0,1,0,8734,Applied Research Laboratories,TX,1,501-1000 ,-1,universidad,-1
+3.9,Research & Development,Business Services,$500 million to $1 billion (USD),0,0,52,91,71.5,na,senior,1,0,0,1,1,2332,Southwest Research Institute,TX,1,1001-5000 ,73,sin_lucro,3
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,47,101,74.0,na,senior,0,0,0,0,1,6034,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+3.7,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,49,76,62.5,analysta de datos,na,0,0,0,0,1,4774,Raytheon,AL,0,10000+ ,98,publico,-1
+4.3,Research & Development,Business Services,$500 million to $1 billion (USD),0,0,43,88,65.5,na,senior,0,0,0,0,0,2222,RTI International,NC,0,1001-5000 ,62,sin_lucro,3
+3.8,Sporting Goods Stores,Retail,$5 to $10 billion (USD),0,0,61,109,85.0,cientifico de datos,na,1,0,0,0,0,2493,DICK'S Sporting Goods - Corporate,PA,1,10000+ ,72,publico,3
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,113,182,147.5,cientifico de datos,na,1,0,0,0,1,4490,AstraZeneca,MD,0,10000+ ,107,publico,3
+3.6,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,124,199,161.5,director,na,1,0,0,1,1,5121,TRANZACT,NJ,1,1001-5000 ,31,privado,-1
+3.7,Health Care Services & Hospitals,Health Care,$1 to $2 billion (USD),0,0,58,104,81.0,ingeniero de datos,na,0,0,0,0,1,2948,Carilion Clinic,VA,1,10000+ ,121,sin_lucro,-1
+2.1,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$100 to $500 million (USD),0,0,52,93,72.5,analysta de datos,senior,0,0,0,0,1,1359,United BioSource,PA,1,1001-5000 ,17,na,2
+3.9,Computer Hardware & Software,Information Technology,$10 to $25 million (USD),0,0,97,181,139.0,ingeniero de datos,senior,1,0,0,1,1,4915,Figure Eight,CA,1,51-200 ,12,publico,-1
+3.9,Internet,Information Technology,$10 to $25 million (USD),0,0,100,173,136.5,ingeniero de datos,senior,0,0,0,0,0,3466,Tapjoy,CA,1,201-500 ,13,privado,2
+3.2,Internet,Information Technology,Unknown / Non-Applicable,0,0,58,108,83.0,analysta de datos,senior,1,0,1,0,1,2689,DoubleVerify,NY,1,201-500 ,12,privado,-1
+4.6,Research & Development,Business Services,$5 to $10 million (USD),0,0,81,161,121.0,na,senior,0,0,0,1,1,3709,Mitsubishi Electric Research Labs,MA,1,51-200 ,29,subsidiary,3
+3.8,Travel Agencies,Travel & Tourism,$2 to $5 billion (USD),0,0,53,96,74.5,cientifico de datos,na,1,0,1,0,0,3172,Fareportal,NY,1,1001-5000 ,18,privado,3
+2.2,Beauty & Personal Accessories Stores,Retail,Unknown / Non-Applicable,0,0,61,110,85.5,analysta de datos,na,0,0,0,0,1,4402,"Rodan and Fields, LLC",CA,1,501-1000 ,18,privado,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,65,96,80.5,na,senior,0,0,0,0,1,5749,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+4.6,Research & Development,Business Services,$5 to $10 million (USD),0,0,115,220,167.5,principal,na,0,0,0,0,0,3180,Mitsubishi Electric Research Labs,MA,1,51-200 ,29,subsidiary,3
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,71,144,107.5,ingeniero de ML,na,1,0,0,0,0,2011,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.4,Social Assistance,Non-Profit,$25 to $50 million (USD),0,0,32,57,44.5,analysta de datos,na,0,0,0,1,1,4087,DESC,WA,1,501-1000 ,41,sin_lucro,-1
+3.3,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,79,136,107.5,analysta de datos,senior,0,0,0,0,0,2606,Johns Hopkins Health Care,MD,0,1001-5000 ,131,privado,3
+-1.0,-1,-1,Unknown / Non-Applicable,0,1,120,145,132.5,principal,na,0,0,0,0,0,3082,Kronos Bio,MA,0,Unknown,-1,privado,-1
+3.7,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,50,89,69.5,analysta de datos,senior,0,0,0,0,1,1865,Community Behavioral Health,PA,0,201-500 ,26,privado,-1
+3.5,Computer Hardware & Software,Information Technology,$10+ billion (USD),0,0,68,129,98.5,na,senior,1,0,1,1,0,3926,Western Digital,CA,0,10000+ ,50,publico,2
+2.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,48,113,80.5,na,na,0,0,0,0,1,3570,Advanced BioScience Laboratories,MD,1,201-500 ,59,privado,-1
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10 to $25 million (USD),1,0,54,94,74.0,na,na,0,0,0,0,1,3747,FORMA THERAPEUTICS,MA,1,51-200 ,12,privado,-1
+3.7,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,74,124,99.0,na,na,1,0,0,0,0,4431,Raytheon,MD,0,10000+ ,98,publico,-1
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$50 to $100 million (USD),0,0,68,125,96.5,gerente,na,0,0,0,0,1,4465,Agios Pharmaceuticals,MA,1,501-1000 ,12,publico,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,39,67,53.0,director,na,0,0,0,0,0,3448,Liberty Mutual Insurance,MA,1,10000+ ,108,privado,3
+2.7,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,71,135,103.0,ingeniero de datos,senior,0,0,1,1,0,4571,Bridg,CA,1,1-50 ,9,privado,-1
+3.8,Financial Transaction Processing,Finance,$50 to $100 million (USD),0,0,107,172,139.5,cientifico de datos,senior,0,0,0,0,0,2933,Bill.com,CA,1,501-1000 ,14,publico,-1
+3.8,Energy,"Oil, Gas, Energy & Utilities",$500 million to $1 billion (USD),0,0,49,85,67.0,cientifico de datos,na,0,0,0,0,0,4945,Pacific Northwest National Laboratory,WA,1,1001-5000 ,55,gubernamental,3
+3.0,IT Services,Information Technology,$10+ billion (USD),0,0,54,71,62.5,asesor,na,0,0,0,0,1,3449,Infosys,CT,0,10000+ ,39,publico,3
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,61,123,92.0,na,na,0,0,0,0,0,2391,AstraZeneca,MD,0,10000+ ,107,publico,3
+3.6,Health Care Services & Hospitals,Health Care,$10 to $25 million (USD),0,0,47,85,66.0,analysta de datos,na,0,0,0,0,1,2292,AXION Healthcare Solutions,NY,1,1-50 ,40,privado,2
+3.5,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,65,124,94.5,ingeniero de datos,na,1,0,1,1,1,5743,Alignment Healthcare,CA,1,501-1000 ,7,privado,-1
+3.6,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,87,141,114.0,cientifico de datos,na,1,0,0,1,1,4648,TRANZACT,NJ,1,1001-5000 ,31,privado,-1
+4.2,Education Training Services,Education,Unknown / Non-Applicable,0,0,56,95,75.5,cientifico de datos,na,1,0,0,1,0,4341,ExecOnline,NY,1,51-200 ,8,privado,3
+3.5,K-12 Education,Education,$5 to $10 million (USD),0,0,71,121,96.0,cientifico de datos,na,0,0,0,0,1,3775,Charter Spectrum,MO,0,1-50 ,-1,colegio,-1
+4.0,Aerospace & Defense,Aerospace & Defense,$100 to $500 million (USD),0,0,62,112,87.0,ingeniero de ML,na,1,0,0,0,0,3127,Mteq,VA,0,501-1000 ,66,publico,2
+3.7,IT Services,Information Technology,$25 to $50 million (USD),0,0,64,108,86.0,cientifico de datos,na,1,0,0,0,1,6626,Brillient,MD,0,201-500 ,14,privado,-1
+4.4,Internet,Information Technology,Unknown / Non-Applicable,0,0,89,144,116.5,cientifico de datos,senior,1,0,0,0,0,1211,Entefy,CA,1,1-50 ,8,privado,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$1 to $2 billion (USD),0,0,109,200,154.5,na,senior,1,0,0,0,1,4517,Sunovion,MA,1,1001-5000 ,10,privado,3
+3.6,Gambling,"Arts, Entertainment & Recreation",$100 to $500 million (USD),0,0,35,62,48.5,analysta de datos,na,0,0,0,0,1,4608,San Manuel Casino,CA,1,1001-5000 ,34,privado,-1
+3.7,Stock Exchanges,Finance,$500 million to $1 billion (USD),0,0,61,113,87.0,ingeniero de ML,na,1,0,0,0,1,2860,Cboe Global Markets,KS,0,501-1000 ,47,publico,-1
+3.4,IT Services,Information Technology,$1 to $2 billion (USD),0,0,55,105,80.0,ingeniero de datos,na,1,0,1,0,1,7802,Trace3,TX,0,501-1000 ,18,privado,3
+4.0,Health Care Services & Hospitals,Health Care,$50 to $100 million (USD),1,0,36,50,43.0,na,na,0,0,0,1,0,5160,Texas Health Huguley Hospital,TX,0,1001-5000 ,43,hospital,-1
+3.7,Aerospace & Defense,Aerospace & Defense,$10+ billion (USD),0,0,135,211,173.0,cientifico de datos,na,1,0,0,0,0,5884,Northrop Grumman,CA,0,10000+ ,81,publico,-1
+2.4,Food & Beverage Manufacturing,Manufacturing,$100 to $500 million (USD),0,0,39,66,52.5,na,na,0,0,0,0,0,2433,Teasdale Latin Foods,IL,0,501-1000 ,-1,privado,-1
+3.5,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,57,80,68.5,ingeniero de datos,na,1,0,1,0,0,1230,Saama Technologies Inc,AZ,0,501-1000 ,23,privado,3
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,63,127,95.0,principal,na,0,0,0,0,0,3110,AstraZeneca,MD,0,10000+ ,107,publico,3
+3.2,Federal Agencies,Government,$1 to $2 billion (USD),0,0,50,89,69.5,cientifico de datos,na,1,0,0,0,1,4478,MITRE,MA,1,5001-10000 ,62,sin_lucro,3
+4.4,Metals Brokers,Mining & Metals,Unknown / Non-Applicable,0,0,82,132,107.0,cientifico de datos,senior,1,0,0,1,0,4804,The David J. Joseph Company,OH,1,201-500 ,135,subsidiary,-1
+3.9,IT Services,Information Technology,$100 to $500 million (USD),0,0,85,139,112.0,cientifico de datos,senior,1,0,1,0,0,4427,The Buffalo Group,VA,0,501-1000 ,10,privado,3
+3.4,Consulting,Business Services,$10 to $25 million (USD),0,0,72,121,96.5,cientifico de datos,na,1,0,0,0,0,4662,CompQsoft,DC,0,51-200 ,23,privado,-1
+2.1,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,74,149,111.5,na,na,0,0,0,0,1,4300,Cerus Corporation,CA,1,201-500 ,-1,publico,-1
+3.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,113,196,154.5,ingeniero de datos,na,0,0,1,1,1,6817,Takeda Pharmaceuticals,MA,0,10000+ ,239,publico,3
+3.4,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,69,121,95.0,cientifico de datos,na,1,0,1,1,0,3111,"Remedy BPCI Partners, LLC.",NY,0,201-500 ,9,privado,2
+4.0,Consumer Product Rental,Consumer Services,Unknown / Non-Applicable,0,0,71,124,97.5,cientifico de datos,na,1,0,0,0,1,3431,Strategic Financial Solutions,NY,1,501-1000 ,13,privado,2
+4.4,Consulting,Business Services,$50 to $100 million (USD),0,0,97,160,128.5,cientifico de datos,senior,1,0,0,1,1,3160,Maven Wave Partners,IL,1,201-500 ,12,privado,-1
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,81,167,124.0,ingeniero de ML,senior,0,0,0,0,0,5379,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.2,Enterprise Software & Network Solutions,Information Technology,Unknown / Non-Applicable,0,0,150,238,194.0,cientifico de datos,na,0,0,0,1,1,4847,The Climate Corporation,CA,1,501-1000 ,14,subsidiary,3
+3.7,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,48,78,63.0,na,na,0,0,0,0,0,1945,Vail Health,CO,1,501-1000 ,54,hospital,-1
+4.2,Religious Organizations,Non-Profit,Unknown / Non-Applicable,0,0,35,65,50.0,analysta de datos,na,0,0,0,1,1,4525,The Church of Jesus Christ of Latter-day Saints,UT,1,10000+ ,-1,sin_lucro,-1
+3.5,Advertising & Marketing,Business Services,Unknown / Non-Applicable,0,0,77,132,104.5,cientifico de datos,na,1,0,1,1,1,4134,Crossix Solutions,NY,1,201-500 ,15,publico,-1
+4.3,IT Services,Information Technology,$50 to $100 million (USD),0,0,51,88,69.5,cientifico de datos,na,1,0,0,0,1,3728,Solugenix Corporation,AZ,0,201-500 ,51,privado,-1
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,101,141,121.0,cientifico de datos,na,1,0,0,0,0,2399,West Coast University,CA,1,10000+ ,23,privado,-1
+4.2,IT Services,Information Technology,Unknown / Non-Applicable,0,0,59,112,85.5,ingeniero de datos,na,1,0,0,0,1,5192,Clarity Insights,NC,0,201-500 ,12,privado,-1
+3.1,Video Games,Media,$10+ billion (USD),0,0,79,147,113.0,ingeniero de datos,na,1,0,1,1,1,2421,NCSOFT,CA,0,1001-5000 ,23,publico,3
+3.8,Consumer Products Manufacturing,Manufacturing,$25 to $50 million (USD),0,0,79,127,103.0,cientifico de datos,na,1,0,0,1,0,2730,SoftBank Robotics,CA,0,201-500 ,15,subsidiary,-1
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,62,119,90.5,na,na,0,0,0,1,0,5838,GSK,MA,0,10000+ ,190,publico,3
+4.3,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,119,187,153.0,cientifico de datos,senior,1,0,1,0,1,2095,Factual,CA,1,51-200 ,12,privado,1
+3.2,Federal Agencies,Government,$1 to $2 billion (USD),0,0,81,132,106.5,cientifico de datos,junior,1,0,1,0,1,3170,MITRE,VA,0,5001-10000 ,62,sin_lucro,3
+5.0,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,1,120,140,130.0,cientifico de datos,senior,0,0,0,0,1,3808,SkySync,MI,1,51-200 ,9,privado,-1
+3.3,Consulting,Business Services,$2 to $5 billion (USD),0,0,90,157,123.5,analysta de datos,na,0,0,0,0,1,7383,TriNet,CA,1,1001-5000 ,32,publico,3
+4.3,Enterprise Software & Network Solutions,Information Technology,$500 million to $1 billion (USD),0,0,63,110,86.5,na,na,0,0,0,1,1,4023,Medidata Solutions,NY,1,1001-5000 ,21,publico,1
+3.5,Health Care Services & Hospitals,Health Care,$500 million to $1 billion (USD),0,0,42,86,64.0,gerente,na,0,0,0,0,0,3846,Central California Alliance for Health,CA,1,501-1000 ,24,sin_lucro,-1
+3.9,Internet,Information Technology,$10 to $25 million (USD),0,0,32,62,47.0,analysta de datos,na,0,0,1,0,0,2460,Signpost,NY,1,201-500 ,10,privado,-1
+4.0,Computer Hardware & Software,Information Technology,$5 to $10 billion (USD),0,0,116,208,162.0,na,na,1,0,0,0,1,3864,Adobe,CA,1,10000+ ,38,publico,2
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,107,173,140.0,cientifico de datos,senior,1,0,0,0,1,4572,AstraZeneca,MD,0,10000+ ,107,publico,3
+3.4,IT Services,Information Technology,$5 to $10 million (USD),0,0,65,113,89.0,cientifico de datos,na,0,0,0,0,0,407,"DatamanUSA, LLC",WA,0,51-200 ,-1,privado,-1
+3.0,Gas Stations,Retail,$10+ billion (USD),0,0,69,127,98.0,ingeniero de datos,senior,1,0,0,0,0,2133,Pilot Flying J Travel Centers LLC,TN,1,10000+ ,62,privado,3
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,102,172,137.0,cientifico de datos,senior,1,0,0,0,0,3169,AstraZeneca,NY,0,10000+ ,107,publico,3
+4.0,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,74,124,99.0,ingeniero de datos,na,1,0,0,1,0,4701,Pinnacol Assurance,CO,1,501-1000 ,105,sin_lucro,-1
+3.3,Food & Beverage Manufacturing,Manufacturing,Unknown / Non-Applicable,0,0,40,68,54.0,na,na,0,0,0,0,0,2832,Palermo's Pizza,WI,1,501-1000 ,56,privado,-1
+3.2,Health Care Services & Hospitals,Health Care,Unknown / Non-Applicable,0,0,76,142,109.0,ingeniero de datos,senior,0,0,0,1,1,1793,Equian LLC,TN,0,1001-5000 ,16,privado,-1
+3.4,IT Services,Information Technology,$25 to $50 million (USD),0,0,76,142,109.0,ingeniero de datos,na,0,0,0,1,0,3677,MetroStar Systems,MD,0,201-500 ,21,privado,-1
+4.4,Computer Hardware & Software,Information Technology,$1 to $2 billion (USD),0,0,108,171,139.5,cientifico de datos,senior,1,0,0,0,0,2518,MathWorks,MA,1,1001-5000 ,36,privado,-1
+3.3,Insurance Carriers,Insurance,$10+ billion (USD),0,0,202,306,254.0,director,na,1,0,0,0,0,4471,Liberty Mutual Insurance,IL,0,10000+ ,108,privado,3
+3.2,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,91,159,125.0,ingeniero de ML,na,1,0,0,1,1,3516,Information Builders,NY,1,1001-5000 ,45,privado,3
+3.8,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,80,133,106.5,na,senior,1,0,0,0,0,4033,Novartis,MA,0,10000+ ,24,publico,-1
+3.6,Health Care Services & Hospitals,Health Care,$100 to $500 million (USD),1,0,42,68,55.0,na,na,0,0,0,0,0,2801,Beebe Healthcare,DE,0,1001-5000 ,85,sin_lucro,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,49,97,73.0,na,na,0,0,0,0,0,3725,Audentes Therapeutics,CA,0,201-500 ,8,subsidiary,3
+2.7,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$25 to $50 million (USD),0,0,49,113,81.0,na,na,0,0,0,0,1,3776,Advanced BioScience Laboratories,MD,1,201-500 ,59,privado,-1
+3.2,Staffing & Outsourcing,Business Services,$5 to $10 million (USD),0,0,96,161,128.5,cientifico de datos,na,1,0,1,1,0,2306,"Numeric, LLC",PA,0,1-50 ,-1,privado,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,65,134,99.5,na,na,0,0,0,0,1,7121,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+4.0,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,59,125,92.0,na,senior,0,0,0,1,1,3911,23andMe,CA,0,501-1000 ,14,privado,3
+3.3,Insurance Carriers,Insurance,$500 million to $1 billion (USD),0,0,32,59,45.5,analysta de datos,na,0,0,0,0,0,2867,National Interstate,OH,1,501-1000 ,31,privado,-1
+4.5,Consulting,Business Services,$25 to $50 million (USD),0,0,87,158,122.5,ingeniero de datos,senior,1,0,1,1,0,2311,Moser Consulting,IN,1,51-200 ,24,privado,-1
+3.0,Enterprise Software & Network Solutions,Information Technology,$100 to $500 million (USD),0,0,27,48,37.5,analysta de datos,na,0,0,0,0,1,6175,Greenway Health,FL,1,1001-5000 ,43,subsidiary,3
+3.7,Insurance Carriers,Insurance,$5 to $10 billion (USD),0,0,39,69,54.0,analysta de datos,na,0,0,0,0,0,3783,The Hanover Insurance Group,MA,1,5001-10000 ,168,publico,-1
+3.8,Travel Agencies,Travel & Tourism,$2 to $5 billion (USD),0,0,36,71,53.5,analysta de datos,na,1,0,0,0,1,2479,Fareportal,NY,1,1001-5000 ,18,privado,3
+3.9,Financial Analytics & Research,Finance,$1 to $2 billion (USD),0,0,107,173,140.0,cientifico de datos,senior,1,0,0,0,1,5338,TransUnion,IL,1,5001-10000 ,52,publico,-1
+3.2,Federal Agencies,Government,$1 to $2 billion (USD),0,0,56,99,77.5,na,senior,0,0,0,0,0,3243,MITRE,VA,0,5001-10000 ,62,sin_lucro,3
+3.3,Construction,"Construction, Repair & Maintenance",Unknown / Non-Applicable,1,1,50,56,53.0,na,na,0,0,0,0,1,1848,Mcphail Associates,MA,1,1-50 ,44,privado,-1
+3.1,Consumer Products Manufacturing,Manufacturing,$10+ billion (USD),0,0,80,155,117.5,na,senior,0,0,0,0,1,7361,Reynolds American,NC,1,5001-10000 ,145,privado,-1
+2.4,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$50 to $100 million (USD),0,0,43,98,70.5,na,na,0,0,0,0,0,3374,Crown Bioscience,CA,1,501-1000 ,14,privado,-1
+4.8,Computer Hardware & Software,Information Technology,$25 to $50 million (USD),0,0,45,78,61.5,gerente,na,0,0,0,0,1,3693,HOVER,CA,1,51-200 ,9,privado,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,50,110,80.0,na,senior,0,0,0,0,1,4613,Q2 Solutions,GA,0,1001-5000 ,5,privado,-1
+2.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,Unknown / Non-Applicable,0,0,44,96,70.0,na,na,0,0,0,0,1,4707,Q2 Solutions,NY,0,1001-5000 ,5,privado,-1
+-1.0,-1,-1,Unknown / Non-Applicable,0,1,100,140,120.0,na,na,0,0,0,0,1,3309,Kronos Bio,MA,0,Unknown,-1,privado,-1
+3.4,Insurance Carriers,Insurance,$100 to $500 million (USD),0,0,61,119,90.0,ingeniero de datos,na,0,0,1,0,1,2752,Arbella Insurance,MA,1,1001-5000 ,32,privado,-1
+4.1,K-12 Education,Education,Unknown / Non-Applicable,0,0,80,142,111.0,ingeniero de ML,na,1,0,0,1,1,3478,CK-12 Foundation,CA,1,1-50 ,13,privado,-1
+3.9,Computer Hardware & Software,Information Technology,Unknown / Non-Applicable,0,0,99,178,138.5,analysta de datos,senior,1,0,0,0,0,5717,Life360,CA,1,51-200 ,12,publico,-1
+3.6,Insurance Carriers,Insurance,$10+ billion (USD),0,0,37,100,68.5,gerente,na,0,0,0,0,1,5016,MassMutual,MA,0,5001-10000 ,169,privado,-1
+3.9,Internet,Information Technology,$100 to $500 million (USD),0,0,62,113,87.5,ingeniero de datos,na,1,0,0,1,1,3813,Fivestars,CA,1,201-500 ,9,privado,2
+3.6,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$2 to $5 billion (USD),0,0,86,137,111.5,principal,na,0,0,0,0,0,5025,IQVIA,PA,0,10000+ ,3,publico,3
+3.9,Biotech & Pharmaceuticals,Biotech & Pharmaceuticals,$10+ billion (USD),0,0,58,111,84.5,na,senior,0,0,0,1,0,6162,GSK,MA,0,10000+ ,190,publico,3
+4.4,Internet,Information Technology,$100 to $500 million (USD),0,0,72,133,102.5,ingeniero de datos,senior,1,0,1,1,0,6130,Eventbrite,TN,0,1001-5000 ,14,publico,3
+2.6,Colleges & Universities,Education,Unknown / Non-Applicable,0,0,56,91,73.5,na,na,0,0,0,0,1,3078,Software Engineering Institute,PA,1,501-1000 ,36,universidad,-1
+3.2,Staffing & Outsourcing,Business Services,$5 to $10 million (USD),0,0,95,160,127.5,gerente,na,0,0,0,0,1,1642,"Numeric, LLC",PA,0,1-50 ,-1,privado,-1
+3.6,Federal Agencies,Government,$50 to $100 million (USD),0,0,61,126,93.5,na,na,1,0,0,0,0,3673,Riverside Research Institute,OH,0,501-1000 ,53,sin_lucro,-1
