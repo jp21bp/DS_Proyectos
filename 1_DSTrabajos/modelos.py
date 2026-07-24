@@ -147,3 +147,23 @@ from sklearn.metrics import mean_absolute_error as mae
 mae(y_test, tpred_linear_reg)
 mae(y_test, tpred_lasso_reg)
 mae(y_test, tpred_rf)   # Tiene mejores resultados
+
+
+##### Guardando el mejor modelo
+import pickle, os
+model_path = os.path.join('FlaskAPI', 'model_file.p')
+model_pickle = {'model': gs.best_estimator_}
+pickle.dump(model_pickle, open(model_path, 'wb'))
+
+
+##### Aseugrando que el modelo guardado trabaja
+with open(model_path, 'rb') as file:
+    data = pickle.load(file)
+    main_modelo = data['model']
+
+prediccion = main_modelo.predict(
+    X_test.iloc[3,:].values.reshape(1,-1)
+)
+prediccion
+y_test[3]
+X_test.iloc[3,:].values.reshape(1,-1)
