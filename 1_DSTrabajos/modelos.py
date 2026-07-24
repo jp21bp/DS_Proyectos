@@ -53,9 +53,97 @@ for col in df_ols.columns.to_list()[1:]:
     df_ols[col] = df_ols[col].astype(float)
 df_ols.info()
 varaibles_sign = df_ols[df_ols['P>|t|'] < 0.05]['Variable']
-varaibles_sign
+varaibles_sign.shape
+
+
+
+##### Formando linear regression
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import cross_val_score
+
+linear_reg = LinearRegression()
+linear_reg.fit(X_train, y_train)
+linear_reg_resultados = np.mean(
+    cross_val_score(
+        linear_reg, 
+        X_train,
+        y_train,
+        scoring = 'neg_mean_absolute_error'
+    )
+)
+
+print(linear_reg_resultados)
+
+
+##### Lasso regression
+#### Averiguando mejor param alpha
+from sklearn.linear_model import Lasso
+alpha, error = [], []
+for i in range(1,1000):
+    alpha.append(i/1000)
+    candidato = Lasso(alpha=(i/1000))
+    error.append(
+        np.mean(
+            cross_val_score(
+                candidato,
+                X_train,
+                y_train,
+                scoring='neg_mean_absolute_error',
+                cv=3
+            )
+        )
+    )
+
+plt.plot(alpha,error)
+plt.show()
+
+#### Esocjiendo el mejor alpha
+err= tuple(zip(alpha,error))
+df_err = pd.DataFrame(err, columns = ['alpha', 'error'])
+alpha = df_err[df_err.error == max(df_err.error)]['alpha']
+mejor_alpha = alpha.values[0]
+
+#### Usando el mejor alpha
+lasso_reg = Lasso(alpha=mejor_alpha)
+lasso_reg.fit(X_train,y_train)
+lasso_reg_resultados = np.mean(
+    cross_val_score(
+        lasso_reg,
+        X_train,
+        y_train,
+        scoring = 'neg_mean_absolute_error', 
+        cv= 3))
 
 
 
 
 
+##### Creando un RF
+#### Buscando los mejores parametros
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import GridSearchCV
+rf = RandomForestRegressor()
+params = {
+    'n_estimators': range(10,300,10),
+    'criterion': ('squared_error','absolute_error'),
+    'max_features': ('auto', 'sqrt', 'log2')
+}
+gs = GridSearchCV(rf, params, scoring='neg_mean_absolute_error', cv = 3)
+
+gs.fit(X_train,y_train)
+
+gs.best_score_
+gs.best_estimator_
+
+
+
+
+##### Prueba final con todos los modelos
+tpred_linear_reg = linear_reg.predict(X_test)
+tpred_lasso_reg = lasso_reg.predict(X_test)
+tpred_rf = gs.best_estimator_.predict(X_test)
+
+from sklearn.metrics import mean_absolute_error as mae
+mae(y_test, tpred_linear_reg)
+mae(y_test, tpred_lasso_reg)
+mae(y_test, tpred_rf)   # Tiene mejores resultados
