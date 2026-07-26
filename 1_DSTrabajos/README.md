@@ -19,6 +19,7 @@ Este proyecto seguira los siguente pasos en su desarrollo:
 4. EDA
 5. Crear modelos
 6. Desplegar Modelos
+7. Documentacion 
 
 ## Formulacion del Problema (Paso 1)
 
