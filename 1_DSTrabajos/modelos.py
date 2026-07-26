@@ -166,4 +166,6 @@ prediccion = main_modelo.predict(
 )
 prediccion
 y_test[3]
-X_test.iloc[3,:].values.reshape(1,-1)
+
+
+sample = X_test.iloc[3,:].values.astype(float)
