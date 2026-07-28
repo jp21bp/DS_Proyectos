@@ -16,13 +16,17 @@ Existen los siguiente pasos generales dentro un proyecto:
 ### Paso 1: Formulacion del Problema
 Existen varias maneras de formular un problema pero en general necesitan:
 * Contexto del Negocio/Problema
+    - Cual es el contexto del problema?
     - Cual es el problema?
-    - Quienes son los stakeholders?
     - Cual es el impoacto al negocio?
+    - Quienes son los stakeholders?
     - Cuales son los antecedentes?
 * Objetivo del Proyecto
     - Que se quiere lograr?
     - Tipo de problema: classificacion, regression, optimizacion, etc?
+* Scope:
+    - Cuales son los aspectos dentro del proyecto?
+    - Cuales son los aspectos afuera del proyecto?
 * Disponibilidad de Datos
     - Estructurados? No Estructurados? Incompletos?
 * Restricciones
@@ -38,6 +42,7 @@ https://levelup.gitconnected.com/crafting-effective-problem-statements-for-data-
 Cuando se formula el problema, los siguientes paso los transformaran en problema de datos:
 1. Frame la formulacion del problema
     * Converit problema general en especifico
+    * Considera SMART
 2. Romper en problemas matematicos mas pequenos
     * Al problema seleccionado, transformarlo en una ecuacion matematica de diferentes componentes
 3. Convertir los problemas pequenos en problemas de datos
