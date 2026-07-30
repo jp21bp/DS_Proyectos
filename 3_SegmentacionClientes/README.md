@@ -102,8 +102,12 @@ $$
         - Utilizar KMeans para encontrar $K$ segmentos
     2. Estimacion de Parametros (valores iguales para todos segmentos $k$):
         - $p_k$: de historical campaign response rates
+            * Idea: despues de avergiuar k segments en 2025, hacer un trend histrico y ver como cada segmento aumento a traves de ano
+                - Ej: 2023 = 1.0 M y 2024 = 1.2M => p_k = (1.2-1.0)/1.0 = 0.2
         - $r_k$: de trasaction data
+            * Idea: precio de cada sitio?
         - $c_k$: marketing spending records
+            * Idea: costo de mantenimiento de cada sitio?
     3. Optimizacion
         - Resolver el binary integer programming problema para ver cual de los segmentos hacer targeted marketing
     4. Prediccion:
