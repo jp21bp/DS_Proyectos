@@ -24,9 +24,10 @@ urls = df['URL'].values.tolist()
 ##### Web scrapping precios de ingreso
 #### Setup
 filas = []
+start = 2614
 #### Bucle 
-for i, url in enumerate(urls):
-    print(i)
+for i, url in enumerate(urls[start:]):
+    print(i + start)
     ### SEtup
         # Cada pagina tiene su "tipo" y "observacion"
     tipo = []
@@ -34,7 +35,7 @@ for i, url in enumerate(urls):
     ### Cargando pagina
     driver = webdriver.Edge()
     driver.get(url)
-    WebDriverWait(driver, 15).until(
+    WebDriverWait(driver, 60).until(
         EC.presence_of_all_elements_located((By.CSS_SELECTOR, "#accordionContent"))
     )  
 
@@ -70,12 +71,14 @@ for i, url in enumerate(urls):
 ##### Finalizando web scrapping
 #### Transformando filas en dataframe
 tmp = pd.DataFrame(filas, columns=['TIPO','OBSERVACION'])
+tmp_path = os.path.join('Datos', 'Limpios', 'tmp.csv')
+tmp.to_csv(tmp_path, index=False, encoding='utf-8')
 
 #### Uniendo ambos dataframes
 df_final = pd.concat([df, tmp], ignore_index=False, axis=1)
 
 #### Guardando DF final
 limpio_path = os.path.join('Datos', 'Limpios', 'web_scrapped_inventario_recursos_turisticos.csv')
-df_final.to_csv()
+df_final.to_csv(limpio_path, index=False, encoding='utf-8')
 
 tmp['TIPO'].value_counts()
