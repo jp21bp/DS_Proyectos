@@ -35,7 +35,7 @@ for i, url in enumerate(urls[start:]):
     ### Cargando pagina
     driver = webdriver.Edge()
     driver.get(url)
-    WebDriverWait(driver, 60).until(
+    WebDriverWait(driver, 120).until(
         EC.presence_of_all_elements_located((By.CSS_SELECTOR, "#accordionContent"))
     )  
 
@@ -80,5 +80,3 @@ df_final = pd.concat([df, tmp], ignore_index=False, axis=1)
 #### Guardando DF final
 limpio_path = os.path.join('Datos', 'Limpios', 'web_scrapped_inventario_recursos_turisticos.csv')
 df_final.to_csv(limpio_path, index=False, encoding='utf-8')
-
-tmp['TIPO'].value_counts()
