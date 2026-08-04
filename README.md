@@ -127,10 +127,14 @@ La limpieza de datos generalmente consiste de 3 partes:
 * Hacer resumen holistico
     - df.describe()
     - df.info()
+* Eliminar columnas no necesarias
+    - dr.drop()
 * Identificar variables cuant y cual
     - Cuant: cuant_vars = df._get_numeric_data().columns.values
+        * df.describe()
     - Cual: cual_vars = list(set(df.columns) - set(cuant_vars))
-* Investigando correlaciones
+        * df.hist()
+* Investigando correlaciones (variables cuantitativos)
     - sns.heatmap(df.corr(), annot = True, cmap = 'coolwarm', center = 0)
 * Hacer los histogramas (con variables cuant)
     - sqrt_vars = sqrt(len(cuant_vars))
