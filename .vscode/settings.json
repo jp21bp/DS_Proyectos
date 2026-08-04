@@ -1,5 +1,6 @@
 {
     "dataWrangler.columnInsights.displayOnOpen": false,
     "dataWrangler.experiments.copilot.enabled": false,
-    "dataWrangler.panels.displayOnTabFocus": false
+    "dataWrangler.panels.displayOnTabFocus": false,
+    "python.REPL.enableREPLSmartSend": false
 }
