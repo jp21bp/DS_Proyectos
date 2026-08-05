@@ -255,7 +255,7 @@ df_3a.info()
 
 
 ### Reseteando los indices
-df_3a = df_3a.reset_index()
+df_3a = df_3a.reset_index(drop=True)
 
 
 
