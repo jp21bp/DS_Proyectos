@@ -19,6 +19,7 @@ import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import re
 
 ############################################################
 
@@ -253,6 +254,10 @@ df_3a['OBSERVACION'] = df_3a['OBSERVACION'].fillna('Libre')
 df_3a.info()
 
 
+### Reseteando los indices
+df_3a = df_3a.reset_index()
+
+
 
 ############################################################
 
@@ -261,6 +266,152 @@ df_3a.info()
 df_3a.duplicated().sum()
 
 ############################################################
+
+##### Renombrando columnas
+#### 'REGION' -> 'DEPARTAMENTO'
+df_3a = df_3a.rename(columns={'REGIÓN':'DEPARTAMENTO'})
+
+#### Borrando acentos
+df_3a = df_3a.rename(columns={
+    'CATEGORÍA':'CATEGORIA',
+    'TIPO DE CATEGORÍA': 'TIPO_CATEGORIA',
+    'SUB TIPO CATEGORÍA': 'SUBTIPO_CATEGORIA',
+})
+df_3a.info()
+
+############################################################
+###### Investigacion detallada:  'TIPO' y 'OBSERVACION'
+
+##### Cambiando ingresos y observaciones a sus valores numericos
+#### Investigando 'INGRESO' general
+df_3a[['TIPO','OBSERVACION']].info()    # Existen 4556 registros
+df_3a['TIPO'].value_counts()
+    # Existen 2 categorias generales
+        # 1. Ingresos con solo 1 nota (sin "#")
+        # 2. Ingresos con 2+ notas (con "#")
+
+
+
+#### Investigando 'INGRESO' y 'OBSERVACION' con "#"
+### Investigacion general
+df_3a[df_3a['TIPO'].str.contains("#", case=False)].info()
+    # Contiene 97 registros
+df_3a[df_3a['OBSERVACION'].str.contains("#", case=False)].info()
+    # Contiene 99 registros
+### Viendo intereseccion entre los indices
+df_3a[df_3a['OBSERVACION'].str.contains("#", case=False)].index.difference(
+    df_3a[df_3a['TIPO'].str.contains("#", case=False)].index
+)
+    # Identificacion de los 2 indices: 3292, 3414
+### Investigando ambos indices
+df_3a.iloc[[3293, 3414]][['TIPO','OBSERVACION']]
+df_3a.loc[3293, 'OBSERVACION']
+df_3a.loc[3414, 'OBSERVACION']
+    # Estas observacion con '#' solo lo tienen para cambiar
+            # la notacion: 'numero cel' -> '#'
+        # Si lo hubiera tenido previsto no huiera 
+                # utilizado el delimiter '#'
+
+
+
+#### Investigando cuantos registros tiene 'Libre' para ambos
+    # CASO 1: ingreso = 0
+df_3a[(df_3a['TIPO']=='Libre') & (df_3a['OBSERVACION']=='Libre')].info() # Existen 2365
+
+
+
+#### Investigando cuantos registros tiene 'Libre' para 'TIPO' pero no 'OBSERVACION'
+df_3a[(df_3a['TIPO']=='Libre') & (df_3a['OBSERVACION']!='Libre')].info() # Existen 633
+df_3a[(df_3a['TIPO']=='Libre') & (df_3a['OBSERVACION']!='Libre')]['OBSERVACION']
+    # Parece que ingreso es libre pero 'OBSERVACION' son recommendaciones generales
+df_3a[(df_3a['TIPO']=='Libre') & (df_3a['OBSERVACION']!='Libre')][df_3a['OBSERVACION'].str.contains('s/', case=False)].info()
+    # Existen 11 registros donde 'TIPO'='libre', 'OBSERVACION'!='Libre', pero 'OBSERVACION' contiene 's/
+df_3a[(df_3a['TIPO']=='Libre') & (df_3a['OBSERVACION']!='Libre')]\
+    [df_3a['OBSERVACION'].str.contains('s/', case=False)]['OBSERVACION']
+    # 'TIPO' ='Libre' para nacionales pero tiene diferente precio para etranjeros
+        # Reconociendo el scope es internacional, se tiene que considerar estos precios
+
+
+
+#### Investigando cuantos registros tiene 'Libre' para 'TIPO' pero no 'OBSERVACION', pero igual es libre para todos
+    #CASO 2: ingreso = 0
+df_3a[(df_3a['TIPO']=='Libre') & (df_3a['OBSERVACION']!='Libre')][~df_3a['OBSERVACION'].str.contains('s/', case=False)].info()
+    # Existen 622 = 633-11 registros que solo son recomendaciones => ingreso = 0
+
+
+
+#### Investigando cuantos registros tiene 'Libre' para 'TIPO' pero no 'OBSERVACION', pero no es libre para todos
+    # CASO 3: ingreso != 0
+### Creando lista general
+lista_precio = df_3a[(df_3a['TIPO']=='Libre') & (df_3a['OBSERVACION']!='Libre')]\
+    [df_3a['OBSERVACION'].str.contains('s/', case=False)]\
+    ['OBSERVACION'].to_list()
+lista_precio_idx = df_3a[(df_3a['TIPO']=='Libre') & (df_3a['OBSERVACION']!='Libre')]\
+    [df_3a['OBSERVACION'].str.contains('s/', case=False)]\
+    ['OBSERVACION'].index.to_list()
+### Haciendo "split" en 's/'
+ingreso_caso3 = [] # List de oracion post 's/'
+for obser, idx in zip(lista_precio, lista_precio_idx):
+    ingreso = [float(num) for num in re.findall(r'\d+\.\d*', obser)]
+    if len(ingreso) > 1: 
+        ingreso = [sum(ingreso)/len(ingreso)]
+    ingreso_caso3.append([ingreso[0], idx])
+
+
+##### Conclusion de investigacion
+    # Parece que 'TIPO' no tiene mucho impacto en la creacion de precio 'INGRESO'
+    # En vez, toda esa informacion se encuentra en 'OBSERVACION'
+        # si observacion tiene algun float: ingreso = procesamiento de esos floats
+        # si observacion no tiene un float: ingreso = 0 
+
+
+
+
+
+############################################################
+###### Conviertiendo 'TIPO' y 'OBSERVACION' en 'INGRESO' variable numerico
+
+#### Creando DS variable numerico 'INGRESO'
+ds_ingreso = pd.Series(np.nan, index=df_3a.index)
+ds_ingreso.name = 'INGRESO'
+
+#### Viendo cuantos 'INGRESO' son nulos
+ds_ingreso.isna().sum() # 4556
+
+
+#### Existen 2 casos para rellenar 'INGRESOS'
+### Caso 1: 'OBSERVACION' no tiene ningun 's/' => ingreso = 0
+ds_ingreso.iloc[
+    df_3a[~df_3a['OBSERVACION'].str.contains('s/', case=False)].index
+] = 0
+ds_ingreso.isna().sum() # 795
+### Caso 2: 'OBSERVACION' tiene algun 's/' => ingreso != 0
+lista_precio = df_3a[df_3a['OBSERVACION'].str.contains('s/', case=False)]\
+    ['OBSERVACION'].to_list()
+lista_precio_idx = df_3a[df_3a['OBSERVACION'].str.contains('s/', case=False)]\
+    ['OBSERVACION'].index.to_list()
+for obser, idx in zip(lista_precio, lista_precio_idx):
+    ingreso = [float(num) for num in re.findall(r'\d+\.*\d*', obser)] 
+        # Buscar todos los valores numericos, incluyendo numeros
+    ingreso = [num for num in ingreso if num < 200 and num != 51]
+        # Solo enfocarse en valores numeros que puedan ser entradas
+        # "51" = codigo de peru
+    if len(ingreso) == 0: ingreso = [0]
+    elif len(ingreso) > 1: ingreso = [sum(ingreso)/len(ingreso)]
+    ds_ingreso.iloc[idx] = ingreso[0]
+ds_ingreso.isna().sum() # 0 nulos
+
+
+
+
+##### Uniendo 'INGRESO' columna a df_3a
+df_3a.info()
+df_3a = pd.concat([df_3a,ds_ingreso], axis=1)
+df_3a.info()
+
+
+############################################################
+
 
 ##### Guardando datos limpios
 path_save_3a = os.path.join('Datos','Limpios', 'inventario_recursos_turisticos.csv')
