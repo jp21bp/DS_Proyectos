@@ -230,7 +230,12 @@ df_3a_obser_nulos['TIPO'].value_counts()
 
 #### Arreglando nulos
 ### Longitud y Latitud
-    # Ignorar, no se utilizan en el enfoque de este proyecto
+    # Eliminar todos los nulos
+df_3a = df_3a.dropna(subset=['LONGITUD', 'LATITUD'])
+## Las dos columnas se confundieron: Long = Lat y vice verse
+df_3a = df_3a.rename(columns={'LONGITUD':'LATITUD', 'LATITUD':'LONGITUD1'})
+df_3a = df_3a.rename(columns={'LONGITUD1':'LONGITUD'})
+
 ### 'TIPO'
     # La mayoria de 'tipo' nulos son eventos
         # danza, fiesta, festividad, patronal, festival, carnaval
