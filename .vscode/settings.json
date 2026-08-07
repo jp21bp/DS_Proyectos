@@ -2,5 +2,11 @@
     "dataWrangler.columnInsights.displayOnOpen": false,
     "dataWrangler.experiments.copilot.enabled": false,
     "dataWrangler.panels.displayOnTabFocus": false,
-    "python.REPL.enableREPLSmartSend": false
+    "python.REPL.enableREPLSmartSend": false,
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "notebook.insertSpaces": true,
+    "notebook.tabSize": 4
 }
