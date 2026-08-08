@@ -35,7 +35,6 @@ def ohe_corr(df_enc):
             print(cells_info[i])
     return cells_info
 
-############################################################
 
 ##### Leyendo datos
 #### Rutas de archivos
@@ -50,6 +49,10 @@ os.chdir('3_SegmentacionClientes')
 df_1 = pd.read_csv(fpath_1)
 df_2 = pd.read_csv(fpath_2)
 # df_3 = pd.read_csv(fpath_3)
+
+############################################################
+####### Datos 1
+
 
 ### Borrando columnas no necesarias
 ## Datos 1
@@ -173,15 +176,10 @@ df_2_encoded = pd.get_dummies(df_2_mod, columns=['ID_MES', 'DEPARTAMENTO', 'SITI
 cells = ohe_corr(df_2_encoded)
 
 ### Normalizacion
-df_2_encoded['NUMERO_VISITANTES'] =(
-    (
-        df_2_encoded['NUMERO_VISITANTES'] -\
-        df_2_encoded['NUMERO_VISITANTES'].mean()
-    ) / df_2_encoded['NUMERO_VISITANTES'].std()
-)
+    # Lo voy hacer en otro codigo para poder exportarlo
 
 #### 6. Guardar
-df_2_org.to_csv('Datos/FeatEng/visitantes_sitios_turisticos_mod.csv',index=False)
+df_2_org.to_csv('Datos/FeatEng/visitantes_sitios_turisticos_original.csv',index=False)
 df_2_encoded.to_csv('Datos/FeatEng/visitantes_sitios_turisticos_encoded.csv',index=False)
 
 
