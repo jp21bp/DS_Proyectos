@@ -1,7 +1,6 @@
 """
 Este archivo sera la creacion de los modelos:
 * K-Mean: Para hacer cluster de los turistas
-* Regression: para predecir num_visitantes dado el sitio, dept, y mes
 """
 
 ##### Importaciones
@@ -13,16 +12,8 @@ import matplotlib.pyplot as plt
 #### KMeans
 from sklearn.cluster import KMeans, MiniBatchKMeans, BisectingKMeans
 from sklearn.metrics import silhouette_score, davies_bouldin_score
-#### Regresion
-from sklearn.model_selection import train_test_split
-import statsmodels.api as sm # OLS
-from sklearn.linear_model import LinearRegression # Lin Regression
-from sklearn.model_selection import cross_val_score
-from sklearn.linear_model import Lasso #Lasso regresion
-from sklearn.ensemble import RandomForestRegressor # RF
-from sklearn.model_selection import GridSearchCV
 
-# import tensorflow as tf
+
 
 #### Cambiando directorio (si es necesario)
 if os.getcwd().split('\\')[-1] != '3_SegmentacionClientes': 
