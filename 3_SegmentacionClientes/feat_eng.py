@@ -19,6 +19,22 @@ import matplotlib.pyplot as plt
 import re
 from sklearn.preprocessing import LabelEncoder
 
+##### Funcion para verificar Correlacion de OHE DF
+def ohe_corr(df_enc):
+    df_1_enc_corr= df_enc.corr().round(2)
+    coords = list(zip(*np.where(df_1_enc_corr > 0.8)))
+    cells_info = [
+        (
+            df_1_enc_corr.index[row], 
+            df_1_enc_corr.columns[col], 
+            df_1_enc_corr.iat[row, col]
+        ) for row, col in coords
+    ]
+    for i, (col1, col2, num) in enumerate(cells_info):
+        if col1 != col2: 
+            print(cells_info[i])
+    return cells_info
+
 ############################################################
 
 ##### Leyendo datos
@@ -33,21 +49,21 @@ os.chdir('3_SegmentacionClientes')
 #### Cargando datos
 df_1 = pd.read_csv(fpath_1)
 df_2 = pd.read_csv(fpath_2)
-df_3 = pd.read_csv(fpath_3)
+# df_3 = pd.read_csv(fpath_3)
 
 ### Borrando columnas no necesarias
 ## Datos 1
-df_1 = df_1.drop(columns=['FECHA_CORTE', 'MES', 'TIPO_VISITANTE'])
+df_1 = df_1.drop(columns=['FECHA_CORTE', 'TIPO_VISITANTE'])
 ## Eliminando columnas no necesarias
-df_2 = df_2.drop(columns=['ï»¿FECHA_CORTE','MES'])
+df_2 = df_2.drop(columns=['ï»¿FECHA_CORTE'])
 ## Filtracion de filas
 df_2 = df_2[df_2['TIPO_VISITANTE'] == 'EXTRANJERO']
 ## Borrando columna no necesaria
 df_2 = df_2.drop(columns=['TIPO_VISITANTE'])
 ## DAtos 3
-df_3 = df_3.drop(columns=[
-    'URL', 'FECHA_DE_CORTE', 'TIPO', 'OBSERVACION'
-])
+# df_3 = df_3.drop(columns=[
+#     'URL', 'FECHA_DE_CORTE', 'TIPO', 'OBSERVACION'
+# ])
 
 
 
@@ -60,7 +76,7 @@ df_3 = df_3.drop(columns=[
         # Datos necesarios:
             # ID_MES, PAIS, CONTINENTE, OCM, NUMERO_VISITANTES
             # Entonces se tendra que codensar todas otras col
-
+df_1.info()
 #### Etapa 1: Correlacion
 df_1[['ANIO', 'ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM', 'NUMERO_VISITANTES']].corr().round(4)
     # Ninguno de los |valores| >0.18 => no hay correlacion
@@ -69,8 +85,13 @@ df_1[['ANIO', 'ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM', 'NUMERO_VISITANTES
     # 'ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM', 'NUMERO_VISITANTES'
 
 #### Etapa 3: Condensar datos
-df_1_mod = df_1[['ANIO', 'ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM', 'NUMERO_VISITANTES']]\
+### Datos seleccionados
+df_1_mod = df_1[['ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM', 'NUMERO_VISITANTES']]\
     .groupby(by=['ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM'], as_index=False)\
+    ['NUMERO_VISITANTES'].sum()
+### Datos originales de datos seleccionados
+df_1_org = df_1[['MES', 'PAIS', 'CONTINENTE', 'OCM', 'NUMERO_VISITANTES']]\
+    .groupby(by=['MES', 'PAIS', 'CONTINENTE', 'OCM'], as_index=False)\
     ['NUMERO_VISITANTES'].sum()
 
 #### Etapa 4: Verificar correlacion final
@@ -80,6 +101,14 @@ df_1_mod.corr().round(4)
 #### Etapa 5: Hacer OHE (y normalizacion)
 ### OHE
 df_1_encoded = pd.get_dummies(df_1_mod, columns=['ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM'], drop_first=False)
+## Verificando correlacion de OHEs
+ohe_corr(df_1_encoded)
+## Eliminando columnas con alta correlacion
+df_1_encoded = df_1_encoded.drop(columns='ID_CONTINENTE_11')
+## Verificando correlacion de OHEs
+ohe_corr(df_1_encoded)
+
+
 ### Normalizacion
 df_1_encoded['NUMERO_VISITANTES'] =(
     (
@@ -90,7 +119,7 @@ df_1_encoded['NUMERO_VISITANTES'] =(
 
 
 #### Etapa 6: Guardar ambos datasets
-df_1_mod.to_csv('Datos/FeatEng/visitantes_internacionales_mod.csv', index=False)
+df_1_org.to_csv('Datos/FeatEng/visitantes_internacionales_original.csv', index=False)
 df_1_encoded.to_csv('Datos/FeatEng/visitantes_internacionales_encoded.csv', index=False)
 
 
@@ -104,7 +133,7 @@ df_1_encoded.to_csv('Datos/FeatEng/visitantes_internacionales_encoded.csv', inde
 
 #### 1. Ver correlacion 
 ### Hacer label encoder
-df_le = df_2.copy()
+df_le = df_2.drop(columns='MES').copy()
 vars_categoricales = ['DEPARTAMENTO', 'SITIO_TURISTICO']
 for col in vars_categoricales:
     le = LabelEncoder()
@@ -117,10 +146,18 @@ df_le.corr().round(4)
     # Voy utilizar ['ID_MES', 'DEPARTAMENTO', 'SITIO_TURISTICO', 'NUMERO_VISITANTES']
 
 #### 3. Condensar datos en columnas que no importan
+### Modificados
 df_2_mod = df_le.groupby(by=[
         'ID_MES', 
         'DEPARTAMENTO', 
         'SITIO_TURISTICO'
+    ], as_index=False)\
+    ['NUMERO_VISITANTES'].sum()
+### Originales
+df_2_org = df_2.groupby(by=[
+    'MES',
+    'DEPARTAMENTO',
+    'SITIO_TURISTICO'
     ], as_index=False)\
     ['NUMERO_VISITANTES'].sum()
 
@@ -132,6 +169,9 @@ df_2_mod.corr().round(4)
 #### 5. Hacer one hot encoding
 ### OHE
 df_2_encoded = pd.get_dummies(df_2_mod, columns=['ID_MES', 'DEPARTAMENTO', 'SITIO_TURISTICO'], drop_first=False)
+## Verificando correlacion de OHEs
+cells = ohe_corr(df_2_encoded)
+
 ### Normalizacion
 df_2_encoded['NUMERO_VISITANTES'] =(
     (
@@ -141,7 +181,7 @@ df_2_encoded['NUMERO_VISITANTES'] =(
 )
 
 #### 6. Guardar
-df_2_mod.to_csv('Datos/FeatEng/visitantes_sitios_turisticos_mod.csv',index=False)
+df_2_org.to_csv('Datos/FeatEng/visitantes_sitios_turisticos_mod.csv',index=False)
 df_2_encoded.to_csv('Datos/FeatEng/visitantes_sitios_turisticos_encoded.csv',index=False)
 
 
