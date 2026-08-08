@@ -6,7 +6,7 @@ Creacion de datos para el modelo
         # 2. Escojer columnas
         # 3. Condensar datos en columnas que no importan
         # 4. Verificar correlacion final
-        # 5. Hacer one hot encoding
+        # 5. Hacer one hot encoding (y normalizacion)
         # 6. Guardar
 """
 
@@ -77,11 +77,21 @@ df_1_mod = df_1[['ANIO', 'ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM', 'NUMERO
 df_1_mod.corr().round(4)
     # Ninguno de los |valores| >0.18 => no hay correlacion
 
-#### Etapa 5: Hacer OHE
+#### Etapa 5: Hacer OHE (y normalizacion)
+### OHE
 df_1_encoded = pd.get_dummies(df_1_mod, columns=['ID_MES', 'ID_PAIS', 'ID_CONTINENTE', 'ID_OCM'], drop_first=False)
+### Normalizacion
+df_1_encoded['NUMERO_VISITANTES'] =(
+    (
+        df_1_encoded['NUMERO_VISITANTES'] -\
+        df_1_encoded['NUMERO_VISITANTES'].mean()
+    ) / df_1_encoded['NUMERO_VISITANTES'].std()
+)
 
-#### Etapa 6: Guardar
-df_1_encoded.to_csv('Datos/FeatEng/visitantes_internacionales.csv')
+
+#### Etapa 6: Guardar ambos datasets
+df_1_mod.to_csv('Datos/FeatEng/visitantes_internacionales_mod.csv', index=False)
+df_1_encoded.to_csv('Datos/FeatEng/visitantes_internacionales_encoded.csv', index=False)
 
 
 ############################################################
@@ -120,10 +130,19 @@ df_2_mod.corr().round(4)
 
 
 #### 5. Hacer one hot encoding
+### OHE
 df_2_encoded = pd.get_dummies(df_2_mod, columns=['ID_MES', 'DEPARTAMENTO', 'SITIO_TURISTICO'], drop_first=False)
+### Normalizacion
+df_2_encoded['NUMERO_VISITANTES'] =(
+    (
+        df_2_encoded['NUMERO_VISITANTES'] -\
+        df_2_encoded['NUMERO_VISITANTES'].mean()
+    ) / df_2_encoded['NUMERO_VISITANTES'].std()
+)
 
 #### 6. Guardar
-df_2_encoded.to_csv('Datos/FeatEng/visitantes_sitios_turisticos.csv')
+df_2_mod.to_csv('Datos/FeatEng/visitantes_sitios_turisticos_mod.csv',index=False)
+df_2_encoded.to_csv('Datos/FeatEng/visitantes_sitios_turisticos_encoded.csv',index=False)
 
 
 ############################################################
