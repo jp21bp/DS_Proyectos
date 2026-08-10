@@ -120,7 +120,11 @@ Se esperaba que Machu Picchu, siendo una de las maravillas del mundo, es el siti
 asfsafsa
 
 ### Modelo regresion
-asfsafsaf
+Prediciendo la cantidad de visitantes que espera dentro de un mes ayudaria en la optimizacion de recursos para un negocio. Dado el mes, departamento, y nombre del sitio turistico, el modelo de regresion predeci los numero de visitantes esperados en ese sitio turistico. 
+
+Tres modelos candidatos se utilizaron con estos datos: Regresion lineal, regresion lasso, random forest. Con una metrica adecuada aplicada a todos los candidatos, el modelo regresion lineal obtuvo los mejores resultados. 
+
+
 
 
 ### Los 6 tipos de visitantes internacionales
@@ -139,33 +143,28 @@ El segundo cluster se enfoca completamente en el pais de origen de los visitante
 
 En practica, al llegar un visitante nuevo se puede determinar su similitud a otros visitantes -- como se puede utilizar estos clusteres para toma de decisiones
 
-
-* Agregar tamano
-
-* Poner pic de clusteres en una de las dimensiones
-    - usar pca
-
-* como se escojieron los clusteres
-
-* Cada cluster debe tener acción directa asociada: campañas específicas, mejoras de producto o estrategias de retención.
-
-
+---- Targeted marketing? Ver recomendaciones
 
 
 ## Recomendaciones
-asfasfa
+Considerando las perspicacias y resultados de los modelos, se recomienda al **equipo de Marketing** de compania X los siguiente puntos:
 
-### Primero
-sfsafas
+### Targeted Marketing basado en Pais y OCM de Entrada
+Los top 10 paises con visitantes internacionales ocupan 82.5% de **todos** los visitantes internacionales, con Chile obteniendo casi 1/3 de toda esa poblacion y 6 de los 10 paises siendo de Suramerica. Adicionalmente, se descubrio que a mayoria de ingresantes en cada OCM son del **vecino pais mas cercano**, creando un enlace entre punto de entrada y pais de origin. Este hecho fue fortalecido por los clusteres creados por el algoritmo KMeans, agrupando a todos los visitantes por el OCM de entrada. 
 
-### Segundo
+Por ende, se recomienda que el equipo de Marketing se enfoque en los siguiente targeted marketing:
+* OCM Aeropuerto de Lima: Enfoque a un nivel internacional, sin enfocarse tanto en paises surmaericanos.
+* OCM Santa Rosa: Enfoque en Chile.
+* OCM Cebaf-Tumbes: Enfoque en Ecuador.
+* OCM Desaguadero: Enfoque en Bolivia.
+* Todos los otros OCMs: inversion minima y general. 
+
+### Gestionar un Presupuesto que cambie Fluidamente por cada Mes
 sdgsagag
 
-### Tercero
+### Incorporar Sitios sin Ingresos en Paquetes Promocionales para Machu Picchu
 asgagsa
 
-### Cuarto
-ggagag
 
 ## KPIs
 sgaga

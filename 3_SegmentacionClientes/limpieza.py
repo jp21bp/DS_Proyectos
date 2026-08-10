@@ -42,7 +42,8 @@ path_2A = os.path.join('Datos','VisitantesSitios', nom_2A)
 path_3A = os.path.join('Datos','WebScrapped', nom_3A)
 
 #### Cambiando directorio (si es necesario)
-os.chdir('3_SegmentacionClientes')
+if os.getcwd().split('\\')[-1]!='3_SegmentacionClientes':
+    os.chdir('3_SegmentacionClientes')
 
 ############################################################
 
@@ -95,6 +96,10 @@ df_2a.isnull().sum()
 df_1c = df_1c.dropna(axis=1, how='any')
 df_1c.info()
 
+##### Limpiando nombres
+df_2a['SITIO_TURISTICO'].value_counts()
+df_2a['SITIO_TURISTICO'] = df_2a['SITIO_TURISTICO'].apply(lambda fila: fila.encode('latin-1').decode('utf-8'))
+df_2a['SITIO_TURISTICO'].value_counts()
 
 ############################################################
 
