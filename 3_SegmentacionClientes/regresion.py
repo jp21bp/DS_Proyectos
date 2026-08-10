@@ -118,7 +118,7 @@ for i in range(1,1000):
                 candidato,
                 X_train,
                 y_train,
-                scoring='neg_mean_absolute_error',
+                scoring='neg_root_mean_squared_error',
                 cv=3,
             )
         )
@@ -148,7 +148,7 @@ params = {
     'criterion': ('squared_error','absolute_error'),
     'max_features': ('auto', 'sqrt', 'log2')
 }
-gs = GridSearchCV(rf, params, scoring='neg_mean_absolute_error', cv = 3)
+gs = GridSearchCV(rf, params, scoring='neg_root_mean_squared_error', cv = 3)
 gs.fit(X_train,y_train.reshape(-1))
 gs.best_score_
 gs.best_estimator_

@@ -10,7 +10,7 @@
     * segundo
     * tercero
     * cuarto
-5. [Predicciones y sus Impactos](#predicciones-y-sus-impactos)
+5. [Modelos, Predicciones y sus Impactos](#modelos-predicciones-y-sus-impactos)
     * modelo 1
     * modelo 2
 6. [Recomendaciones](#recomendaciones)
@@ -81,7 +81,7 @@ asfsfsa
 
 asgsagsag
 
-## Predicciones y sus Impactos
+## Modelos, Predicciones y sus Impactos
 asfsafsa
 
 ### Modelo 1
