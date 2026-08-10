@@ -12,7 +12,8 @@ import matplotlib.pyplot as plt
 #### KMeans
 from sklearn.cluster import KMeans, MiniBatchKMeans, BisectingKMeans
 from sklearn.metrics import silhouette_score, davies_bouldin_score
-
+from sklearn.decomposition import PCA
+from matplotlib.colors import ListedColormap, BoundaryNorm
 
 
 #### Cambiando directorio (si es necesario)
@@ -134,7 +135,96 @@ df_clu_eda
 ##### Analisis de clusters
 df_1_original[df_1_original['CLUSTERS_KMEANS']==5]['OCM'].value_counts()
 'CHILE' in df_1_original[df_1_original['CLUSTERS_KMEANS']==5]['PAIS'].values.tolist()
+df_1_original[df_1_original['CLUSTERS_KMEANS']==1].shape[0]
+df_1_encoded.info()
 
+###### Visualizando KMeans clusteres
+##### Colores
+colores = ['indigo', 'green', 'blue', 'orange', 'violet', 'yellow']
+cmap = ListedColormap(colores)
+##### Boundary 
+bounds = [0.5, 1.5, 2.5, 3.5, 4.5, 5.5, 6.5]
+norm = BoundaryNorm(bounds, cmap.N)
+##### Visual 2D
+#### Creando PCA
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(df_1_encoded)
+fig = plt.figure(figsize=(10, 7))
+#### Graficando clusteres
+scatter = plt.scatter(
+    X_pca[:,0],
+    X_pca[:,1],
+    c=df_1_original['CLUSTERS_KMEANS'],
+    cmap=cmap,
+    norm=norm,
+    edgecolors='k'
+)
+#### Graficando clusteres centros
+centers_pca = pca.transform(m1.cluster_centers_)
+print(centers_pca)
+plt.scatter(
+    centers_pca[:,0],
+    centers_pca[:,1],
+    c='red',
+    s=200,
+    marker='X',
+    label='Centros'
+)
+#### Configuraciones
+cbar = plt.colorbar(scatter, ticks=[1,2,3,4,5,6], label='Cluster')
+cbar.ax.set_yticklabels([1,2,3,4,5,6])
+plt.title('Clusteres')
+plt.xlabel("Componente Principal 1")
+plt.xlim(-0.1, -0.05)
+plt.ylim(-0.1, 0.1)
+plt.ylabel("Componente Principal 2")
+plt.legend()
+# plt.colorbar(scatter, label='Cluster')
+plt.show()
+
+
+
+
+##### Visual 3D
+#### Creando PCA
+pca = PCA(n_components=3)
+X_pca = pca.fit_transform(df_1_encoded)
+#### Graficando clusteres
+fig = plt.figure(figsize=(10, 7))
+ax = fig.add_subplot(111, projection='3d')
+scatter = ax.scatter(
+    X_pca[:,0],
+    X_pca[:,1],
+    X_pca[:,2],
+    c=df_1_original['CLUSTERS_KMEANS'],
+    cmap=cmap,
+    norm=norm,
+    alpha=0.7,
+    edgecolor='k'
+)
+#### Graficando clusteres centros
+centers_pca = pca.transform(m1.cluster_centers_)
+print(centers_pca)
+ax.scatter(
+    centers_pca[:,0],
+    centers_pca[:,1],
+    centers_pca[:,2],
+    c='red',
+    s=200,
+    marker='X',
+    label='Centros',
+)
+#### Configuraciones
+ax.title('Clusteres')
+ax.set_xlabel("Componente Principal 1")
+ax.set_xlim(-0.1, 0.1)
+ax.set_ylabel("Componente Principal 2")
+ax.set_zlabel("Componente Principal 3")
+ax.legend()
+cbar = plt.colorbar(scatter, ticks=[1,2,3,4,5,6], label='Cluster')
+cbar.ax.set_yticklabels([1,2,3,4,5,6])
+# fig.colorbar(scatter, label='Cluster')
+plt.show()
 ###########################################
 ##### Insights de KMeans
 """
