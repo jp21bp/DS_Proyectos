@@ -155,14 +155,14 @@ df_2_mod = df_le.groupby(by=[
         'DEPARTAMENTO', 
         'SITIO_TURISTICO'
     ], as_index=False)\
-    ['NUMERO_VISITANTES'].sum()
+    ['NUMERO_VISITANTES'].mean()
 ### Originales
 df_2_org = df_2.groupby(by=[
     'MES',
     'DEPARTAMENTO',
     'SITIO_TURISTICO'
     ], as_index=False)\
-    ['NUMERO_VISITANTES'].sum()
+    ['NUMERO_VISITANTES'].mean()
 
 #### 4. Verificar correlacion final
 df_2_mod.corr().round(4)

@@ -36,10 +36,10 @@ if os.getcwd().split('\\')[-1] != '3_SegmentacionClientes':
 ##### Leyendo datos
 df_2_original = pd.read_csv('Datos/FeatEng/visitantes_sitios_turisticos_original.csv')
 df_2_encoded = pd.read_csv('Datos/FeatEng/visitantes_sitios_turisticos_encoded.csv')
-
+df_2_encoded.info()
 ##### Etiquetando datos
 X = df_2_encoded.drop(columns='NUMERO_VISITANTES')
-y = df_2_encoded['NUMERO_VISITANTES'].values
+y = df_2_encoded['NUMERO_VISITANTES']
 
 
 ##### Separando datos
@@ -47,11 +47,16 @@ X_train, X_test, y_train, y_test = \
     train_test_split(X,y,test_size=0.2)
 
 
+#### Buscando los indices de datos originales
+idxs = y_test.index.to_list()
+df_2_org_test = df_2_original.iloc[idxs]
+
+
 ##### Haciendo reshapes
 # X_train = X_train.values.reshape(-1,1)
 # X_test = X_test.values.reshape(-1,1)
-y_train = y_train.reshape(-1,1)
-y_test = y_test.reshape(-1,1)
+y_train = y_train.values.reshape(-1,1)
+y_test = y_test.values.reshape(-1,1)
 
 
 ##### Normalizacion
@@ -173,4 +178,22 @@ df_resultados
 joblib.dump(linear_reg, './App/model.pkl')
 
 
+##### Creando visual
+#### Cargando modelo
+lin_reg = joblib.load('./App/model.pkl')
+#### Convirtiendo meses en numero
+### Dict de meses
+meses_dict = {'ENERO':1,'FEBRERO':2, 'MARZO':3, 'ABRIL':4, \
+              'MAYO':5, 'JUNIO':6, 'JULIO': 7, 'AGOSTO': 8,\
+              'SEPTIEMBRE':9, 'OCTUBRE': 10, 'NOVIEMBRE': 11,\
+              'DICIEMBRE':12}
+### Cambio
+df_2_org_test['ID_MES'] = df_2_org_test['MES'].apply(
+    lambda fila: meses_dict.get(fila)
+)
+### Organizando df basado en 'ID_MES'
+df_2_org_test = df_2_org_test.sort_values(
+    by='ID_MES', ascending=True
+)
 
+df_2_org_test
