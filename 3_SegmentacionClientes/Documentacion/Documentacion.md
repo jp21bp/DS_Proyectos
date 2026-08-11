@@ -33,25 +33,35 @@
 
 ## Contexto del Proyecto
 
-*** diff entre visitantes y touristas - pero ambos internacionales
-asasfsaf
+PeruTur es una compania pequena que provee servicios turisticos a visitantes internacionales ingresando al Peru. Actualmente operan en la ciudad de Lima y quieren expandir hacia todo el pais pero no saben la mejor estrategia para promocionar sus servicios al nivel nacional. Este proyecto utiliza datos publicos Peruanos que contienen informacion sobre los turistas internacionales y sitios turisiticos en su entorno durantes los anios de **2019 - 2025**.
 
-asfsafaf
+El analisis y los modelos demuestran que los turistas se pueden agrupar dependiendo en la **Oficina Control Migratio(OCM)** de su entrada, con las cuales se puede generar targeted marketing para optimizar la atracciones promocionales. Adicionalmente se revela que las visitas turisticas tienen una tendencia mensual a traves todo el anio, turistas **minimos en Febrero** y **maximos en Julio y Agosto**. Finalmente, existen una variedad de sitios turistico sin costo al ingresar, creando una oportunidad para minimizar los costos de sus viajes turisticos. 
+
+Se destacan los enfoques en targeted marketing, presupuesto dinamico, y los sitios gratis al crear una estrategia para ayudar a PeruTur expander a un nivel nacional. 
+
 
 ### Perspicacias, Recomendaciones y sus Enfoques
-asfafaf
+**Concentracion de Visitantes y sus Paises de Origen**: 95% de los visitantes internacionales provienen de **25 paises**, con los top 6 paises culminando en 70.6%. Adicionalmente, 5 de estos 6 paises son Sur Americanos. Esto crea una oportunidad para limitar los paises para enfocarse y hacer targeted marketing hacia cada uno de estos paises. 
 
-assafaf
+
+**Oficinas de Control Migratorio (OCMs) y los Paises Vecinos**: 4 de los 81 OCMs nacionales registran el **94.67%** de todos los ingresos internacionales hacia Peru. Adicionalmente, la mayoria de los ingrensantes en cada uno de estos 4 OCMs provienen del pais vecino mas cercano (con la excepcion del Aeropuerto internacional en Lima). Al desarrollar promociones alrededor estos OCMs, se recomienda enfocar en atraer turistas de los paises vecinos mas cercanos. 
+
+
+**Disponibilidad de Sitios Turisticos sin Ingresos**: Machu Picchu, siendo una de las maravillas del mundo, es el sitio turistico mas popular en Peru, implicando que la mayoria de los clientes de PeruTur van a tener deseos de viajar ahi. El analis demostro que existen 16 sitios turisticos **gratis** dentro un radio de 25 kilometros de Machu Picchu. Este hecho crea una oportunidad de crear promociones que incluyan esos sitios sin incurrir costos adicionales (aparte de la gasolina). 
+
+
+<br><br>
+El proceso de web scrapping y limpieza de datos se encuentra AQUI -link
+
+Los analisis de los datos coleccionados se encuentran AQUI -link
+
+La creacion y evaluacion de los modelos se encuentran AQUI - link
 
 ## Estructura de los Datos y su Verificaciones
-assafasf
+3 conjuntos de datos diferentes se utilizaron para desarrollar los analises necesarios. 
 
-asfsagaga
 
 ## Resumen Ejecutivo
-assaas
-
-afsagsag
 
 ### Resumen de Descubrimientos
 asafasf
@@ -83,6 +93,7 @@ Patrones Destacados:
 ![Visitantes Por Mes](VisitantesPorMes.png)
 
 <br><br><br>
+
 ### Control Migratorio entre los top 3 Paises
 Considerando que Chile, EE.UU, y Ecuador ocupan mas de la mitad del total de visitantes, es importante considerara la Oficina de Control Migratorio (OCM) que utilizan para ingresar al Peru.
 
@@ -102,6 +113,7 @@ Patrones Destacados:
 ![OCM Por Pais](OCMPorPais.png)
 
 <br><br><br>
+
 ### Los Meses con 21.75% de Turistas Anuales
 Existen diferentes factores que afectan la cantidad de turistas en un mes, como el clima, eventos historicos, cambios polticos, etc. Algunos de estos factores tienen una temporada anual, impicando que la cantidad de turistas tambien tiene tendencias anuales. 
 
@@ -119,6 +131,7 @@ Patrones destacados:
 
 
 <br><br><br>
+
 ### 16 sitios gratis dentro 25 kms de Machu Picchu
 Se esperaba que Machu Picchu, siendo una de las maravillas del mundo, es el sitio turistico mas popular. Tambien se encuentran una variedad de sitios turisticos cercanos con cero costo de ingreso, proveyendo una oportunidad que maximiza ganacias a una agencia turistica. 
 
@@ -140,6 +153,7 @@ Al aplicar el modelo con los datos disponibles, se calcula que hay una pequena d
 
 
 <br><br><br>
+
 ### Los 6 tipos de visitantes internacionales
 KMeans es un algoritmo que agrupa puntos de datos en clusters, depediendo en su cercania entre uno al otro. Este proceso revelo los siguientes clusteres:
 
@@ -159,7 +173,7 @@ En practica, se puede desarrollar un targeted marketing a cada uno de los cluste
 
 
 ## Recomendaciones
-Considerando las perspicacias y resultados de los modelos, se recomienda al **equipo de Marketing** de compania X los siguiente puntos:
+Considerando las perspicacias y resultados de los modelos, se recomienda al **equipo de Marketing** de PeruTur los siguiente puntos:
 
 ### Targeted Marketing basado en Pais y OCM de Entrada
 Los top 10 paises con visitantes internacionales ocupan 82.5% de **todos** los visitantes internacionales, con Chile obteniendo casi 1/3 de toda esa poblacion y 6 de los 10 paises siendo de Suramerica. Adicionalmente, se descubrio que a mayoria de ingresantes en cada OCM son del **vecino pais mas cercano**, creando un enlace entre punto de entrada y pais de origin. Este hecho fue fortalecido por los clusteres creados por el algoritmo KMeans, agrupando a todos los visitantes por el OCM de entrada. 
@@ -172,12 +186,14 @@ Por ende, se recomienda que el equipo de Marketing se enfoque en los siguiente t
 * Todos los otros OCMs: inversion minima y general. 
 
 <br><br><br>
+
 ### Gestionar un Presupuesto que cambie Fluidamente por cada Mes
 Los sitios turisticos tienen sus temporadas altas, en Julio y Agosto, y bajas, en Febrero. Para optimizar el uso de un presupuesto anual, se recomienda crear un **presupuesto dinamico** que asigne un valor alto durante Julio y Agosto mientras Febrero recibe un valor bajo. 
 
 Esta dinamica tambien afectaria a las campanas que se desarollan, pero las tendencias de los paises origines es consistente en todos los meses. Considerando que la mayoria de visitantes internacionales tiene origines en Chile en todos los meses, seria mejor enfocarse en marketing hacia los Chilenos durante temporada baja. De lo contrario, durante temporada alta, y con mas mas presupuesto, se puede expander las campanas hacia Estado Unidenses, Ecuatorianos, y otros, dependiendo en la suma de presupuesto. 
 
 <br><br><br>
+
 ### Incorporar Sitios sin Ingresos en Paquetes Promocionales para Machu Picchu
 Machu Picchu, siendo una de las maravillas del mundo, es el sitio turistico mas popular en Peru. Lo que tambien se decubrio es que existen una variedad de otros sitios en su alrededor sin costo para ingresar. Dentro de 25 kilometros de Machu Picchu se encuentran 16 de estos sitios **gratis**. Con la inversion de gasolina, para llevar a turistas dentro 25 kilometros, este hecho se puede incorporar con paquetes promocionales para generar mas atraccion. 
 
@@ -190,6 +206,7 @@ Machu Picchu, siendo una de las maravillas del mundo, es el sitio turistico mas 
 Enfoque: Para medir la eficacia de las campanas de targeted marketing, se medira esta metrica en cada OCM que obtengo una promocion de marketing.  
 
 <br><br><br>
+
 ### 2. Presupuesto Dinamico
 Presupuesto Anual x (Turistas Mensual / Turistas Anual)
 
@@ -197,6 +214,7 @@ Objetivo: Asignar un presupuesto proporcional al porcentaje de turistas que se m
 
 
 <br><br><br>
+
 ### 3. Ratio de Sitios
 Sitios gratis : Sitios no-gratis
 
