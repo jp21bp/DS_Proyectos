@@ -43,7 +43,8 @@ fpath_2 = 'Datos/Limpios/visitantes_sitios_turisticos.csv'
 fpath_3 = 'Datos/Limpios/inventario_recursos_turisticos.csv'
 
 #### Cambiando directorio (si es necesario)
-os.chdir('3_SegmentacionClientes')
+if os.getcwd().split('\\')[-1] != '3_SegmentacionClientes':
+    os.chdir('3_SegmentacionClientes')
 
 #### Cargando datos
 df_1 = pd.read_csv(fpath_1)
@@ -140,9 +141,9 @@ df_le = df_2.drop(columns='MES').copy()
 vars_categoricales = ['DEPARTAMENTO', 'SITIO_TURISTICO']
 for col in vars_categoricales:
     le = LabelEncoder()
-    df_le[col] = le.fit_transform(df_le[col])
+    df_le[f'{col}_TRANS'] = le.fit_transform(df_le[col])
 ### Correlacion
-df_le.corr().round(4)
+df_le.drop(columns=['DEPARTAMENTO', 'SITIO_TURISTICO']).corr().round(4)
     # Ninguno de los |valores| > 0.177 => no correlacion
 
 #### 2. Escojer columnas
@@ -152,17 +153,19 @@ df_le.corr().round(4)
 ### Modificados
 df_2_mod = df_le.groupby(by=[
         'ID_MES', 
-        'DEPARTAMENTO', 
-        'SITIO_TURISTICO'
+        'DEPARTAMENTO_TRANS', 
+        'SITIO_TURISTICO_TRANS'
     ], as_index=False)\
     ['NUMERO_VISITANTES'].mean()
 ### Originales
-df_2_org = df_2.groupby(by=[
-    'MES',
+df_2_org = df_le.groupby(by=[
+    'ID_MES',
     'DEPARTAMENTO',
     'SITIO_TURISTICO'
     ], as_index=False)\
     ['NUMERO_VISITANTES'].mean()
+df_2_mod['NUMERO_VISITANTES'].values.tolist()[:10]
+df_2_org['NUMERO_VISITANTES'].values.tolist()[:10]
 
 #### 4. Verificar correlacion final
 df_2_mod.corr().round(4)
@@ -171,7 +174,7 @@ df_2_mod.corr().round(4)
 
 #### 5. Hacer one hot encoding
 ### OHE
-df_2_encoded = pd.get_dummies(df_2_mod, columns=['ID_MES', 'DEPARTAMENTO', 'SITIO_TURISTICO'], drop_first=False)
+df_2_encoded = pd.get_dummies(df_2_mod, columns=['ID_MES', 'DEPARTAMENTO_TRANS', 'SITIO_TURISTICO_TRANS'], drop_first=False)
 ## Verificando correlacion de OHEs
 cells = ohe_corr(df_2_encoded)
 

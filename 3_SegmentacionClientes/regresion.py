@@ -9,6 +9,7 @@ from pandas.api.types import is_numeric_dtype
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 #### Regresion
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -40,17 +41,19 @@ df_2_encoded.info()
 ##### Etiquetando datos
 X = df_2_encoded.drop(columns='NUMERO_VISITANTES')
 y = df_2_encoded['NUMERO_VISITANTES']
+##### Verificando datos importados
+df_2_encoded['NUMERO_VISITANTES'].values.tolist()[:10]
+df_2_original['NUMERO_VISITANTES'].values.tolist()[:10]
 
 
 ##### Separando datos
 X_train, X_test, y_train, y_test = \
-    train_test_split(X,y,test_size=0.2)
+    train_test_split(X,y,test_size=0.2, random_state=42)
 
 
 #### Buscando los indices de datos originales
 idxs = y_test.index.to_list()
 df_2_org_test = df_2_original.iloc[idxs]
-
 
 ##### Haciendo reshapes
 # X_train = X_train.values.reshape(-1,1)
@@ -65,7 +68,7 @@ y_test = y_test.values.reshape(-1,1)
 scaler = StandardScaler()
 y_train = scaler.fit_transform(y_train)
 joblib.dump(scaler, './App/scaler.pkl')
-y_test = scaler.fit_transform(y_test)
+y_test = scaler.transform(y_test)
 
 
 ##### Haciendo el accuracy score
@@ -172,28 +175,150 @@ df_resultados = pd.concat([
     df_rf_results], axis=1)
 df_resultados
 
-
-
 ##### Guardando el mejor modelo
-joblib.dump(linear_reg, './App/model.pkl')
+joblib.dump(gs.best_estimator_, './App/model.pkl')
+
+#################################################################
+
+# ##### Creando visual
+'''
+Este bloque no me srve pq y_test saco sitios aleatoriamentes
+Pero para hacer un visual necesito un sitio con todos los meses
+'''
+#     # Se va hacer visualizacion de los top X sitios
+#     # La prediccion sera los valores verdaderos vs las predicciones
+# #### Haciendo predicciones con el modelo
+# ### Cargando el modelo y scaler
+# lin_reg = joblib.load('./App/model.pkl')
+# scaler = joblib.load('./App/scaler.pkl')
+# ### Invocando modelo
+# y_pred = lin_reg.predict(X_test)
+# y_pred.shape
+# ### Agregado preds a los datos originales del test df_2_org_test
+# df_2_org_test['PREDS'] = scaler.inverse_transform(y_pred.reshape(-1,1))
+
+# #### Buscando los top X
+# top_X = 5
+# top_X_sitios = df_2_org_test\
+#     .groupby(by='SITIO_TURISTICO', as_index=False)\
+#     ['NUMERO_VISITANTES'].agg(['mean'])\
+#     .sort_values(by='mean', ascending=False)\
+#     ['SITIO_TURISTICO'][:top_X].values.tolist()
+# top_X_sitios
+# #### Creando visual
+# ### Configuraciones inciales
+# ANCH = 8
+# ALT = 5
+# fig = plt.figure(figsize=(ANCH,ALT))
+# colores = ["yellow", "purple", "cyan", "grey", "magenta", \
+#            "red", "black", "green", "orange", "blue"]
+# meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN',\
+#         'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
+# ### Primer plot - valores verdaderos
+# for i in range(len(top_X_sitios)):
+#     plt.plot(
+#         df_2_org_test[\
+#             df_2_org_test['SITIO_TURISTICO'] == top_X_sitios[i]\
+#         ]['ID_MES'],
+#         df_2_org_test[\
+#             df_2_org_test['SITIO_TURISTICO'] == top_X_sitios[i]\
+#         ]['NUMERO_VISITANTES'],
+#         label=top_X_sitios[i],
+#         color='orange',
+#         marker='o',
+#         markerfacecolor = colores[i],
+#         markeredgecolor='black'
+#     )
+# plt.show()
+
+# top_X_sitios
+
+#################################################################
+###### Creando visuales
+    # Voy hacer predicciones de los top 5 sitios turisticos
+
+##### Seleccionando datos adecuados
+#### Seleccionando top 5 sitios
+top_X = 5
+top_X_sitios = df_2_original.groupby(by='SITIO_TURISTICO', as_index=False)\
+    ['NUMERO_VISITANTES'].agg('mean')\
+    .sort_values(by='NUMERO_VISITANTES', ascending=False)\
+    ['SITIO_TURISTICO'][:top_X].values.tolist()
+
+#### Seleccionando los indices
+idxs = df_2_original[df_2_original['SITIO_TURISTICO'].isin(top_X_sitios)].index
+df_org_topX = df_2_original.iloc[idxs]
+df_enc_topX = df_2_encoded.iloc[idxs].drop(columns='NUMERO_VISITANTES')
 
 
-##### Creando visual
-#### Cargando modelo
-lin_reg = joblib.load('./App/model.pkl')
-#### Convirtiendo meses en numero
-### Dict de meses
-meses_dict = {'ENERO':1,'FEBRERO':2, 'MARZO':3, 'ABRIL':4, \
-              'MAYO':5, 'JUNIO':6, 'JULIO': 7, 'AGOSTO': 8,\
-              'SEPTIEMBRE':9, 'OCTUBRE': 10, 'NOVIEMBRE': 11,\
-              'DICIEMBRE':12}
-### Cambio
-df_2_org_test['ID_MES'] = df_2_org_test['MES'].apply(
-    lambda fila: meses_dict.get(fila)
-)
-### Organizando df basado en 'ID_MES'
-df_2_org_test = df_2_org_test.sort_values(
-    by='ID_MES', ascending=True
-)
+##### Modelo y prediccion
+#### Cargando el modelo y scaler
+rf = joblib.load('./App/model.pkl')
+scaler = joblib.load('./App/scaler.pkl')
+#### Invocando modelo
+y_pred = rf.predict(df_enc_topX)
+#### Denormalizando
+y_pred_denorm = scaler.inverse_transform(y_pred.reshape(-1,1))
+#### Aregando preds a datos originales
+df_org_topX['NUM_PRED'] = y_pred_denorm
 
-df_2_org_test
+##### Promedio de diferencia
+df_org_topX['DIFF'] = abs(df_org_topX['NUMERO_VISITANTES'] - df_org_topX['NUM_PRED'])
+diff_promedio = int(df_org_topX['DIFF'].mean().item())
+
+##### Visuales
+#### Configuracion inicial
+ANCH = 8
+ALT = 5
+exp = 10000
+fig, ax  = plt.subplots(figsize=(ANCH,ALT))
+meses = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN',\
+         'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC']
+colores = ["yellow", "purple", "cyan", "grey", "magenta", \
+           "red", "black", "green", "orange", "blue"]
+#### Graficando
+for i in range(len(top_X_sitios)):
+    ax.plot(
+        range(len(meses)),
+        df_org_topX[df_org_topX['SITIO_TURISTICO']==top_X_sitios[i]]['NUMERO_VISITANTES']/exp,
+        label = top_X_sitios[i],
+        marker='o',
+        color = 'orange',
+        markerfacecolor = colores[i],
+        markeredgecolor='black'
+    )
+    ax.plot(
+        range(len(meses)),
+        df_org_topX[df_org_topX['SITIO_TURISTICO']==top_X_sitios[i]]['NUM_PRED']/exp,
+        label = top_X_sitios[i],
+        marker='o',
+        color = 'blue',
+        markerfacecolor = colores[i],
+        markeredgecolor='black'
+    )
+ax.set_xticks(range(len(meses)))
+ax.set_xticklabels(meses)
+ax.set_xlabel('MES', fontweight='bold')
+ax.set_ylabel(f'VISITANTES (x{exp})', fontweight='bold')
+ax.set_title(f'{diff_promedio} Turistas de Diferencia Promedio entre \nla Preddicion y Valores Actuales',
+             fontweight='bold')
+ax.set_ylim(0, max(df_org_topX['NUMERO_VISITANTES'])/exp + 2)
+# Crear elementos personalizados para la leyenda
+custom_lines = [
+    Line2D([0], [0], color='blue', linestyle='-', lw=2),   
+    Line2D([0], [0], color='orange', linestyle='-', lw=2),
+]
+for i in range(len(top_X_sitios)):
+    custom_lines.append(
+        Line2D([0], [0], color=colores[i], marker='o', lw=0, markersize=4)  # Puntos rojos
+    )
+
+# Agregar leyenda personalizada
+ax.legend(
+    custom_lines, 
+    ['PREDICCIONES', 'VALORES ACTUALES'] + top_X_sitios, 
+    loc='upper left',
+    bbox_to_anchor =(-0.1, 1.035), 
+    fontsize=7.5, 
+    )
+plt.show()
