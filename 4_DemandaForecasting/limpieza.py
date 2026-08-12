@@ -19,7 +19,8 @@ for file in os.listdir(os.getcwd()):
     if not file.endswith('.csv'): continue
     df = pd.read_csv(file)
     for col in df.columns:
-        if is_numeric_dtype(df[col]): continue
+        if is_numeric_dtype(df[col]): 
+            continue
         df[col] = df[col].apply(
             lambda fila: \
             ''.join(
@@ -27,4 +28,11 @@ for file in os.listdir(os.getcwd()):
                 if unicodedata.category(c) != 'Mn'
             )
         )
-    df.to_csv(f'../OriginalesEncodedUTF8/{file}')
+    if file=='productos.csv':   # Floats con ',' -> '.'
+        df['Precio_Unitario'] = df['Precio_Unitario'].apply(
+            lambda fila: float(fila.replace(',', '.'))
+        )
+    df = df.drop_duplicates(subset=df.columns[0])
+        # La primera columna es primary key
+            # Segurando que no haiga primary keys duplicados
+    df.to_csv(f'../OriginalesEncodedUTF8/{file}', index = False)

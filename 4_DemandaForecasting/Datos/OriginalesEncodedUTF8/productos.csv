@@ -1,39 +1,39 @@
-,ID_Producto,Nombre_producto,Categoría,Precio_Unitario,Stock
-0,1,Leche,Lacteos,"12,24",3327
-1,2,Yogur,Lacteos,"5,21",3358
-2,3,Queso cremoso,Lacteos,"17,23",3167
-3,4,Queso rallado,Lacteos,"19,23",2099
-4,5,Manteca,Lacteos,"5,65",4929
-5,6,Asado,Carniceria,"28,56",5137
-6,7,Chorizo,Carniceria,"11,25",4068
-7,8,Milanesa,Carniceria,"16,21",3140
-8,9,Pollo,Carniceria,"18,56",4051
-9,10,Costilla de cerdo,Carniceria,"14,25",2429
-10,11,Salchicha,Carniceria,"11,23",1726
-11,12,Pan frances,Panaderia,"8,12",1619
-12,13,Pan integral,Panaderia,"12,56",2228
-13,14,Facturas,Panaderia,"12,36",3125
-14,15,Medialunas,Panaderia,"3,51",4043
-15,16,Tortas,Panaderia,"15,23",3189
-16,17,Manzanas,Frutas y Verduras,"6,54",3383
-17,18,Bananas,Frutas y Verduras,"7,25",4720
-18,19,Tomates,Frutas y Verduras,"6,54",4041
-19,20,Lechugas,Frutas y Verduras,"4,25",1541
-20,21,Zanahorias,Frutas y Verduras,"3,25",2800
-21,22,Cebolla,Frutas y Verduras,"4,21",3545
-22,23,Papas fritas,Congelados,"8,23",3731
-23,24,Empanadas,Congelados,"13,54",2908
-24,25,Pizza congelada,Congelados,"15,45",1640
-25,26,Hamburgesas congeladas,Congelados,"9,54",1688
-26,27,Agua mineral,Bebidas,"6,21",4978
-27,28,Jugos de frutas,Bebidas,"9,45",3637
-28,29,Cerveza,Bebidas,"11,54",2455
-29,30,Vino tinto,Bebidas,"13,54",1363
-30,31,Galletitas de agua,Galletitas y Snacks,"5,24",2771
-31,32,Galletitas de chocolate,Galletitas y Snacks,"6,25",5057
-32,33,Papas chips,Galletitas y Snacks,"8,54",2837
-33,34,Manies,Galletitas y Snacks,"5,45",4769
-34,35,Arroz,Conservas,"4,25",1437
-35,36,Lentejas,Conservas,"3,25",4578
-36,37,Garbanzos,Conservas,"3,65",1506
-37,38,Atun enlatado,Conservas,"6,21",2182
+ID_Producto,Nombre_producto,Categoría,Precio_Unitario,Stock
+1,Leche,Lacteos,12.24,3327
+2,Yogur,Lacteos,5.21,3358
+3,Queso cremoso,Lacteos,17.23,3167
+4,Queso rallado,Lacteos,19.23,2099
+5,Manteca,Lacteos,5.65,4929
+6,Asado,Carniceria,28.56,5137
+7,Chorizo,Carniceria,11.25,4068
+8,Milanesa,Carniceria,16.21,3140
+9,Pollo,Carniceria,18.56,4051
+10,Costilla de cerdo,Carniceria,14.25,2429
+11,Salchicha,Carniceria,11.23,1726
+12,Pan frances,Panaderia,8.12,1619
+13,Pan integral,Panaderia,12.56,2228
+14,Facturas,Panaderia,12.36,3125
+15,Medialunas,Panaderia,3.51,4043
+16,Tortas,Panaderia,15.23,3189
+17,Manzanas,Frutas y Verduras,6.54,3383
+18,Bananas,Frutas y Verduras,7.25,4720
+19,Tomates,Frutas y Verduras,6.54,4041
+20,Lechugas,Frutas y Verduras,4.25,1541
+21,Zanahorias,Frutas y Verduras,3.25,2800
+22,Cebolla,Frutas y Verduras,4.21,3545
+23,Papas fritas,Congelados,8.23,3731
+24,Empanadas,Congelados,13.54,2908
+25,Pizza congelada,Congelados,15.45,1640
+26,Hamburgesas congeladas,Congelados,9.54,1688
+27,Agua mineral,Bebidas,6.21,4978
+28,Jugos de frutas,Bebidas,9.45,3637
+29,Cerveza,Bebidas,11.54,2455
+30,Vino tinto,Bebidas,13.54,1363
+31,Galletitas de agua,Galletitas y Snacks,5.24,2771
+32,Galletitas de chocolate,Galletitas y Snacks,6.25,5057
+33,Papas chips,Galletitas y Snacks,8.54,2837
+34,Manies,Galletitas y Snacks,5.45,4769
+35,Arroz,Conservas,4.25,1437
+36,Lentejas,Conservas,3.25,4578
+37,Garbanzos,Conservas,3.65,1506
+38,Atun enlatado,Conservas,6.21,2182

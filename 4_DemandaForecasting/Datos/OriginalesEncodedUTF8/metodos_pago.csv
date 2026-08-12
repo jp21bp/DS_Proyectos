@@ -1,6 +1,6 @@
-,ID_Metodo,Método,Descripción
-0,1,Efectivo,"Pago en dinero en efectivo, sin intermediarios financieros."
-1,2,Tarjeta de Credito,"Pago con tarjetas emitidas por bancos y financieras, con la opcion de pago a credito."
-2,3,Tarjeta de Debito,Pago con tarjetas que debitan directamente de la cuenta bancaria del titular.
-3,4,Mercado Pago,"Plataforma de pagos online que permite realizar transacciones con tarjetas, cuenta bancaria o efectivo."
-4,5,Transferencia,Pago realizado a traves de una transferencia de fondos entre cuentas bancarias.
+ID_Metodo,Método,Descripción
+1,Efectivo,"Pago en dinero en efectivo, sin intermediarios financieros."
+2,Tarjeta de Credito,"Pago con tarjetas emitidas por bancos y financieras, con la opcion de pago a credito."
+3,Tarjeta de Debito,Pago con tarjetas que debitan directamente de la cuenta bancaria del titular.
+4,Mercado Pago,"Plataforma de pagos online que permite realizar transacciones con tarjetas, cuenta bancaria o efectivo."
+5,Transferencia,Pago realizado a traves de una transferencia de fondos entre cuentas bancarias.
