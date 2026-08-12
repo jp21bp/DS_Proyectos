@@ -1,0 +1,62 @@
+CREATE DATABASE ds4;
+
+
+
+/* Creando tablas*/
+CREATE TABLE categorias(
+id_categoria SERIAL PRIMARY KEY,
+categoria TEXT,
+descripcion TEXT);
+
+CREATE TABLE clientes(
+id_cliente SERIAL PRIMARY KEY,
+nombre TEXT,
+apellido TEXT,
+email TEXT,
+fecha TEXT,
+region TEXT);
+
+CREATE TABLE metodos(
+id_metodo SERIAL PRIMARY KEY,
+metodo TEXT,
+descripcion TEXT);
+
+CREATE TABLE productos(
+id_producto SERIAL PRIMARY KEY,
+nombre TEXT,
+categoria TEXT,
+precio NUMERIC(8,2),
+stock SMALLINT);
+
+CREATE TABLE ventas(
+id_venta SERIAL PRIMARY KEY,
+fecha TEXT,
+cliente_id INT,
+FOREIGN KEY (cliente_id) REFERENCES clientes(id_cliente),
+producto_id INT,
+FOREIGN KEY (producto_id) REFERENCES productos(id_producto),
+cantidad SMALLINT,
+metodo_id INT,
+FOREIGN KEY (metodo_id) REFERENCES metodos(id_metodo),
+estado TEXT);
+
+
+
+
+/* Copiando CSV a PostgreSQL*/
+\copy categorias(id_categoria, categoria, descripcion) FROM 'C:\Users\JP\Documents\DSProyectos\4_DemandaForecasting\Datos\OriginalesEncodedUTF8\categorias.csv' DELIMITER ',' CSV HEADER;
+
+\copy clientes(id_cliente, nombre, apellido, email, fecha, region) FROM 'C:\Users\JP\Documents\DSProyectos\4_DemandaForecasting\Datos\OriginalesEncodedUTF8\clientes.csv' DELIMITER',' CSV HEADER
+
+\copy metodos(id_metodo, metodo, descripcion) FROM 'C:\Users\JP\Documents\DSProyectos\4_DemandaForecasting\Datos\OriginalesEncodedUTF8\metodos_pago.csv' DELIMITER ',' CSV HEADER;
+
+\copy productos(id_producto, nombre, categoria, precio, stock) FROM 'C:\Users\JP\Documents\DSProyectos\4_DemandaForecasting\Datos\OriginalesEncodedUTF8\productos.csv' DELIMITER ',' CSV HEADER;
+
+\copy ventas(id_venta, fecha, cliente_id, producto_id, cantidad, metodo_id, estado) FROM 'C:\Users\JP\Documents\DSProyectos\4_DemandaForecasting\Datos\OriginalesEncodedUTF8\ventas.csv' DELIMITER ',' CSV HEADER;
+
+
+
+
+
+
+
