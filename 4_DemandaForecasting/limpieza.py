@@ -28,9 +28,15 @@ for file in os.listdir(os.getcwd()):
                 if unicodedata.category(c) != 'Mn'
             )
         )
-    if file=='productos.csv':   # Floats con ',' -> '.'
+    if file=='productos.csv':   
+        # Haciendo las siguientes transformaciones:
+            # Float: '.' -> ','
+            # Transformando precio a guaranis = 1000 * valor argentino
+                # Redondeado al 100 mas cercano
+            # Valor de micro empresa = 0.8* valor de super mercado
         df['Precio_Unitario'] = df['Precio_Unitario'].apply(
-            lambda fila: float(fila.replace(',', '.'))
+            lambda fila:\
+                int(round(float(fila.replace(',', '.')) * 0.8,1) * 1000)
         )
     df = df.drop_duplicates(subset=df.columns[0])
         # La primera columna es primary key

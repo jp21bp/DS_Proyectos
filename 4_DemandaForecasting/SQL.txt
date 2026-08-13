@@ -25,7 +25,7 @@ CREATE TABLE productos(
 id_producto SERIAL PRIMARY KEY,
 nombre TEXT,
 categoria TEXT,
-precio NUMERIC(8,2),
+precio SMALLINT,
 stock SMALLINT);
 
 CREATE TABLE ventas(
@@ -57,6 +57,26 @@ estado TEXT);
 
 
 
+/* Creando tabla necesaria*/
+CREATE TABLE ventas_productos AS
+SELECT
+ventas.id_venta,
+ventas.fecha,
+ventas.cliente_id,
+ventas.cantidad,
+productos.stock,
+productos.nombre,
+productos.categoria,
+productos.precio
+FROM ventas
+INNER JOIN productos
+ON ventas.producto_id = productos.id_producto
+ORDER BY ventas.id_venta;
+
+
+
+/* Copiando datos a CSV*/
+\copy ventas_productos TO 'C:\Users\JP\Documents\DSProyectos\4_DemandaForecasting\Datos\PostSQL\ventas_productos.csv' WITH (FORMAT csv, HEADER true);
 
 
 
