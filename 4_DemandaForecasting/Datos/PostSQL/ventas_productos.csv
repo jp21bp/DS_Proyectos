@@ -1,0 +1,3001 @@
+id_venta,fecha,cliente_id,cantidad,stock,nombre,categoria,precio
+1,28/08/2024,298,1,3383,Manzanas,Frutas y Verduras,5200
+2,01/06/2024,37,3,4043,Medialunas,Panaderia,2800
+3,29/02/2024,31,3,2800,Zanahorias,Frutas y Verduras,2600
+4,26/09/2024,111,5,1506,Garbanzos,Conservas,2900
+5,06/09/2024,188,4,2099,Queso rallado,Lacteos,15400
+6,30/05/2024,70,5,4978,Agua mineral,Bebidas,5000
+7,03/12/2024,43,6,3731,Papas fritas,Congelados,6600
+8,13/02/2024,214,4,2182,Atun enlatado,Conservas,5000
+9,26/12/2024,21,1,4769,Manies,Galletitas y Snacks,4400
+10,06/04/2024,232,2,1506,Garbanzos,Conservas,2900
+11,20/02/2024,237,6,1640,Pizza congelada,Congelados,12400
+12,12/11/2024,247,5,1541,Lechugas,Frutas y Verduras,3400
+13,07/07/2024,75,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+14,13/02/2024,171,4,3545,Cebolla,Frutas y Verduras,3400
+15,15/04/2024,219,4,4769,Manies,Galletitas y Snacks,4400
+16,20/11/2024,106,1,3167,Queso cremoso,Lacteos,13800
+17,14/08/2024,51,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+18,17/03/2024,179,3,2429,Costilla de cerdo,Carniceria,11400
+19,26/07/2024,47,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+20,04/11/2024,122,6,4068,Chorizo,Carniceria,9000
+21,29/06/2024,184,2,4978,Agua mineral,Bebidas,5000
+22,08/06/2024,257,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+23,25/08/2024,4,6,4769,Manies,Galletitas y Snacks,4400
+24,04/07/2024,184,4,1506,Garbanzos,Conservas,2900
+25,24/09/2024,275,3,4769,Manies,Galletitas y Snacks,4400
+26,16/09/2024,286,2,3731,Papas fritas,Congelados,6600
+27,25/06/2024,85,1,1640,Pizza congelada,Congelados,12400
+28,06/03/2024,240,3,3731,Papas fritas,Congelados,6600
+29,12/02/2024,205,2,2182,Atun enlatado,Conservas,5000
+30,25/05/2024,46,1,1363,Vino tinto,Bebidas,10800
+31,14/03/2024,267,1,3358,Yogur,Lacteos,4200
+32,29/10/2024,155,6,1506,Garbanzos,Conservas,2900
+33,27/10/2024,65,2,3731,Papas fritas,Congelados,6600
+34,15/02/2024,325,5,1437,Arroz,Conservas,3400
+35,10/03/2024,62,6,4051,Pollo,Carniceria,14800
+36,11/10/2024,77,2,4978,Agua mineral,Bebidas,5000
+37,14/05/2024,12,5,4578,Lentejas,Conservas,2600
+38,17/10/2024,271,6,1541,Lechugas,Frutas y Verduras,3400
+39,26/02/2024,183,2,1688,Hamburgesas congeladas,Congelados,7600
+40,16/03/2024,125,6,4769,Manies,Galletitas y Snacks,4400
+41,08/06/2024,38,4,1363,Vino tinto,Bebidas,10800
+42,16/03/2024,259,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+43,02/02/2024,294,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+44,19/03/2024,122,2,1363,Vino tinto,Bebidas,10800
+45,02/06/2024,11,3,1363,Vino tinto,Bebidas,10800
+46,01/09/2024,207,1,2429,Costilla de cerdo,Carniceria,11400
+47,01/08/2024,86,4,2771,Galletitas de agua,Galletitas y Snacks,4200
+48,16/07/2024,13,2,2099,Queso rallado,Lacteos,15400
+49,12/05/2024,237,3,1688,Hamburgesas congeladas,Congelados,7600
+50,25/06/2024,233,2,3731,Papas fritas,Congelados,6600
+51,23/05/2024,189,2,4720,Bananas,Frutas y Verduras,5800
+52,04/09/2024,50,6,3189,Tortas,Panaderia,12200
+53,19/02/2024,66,2,1363,Vino tinto,Bebidas,10800
+54,08/03/2024,108,1,2228,Pan integral,Panaderia,10000
+55,19/12/2024,264,4,1726,Salchicha,Carniceria,9000
+56,27/09/2024,91,6,1541,Lechugas,Frutas y Verduras,3400
+57,02/08/2024,305,1,2228,Pan integral,Panaderia,10000
+58,19/05/2024,157,6,4929,Manteca,Lacteos,4500
+59,29/09/2024,242,6,3189,Tortas,Panaderia,12200
+60,03/05/2024,53,5,1541,Lechugas,Frutas y Verduras,3400
+61,23/04/2024,319,2,5137,Asado,Carniceria,22800
+62,07/08/2024,205,2,4043,Medialunas,Panaderia,2800
+63,11/05/2024,180,1,2837,Papas chips,Galletitas y Snacks,6800
+64,04/12/2024,82,4,2908,Empanadas,Congelados,10800
+65,18/11/2024,205,5,4978,Agua mineral,Bebidas,5000
+66,01/03/2024,97,3,4978,Agua mineral,Bebidas,5000
+67,06/07/2024,120,2,4720,Bananas,Frutas y Verduras,5800
+68,06/10/2024,127,2,1541,Lechugas,Frutas y Verduras,3400
+69,18/08/2024,4,3,2182,Atun enlatado,Conservas,5000
+70,27/05/2024,138,4,2837,Papas chips,Galletitas y Snacks,6800
+71,18/09/2024,79,1,3167,Queso cremoso,Lacteos,13800
+72,02/03/2024,144,5,3731,Papas fritas,Congelados,6600
+73,25/06/2024,143,3,1688,Hamburgesas congeladas,Congelados,7600
+74,16/07/2024,125,4,4041,Tomates,Frutas y Verduras,5200
+75,24/12/2024,200,4,1437,Arroz,Conservas,3400
+76,04/11/2024,147,5,4578,Lentejas,Conservas,2600
+77,18/02/2024,320,2,4978,Agua mineral,Bebidas,5000
+78,13/08/2024,60,6,2228,Pan integral,Panaderia,10000
+79,30/06/2024,133,4,2908,Empanadas,Congelados,10800
+80,09/04/2024,313,6,1640,Pizza congelada,Congelados,12400
+81,22/07/2024,160,2,2429,Costilla de cerdo,Carniceria,11400
+82,15/04/2024,246,3,4978,Agua mineral,Bebidas,5000
+83,08/09/2024,187,6,3358,Yogur,Lacteos,4200
+84,11/10/2024,110,1,2228,Pan integral,Panaderia,10000
+85,23/02/2024,91,5,2099,Queso rallado,Lacteos,15400
+86,29/03/2024,188,2,1363,Vino tinto,Bebidas,10800
+87,25/04/2024,152,6,1688,Hamburgesas congeladas,Congelados,7600
+88,24/02/2024,176,1,1506,Garbanzos,Conservas,2900
+89,28/02/2024,6,2,2429,Costilla de cerdo,Carniceria,11400
+90,10/05/2024,161,3,3189,Tortas,Panaderia,12200
+91,29/09/2024,192,6,5137,Asado,Carniceria,22800
+92,24/07/2024,190,2,3545,Cebolla,Frutas y Verduras,3400
+93,02/11/2024,101,4,1688,Hamburgesas congeladas,Congelados,7600
+94,06/08/2024,174,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+95,03/03/2024,67,5,3125,Facturas,Panaderia,9900
+96,15/06/2024,93,3,3125,Facturas,Panaderia,9900
+97,09/07/2024,103,1,4041,Tomates,Frutas y Verduras,5200
+98,22/06/2024,177,1,1541,Lechugas,Frutas y Verduras,3400
+99,01/11/2024,11,1,3383,Manzanas,Frutas y Verduras,5200
+100,29/09/2024,134,6,1688,Hamburgesas congeladas,Congelados,7600
+101,07/11/2024,281,1,4578,Lentejas,Conservas,2600
+102,10/04/2024,282,1,1688,Hamburgesas congeladas,Congelados,7600
+103,04/05/2024,98,3,3383,Manzanas,Frutas y Verduras,5200
+104,25/07/2024,171,2,2800,Zanahorias,Frutas y Verduras,2600
+105,29/09/2024,24,1,2908,Empanadas,Congelados,10800
+106,21/12/2024,67,6,2800,Zanahorias,Frutas y Verduras,2600
+107,13/11/2024,7,5,2908,Empanadas,Congelados,10800
+108,08/04/2024,153,4,3383,Manzanas,Frutas y Verduras,5200
+109,31/10/2024,285,6,4769,Manies,Galletitas y Snacks,4400
+110,20/02/2024,31,2,1726,Salchicha,Carniceria,9000
+111,22/11/2024,103,5,2455,Cerveza,Bebidas,9200
+112,27/09/2024,3,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+113,25/03/2024,72,1,4041,Tomates,Frutas y Verduras,5200
+114,07/08/2024,46,6,3731,Papas fritas,Congelados,6600
+115,26/11/2024,19,4,2800,Zanahorias,Frutas y Verduras,2600
+116,07/02/2024,71,4,1437,Arroz,Conservas,3400
+117,10/02/2024,288,3,2429,Costilla de cerdo,Carniceria,11400
+118,20/03/2024,26,4,1640,Pizza congelada,Congelados,12400
+119,24/04/2024,55,4,2800,Zanahorias,Frutas y Verduras,2600
+120,25/11/2024,16,4,2182,Atun enlatado,Conservas,5000
+121,30/07/2024,114,4,2182,Atun enlatado,Conservas,5000
+122,04/12/2024,237,5,3125,Facturas,Panaderia,9900
+123,29/02/2024,169,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+124,14/03/2024,173,5,2228,Pan integral,Panaderia,10000
+125,30/10/2024,190,6,3167,Queso cremoso,Lacteos,13800
+126,07/08/2024,24,5,1688,Hamburgesas congeladas,Congelados,7600
+127,23/11/2024,95,3,3327,Leche,Lacteos,9800
+128,24/05/2024,214,4,3358,Yogur,Lacteos,4200
+129,16/08/2024,25,2,3125,Facturas,Panaderia,9900
+130,06/07/2024,273,4,2455,Cerveza,Bebidas,9200
+131,18/02/2024,17,5,3731,Papas fritas,Congelados,6600
+132,21/10/2024,95,1,4978,Agua mineral,Bebidas,5000
+133,23/05/2024,220,4,3545,Cebolla,Frutas y Verduras,3400
+134,25/02/2024,308,1,2429,Costilla de cerdo,Carniceria,11400
+135,21/04/2024,254,2,2182,Atun enlatado,Conservas,5000
+136,23/08/2024,258,3,1688,Hamburgesas congeladas,Congelados,7600
+137,07/10/2024,264,1,4043,Medialunas,Panaderia,2800
+138,16/12/2024,148,5,4041,Tomates,Frutas y Verduras,5200
+139,17/08/2024,302,4,3140,Milanesa,Carniceria,13000
+140,07/05/2024,220,3,2455,Cerveza,Bebidas,9200
+141,22/05/2024,115,3,4929,Manteca,Lacteos,4500
+142,25/08/2024,246,2,2800,Zanahorias,Frutas y Verduras,2600
+143,13/07/2024,184,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+144,22/12/2024,47,1,2429,Costilla de cerdo,Carniceria,11400
+145,07/12/2024,257,4,2228,Pan integral,Panaderia,10000
+146,31/07/2024,148,2,3140,Milanesa,Carniceria,13000
+147,05/09/2024,213,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+148,19/07/2024,50,6,4051,Pollo,Carniceria,14800
+149,13/08/2024,79,6,4068,Chorizo,Carniceria,9000
+150,27/09/2024,133,3,5137,Asado,Carniceria,22800
+151,01/12/2024,317,2,1541,Lechugas,Frutas y Verduras,3400
+152,10/03/2024,64,5,1726,Salchicha,Carniceria,9000
+153,05/08/2024,268,4,3167,Queso cremoso,Lacteos,13800
+154,02/09/2024,164,2,3189,Tortas,Panaderia,12200
+155,06/11/2024,125,5,3358,Yogur,Lacteos,4200
+156,23/09/2024,145,6,2099,Queso rallado,Lacteos,15400
+157,18/12/2024,179,1,4720,Bananas,Frutas y Verduras,5800
+158,04/11/2024,319,2,1688,Hamburgesas congeladas,Congelados,7600
+159,05/10/2024,217,2,1688,Hamburgesas congeladas,Congelados,7600
+160,02/04/2024,106,6,1640,Pizza congelada,Congelados,12400
+161,29/11/2024,134,5,3125,Facturas,Panaderia,9900
+162,25/12/2024,319,5,3189,Tortas,Panaderia,12200
+163,01/06/2024,165,6,1726,Salchicha,Carniceria,9000
+164,06/10/2024,233,2,4720,Bananas,Frutas y Verduras,5800
+165,18/09/2024,173,3,3140,Milanesa,Carniceria,13000
+166,18/02/2024,25,5,2228,Pan integral,Panaderia,10000
+167,08/12/2024,1,4,3637,Jugos de frutas,Bebidas,7600
+168,21/02/2024,186,1,3358,Yogur,Lacteos,4200
+169,02/05/2024,279,4,2908,Empanadas,Congelados,10800
+170,25/03/2024,269,3,1541,Lechugas,Frutas y Verduras,3400
+171,30/09/2024,50,3,4978,Agua mineral,Bebidas,5000
+172,27/03/2024,268,6,2908,Empanadas,Congelados,10800
+173,23/10/2024,168,1,4578,Lentejas,Conservas,2600
+174,05/05/2024,264,1,3358,Yogur,Lacteos,4200
+175,06/08/2024,203,2,3167,Queso cremoso,Lacteos,13800
+176,09/11/2024,68,6,2837,Papas chips,Galletitas y Snacks,6800
+177,02/06/2024,316,5,2800,Zanahorias,Frutas y Verduras,2600
+178,29/07/2024,159,1,2800,Zanahorias,Frutas y Verduras,2600
+179,29/09/2024,37,4,5137,Asado,Carniceria,22800
+180,20/05/2024,58,3,1640,Pizza congelada,Congelados,12400
+181,06/07/2024,143,6,4769,Manies,Galletitas y Snacks,4400
+182,10/05/2024,301,2,2228,Pan integral,Panaderia,10000
+183,01/03/2024,31,3,2182,Atun enlatado,Conservas,5000
+184,05/07/2024,150,6,4769,Manies,Galletitas y Snacks,4400
+185,30/05/2024,97,5,3637,Jugos de frutas,Bebidas,7600
+186,19/09/2024,204,1,1619,Pan frances,Panaderia,6500
+187,31/05/2024,118,5,3140,Milanesa,Carniceria,13000
+188,09/11/2024,323,5,4578,Lentejas,Conservas,2600
+189,29/03/2024,170,1,1363,Vino tinto,Bebidas,10800
+190,26/05/2024,21,1,3731,Papas fritas,Congelados,6600
+191,27/06/2024,186,1,1726,Salchicha,Carniceria,9000
+192,25/06/2024,97,4,4978,Agua mineral,Bebidas,5000
+193,05/08/2024,20,2,3327,Leche,Lacteos,9800
+194,15/04/2024,45,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+195,15/12/2024,71,4,2228,Pan integral,Panaderia,10000
+196,01/12/2024,104,4,4978,Agua mineral,Bebidas,5000
+197,30/05/2024,211,1,1688,Hamburgesas congeladas,Congelados,7600
+198,28/12/2024,106,5,4068,Chorizo,Carniceria,9000
+199,16/03/2024,226,4,1363,Vino tinto,Bebidas,10800
+200,26/11/2024,142,6,1437,Arroz,Conservas,3400
+201,02/07/2024,141,3,3125,Facturas,Panaderia,9900
+202,30/07/2024,170,5,5137,Asado,Carniceria,22800
+203,01/09/2024,322,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+204,16/08/2024,292,5,5137,Asado,Carniceria,22800
+205,04/09/2024,303,3,3358,Yogur,Lacteos,4200
+206,27/08/2024,96,5,1363,Vino tinto,Bebidas,10800
+207,17/02/2024,203,2,1541,Lechugas,Frutas y Verduras,3400
+208,19/03/2024,66,3,2455,Cerveza,Bebidas,9200
+209,31/03/2024,311,3,1437,Arroz,Conservas,3400
+210,07/03/2024,215,3,1437,Arroz,Conservas,3400
+211,04/08/2024,264,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+212,09/07/2024,75,2,4051,Pollo,Carniceria,14800
+213,19/12/2024,322,4,2800,Zanahorias,Frutas y Verduras,2600
+214,11/05/2024,9,2,3140,Milanesa,Carniceria,13000
+215,07/02/2024,64,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+216,23/06/2024,270,4,3140,Milanesa,Carniceria,13000
+217,29/04/2024,100,4,3383,Manzanas,Frutas y Verduras,5200
+218,15/12/2024,36,1,1437,Arroz,Conservas,3400
+219,02/07/2024,24,6,3731,Papas fritas,Congelados,6600
+220,31/07/2024,156,6,4929,Manteca,Lacteos,4500
+221,28/11/2024,31,2,2099,Queso rallado,Lacteos,15400
+222,08/12/2024,260,2,1726,Salchicha,Carniceria,9000
+223,18/02/2024,221,1,2455,Cerveza,Bebidas,9200
+224,26/09/2024,294,5,2429,Costilla de cerdo,Carniceria,11400
+225,14/03/2024,104,3,2182,Atun enlatado,Conservas,5000
+226,09/02/2024,3,4,1726,Salchicha,Carniceria,9000
+227,20/05/2024,271,6,4068,Chorizo,Carniceria,9000
+228,26/10/2024,209,4,1726,Salchicha,Carniceria,9000
+229,12/12/2024,153,5,3125,Facturas,Panaderia,9900
+230,29/12/2024,252,3,5137,Asado,Carniceria,22800
+231,23/11/2024,39,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+232,03/04/2024,144,3,2908,Empanadas,Congelados,10800
+233,28/09/2024,315,5,2429,Costilla de cerdo,Carniceria,11400
+234,31/10/2024,255,5,1506,Garbanzos,Conservas,2900
+235,25/10/2024,177,2,3167,Queso cremoso,Lacteos,13800
+236,18/02/2024,44,4,2800,Zanahorias,Frutas y Verduras,2600
+237,12/02/2024,182,4,2800,Zanahorias,Frutas y Verduras,2600
+238,04/05/2024,25,2,3358,Yogur,Lacteos,4200
+239,10/04/2024,197,6,1506,Garbanzos,Conservas,2900
+240,04/10/2024,312,4,2455,Cerveza,Bebidas,9200
+241,19/07/2024,158,5,4068,Chorizo,Carniceria,9000
+242,25/10/2024,152,3,3327,Leche,Lacteos,9800
+243,15/06/2024,54,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+244,15/06/2024,188,5,4068,Chorizo,Carniceria,9000
+245,05/04/2024,101,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+246,14/07/2024,171,3,1688,Hamburgesas congeladas,Congelados,7600
+247,22/08/2024,63,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+248,14/04/2024,132,5,3167,Queso cremoso,Lacteos,13800
+249,28/03/2024,1,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+250,08/11/2024,313,3,2908,Empanadas,Congelados,10800
+251,25/04/2024,158,1,2099,Queso rallado,Lacteos,15400
+252,07/09/2024,222,3,3731,Papas fritas,Congelados,6600
+253,18/11/2024,14,2,4043,Medialunas,Panaderia,2800
+254,28/09/2024,324,1,2455,Cerveza,Bebidas,9200
+255,24/08/2024,237,4,3545,Cebolla,Frutas y Verduras,3400
+256,24/11/2024,34,5,3140,Milanesa,Carniceria,13000
+257,29/07/2024,249,5,3637,Jugos de frutas,Bebidas,7600
+258,12/08/2024,42,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+259,21/04/2024,288,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+260,06/06/2024,17,1,3125,Facturas,Panaderia,9900
+261,03/10/2024,74,5,5137,Asado,Carniceria,22800
+262,03/02/2024,156,3,2837,Papas chips,Galletitas y Snacks,6800
+263,19/05/2024,130,1,3358,Yogur,Lacteos,4200
+264,07/12/2024,275,4,2908,Empanadas,Congelados,10800
+265,30/03/2024,257,1,3637,Jugos de frutas,Bebidas,7600
+266,18/08/2024,78,5,3358,Yogur,Lacteos,4200
+267,24/02/2024,273,1,2228,Pan integral,Panaderia,10000
+268,28/06/2024,119,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+269,06/12/2024,66,2,4043,Medialunas,Panaderia,2800
+270,03/05/2024,326,6,3140,Milanesa,Carniceria,13000
+271,28/02/2024,66,6,5137,Asado,Carniceria,22800
+272,02/02/2024,60,6,3167,Queso cremoso,Lacteos,13800
+273,25/09/2024,130,4,2099,Queso rallado,Lacteos,15400
+274,03/10/2024,105,5,3731,Papas fritas,Congelados,6600
+275,04/03/2024,27,5,1726,Salchicha,Carniceria,9000
+276,16/08/2024,103,1,3167,Queso cremoso,Lacteos,13800
+277,05/02/2024,159,6,2099,Queso rallado,Lacteos,15400
+278,08/11/2024,180,3,4041,Tomates,Frutas y Verduras,5200
+279,28/03/2024,54,4,2429,Costilla de cerdo,Carniceria,11400
+280,23/07/2024,279,1,3358,Yogur,Lacteos,4200
+281,24/05/2024,2,5,4929,Manteca,Lacteos,4500
+282,04/08/2024,189,2,3167,Queso cremoso,Lacteos,13800
+283,02/11/2024,292,5,2800,Zanahorias,Frutas y Verduras,2600
+284,03/06/2024,176,5,4578,Lentejas,Conservas,2600
+285,11/10/2024,239,2,4043,Medialunas,Panaderia,2800
+286,23/05/2024,317,4,1619,Pan frances,Panaderia,6500
+287,02/05/2024,70,6,3731,Papas fritas,Congelados,6600
+288,04/07/2024,88,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+289,03/10/2024,225,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+290,05/03/2024,123,4,2771,Galletitas de agua,Galletitas y Snacks,4200
+291,22/07/2024,79,6,1506,Garbanzos,Conservas,2900
+292,22/09/2024,221,6,1688,Hamburgesas congeladas,Congelados,7600
+293,31/03/2024,310,3,1437,Arroz,Conservas,3400
+294,15/02/2024,85,3,2908,Empanadas,Congelados,10800
+295,27/03/2024,223,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+296,26/09/2024,279,6,2429,Costilla de cerdo,Carniceria,11400
+297,17/02/2024,302,4,3167,Queso cremoso,Lacteos,13800
+298,04/03/2024,158,3,3327,Leche,Lacteos,9800
+299,07/09/2024,60,2,3637,Jugos de frutas,Bebidas,7600
+300,06/06/2024,258,3,3358,Yogur,Lacteos,4200
+301,13/10/2024,326,4,2800,Zanahorias,Frutas y Verduras,2600
+302,08/06/2024,155,2,3125,Facturas,Panaderia,9900
+303,10/05/2024,216,1,3167,Queso cremoso,Lacteos,13800
+304,18/09/2024,309,6,4929,Manteca,Lacteos,4500
+305,03/08/2024,78,6,1726,Salchicha,Carniceria,9000
+306,02/07/2024,14,2,2182,Atun enlatado,Conservas,5000
+307,16/10/2024,50,1,4978,Agua mineral,Bebidas,5000
+308,30/07/2024,153,2,2455,Cerveza,Bebidas,9200
+309,14/06/2024,148,3,2837,Papas chips,Galletitas y Snacks,6800
+310,12/10/2024,152,3,1640,Pizza congelada,Congelados,12400
+311,06/03/2024,68,6,2908,Empanadas,Congelados,10800
+312,08/06/2024,101,2,2182,Atun enlatado,Conservas,5000
+313,02/08/2024,250,1,1363,Vino tinto,Bebidas,10800
+314,27/10/2024,122,3,3140,Milanesa,Carniceria,13000
+315,12/08/2024,182,2,3125,Facturas,Panaderia,9900
+316,13/12/2024,119,5,2455,Cerveza,Bebidas,9200
+317,28/09/2024,258,6,4068,Chorizo,Carniceria,9000
+318,10/12/2024,258,5,3327,Leche,Lacteos,9800
+319,28/11/2024,199,4,1619,Pan frances,Panaderia,6500
+320,06/09/2024,93,3,2182,Atun enlatado,Conservas,5000
+321,28/03/2024,205,4,1437,Arroz,Conservas,3400
+322,09/09/2024,97,6,4051,Pollo,Carniceria,14800
+323,26/07/2024,295,3,3545,Cebolla,Frutas y Verduras,3400
+324,30/08/2024,206,3,3167,Queso cremoso,Lacteos,13800
+325,12/12/2024,323,2,3167,Queso cremoso,Lacteos,13800
+326,17/10/2024,132,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+327,04/04/2024,203,4,4978,Agua mineral,Bebidas,5000
+328,13/04/2024,167,3,3731,Papas fritas,Congelados,6600
+329,22/05/2024,234,2,2228,Pan integral,Panaderia,10000
+330,20/06/2024,63,3,2228,Pan integral,Panaderia,10000
+331,29/10/2024,157,2,1437,Arroz,Conservas,3400
+332,16/12/2024,309,3,3125,Facturas,Panaderia,9900
+333,02/08/2024,26,1,1437,Arroz,Conservas,3400
+334,16/12/2024,286,4,2908,Empanadas,Congelados,10800
+335,19/07/2024,277,2,1726,Salchicha,Carniceria,9000
+336,02/08/2024,80,6,1541,Lechugas,Frutas y Verduras,3400
+337,14/05/2024,247,1,3637,Jugos de frutas,Bebidas,7600
+338,22/02/2024,103,2,1619,Pan frances,Panaderia,6500
+339,03/04/2024,81,1,2800,Zanahorias,Frutas y Verduras,2600
+340,14/04/2024,271,2,4041,Tomates,Frutas y Verduras,5200
+341,23/11/2024,315,4,4929,Manteca,Lacteos,4500
+342,24/02/2024,109,3,4068,Chorizo,Carniceria,9000
+343,19/06/2024,14,1,2455,Cerveza,Bebidas,9200
+344,27/07/2024,151,2,4041,Tomates,Frutas y Verduras,5200
+345,13/11/2024,132,6,1688,Hamburgesas congeladas,Congelados,7600
+346,22/08/2024,92,4,4769,Manies,Galletitas y Snacks,4400
+347,09/12/2024,204,1,3327,Leche,Lacteos,9800
+348,02/09/2024,248,4,4051,Pollo,Carniceria,14800
+349,02/02/2024,203,3,3358,Yogur,Lacteos,4200
+350,12/05/2024,98,3,4769,Manies,Galletitas y Snacks,4400
+351,02/02/2024,45,4,3140,Milanesa,Carniceria,13000
+352,16/12/2024,286,6,1640,Pizza congelada,Congelados,12400
+353,30/04/2024,181,4,2429,Costilla de cerdo,Carniceria,11400
+354,11/04/2024,195,6,2455,Cerveza,Bebidas,9200
+355,16/12/2024,308,5,1640,Pizza congelada,Congelados,12400
+356,02/08/2024,278,6,3358,Yogur,Lacteos,4200
+357,07/06/2024,52,4,4051,Pollo,Carniceria,14800
+358,21/08/2024,193,6,2099,Queso rallado,Lacteos,15400
+359,12/10/2024,56,1,4720,Bananas,Frutas y Verduras,5800
+360,16/12/2024,139,1,1619,Pan frances,Panaderia,6500
+361,15/04/2024,226,6,1541,Lechugas,Frutas y Verduras,3400
+362,09/03/2024,30,2,4043,Medialunas,Panaderia,2800
+363,10/10/2024,219,2,3731,Papas fritas,Congelados,6600
+364,04/07/2024,128,1,4769,Manies,Galletitas y Snacks,4400
+365,03/03/2024,90,5,3140,Milanesa,Carniceria,13000
+366,08/11/2024,111,4,1506,Garbanzos,Conservas,2900
+367,21/07/2024,163,3,5137,Asado,Carniceria,22800
+368,24/09/2024,276,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+369,09/12/2024,96,1,2429,Costilla de cerdo,Carniceria,11400
+370,09/06/2024,194,4,2800,Zanahorias,Frutas y Verduras,2600
+371,14/04/2024,105,2,4929,Manteca,Lacteos,4500
+372,09/07/2024,15,3,3327,Leche,Lacteos,9800
+373,19/09/2024,41,3,1688,Hamburgesas congeladas,Congelados,7600
+374,11/12/2024,17,6,5137,Asado,Carniceria,22800
+375,24/06/2024,248,6,1437,Arroz,Conservas,3400
+376,25/06/2024,201,5,3140,Milanesa,Carniceria,13000
+377,19/12/2024,262,3,1619,Pan frances,Panaderia,6500
+378,25/03/2024,199,1,1640,Pizza congelada,Congelados,12400
+379,12/04/2024,67,4,3358,Yogur,Lacteos,4200
+380,21/05/2024,24,5,4929,Manteca,Lacteos,4500
+381,30/07/2024,140,4,2455,Cerveza,Bebidas,9200
+382,03/03/2024,208,1,1619,Pan frances,Panaderia,6500
+383,01/06/2024,75,3,1640,Pizza congelada,Congelados,12400
+384,19/12/2024,146,6,3167,Queso cremoso,Lacteos,13800
+385,04/09/2024,257,2,4041,Tomates,Frutas y Verduras,5200
+386,17/02/2024,250,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+387,23/12/2024,180,2,3383,Manzanas,Frutas y Verduras,5200
+388,16/08/2024,222,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+389,16/12/2024,174,4,4068,Chorizo,Carniceria,9000
+390,01/12/2024,74,4,1688,Hamburgesas congeladas,Congelados,7600
+391,14/07/2024,34,3,3189,Tortas,Panaderia,12200
+392,26/07/2024,150,5,4043,Medialunas,Panaderia,2800
+393,23/05/2024,195,4,1363,Vino tinto,Bebidas,10800
+394,12/10/2024,293,6,2908,Empanadas,Congelados,10800
+395,07/04/2024,75,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+396,20/12/2024,295,5,3327,Leche,Lacteos,9800
+397,24/05/2024,231,6,3140,Milanesa,Carniceria,13000
+398,08/08/2024,123,1,3731,Papas fritas,Congelados,6600
+399,16/04/2024,115,4,2182,Atun enlatado,Conservas,5000
+400,30/09/2024,167,2,1437,Arroz,Conservas,3400
+401,07/11/2024,27,6,4978,Agua mineral,Bebidas,5000
+402,09/09/2024,45,1,1640,Pizza congelada,Congelados,12400
+403,15/08/2024,300,6,1437,Arroz,Conservas,3400
+404,01/12/2024,72,3,2455,Cerveza,Bebidas,9200
+405,23/03/2024,122,2,3189,Tortas,Panaderia,12200
+406,28/12/2024,161,6,1437,Arroz,Conservas,3400
+407,22/02/2024,32,3,4929,Manteca,Lacteos,4500
+408,05/03/2024,7,5,1619,Pan frances,Panaderia,6500
+409,15/12/2024,34,6,4978,Agua mineral,Bebidas,5000
+410,26/07/2024,165,5,4769,Manies,Galletitas y Snacks,4400
+411,28/07/2024,142,5,3731,Papas fritas,Congelados,6600
+412,17/07/2024,170,1,4051,Pollo,Carniceria,14800
+413,15/08/2024,137,1,3167,Queso cremoso,Lacteos,13800
+414,18/03/2024,151,3,1437,Arroz,Conservas,3400
+415,17/10/2024,148,1,2800,Zanahorias,Frutas y Verduras,2600
+416,22/03/2024,110,2,2455,Cerveza,Bebidas,9200
+417,28/09/2024,40,6,3140,Milanesa,Carniceria,13000
+418,09/08/2024,252,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+419,01/05/2024,149,2,3358,Yogur,Lacteos,4200
+420,04/02/2024,259,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+421,18/04/2024,86,3,3637,Jugos de frutas,Bebidas,7600
+422,10/05/2024,81,2,1726,Salchicha,Carniceria,9000
+423,26/10/2024,34,6,4978,Agua mineral,Bebidas,5000
+424,05/12/2024,259,5,3358,Yogur,Lacteos,4200
+425,02/06/2024,138,5,4929,Manteca,Lacteos,4500
+426,13/03/2024,100,4,3383,Manzanas,Frutas y Verduras,5200
+427,11/08/2024,132,5,4769,Manies,Galletitas y Snacks,4400
+428,03/03/2024,308,4,3637,Jugos de frutas,Bebidas,7600
+429,18/12/2024,10,3,3637,Jugos de frutas,Bebidas,7600
+430,10/10/2024,26,2,1640,Pizza congelada,Congelados,12400
+431,15/04/2024,231,1,2837,Papas chips,Galletitas y Snacks,6800
+432,30/03/2024,197,5,1640,Pizza congelada,Congelados,12400
+433,31/03/2024,218,6,2455,Cerveza,Bebidas,9200
+434,18/02/2024,90,1,3731,Papas fritas,Congelados,6600
+435,17/10/2024,70,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+436,09/12/2024,190,4,1506,Garbanzos,Conservas,2900
+437,12/03/2024,211,5,4043,Medialunas,Panaderia,2800
+438,08/03/2024,307,5,2455,Cerveza,Bebidas,9200
+439,19/10/2024,207,2,4578,Lentejas,Conservas,2600
+440,25/11/2024,269,1,1363,Vino tinto,Bebidas,10800
+441,07/02/2024,21,6,4068,Chorizo,Carniceria,9000
+442,08/09/2024,48,3,4769,Manies,Galletitas y Snacks,4400
+443,18/11/2024,263,2,4051,Pollo,Carniceria,14800
+444,09/03/2024,164,6,4051,Pollo,Carniceria,14800
+445,24/06/2024,296,4,2908,Empanadas,Congelados,10800
+446,09/11/2024,234,3,1640,Pizza congelada,Congelados,12400
+447,19/02/2024,249,5,4978,Agua mineral,Bebidas,5000
+448,01/02/2024,5,3,4041,Tomates,Frutas y Verduras,5200
+449,13/05/2024,21,4,4769,Manies,Galletitas y Snacks,4400
+450,18/06/2024,235,5,2099,Queso rallado,Lacteos,15400
+451,27/09/2024,290,3,4068,Chorizo,Carniceria,9000
+452,29/02/2024,115,5,2099,Queso rallado,Lacteos,15400
+453,07/04/2024,75,2,1619,Pan frances,Panaderia,6500
+454,19/02/2024,131,5,2228,Pan integral,Panaderia,10000
+455,06/05/2024,4,4,4978,Agua mineral,Bebidas,5000
+456,24/12/2024,105,2,2099,Queso rallado,Lacteos,15400
+457,09/07/2024,154,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+458,27/10/2024,102,4,2429,Costilla de cerdo,Carniceria,11400
+459,13/02/2024,128,4,2908,Empanadas,Congelados,10800
+460,27/06/2024,166,3,4978,Agua mineral,Bebidas,5000
+461,20/05/2024,185,1,3189,Tortas,Panaderia,12200
+462,24/09/2024,100,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+463,23/09/2024,280,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+464,26/03/2024,323,4,4929,Manteca,Lacteos,4500
+465,29/11/2024,93,6,1363,Vino tinto,Bebidas,10800
+466,04/06/2024,7,4,4051,Pollo,Carniceria,14800
+467,08/11/2024,271,6,4769,Manies,Galletitas y Snacks,4400
+468,29/03/2024,45,5,3383,Manzanas,Frutas y Verduras,5200
+469,26/03/2024,134,4,3383,Manzanas,Frutas y Verduras,5200
+470,23/09/2024,62,4,1619,Pan frances,Panaderia,6500
+471,07/02/2024,108,6,1619,Pan frances,Panaderia,6500
+472,03/05/2024,123,4,2837,Papas chips,Galletitas y Snacks,6800
+473,14/07/2024,229,4,2455,Cerveza,Bebidas,9200
+474,02/07/2024,25,3,4720,Bananas,Frutas y Verduras,5800
+475,27/07/2024,314,5,4578,Lentejas,Conservas,2600
+476,05/09/2024,209,5,2182,Atun enlatado,Conservas,5000
+477,11/11/2024,102,6,5137,Asado,Carniceria,22800
+478,25/09/2024,108,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+479,22/08/2024,23,4,3637,Jugos de frutas,Bebidas,7600
+480,06/11/2024,161,2,1619,Pan frances,Panaderia,6500
+481,16/02/2024,109,3,4041,Tomates,Frutas y Verduras,5200
+482,11/12/2024,76,6,2182,Atun enlatado,Conservas,5000
+483,02/12/2024,230,6,1640,Pizza congelada,Congelados,12400
+484,06/02/2024,168,1,1437,Arroz,Conservas,3400
+485,27/05/2024,136,1,1541,Lechugas,Frutas y Verduras,3400
+486,05/08/2024,151,3,1437,Arroz,Conservas,3400
+487,05/08/2024,93,2,4578,Lentejas,Conservas,2600
+488,12/02/2024,47,2,3125,Facturas,Panaderia,9900
+489,18/07/2024,152,6,4978,Agua mineral,Bebidas,5000
+490,15/11/2024,20,6,4929,Manteca,Lacteos,4500
+491,04/04/2024,25,5,4929,Manteca,Lacteos,4500
+492,01/02/2024,114,6,2455,Cerveza,Bebidas,9200
+493,01/09/2024,273,3,3140,Milanesa,Carniceria,13000
+494,08/08/2024,143,6,3140,Milanesa,Carniceria,13000
+495,08/06/2024,153,5,1437,Arroz,Conservas,3400
+496,02/12/2024,137,1,2837,Papas chips,Galletitas y Snacks,6800
+497,05/02/2024,169,6,4929,Manteca,Lacteos,4500
+498,22/08/2024,299,6,1541,Lechugas,Frutas y Verduras,3400
+499,17/09/2024,197,1,3358,Yogur,Lacteos,4200
+500,20/07/2024,175,3,1437,Arroz,Conservas,3400
+501,26/11/2024,317,5,1437,Arroz,Conservas,3400
+502,10/08/2024,231,1,3731,Papas fritas,Congelados,6600
+503,05/02/2024,169,5,4929,Manteca,Lacteos,4500
+504,16/12/2024,179,6,4720,Bananas,Frutas y Verduras,5800
+505,15/05/2024,316,5,2182,Atun enlatado,Conservas,5000
+506,16/06/2024,287,6,4978,Agua mineral,Bebidas,5000
+507,01/07/2024,73,6,2182,Atun enlatado,Conservas,5000
+508,26/08/2024,14,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+509,07/11/2024,136,3,2182,Atun enlatado,Conservas,5000
+510,15/06/2024,250,3,2429,Costilla de cerdo,Carniceria,11400
+511,29/03/2024,98,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+512,05/06/2024,106,6,2800,Zanahorias,Frutas y Verduras,2600
+513,17/11/2024,278,6,1640,Pizza congelada,Congelados,12400
+514,20/07/2024,298,5,2182,Atun enlatado,Conservas,5000
+515,26/07/2024,35,3,2228,Pan integral,Panaderia,10000
+516,02/06/2024,83,2,3383,Manzanas,Frutas y Verduras,5200
+517,02/10/2024,307,5,2182,Atun enlatado,Conservas,5000
+518,02/09/2024,314,3,3189,Tortas,Panaderia,12200
+519,18/07/2024,174,3,2182,Atun enlatado,Conservas,5000
+520,25/08/2024,208,4,2837,Papas chips,Galletitas y Snacks,6800
+521,14/08/2024,140,6,1688,Hamburgesas congeladas,Congelados,7600
+522,15/09/2024,58,4,1688,Hamburgesas congeladas,Congelados,7600
+523,22/04/2024,107,2,1619,Pan frances,Panaderia,6500
+524,10/05/2024,54,4,4068,Chorizo,Carniceria,9000
+525,03/10/2024,311,4,4769,Manies,Galletitas y Snacks,4400
+526,31/08/2024,321,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+527,08/09/2024,13,6,2429,Costilla de cerdo,Carniceria,11400
+528,03/07/2024,93,2,1506,Garbanzos,Conservas,2900
+529,29/12/2024,212,6,1619,Pan frances,Panaderia,6500
+530,19/10/2024,31,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+531,29/07/2024,24,2,4978,Agua mineral,Bebidas,5000
+532,10/04/2024,233,3,3327,Leche,Lacteos,9800
+533,22/06/2024,83,2,2099,Queso rallado,Lacteos,15400
+534,23/09/2024,56,5,3327,Leche,Lacteos,9800
+535,04/09/2024,167,3,3125,Facturas,Panaderia,9900
+536,07/07/2024,117,1,3189,Tortas,Panaderia,12200
+537,13/03/2024,262,6,3167,Queso cremoso,Lacteos,13800
+538,23/07/2024,243,1,1506,Garbanzos,Conservas,2900
+539,18/02/2024,274,2,3125,Facturas,Panaderia,9900
+540,16/08/2024,26,4,3189,Tortas,Panaderia,12200
+541,10/10/2024,106,4,2800,Zanahorias,Frutas y Verduras,2600
+542,19/05/2024,64,1,4043,Medialunas,Panaderia,2800
+543,05/10/2024,162,1,3140,Milanesa,Carniceria,13000
+544,04/11/2024,252,3,1688,Hamburgesas congeladas,Congelados,7600
+545,28/02/2024,20,4,1688,Hamburgesas congeladas,Congelados,7600
+546,04/02/2024,66,3,4041,Tomates,Frutas y Verduras,5200
+547,17/04/2024,69,2,3545,Cebolla,Frutas y Verduras,3400
+548,15/07/2024,229,6,1363,Vino tinto,Bebidas,10800
+549,18/07/2024,211,3,2099,Queso rallado,Lacteos,15400
+550,02/08/2024,221,5,2099,Queso rallado,Lacteos,15400
+551,07/07/2024,146,6,4068,Chorizo,Carniceria,9000
+552,21/09/2024,286,1,3383,Manzanas,Frutas y Verduras,5200
+553,08/10/2024,255,5,2800,Zanahorias,Frutas y Verduras,2600
+554,29/05/2024,132,5,1363,Vino tinto,Bebidas,10800
+555,22/07/2024,234,5,4978,Agua mineral,Bebidas,5000
+556,07/03/2024,104,5,3731,Papas fritas,Congelados,6600
+557,09/07/2024,208,3,3140,Milanesa,Carniceria,13000
+558,25/11/2024,33,5,1688,Hamburgesas congeladas,Congelados,7600
+559,27/03/2024,97,5,2908,Empanadas,Congelados,10800
+560,12/07/2024,300,1,3731,Papas fritas,Congelados,6600
+561,16/09/2024,9,6,2182,Atun enlatado,Conservas,5000
+562,21/12/2024,248,1,2228,Pan integral,Panaderia,10000
+563,30/12/2024,272,5,1640,Pizza congelada,Congelados,12400
+564,14/10/2024,11,5,1437,Arroz,Conservas,3400
+565,22/08/2024,244,1,4041,Tomates,Frutas y Verduras,5200
+566,29/09/2024,109,1,3189,Tortas,Panaderia,12200
+567,18/12/2024,255,5,1437,Arroz,Conservas,3400
+568,23/09/2024,230,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+569,15/10/2024,184,4,1640,Pizza congelada,Congelados,12400
+570,26/06/2024,185,5,4041,Tomates,Frutas y Verduras,5200
+571,23/12/2024,262,4,1363,Vino tinto,Bebidas,10800
+572,17/02/2024,95,5,4720,Bananas,Frutas y Verduras,5800
+573,25/05/2024,264,6,2429,Costilla de cerdo,Carniceria,11400
+574,23/07/2024,17,5,3383,Manzanas,Frutas y Verduras,5200
+575,16/08/2024,112,1,5137,Asado,Carniceria,22800
+576,17/09/2024,30,5,4978,Agua mineral,Bebidas,5000
+577,26/02/2024,169,1,3167,Queso cremoso,Lacteos,13800
+578,27/06/2024,180,2,4043,Medialunas,Panaderia,2800
+579,16/06/2024,144,1,3731,Papas fritas,Congelados,6600
+580,04/06/2024,195,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+581,08/04/2024,297,1,5137,Asado,Carniceria,22800
+582,09/09/2024,266,3,2800,Zanahorias,Frutas y Verduras,2600
+583,21/08/2024,7,3,4978,Agua mineral,Bebidas,5000
+584,05/08/2024,99,4,1726,Salchicha,Carniceria,9000
+585,28/12/2024,192,3,3545,Cebolla,Frutas y Verduras,3400
+586,13/06/2024,128,2,1640,Pizza congelada,Congelados,12400
+587,02/09/2024,317,5,1541,Lechugas,Frutas y Verduras,3400
+588,18/11/2024,261,2,1640,Pizza congelada,Congelados,12400
+589,16/12/2024,159,4,3189,Tortas,Panaderia,12200
+590,31/03/2024,194,6,2228,Pan integral,Panaderia,10000
+591,05/08/2024,111,5,1506,Garbanzos,Conservas,2900
+592,28/04/2024,102,6,4929,Manteca,Lacteos,4500
+593,06/02/2024,258,4,1726,Salchicha,Carniceria,9000
+594,10/08/2024,261,4,4929,Manteca,Lacteos,4500
+595,24/06/2024,271,5,4978,Agua mineral,Bebidas,5000
+596,15/09/2024,169,5,3327,Leche,Lacteos,9800
+597,12/06/2024,250,6,2429,Costilla de cerdo,Carniceria,11400
+598,21/04/2024,186,1,2099,Queso rallado,Lacteos,15400
+599,30/06/2024,61,6,1506,Garbanzos,Conservas,2900
+600,09/04/2024,142,2,3125,Facturas,Panaderia,9900
+601,29/08/2024,193,6,1640,Pizza congelada,Congelados,12400
+602,10/10/2024,53,1,1437,Arroz,Conservas,3400
+603,14/06/2024,249,4,3327,Leche,Lacteos,9800
+604,26/09/2024,321,3,5137,Asado,Carniceria,22800
+605,16/10/2024,299,4,4929,Manteca,Lacteos,4500
+606,07/03/2024,46,2,1541,Lechugas,Frutas y Verduras,3400
+607,14/03/2024,251,5,4051,Pollo,Carniceria,14800
+608,22/03/2024,105,5,3125,Facturas,Panaderia,9900
+609,13/11/2024,241,4,4769,Manies,Galletitas y Snacks,4400
+610,03/03/2024,197,3,2182,Atun enlatado,Conservas,5000
+611,19/11/2024,119,6,2182,Atun enlatado,Conservas,5000
+612,24/05/2024,307,4,3637,Jugos de frutas,Bebidas,7600
+613,25/10/2024,325,3,4978,Agua mineral,Bebidas,5000
+614,06/05/2024,245,3,4769,Manies,Galletitas y Snacks,4400
+615,07/09/2024,205,4,3383,Manzanas,Frutas y Verduras,5200
+616,13/06/2024,125,1,1541,Lechugas,Frutas y Verduras,3400
+617,26/04/2024,313,6,3140,Milanesa,Carniceria,13000
+618,30/09/2024,31,3,1506,Garbanzos,Conservas,2900
+619,14/07/2024,121,2,1437,Arroz,Conservas,3400
+620,08/03/2024,257,6,2800,Zanahorias,Frutas y Verduras,2600
+621,11/02/2024,166,3,3167,Queso cremoso,Lacteos,13800
+622,16/06/2024,244,1,1363,Vino tinto,Bebidas,10800
+623,06/06/2024,86,1,3125,Facturas,Panaderia,9900
+624,03/09/2024,297,1,4578,Lentejas,Conservas,2600
+625,30/04/2024,11,1,4720,Bananas,Frutas y Verduras,5800
+626,05/06/2024,324,1,2800,Zanahorias,Frutas y Verduras,2600
+627,15/02/2024,312,6,2908,Empanadas,Congelados,10800
+628,18/06/2024,245,1,2182,Atun enlatado,Conservas,5000
+629,24/10/2024,157,1,3125,Facturas,Panaderia,9900
+630,18/10/2024,290,5,4720,Bananas,Frutas y Verduras,5800
+631,01/08/2024,120,1,1541,Lechugas,Frutas y Verduras,3400
+632,01/09/2024,50,5,4578,Lentejas,Conservas,2600
+633,19/08/2024,121,3,3637,Jugos de frutas,Bebidas,7600
+634,15/09/2024,14,5,3140,Milanesa,Carniceria,13000
+635,25/09/2024,261,2,4929,Manteca,Lacteos,4500
+636,01/06/2024,185,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+637,24/09/2024,176,6,2837,Papas chips,Galletitas y Snacks,6800
+638,09/11/2024,236,6,1688,Hamburgesas congeladas,Congelados,7600
+639,25/08/2024,279,3,2455,Cerveza,Bebidas,9200
+640,26/08/2024,316,1,3637,Jugos de frutas,Bebidas,7600
+641,16/02/2024,184,5,3383,Manzanas,Frutas y Verduras,5200
+642,29/05/2024,240,5,1688,Hamburgesas congeladas,Congelados,7600
+643,06/12/2024,93,5,4043,Medialunas,Panaderia,2800
+644,06/07/2024,232,5,4051,Pollo,Carniceria,14800
+645,16/10/2024,188,1,3167,Queso cremoso,Lacteos,13800
+646,12/07/2024,25,5,4978,Agua mineral,Bebidas,5000
+647,27/09/2024,286,5,4041,Tomates,Frutas y Verduras,5200
+648,16/07/2024,198,6,1437,Arroz,Conservas,3400
+649,04/10/2024,128,4,3125,Facturas,Panaderia,9900
+650,31/05/2024,242,3,4051,Pollo,Carniceria,14800
+651,15/04/2024,150,6,3140,Milanesa,Carniceria,13000
+652,21/05/2024,316,1,3731,Papas fritas,Congelados,6600
+653,15/10/2024,29,1,3167,Queso cremoso,Lacteos,13800
+654,22/09/2024,174,6,1363,Vino tinto,Bebidas,10800
+655,16/05/2024,24,3,1541,Lechugas,Frutas y Verduras,3400
+656,13/03/2024,35,5,5137,Asado,Carniceria,22800
+657,07/04/2024,57,1,4578,Lentejas,Conservas,2600
+658,10/11/2024,29,5,2908,Empanadas,Congelados,10800
+659,01/05/2024,213,2,3327,Leche,Lacteos,9800
+660,16/06/2024,205,3,3167,Queso cremoso,Lacteos,13800
+661,13/11/2024,151,6,2800,Zanahorias,Frutas y Verduras,2600
+662,21/11/2024,214,5,4769,Manies,Galletitas y Snacks,4400
+663,08/07/2024,183,2,4720,Bananas,Frutas y Verduras,5800
+664,04/10/2024,264,3,2837,Papas chips,Galletitas y Snacks,6800
+665,31/08/2024,151,5,2429,Costilla de cerdo,Carniceria,11400
+666,21/07/2024,20,3,2429,Costilla de cerdo,Carniceria,11400
+667,07/11/2024,189,5,3189,Tortas,Panaderia,12200
+668,29/10/2024,160,3,4051,Pollo,Carniceria,14800
+669,28/03/2024,44,4,4041,Tomates,Frutas y Verduras,5200
+670,29/08/2024,80,3,4068,Chorizo,Carniceria,9000
+671,17/07/2024,286,1,3545,Cebolla,Frutas y Verduras,3400
+672,12/11/2024,63,2,2182,Atun enlatado,Conservas,5000
+673,18/08/2024,257,3,1619,Pan frances,Panaderia,6500
+674,01/11/2024,157,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+675,20/10/2024,168,4,1688,Hamburgesas congeladas,Congelados,7600
+676,17/08/2024,291,6,2182,Atun enlatado,Conservas,5000
+677,11/04/2024,291,3,2429,Costilla de cerdo,Carniceria,11400
+678,18/10/2024,47,1,4978,Agua mineral,Bebidas,5000
+679,16/08/2024,137,2,2429,Costilla de cerdo,Carniceria,11400
+680,04/02/2024,112,2,1506,Garbanzos,Conservas,2900
+681,13/02/2024,14,3,2455,Cerveza,Bebidas,9200
+682,20/07/2024,200,2,3383,Manzanas,Frutas y Verduras,5200
+683,11/06/2024,200,3,1437,Arroz,Conservas,3400
+684,13/05/2024,180,3,1688,Hamburgesas congeladas,Congelados,7600
+685,11/06/2024,201,2,1541,Lechugas,Frutas y Verduras,3400
+686,07/05/2024,171,1,3189,Tortas,Panaderia,12200
+687,09/11/2024,43,2,1363,Vino tinto,Bebidas,10800
+688,07/07/2024,82,6,3731,Papas fritas,Congelados,6600
+689,26/07/2024,187,3,2837,Papas chips,Galletitas y Snacks,6800
+690,21/11/2024,166,4,1619,Pan frances,Panaderia,6500
+691,21/02/2024,175,1,3125,Facturas,Panaderia,9900
+692,02/05/2024,303,5,3167,Queso cremoso,Lacteos,13800
+693,03/12/2024,15,4,4068,Chorizo,Carniceria,9000
+694,15/06/2024,114,5,4041,Tomates,Frutas y Verduras,5200
+695,13/12/2024,202,3,4051,Pollo,Carniceria,14800
+696,15/02/2024,76,3,2228,Pan integral,Panaderia,10000
+697,27/09/2024,21,6,4041,Tomates,Frutas y Verduras,5200
+698,08/11/2024,225,6,1541,Lechugas,Frutas y Verduras,3400
+699,01/06/2024,252,6,4043,Medialunas,Panaderia,2800
+700,04/07/2024,134,3,3140,Milanesa,Carniceria,13000
+701,29/07/2024,77,2,2800,Zanahorias,Frutas y Verduras,2600
+702,02/09/2024,308,2,1640,Pizza congelada,Congelados,12400
+703,10/08/2024,126,5,2908,Empanadas,Congelados,10800
+704,25/11/2024,105,6,1363,Vino tinto,Bebidas,10800
+705,14/03/2024,185,2,3383,Manzanas,Frutas y Verduras,5200
+706,22/05/2024,287,1,3327,Leche,Lacteos,9800
+707,20/07/2024,216,4,3140,Milanesa,Carniceria,13000
+708,14/04/2024,164,3,3383,Manzanas,Frutas y Verduras,5200
+709,10/11/2024,20,2,2228,Pan integral,Panaderia,10000
+710,05/06/2024,292,6,4978,Agua mineral,Bebidas,5000
+711,01/06/2024,149,4,1437,Arroz,Conservas,3400
+712,09/10/2024,247,4,4043,Medialunas,Panaderia,2800
+713,27/02/2024,64,2,3125,Facturas,Panaderia,9900
+714,01/10/2024,237,2,3189,Tortas,Panaderia,12200
+715,12/05/2024,281,1,1726,Salchicha,Carniceria,9000
+716,21/08/2024,289,3,2455,Cerveza,Bebidas,9200
+717,29/05/2024,304,5,2182,Atun enlatado,Conservas,5000
+718,20/11/2024,292,1,3383,Manzanas,Frutas y Verduras,5200
+719,26/08/2024,148,6,3383,Manzanas,Frutas y Verduras,5200
+720,21/09/2024,180,3,2429,Costilla de cerdo,Carniceria,11400
+721,29/12/2024,148,2,3189,Tortas,Panaderia,12200
+722,05/10/2024,136,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+723,21/05/2024,101,3,2429,Costilla de cerdo,Carniceria,11400
+724,20/04/2024,298,2,2099,Queso rallado,Lacteos,15400
+725,22/08/2024,234,2,2800,Zanahorias,Frutas y Verduras,2600
+726,10/09/2024,161,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+727,04/05/2024,241,6,2099,Queso rallado,Lacteos,15400
+728,16/05/2024,193,1,3731,Papas fritas,Congelados,6600
+729,29/08/2024,288,3,1726,Salchicha,Carniceria,9000
+730,18/06/2024,201,6,1688,Hamburgesas congeladas,Congelados,7600
+731,20/11/2024,314,2,1541,Lechugas,Frutas y Verduras,3400
+732,24/08/2024,155,6,2228,Pan integral,Panaderia,10000
+733,16/06/2024,111,3,2455,Cerveza,Bebidas,9200
+734,08/02/2024,212,5,4578,Lentejas,Conservas,2600
+735,16/02/2024,183,2,1541,Lechugas,Frutas y Verduras,3400
+736,27/09/2024,325,6,4929,Manteca,Lacteos,4500
+737,27/03/2024,48,1,1363,Vino tinto,Bebidas,10800
+738,03/09/2024,59,4,4578,Lentejas,Conservas,2600
+739,06/06/2024,109,6,1437,Arroz,Conservas,3400
+740,10/10/2024,62,3,3383,Manzanas,Frutas y Verduras,5200
+741,20/03/2024,222,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+742,06/12/2024,45,5,1726,Salchicha,Carniceria,9000
+743,22/06/2024,271,5,4929,Manteca,Lacteos,4500
+744,14/05/2024,326,1,4051,Pollo,Carniceria,14800
+745,29/09/2024,230,5,4051,Pollo,Carniceria,14800
+746,08/07/2024,47,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+747,16/11/2024,84,1,2800,Zanahorias,Frutas y Verduras,2600
+748,21/12/2024,326,5,2429,Costilla de cerdo,Carniceria,11400
+749,24/12/2024,153,3,3125,Facturas,Panaderia,9900
+750,27/06/2024,198,2,1363,Vino tinto,Bebidas,10800
+751,25/04/2024,259,2,3731,Papas fritas,Congelados,6600
+752,20/10/2024,48,3,2908,Empanadas,Congelados,10800
+753,01/10/2024,99,3,1726,Salchicha,Carniceria,9000
+754,29/06/2024,216,4,3731,Papas fritas,Congelados,6600
+755,30/09/2024,109,6,4929,Manteca,Lacteos,4500
+756,13/03/2024,81,4,1619,Pan frances,Panaderia,6500
+757,16/08/2024,52,6,2099,Queso rallado,Lacteos,15400
+758,29/10/2024,168,2,1726,Salchicha,Carniceria,9000
+759,29/10/2024,4,6,4068,Chorizo,Carniceria,9000
+760,22/10/2024,4,5,3637,Jugos de frutas,Bebidas,7600
+761,08/09/2024,16,6,4769,Manies,Galletitas y Snacks,4400
+762,13/03/2024,81,5,3167,Queso cremoso,Lacteos,13800
+763,26/04/2024,254,2,4978,Agua mineral,Bebidas,5000
+764,06/08/2024,43,2,4051,Pollo,Carniceria,14800
+765,02/06/2024,229,4,1640,Pizza congelada,Congelados,12400
+766,04/05/2024,166,6,3140,Milanesa,Carniceria,13000
+767,22/10/2024,9,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+768,17/07/2024,168,5,4041,Tomates,Frutas y Verduras,5200
+769,09/10/2024,289,5,3383,Manzanas,Frutas y Verduras,5200
+770,26/07/2024,123,1,4051,Pollo,Carniceria,14800
+771,27/07/2024,78,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+772,05/10/2024,141,6,3358,Yogur,Lacteos,4200
+773,12/08/2024,247,2,1688,Hamburgesas congeladas,Congelados,7600
+774,12/06/2024,148,4,4929,Manteca,Lacteos,4500
+775,03/11/2024,71,6,3383,Manzanas,Frutas y Verduras,5200
+776,13/07/2024,175,6,5137,Asado,Carniceria,22800
+777,20/07/2024,235,1,4051,Pollo,Carniceria,14800
+778,10/05/2024,46,1,5137,Asado,Carniceria,22800
+779,16/02/2024,252,2,3125,Facturas,Panaderia,9900
+780,14/12/2024,140,3,4043,Medialunas,Panaderia,2800
+781,12/11/2024,68,5,1619,Pan frances,Panaderia,6500
+782,05/12/2024,12,3,3358,Yogur,Lacteos,4200
+783,24/02/2024,124,1,1363,Vino tinto,Bebidas,10800
+784,23/02/2024,279,4,2429,Costilla de cerdo,Carniceria,11400
+785,24/03/2024,132,5,4051,Pollo,Carniceria,14800
+786,02/03/2024,292,6,4041,Tomates,Frutas y Verduras,5200
+787,13/12/2024,325,6,4978,Agua mineral,Bebidas,5000
+788,13/04/2024,52,1,2837,Papas chips,Galletitas y Snacks,6800
+789,13/06/2024,129,1,1688,Hamburgesas congeladas,Congelados,7600
+790,09/03/2024,119,6,2908,Empanadas,Congelados,10800
+791,05/11/2024,210,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+792,25/04/2024,130,1,3327,Leche,Lacteos,9800
+793,13/11/2024,175,2,3358,Yogur,Lacteos,4200
+794,05/10/2024,302,4,3637,Jugos de frutas,Bebidas,7600
+795,28/02/2024,256,6,1640,Pizza congelada,Congelados,12400
+796,14/05/2024,281,4,1506,Garbanzos,Conservas,2900
+797,21/11/2024,267,2,3327,Leche,Lacteos,9800
+798,09/07/2024,10,5,2908,Empanadas,Congelados,10800
+799,05/04/2024,55,1,4041,Tomates,Frutas y Verduras,5200
+800,20/04/2024,56,3,2455,Cerveza,Bebidas,9200
+801,18/02/2024,37,3,4978,Agua mineral,Bebidas,5000
+802,05/07/2024,214,6,3327,Leche,Lacteos,9800
+803,20/07/2024,227,4,3358,Yogur,Lacteos,4200
+804,01/07/2024,154,2,2429,Costilla de cerdo,Carniceria,11400
+805,25/09/2024,270,2,1688,Hamburgesas congeladas,Congelados,7600
+806,22/04/2024,225,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+807,16/04/2024,181,5,3327,Leche,Lacteos,9800
+808,18/05/2024,273,6,3637,Jugos de frutas,Bebidas,7600
+809,06/02/2024,159,6,4041,Tomates,Frutas y Verduras,5200
+810,02/09/2024,40,6,2908,Empanadas,Congelados,10800
+811,07/09/2024,52,3,2228,Pan integral,Panaderia,10000
+812,17/02/2024,280,4,4068,Chorizo,Carniceria,9000
+813,08/12/2024,168,3,3545,Cebolla,Frutas y Verduras,3400
+814,13/11/2024,262,4,3545,Cebolla,Frutas y Verduras,3400
+815,06/05/2024,186,2,4929,Manteca,Lacteos,4500
+816,18/08/2024,111,3,3140,Milanesa,Carniceria,13000
+817,15/03/2024,31,2,3167,Queso cremoso,Lacteos,13800
+818,30/05/2024,159,2,2429,Costilla de cerdo,Carniceria,11400
+819,28/06/2024,252,4,3358,Yogur,Lacteos,4200
+820,07/03/2024,148,3,4068,Chorizo,Carniceria,9000
+821,13/02/2024,43,3,3327,Leche,Lacteos,9800
+822,02/02/2024,1,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+823,20/10/2024,225,6,3125,Facturas,Panaderia,9900
+824,20/05/2024,292,1,2182,Atun enlatado,Conservas,5000
+825,29/06/2024,120,6,2455,Cerveza,Bebidas,9200
+826,26/04/2024,137,5,1688,Hamburgesas congeladas,Congelados,7600
+827,17/03/2024,246,2,3140,Milanesa,Carniceria,13000
+828,03/10/2024,29,6,1688,Hamburgesas congeladas,Congelados,7600
+829,18/08/2024,234,3,1541,Lechugas,Frutas y Verduras,3400
+830,02/11/2024,55,1,1541,Lechugas,Frutas y Verduras,3400
+831,12/04/2024,94,4,4041,Tomates,Frutas y Verduras,5200
+832,20/09/2024,100,6,2800,Zanahorias,Frutas y Verduras,2600
+833,04/06/2024,303,1,3637,Jugos de frutas,Bebidas,7600
+834,03/11/2024,111,4,1640,Pizza congelada,Congelados,12400
+835,09/11/2024,224,3,3327,Leche,Lacteos,9800
+836,16/06/2024,165,4,2099,Queso rallado,Lacteos,15400
+837,02/04/2024,102,3,2099,Queso rallado,Lacteos,15400
+838,28/07/2024,304,3,2182,Atun enlatado,Conservas,5000
+839,07/08/2024,35,6,1619,Pan frances,Panaderia,6500
+840,23/10/2024,116,1,4978,Agua mineral,Bebidas,5000
+841,20/10/2024,280,2,1726,Salchicha,Carniceria,9000
+842,27/04/2024,307,4,3125,Facturas,Panaderia,9900
+843,08/12/2024,7,1,3167,Queso cremoso,Lacteos,13800
+844,03/04/2024,258,2,3545,Cebolla,Frutas y Verduras,3400
+845,29/11/2024,318,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+846,22/11/2024,266,4,3327,Leche,Lacteos,9800
+847,04/12/2024,244,3,2455,Cerveza,Bebidas,9200
+848,11/07/2024,227,3,3327,Leche,Lacteos,9800
+849,23/04/2024,177,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+850,29/12/2024,194,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+851,21/02/2024,13,2,3125,Facturas,Panaderia,9900
+852,11/08/2024,139,3,1688,Hamburgesas congeladas,Congelados,7600
+853,31/03/2024,176,2,1437,Arroz,Conservas,3400
+854,05/08/2024,82,6,2455,Cerveza,Bebidas,9200
+855,22/09/2024,35,2,3140,Milanesa,Carniceria,13000
+856,14/10/2024,27,2,4041,Tomates,Frutas y Verduras,5200
+857,11/05/2024,325,1,2908,Empanadas,Congelados,10800
+858,28/04/2024,67,4,3327,Leche,Lacteos,9800
+859,13/10/2024,78,4,3140,Milanesa,Carniceria,13000
+860,28/09/2024,106,6,3358,Yogur,Lacteos,4200
+861,19/06/2024,34,4,3731,Papas fritas,Congelados,6600
+862,06/09/2024,284,5,3383,Manzanas,Frutas y Verduras,5200
+863,13/06/2024,186,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+864,14/04/2024,190,5,2800,Zanahorias,Frutas y Verduras,2600
+865,19/06/2024,60,5,3358,Yogur,Lacteos,4200
+866,28/06/2024,46,2,2837,Papas chips,Galletitas y Snacks,6800
+867,31/05/2024,77,2,1619,Pan frances,Panaderia,6500
+868,19/12/2024,287,1,1619,Pan frances,Panaderia,6500
+869,27/08/2024,111,2,1541,Lechugas,Frutas y Verduras,3400
+870,25/12/2024,113,5,1619,Pan frances,Panaderia,6500
+871,15/11/2024,242,4,1640,Pizza congelada,Congelados,12400
+872,14/10/2024,29,6,3189,Tortas,Panaderia,12200
+873,11/04/2024,72,1,1688,Hamburgesas congeladas,Congelados,7600
+874,25/11/2024,326,6,1688,Hamburgesas congeladas,Congelados,7600
+875,17/03/2024,321,6,4043,Medialunas,Panaderia,2800
+876,08/03/2024,42,3,3731,Papas fritas,Congelados,6600
+877,12/12/2024,280,6,1726,Salchicha,Carniceria,9000
+878,25/09/2024,153,2,1688,Hamburgesas congeladas,Congelados,7600
+879,21/11/2024,110,4,2908,Empanadas,Congelados,10800
+880,05/08/2024,114,2,3358,Yogur,Lacteos,4200
+881,27/05/2024,39,1,3189,Tortas,Panaderia,12200
+882,07/09/2024,288,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+883,04/07/2024,222,2,3358,Yogur,Lacteos,4200
+884,17/03/2024,312,5,3189,Tortas,Panaderia,12200
+885,21/11/2024,72,3,1688,Hamburgesas congeladas,Congelados,7600
+886,22/10/2024,74,4,3358,Yogur,Lacteos,4200
+887,19/11/2024,214,6,3189,Tortas,Panaderia,12200
+888,27/08/2024,90,3,5137,Asado,Carniceria,22800
+889,27/04/2024,51,2,3383,Manzanas,Frutas y Verduras,5200
+890,03/11/2024,296,5,4068,Chorizo,Carniceria,9000
+891,11/11/2024,79,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+892,19/09/2024,214,2,1506,Garbanzos,Conservas,2900
+893,16/07/2024,183,4,2455,Cerveza,Bebidas,9200
+894,06/10/2024,178,1,5137,Asado,Carniceria,22800
+895,28/05/2024,194,4,1619,Pan frances,Panaderia,6500
+896,21/12/2024,190,3,1506,Garbanzos,Conservas,2900
+897,08/05/2024,234,5,3731,Papas fritas,Congelados,6600
+898,30/04/2024,179,6,4051,Pollo,Carniceria,14800
+899,20/09/2024,32,6,4978,Agua mineral,Bebidas,5000
+900,30/12/2024,248,5,2429,Costilla de cerdo,Carniceria,11400
+901,02/10/2024,325,4,1506,Garbanzos,Conservas,2900
+902,13/05/2024,316,6,1506,Garbanzos,Conservas,2900
+903,27/08/2024,257,5,4929,Manteca,Lacteos,4500
+904,30/09/2024,76,3,3189,Tortas,Panaderia,12200
+905,05/04/2024,151,2,3167,Queso cremoso,Lacteos,13800
+906,30/07/2024,179,1,2228,Pan integral,Panaderia,10000
+907,20/11/2024,68,3,1437,Arroz,Conservas,3400
+908,13/02/2024,141,4,1726,Salchicha,Carniceria,9000
+909,24/04/2024,287,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+910,20/10/2024,208,5,2908,Empanadas,Congelados,10800
+911,21/03/2024,288,1,4041,Tomates,Frutas y Verduras,5200
+912,16/10/2024,306,6,4041,Tomates,Frutas y Verduras,5200
+913,09/11/2024,36,5,4978,Agua mineral,Bebidas,5000
+914,19/12/2024,203,2,3189,Tortas,Panaderia,12200
+915,05/12/2024,75,3,3125,Facturas,Panaderia,9900
+916,06/03/2024,307,3,3383,Manzanas,Frutas y Verduras,5200
+917,25/08/2024,275,6,2228,Pan integral,Panaderia,10000
+918,15/10/2024,61,2,1726,Salchicha,Carniceria,9000
+919,31/01/2024,10,5,1640,Pizza congelada,Congelados,12400
+920,30/06/2024,50,1,2837,Papas chips,Galletitas y Snacks,6800
+921,14/10/2024,46,2,2800,Zanahorias,Frutas y Verduras,2600
+922,02/06/2024,210,5,2908,Empanadas,Congelados,10800
+923,11/03/2024,172,1,3358,Yogur,Lacteos,4200
+924,02/12/2024,90,2,3327,Leche,Lacteos,9800
+925,21/12/2024,179,4,4929,Manteca,Lacteos,4500
+926,24/08/2024,55,2,1640,Pizza congelada,Congelados,12400
+927,07/09/2024,242,3,2800,Zanahorias,Frutas y Verduras,2600
+928,18/06/2024,152,6,3167,Queso cremoso,Lacteos,13800
+929,01/08/2024,164,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+930,30/07/2024,91,6,4068,Chorizo,Carniceria,9000
+931,02/09/2024,179,4,2455,Cerveza,Bebidas,9200
+932,26/05/2024,213,6,2099,Queso rallado,Lacteos,15400
+933,22/12/2024,260,2,2455,Cerveza,Bebidas,9200
+934,17/09/2024,213,5,1688,Hamburgesas congeladas,Congelados,7600
+935,24/05/2024,93,4,4051,Pollo,Carniceria,14800
+936,13/08/2024,98,2,3358,Yogur,Lacteos,4200
+937,01/12/2024,261,4,4978,Agua mineral,Bebidas,5000
+938,15/02/2024,204,1,3327,Leche,Lacteos,9800
+939,25/07/2024,150,2,3125,Facturas,Panaderia,9900
+940,11/11/2024,220,4,2455,Cerveza,Bebidas,9200
+941,23/06/2024,146,6,2228,Pan integral,Panaderia,10000
+942,28/11/2024,5,3,4769,Manies,Galletitas y Snacks,4400
+943,29/08/2024,56,6,4929,Manteca,Lacteos,4500
+944,01/06/2024,51,1,4978,Agua mineral,Bebidas,5000
+945,15/10/2024,241,5,1363,Vino tinto,Bebidas,10800
+946,18/09/2024,313,4,4769,Manies,Galletitas y Snacks,4400
+947,31/01/2024,106,1,4929,Manteca,Lacteos,4500
+948,24/02/2024,218,1,1726,Salchicha,Carniceria,9000
+949,17/06/2024,29,2,4041,Tomates,Frutas y Verduras,5200
+950,21/06/2024,119,6,2837,Papas chips,Galletitas y Snacks,6800
+951,23/05/2024,152,1,3125,Facturas,Panaderia,9900
+952,25/04/2024,207,3,4068,Chorizo,Carniceria,9000
+953,24/07/2024,134,3,2837,Papas chips,Galletitas y Snacks,6800
+954,30/12/2024,44,6,1619,Pan frances,Panaderia,6500
+955,18/10/2024,196,3,5137,Asado,Carniceria,22800
+956,25/05/2024,139,2,3125,Facturas,Panaderia,9900
+957,07/07/2024,198,5,3383,Manzanas,Frutas y Verduras,5200
+958,12/09/2024,80,3,1726,Salchicha,Carniceria,9000
+959,11/06/2024,66,1,1688,Hamburgesas congeladas,Congelados,7600
+960,06/07/2024,200,2,2099,Queso rallado,Lacteos,15400
+961,16/12/2024,154,3,4043,Medialunas,Panaderia,2800
+962,09/04/2024,275,2,3140,Milanesa,Carniceria,13000
+963,01/11/2024,107,4,3383,Manzanas,Frutas y Verduras,5200
+964,06/10/2024,220,4,4720,Bananas,Frutas y Verduras,5800
+965,31/10/2024,177,4,4041,Tomates,Frutas y Verduras,5200
+966,18/10/2024,120,1,3545,Cebolla,Frutas y Verduras,3400
+967,11/06/2024,55,4,2455,Cerveza,Bebidas,9200
+968,20/03/2024,3,3,3731,Papas fritas,Congelados,6600
+969,12/06/2024,118,2,1506,Garbanzos,Conservas,2900
+970,23/03/2024,212,6,3189,Tortas,Panaderia,12200
+971,12/03/2024,213,6,2455,Cerveza,Bebidas,9200
+972,14/06/2024,181,2,1437,Arroz,Conservas,3400
+973,25/12/2024,162,6,2800,Zanahorias,Frutas y Verduras,2600
+974,17/07/2024,175,2,3731,Papas fritas,Congelados,6600
+975,07/07/2024,40,6,4769,Manies,Galletitas y Snacks,4400
+976,16/04/2024,110,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+977,19/07/2024,25,1,1619,Pan frances,Panaderia,6500
+978,19/10/2024,116,3,4041,Tomates,Frutas y Verduras,5200
+979,20/02/2024,30,5,2455,Cerveza,Bebidas,9200
+980,06/11/2024,119,4,5137,Asado,Carniceria,22800
+981,07/07/2024,33,6,3383,Manzanas,Frutas y Verduras,5200
+982,04/11/2024,245,3,4041,Tomates,Frutas y Verduras,5200
+983,17/11/2024,11,6,2837,Papas chips,Galletitas y Snacks,6800
+984,29/08/2024,121,5,5137,Asado,Carniceria,22800
+985,05/06/2024,29,3,1619,Pan frances,Panaderia,6500
+986,21/02/2024,273,4,4068,Chorizo,Carniceria,9000
+987,14/08/2024,274,5,2837,Papas chips,Galletitas y Snacks,6800
+988,28/03/2024,266,5,2800,Zanahorias,Frutas y Verduras,2600
+989,18/05/2024,115,4,5137,Asado,Carniceria,22800
+990,02/12/2024,136,6,4978,Agua mineral,Bebidas,5000
+991,02/06/2024,104,2,2099,Queso rallado,Lacteos,15400
+992,23/12/2024,283,5,1437,Arroz,Conservas,3400
+993,11/10/2024,313,5,2429,Costilla de cerdo,Carniceria,11400
+994,21/08/2024,102,3,2908,Empanadas,Congelados,10800
+995,11/02/2024,224,5,2228,Pan integral,Panaderia,10000
+996,04/06/2024,242,5,2228,Pan integral,Panaderia,10000
+997,03/02/2024,245,3,1619,Pan frances,Panaderia,6500
+998,03/09/2024,152,5,1640,Pizza congelada,Congelados,12400
+999,19/12/2024,155,4,2182,Atun enlatado,Conservas,5000
+1000,25/12/2024,151,3,1437,Arroz,Conservas,3400
+1001,15/4/2024,325,4,2099,Queso rallado,Lacteos,15400
+1002,7/12/2024,7,3,4041,Tomates,Frutas y Verduras,5200
+1003,13/6/2024,19,1,1726,Salchicha,Carniceria,9000
+1004,26/7/2024,71,5,2455,Cerveza,Bebidas,9200
+1005,2/7/2024,131,6,2099,Queso rallado,Lacteos,15400
+1006,2/10/2024,281,6,3731,Papas fritas,Congelados,6600
+1007,18/2/2024,77,6,1726,Salchicha,Carniceria,9000
+1008,11/8/2024,204,5,1726,Salchicha,Carniceria,9000
+1009,5/8/2024,306,2,2455,Cerveza,Bebidas,9200
+1010,8/6/2024,90,4,4043,Medialunas,Panaderia,2800
+1011,9/12/2024,190,3,3327,Leche,Lacteos,9800
+1012,9/10/2024,127,2,3327,Leche,Lacteos,9800
+1013,28/12/2024,72,5,4051,Pollo,Carniceria,14800
+1014,25/12/2024,54,6,2182,Atun enlatado,Conservas,5000
+1015,6/10/2024,83,1,2099,Queso rallado,Lacteos,15400
+1016,13/11/2024,131,4,2099,Queso rallado,Lacteos,15400
+1017,21/7/2024,200,2,2908,Empanadas,Congelados,10800
+1018,16/10/2024,291,3,3125,Facturas,Panaderia,9900
+1019,9/5/2024,225,4,1688,Hamburgesas congeladas,Congelados,7600
+1020,16/10/2024,61,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1021,14/10/2024,24,6,1541,Lechugas,Frutas y Verduras,3400
+1022,13/11/2024,134,4,4051,Pollo,Carniceria,14800
+1023,21/7/2024,104,2,2099,Queso rallado,Lacteos,15400
+1024,15/10/2024,168,1,1506,Garbanzos,Conservas,2900
+1025,26/3/2024,288,3,4043,Medialunas,Panaderia,2800
+1026,21/4/2024,131,2,3383,Manzanas,Frutas y Verduras,5200
+1027,30/10/2024,140,4,4720,Bananas,Frutas y Verduras,5800
+1028,22/3/2024,267,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+1029,3/11/2024,9,1,2455,Cerveza,Bebidas,9200
+1030,26/5/2024,44,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1031,10/5/2024,103,4,2429,Costilla de cerdo,Carniceria,11400
+1032,10/11/2024,20,2,3140,Milanesa,Carniceria,13000
+1033,14/3/2024,78,3,3327,Leche,Lacteos,9800
+1034,22/7/2024,125,3,1688,Hamburgesas congeladas,Congelados,7600
+1035,7/6/2024,249,1,1541,Lechugas,Frutas y Verduras,3400
+1036,4/7/2024,230,2,1363,Vino tinto,Bebidas,10800
+1037,29/2/2024,48,6,1363,Vino tinto,Bebidas,10800
+1038,7/8/2024,119,5,4769,Manies,Galletitas y Snacks,4400
+1039,4/9/2024,314,1,3545,Cebolla,Frutas y Verduras,3400
+1040,7/6/2024,298,6,4720,Bananas,Frutas y Verduras,5800
+1041,21/2/2024,312,3,4051,Pollo,Carniceria,14800
+1042,4/9/2024,257,2,3140,Milanesa,Carniceria,13000
+1043,10/12/2024,96,4,2800,Zanahorias,Frutas y Verduras,2600
+1044,9/2/2024,69,1,2455,Cerveza,Bebidas,9200
+1045,31/3/2024,258,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1046,10/4/2024,288,5,3327,Leche,Lacteos,9800
+1047,17/12/2024,235,2,4068,Chorizo,Carniceria,9000
+1048,1/11/2024,185,1,4929,Manteca,Lacteos,4500
+1049,25/8/2024,263,4,1640,Pizza congelada,Congelados,12400
+1050,11/5/2024,115,3,4978,Agua mineral,Bebidas,5000
+1051,8/5/2024,308,2,4068,Chorizo,Carniceria,9000
+1052,1/7/2024,219,1,4720,Bananas,Frutas y Verduras,5800
+1053,28/8/2024,23,3,3358,Yogur,Lacteos,4200
+1054,1/6/2024,300,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+1055,29/8/2024,229,5,4769,Manies,Galletitas y Snacks,4400
+1056,4/12/2024,46,2,3140,Milanesa,Carniceria,13000
+1057,10/12/2024,265,4,2099,Queso rallado,Lacteos,15400
+1058,7/8/2024,67,5,4043,Medialunas,Panaderia,2800
+1059,11/8/2024,24,3,2455,Cerveza,Bebidas,9200
+1060,25/4/2024,56,5,2455,Cerveza,Bebidas,9200
+1061,24/8/2024,320,4,3125,Facturas,Panaderia,9900
+1062,19/10/2024,141,3,4769,Manies,Galletitas y Snacks,4400
+1063,9/12/2024,115,2,2800,Zanahorias,Frutas y Verduras,2600
+1064,13/6/2024,152,6,3358,Yogur,Lacteos,4200
+1065,24/12/2024,124,2,2182,Atun enlatado,Conservas,5000
+1066,28/5/2024,182,5,2455,Cerveza,Bebidas,9200
+1067,13/5/2024,271,3,4978,Agua mineral,Bebidas,5000
+1068,6/4/2024,318,3,5137,Asado,Carniceria,22800
+1069,3/3/2024,37,1,1688,Hamburgesas congeladas,Congelados,7600
+1070,26/7/2024,174,6,1619,Pan frances,Panaderia,6500
+1071,20/3/2024,135,6,3125,Facturas,Panaderia,9900
+1072,25/9/2024,155,2,3637,Jugos de frutas,Bebidas,7600
+1073,5/11/2024,173,5,1437,Arroz,Conservas,3400
+1074,22/4/2024,320,6,2182,Atun enlatado,Conservas,5000
+1075,13/11/2024,207,3,4720,Bananas,Frutas y Verduras,5800
+1076,27/12/2024,316,1,3358,Yogur,Lacteos,4200
+1077,12/7/2024,268,4,4769,Manies,Galletitas y Snacks,4400
+1078,2/2/2024,218,5,5137,Asado,Carniceria,22800
+1079,17/2/2024,8,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+1080,8/8/2024,202,6,4978,Agua mineral,Bebidas,5000
+1081,22/5/2024,249,3,2800,Zanahorias,Frutas y Verduras,2600
+1082,18/9/2024,282,6,2837,Papas chips,Galletitas y Snacks,6800
+1083,16/3/2024,111,5,1688,Hamburgesas congeladas,Congelados,7600
+1084,23/12/2024,70,4,3125,Facturas,Panaderia,9900
+1085,16/3/2024,232,3,1541,Lechugas,Frutas y Verduras,3400
+1086,28/3/2024,40,6,3545,Cebolla,Frutas y Verduras,3400
+1087,25/10/2024,170,2,1640,Pizza congelada,Congelados,12400
+1088,25/4/2024,274,2,1363,Vino tinto,Bebidas,10800
+1089,19/9/2024,73,4,3140,Milanesa,Carniceria,13000
+1090,1/8/2024,43,3,3167,Queso cremoso,Lacteos,13800
+1091,6/7/2024,250,5,4043,Medialunas,Panaderia,2800
+1092,26/9/2024,232,1,4051,Pollo,Carniceria,14800
+1093,17/7/2024,52,3,4578,Lentejas,Conservas,2600
+1094,18/8/2024,98,2,4578,Lentejas,Conservas,2600
+1095,17/2/2024,326,5,3358,Yogur,Lacteos,4200
+1096,21/3/2024,204,5,1506,Garbanzos,Conservas,2900
+1097,13/5/2024,102,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+1098,21/3/2024,178,3,1640,Pizza congelada,Congelados,12400
+1099,1/2/2024,282,1,3637,Jugos de frutas,Bebidas,7600
+1100,15/5/2024,18,2,2455,Cerveza,Bebidas,9200
+1101,9/8/2024,127,6,5137,Asado,Carniceria,22800
+1102,10/2/2024,59,4,2455,Cerveza,Bebidas,9200
+1103,9/7/2024,10,6,4769,Manies,Galletitas y Snacks,4400
+1104,28/12/2024,176,4,5137,Asado,Carniceria,22800
+1105,26/11/2024,247,3,1688,Hamburgesas congeladas,Congelados,7600
+1106,30/7/2024,153,1,3358,Yogur,Lacteos,4200
+1107,18/4/2024,223,4,4720,Bananas,Frutas y Verduras,5800
+1108,20/3/2024,270,6,1640,Pizza congelada,Congelados,12400
+1109,19/8/2024,287,1,2455,Cerveza,Bebidas,9200
+1110,11/4/2024,284,2,1619,Pan frances,Panaderia,6500
+1111,16/3/2024,65,2,3189,Tortas,Panaderia,12200
+1112,4/6/2024,171,3,1506,Garbanzos,Conservas,2900
+1113,1/12/2024,4,2,3383,Manzanas,Frutas y Verduras,5200
+1114,29/4/2024,47,6,2182,Atun enlatado,Conservas,5000
+1115,29/4/2024,159,6,3327,Leche,Lacteos,9800
+1116,2/10/2024,266,4,2429,Costilla de cerdo,Carniceria,11400
+1117,23/6/2024,292,3,2182,Atun enlatado,Conservas,5000
+1118,22/3/2024,106,2,2228,Pan integral,Panaderia,10000
+1119,28/10/2024,142,6,4043,Medialunas,Panaderia,2800
+1120,30/9/2024,283,6,2228,Pan integral,Panaderia,10000
+1121,17/3/2024,88,3,4769,Manies,Galletitas y Snacks,4400
+1122,19/8/2024,313,2,4041,Tomates,Frutas y Verduras,5200
+1123,8/7/2024,164,5,4051,Pollo,Carniceria,14800
+1124,19/6/2024,232,3,4068,Chorizo,Carniceria,9000
+1125,26/3/2024,9,5,1688,Hamburgesas congeladas,Congelados,7600
+1126,19/12/2024,315,1,4769,Manies,Galletitas y Snacks,4400
+1127,30/4/2024,136,2,5137,Asado,Carniceria,22800
+1128,27/4/2024,59,3,1541,Lechugas,Frutas y Verduras,3400
+1129,29/3/2024,275,4,4578,Lentejas,Conservas,2600
+1130,20/3/2024,213,2,2099,Queso rallado,Lacteos,15400
+1131,16/6/2024,134,1,5137,Asado,Carniceria,22800
+1132,13/9/2024,88,1,3545,Cebolla,Frutas y Verduras,3400
+1133,18/3/2024,313,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1134,5/9/2024,138,2,1363,Vino tinto,Bebidas,10800
+1135,12/6/2024,86,5,4051,Pollo,Carniceria,14800
+1136,7/2/2024,187,3,3731,Papas fritas,Congelados,6600
+1137,17/3/2024,295,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1138,5/10/2024,123,2,3545,Cebolla,Frutas y Verduras,3400
+1139,25/3/2024,8,5,4578,Lentejas,Conservas,2600
+1140,11/5/2024,184,1,3731,Papas fritas,Congelados,6600
+1141,25/5/2024,56,5,3545,Cebolla,Frutas y Verduras,3400
+1142,10/3/2024,164,6,2228,Pan integral,Panaderia,10000
+1143,12/4/2024,266,2,1541,Lechugas,Frutas y Verduras,3400
+1144,22/9/2024,106,1,2800,Zanahorias,Frutas y Verduras,2600
+1145,23/7/2024,90,6,1640,Pizza congelada,Congelados,12400
+1146,15/12/2024,187,3,3637,Jugos de frutas,Bebidas,7600
+1147,14/8/2024,112,6,4929,Manteca,Lacteos,4500
+1148,11/3/2024,67,5,1640,Pizza congelada,Congelados,12400
+1149,12/4/2024,272,5,2908,Empanadas,Congelados,10800
+1150,25/11/2024,274,3,1619,Pan frances,Panaderia,6500
+1151,12/5/2024,59,3,4929,Manteca,Lacteos,4500
+1152,11/10/2024,111,3,5137,Asado,Carniceria,22800
+1153,28/3/2024,130,6,4978,Agua mineral,Bebidas,5000
+1154,8/12/2024,260,1,4043,Medialunas,Panaderia,2800
+1155,14/5/2024,113,6,1506,Garbanzos,Conservas,2900
+1156,18/3/2024,37,3,3358,Yogur,Lacteos,4200
+1157,12/4/2024,90,4,1726,Salchicha,Carniceria,9000
+1158,10/11/2024,88,5,3383,Manzanas,Frutas y Verduras,5200
+1159,1/7/2024,233,2,2800,Zanahorias,Frutas y Verduras,2600
+1160,22/12/2024,108,5,3358,Yogur,Lacteos,4200
+1161,3/11/2024,277,6,1688,Hamburgesas congeladas,Congelados,7600
+1162,9/2/2024,104,2,3383,Manzanas,Frutas y Verduras,5200
+1163,21/12/2024,94,4,1726,Salchicha,Carniceria,9000
+1164,3/3/2024,97,3,1619,Pan frances,Panaderia,6500
+1165,7/6/2024,30,5,2228,Pan integral,Panaderia,10000
+1166,9/8/2024,151,5,4051,Pollo,Carniceria,14800
+1167,17/6/2024,311,4,4068,Chorizo,Carniceria,9000
+1168,12/2/2024,286,4,2099,Queso rallado,Lacteos,15400
+1169,29/3/2024,8,5,3637,Jugos de frutas,Bebidas,7600
+1170,29/11/2024,17,4,1688,Hamburgesas congeladas,Congelados,7600
+1171,5/3/2024,8,5,3125,Facturas,Panaderia,9900
+1172,22/9/2024,164,1,2228,Pan integral,Panaderia,10000
+1173,21/11/2024,193,6,1726,Salchicha,Carniceria,9000
+1174,16/2/2024,286,1,3125,Facturas,Panaderia,9900
+1175,4/4/2024,189,3,3383,Manzanas,Frutas y Verduras,5200
+1176,9/7/2024,253,6,4769,Manies,Galletitas y Snacks,4400
+1177,17/4/2024,192,1,3545,Cebolla,Frutas y Verduras,3400
+1178,23/11/2024,249,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1179,28/9/2024,98,5,2429,Costilla de cerdo,Carniceria,11400
+1180,23/9/2024,256,1,2429,Costilla de cerdo,Carniceria,11400
+1181,18/2/2024,171,4,3383,Manzanas,Frutas y Verduras,5200
+1182,7/6/2024,169,2,4043,Medialunas,Panaderia,2800
+1183,15/9/2024,289,4,3189,Tortas,Panaderia,12200
+1184,22/2/2024,106,6,2182,Atun enlatado,Conservas,5000
+1185,7/3/2024,58,2,3545,Cebolla,Frutas y Verduras,3400
+1186,1/7/2024,24,6,3731,Papas fritas,Congelados,6600
+1187,2/6/2024,154,5,4929,Manteca,Lacteos,4500
+1188,1/3/2024,255,3,4978,Agua mineral,Bebidas,5000
+1189,17/8/2024,31,5,2429,Costilla de cerdo,Carniceria,11400
+1190,29/2/2024,119,1,2800,Zanahorias,Frutas y Verduras,2600
+1191,23/10/2024,285,5,2429,Costilla de cerdo,Carniceria,11400
+1192,31/10/2024,277,4,3140,Milanesa,Carniceria,13000
+1193,30/10/2024,217,6,4929,Manteca,Lacteos,4500
+1194,21/4/2024,237,6,3383,Manzanas,Frutas y Verduras,5200
+1195,5/4/2024,47,3,3189,Tortas,Panaderia,12200
+1196,30/7/2024,239,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1197,21/9/2024,323,3,3358,Yogur,Lacteos,4200
+1198,5/2/2024,102,2,2228,Pan integral,Panaderia,10000
+1199,29/9/2024,38,3,2182,Atun enlatado,Conservas,5000
+1200,22/2/2024,143,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1201,6/12/2024,161,1,2429,Costilla de cerdo,Carniceria,11400
+1202,28/12/2024,45,2,3140,Milanesa,Carniceria,13000
+1203,2/9/2024,257,5,2182,Atun enlatado,Conservas,5000
+1204,25/9/2024,280,1,2837,Papas chips,Galletitas y Snacks,6800
+1205,31/5/2024,285,3,4978,Agua mineral,Bebidas,5000
+1206,13/12/2024,177,5,1640,Pizza congelada,Congelados,12400
+1207,29/4/2024,159,4,1726,Salchicha,Carniceria,9000
+1208,29/8/2024,306,4,3125,Facturas,Panaderia,9900
+1209,17/10/2024,19,3,3637,Jugos de frutas,Bebidas,7600
+1210,22/3/2024,266,4,5137,Asado,Carniceria,22800
+1211,29/4/2024,104,5,2099,Queso rallado,Lacteos,15400
+1212,14/8/2024,58,5,1541,Lechugas,Frutas y Verduras,3400
+1213,22/8/2024,95,4,1688,Hamburgesas congeladas,Congelados,7600
+1214,3/3/2024,67,1,4929,Manteca,Lacteos,4500
+1215,7/11/2024,297,6,3383,Manzanas,Frutas y Verduras,5200
+1216,18/7/2024,123,6,3731,Papas fritas,Congelados,6600
+1217,10/2/2024,144,2,3545,Cebolla,Frutas y Verduras,3400
+1218,11/2/2024,34,1,2455,Cerveza,Bebidas,9200
+1219,9/11/2024,125,4,1506,Garbanzos,Conservas,2900
+1220,7/4/2024,224,5,2182,Atun enlatado,Conservas,5000
+1221,3/2/2024,251,5,2429,Costilla de cerdo,Carniceria,11400
+1222,16/10/2024,82,3,4978,Agua mineral,Bebidas,5000
+1223,3/10/2024,104,6,4043,Medialunas,Panaderia,2800
+1224,2/4/2024,60,3,2099,Queso rallado,Lacteos,15400
+1225,5/6/2024,134,5,2455,Cerveza,Bebidas,9200
+1226,8/3/2024,91,6,1437,Arroz,Conservas,3400
+1227,5/10/2024,290,3,4978,Agua mineral,Bebidas,5000
+1228,14/3/2024,291,6,3327,Leche,Lacteos,9800
+1229,6/8/2024,107,1,3545,Cebolla,Frutas y Verduras,3400
+1230,16/9/2024,197,6,3358,Yogur,Lacteos,4200
+1231,10/11/2024,242,3,3189,Tortas,Panaderia,12200
+1232,26/5/2024,241,3,4929,Manteca,Lacteos,4500
+1233,26/7/2024,199,4,3189,Tortas,Panaderia,12200
+1234,17/6/2024,276,5,1640,Pizza congelada,Congelados,12400
+1235,8/5/2024,250,6,3189,Tortas,Panaderia,12200
+1236,18/11/2024,228,4,2455,Cerveza,Bebidas,9200
+1237,1/5/2024,247,6,1506,Garbanzos,Conservas,2900
+1238,30/4/2024,254,2,5137,Asado,Carniceria,22800
+1239,19/5/2024,254,1,4769,Manies,Galletitas y Snacks,4400
+1240,5/12/2024,56,1,3637,Jugos de frutas,Bebidas,7600
+1241,26/12/2024,82,4,3140,Milanesa,Carniceria,13000
+1242,12/8/2024,62,4,2182,Atun enlatado,Conservas,5000
+1243,5/6/2024,307,3,1437,Arroz,Conservas,3400
+1244,2/6/2024,200,3,5137,Asado,Carniceria,22800
+1245,25/8/2024,316,3,2455,Cerveza,Bebidas,9200
+1246,10/10/2024,54,6,2182,Atun enlatado,Conservas,5000
+1247,1/5/2024,87,6,1640,Pizza congelada,Congelados,12400
+1248,21/5/2024,86,3,3358,Yogur,Lacteos,4200
+1249,16/3/2024,77,1,2800,Zanahorias,Frutas y Verduras,2600
+1250,7/5/2024,234,1,3140,Milanesa,Carniceria,13000
+1251,25/11/2024,290,4,2800,Zanahorias,Frutas y Verduras,2600
+1252,8/9/2024,50,3,4578,Lentejas,Conservas,2600
+1253,16/2/2024,50,1,2228,Pan integral,Panaderia,10000
+1254,23/4/2024,294,2,2099,Queso rallado,Lacteos,15400
+1255,25/7/2024,25,6,1437,Arroz,Conservas,3400
+1256,9/12/2024,227,4,4578,Lentejas,Conservas,2600
+1257,26/8/2024,15,4,5137,Asado,Carniceria,22800
+1258,16/4/2024,48,4,3637,Jugos de frutas,Bebidas,7600
+1259,21/9/2024,307,6,3358,Yogur,Lacteos,4200
+1260,30/6/2024,115,2,1640,Pizza congelada,Congelados,12400
+1261,23/7/2024,318,4,1363,Vino tinto,Bebidas,10800
+1262,12/7/2024,313,2,2800,Zanahorias,Frutas y Verduras,2600
+1263,16/2/2024,48,5,2182,Atun enlatado,Conservas,5000
+1264,23/12/2024,188,5,3189,Tortas,Panaderia,12200
+1265,21/9/2024,94,2,5137,Asado,Carniceria,22800
+1266,27/4/2024,70,6,2800,Zanahorias,Frutas y Verduras,2600
+1267,2/12/2024,130,2,3327,Leche,Lacteos,9800
+1268,10/5/2024,14,4,3140,Milanesa,Carniceria,13000
+1269,17/5/2024,106,4,4068,Chorizo,Carniceria,9000
+1270,8/5/2024,173,6,2455,Cerveza,Bebidas,9200
+1271,14/2/2024,190,5,4978,Agua mineral,Bebidas,5000
+1272,14/9/2024,187,2,1619,Pan frances,Panaderia,6500
+1273,2/12/2024,289,3,2455,Cerveza,Bebidas,9200
+1274,3/5/2024,187,4,3383,Manzanas,Frutas y Verduras,5200
+1275,21/10/2024,18,5,4043,Medialunas,Panaderia,2800
+1276,13/11/2024,99,1,2099,Queso rallado,Lacteos,15400
+1277,16/10/2024,163,2,3358,Yogur,Lacteos,4200
+1278,27/3/2024,11,5,2455,Cerveza,Bebidas,9200
+1279,31/7/2024,302,4,2837,Papas chips,Galletitas y Snacks,6800
+1280,9/10/2024,239,1,2429,Costilla de cerdo,Carniceria,11400
+1281,5/6/2024,223,2,4051,Pollo,Carniceria,14800
+1282,18/4/2024,280,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+1283,27/10/2024,318,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1284,10/12/2024,147,2,1726,Salchicha,Carniceria,9000
+1285,29/12/2024,10,4,2837,Papas chips,Galletitas y Snacks,6800
+1286,15/4/2024,110,5,2800,Zanahorias,Frutas y Verduras,2600
+1287,26/2/2024,22,6,1640,Pizza congelada,Congelados,12400
+1288,29/9/2024,53,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1289,19/9/2024,50,4,3637,Jugos de frutas,Bebidas,7600
+1290,17/3/2024,323,5,1640,Pizza congelada,Congelados,12400
+1291,23/5/2024,32,1,2455,Cerveza,Bebidas,9200
+1292,3/12/2024,287,3,2908,Empanadas,Congelados,10800
+1293,27/10/2024,247,2,2099,Queso rallado,Lacteos,15400
+1294,17/5/2024,325,1,3637,Jugos de frutas,Bebidas,7600
+1295,2/10/2024,208,1,3383,Manzanas,Frutas y Verduras,5200
+1296,22/11/2024,174,5,1619,Pan frances,Panaderia,6500
+1297,31/7/2024,32,2,2908,Empanadas,Congelados,10800
+1298,6/11/2024,216,1,4720,Bananas,Frutas y Verduras,5800
+1299,12/4/2024,223,3,3189,Tortas,Panaderia,12200
+1300,1/9/2024,201,5,1640,Pizza congelada,Congelados,12400
+1301,24/12/2024,158,1,5137,Asado,Carniceria,22800
+1302,21/9/2024,241,3,4769,Manies,Galletitas y Snacks,4400
+1303,26/10/2024,203,1,2837,Papas chips,Galletitas y Snacks,6800
+1304,2/11/2024,19,6,2800,Zanahorias,Frutas y Verduras,2600
+1305,18/7/2024,134,1,2182,Atun enlatado,Conservas,5000
+1306,17/9/2024,168,2,3731,Papas fritas,Congelados,6600
+1307,16/4/2024,46,3,3327,Leche,Lacteos,9800
+1308,27/10/2024,185,4,3545,Cebolla,Frutas y Verduras,3400
+1309,7/7/2024,4,3,2908,Empanadas,Congelados,10800
+1310,25/8/2024,179,6,3731,Papas fritas,Congelados,6600
+1311,29/9/2024,309,4,4978,Agua mineral,Bebidas,5000
+1312,27/3/2024,215,5,1437,Arroz,Conservas,3400
+1313,29/2/2024,95,2,2228,Pan integral,Panaderia,10000
+1314,24/7/2024,290,3,5137,Asado,Carniceria,22800
+1315,27/10/2024,222,1,3167,Queso cremoso,Lacteos,13800
+1316,31/7/2024,251,3,3358,Yogur,Lacteos,4200
+1317,31/1/2024,235,3,1640,Pizza congelada,Congelados,12400
+1318,14/8/2024,219,1,2228,Pan integral,Panaderia,10000
+1319,16/4/2024,28,1,3167,Queso cremoso,Lacteos,13800
+1320,19/4/2024,324,2,3545,Cebolla,Frutas y Verduras,3400
+1321,26/3/2024,94,4,5137,Asado,Carniceria,22800
+1322,16/10/2024,60,2,2800,Zanahorias,Frutas y Verduras,2600
+1323,12/6/2024,106,3,3189,Tortas,Panaderia,12200
+1324,15/6/2024,41,5,4720,Bananas,Frutas y Verduras,5800
+1325,18/4/2024,89,6,2908,Empanadas,Congelados,10800
+1326,31/8/2024,307,5,4769,Manies,Galletitas y Snacks,4400
+1327,26/10/2024,205,3,3731,Papas fritas,Congelados,6600
+1328,19/5/2024,91,2,2455,Cerveza,Bebidas,9200
+1329,29/6/2024,233,6,4978,Agua mineral,Bebidas,5000
+1330,7/10/2024,285,6,4068,Chorizo,Carniceria,9000
+1331,9/4/2024,51,2,1726,Salchicha,Carniceria,9000
+1332,19/2/2024,1,4,2455,Cerveza,Bebidas,9200
+1333,30/8/2024,132,2,3637,Jugos de frutas,Bebidas,7600
+1334,30/9/2024,158,1,2837,Papas chips,Galletitas y Snacks,6800
+1335,17/7/2024,33,4,3637,Jugos de frutas,Bebidas,7600
+1336,23/10/2024,122,6,4769,Manies,Galletitas y Snacks,4400
+1337,13/6/2024,77,2,2099,Queso rallado,Lacteos,15400
+1338,6/7/2024,60,3,2099,Queso rallado,Lacteos,15400
+1339,17/8/2024,279,3,3358,Yogur,Lacteos,4200
+1340,23/9/2024,8,3,3167,Queso cremoso,Lacteos,13800
+1341,18/6/2024,133,5,4043,Medialunas,Panaderia,2800
+1342,6/11/2024,119,6,3731,Papas fritas,Congelados,6600
+1343,8/6/2024,288,1,3637,Jugos de frutas,Bebidas,7600
+1344,27/12/2024,261,4,1363,Vino tinto,Bebidas,10800
+1345,16/7/2024,149,1,4978,Agua mineral,Bebidas,5000
+1346,17/9/2024,278,5,3167,Queso cremoso,Lacteos,13800
+1347,25/6/2024,223,6,3327,Leche,Lacteos,9800
+1348,23/6/2024,151,3,1541,Lechugas,Frutas y Verduras,3400
+1349,26/5/2024,264,1,3545,Cebolla,Frutas y Verduras,3400
+1350,24/5/2024,248,5,1688,Hamburgesas congeladas,Congelados,7600
+1351,11/5/2024,222,5,2099,Queso rallado,Lacteos,15400
+1352,31/7/2024,205,6,4068,Chorizo,Carniceria,9000
+1353,25/7/2024,317,3,4769,Manies,Galletitas y Snacks,4400
+1354,16/6/2024,71,2,2182,Atun enlatado,Conservas,5000
+1355,19/6/2024,106,2,3545,Cebolla,Frutas y Verduras,3400
+1356,20/10/2024,228,6,2099,Queso rallado,Lacteos,15400
+1357,19/3/2024,71,5,3731,Papas fritas,Congelados,6600
+1358,16/5/2024,115,2,4041,Tomates,Frutas y Verduras,5200
+1359,19/12/2024,118,3,3125,Facturas,Panaderia,9900
+1360,7/10/2024,177,4,1506,Garbanzos,Conservas,2900
+1361,31/10/2024,192,1,3637,Jugos de frutas,Bebidas,7600
+1362,11/2/2024,120,2,4041,Tomates,Frutas y Verduras,5200
+1363,10/2/2024,314,3,3637,Jugos de frutas,Bebidas,7600
+1364,5/11/2024,65,3,2837,Papas chips,Galletitas y Snacks,6800
+1365,28/12/2024,176,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+1366,19/9/2024,185,1,1437,Arroz,Conservas,3400
+1367,29/10/2024,248,5,4051,Pollo,Carniceria,14800
+1368,16/5/2024,57,6,1726,Salchicha,Carniceria,9000
+1369,15/6/2024,232,1,4051,Pollo,Carniceria,14800
+1370,28/11/2024,250,4,3327,Leche,Lacteos,9800
+1371,8/9/2024,72,6,4043,Medialunas,Panaderia,2800
+1372,5/7/2024,41,4,3731,Papas fritas,Congelados,6600
+1373,22/9/2024,192,1,1726,Salchicha,Carniceria,9000
+1374,15/10/2024,21,4,2182,Atun enlatado,Conservas,5000
+1375,11/6/2024,49,3,2099,Queso rallado,Lacteos,15400
+1376,14/10/2024,61,1,3189,Tortas,Panaderia,12200
+1377,2/8/2024,85,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+1378,23/11/2024,95,3,4929,Manteca,Lacteos,4500
+1379,18/4/2024,301,1,4720,Bananas,Frutas y Verduras,5800
+1380,14/9/2024,126,2,3545,Cebolla,Frutas y Verduras,3400
+1381,25/8/2024,161,3,1541,Lechugas,Frutas y Verduras,3400
+1382,18/9/2024,318,2,3731,Papas fritas,Congelados,6600
+1383,1/12/2024,185,3,2429,Costilla de cerdo,Carniceria,11400
+1384,29/6/2024,62,4,1363,Vino tinto,Bebidas,10800
+1385,10/5/2024,151,4,2228,Pan integral,Panaderia,10000
+1386,6/6/2024,125,2,4043,Medialunas,Panaderia,2800
+1387,10/5/2024,156,6,4978,Agua mineral,Bebidas,5000
+1388,11/7/2024,79,3,4929,Manteca,Lacteos,4500
+1389,20/12/2024,78,3,5137,Asado,Carniceria,22800
+1390,30/12/2024,26,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+1391,20/10/2024,6,2,3545,Cebolla,Frutas y Verduras,3400
+1392,16/10/2024,49,4,3637,Jugos de frutas,Bebidas,7600
+1393,10/7/2024,121,5,4978,Agua mineral,Bebidas,5000
+1394,8/6/2024,245,4,1541,Lechugas,Frutas y Verduras,3400
+1395,19/7/2024,265,4,3167,Queso cremoso,Lacteos,13800
+1396,3/11/2024,209,1,4051,Pollo,Carniceria,14800
+1397,14/7/2024,112,2,2228,Pan integral,Panaderia,10000
+1398,21/5/2024,202,3,2908,Empanadas,Congelados,10800
+1399,25/3/2024,90,2,4978,Agua mineral,Bebidas,5000
+1400,16/7/2024,299,4,3545,Cebolla,Frutas y Verduras,3400
+1401,31/5/2024,313,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1402,24/9/2024,31,1,1437,Arroz,Conservas,3400
+1403,21/12/2024,79,1,4043,Medialunas,Panaderia,2800
+1404,16/6/2024,57,3,4041,Tomates,Frutas y Verduras,5200
+1405,27/10/2024,187,2,2455,Cerveza,Bebidas,9200
+1406,22/4/2024,100,1,3731,Papas fritas,Congelados,6600
+1407,2/8/2024,242,4,5137,Asado,Carniceria,22800
+1408,25/7/2024,124,1,1619,Pan frances,Panaderia,6500
+1409,29/3/2024,86,6,3125,Facturas,Panaderia,9900
+1410,18/11/2024,34,4,1619,Pan frances,Panaderia,6500
+1411,5/7/2024,75,6,1437,Arroz,Conservas,3400
+1412,22/6/2024,60,2,3637,Jugos de frutas,Bebidas,7600
+1413,24/11/2024,175,5,3140,Milanesa,Carniceria,13000
+1414,10/10/2024,248,4,2908,Empanadas,Congelados,10800
+1415,17/5/2024,119,5,3140,Milanesa,Carniceria,13000
+1416,24/2/2024,31,2,2182,Atun enlatado,Conservas,5000
+1417,4/4/2024,126,5,2228,Pan integral,Panaderia,10000
+1418,7/11/2024,111,1,1506,Garbanzos,Conservas,2900
+1419,26/8/2024,278,3,3545,Cebolla,Frutas y Verduras,3400
+1420,15/11/2024,277,4,2837,Papas chips,Galletitas y Snacks,6800
+1421,28/5/2024,89,3,3383,Manzanas,Frutas y Verduras,5200
+1422,1/3/2024,58,1,3358,Yogur,Lacteos,4200
+1423,16/6/2024,264,1,3327,Leche,Lacteos,9800
+1424,6/5/2024,174,1,1437,Arroz,Conservas,3400
+1425,12/6/2024,306,1,1726,Salchicha,Carniceria,9000
+1426,7/8/2024,326,6,4043,Medialunas,Panaderia,2800
+1427,31/5/2024,234,5,2908,Empanadas,Congelados,10800
+1428,23/11/2024,266,2,1506,Garbanzos,Conservas,2900
+1429,4/9/2024,23,2,1688,Hamburgesas congeladas,Congelados,7600
+1430,4/9/2024,302,3,4041,Tomates,Frutas y Verduras,5200
+1431,18/5/2024,43,3,2455,Cerveza,Bebidas,9200
+1432,5/8/2024,309,3,4578,Lentejas,Conservas,2600
+1433,6/5/2024,222,1,3189,Tortas,Panaderia,12200
+1434,6/6/2024,5,2,4929,Manteca,Lacteos,4500
+1435,4/10/2024,52,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+1436,31/10/2024,165,2,3125,Facturas,Panaderia,9900
+1437,24/5/2024,197,3,4041,Tomates,Frutas y Verduras,5200
+1438,16/8/2024,101,6,3189,Tortas,Panaderia,12200
+1439,1/2/2024,130,2,4720,Bananas,Frutas y Verduras,5800
+1440,13/7/2024,278,1,3189,Tortas,Panaderia,12200
+1441,27/5/2024,145,2,4041,Tomates,Frutas y Verduras,5200
+1442,13/9/2024,4,4,3383,Manzanas,Frutas y Verduras,5200
+1443,20/8/2024,168,6,3327,Leche,Lacteos,9800
+1444,7/3/2024,23,4,1640,Pizza congelada,Congelados,12400
+1445,2/11/2024,104,2,1619,Pan frances,Panaderia,6500
+1446,16/10/2024,9,3,1541,Lechugas,Frutas y Verduras,3400
+1447,10/5/2024,75,2,1506,Garbanzos,Conservas,2900
+1448,21/5/2024,289,5,1688,Hamburgesas congeladas,Congelados,7600
+1449,5/2/2024,172,6,2455,Cerveza,Bebidas,9200
+1450,13/8/2024,98,2,1619,Pan frances,Panaderia,6500
+1451,20/12/2024,131,5,4978,Agua mineral,Bebidas,5000
+1452,29/6/2024,56,1,1541,Lechugas,Frutas y Verduras,3400
+1453,17/10/2024,275,4,1640,Pizza congelada,Congelados,12400
+1454,21/10/2024,272,6,2429,Costilla de cerdo,Carniceria,11400
+1455,1/12/2024,271,4,2455,Cerveza,Bebidas,9200
+1456,21/4/2024,271,4,4720,Bananas,Frutas y Verduras,5800
+1457,15/12/2024,284,1,1506,Garbanzos,Conservas,2900
+1458,19/8/2024,73,2,3140,Milanesa,Carniceria,13000
+1459,12/7/2024,176,5,1506,Garbanzos,Conservas,2900
+1460,24/4/2024,40,4,3383,Manzanas,Frutas y Verduras,5200
+1461,20/7/2024,87,4,4929,Manteca,Lacteos,4500
+1462,29/6/2024,86,5,1726,Salchicha,Carniceria,9000
+1463,8/3/2024,299,4,3383,Manzanas,Frutas y Verduras,5200
+1464,17/6/2024,268,1,4720,Bananas,Frutas y Verduras,5800
+1465,1/3/2024,36,2,3125,Facturas,Panaderia,9900
+1466,12/9/2024,215,1,3383,Manzanas,Frutas y Verduras,5200
+1467,10/5/2024,59,1,2099,Queso rallado,Lacteos,15400
+1468,8/12/2024,3,2,2182,Atun enlatado,Conservas,5000
+1469,15/10/2024,104,2,1640,Pizza congelada,Congelados,12400
+1470,8/4/2024,38,5,2908,Empanadas,Congelados,10800
+1471,15/8/2024,123,5,1640,Pizza congelada,Congelados,12400
+1472,1/5/2024,1,2,1619,Pan frances,Panaderia,6500
+1473,21/3/2024,255,1,4720,Bananas,Frutas y Verduras,5800
+1474,9/4/2024,321,1,4051,Pollo,Carniceria,14800
+1475,9/7/2024,39,5,2837,Papas chips,Galletitas y Snacks,6800
+1476,12/7/2024,12,3,1688,Hamburgesas congeladas,Congelados,7600
+1477,20/9/2024,170,4,4068,Chorizo,Carniceria,9000
+1478,18/12/2024,40,6,3358,Yogur,Lacteos,4200
+1479,16/2/2024,211,1,2837,Papas chips,Galletitas y Snacks,6800
+1480,11/11/2024,113,3,3383,Manzanas,Frutas y Verduras,5200
+1481,27/5/2024,148,3,1437,Arroz,Conservas,3400
+1482,5/8/2024,126,4,4720,Bananas,Frutas y Verduras,5800
+1483,30/10/2024,303,5,3731,Papas fritas,Congelados,6600
+1484,16/9/2024,171,6,3167,Queso cremoso,Lacteos,13800
+1485,25/10/2024,162,1,2182,Atun enlatado,Conservas,5000
+1486,26/8/2024,313,3,4929,Manteca,Lacteos,4500
+1487,26/12/2024,79,2,1726,Salchicha,Carniceria,9000
+1488,15/11/2024,162,4,2771,Galletitas de agua,Galletitas y Snacks,4200
+1489,3/11/2024,22,4,3140,Milanesa,Carniceria,13000
+1490,4/11/2024,255,3,4068,Chorizo,Carniceria,9000
+1491,24/10/2024,132,2,1437,Arroz,Conservas,3400
+1492,24/12/2024,316,5,1726,Salchicha,Carniceria,9000
+1493,18/7/2024,291,4,4043,Medialunas,Panaderia,2800
+1494,15/3/2024,157,3,3731,Papas fritas,Congelados,6600
+1495,20/9/2024,142,2,4720,Bananas,Frutas y Verduras,5800
+1496,2/8/2024,213,5,4051,Pollo,Carniceria,14800
+1497,16/11/2024,63,2,1506,Garbanzos,Conservas,2900
+1498,15/4/2024,216,4,1506,Garbanzos,Conservas,2900
+1499,12/8/2024,262,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1500,23/7/2024,141,5,3731,Papas fritas,Congelados,6600
+1501,3/3/2024,42,5,2455,Cerveza,Bebidas,9200
+1502,1/6/2024,165,1,2455,Cerveza,Bebidas,9200
+1503,28/9/2024,121,6,1619,Pan frances,Panaderia,6500
+1504,22/3/2024,168,4,3167,Queso cremoso,Lacteos,13800
+1505,27/4/2024,13,5,3140,Milanesa,Carniceria,13000
+1506,25/12/2024,144,2,3140,Milanesa,Carniceria,13000
+1507,3/12/2024,145,4,1640,Pizza congelada,Congelados,12400
+1508,18/11/2024,295,4,5137,Asado,Carniceria,22800
+1509,20/6/2024,36,5,4720,Bananas,Frutas y Verduras,5800
+1510,1/11/2024,34,3,3327,Leche,Lacteos,9800
+1511,29/12/2024,141,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+1512,9/10/2024,91,2,1726,Salchicha,Carniceria,9000
+1513,24/5/2024,119,3,4578,Lentejas,Conservas,2600
+1514,11/7/2024,156,1,3125,Facturas,Panaderia,9900
+1515,29/7/2024,22,3,3167,Queso cremoso,Lacteos,13800
+1516,27/7/2024,22,2,3125,Facturas,Panaderia,9900
+1517,6/5/2024,106,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+1518,2/6/2024,33,6,2182,Atun enlatado,Conservas,5000
+1519,30/12/2024,246,3,1726,Salchicha,Carniceria,9000
+1520,30/7/2024,209,4,3327,Leche,Lacteos,9800
+1521,28/11/2024,168,6,4929,Manteca,Lacteos,4500
+1522,2/8/2024,167,6,5137,Asado,Carniceria,22800
+1523,27/9/2024,79,3,1363,Vino tinto,Bebidas,10800
+1524,6/3/2024,292,2,4769,Manies,Galletitas y Snacks,4400
+1525,22/12/2024,65,3,1363,Vino tinto,Bebidas,10800
+1526,6/9/2024,229,5,4041,Tomates,Frutas y Verduras,5200
+1527,7/8/2024,203,5,2455,Cerveza,Bebidas,9200
+1528,6/10/2024,90,2,2455,Cerveza,Bebidas,9200
+1529,25/12/2024,232,6,3167,Queso cremoso,Lacteos,13800
+1530,19/6/2024,2,4,4769,Manies,Galletitas y Snacks,4400
+1531,4/3/2024,326,1,3125,Facturas,Panaderia,9900
+1532,13/12/2024,218,1,3545,Cebolla,Frutas y Verduras,3400
+1533,28/10/2024,118,4,4043,Medialunas,Panaderia,2800
+1534,21/6/2024,12,2,4929,Manteca,Lacteos,4500
+1535,1/3/2024,255,1,3140,Milanesa,Carniceria,13000
+1536,27/10/2024,203,6,1437,Arroz,Conservas,3400
+1537,14/3/2024,138,1,1506,Garbanzos,Conservas,2900
+1538,15/10/2024,104,6,2455,Cerveza,Bebidas,9200
+1539,30/9/2024,152,1,3140,Milanesa,Carniceria,13000
+1540,12/2/2024,273,6,3125,Facturas,Panaderia,9900
+1541,9/7/2024,184,2,2228,Pan integral,Panaderia,10000
+1542,1/12/2024,250,4,2837,Papas chips,Galletitas y Snacks,6800
+1543,14/6/2024,130,3,1506,Garbanzos,Conservas,2900
+1544,6/8/2024,60,6,1688,Hamburgesas congeladas,Congelados,7600
+1545,18/3/2024,8,2,4041,Tomates,Frutas y Verduras,5200
+1546,19/7/2024,283,1,2429,Costilla de cerdo,Carniceria,11400
+1547,20/7/2024,122,2,2800,Zanahorias,Frutas y Verduras,2600
+1548,21/12/2024,98,4,2182,Atun enlatado,Conservas,5000
+1549,24/3/2024,260,1,3383,Manzanas,Frutas y Verduras,5200
+1550,5/9/2024,125,4,5137,Asado,Carniceria,22800
+1551,16/6/2024,162,1,3327,Leche,Lacteos,9800
+1552,29/4/2024,21,6,5137,Asado,Carniceria,22800
+1553,17/8/2024,25,5,3140,Milanesa,Carniceria,13000
+1554,21/11/2024,212,1,2837,Papas chips,Galletitas y Snacks,6800
+1555,25/9/2024,9,2,1640,Pizza congelada,Congelados,12400
+1556,26/3/2024,65,2,3140,Milanesa,Carniceria,13000
+1557,4/8/2024,165,5,1506,Garbanzos,Conservas,2900
+1558,17/8/2024,318,1,3731,Papas fritas,Congelados,6600
+1559,21/10/2024,226,1,3327,Leche,Lacteos,9800
+1560,6/10/2024,240,5,4051,Pollo,Carniceria,14800
+1561,16/3/2024,200,5,3545,Cebolla,Frutas y Verduras,3400
+1562,1/6/2024,213,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+1563,5/6/2024,313,1,4769,Manies,Galletitas y Snacks,4400
+1564,11/3/2024,238,2,3731,Papas fritas,Congelados,6600
+1565,1/2/2024,97,6,5137,Asado,Carniceria,22800
+1566,27/11/2024,206,5,2429,Costilla de cerdo,Carniceria,11400
+1567,26/9/2024,147,4,4043,Medialunas,Panaderia,2800
+1568,14/8/2024,148,2,5137,Asado,Carniceria,22800
+1569,17/5/2024,194,5,2837,Papas chips,Galletitas y Snacks,6800
+1570,3/10/2024,78,6,1506,Garbanzos,Conservas,2900
+1571,7/10/2024,14,6,4720,Bananas,Frutas y Verduras,5800
+1572,27/4/2024,314,1,2908,Empanadas,Congelados,10800
+1573,4/11/2024,298,4,2908,Empanadas,Congelados,10800
+1574,13/4/2024,204,5,1541,Lechugas,Frutas y Verduras,3400
+1575,20/4/2024,66,3,2099,Queso rallado,Lacteos,15400
+1576,28/5/2024,127,5,1640,Pizza congelada,Congelados,12400
+1577,8/3/2024,25,5,1688,Hamburgesas congeladas,Congelados,7600
+1578,23/11/2024,283,3,4978,Agua mineral,Bebidas,5000
+1579,19/10/2024,20,1,3545,Cebolla,Frutas y Verduras,3400
+1580,25/7/2024,209,6,4051,Pollo,Carniceria,14800
+1581,26/5/2024,210,6,4929,Manteca,Lacteos,4500
+1582,18/9/2024,245,1,3189,Tortas,Panaderia,12200
+1583,21/6/2024,53,2,1363,Vino tinto,Bebidas,10800
+1584,3/9/2024,194,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+1585,14/10/2024,297,2,4051,Pollo,Carniceria,14800
+1586,23/2/2024,166,2,2182,Atun enlatado,Conservas,5000
+1587,20/5/2024,153,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+1588,25/6/2024,324,6,3167,Queso cremoso,Lacteos,13800
+1589,5/3/2024,112,2,1688,Hamburgesas congeladas,Congelados,7600
+1590,2/6/2024,265,3,3140,Milanesa,Carniceria,13000
+1591,23/8/2024,311,3,1541,Lechugas,Frutas y Verduras,3400
+1592,25/11/2024,27,6,4051,Pollo,Carniceria,14800
+1593,13/6/2024,231,6,4578,Lentejas,Conservas,2600
+1594,4/7/2024,253,1,2099,Queso rallado,Lacteos,15400
+1595,2/2/2024,129,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+1596,17/10/2024,85,2,1688,Hamburgesas congeladas,Congelados,7600
+1597,30/8/2024,281,2,2837,Papas chips,Galletitas y Snacks,6800
+1598,30/5/2024,243,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1599,19/9/2024,144,3,4929,Manteca,Lacteos,4500
+1600,10/2/2024,230,6,2908,Empanadas,Congelados,10800
+1601,15/3/2024,313,4,4769,Manies,Galletitas y Snacks,4400
+1602,23/5/2024,123,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+1603,7/10/2024,50,3,3545,Cebolla,Frutas y Verduras,3400
+1604,5/8/2024,1,1,4043,Medialunas,Panaderia,2800
+1605,20/4/2024,180,6,1541,Lechugas,Frutas y Verduras,3400
+1606,21/3/2024,278,6,4978,Agua mineral,Bebidas,5000
+1607,31/1/2024,114,5,4043,Medialunas,Panaderia,2800
+1608,30/9/2024,78,1,1726,Salchicha,Carniceria,9000
+1609,2/5/2024,286,3,4043,Medialunas,Panaderia,2800
+1610,31/10/2024,198,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+1611,11/7/2024,297,2,3140,Milanesa,Carniceria,13000
+1612,10/4/2024,68,4,1541,Lechugas,Frutas y Verduras,3400
+1613,4/5/2024,12,5,3167,Queso cremoso,Lacteos,13800
+1614,18/9/2024,60,1,1506,Garbanzos,Conservas,2900
+1615,25/5/2024,264,4,1640,Pizza congelada,Congelados,12400
+1616,26/4/2024,144,1,4769,Manies,Galletitas y Snacks,4400
+1617,30/7/2024,162,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1618,15/3/2024,14,3,4720,Bananas,Frutas y Verduras,5800
+1619,3/10/2024,236,1,2228,Pan integral,Panaderia,10000
+1620,14/7/2024,267,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1621,26/4/2024,193,2,3358,Yogur,Lacteos,4200
+1622,15/3/2024,211,2,3189,Tortas,Panaderia,12200
+1623,19/11/2024,315,4,3125,Facturas,Panaderia,9900
+1624,30/3/2024,71,2,3327,Leche,Lacteos,9800
+1625,18/2/2024,145,4,2182,Atun enlatado,Conservas,5000
+1626,6/7/2024,171,3,4578,Lentejas,Conservas,2600
+1627,27/3/2024,323,1,2228,Pan integral,Panaderia,10000
+1628,10/7/2024,307,2,1437,Arroz,Conservas,3400
+1629,17/12/2024,130,4,5137,Asado,Carniceria,22800
+1630,23/11/2024,317,1,4068,Chorizo,Carniceria,9000
+1631,15/12/2024,189,1,4578,Lentejas,Conservas,2600
+1632,7/7/2024,224,1,2182,Atun enlatado,Conservas,5000
+1633,20/2/2024,27,5,1726,Salchicha,Carniceria,9000
+1634,9/3/2024,206,3,3125,Facturas,Panaderia,9900
+1635,5/10/2024,94,5,1541,Lechugas,Frutas y Verduras,3400
+1636,12/6/2024,152,5,1619,Pan frances,Panaderia,6500
+1637,26/11/2024,293,2,1541,Lechugas,Frutas y Verduras,3400
+1638,21/4/2024,151,1,4720,Bananas,Frutas y Verduras,5800
+1639,10/3/2024,230,5,1688,Hamburgesas congeladas,Congelados,7600
+1640,23/8/2024,128,3,4769,Manies,Galletitas y Snacks,4400
+1641,22/7/2024,319,6,2455,Cerveza,Bebidas,9200
+1642,19/12/2024,172,4,3545,Cebolla,Frutas y Verduras,3400
+1643,16/6/2024,170,6,4068,Chorizo,Carniceria,9000
+1644,31/10/2024,111,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1645,6/11/2024,13,2,1619,Pan frances,Panaderia,6500
+1646,15/3/2024,143,3,3140,Milanesa,Carniceria,13000
+1647,12/4/2024,74,4,4051,Pollo,Carniceria,14800
+1648,8/5/2024,50,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+1649,11/9/2024,189,2,1506,Garbanzos,Conservas,2900
+1650,21/12/2024,40,6,3327,Leche,Lacteos,9800
+1651,11/2/2024,85,6,2228,Pan integral,Panaderia,10000
+1652,30/4/2024,106,4,4041,Tomates,Frutas y Verduras,5200
+1653,15/6/2024,124,2,5137,Asado,Carniceria,22800
+1654,12/11/2024,183,1,2429,Costilla de cerdo,Carniceria,11400
+1655,3/5/2024,293,5,4978,Agua mineral,Bebidas,5000
+1656,6/2/2024,283,3,3327,Leche,Lacteos,9800
+1657,25/4/2024,298,5,1619,Pan frances,Panaderia,6500
+1658,29/6/2024,193,3,3327,Leche,Lacteos,9800
+1659,8/5/2024,283,4,2800,Zanahorias,Frutas y Verduras,2600
+1660,19/12/2024,313,1,3383,Manzanas,Frutas y Verduras,5200
+1661,27/5/2024,146,3,3140,Milanesa,Carniceria,13000
+1662,12/11/2024,133,5,1688,Hamburgesas congeladas,Congelados,7600
+1663,19/8/2024,191,1,3358,Yogur,Lacteos,4200
+1664,17/7/2024,17,2,1726,Salchicha,Carniceria,9000
+1665,16/5/2024,191,3,1688,Hamburgesas congeladas,Congelados,7600
+1666,27/3/2024,56,1,1640,Pizza congelada,Congelados,12400
+1667,26/3/2024,81,6,2908,Empanadas,Congelados,10800
+1668,29/10/2024,55,6,1688,Hamburgesas congeladas,Congelados,7600
+1669,28/11/2024,93,6,4068,Chorizo,Carniceria,9000
+1670,27/9/2024,95,5,2099,Queso rallado,Lacteos,15400
+1671,9/6/2024,304,6,3545,Cebolla,Frutas y Verduras,3400
+1672,30/7/2024,188,5,3140,Milanesa,Carniceria,13000
+1673,12/6/2024,140,3,3167,Queso cremoso,Lacteos,13800
+1674,24/2/2024,75,4,3731,Papas fritas,Congelados,6600
+1675,14/8/2024,304,4,2771,Galletitas de agua,Galletitas y Snacks,4200
+1676,12/7/2024,324,5,4578,Lentejas,Conservas,2600
+1677,23/4/2024,122,1,4929,Manteca,Lacteos,4500
+1678,26/7/2024,170,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1679,27/3/2024,273,4,2182,Atun enlatado,Conservas,5000
+1680,11/2/2024,241,3,3637,Jugos de frutas,Bebidas,7600
+1681,3/6/2024,167,3,3358,Yogur,Lacteos,4200
+1682,17/3/2024,48,4,2182,Atun enlatado,Conservas,5000
+1683,21/10/2024,181,4,1619,Pan frances,Panaderia,6500
+1684,9/10/2024,174,3,3140,Milanesa,Carniceria,13000
+1685,14/5/2024,96,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+1686,23/4/2024,73,1,1506,Garbanzos,Conservas,2900
+1687,3/4/2024,160,6,3731,Papas fritas,Congelados,6600
+1688,16/6/2024,297,3,1619,Pan frances,Panaderia,6500
+1689,28/4/2024,28,4,2837,Papas chips,Galletitas y Snacks,6800
+1690,23/5/2024,94,3,2908,Empanadas,Congelados,10800
+1691,15/5/2024,283,1,4051,Pollo,Carniceria,14800
+1692,16/6/2024,295,2,1437,Arroz,Conservas,3400
+1693,29/6/2024,68,2,5137,Asado,Carniceria,22800
+1694,30/11/2024,64,5,3637,Jugos de frutas,Bebidas,7600
+1695,28/6/2024,103,5,3189,Tortas,Panaderia,12200
+1696,28/10/2024,316,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+1697,24/11/2024,173,1,2228,Pan integral,Panaderia,10000
+1698,12/4/2024,272,5,3167,Queso cremoso,Lacteos,13800
+1699,14/5/2024,24,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1700,15/2/2024,158,4,2837,Papas chips,Galletitas y Snacks,6800
+1701,11/10/2024,200,2,3167,Queso cremoso,Lacteos,13800
+1702,15/6/2024,289,1,5137,Asado,Carniceria,22800
+1703,18/5/2024,150,3,1506,Garbanzos,Conservas,2900
+1704,3/4/2024,104,4,3167,Queso cremoso,Lacteos,13800
+1705,31/3/2024,321,4,4720,Bananas,Frutas y Verduras,5800
+1706,14/12/2024,94,2,3731,Papas fritas,Congelados,6600
+1707,20/4/2024,223,2,1363,Vino tinto,Bebidas,10800
+1708,16/3/2024,68,1,3189,Tortas,Panaderia,12200
+1709,28/5/2024,319,2,3167,Queso cremoso,Lacteos,13800
+1710,25/3/2024,131,1,4978,Agua mineral,Bebidas,5000
+1711,3/11/2024,183,4,4041,Tomates,Frutas y Verduras,5200
+1712,21/9/2024,92,6,1726,Salchicha,Carniceria,9000
+1713,29/2/2024,265,2,3125,Facturas,Panaderia,9900
+1714,21/4/2024,242,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1715,29/12/2024,87,1,4929,Manteca,Lacteos,4500
+1716,20/10/2024,15,5,4769,Manies,Galletitas y Snacks,4400
+1717,16/4/2024,171,5,2837,Papas chips,Galletitas y Snacks,6800
+1718,20/10/2024,224,3,3167,Queso cremoso,Lacteos,13800
+1719,19/10/2024,1,3,1726,Salchicha,Carniceria,9000
+1720,17/12/2024,316,4,4051,Pollo,Carniceria,14800
+1721,8/11/2024,46,4,1363,Vino tinto,Bebidas,10800
+1722,19/2/2024,266,3,4068,Chorizo,Carniceria,9000
+1723,14/8/2024,320,3,1541,Lechugas,Frutas y Verduras,3400
+1724,19/12/2024,252,6,2455,Cerveza,Bebidas,9200
+1725,9/2/2024,293,6,1640,Pizza congelada,Congelados,12400
+1726,11/10/2024,241,3,3637,Jugos de frutas,Bebidas,7600
+1727,20/5/2024,128,6,3125,Facturas,Panaderia,9900
+1728,26/10/2024,46,5,4041,Tomates,Frutas y Verduras,5200
+1729,12/7/2024,118,6,2837,Papas chips,Galletitas y Snacks,6800
+1730,3/3/2024,160,6,2837,Papas chips,Galletitas y Snacks,6800
+1731,13/5/2024,231,3,1363,Vino tinto,Bebidas,10800
+1732,23/4/2024,215,5,2182,Atun enlatado,Conservas,5000
+1733,26/4/2024,185,5,2429,Costilla de cerdo,Carniceria,11400
+1734,7/5/2024,311,3,3140,Milanesa,Carniceria,13000
+1735,6/2/2024,130,6,3140,Milanesa,Carniceria,13000
+1736,24/12/2024,192,4,3731,Papas fritas,Congelados,6600
+1737,4/3/2024,149,5,2800,Zanahorias,Frutas y Verduras,2600
+1738,5/5/2024,198,4,2429,Costilla de cerdo,Carniceria,11400
+1739,7/5/2024,222,4,3358,Yogur,Lacteos,4200
+1740,22/10/2024,210,6,4068,Chorizo,Carniceria,9000
+1741,12/6/2024,61,3,1541,Lechugas,Frutas y Verduras,3400
+1742,23/10/2024,175,2,4068,Chorizo,Carniceria,9000
+1743,4/5/2024,9,4,3327,Leche,Lacteos,9800
+1744,25/7/2024,314,3,4769,Manies,Galletitas y Snacks,4400
+1745,14/8/2024,294,1,3383,Manzanas,Frutas y Verduras,5200
+1746,2/7/2024,269,4,4929,Manteca,Lacteos,4500
+1747,11/5/2024,138,4,4043,Medialunas,Panaderia,2800
+1748,12/10/2024,218,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1749,28/2/2024,95,1,2837,Papas chips,Galletitas y Snacks,6800
+1750,28/10/2024,310,1,3189,Tortas,Panaderia,12200
+1751,1/6/2024,211,6,4578,Lentejas,Conservas,2600
+1752,27/5/2024,220,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+1753,7/2/2024,35,2,3383,Manzanas,Frutas y Verduras,5200
+1754,11/2/2024,212,3,4978,Agua mineral,Bebidas,5000
+1755,31/5/2024,198,4,3189,Tortas,Panaderia,12200
+1756,7/3/2024,309,5,2228,Pan integral,Panaderia,10000
+1757,11/6/2024,272,1,4720,Bananas,Frutas y Verduras,5800
+1758,16/6/2024,38,4,1688,Hamburgesas congeladas,Congelados,7600
+1759,5/2/2024,255,5,3731,Papas fritas,Congelados,6600
+1760,17/6/2024,124,2,4578,Lentejas,Conservas,2600
+1761,17/6/2024,260,4,3140,Milanesa,Carniceria,13000
+1762,14/9/2024,71,2,2455,Cerveza,Bebidas,9200
+1763,1/9/2024,182,3,1437,Arroz,Conservas,3400
+1764,22/6/2024,268,4,4068,Chorizo,Carniceria,9000
+1765,14/8/2024,307,2,2908,Empanadas,Congelados,10800
+1766,28/6/2024,46,6,1726,Salchicha,Carniceria,9000
+1767,6/8/2024,215,5,4578,Lentejas,Conservas,2600
+1768,14/10/2024,260,5,2800,Zanahorias,Frutas y Verduras,2600
+1769,9/12/2024,284,4,4978,Agua mineral,Bebidas,5000
+1770,28/12/2024,263,1,4578,Lentejas,Conservas,2600
+1771,9/12/2024,169,1,2800,Zanahorias,Frutas y Verduras,2600
+1772,14/11/2024,164,2,2908,Empanadas,Congelados,10800
+1773,22/3/2024,88,4,1640,Pizza congelada,Congelados,12400
+1774,3/5/2024,232,3,3140,Milanesa,Carniceria,13000
+1775,8/6/2024,126,1,2800,Zanahorias,Frutas y Verduras,2600
+1776,1/2/2024,247,4,4068,Chorizo,Carniceria,9000
+1777,19/3/2024,113,2,3167,Queso cremoso,Lacteos,13800
+1778,14/7/2024,208,4,4041,Tomates,Frutas y Verduras,5200
+1779,22/12/2024,81,1,4043,Medialunas,Panaderia,2800
+1780,9/6/2024,40,3,3731,Papas fritas,Congelados,6600
+1781,17/12/2024,177,1,4043,Medialunas,Panaderia,2800
+1782,4/4/2024,145,2,2228,Pan integral,Panaderia,10000
+1783,24/4/2024,301,2,1726,Salchicha,Carniceria,9000
+1784,26/11/2024,179,6,1363,Vino tinto,Bebidas,10800
+1785,30/10/2024,207,1,3327,Leche,Lacteos,9800
+1786,4/8/2024,209,4,2837,Papas chips,Galletitas y Snacks,6800
+1787,8/6/2024,203,5,3545,Cebolla,Frutas y Verduras,3400
+1788,9/3/2024,180,2,3358,Yogur,Lacteos,4200
+1789,2/9/2024,115,5,1363,Vino tinto,Bebidas,10800
+1790,9/7/2024,225,2,1363,Vino tinto,Bebidas,10800
+1791,12/7/2024,250,4,3189,Tortas,Panaderia,12200
+1792,22/2/2024,81,4,4051,Pollo,Carniceria,14800
+1793,23/8/2024,275,6,5137,Asado,Carniceria,22800
+1794,22/5/2024,144,6,4929,Manteca,Lacteos,4500
+1795,23/3/2024,1,6,1619,Pan frances,Panaderia,6500
+1796,7/3/2024,32,2,2099,Queso rallado,Lacteos,15400
+1797,29/6/2024,192,6,2099,Queso rallado,Lacteos,15400
+1798,2/7/2024,167,6,1437,Arroz,Conservas,3400
+1799,13/8/2024,325,2,4041,Tomates,Frutas y Verduras,5200
+1800,23/4/2024,313,4,1506,Garbanzos,Conservas,2900
+1801,18/9/2024,46,1,2837,Papas chips,Galletitas y Snacks,6800
+1802,7/5/2024,81,6,1363,Vino tinto,Bebidas,10800
+1803,15/6/2024,100,5,4978,Agua mineral,Bebidas,5000
+1804,17/5/2024,184,2,2099,Queso rallado,Lacteos,15400
+1805,7/6/2024,290,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+1806,22/4/2024,233,4,1437,Arroz,Conservas,3400
+1807,19/12/2024,205,5,2455,Cerveza,Bebidas,9200
+1808,13/3/2024,303,5,1726,Salchicha,Carniceria,9000
+1809,22/3/2024,90,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+1810,18/9/2024,72,4,1437,Arroz,Conservas,3400
+1811,30/11/2024,321,4,4720,Bananas,Frutas y Verduras,5800
+1812,23/12/2024,97,6,2228,Pan integral,Panaderia,10000
+1813,7/7/2024,90,1,1437,Arroz,Conservas,3400
+1814,23/3/2024,175,4,2099,Queso rallado,Lacteos,15400
+1815,21/11/2024,93,4,3327,Leche,Lacteos,9800
+1816,10/12/2024,210,6,5137,Asado,Carniceria,22800
+1817,11/12/2024,73,6,2455,Cerveza,Bebidas,9200
+1818,6/11/2024,279,3,3545,Cebolla,Frutas y Verduras,3400
+1819,2/4/2024,192,5,3545,Cebolla,Frutas y Verduras,3400
+1820,1/12/2024,170,2,1363,Vino tinto,Bebidas,10800
+1821,9/9/2024,143,1,3189,Tortas,Panaderia,12200
+1822,30/5/2024,311,4,4978,Agua mineral,Bebidas,5000
+1823,20/5/2024,189,1,2099,Queso rallado,Lacteos,15400
+1824,10/5/2024,73,3,1688,Hamburgesas congeladas,Congelados,7600
+1825,21/12/2024,136,1,2908,Empanadas,Congelados,10800
+1826,13/2/2024,300,1,1541,Lechugas,Frutas y Verduras,3400
+1827,8/8/2024,13,2,3637,Jugos de frutas,Bebidas,7600
+1828,29/3/2024,52,2,3125,Facturas,Panaderia,9900
+1829,14/9/2024,207,2,3731,Papas fritas,Congelados,6600
+1830,26/2/2024,291,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1831,20/5/2024,306,4,2429,Costilla de cerdo,Carniceria,11400
+1832,4/11/2024,173,1,3545,Cebolla,Frutas y Verduras,3400
+1833,28/10/2024,14,6,4720,Bananas,Frutas y Verduras,5800
+1834,8/4/2024,141,1,4068,Chorizo,Carniceria,9000
+1835,25/6/2024,100,4,1688,Hamburgesas congeladas,Congelados,7600
+1836,13/10/2024,141,5,4720,Bananas,Frutas y Verduras,5800
+1837,29/5/2024,26,3,3383,Manzanas,Frutas y Verduras,5200
+1838,19/5/2024,299,5,1688,Hamburgesas congeladas,Congelados,7600
+1839,5/7/2024,197,3,3731,Papas fritas,Congelados,6600
+1840,8/4/2024,241,6,1619,Pan frances,Panaderia,6500
+1841,27/2/2024,37,6,2182,Atun enlatado,Conservas,5000
+1842,17/2/2024,224,2,2455,Cerveza,Bebidas,9200
+1843,22/6/2024,139,1,2099,Queso rallado,Lacteos,15400
+1844,29/5/2024,127,2,3637,Jugos de frutas,Bebidas,7600
+1845,15/8/2024,70,1,1688,Hamburgesas congeladas,Congelados,7600
+1846,12/12/2024,23,5,1619,Pan frances,Panaderia,6500
+1847,11/5/2024,56,5,4720,Bananas,Frutas y Verduras,5800
+1848,22/7/2024,323,5,3358,Yogur,Lacteos,4200
+1849,29/6/2024,30,3,1363,Vino tinto,Bebidas,10800
+1850,29/7/2024,301,4,4043,Medialunas,Panaderia,2800
+1851,30/6/2024,318,5,1437,Arroz,Conservas,3400
+1852,24/2/2024,230,4,3327,Leche,Lacteos,9800
+1853,22/4/2024,273,5,4929,Manteca,Lacteos,4500
+1854,11/9/2024,303,5,2099,Queso rallado,Lacteos,15400
+1855,11/8/2024,237,6,3140,Milanesa,Carniceria,13000
+1856,16/12/2024,151,6,2228,Pan integral,Panaderia,10000
+1857,5/6/2024,298,2,2099,Queso rallado,Lacteos,15400
+1858,27/7/2024,301,2,1688,Hamburgesas congeladas,Congelados,7600
+1859,20/8/2024,57,6,1726,Salchicha,Carniceria,9000
+1860,15/5/2024,54,5,3637,Jugos de frutas,Bebidas,7600
+1861,21/12/2024,117,5,2455,Cerveza,Bebidas,9200
+1862,21/8/2024,26,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+1863,17/2/2024,46,5,1688,Hamburgesas congeladas,Congelados,7600
+1864,14/3/2024,15,5,2429,Costilla de cerdo,Carniceria,11400
+1865,10/8/2024,247,3,4051,Pollo,Carniceria,14800
+1866,25/3/2024,272,5,4929,Manteca,Lacteos,4500
+1867,3/3/2024,132,6,3545,Cebolla,Frutas y Verduras,3400
+1868,14/4/2024,234,6,4041,Tomates,Frutas y Verduras,5200
+1869,2/11/2024,205,4,3189,Tortas,Panaderia,12200
+1870,16/5/2024,307,3,2455,Cerveza,Bebidas,9200
+1871,16/7/2024,184,1,1541,Lechugas,Frutas y Verduras,3400
+1872,4/4/2024,239,6,3189,Tortas,Panaderia,12200
+1873,11/8/2024,234,2,4051,Pollo,Carniceria,14800
+1874,19/3/2024,92,4,4043,Medialunas,Panaderia,2800
+1875,15/5/2024,6,2,4929,Manteca,Lacteos,4500
+1876,11/5/2024,265,6,3167,Queso cremoso,Lacteos,13800
+1877,24/12/2024,298,6,4929,Manteca,Lacteos,4500
+1878,9/2/2024,214,3,3383,Manzanas,Frutas y Verduras,5200
+1879,7/12/2024,160,4,2099,Queso rallado,Lacteos,15400
+1880,19/8/2024,269,3,2455,Cerveza,Bebidas,9200
+1881,16/6/2024,218,5,2908,Empanadas,Congelados,10800
+1882,29/10/2024,7,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1883,15/11/2024,2,2,5137,Asado,Carniceria,22800
+1884,2/12/2024,98,5,2837,Papas chips,Galletitas y Snacks,6800
+1885,21/7/2024,219,6,3383,Manzanas,Frutas y Verduras,5200
+1886,18/12/2024,68,3,4068,Chorizo,Carniceria,9000
+1887,21/7/2024,19,2,4041,Tomates,Frutas y Verduras,5200
+1888,21/5/2024,281,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1889,29/4/2024,237,4,3327,Leche,Lacteos,9800
+1890,21/6/2024,6,1,3167,Queso cremoso,Lacteos,13800
+1891,18/8/2024,83,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1892,17/11/2024,222,1,2228,Pan integral,Panaderia,10000
+1893,24/11/2024,245,4,2182,Atun enlatado,Conservas,5000
+1894,21/4/2024,1,4,1506,Garbanzos,Conservas,2900
+1895,3/8/2024,125,4,2228,Pan integral,Panaderia,10000
+1896,4/7/2024,302,6,4041,Tomates,Frutas y Verduras,5200
+1897,2/7/2024,57,2,1506,Garbanzos,Conservas,2900
+1898,17/7/2024,261,4,1541,Lechugas,Frutas y Verduras,3400
+1899,13/4/2024,176,2,3545,Cebolla,Frutas y Verduras,3400
+1900,25/4/2024,222,2,2908,Empanadas,Congelados,10800
+1901,24/6/2024,53,3,3327,Leche,Lacteos,9800
+1902,15/6/2024,55,5,1506,Garbanzos,Conservas,2900
+1903,20/3/2024,278,2,2837,Papas chips,Galletitas y Snacks,6800
+1904,10/4/2024,231,4,1619,Pan frances,Panaderia,6500
+1905,18/5/2024,275,1,3189,Tortas,Panaderia,12200
+1906,23/5/2024,158,3,2800,Zanahorias,Frutas y Verduras,2600
+1907,29/2/2024,278,3,1619,Pan frances,Panaderia,6500
+1908,31/8/2024,199,2,3167,Queso cremoso,Lacteos,13800
+1909,21/9/2024,272,6,3383,Manzanas,Frutas y Verduras,5200
+1910,12/11/2024,292,4,2182,Atun enlatado,Conservas,5000
+1911,20/10/2024,64,5,2429,Costilla de cerdo,Carniceria,11400
+1912,23/7/2024,23,1,2800,Zanahorias,Frutas y Verduras,2600
+1913,3/4/2024,78,5,2837,Papas chips,Galletitas y Snacks,6800
+1914,9/12/2024,212,3,3637,Jugos de frutas,Bebidas,7600
+1915,12/4/2024,21,4,4978,Agua mineral,Bebidas,5000
+1916,25/12/2024,98,4,1363,Vino tinto,Bebidas,10800
+1917,23/5/2024,168,4,2455,Cerveza,Bebidas,9200
+1918,15/12/2024,216,5,3167,Queso cremoso,Lacteos,13800
+1919,20/5/2024,67,3,4578,Lentejas,Conservas,2600
+1920,20/3/2024,184,6,4578,Lentejas,Conservas,2600
+1921,9/5/2024,192,6,2908,Empanadas,Congelados,10800
+1922,14/4/2024,269,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+1923,12/5/2024,112,5,4720,Bananas,Frutas y Verduras,5800
+1924,8/6/2024,8,6,1688,Hamburgesas congeladas,Congelados,7600
+1925,27/9/2024,101,4,2429,Costilla de cerdo,Carniceria,11400
+1926,2/5/2024,55,1,2837,Papas chips,Galletitas y Snacks,6800
+1927,12/11/2024,59,1,4720,Bananas,Frutas y Verduras,5800
+1928,15/2/2024,310,1,1437,Arroz,Conservas,3400
+1929,20/9/2024,252,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+1930,30/10/2024,302,1,3327,Leche,Lacteos,9800
+1931,3/2/2024,204,4,5137,Asado,Carniceria,22800
+1932,15/5/2024,146,1,1506,Garbanzos,Conservas,2900
+1933,14/5/2024,314,5,1619,Pan frances,Panaderia,6500
+1934,11/2/2024,69,1,4978,Agua mineral,Bebidas,5000
+1935,3/6/2024,311,5,3140,Milanesa,Carniceria,13000
+1936,23/10/2024,89,5,2455,Cerveza,Bebidas,9200
+1937,3/8/2024,326,1,1640,Pizza congelada,Congelados,12400
+1938,30/7/2024,125,3,3189,Tortas,Panaderia,12200
+1939,5/11/2024,141,5,4978,Agua mineral,Bebidas,5000
+1940,16/12/2024,87,5,3637,Jugos de frutas,Bebidas,7600
+1941,9/7/2024,133,2,2228,Pan integral,Panaderia,10000
+1942,24/3/2024,41,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+1943,21/7/2024,235,2,4043,Medialunas,Panaderia,2800
+1944,8/7/2024,130,6,3327,Leche,Lacteos,9800
+1945,21/6/2024,190,3,1437,Arroz,Conservas,3400
+1946,27/9/2024,277,5,3358,Yogur,Lacteos,4200
+1947,24/3/2024,288,2,2455,Cerveza,Bebidas,9200
+1948,18/11/2024,5,3,4041,Tomates,Frutas y Verduras,5200
+1949,25/9/2024,223,3,3327,Leche,Lacteos,9800
+1950,28/6/2024,111,5,4043,Medialunas,Panaderia,2800
+1951,18/4/2024,212,6,3140,Milanesa,Carniceria,13000
+1952,29/4/2024,190,4,4041,Tomates,Frutas y Verduras,5200
+1953,24/11/2024,71,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+1954,20/6/2024,120,4,3383,Manzanas,Frutas y Verduras,5200
+1955,2/8/2024,78,6,1363,Vino tinto,Bebidas,10800
+1956,30/8/2024,1,3,4578,Lentejas,Conservas,2600
+1957,10/3/2024,217,2,1506,Garbanzos,Conservas,2900
+1958,24/11/2024,310,5,3731,Papas fritas,Congelados,6600
+1959,1/12/2024,58,6,3189,Tortas,Panaderia,12200
+1960,6/4/2024,266,3,1363,Vino tinto,Bebidas,10800
+1961,1/5/2024,177,3,1437,Arroz,Conservas,3400
+1962,30/5/2024,82,2,4929,Manteca,Lacteos,4500
+1963,19/9/2024,99,1,1619,Pan frances,Panaderia,6500
+1964,1/9/2024,319,1,2455,Cerveza,Bebidas,9200
+1965,7/11/2024,185,5,4578,Lentejas,Conservas,2600
+1966,6/6/2024,11,1,2908,Empanadas,Congelados,10800
+1967,3/2/2024,32,5,4068,Chorizo,Carniceria,9000
+1968,2/4/2024,285,2,1619,Pan frances,Panaderia,6500
+1969,17/10/2024,233,1,2455,Cerveza,Bebidas,9200
+1970,13/3/2024,167,1,2429,Costilla de cerdo,Carniceria,11400
+1971,6/10/2024,176,1,1363,Vino tinto,Bebidas,10800
+1972,31/10/2024,305,5,3545,Cebolla,Frutas y Verduras,3400
+1973,1/8/2024,80,3,1541,Lechugas,Frutas y Verduras,3400
+1974,19/5/2024,99,1,3383,Manzanas,Frutas y Verduras,5200
+1975,14/2/2024,118,6,2099,Queso rallado,Lacteos,15400
+1976,31/3/2024,299,6,4720,Bananas,Frutas y Verduras,5800
+1977,25/12/2024,36,5,2182,Atun enlatado,Conservas,5000
+1978,1/11/2024,210,3,2800,Zanahorias,Frutas y Verduras,2600
+1979,13/8/2024,185,3,2800,Zanahorias,Frutas y Verduras,2600
+1980,28/6/2024,160,4,1363,Vino tinto,Bebidas,10800
+1981,24/8/2024,70,5,1437,Arroz,Conservas,3400
+1982,10/11/2024,283,1,1688,Hamburgesas congeladas,Congelados,7600
+1983,18/2/2024,63,4,4978,Agua mineral,Bebidas,5000
+1984,20/3/2024,321,2,2182,Atun enlatado,Conservas,5000
+1985,31/5/2024,84,5,4769,Manies,Galletitas y Snacks,4400
+1986,1/5/2024,278,6,3383,Manzanas,Frutas y Verduras,5200
+1987,21/6/2024,90,4,4043,Medialunas,Panaderia,2800
+1988,28/4/2024,114,2,2800,Zanahorias,Frutas y Verduras,2600
+1989,8/7/2024,274,2,3383,Manzanas,Frutas y Verduras,5200
+1990,22/7/2024,242,4,3189,Tortas,Panaderia,12200
+1991,11/8/2024,21,2,1437,Arroz,Conservas,3400
+1992,25/9/2024,266,6,2455,Cerveza,Bebidas,9200
+1993,17/11/2024,99,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+1994,24/7/2024,323,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+1995,11/8/2024,159,2,4051,Pollo,Carniceria,14800
+1996,24/4/2024,117,2,3731,Papas fritas,Congelados,6600
+1997,3/10/2024,246,1,3358,Yogur,Lacteos,4200
+1998,21/3/2024,279,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+1999,25/2/2024,209,2,2837,Papas chips,Galletitas y Snacks,6800
+2000,20/11/2024,151,3,4051,Pollo,Carniceria,14800
+2001,21/11/2024,271,1,5137,Asado,Carniceria,22800
+2002,6/6/2024,130,5,1726,Salchicha,Carniceria,9000
+2003,24/12/2024,161,5,3167,Queso cremoso,Lacteos,13800
+2004,14/11/2024,252,2,4068,Chorizo,Carniceria,9000
+2005,10/5/2024,45,3,3637,Jugos de frutas,Bebidas,7600
+2006,19/11/2024,152,3,2837,Papas chips,Galletitas y Snacks,6800
+2007,12/2/2024,288,2,3125,Facturas,Panaderia,9900
+2008,24/3/2024,162,4,4043,Medialunas,Panaderia,2800
+2009,8/6/2024,238,5,1363,Vino tinto,Bebidas,10800
+2010,5/12/2024,9,3,2099,Queso rallado,Lacteos,15400
+2011,3/11/2024,322,6,3140,Milanesa,Carniceria,13000
+2012,7/12/2024,210,4,2837,Papas chips,Galletitas y Snacks,6800
+2013,17/9/2024,84,3,3358,Yogur,Lacteos,4200
+2014,26/6/2024,229,4,1437,Arroz,Conservas,3400
+2015,15/8/2024,33,5,4929,Manteca,Lacteos,4500
+2016,16/12/2024,58,3,4769,Manies,Galletitas y Snacks,4400
+2017,9/6/2024,226,6,4068,Chorizo,Carniceria,9000
+2018,22/5/2024,69,6,4978,Agua mineral,Bebidas,5000
+2019,12/3/2024,49,6,2228,Pan integral,Panaderia,10000
+2020,13/5/2024,265,1,5137,Asado,Carniceria,22800
+2021,18/8/2024,240,3,1506,Garbanzos,Conservas,2900
+2022,7/6/2024,211,3,1363,Vino tinto,Bebidas,10800
+2023,20/6/2024,280,2,2908,Empanadas,Congelados,10800
+2024,30/5/2024,282,4,3140,Milanesa,Carniceria,13000
+2025,6/9/2024,59,1,2099,Queso rallado,Lacteos,15400
+2026,28/9/2024,48,3,3383,Manzanas,Frutas y Verduras,5200
+2027,22/2/2024,184,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2028,3/12/2024,226,3,3189,Tortas,Panaderia,12200
+2029,3/10/2024,129,6,5137,Asado,Carniceria,22800
+2030,5/11/2024,70,6,3327,Leche,Lacteos,9800
+2031,7/11/2024,190,3,2837,Papas chips,Galletitas y Snacks,6800
+2032,3/9/2024,100,4,2182,Atun enlatado,Conservas,5000
+2033,14/12/2024,308,4,2099,Queso rallado,Lacteos,15400
+2034,3/7/2024,15,1,2908,Empanadas,Congelados,10800
+2035,4/7/2024,225,6,4720,Bananas,Frutas y Verduras,5800
+2036,12/6/2024,158,6,2429,Costilla de cerdo,Carniceria,11400
+2037,4/10/2024,296,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2038,31/1/2024,132,5,3358,Yogur,Lacteos,4200
+2039,1/12/2024,88,3,1619,Pan frances,Panaderia,6500
+2040,22/3/2024,313,5,1619,Pan frances,Panaderia,6500
+2041,3/10/2024,219,5,3637,Jugos de frutas,Bebidas,7600
+2042,3/3/2024,221,6,3545,Cebolla,Frutas y Verduras,3400
+2043,8/2/2024,318,2,4978,Agua mineral,Bebidas,5000
+2044,20/8/2024,246,5,3140,Milanesa,Carniceria,13000
+2045,17/2/2024,97,3,3140,Milanesa,Carniceria,13000
+2046,3/8/2024,13,1,3545,Cebolla,Frutas y Verduras,3400
+2047,28/2/2024,117,1,3383,Manzanas,Frutas y Verduras,5200
+2048,27/3/2024,261,3,1640,Pizza congelada,Congelados,12400
+2049,8/8/2024,76,1,4051,Pollo,Carniceria,14800
+2050,18/6/2024,58,4,2908,Empanadas,Congelados,10800
+2051,14/4/2024,165,2,1363,Vino tinto,Bebidas,10800
+2052,13/7/2024,322,4,4041,Tomates,Frutas y Verduras,5200
+2053,29/8/2024,178,1,1363,Vino tinto,Bebidas,10800
+2054,20/3/2024,209,3,1506,Garbanzos,Conservas,2900
+2055,21/4/2024,186,3,4929,Manteca,Lacteos,4500
+2056,18/8/2024,320,6,4578,Lentejas,Conservas,2600
+2057,3/6/2024,81,5,4051,Pollo,Carniceria,14800
+2058,11/3/2024,206,2,4051,Pollo,Carniceria,14800
+2059,29/2/2024,84,6,1541,Lechugas,Frutas y Verduras,3400
+2060,6/6/2024,194,6,4068,Chorizo,Carniceria,9000
+2061,17/7/2024,318,2,1363,Vino tinto,Bebidas,10800
+2062,15/11/2024,172,1,3637,Jugos de frutas,Bebidas,7600
+2063,3/11/2024,8,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2064,9/7/2024,306,5,1363,Vino tinto,Bebidas,10800
+2065,29/9/2024,202,3,3189,Tortas,Panaderia,12200
+2066,21/4/2024,288,1,1726,Salchicha,Carniceria,9000
+2067,26/2/2024,73,1,3731,Papas fritas,Congelados,6600
+2068,21/6/2024,224,6,4978,Agua mineral,Bebidas,5000
+2069,21/9/2024,243,5,1506,Garbanzos,Conservas,2900
+2070,30/6/2024,89,1,3383,Manzanas,Frutas y Verduras,5200
+2071,4/10/2024,122,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+2072,24/10/2024,11,4,2455,Cerveza,Bebidas,9200
+2073,15/3/2024,283,4,1726,Salchicha,Carniceria,9000
+2074,13/6/2024,172,1,1541,Lechugas,Frutas y Verduras,3400
+2075,7/9/2024,245,5,1726,Salchicha,Carniceria,9000
+2076,14/2/2024,5,1,3327,Leche,Lacteos,9800
+2077,3/7/2024,62,6,2800,Zanahorias,Frutas y Verduras,2600
+2078,29/10/2024,60,5,3731,Papas fritas,Congelados,6600
+2079,21/11/2024,11,5,1726,Salchicha,Carniceria,9000
+2080,29/10/2024,62,4,4720,Bananas,Frutas y Verduras,5800
+2081,19/4/2024,206,1,3167,Queso cremoso,Lacteos,13800
+2082,7/6/2024,169,2,4041,Tomates,Frutas y Verduras,5200
+2083,15/7/2024,44,2,5137,Asado,Carniceria,22800
+2084,7/4/2024,138,4,2837,Papas chips,Galletitas y Snacks,6800
+2085,13/12/2024,46,1,3140,Milanesa,Carniceria,13000
+2086,26/5/2024,68,3,4929,Manteca,Lacteos,4500
+2087,19/4/2024,103,6,4978,Agua mineral,Bebidas,5000
+2088,18/12/2024,70,4,3731,Papas fritas,Congelados,6600
+2089,30/9/2024,221,2,3125,Facturas,Panaderia,9900
+2090,5/10/2024,299,5,4041,Tomates,Frutas y Verduras,5200
+2091,17/3/2024,44,3,2800,Zanahorias,Frutas y Verduras,2600
+2092,20/4/2024,272,1,3731,Papas fritas,Congelados,6600
+2093,27/5/2024,90,1,3358,Yogur,Lacteos,4200
+2094,2/3/2024,276,5,1640,Pizza congelada,Congelados,12400
+2095,18/9/2024,36,6,4578,Lentejas,Conservas,2600
+2096,20/12/2024,308,5,1640,Pizza congelada,Congelados,12400
+2097,12/11/2024,296,1,1541,Lechugas,Frutas y Verduras,3400
+2098,28/5/2024,108,4,1437,Arroz,Conservas,3400
+2099,12/10/2024,147,1,4769,Manies,Galletitas y Snacks,4400
+2100,21/11/2024,260,6,2908,Empanadas,Congelados,10800
+2101,10/11/2024,260,3,5137,Asado,Carniceria,22800
+2102,29/9/2024,268,4,4720,Bananas,Frutas y Verduras,5800
+2103,30/9/2024,78,4,4929,Manteca,Lacteos,4500
+2104,11/10/2024,320,5,4043,Medialunas,Panaderia,2800
+2105,29/4/2024,85,1,1619,Pan frances,Panaderia,6500
+2106,12/9/2024,135,2,3125,Facturas,Panaderia,9900
+2107,15/3/2024,299,5,3167,Queso cremoso,Lacteos,13800
+2108,19/8/2024,246,2,1541,Lechugas,Frutas y Verduras,3400
+2109,3/5/2024,284,2,3327,Leche,Lacteos,9800
+2110,7/5/2024,27,5,2455,Cerveza,Bebidas,9200
+2111,21/7/2024,289,2,3731,Papas fritas,Congelados,6600
+2112,19/3/2024,119,4,3545,Cebolla,Frutas y Verduras,3400
+2113,13/10/2024,119,6,1506,Garbanzos,Conservas,2900
+2114,12/5/2024,119,4,3383,Manzanas,Frutas y Verduras,5200
+2115,19/10/2024,250,4,2455,Cerveza,Bebidas,9200
+2116,9/6/2024,187,4,1541,Lechugas,Frutas y Verduras,3400
+2117,26/4/2024,82,2,1619,Pan frances,Panaderia,6500
+2118,1/8/2024,199,2,4068,Chorizo,Carniceria,9000
+2119,2/10/2024,296,1,3140,Milanesa,Carniceria,13000
+2120,17/10/2024,316,5,2228,Pan integral,Panaderia,10000
+2121,4/11/2024,261,5,1363,Vino tinto,Bebidas,10800
+2122,7/10/2024,120,5,3358,Yogur,Lacteos,4200
+2123,27/5/2024,235,3,3383,Manzanas,Frutas y Verduras,5200
+2124,8/11/2024,70,3,2429,Costilla de cerdo,Carniceria,11400
+2125,22/11/2024,231,5,4929,Manteca,Lacteos,4500
+2126,6/2/2024,181,3,3167,Queso cremoso,Lacteos,13800
+2127,7/2/2024,180,3,5137,Asado,Carniceria,22800
+2128,28/4/2024,314,1,1437,Arroz,Conservas,3400
+2129,29/11/2024,49,4,4578,Lentejas,Conservas,2600
+2130,16/8/2024,286,4,4043,Medialunas,Panaderia,2800
+2131,18/10/2024,315,5,4929,Manteca,Lacteos,4500
+2132,11/3/2024,215,3,1726,Salchicha,Carniceria,9000
+2133,17/7/2024,92,6,2228,Pan integral,Panaderia,10000
+2134,19/2/2024,116,5,2455,Cerveza,Bebidas,9200
+2135,18/3/2024,50,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+2136,7/5/2024,150,6,1619,Pan frances,Panaderia,6500
+2137,12/4/2024,202,1,4929,Manteca,Lacteos,4500
+2138,13/4/2024,281,5,4068,Chorizo,Carniceria,9000
+2139,17/7/2024,234,6,4720,Bananas,Frutas y Verduras,5800
+2140,8/4/2024,174,1,4051,Pollo,Carniceria,14800
+2141,1/9/2024,188,4,3189,Tortas,Panaderia,12200
+2142,29/3/2024,165,2,3731,Papas fritas,Congelados,6600
+2143,1/11/2024,54,6,2182,Atun enlatado,Conservas,5000
+2144,29/11/2024,281,4,2908,Empanadas,Congelados,10800
+2145,24/4/2024,38,4,1619,Pan frances,Panaderia,6500
+2146,4/5/2024,278,2,4043,Medialunas,Panaderia,2800
+2147,30/12/2024,231,2,3545,Cebolla,Frutas y Verduras,3400
+2148,9/11/2024,43,2,3189,Tortas,Panaderia,12200
+2149,19/4/2024,82,4,3167,Queso cremoso,Lacteos,13800
+2150,2/7/2024,214,5,1640,Pizza congelada,Congelados,12400
+2151,5/6/2024,127,2,4720,Bananas,Frutas y Verduras,5800
+2152,3/8/2024,153,2,1640,Pizza congelada,Congelados,12400
+2153,5/6/2024,282,6,1640,Pizza congelada,Congelados,12400
+2154,13/9/2024,212,6,1640,Pizza congelada,Congelados,12400
+2155,25/2/2024,162,1,3383,Manzanas,Frutas y Verduras,5200
+2156,7/3/2024,193,5,1688,Hamburgesas congeladas,Congelados,7600
+2157,6/3/2024,193,1,3358,Yogur,Lacteos,4200
+2158,16/7/2024,148,3,2182,Atun enlatado,Conservas,5000
+2159,13/4/2024,288,3,4041,Tomates,Frutas y Verduras,5200
+2160,24/12/2024,321,5,2228,Pan integral,Panaderia,10000
+2161,12/8/2024,280,1,3189,Tortas,Panaderia,12200
+2162,16/4/2024,304,4,3637,Jugos de frutas,Bebidas,7600
+2163,23/6/2024,168,6,2182,Atun enlatado,Conservas,5000
+2164,25/3/2024,292,5,4578,Lentejas,Conservas,2600
+2165,20/8/2024,106,6,1363,Vino tinto,Bebidas,10800
+2166,26/8/2024,153,3,4578,Lentejas,Conservas,2600
+2167,13/11/2024,311,1,4978,Agua mineral,Bebidas,5000
+2168,6/7/2024,38,5,4720,Bananas,Frutas y Verduras,5800
+2169,27/4/2024,284,6,2182,Atun enlatado,Conservas,5000
+2170,23/7/2024,130,1,3358,Yogur,Lacteos,4200
+2171,17/10/2024,106,2,1363,Vino tinto,Bebidas,10800
+2172,11/8/2024,238,3,1619,Pan frances,Panaderia,6500
+2173,5/12/2024,128,1,1640,Pizza congelada,Congelados,12400
+2174,28/9/2024,325,1,3383,Manzanas,Frutas y Verduras,5200
+2175,7/3/2024,255,1,3167,Queso cremoso,Lacteos,13800
+2176,20/2/2024,48,5,1619,Pan frances,Panaderia,6500
+2177,24/10/2024,37,6,4720,Bananas,Frutas y Verduras,5800
+2178,19/6/2024,54,2,4068,Chorizo,Carniceria,9000
+2179,7/12/2024,150,4,3731,Papas fritas,Congelados,6600
+2180,13/3/2024,74,5,4720,Bananas,Frutas y Verduras,5800
+2181,2/6/2024,136,6,3327,Leche,Lacteos,9800
+2182,26/3/2024,116,6,3358,Yogur,Lacteos,4200
+2183,7/3/2024,38,4,4578,Lentejas,Conservas,2600
+2184,25/4/2024,68,6,4051,Pollo,Carniceria,14800
+2185,28/9/2024,250,2,2429,Costilla de cerdo,Carniceria,11400
+2186,9/6/2024,234,3,2228,Pan integral,Panaderia,10000
+2187,5/8/2024,69,1,2455,Cerveza,Bebidas,9200
+2188,26/12/2024,17,3,3637,Jugos de frutas,Bebidas,7600
+2189,22/12/2024,308,3,4929,Manteca,Lacteos,4500
+2190,1/2/2024,98,1,3189,Tortas,Panaderia,12200
+2191,4/7/2024,80,4,1619,Pan frances,Panaderia,6500
+2192,12/9/2024,167,6,1688,Hamburgesas congeladas,Congelados,7600
+2193,9/5/2024,244,5,1363,Vino tinto,Bebidas,10800
+2194,2/7/2024,157,2,3140,Milanesa,Carniceria,13000
+2195,10/11/2024,197,3,1437,Arroz,Conservas,3400
+2196,20/5/2024,175,2,3731,Papas fritas,Congelados,6600
+2197,31/8/2024,151,1,4578,Lentejas,Conservas,2600
+2198,7/7/2024,213,1,2228,Pan integral,Panaderia,10000
+2199,17/9/2024,325,4,2228,Pan integral,Panaderia,10000
+2200,8/9/2024,115,1,3637,Jugos de frutas,Bebidas,7600
+2201,16/3/2024,63,6,4769,Manies,Galletitas y Snacks,4400
+2202,4/10/2024,276,5,5137,Asado,Carniceria,22800
+2203,18/11/2024,68,5,3125,Facturas,Panaderia,9900
+2204,15/3/2024,55,1,3637,Jugos de frutas,Bebidas,7600
+2205,20/4/2024,233,2,2099,Queso rallado,Lacteos,15400
+2206,22/2/2024,236,1,3731,Papas fritas,Congelados,6600
+2207,16/11/2024,149,1,3383,Manzanas,Frutas y Verduras,5200
+2208,17/9/2024,324,5,3383,Manzanas,Frutas y Verduras,5200
+2209,7/2/2024,151,2,3167,Queso cremoso,Lacteos,13800
+2210,1/8/2024,140,2,4929,Manteca,Lacteos,4500
+2211,28/9/2024,60,1,2908,Empanadas,Congelados,10800
+2212,7/8/2024,99,3,3731,Papas fritas,Congelados,6600
+2213,31/3/2024,230,4,4041,Tomates,Frutas y Verduras,5200
+2214,15/2/2024,187,5,4068,Chorizo,Carniceria,9000
+2215,24/7/2024,35,1,3637,Jugos de frutas,Bebidas,7600
+2216,19/8/2024,42,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2217,5/12/2024,198,6,5137,Asado,Carniceria,22800
+2218,6/6/2024,209,3,2908,Empanadas,Congelados,10800
+2219,24/12/2024,79,2,2182,Atun enlatado,Conservas,5000
+2220,11/9/2024,317,3,1688,Hamburgesas congeladas,Congelados,7600
+2221,16/5/2024,63,6,1541,Lechugas,Frutas y Verduras,3400
+2222,30/4/2024,163,1,2800,Zanahorias,Frutas y Verduras,2600
+2223,17/9/2024,219,5,5137,Asado,Carniceria,22800
+2224,2/7/2024,286,3,3637,Jugos de frutas,Bebidas,7600
+2225,27/3/2024,269,1,4769,Manies,Galletitas y Snacks,4400
+2226,1/9/2024,122,6,3140,Milanesa,Carniceria,13000
+2227,20/2/2024,239,4,3140,Milanesa,Carniceria,13000
+2228,8/11/2024,155,4,2455,Cerveza,Bebidas,9200
+2229,12/4/2024,312,2,4978,Agua mineral,Bebidas,5000
+2230,27/11/2024,24,2,4720,Bananas,Frutas y Verduras,5800
+2231,17/10/2024,6,3,4041,Tomates,Frutas y Verduras,5200
+2232,19/5/2024,64,1,1541,Lechugas,Frutas y Verduras,3400
+2233,13/12/2024,1,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2234,4/8/2024,278,2,4978,Agua mineral,Bebidas,5000
+2235,22/2/2024,20,6,3637,Jugos de frutas,Bebidas,7600
+2236,12/2/2024,295,4,4720,Bananas,Frutas y Verduras,5800
+2237,27/7/2024,233,5,2182,Atun enlatado,Conservas,5000
+2238,15/2/2024,231,3,1619,Pan frances,Panaderia,6500
+2239,30/12/2024,172,3,3383,Manzanas,Frutas y Verduras,5200
+2240,15/6/2024,258,4,2837,Papas chips,Galletitas y Snacks,6800
+2241,15/5/2024,25,3,4051,Pollo,Carniceria,14800
+2242,29/10/2024,134,3,1619,Pan frances,Panaderia,6500
+2243,21/3/2024,326,2,4720,Bananas,Frutas y Verduras,5800
+2244,6/6/2024,108,1,1363,Vino tinto,Bebidas,10800
+2245,27/4/2024,167,4,3545,Cebolla,Frutas y Verduras,3400
+2246,3/10/2024,59,3,3545,Cebolla,Frutas y Verduras,3400
+2247,1/11/2024,15,5,1619,Pan frances,Panaderia,6500
+2248,27/2/2024,16,1,3545,Cebolla,Frutas y Verduras,3400
+2249,1/6/2024,124,2,2455,Cerveza,Bebidas,9200
+2250,4/12/2024,276,4,2099,Queso rallado,Lacteos,15400
+2251,22/3/2024,238,4,4578,Lentejas,Conservas,2600
+2252,3/9/2024,206,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+2253,11/3/2024,278,2,3358,Yogur,Lacteos,4200
+2254,11/7/2024,303,2,2429,Costilla de cerdo,Carniceria,11400
+2255,11/7/2024,180,5,1437,Arroz,Conservas,3400
+2256,8/7/2024,242,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+2257,20/6/2024,137,5,4043,Medialunas,Panaderia,2800
+2258,23/3/2024,17,3,2837,Papas chips,Galletitas y Snacks,6800
+2259,22/12/2024,103,1,4929,Manteca,Lacteos,4500
+2260,13/3/2024,54,3,3327,Leche,Lacteos,9800
+2261,17/3/2024,305,6,2099,Queso rallado,Lacteos,15400
+2262,13/11/2024,222,2,4041,Tomates,Frutas y Verduras,5200
+2263,4/2/2024,48,1,4978,Agua mineral,Bebidas,5000
+2264,16/3/2024,87,6,1726,Salchicha,Carniceria,9000
+2265,3/8/2024,37,5,1688,Hamburgesas congeladas,Congelados,7600
+2266,4/6/2024,108,3,4929,Manteca,Lacteos,4500
+2267,18/11/2024,239,6,3731,Papas fritas,Congelados,6600
+2268,27/6/2024,260,6,2099,Queso rallado,Lacteos,15400
+2269,25/4/2024,13,6,2908,Empanadas,Congelados,10800
+2270,12/6/2024,200,4,3545,Cebolla,Frutas y Verduras,3400
+2271,9/12/2024,45,1,4578,Lentejas,Conservas,2600
+2272,27/2/2024,85,6,3189,Tortas,Panaderia,12200
+2273,27/10/2024,304,4,2429,Costilla de cerdo,Carniceria,11400
+2274,13/3/2024,213,1,1437,Arroz,Conservas,3400
+2275,7/10/2024,227,1,4578,Lentejas,Conservas,2600
+2276,5/4/2024,62,6,3731,Papas fritas,Congelados,6600
+2277,24/7/2024,144,3,4578,Lentejas,Conservas,2600
+2278,2/3/2024,163,3,4929,Manteca,Lacteos,4500
+2279,22/10/2024,219,3,3637,Jugos de frutas,Bebidas,7600
+2280,1/3/2024,134,1,4720,Bananas,Frutas y Verduras,5800
+2281,27/4/2024,283,5,2429,Costilla de cerdo,Carniceria,11400
+2282,27/7/2024,192,6,5137,Asado,Carniceria,22800
+2283,20/12/2024,113,5,5137,Asado,Carniceria,22800
+2284,7/8/2024,58,4,4043,Medialunas,Panaderia,2800
+2285,1/8/2024,78,3,2099,Queso rallado,Lacteos,15400
+2286,16/9/2024,307,6,3545,Cebolla,Frutas y Verduras,3400
+2287,11/12/2024,5,5,2228,Pan integral,Panaderia,10000
+2288,2/9/2024,252,4,3189,Tortas,Panaderia,12200
+2289,12/5/2024,288,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2290,11/7/2024,216,3,4041,Tomates,Frutas y Verduras,5200
+2291,12/3/2024,69,6,5137,Asado,Carniceria,22800
+2292,11/11/2024,225,5,3140,Milanesa,Carniceria,13000
+2293,27/7/2024,300,3,5137,Asado,Carniceria,22800
+2294,28/2/2024,316,2,1437,Arroz,Conservas,3400
+2295,30/8/2024,252,2,4769,Manies,Galletitas y Snacks,4400
+2296,9/11/2024,254,3,2228,Pan integral,Panaderia,10000
+2297,4/12/2024,69,2,3731,Papas fritas,Congelados,6600
+2298,13/11/2024,140,2,2837,Papas chips,Galletitas y Snacks,6800
+2299,22/8/2024,236,6,4769,Manies,Galletitas y Snacks,4400
+2300,3/6/2024,49,6,4978,Agua mineral,Bebidas,5000
+2301,6/3/2024,321,1,4068,Chorizo,Carniceria,9000
+2302,28/9/2024,41,4,2800,Zanahorias,Frutas y Verduras,2600
+2303,1/4/2024,314,1,3358,Yogur,Lacteos,4200
+2304,3/6/2024,276,6,3125,Facturas,Panaderia,9900
+2305,25/12/2024,109,6,4978,Agua mineral,Bebidas,5000
+2306,12/4/2024,242,6,3358,Yogur,Lacteos,4200
+2307,24/11/2024,182,2,4041,Tomates,Frutas y Verduras,5200
+2308,2/6/2024,31,2,3731,Papas fritas,Congelados,6600
+2309,25/2/2024,82,4,3327,Leche,Lacteos,9800
+2310,19/2/2024,139,2,1726,Salchicha,Carniceria,9000
+2311,10/5/2024,45,2,4720,Bananas,Frutas y Verduras,5800
+2312,19/10/2024,22,5,1541,Lechugas,Frutas y Verduras,3400
+2313,5/5/2024,122,2,2837,Papas chips,Galletitas y Snacks,6800
+2314,30/6/2024,171,6,3637,Jugos de frutas,Bebidas,7600
+2315,31/5/2024,312,3,3167,Queso cremoso,Lacteos,13800
+2316,13/8/2024,197,1,1726,Salchicha,Carniceria,9000
+2317,22/10/2024,174,6,2228,Pan integral,Panaderia,10000
+2318,8/12/2024,18,4,4051,Pollo,Carniceria,14800
+2319,18/12/2024,199,6,1726,Salchicha,Carniceria,9000
+2320,10/12/2024,317,2,2837,Papas chips,Galletitas y Snacks,6800
+2321,17/7/2024,34,6,1541,Lechugas,Frutas y Verduras,3400
+2322,30/11/2024,63,6,4068,Chorizo,Carniceria,9000
+2323,16/2/2024,98,3,1640,Pizza congelada,Congelados,12400
+2324,10/8/2024,235,1,1363,Vino tinto,Bebidas,10800
+2325,20/2/2024,13,4,3358,Yogur,Lacteos,4200
+2326,1/4/2024,201,3,1688,Hamburgesas congeladas,Congelados,7600
+2327,3/3/2024,62,4,1688,Hamburgesas congeladas,Congelados,7600
+2328,3/2/2024,275,1,3731,Papas fritas,Congelados,6600
+2329,13/8/2024,145,1,1363,Vino tinto,Bebidas,10800
+2330,28/6/2024,254,4,1619,Pan frances,Panaderia,6500
+2331,25/2/2024,228,2,3327,Leche,Lacteos,9800
+2332,11/5/2024,301,2,3167,Queso cremoso,Lacteos,13800
+2333,25/12/2024,304,6,2429,Costilla de cerdo,Carniceria,11400
+2334,22/6/2024,190,2,3358,Yogur,Lacteos,4200
+2335,8/2/2024,56,2,2182,Atun enlatado,Conservas,5000
+2336,16/11/2024,148,4,1506,Garbanzos,Conservas,2900
+2337,20/10/2024,242,4,4068,Chorizo,Carniceria,9000
+2338,17/6/2024,137,6,2455,Cerveza,Bebidas,9200
+2339,16/5/2024,6,6,2800,Zanahorias,Frutas y Verduras,2600
+2340,13/12/2024,76,6,2182,Atun enlatado,Conservas,5000
+2341,9/4/2024,23,3,2429,Costilla de cerdo,Carniceria,11400
+2342,14/7/2024,180,6,3545,Cebolla,Frutas y Verduras,3400
+2343,18/11/2024,263,1,1726,Salchicha,Carniceria,9000
+2344,12/5/2024,76,6,1619,Pan frances,Panaderia,6500
+2345,14/11/2024,194,4,3358,Yogur,Lacteos,4200
+2346,28/2/2024,274,4,1640,Pizza congelada,Congelados,12400
+2347,22/11/2024,122,2,3731,Papas fritas,Congelados,6600
+2348,15/8/2024,138,6,4043,Medialunas,Panaderia,2800
+2349,4/12/2024,90,5,4051,Pollo,Carniceria,14800
+2350,26/12/2024,253,3,3327,Leche,Lacteos,9800
+2351,19/6/2024,114,2,3167,Queso cremoso,Lacteos,13800
+2352,15/10/2024,193,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+2353,30/11/2024,39,3,2837,Papas chips,Galletitas y Snacks,6800
+2354,20/6/2024,20,3,4043,Medialunas,Panaderia,2800
+2355,13/2/2024,150,2,1437,Arroz,Conservas,3400
+2356,21/4/2024,139,1,4041,Tomates,Frutas y Verduras,5200
+2357,5/8/2024,125,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2358,19/12/2024,316,1,3637,Jugos de frutas,Bebidas,7600
+2359,10/9/2024,230,1,1437,Arroz,Conservas,3400
+2360,12/10/2024,250,1,2800,Zanahorias,Frutas y Verduras,2600
+2361,2/8/2024,164,5,2800,Zanahorias,Frutas y Verduras,2600
+2362,16/2/2024,109,6,4578,Lentejas,Conservas,2600
+2363,12/11/2024,59,6,3383,Manzanas,Frutas y Verduras,5200
+2364,15/6/2024,285,2,1688,Hamburgesas congeladas,Congelados,7600
+2365,22/9/2024,95,3,1506,Garbanzos,Conservas,2900
+2366,7/3/2024,222,2,3383,Manzanas,Frutas y Verduras,5200
+2367,9/11/2024,83,4,1541,Lechugas,Frutas y Verduras,3400
+2368,17/4/2024,245,1,2837,Papas chips,Galletitas y Snacks,6800
+2369,28/11/2024,283,3,4769,Manies,Galletitas y Snacks,4400
+2370,13/10/2024,19,5,3637,Jugos de frutas,Bebidas,7600
+2371,19/10/2024,264,3,5137,Asado,Carniceria,22800
+2372,22/3/2024,177,1,3140,Milanesa,Carniceria,13000
+2373,24/6/2024,125,1,1688,Hamburgesas congeladas,Congelados,7600
+2374,14/10/2024,8,5,3358,Yogur,Lacteos,4200
+2375,17/2/2024,82,1,2182,Atun enlatado,Conservas,5000
+2376,7/6/2024,168,4,2800,Zanahorias,Frutas y Verduras,2600
+2377,24/9/2024,224,5,1688,Hamburgesas congeladas,Congelados,7600
+2378,8/12/2024,31,1,3358,Yogur,Lacteos,4200
+2379,6/5/2024,321,5,2228,Pan integral,Panaderia,10000
+2380,6/12/2024,175,5,1619,Pan frances,Panaderia,6500
+2381,21/8/2024,79,3,4929,Manteca,Lacteos,4500
+2382,14/8/2024,326,3,3545,Cebolla,Frutas y Verduras,3400
+2383,30/10/2024,237,3,3125,Facturas,Panaderia,9900
+2384,24/5/2024,238,5,3189,Tortas,Panaderia,12200
+2385,1/4/2024,76,4,1619,Pan frances,Panaderia,6500
+2386,18/10/2024,102,5,4043,Medialunas,Panaderia,2800
+2387,12/10/2024,22,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2388,3/5/2024,128,2,1506,Garbanzos,Conservas,2900
+2389,28/7/2024,64,1,2455,Cerveza,Bebidas,9200
+2390,24/6/2024,159,2,3140,Milanesa,Carniceria,13000
+2391,3/3/2024,271,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2392,30/9/2024,58,5,5137,Asado,Carniceria,22800
+2393,1/7/2024,58,4,4043,Medialunas,Panaderia,2800
+2394,12/8/2024,94,1,4769,Manies,Galletitas y Snacks,4400
+2395,13/4/2024,248,5,1619,Pan frances,Panaderia,6500
+2396,30/6/2024,176,3,3358,Yogur,Lacteos,4200
+2397,21/3/2024,238,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2398,8/3/2024,203,1,1363,Vino tinto,Bebidas,10800
+2399,29/6/2024,73,2,1506,Garbanzos,Conservas,2900
+2400,20/12/2024,166,6,2182,Atun enlatado,Conservas,5000
+2401,13/12/2024,217,2,1437,Arroz,Conservas,3400
+2402,30/4/2024,90,6,3189,Tortas,Panaderia,12200
+2403,13/4/2024,15,2,3140,Milanesa,Carniceria,13000
+2404,5/10/2024,97,4,3327,Leche,Lacteos,9800
+2405,9/6/2024,77,2,3637,Jugos de frutas,Bebidas,7600
+2406,21/9/2024,152,1,5137,Asado,Carniceria,22800
+2407,16/4/2024,209,5,4769,Manies,Galletitas y Snacks,4400
+2408,1/8/2024,89,1,4043,Medialunas,Panaderia,2800
+2409,18/2/2024,252,4,4043,Medialunas,Panaderia,2800
+2410,28/11/2024,93,2,1437,Arroz,Conservas,3400
+2411,27/6/2024,178,2,2908,Empanadas,Congelados,10800
+2412,18/7/2024,5,3,4578,Lentejas,Conservas,2600
+2413,2/4/2024,248,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+2414,10/7/2024,97,3,4041,Tomates,Frutas y Verduras,5200
+2415,20/8/2024,108,5,1619,Pan frances,Panaderia,6500
+2416,12/3/2024,49,5,1726,Salchicha,Carniceria,9000
+2417,12/11/2024,307,6,3327,Leche,Lacteos,9800
+2418,30/5/2024,308,4,4978,Agua mineral,Bebidas,5000
+2419,18/12/2024,134,2,4929,Manteca,Lacteos,4500
+2420,3/3/2024,17,2,3327,Leche,Lacteos,9800
+2421,17/12/2024,268,2,4578,Lentejas,Conservas,2600
+2422,19/10/2024,219,1,2099,Queso rallado,Lacteos,15400
+2423,30/7/2024,157,5,3327,Leche,Lacteos,9800
+2424,25/8/2024,61,3,3125,Facturas,Panaderia,9900
+2425,30/11/2024,132,2,2908,Empanadas,Congelados,10800
+2426,21/4/2024,75,2,1363,Vino tinto,Bebidas,10800
+2427,20/2/2024,57,2,1437,Arroz,Conservas,3400
+2428,19/11/2024,319,1,4929,Manteca,Lacteos,4500
+2429,29/8/2024,89,3,3731,Papas fritas,Congelados,6600
+2430,6/7/2024,264,4,4051,Pollo,Carniceria,14800
+2431,20/11/2024,31,5,1688,Hamburgesas congeladas,Congelados,7600
+2432,9/7/2024,190,2,1541,Lechugas,Frutas y Verduras,3400
+2433,3/6/2024,126,2,2455,Cerveza,Bebidas,9200
+2434,20/4/2024,211,5,3637,Jugos de frutas,Bebidas,7600
+2435,15/6/2024,80,5,1437,Arroz,Conservas,3400
+2436,31/1/2024,282,3,3167,Queso cremoso,Lacteos,13800
+2437,11/6/2024,139,3,3637,Jugos de frutas,Bebidas,7600
+2438,25/6/2024,287,1,3125,Facturas,Panaderia,9900
+2439,24/2/2024,142,3,4068,Chorizo,Carniceria,9000
+2440,22/7/2024,21,6,1437,Arroz,Conservas,3400
+2441,26/5/2024,205,5,3731,Papas fritas,Congelados,6600
+2442,27/2/2024,266,3,1688,Hamburgesas congeladas,Congelados,7600
+2443,23/5/2024,74,6,2228,Pan integral,Panaderia,10000
+2444,17/11/2024,185,6,2099,Queso rallado,Lacteos,15400
+2445,5/11/2024,56,3,3125,Facturas,Panaderia,9900
+2446,29/12/2024,302,4,3140,Milanesa,Carniceria,13000
+2447,11/6/2024,53,1,4720,Bananas,Frutas y Verduras,5800
+2448,24/5/2024,242,5,1506,Garbanzos,Conservas,2900
+2449,22/2/2024,262,2,3327,Leche,Lacteos,9800
+2450,9/6/2024,49,6,3167,Queso cremoso,Lacteos,13800
+2451,17/5/2024,311,1,1619,Pan frances,Panaderia,6500
+2452,9/5/2024,215,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2453,24/12/2024,217,5,1688,Hamburgesas congeladas,Congelados,7600
+2454,19/8/2024,218,2,3383,Manzanas,Frutas y Verduras,5200
+2455,7/9/2024,316,5,5137,Asado,Carniceria,22800
+2456,17/11/2024,243,1,1506,Garbanzos,Conservas,2900
+2457,22/9/2024,234,3,3167,Queso cremoso,Lacteos,13800
+2458,13/4/2024,105,1,2908,Empanadas,Congelados,10800
+2459,7/9/2024,61,6,2837,Papas chips,Galletitas y Snacks,6800
+2460,28/2/2024,301,5,4043,Medialunas,Panaderia,2800
+2461,3/10/2024,185,5,1541,Lechugas,Frutas y Verduras,3400
+2462,30/6/2024,102,4,1506,Garbanzos,Conservas,2900
+2463,14/11/2024,95,4,4978,Agua mineral,Bebidas,5000
+2464,27/11/2024,18,6,4769,Manies,Galletitas y Snacks,4400
+2465,2/4/2024,240,3,4051,Pollo,Carniceria,14800
+2466,18/12/2024,201,6,3358,Yogur,Lacteos,4200
+2467,23/3/2024,25,3,2099,Queso rallado,Lacteos,15400
+2468,10/11/2024,307,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2469,11/4/2024,79,4,4578,Lentejas,Conservas,2600
+2470,29/9/2024,85,2,2908,Empanadas,Congelados,10800
+2471,25/7/2024,32,2,1437,Arroz,Conservas,3400
+2472,28/12/2024,236,4,1688,Hamburgesas congeladas,Congelados,7600
+2473,5/5/2024,181,5,1506,Garbanzos,Conservas,2900
+2474,19/7/2024,188,3,4041,Tomates,Frutas y Verduras,5200
+2475,29/5/2024,7,6,1688,Hamburgesas congeladas,Congelados,7600
+2476,3/6/2024,69,5,2800,Zanahorias,Frutas y Verduras,2600
+2477,24/6/2024,90,6,5137,Asado,Carniceria,22800
+2478,17/3/2024,109,3,2455,Cerveza,Bebidas,9200
+2479,5/3/2024,85,5,4769,Manies,Galletitas y Snacks,4400
+2480,9/2/2024,278,1,3545,Cebolla,Frutas y Verduras,3400
+2481,15/2/2024,166,2,2099,Queso rallado,Lacteos,15400
+2482,30/9/2024,82,2,2099,Queso rallado,Lacteos,15400
+2483,8/12/2024,14,3,2228,Pan integral,Panaderia,10000
+2484,11/6/2024,151,1,3637,Jugos de frutas,Bebidas,7600
+2485,9/5/2024,66,5,5137,Asado,Carniceria,22800
+2486,12/12/2024,81,2,5137,Asado,Carniceria,22800
+2487,8/5/2024,250,5,1437,Arroz,Conservas,3400
+2488,28/10/2024,55,5,2429,Costilla de cerdo,Carniceria,11400
+2489,11/9/2024,266,3,4769,Manies,Galletitas y Snacks,4400
+2490,10/4/2024,162,3,1688,Hamburgesas congeladas,Congelados,7600
+2491,6/10/2024,91,3,4929,Manteca,Lacteos,4500
+2492,20/6/2024,68,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+2493,13/5/2024,36,2,3167,Queso cremoso,Lacteos,13800
+2494,28/10/2024,211,5,2837,Papas chips,Galletitas y Snacks,6800
+2495,30/4/2024,299,4,4068,Chorizo,Carniceria,9000
+2496,11/7/2024,262,3,4929,Manteca,Lacteos,4500
+2497,12/4/2024,105,5,1688,Hamburgesas congeladas,Congelados,7600
+2498,2/6/2024,144,3,3637,Jugos de frutas,Bebidas,7600
+2499,21/4/2024,310,1,2908,Empanadas,Congelados,10800
+2500,6/11/2024,20,4,3731,Papas fritas,Congelados,6600
+2501,28/10/2024,272,4,3383,Manzanas,Frutas y Verduras,5200
+2502,1/8/2024,326,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+2503,3/7/2024,205,3,3327,Leche,Lacteos,9800
+2504,24/10/2024,161,3,3545,Cebolla,Frutas y Verduras,3400
+2505,2/6/2024,235,4,1363,Vino tinto,Bebidas,10800
+2506,13/11/2024,84,1,1688,Hamburgesas congeladas,Congelados,7600
+2507,28/3/2024,243,3,2837,Papas chips,Galletitas y Snacks,6800
+2508,20/9/2024,225,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+2509,4/6/2024,114,1,4051,Pollo,Carniceria,14800
+2510,2/10/2024,294,4,2771,Galletitas de agua,Galletitas y Snacks,4200
+2511,15/6/2024,259,3,1506,Garbanzos,Conservas,2900
+2512,9/3/2024,87,1,4578,Lentejas,Conservas,2600
+2513,25/9/2024,290,1,4720,Bananas,Frutas y Verduras,5800
+2514,26/10/2024,255,5,2800,Zanahorias,Frutas y Verduras,2600
+2515,22/8/2024,79,1,3140,Milanesa,Carniceria,13000
+2516,27/6/2024,268,4,3383,Manzanas,Frutas y Verduras,5200
+2517,6/12/2024,308,2,3167,Queso cremoso,Lacteos,13800
+2518,24/12/2024,107,4,2429,Costilla de cerdo,Carniceria,11400
+2519,12/3/2024,30,6,3167,Queso cremoso,Lacteos,13800
+2520,11/5/2024,103,5,2429,Costilla de cerdo,Carniceria,11400
+2521,4/10/2024,20,4,1437,Arroz,Conservas,3400
+2522,23/12/2024,110,3,1640,Pizza congelada,Congelados,12400
+2523,10/10/2024,63,6,3383,Manzanas,Frutas y Verduras,5200
+2524,12/3/2024,117,2,4051,Pollo,Carniceria,14800
+2525,25/7/2024,231,4,2182,Atun enlatado,Conservas,5000
+2526,3/7/2024,246,4,3167,Queso cremoso,Lacteos,13800
+2527,22/2/2024,55,3,3125,Facturas,Panaderia,9900
+2528,24/7/2024,164,1,2228,Pan integral,Panaderia,10000
+2529,5/7/2024,77,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+2530,5/9/2024,218,1,2099,Queso rallado,Lacteos,15400
+2531,23/8/2024,274,2,1437,Arroz,Conservas,3400
+2532,3/4/2024,28,5,2228,Pan integral,Panaderia,10000
+2533,12/8/2024,12,1,2800,Zanahorias,Frutas y Verduras,2600
+2534,11/2/2024,250,1,1726,Salchicha,Carniceria,9000
+2535,20/11/2024,118,2,2455,Cerveza,Bebidas,9200
+2536,9/7/2024,194,3,2455,Cerveza,Bebidas,9200
+2537,14/8/2024,57,2,1688,Hamburgesas congeladas,Congelados,7600
+2538,4/9/2024,141,5,1363,Vino tinto,Bebidas,10800
+2539,28/4/2024,135,4,1506,Garbanzos,Conservas,2900
+2540,6/2/2024,75,6,3637,Jugos de frutas,Bebidas,7600
+2541,14/11/2024,3,3,2182,Atun enlatado,Conservas,5000
+2542,19/10/2024,189,4,1640,Pizza congelada,Congelados,12400
+2543,14/11/2024,296,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2544,5/5/2024,34,1,1363,Vino tinto,Bebidas,10800
+2545,14/3/2024,233,1,1619,Pan frances,Panaderia,6500
+2546,22/10/2024,274,4,3731,Papas fritas,Congelados,6600
+2547,4/3/2024,80,5,3358,Yogur,Lacteos,4200
+2548,3/10/2024,206,6,4978,Agua mineral,Bebidas,5000
+2549,28/10/2024,239,1,3140,Milanesa,Carniceria,13000
+2550,28/2/2024,138,4,3731,Papas fritas,Congelados,6600
+2551,9/12/2024,171,2,4051,Pollo,Carniceria,14800
+2552,25/6/2024,310,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+2553,27/9/2024,120,5,3167,Queso cremoso,Lacteos,13800
+2554,26/4/2024,306,1,4578,Lentejas,Conservas,2600
+2555,13/2/2024,130,3,2837,Papas chips,Galletitas y Snacks,6800
+2556,18/8/2024,162,4,1688,Hamburgesas congeladas,Congelados,7600
+2557,19/7/2024,156,1,4068,Chorizo,Carniceria,9000
+2558,3/10/2024,177,6,1640,Pizza congelada,Congelados,12400
+2559,14/2/2024,87,6,4043,Medialunas,Panaderia,2800
+2560,21/2/2024,249,3,2837,Papas chips,Galletitas y Snacks,6800
+2561,11/4/2024,133,3,4041,Tomates,Frutas y Verduras,5200
+2562,24/11/2024,79,6,4578,Lentejas,Conservas,2600
+2563,19/3/2024,99,4,4043,Medialunas,Panaderia,2800
+2564,14/5/2024,117,2,3140,Milanesa,Carniceria,13000
+2565,14/8/2024,318,5,4041,Tomates,Frutas y Verduras,5200
+2566,2/6/2024,158,3,3140,Milanesa,Carniceria,13000
+2567,11/5/2024,56,3,4978,Agua mineral,Bebidas,5000
+2568,7/5/2024,92,4,2837,Papas chips,Galletitas y Snacks,6800
+2569,7/10/2024,177,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2570,26/3/2024,17,6,4068,Chorizo,Carniceria,9000
+2571,3/4/2024,54,5,4720,Bananas,Frutas y Verduras,5800
+2572,13/2/2024,258,4,1688,Hamburgesas congeladas,Congelados,7600
+2573,3/12/2024,143,1,4068,Chorizo,Carniceria,9000
+2574,3/7/2024,62,3,3358,Yogur,Lacteos,4200
+2575,28/10/2024,13,4,3731,Papas fritas,Congelados,6600
+2576,25/9/2024,214,2,4043,Medialunas,Panaderia,2800
+2577,15/7/2024,240,3,1726,Salchicha,Carniceria,9000
+2578,31/1/2024,201,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+2579,1/6/2024,66,5,4978,Agua mineral,Bebidas,5000
+2580,30/3/2024,287,4,3545,Cebolla,Frutas y Verduras,3400
+2581,12/4/2024,260,2,1688,Hamburgesas congeladas,Congelados,7600
+2582,14/6/2024,124,2,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2583,14/5/2024,220,4,1688,Hamburgesas congeladas,Congelados,7600
+2584,24/4/2024,141,4,4929,Manteca,Lacteos,4500
+2585,19/3/2024,323,1,4041,Tomates,Frutas y Verduras,5200
+2586,11/6/2024,184,2,1726,Salchicha,Carniceria,9000
+2587,25/10/2024,221,1,1506,Garbanzos,Conservas,2900
+2588,20/10/2024,116,4,4978,Agua mineral,Bebidas,5000
+2589,23/10/2024,274,5,3545,Cebolla,Frutas y Verduras,3400
+2590,14/5/2024,283,4,2800,Zanahorias,Frutas y Verduras,2600
+2591,4/12/2024,305,6,4051,Pollo,Carniceria,14800
+2592,8/9/2024,98,5,3140,Milanesa,Carniceria,13000
+2593,9/12/2024,312,6,3358,Yogur,Lacteos,4200
+2594,20/10/2024,75,1,3167,Queso cremoso,Lacteos,13800
+2595,28/11/2024,196,5,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2596,20/4/2024,287,5,1619,Pan frances,Panaderia,6500
+2597,6/11/2024,80,6,3545,Cebolla,Frutas y Verduras,3400
+2598,28/10/2024,155,6,4720,Bananas,Frutas y Verduras,5800
+2599,27/5/2024,176,2,1363,Vino tinto,Bebidas,10800
+2600,28/2/2024,187,4,1640,Pizza congelada,Congelados,12400
+2601,4/6/2024,218,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2602,6/5/2024,157,1,1506,Garbanzos,Conservas,2900
+2603,5/11/2024,156,1,1506,Garbanzos,Conservas,2900
+2604,15/2/2024,319,1,3731,Papas fritas,Congelados,6600
+2605,4/5/2024,210,6,2908,Empanadas,Congelados,10800
+2606,29/2/2024,221,2,4068,Chorizo,Carniceria,9000
+2607,6/9/2024,214,1,2182,Atun enlatado,Conservas,5000
+2608,7/12/2024,222,4,1619,Pan frances,Panaderia,6500
+2609,30/6/2024,148,6,1619,Pan frances,Panaderia,6500
+2610,9/2/2024,78,6,3327,Leche,Lacteos,9800
+2611,1/4/2024,63,4,3327,Leche,Lacteos,9800
+2612,6/9/2024,165,4,1541,Lechugas,Frutas y Verduras,3400
+2613,30/9/2024,251,3,1688,Hamburgesas congeladas,Congelados,7600
+2614,3/6/2024,279,4,4769,Manies,Galletitas y Snacks,4400
+2615,25/4/2024,277,4,3189,Tortas,Panaderia,12200
+2616,3/10/2024,272,3,4051,Pollo,Carniceria,14800
+2617,1/10/2024,63,2,1437,Arroz,Conservas,3400
+2618,5/8/2024,145,3,3327,Leche,Lacteos,9800
+2619,21/11/2024,209,4,3125,Facturas,Panaderia,9900
+2620,23/9/2024,29,2,3545,Cebolla,Frutas y Verduras,3400
+2621,10/11/2024,112,2,3731,Papas fritas,Congelados,6600
+2622,17/8/2024,27,4,1437,Arroz,Conservas,3400
+2623,26/3/2024,237,5,3167,Queso cremoso,Lacteos,13800
+2624,5/7/2024,52,3,3167,Queso cremoso,Lacteos,13800
+2625,21/8/2024,188,5,1437,Arroz,Conservas,3400
+2626,12/8/2024,321,2,2429,Costilla de cerdo,Carniceria,11400
+2627,5/8/2024,241,4,4578,Lentejas,Conservas,2600
+2628,19/3/2024,195,5,3125,Facturas,Panaderia,9900
+2629,9/7/2024,233,1,4041,Tomates,Frutas y Verduras,5200
+2630,27/3/2024,223,5,4041,Tomates,Frutas y Verduras,5200
+2631,6/11/2024,27,3,3545,Cebolla,Frutas y Verduras,3400
+2632,18/4/2024,53,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+2633,26/6/2024,13,5,2099,Queso rallado,Lacteos,15400
+2634,17/2/2024,31,6,4043,Medialunas,Panaderia,2800
+2635,20/4/2024,263,5,4769,Manies,Galletitas y Snacks,4400
+2636,20/6/2024,88,4,4041,Tomates,Frutas y Verduras,5200
+2637,20/11/2024,316,1,1688,Hamburgesas congeladas,Congelados,7600
+2638,1/10/2024,91,4,2908,Empanadas,Congelados,10800
+2639,9/7/2024,228,5,1437,Arroz,Conservas,3400
+2640,28/12/2024,25,1,1363,Vino tinto,Bebidas,10800
+2641,3/4/2024,172,3,3140,Milanesa,Carniceria,13000
+2642,11/2/2024,54,5,1506,Garbanzos,Conservas,2900
+2643,29/12/2024,121,5,1619,Pan frances,Panaderia,6500
+2644,5/11/2024,69,2,2800,Zanahorias,Frutas y Verduras,2600
+2645,24/4/2024,182,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2646,5/11/2024,228,4,2429,Costilla de cerdo,Carniceria,11400
+2647,21/9/2024,83,6,3731,Papas fritas,Congelados,6600
+2648,10/6/2024,299,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+2649,11/9/2024,294,1,3637,Jugos de frutas,Bebidas,7600
+2650,25/9/2024,48,2,1688,Hamburgesas congeladas,Congelados,7600
+2651,17/9/2024,272,4,2800,Zanahorias,Frutas y Verduras,2600
+2652,19/7/2024,247,1,3731,Papas fritas,Congelados,6600
+2653,10/6/2024,255,1,3140,Milanesa,Carniceria,13000
+2654,9/6/2024,224,3,3125,Facturas,Panaderia,9900
+2655,7/6/2024,176,1,4720,Bananas,Frutas y Verduras,5800
+2656,30/7/2024,207,4,3125,Facturas,Panaderia,9900
+2657,10/6/2024,171,1,1619,Pan frances,Panaderia,6500
+2658,17/6/2024,235,6,4578,Lentejas,Conservas,2600
+2659,1/5/2024,274,5,2228,Pan integral,Panaderia,10000
+2660,15/3/2024,28,6,4068,Chorizo,Carniceria,9000
+2661,18/4/2024,121,3,2455,Cerveza,Bebidas,9200
+2662,9/10/2024,15,6,3125,Facturas,Panaderia,9900
+2663,30/6/2024,251,4,1726,Salchicha,Carniceria,9000
+2664,26/8/2024,284,6,3140,Milanesa,Carniceria,13000
+2665,6/3/2024,36,6,1541,Lechugas,Frutas y Verduras,3400
+2666,19/4/2024,12,3,4578,Lentejas,Conservas,2600
+2667,16/9/2024,315,2,1688,Hamburgesas congeladas,Congelados,7600
+2668,1/3/2024,117,5,4041,Tomates,Frutas y Verduras,5200
+2669,5/3/2024,68,5,3358,Yogur,Lacteos,4200
+2670,23/10/2024,311,6,2908,Empanadas,Congelados,10800
+2671,27/6/2024,36,1,2908,Empanadas,Congelados,10800
+2672,1/7/2024,49,6,2908,Empanadas,Congelados,10800
+2673,21/9/2024,44,2,2837,Papas chips,Galletitas y Snacks,6800
+2674,17/5/2024,165,2,1541,Lechugas,Frutas y Verduras,3400
+2675,12/12/2024,285,2,3637,Jugos de frutas,Bebidas,7600
+2676,20/7/2024,83,2,1640,Pizza congelada,Congelados,12400
+2677,25/8/2024,118,2,2837,Papas chips,Galletitas y Snacks,6800
+2678,10/3/2024,11,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+2679,17/10/2024,63,1,3167,Queso cremoso,Lacteos,13800
+2680,6/2/2024,155,2,4720,Bananas,Frutas y Verduras,5800
+2681,21/8/2024,62,2,1506,Garbanzos,Conservas,2900
+2682,25/9/2024,8,5,3383,Manzanas,Frutas y Verduras,5200
+2683,26/3/2024,14,1,3637,Jugos de frutas,Bebidas,7600
+2684,10/10/2024,282,5,1437,Arroz,Conservas,3400
+2685,12/6/2024,40,2,2182,Atun enlatado,Conservas,5000
+2686,12/11/2024,44,3,4043,Medialunas,Panaderia,2800
+2687,13/2/2024,73,4,2455,Cerveza,Bebidas,9200
+2688,28/8/2024,74,2,4043,Medialunas,Panaderia,2800
+2689,16/3/2024,108,5,1363,Vino tinto,Bebidas,10800
+2690,5/10/2024,263,4,4720,Bananas,Frutas y Verduras,5800
+2691,13/6/2024,72,4,1541,Lechugas,Frutas y Verduras,3400
+2692,11/8/2024,1,2,2228,Pan integral,Panaderia,10000
+2693,29/8/2024,133,4,2837,Papas chips,Galletitas y Snacks,6800
+2694,25/11/2024,52,4,1640,Pizza congelada,Congelados,12400
+2695,24/7/2024,58,1,2771,Galletitas de agua,Galletitas y Snacks,4200
+2696,9/11/2024,86,2,4929,Manteca,Lacteos,4500
+2697,26/8/2024,218,5,2908,Empanadas,Congelados,10800
+2698,26/11/2024,146,5,3637,Jugos de frutas,Bebidas,7600
+2699,24/12/2024,133,3,4068,Chorizo,Carniceria,9000
+2700,14/6/2024,39,6,2800,Zanahorias,Frutas y Verduras,2600
+2701,20/8/2024,169,1,4041,Tomates,Frutas y Verduras,5200
+2702,11/8/2024,212,1,3167,Queso cremoso,Lacteos,13800
+2703,11/2/2024,255,3,2455,Cerveza,Bebidas,9200
+2704,14/12/2024,14,5,3383,Manzanas,Frutas y Verduras,5200
+2705,5/6/2024,305,5,3731,Papas fritas,Congelados,6600
+2706,5/12/2024,21,4,2908,Empanadas,Congelados,10800
+2707,26/9/2024,244,1,3731,Papas fritas,Congelados,6600
+2708,12/9/2024,233,5,2455,Cerveza,Bebidas,9200
+2709,13/2/2024,304,2,1619,Pan frances,Panaderia,6500
+2710,11/10/2024,5,2,3140,Milanesa,Carniceria,13000
+2711,26/9/2024,309,4,4929,Manteca,Lacteos,4500
+2712,21/5/2024,303,5,1363,Vino tinto,Bebidas,10800
+2713,31/8/2024,176,3,4769,Manies,Galletitas y Snacks,4400
+2714,6/9/2024,21,2,3327,Leche,Lacteos,9800
+2715,4/7/2024,159,1,2099,Queso rallado,Lacteos,15400
+2716,9/4/2024,162,4,4043,Medialunas,Panaderia,2800
+2717,25/5/2024,16,6,4068,Chorizo,Carniceria,9000
+2718,6/4/2024,157,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2719,10/2/2024,57,1,3189,Tortas,Panaderia,12200
+2720,20/3/2024,145,4,4068,Chorizo,Carniceria,9000
+2721,29/6/2024,29,2,1541,Lechugas,Frutas y Verduras,3400
+2722,21/8/2024,145,1,2837,Papas chips,Galletitas y Snacks,6800
+2723,26/10/2024,321,2,3327,Leche,Lacteos,9800
+2724,3/10/2024,302,1,3167,Queso cremoso,Lacteos,13800
+2725,24/7/2024,256,3,5137,Asado,Carniceria,22800
+2726,7/4/2024,166,6,3383,Manzanas,Frutas y Verduras,5200
+2727,9/7/2024,167,1,3383,Manzanas,Frutas y Verduras,5200
+2728,13/5/2024,49,6,5137,Asado,Carniceria,22800
+2729,25/2/2024,166,4,4051,Pollo,Carniceria,14800
+2730,12/11/2024,224,6,3167,Queso cremoso,Lacteos,13800
+2731,7/4/2024,132,3,4929,Manteca,Lacteos,4500
+2732,7/3/2024,311,6,2099,Queso rallado,Lacteos,15400
+2733,27/10/2024,27,6,1363,Vino tinto,Bebidas,10800
+2734,21/12/2024,116,5,3545,Cebolla,Frutas y Verduras,3400
+2735,24/9/2024,3,2,4578,Lentejas,Conservas,2600
+2736,23/7/2024,133,4,1437,Arroz,Conservas,3400
+2737,12/6/2024,285,5,4041,Tomates,Frutas y Verduras,5200
+2738,21/9/2024,70,3,1506,Garbanzos,Conservas,2900
+2739,18/10/2024,6,4,3327,Leche,Lacteos,9800
+2740,16/3/2024,224,5,4068,Chorizo,Carniceria,9000
+2741,26/4/2024,48,5,1640,Pizza congelada,Congelados,12400
+2742,18/11/2024,25,1,3167,Queso cremoso,Lacteos,13800
+2743,13/7/2024,251,5,4929,Manteca,Lacteos,4500
+2744,10/9/2024,301,3,4578,Lentejas,Conservas,2600
+2745,1/9/2024,114,3,4051,Pollo,Carniceria,14800
+2746,2/2/2024,217,1,2099,Queso rallado,Lacteos,15400
+2747,24/12/2024,54,1,2908,Empanadas,Congelados,10800
+2748,10/8/2024,169,2,4978,Agua mineral,Bebidas,5000
+2749,23/7/2024,248,2,4720,Bananas,Frutas y Verduras,5800
+2750,21/6/2024,3,4,3545,Cebolla,Frutas y Verduras,3400
+2751,21/2/2024,19,5,3358,Yogur,Lacteos,4200
+2752,4/2/2024,125,3,1437,Arroz,Conservas,3400
+2753,3/11/2024,319,3,4929,Manteca,Lacteos,4500
+2754,29/11/2024,95,2,1688,Hamburgesas congeladas,Congelados,7600
+2755,1/2/2024,27,4,4720,Bananas,Frutas y Verduras,5800
+2756,11/12/2024,207,2,4043,Medialunas,Panaderia,2800
+2757,1/10/2024,35,5,4978,Agua mineral,Bebidas,5000
+2758,10/4/2024,273,2,3731,Papas fritas,Congelados,6600
+2759,10/11/2024,170,3,4043,Medialunas,Panaderia,2800
+2760,26/7/2024,159,5,3189,Tortas,Panaderia,12200
+2761,29/5/2024,87,2,1688,Hamburgesas congeladas,Congelados,7600
+2762,14/8/2024,145,4,4978,Agua mineral,Bebidas,5000
+2763,14/2/2024,273,5,2800,Zanahorias,Frutas y Verduras,2600
+2764,30/11/2024,50,1,3327,Leche,Lacteos,9800
+2765,29/9/2024,183,5,2800,Zanahorias,Frutas y Verduras,2600
+2766,30/6/2024,185,1,1506,Garbanzos,Conservas,2900
+2767,14/6/2024,245,5,2455,Cerveza,Bebidas,9200
+2768,12/7/2024,307,1,2228,Pan integral,Panaderia,10000
+2769,9/3/2024,33,6,2908,Empanadas,Congelados,10800
+2770,8/2/2024,295,4,4769,Manies,Galletitas y Snacks,4400
+2771,16/2/2024,39,2,4068,Chorizo,Carniceria,9000
+2772,29/9/2024,56,3,2837,Papas chips,Galletitas y Snacks,6800
+2773,5/8/2024,248,4,2771,Galletitas de agua,Galletitas y Snacks,4200
+2774,22/9/2024,31,2,5137,Asado,Carniceria,22800
+2775,26/12/2024,159,4,4051,Pollo,Carniceria,14800
+2776,10/10/2024,10,3,2837,Papas chips,Galletitas y Snacks,6800
+2777,18/4/2024,24,6,3637,Jugos de frutas,Bebidas,7600
+2778,3/3/2024,64,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2779,26/7/2024,237,3,1688,Hamburgesas congeladas,Congelados,7600
+2780,23/6/2024,216,5,3327,Leche,Lacteos,9800
+2781,20/10/2024,224,5,1640,Pizza congelada,Congelados,12400
+2782,28/12/2024,119,2,4978,Agua mineral,Bebidas,5000
+2783,22/9/2024,61,5,2429,Costilla de cerdo,Carniceria,11400
+2784,7/8/2024,44,3,1437,Arroz,Conservas,3400
+2785,10/4/2024,191,6,3383,Manzanas,Frutas y Verduras,5200
+2786,29/4/2024,106,6,4068,Chorizo,Carniceria,9000
+2787,2/7/2024,249,4,3637,Jugos de frutas,Bebidas,7600
+2788,9/7/2024,18,3,1640,Pizza congelada,Congelados,12400
+2789,27/2/2024,35,5,3545,Cebolla,Frutas y Verduras,3400
+2790,3/6/2024,97,1,4769,Manies,Galletitas y Snacks,4400
+2791,9/8/2024,124,2,2837,Papas chips,Galletitas y Snacks,6800
+2792,29/12/2024,109,4,4769,Manies,Galletitas y Snacks,4400
+2793,18/9/2024,205,2,3189,Tortas,Panaderia,12200
+2794,10/5/2024,114,2,2182,Atun enlatado,Conservas,5000
+2795,3/4/2024,39,5,3140,Milanesa,Carniceria,13000
+2796,13/8/2024,94,4,4978,Agua mineral,Bebidas,5000
+2797,25/11/2024,10,2,3383,Manzanas,Frutas y Verduras,5200
+2798,15/9/2024,185,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2799,28/4/2024,217,1,3358,Yogur,Lacteos,4200
+2800,19/7/2024,226,4,3140,Milanesa,Carniceria,13000
+2801,14/2/2024,105,5,3383,Manzanas,Frutas y Verduras,5200
+2802,8/8/2024,326,4,3189,Tortas,Panaderia,12200
+2803,25/5/2024,283,6,1726,Salchicha,Carniceria,9000
+2804,12/8/2024,11,1,3327,Leche,Lacteos,9800
+2805,15/11/2024,256,6,3140,Milanesa,Carniceria,13000
+2806,23/6/2024,193,6,2228,Pan integral,Panaderia,10000
+2807,14/11/2024,26,3,4068,Chorizo,Carniceria,9000
+2808,15/3/2024,11,6,2182,Atun enlatado,Conservas,5000
+2809,11/9/2024,276,5,3140,Milanesa,Carniceria,13000
+2810,2/5/2024,314,2,1619,Pan frances,Panaderia,6500
+2811,19/7/2024,253,6,1688,Hamburgesas congeladas,Congelados,7600
+2812,29/10/2024,89,4,2182,Atun enlatado,Conservas,5000
+2813,19/11/2024,264,2,2429,Costilla de cerdo,Carniceria,11400
+2814,11/12/2024,29,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2815,23/3/2024,171,6,3327,Leche,Lacteos,9800
+2816,16/10/2024,287,6,4769,Manies,Galletitas y Snacks,4400
+2817,3/12/2024,254,2,4720,Bananas,Frutas y Verduras,5800
+2818,15/10/2024,310,2,1363,Vino tinto,Bebidas,10800
+2819,26/9/2024,6,1,1640,Pizza congelada,Congelados,12400
+2820,26/6/2024,258,2,3125,Facturas,Panaderia,9900
+2821,31/5/2024,66,1,3545,Cebolla,Frutas y Verduras,3400
+2822,9/7/2024,27,1,3125,Facturas,Panaderia,9900
+2823,1/9/2024,91,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2824,2/6/2024,144,4,3383,Manzanas,Frutas y Verduras,5200
+2825,27/11/2024,207,2,1363,Vino tinto,Bebidas,10800
+2826,2/5/2024,323,1,4769,Manies,Galletitas y Snacks,4400
+2827,21/4/2024,305,2,3731,Papas fritas,Congelados,6600
+2828,17/6/2024,233,6,4720,Bananas,Frutas y Verduras,5800
+2829,14/10/2024,188,1,3358,Yogur,Lacteos,4200
+2830,19/7/2024,11,1,4978,Agua mineral,Bebidas,5000
+2831,29/5/2024,180,5,4043,Medialunas,Panaderia,2800
+2832,7/7/2024,171,2,2771,Galletitas de agua,Galletitas y Snacks,4200
+2833,25/9/2024,202,5,4578,Lentejas,Conservas,2600
+2834,9/12/2024,123,1,1688,Hamburgesas congeladas,Congelados,7600
+2835,24/2/2024,57,5,3167,Queso cremoso,Lacteos,13800
+2836,26/7/2024,139,5,2228,Pan integral,Panaderia,10000
+2837,22/7/2024,324,1,3125,Facturas,Panaderia,9900
+2838,14/4/2024,41,2,3637,Jugos de frutas,Bebidas,7600
+2839,23/8/2024,54,6,1506,Garbanzos,Conservas,2900
+2840,5/5/2024,289,3,1437,Arroz,Conservas,3400
+2841,23/5/2024,303,6,4043,Medialunas,Panaderia,2800
+2842,29/11/2024,185,2,3167,Queso cremoso,Lacteos,13800
+2843,31/10/2024,3,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2844,4/4/2024,213,3,3545,Cebolla,Frutas y Verduras,3400
+2845,1/3/2024,71,6,4929,Manteca,Lacteos,4500
+2846,30/7/2024,200,4,4043,Medialunas,Panaderia,2800
+2847,15/10/2024,180,2,4043,Medialunas,Panaderia,2800
+2848,6/8/2024,157,4,4051,Pollo,Carniceria,14800
+2849,30/7/2024,153,2,1688,Hamburgesas congeladas,Congelados,7600
+2850,26/12/2024,202,6,3637,Jugos de frutas,Bebidas,7600
+2851,28/4/2024,316,4,2837,Papas chips,Galletitas y Snacks,6800
+2852,6/8/2024,50,4,1688,Hamburgesas congeladas,Congelados,7600
+2853,7/10/2024,259,4,1640,Pizza congelada,Congelados,12400
+2854,25/3/2024,208,2,2837,Papas chips,Galletitas y Snacks,6800
+2855,7/6/2024,53,5,4068,Chorizo,Carniceria,9000
+2856,2/12/2024,87,5,4578,Lentejas,Conservas,2600
+2857,10/7/2024,111,3,1640,Pizza congelada,Congelados,12400
+2858,30/10/2024,154,1,4043,Medialunas,Panaderia,2800
+2859,5/11/2024,280,3,3189,Tortas,Panaderia,12200
+2860,4/6/2024,156,6,3125,Facturas,Panaderia,9900
+2861,24/3/2024,147,5,2800,Zanahorias,Frutas y Verduras,2600
+2862,29/8/2024,233,3,1640,Pizza congelada,Congelados,12400
+2863,30/3/2024,194,5,3327,Leche,Lacteos,9800
+2864,30/9/2024,28,4,4578,Lentejas,Conservas,2600
+2865,25/6/2024,265,2,3545,Cebolla,Frutas y Verduras,3400
+2866,28/10/2024,6,3,3358,Yogur,Lacteos,4200
+2867,16/11/2024,7,1,3383,Manzanas,Frutas y Verduras,5200
+2868,13/11/2024,94,5,1640,Pizza congelada,Congelados,12400
+2869,23/2/2024,247,2,2099,Queso rallado,Lacteos,15400
+2870,23/8/2024,149,3,4720,Bananas,Frutas y Verduras,5800
+2871,26/11/2024,219,3,4929,Manteca,Lacteos,4500
+2872,5/7/2024,277,3,4978,Agua mineral,Bebidas,5000
+2873,5/2/2024,230,2,2228,Pan integral,Panaderia,10000
+2874,11/2/2024,87,4,4041,Tomates,Frutas y Verduras,5200
+2875,14/12/2024,148,1,4041,Tomates,Frutas y Verduras,5200
+2876,30/9/2024,162,3,2228,Pan integral,Panaderia,10000
+2877,1/11/2024,152,4,3731,Papas fritas,Congelados,6600
+2878,11/9/2024,180,4,4978,Agua mineral,Bebidas,5000
+2879,4/4/2024,186,5,3167,Queso cremoso,Lacteos,13800
+2880,28/5/2024,248,1,2182,Atun enlatado,Conservas,5000
+2881,27/6/2024,163,5,4051,Pollo,Carniceria,14800
+2882,17/5/2024,23,2,1640,Pizza congelada,Congelados,12400
+2883,2/5/2024,251,1,4929,Manteca,Lacteos,4500
+2884,5/4/2024,307,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2885,8/4/2024,245,1,2908,Empanadas,Congelados,10800
+2886,14/7/2024,67,1,4041,Tomates,Frutas y Verduras,5200
+2887,12/6/2024,24,6,3189,Tortas,Panaderia,12200
+2888,16/11/2024,83,3,3637,Jugos de frutas,Bebidas,7600
+2889,4/2/2024,48,2,2908,Empanadas,Congelados,10800
+2890,1/5/2024,156,5,3140,Milanesa,Carniceria,13000
+2891,30/3/2024,76,1,4068,Chorizo,Carniceria,9000
+2892,11/5/2024,185,3,4978,Agua mineral,Bebidas,5000
+2893,8/12/2024,221,2,4043,Medialunas,Panaderia,2800
+2894,13/6/2024,259,2,4043,Medialunas,Panaderia,2800
+2895,20/9/2024,41,1,2228,Pan integral,Panaderia,10000
+2896,4/2/2024,106,1,2800,Zanahorias,Frutas y Verduras,2600
+2897,28/10/2024,36,3,3167,Queso cremoso,Lacteos,13800
+2898,3/5/2024,188,5,3327,Leche,Lacteos,9800
+2899,2/4/2024,163,5,4769,Manies,Galletitas y Snacks,4400
+2900,6/7/2024,152,5,1619,Pan frances,Panaderia,6500
+2901,27/2/2024,34,1,4041,Tomates,Frutas y Verduras,5200
+2902,18/7/2024,325,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2903,27/9/2024,306,2,5137,Asado,Carniceria,22800
+2904,5/11/2024,165,6,4769,Manies,Galletitas y Snacks,4400
+2905,21/2/2024,226,4,4929,Manteca,Lacteos,4500
+2906,1/12/2024,290,4,3327,Leche,Lacteos,9800
+2907,22/3/2024,207,2,5137,Asado,Carniceria,22800
+2908,3/6/2024,48,2,2800,Zanahorias,Frutas y Verduras,2600
+2909,1/6/2024,277,3,2908,Empanadas,Congelados,10800
+2910,8/10/2024,77,4,4769,Manies,Galletitas y Snacks,4400
+2911,13/8/2024,140,3,3545,Cebolla,Frutas y Verduras,3400
+2912,1/12/2024,39,2,1688,Hamburgesas congeladas,Congelados,7600
+2913,4/3/2024,283,6,2429,Costilla de cerdo,Carniceria,11400
+2914,1/4/2024,66,6,3545,Cebolla,Frutas y Verduras,3400
+2915,27/8/2024,187,2,1506,Garbanzos,Conservas,2900
+2916,2/7/2024,268,6,3383,Manzanas,Frutas y Verduras,5200
+2917,18/3/2024,17,5,1437,Arroz,Conservas,3400
+2918,25/5/2024,311,6,4769,Manies,Galletitas y Snacks,4400
+2919,9/10/2024,238,4,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2920,9/4/2024,207,2,1437,Arroz,Conservas,3400
+2921,16/5/2024,262,1,3358,Yogur,Lacteos,4200
+2922,12/10/2024,230,4,3545,Cebolla,Frutas y Verduras,3400
+2923,31/8/2024,214,6,2429,Costilla de cerdo,Carniceria,11400
+2924,5/5/2024,158,6,3358,Yogur,Lacteos,4200
+2925,22/4/2024,209,3,4720,Bananas,Frutas y Verduras,5800
+2926,19/2/2024,210,2,1506,Garbanzos,Conservas,2900
+2927,23/7/2024,270,6,2228,Pan integral,Panaderia,10000
+2928,20/5/2024,159,1,4043,Medialunas,Panaderia,2800
+2929,20/2/2024,28,1,1726,Salchicha,Carniceria,9000
+2930,11/7/2024,198,4,1363,Vino tinto,Bebidas,10800
+2931,25/6/2024,41,3,2455,Cerveza,Bebidas,9200
+2932,11/7/2024,313,1,3731,Papas fritas,Congelados,6600
+2933,11/2/2024,307,4,1506,Garbanzos,Conservas,2900
+2934,21/8/2024,36,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+2935,7/2/2024,164,3,1640,Pizza congelada,Congelados,12400
+2936,15/8/2024,241,2,1640,Pizza congelada,Congelados,12400
+2937,16/2/2024,124,3,3167,Queso cremoso,Lacteos,13800
+2938,2/5/2024,12,5,2771,Galletitas de agua,Galletitas y Snacks,4200
+2939,26/11/2024,279,1,4769,Manies,Galletitas y Snacks,4400
+2940,27/5/2024,56,3,4051,Pollo,Carniceria,14800
+2941,16/9/2024,85,5,2182,Atun enlatado,Conservas,5000
+2942,25/6/2024,215,4,3637,Jugos de frutas,Bebidas,7600
+2943,3/5/2024,181,3,3383,Manzanas,Frutas y Verduras,5200
+2944,14/9/2024,22,3,2800,Zanahorias,Frutas y Verduras,2600
+2945,5/4/2024,245,1,1541,Lechugas,Frutas y Verduras,3400
+2946,28/6/2024,296,6,1726,Salchicha,Carniceria,9000
+2947,9/2/2024,28,5,5137,Asado,Carniceria,22800
+2948,6/10/2024,278,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2949,15/4/2024,24,6,3637,Jugos de frutas,Bebidas,7600
+2950,6/5/2024,307,4,1688,Hamburgesas congeladas,Congelados,7600
+2951,16/3/2024,229,1,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2952,13/10/2024,23,6,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2953,11/10/2024,1,5,3545,Cebolla,Frutas y Verduras,3400
+2954,3/4/2024,237,6,4978,Agua mineral,Bebidas,5000
+2955,14/6/2024,311,5,1541,Lechugas,Frutas y Verduras,3400
+2956,21/6/2024,307,1,1688,Hamburgesas congeladas,Congelados,7600
+2957,28/4/2024,249,6,2099,Queso rallado,Lacteos,15400
+2958,7/7/2024,142,6,1619,Pan frances,Panaderia,6500
+2959,4/6/2024,197,2,4041,Tomates,Frutas y Verduras,5200
+2960,8/11/2024,240,5,2182,Atun enlatado,Conservas,5000
+2961,3/4/2024,141,2,1640,Pizza congelada,Congelados,12400
+2962,17/4/2024,314,6,3358,Yogur,Lacteos,4200
+2963,11/7/2024,9,4,3189,Tortas,Panaderia,12200
+2964,18/2/2024,269,2,4068,Chorizo,Carniceria,9000
+2965,31/8/2024,183,4,1506,Garbanzos,Conservas,2900
+2966,19/7/2024,203,4,1506,Garbanzos,Conservas,2900
+2967,11/6/2024,234,5,3383,Manzanas,Frutas y Verduras,5200
+2968,22/9/2024,245,2,2455,Cerveza,Bebidas,9200
+2969,19/2/2024,128,1,4051,Pollo,Carniceria,14800
+2970,29/9/2024,135,4,3167,Queso cremoso,Lacteos,13800
+2971,12/8/2024,124,6,4068,Chorizo,Carniceria,9000
+2972,21/9/2024,74,3,5057,Galletitas de chocolate,Galletitas y Snacks,5000
+2973,14/3/2024,134,3,4068,Chorizo,Carniceria,9000
+2974,25/4/2024,315,4,3383,Manzanas,Frutas y Verduras,5200
+2975,13/6/2024,50,6,1640,Pizza congelada,Congelados,12400
+2976,6/7/2024,214,5,2455,Cerveza,Bebidas,9200
+2977,19/7/2024,288,2,2800,Zanahorias,Frutas y Verduras,2600
+2978,26/2/2024,108,3,3167,Queso cremoso,Lacteos,13800
+2979,1/6/2024,5,4,4051,Pollo,Carniceria,14800
+2980,22/8/2024,301,3,3125,Facturas,Panaderia,9900
+2981,18/3/2024,36,2,1726,Salchicha,Carniceria,9000
+2982,23/2/2024,229,2,4769,Manies,Galletitas y Snacks,4400
+2983,6/11/2024,234,3,1541,Lechugas,Frutas y Verduras,3400
+2984,30/11/2024,95,3,4578,Lentejas,Conservas,2600
+2985,29/11/2024,186,2,3383,Manzanas,Frutas y Verduras,5200
+2986,26/7/2024,228,4,1726,Salchicha,Carniceria,9000
+2987,2/11/2024,2,3,1619,Pan frances,Panaderia,6500
+2988,19/9/2024,152,2,1363,Vino tinto,Bebidas,10800
+2989,12/3/2024,147,6,2771,Galletitas de agua,Galletitas y Snacks,4200
+2990,12/6/2024,297,3,2771,Galletitas de agua,Galletitas y Snacks,4200
+2991,26/5/2024,266,2,2182,Atun enlatado,Conservas,5000
+2992,14/9/2024,311,2,1363,Vino tinto,Bebidas,10800
+2993,25/3/2024,117,2,2099,Queso rallado,Lacteos,15400
+2994,29/7/2024,162,3,3383,Manzanas,Frutas y Verduras,5200
+2995,5/4/2024,38,5,4769,Manies,Galletitas y Snacks,4400
+2996,3/7/2024,22,4,3383,Manzanas,Frutas y Verduras,5200
+2997,5/5/2024,178,2,1640,Pizza congelada,Congelados,12400
+2998,27/11/2024,228,1,3545,Cebolla,Frutas y Verduras,3400
+2999,29/4/2024,320,3,1726,Salchicha,Carniceria,9000
+3000,2/12/2024,266,2,2771,Galletitas de agua,Galletitas y Snacks,4200

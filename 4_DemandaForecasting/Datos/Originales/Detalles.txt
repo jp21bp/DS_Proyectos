@@ -1,0 +1,8 @@
+Los datos fueron coleccionados en:
+
+https://www.kaggle.com/datasets/dataregina/datasets-para-proyecto-bi
+
+
+Caracteristicas:
+* Compras en Argentina, vecino de PY
+* Son del anio 2024 completo
