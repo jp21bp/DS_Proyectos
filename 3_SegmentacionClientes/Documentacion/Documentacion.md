@@ -1,4 +1,4 @@
-# Table of Contents
+# Tabla de Contenidos
 1. [Contexto del Proyecto](#contexto-del-proyecto)
     * [Perspicacias, Recomendaciones y sus Enfoques](#perspicacias-recomendaciones-y-sus-enfoques)
 2. [Estructura de los Datos y su Verificaciones](#estructura-de-los-datos-y-su-verificaciones)
@@ -6,29 +6,22 @@
     * [Resumen de Descubrimientos ](#resumen-de-descubrimientos)
     * [Tendencia de los Descubrimientos](#tendencia-de-los-descubrimientos)
 4. [Detalles de las Perspicacias](#detalles-de-las-perspicacias)
-    * Concentracion de 56.4% de Visitantes Internacionaless
-    * Control Migratorio mas Populares
-    * Los Meses con 21.7% de Turistas Anuales
-    * Maximizando Ganancias y minimizando costos
+    * [Concentracion de 56.4% de Visitantes Internacionaless](#concentracion-de-564-de-visitantes-internacionales)
+    * [Control Migratorio entre los Top 3 Paises](#control-migratorio-entre-los-top-3-paises)
+    * [Los Meses con 21.75% de Turistas Anuales](#los-meses-con-2175-de-turistas-anuales)
+    * [16 sitios gratis dentro 25 kms de Machu Picchu](#16-sitios-gratis-dentro-25-kms-de-machu-picchu)
 5. [Modelos, Predicciones y sus Impactos](#modelos-predicciones-y-sus-impactos)
-    * Los 6 tipos de visitantes internacionales
-    * Predicciendo Movimiento Turistico 
+    * [Prediciendo los Numero de Turistas Esperados](#prediciendo-los-numero-de-turistas-esperados)
+    * [Los 6 tipos de Visitantes Internacionales](#los-6-tipos-de-visitantes-internacionales)
 6. [Recomendaciones](#recomendaciones)
-    * Paquetes Promocionales Dirigidas al OCM
-        - En cada OCM ver cuales son los turistas mas populares
-    * Empleos de Corto- y Largo-Plazo
-        - Febreo = menos empleados, julio = mas empleados
-    * Aprovechando de Sitios sin Costo de Entradas
+    * [Targeted Marketing basado en Pais y OCM de Entrada](#targeted-marketing-basado-en-pais-y-ocm-de-entrada)
+    * [Gestionar un Presupuesto Dinamico por cada Mes](#gestionar-un-presupuesto-que-cambie-fluidamente-por-cada-mes)
+    * [Incorporar Sitios sin Ingresos en Paquetes Promocionales para Machu Picchu](#incorporar-sitios-sin-ingresos-en-paquetes-promocionales-para-machu-picchu)
 7. [KPIs](#kpis)
-    * Aumento de clientes
-        - (num_final - num_inicial)/ num_inicial
-    * Ratio de Empleado por Turista
-        - Num_Turs/ num_empleados
-        - QUe sea consistente en al anio al cambiar cantidad de empleados por mes
-    * Costo por viaje
-        - C = entrada * num_turistas + gasolina *kms
+    * [1. Cambio Porcentual de Clientes](#1-cambio-porcentual-de-clientes)
+    * [2. Presupuesto Dinamico](#2-presupuesto-dinamico)
+    * [3. Ratio de Sitios](#3-ratio-de-sitios)
 8. [Suposiciones y Avisos](#suposiciones-y-avisos)
-
 
 
 ## Contexto del Proyecto
@@ -58,20 +51,27 @@ Los analisis de los datos coleccionados se encuentran AQUI -link
 La creacion y evaluacion de los modelos se encuentran AQUI - link
 
 ## Estructura de los Datos y su Verificaciones
-3 conjuntos de datos diferentes se utilizaron para desarrollar los analises necesarios. 
+3 conjuntos de datos diferentes se utilizaron para desarrollar los analises necesarios, y sus componentes son los siguientes:
+1. Visitantes internacionales: anio, mes, pais, continente, ocm, y numero de visitantes
+2. Visitantes en sitios turisticos: anio, mes, departamento, sitio turistico, y numero de visitantes
+3. Inventario de recursos turisticos: region, categoria, url, latitud, y longitud
+
+Antes de empezar el analisis se comprobaron la integridad y estructura de los conjuntos a traves organizacion y limpieza.
 
 
 ## Resumen Ejecutivo
-
 ### Resumen de Descubrimientos
-asafasf
 
-asgsagsa
+La mayoria de visitantes internacional al Peru se concentran dentro de 25 paises, donde Chile, EE.UU, y Ecuador ocupan 56.4% de los visitantes anuales. Esto presenta una oportunidad a PeruTur para que se enfoque en una pequena cantidad de paises y desarrolle targeted marketing. Adicionalmente,  los OCMs de entrada de estos visitantes se parte entre 55.76% y 28.41% para el Aeropuerto de Lima y Santa Rosa, respetivamente. Este hecho sugerie que las ubicaciones de marketing se tienen que enfocar en el entorno de estos OCMs para llegar a la mayoria de sus clientes potenciales. En otro punto, Julio y Agosto reciben 21.75% de los visitantes anuales, y son los meses donde PeruTur puede invertir mas para poder complacer la demanda de servicios turisticos. Finalmente, Machu Picchu es el sitio turistico mas popular y tiene en su alredeor otros sitios sin costos al ingresas. PeruTur puede aprovechar de esta oportunidad financiera para ampliar sus paquetes promocionales sin incurrir gastos adicionales (aparte de la gasolina). 
+
 
 ### Tendencia de los Descubrimientos
-asfsfsa
+**Sur America y Vecinos Peruanos**: 5 de los top 6 paises con visitantes internacionales son los vecinos del Peru, y todos los paises suramericanos se encuentran dentro los 25 paises con la mayor contribucion. 
 
-asgsagsag
+**Temporadas de Turismo**: En todos los anios, Julio y Agosto tienen la mayor cantidad de visitantes internacionales, mientras Febrero tienen la minima cantidad con solo 4.84* de todos los visitantes anuales. 
+
+**Sitios gratis alrededor Machu Picchu**: Dentro un radio de 25 kilometeros de Machu Picchu se encuentran 16 sitios con ingresos gratis, con la mayoria de ellos ubicados a su norte. 
+
 
 ## Detalles de las Perspicacias 
 ### Concentracion de 56.4% de Visitantes Internacionales
@@ -141,7 +141,7 @@ Se esperaba que Machu Picchu, siendo una de las maravillas del mundo, es el siti
 ![Mapa](MP.png)
 
 ## Modelos, Predicciones y sus Impactos
-### Modelo regresion
+### Prediciendo los Numero de Turistas Esperados
 Prediciendo la cantidad de visitantes que espera dentro de un mes ayudaria en la optimizacion de recursos para un negocio. Dado el mes, departamento, y nombre del sitio turistico, el modelo de regresion predeci los numero de visitantes esperados en ese sitio turistico. 
 
 Tres modelos candidatos se utilizaron con estos datos: Regresion lineal, regresion lasso, random forest. Con una metrica adecuada aplicada a todos los candidatos, el modelo bosque aleatorio (random forrest) obtuvo los mejores resultados. 
@@ -154,7 +154,7 @@ Al aplicar el modelo con los datos disponibles, se calcula que hay una pequena d
 
 <br><br><br>
 
-### Los 6 tipos de visitantes internacionales
+### Los 6 tipos de Visitantes Internacionales
 KMeans es un algoritmo que agrupa puntos de datos en clusters, depediendo en su cercania entre uno al otro. Este proceso revelo los siguientes clusteres:
 
 * Cluster 1: Los ingresantes por OCM Santa Rosa

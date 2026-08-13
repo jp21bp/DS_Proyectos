@@ -283,7 +283,7 @@ for i in range(len(top_X_sitios)):
         df_org_topX[df_org_topX['SITIO_TURISTICO']==top_X_sitios[i]]['NUMERO_VISITANTES']/exp,
         label = top_X_sitios[i],
         marker='o',
-        color = 'orange',
+        color = "#c0960cff",
         markerfacecolor = colores[i],
         markeredgecolor='black'
     )
@@ -306,7 +306,7 @@ ax.set_ylim(0, max(df_org_topX['NUMERO_VISITANTES'])/exp + 2)
 # Crear elementos personalizados para la leyenda
 custom_lines = [
     Line2D([0], [0], color='blue', linestyle='-', lw=2),   
-    Line2D([0], [0], color='orange', linestyle='-', lw=2),
+    Line2D([0], [0], color="#c0960cff", linestyle='-', lw=2),
 ]
 for i in range(len(top_X_sitios)):
     custom_lines.append(
