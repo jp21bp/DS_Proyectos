@@ -1,39 +1,39 @@
 ID_Producto,Nombre_producto,Categoría,Precio_Unitario,Stock
-1,Leche,Lacteos,12.24,3327
-2,Yogur,Lacteos,5.21,3358
-3,Queso cremoso,Lacteos,17.23,3167
-4,Queso rallado,Lacteos,19.23,2099
-5,Manteca,Lacteos,5.65,4929
-6,Asado,Carniceria,28.56,5137
-7,Chorizo,Carniceria,11.25,4068
-8,Milanesa,Carniceria,16.21,3140
-9,Pollo,Carniceria,18.56,4051
-10,Costilla de cerdo,Carniceria,14.25,2429
-11,Salchicha,Carniceria,11.23,1726
-12,Pan frances,Panaderia,8.12,1619
-13,Pan integral,Panaderia,12.56,2228
-14,Facturas,Panaderia,12.36,3125
-15,Medialunas,Panaderia,3.51,4043
-16,Tortas,Panaderia,15.23,3189
-17,Manzanas,Frutas y Verduras,6.54,3383
-18,Bananas,Frutas y Verduras,7.25,4720
-19,Tomates,Frutas y Verduras,6.54,4041
-20,Lechugas,Frutas y Verduras,4.25,1541
-21,Zanahorias,Frutas y Verduras,3.25,2800
-22,Cebolla,Frutas y Verduras,4.21,3545
-23,Papas fritas,Congelados,8.23,3731
-24,Empanadas,Congelados,13.54,2908
-25,Pizza congelada,Congelados,15.45,1640
-26,Hamburgesas congeladas,Congelados,9.54,1688
-27,Agua mineral,Bebidas,6.21,4978
-28,Jugos de frutas,Bebidas,9.45,3637
-29,Cerveza,Bebidas,11.54,2455
-30,Vino tinto,Bebidas,13.54,1363
-31,Galletitas de agua,Galletitas y Snacks,5.24,2771
-32,Galletitas de chocolate,Galletitas y Snacks,6.25,5057
-33,Papas chips,Galletitas y Snacks,8.54,2837
-34,Manies,Galletitas y Snacks,5.45,4769
-35,Arroz,Conservas,4.25,1437
-36,Lentejas,Conservas,3.25,4578
-37,Garbanzos,Conservas,3.65,1506
-38,Atun enlatado,Conservas,6.21,2182
+1,Leche,Lacteos,9800,3327
+2,Yogur,Lacteos,4200,3358
+3,Queso cremoso,Lacteos,13800,3167
+4,Queso rallado,Lacteos,15400,2099
+5,Manteca,Lacteos,4500,4929
+6,Asado,Carniceria,22800,5137
+7,Chorizo,Carniceria,9000,4068
+8,Milanesa,Carniceria,13000,3140
+9,Pollo,Carniceria,14800,4051
+10,Costilla de cerdo,Carniceria,11400,2429
+11,Salchicha,Carniceria,9000,1726
+12,Pan frances,Panaderia,6500,1619
+13,Pan integral,Panaderia,10000,2228
+14,Facturas,Panaderia,9900,3125
+15,Medialunas,Panaderia,2800,4043
+16,Tortas,Panaderia,12200,3189
+17,Manzanas,Frutas y Verduras,5200,3383
+18,Bananas,Frutas y Verduras,5800,4720
+19,Tomates,Frutas y Verduras,5200,4041
+20,Lechugas,Frutas y Verduras,3400,1541
+21,Zanahorias,Frutas y Verduras,2600,2800
+22,Cebolla,Frutas y Verduras,3400,3545
+23,Papas fritas,Congelados,6600,3731
+24,Empanadas,Congelados,10800,2908
+25,Pizza congelada,Congelados,12400,1640
+26,Hamburgesas congeladas,Congelados,7600,1688
+27,Agua mineral,Bebidas,5000,4978
+28,Jugos de frutas,Bebidas,7600,3637
+29,Cerveza,Bebidas,9200,2455
+30,Vino tinto,Bebidas,10800,1363
+31,Galletitas de agua,Galletitas y Snacks,4200,2771
+32,Galletitas de chocolate,Galletitas y Snacks,5000,5057
+33,Papas chips,Galletitas y Snacks,6800,2837
+34,Manies,Galletitas y Snacks,4400,4769
+35,Arroz,Conservas,3400,1437
+36,Lentejas,Conservas,2600,4578
+37,Garbanzos,Conservas,2900,1506
+38,Atun enlatado,Conservas,5000,2182
