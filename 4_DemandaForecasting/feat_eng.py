@@ -82,13 +82,25 @@ df_enc = pd.get_dummies(
 
 ##### VErificando correlaciones 
 ohe_corr(df_enc)
+    # Semana y Mes
 
 ##### Eliminando columnas con alta correlacion
-df_enc = df_enc.drop(columns='mes')
-df = df.drop(columns='mes')
+df_enc = df_enc.drop(columns='semana')
+df = df.drop(columns='semana')
+
+##### Arreglando 'mes' columna
+    # Como el primer 'mes' = 1 esta incompleto, se borra
+df_enc = df_enc[df_enc['mes']!=1]
+df = df[df['mes']!=1]
 
 ##### Verificacion
 ohe_corr(df_enc)
+
+
+##### normalizacion de non-OHE cols
+norm_cols = ['precio', 'dia', 'dia_semana', 'mes']
+for col in norm_cols:
+    df_enc[col] = (df_enc[col] - df_enc[col].mean())/df_enc[col].std()
 
 ##### Guardando datasets
 df.to_csv('../FeatEng/ventas_productos_org.csv')
