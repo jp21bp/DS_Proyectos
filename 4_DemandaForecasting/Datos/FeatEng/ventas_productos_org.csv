@@ -1,0 +1,3001 @@
+,cantidad,nombre,categoria,precio,dia,dia_semana,semana
+0,5,Pizza congelada,Congelados,12400,31,3,5
+1,1,Manteca,Lacteos,4500,31,3,5
+2,3,Pizza congelada,Congelados,12400,31,3,5
+3,5,Medialunas,Panaderia,2800,31,3,5
+4,5,Yogur,Lacteos,4200,31,3,5
+5,3,Queso cremoso,Lacteos,13800,31,3,5
+6,6,Galletitas de agua,Galletitas y Snacks,4200,31,3,5
+7,3,Tomates,Frutas y Verduras,5200,1,4,5
+8,6,Cerveza,Bebidas,9200,1,4,5
+9,1,Jugos de frutas,Bebidas,7600,1,4,5
+10,2,Bananas,Frutas y Verduras,5800,1,4,5
+11,6,Asado,Carniceria,22800,1,4,5
+12,4,Chorizo,Carniceria,9000,1,4,5
+13,1,Tortas,Panaderia,12200,1,4,5
+14,4,Bananas,Frutas y Verduras,5800,1,4,5
+15,1,Galletitas de agua,Galletitas y Snacks,4200,2,5,5
+16,6,Queso cremoso,Lacteos,13800,2,5,5
+17,3,Yogur,Lacteos,4200,2,5,5
+18,4,Milanesa,Carniceria,13000,2,5,5
+19,4,Galletitas de chocolate,Galletitas y Snacks,5000,2,5,5
+20,5,Asado,Carniceria,22800,2,5,5
+21,6,Galletitas de agua,Galletitas y Snacks,4200,2,5,5
+22,1,Queso rallado,Lacteos,15400,2,5,5
+23,3,Papas chips,Galletitas y Snacks,6800,3,6,5
+24,3,Pan frances,Panaderia,6500,3,6,5
+25,5,Costilla de cerdo,Carniceria,11400,3,6,5
+26,4,Asado,Carniceria,22800,3,6,5
+27,5,Chorizo,Carniceria,9000,3,6,5
+28,1,Papas fritas,Congelados,6600,3,6,5
+29,1,Galletitas de chocolate,Galletitas y Snacks,5000,4,7,5
+30,3,Tomates,Frutas y Verduras,5200,4,7,5
+31,2,Garbanzos,Conservas,2900,4,7,5
+32,1,Agua mineral,Bebidas,5000,4,7,5
+33,3,Arroz,Conservas,3400,4,7,5
+34,2,Empanadas,Congelados,10800,4,7,5
+35,1,Zanahorias,Frutas y Verduras,2600,4,7,5
+36,6,Queso rallado,Lacteos,15400,5,1,6
+37,6,Manteca,Lacteos,4500,5,1,6
+38,5,Manteca,Lacteos,4500,5,1,6
+39,2,Pan integral,Panaderia,10000,5,1,6
+40,6,Cerveza,Bebidas,9200,5,1,6
+41,5,Papas fritas,Congelados,6600,5,1,6
+42,2,Pan integral,Panaderia,10000,5,1,6
+43,1,Arroz,Conservas,3400,6,2,6
+44,4,Salchicha,Carniceria,9000,6,2,6
+45,6,Tomates,Frutas y Verduras,5200,6,2,6
+46,3,Leche,Lacteos,9800,6,2,6
+47,6,Milanesa,Carniceria,13000,6,2,6
+48,3,Queso cremoso,Lacteos,13800,6,2,6
+49,6,Jugos de frutas,Bebidas,7600,6,2,6
+50,2,Bananas,Frutas y Verduras,5800,6,2,6
+51,4,Arroz,Conservas,3400,7,3,6
+52,2,Galletitas de agua,Galletitas y Snacks,4200,7,3,6
+53,6,Chorizo,Carniceria,9000,7,3,6
+54,6,Pan frances,Panaderia,6500,7,3,6
+55,3,Papas fritas,Congelados,6600,7,3,6
+56,2,Manzanas,Frutas y Verduras,5200,7,3,6
+57,3,Asado,Carniceria,22800,7,3,6
+58,2,Queso cremoso,Lacteos,13800,7,3,6
+59,3,Pizza congelada,Congelados,12400,7,3,6
+60,5,Lentejas,Conservas,2600,8,4,6
+61,2,Agua mineral,Bebidas,5000,8,4,6
+62,2,Atun enlatado,Conservas,5000,8,4,6
+63,4,Manies,Galletitas y Snacks,4400,8,4,6
+64,4,Salchicha,Carniceria,9000,9,5,6
+65,1,Cerveza,Bebidas,9200,9,5,6
+66,2,Manzanas,Frutas y Verduras,5200,9,5,6
+67,6,Pizza congelada,Congelados,12400,9,5,6
+68,3,Manzanas,Frutas y Verduras,5200,9,5,6
+69,1,Cebolla,Frutas y Verduras,3400,9,5,6
+70,6,Leche,Lacteos,9800,9,5,6
+71,5,Asado,Carniceria,22800,9,5,6
+72,3,Costilla de cerdo,Carniceria,11400,10,6,6
+73,4,Cerveza,Bebidas,9200,10,6,6
+74,2,Cebolla,Frutas y Verduras,3400,10,6,6
+75,3,Jugos de frutas,Bebidas,7600,10,6,6
+76,6,Empanadas,Congelados,10800,10,6,6
+77,1,Tortas,Panaderia,12200,10,6,6
+78,3,Queso cremoso,Lacteos,13800,11,7,6
+79,5,Pan integral,Panaderia,10000,11,7,6
+80,1,Cerveza,Bebidas,9200,11,7,6
+81,2,Tomates,Frutas y Verduras,5200,11,7,6
+82,6,Pan integral,Panaderia,10000,11,7,6
+83,3,Jugos de frutas,Bebidas,7600,11,7,6
+84,3,Agua mineral,Bebidas,5000,11,7,6
+85,1,Agua mineral,Bebidas,5000,11,7,6
+86,1,Salchicha,Carniceria,9000,11,7,6
+87,5,Garbanzos,Conservas,2900,11,7,6
+88,3,Cerveza,Bebidas,9200,11,7,6
+89,4,Tomates,Frutas y Verduras,5200,11,7,6
+90,4,Garbanzos,Conservas,2900,11,7,6
+91,2,Atun enlatado,Conservas,5000,12,1,7
+92,4,Zanahorias,Frutas y Verduras,2600,12,1,7
+93,2,Facturas,Panaderia,9900,12,1,7
+94,4,Queso rallado,Lacteos,15400,12,1,7
+95,6,Facturas,Panaderia,9900,12,1,7
+96,2,Facturas,Panaderia,9900,12,1,7
+97,4,Bananas,Frutas y Verduras,5800,12,1,7
+98,4,Atun enlatado,Conservas,5000,13,2,7
+99,4,Cebolla,Frutas y Verduras,3400,13,2,7
+100,4,Empanadas,Congelados,10800,13,2,7
+101,3,Cerveza,Bebidas,9200,13,2,7
+102,3,Leche,Lacteos,9800,13,2,7
+103,4,Salchicha,Carniceria,9000,13,2,7
+104,1,Lechugas,Frutas y Verduras,3400,13,2,7
+105,2,Arroz,Conservas,3400,13,2,7
+106,3,Papas chips,Galletitas y Snacks,6800,13,2,7
+107,4,Hamburgesas congeladas,Congelados,7600,13,2,7
+108,4,Cerveza,Bebidas,9200,13,2,7
+109,2,Pan frances,Panaderia,6500,13,2,7
+110,5,Agua mineral,Bebidas,5000,14,3,7
+111,6,Queso rallado,Lacteos,15400,14,3,7
+112,1,Leche,Lacteos,9800,14,3,7
+113,6,Medialunas,Panaderia,2800,14,3,7
+114,5,Zanahorias,Frutas y Verduras,2600,14,3,7
+115,5,Manzanas,Frutas y Verduras,5200,14,3,7
+116,5,Arroz,Conservas,3400,15,4,7
+117,3,Empanadas,Congelados,10800,15,4,7
+118,6,Empanadas,Congelados,10800,15,4,7
+119,3,Pan integral,Panaderia,10000,15,4,7
+120,1,Leche,Lacteos,9800,15,4,7
+121,4,Papas chips,Galletitas y Snacks,6800,15,4,7
+122,1,Arroz,Conservas,3400,15,4,7
+123,5,Chorizo,Carniceria,9000,15,4,7
+124,3,Pan frances,Panaderia,6500,15,4,7
+125,2,Queso rallado,Lacteos,15400,15,4,7
+126,1,Papas fritas,Congelados,6600,15,4,7
+127,3,Tomates,Frutas y Verduras,5200,16,5,7
+128,5,Manzanas,Frutas y Verduras,5200,16,5,7
+129,2,Lechugas,Frutas y Verduras,3400,16,5,7
+130,2,Facturas,Panaderia,9900,16,5,7
+131,1,Facturas,Panaderia,9900,16,5,7
+132,1,Pan integral,Panaderia,10000,16,5,7
+133,5,Atun enlatado,Conservas,5000,16,5,7
+134,1,Papas chips,Galletitas y Snacks,6800,16,5,7
+135,3,Pizza congelada,Congelados,12400,16,5,7
+136,6,Lentejas,Conservas,2600,16,5,7
+137,2,Chorizo,Carniceria,9000,16,5,7
+138,3,Queso cremoso,Lacteos,13800,16,5,7
+139,2,Lechugas,Frutas y Verduras,3400,17,6,7
+140,4,Queso cremoso,Lacteos,13800,17,6,7
+141,6,Galletitas de chocolate,Galletitas y Snacks,5000,17,6,7
+142,5,Bananas,Frutas y Verduras,5800,17,6,7
+143,4,Chorizo,Carniceria,9000,17,6,7
+144,6,Galletitas de agua,Galletitas y Snacks,4200,17,6,7
+145,5,Yogur,Lacteos,4200,17,6,7
+146,2,Cerveza,Bebidas,9200,17,6,7
+147,5,Hamburgesas congeladas,Congelados,7600,17,6,7
+148,3,Milanesa,Carniceria,13000,17,6,7
+149,1,Atun enlatado,Conservas,5000,17,6,7
+150,6,Medialunas,Panaderia,2800,17,6,7
+151,2,Agua mineral,Bebidas,5000,18,7,7
+152,5,Papas fritas,Congelados,6600,18,7,7
+153,5,Pan integral,Panaderia,10000,18,7,7
+154,1,Cerveza,Bebidas,9200,18,7,7
+155,4,Zanahorias,Frutas y Verduras,2600,18,7,7
+156,1,Papas fritas,Congelados,6600,18,7,7
+157,2,Facturas,Panaderia,9900,18,7,7
+158,3,Agua mineral,Bebidas,5000,18,7,7
+159,6,Salchicha,Carniceria,9000,18,7,7
+160,4,Manzanas,Frutas y Verduras,5200,18,7,7
+161,4,Atun enlatado,Conservas,5000,18,7,7
+162,4,Agua mineral,Bebidas,5000,18,7,7
+163,4,Medialunas,Panaderia,2800,18,7,7
+164,2,Chorizo,Carniceria,9000,18,7,7
+165,2,Vino tinto,Bebidas,10800,19,1,8
+166,5,Agua mineral,Bebidas,5000,19,1,8
+167,5,Pan integral,Panaderia,10000,19,1,8
+168,4,Cerveza,Bebidas,9200,19,1,8
+169,3,Chorizo,Carniceria,9000,19,1,8
+170,5,Cerveza,Bebidas,9200,19,1,8
+171,2,Salchicha,Carniceria,9000,19,1,8
+172,2,Garbanzos,Conservas,2900,19,1,8
+173,1,Pollo,Carniceria,14800,19,1,8
+174,6,Pizza congelada,Congelados,12400,20,2,8
+175,2,Salchicha,Carniceria,9000,20,2,8
+176,5,Cerveza,Bebidas,9200,20,2,8
+177,5,Salchicha,Carniceria,9000,20,2,8
+178,5,Pan frances,Panaderia,6500,20,2,8
+179,4,Milanesa,Carniceria,13000,20,2,8
+180,4,Yogur,Lacteos,4200,20,2,8
+181,2,Arroz,Conservas,3400,20,2,8
+182,1,Salchicha,Carniceria,9000,20,2,8
+183,1,Yogur,Lacteos,4200,21,3,8
+184,1,Facturas,Panaderia,9900,21,3,8
+185,2,Facturas,Panaderia,9900,21,3,8
+186,4,Chorizo,Carniceria,9000,21,3,8
+187,3,Pollo,Carniceria,14800,21,3,8
+188,3,Papas chips,Galletitas y Snacks,6800,21,3,8
+189,5,Yogur,Lacteos,4200,21,3,8
+190,4,Manteca,Lacteos,4500,21,3,8
+191,2,Pan frances,Panaderia,6500,22,4,8
+192,3,Manteca,Lacteos,4500,22,4,8
+193,6,Atun enlatado,Conservas,5000,22,4,8
+194,1,Galletitas de chocolate,Galletitas y Snacks,5000,22,4,8
+195,4,Pollo,Carniceria,14800,22,4,8
+196,4,Galletitas de chocolate,Galletitas y Snacks,5000,22,4,8
+197,1,Papas fritas,Congelados,6600,22,4,8
+198,6,Jugos de frutas,Bebidas,7600,22,4,8
+199,2,Leche,Lacteos,9800,22,4,8
+200,3,Facturas,Panaderia,9900,22,4,8
+201,5,Queso rallado,Lacteos,15400,23,5,8
+202,4,Costilla de cerdo,Carniceria,11400,23,5,8
+203,2,Atun enlatado,Conservas,5000,23,5,8
+204,2,Queso rallado,Lacteos,15400,23,5,8
+205,2,Manies,Galletitas y Snacks,4400,23,5,8
+206,1,Garbanzos,Conservas,2900,24,6,8
+207,1,Pan integral,Panaderia,10000,24,6,8
+208,3,Chorizo,Carniceria,9000,24,6,8
+209,1,Vino tinto,Bebidas,10800,24,6,8
+210,1,Salchicha,Carniceria,9000,24,6,8
+211,2,Atun enlatado,Conservas,5000,24,6,8
+212,4,Papas fritas,Congelados,6600,24,6,8
+213,4,Leche,Lacteos,9800,24,6,8
+214,3,Chorizo,Carniceria,9000,24,6,8
+215,5,Queso cremoso,Lacteos,13800,24,6,8
+216,1,Costilla de cerdo,Carniceria,11400,25,7,8
+217,2,Papas chips,Galletitas y Snacks,6800,25,7,8
+218,1,Manzanas,Frutas y Verduras,5200,25,7,8
+219,4,Leche,Lacteos,9800,25,7,8
+220,2,Leche,Lacteos,9800,25,7,8
+221,4,Pollo,Carniceria,14800,25,7,8
+222,2,Hamburgesas congeladas,Congelados,7600,26,1,9
+223,1,Queso cremoso,Lacteos,13800,26,1,9
+224,6,Pizza congelada,Congelados,12400,26,1,9
+225,4,Galletitas de chocolate,Galletitas y Snacks,5000,26,1,9
+226,1,Papas fritas,Congelados,6600,26,1,9
+227,3,Queso cremoso,Lacteos,13800,26,1,9
+228,2,Facturas,Panaderia,9900,27,2,9
+229,6,Atun enlatado,Conservas,5000,27,2,9
+230,1,Cebolla,Frutas y Verduras,3400,27,2,9
+231,6,Tortas,Panaderia,12200,27,2,9
+232,3,Hamburgesas congeladas,Congelados,7600,27,2,9
+233,5,Cebolla,Frutas y Verduras,3400,27,2,9
+234,1,Tomates,Frutas y Verduras,5200,27,2,9
+235,2,Costilla de cerdo,Carniceria,11400,28,3,9
+236,6,Asado,Carniceria,22800,28,3,9
+237,4,Hamburgesas congeladas,Congelados,7600,28,3,9
+238,6,Pizza congelada,Congelados,12400,28,3,9
+239,1,Papas chips,Galletitas y Snacks,6800,28,3,9
+240,1,Manzanas,Frutas y Verduras,5200,28,3,9
+241,2,Arroz,Conservas,3400,28,3,9
+242,4,Pizza congelada,Congelados,12400,28,3,9
+243,5,Medialunas,Panaderia,2800,28,3,9
+244,4,Papas fritas,Congelados,6600,28,3,9
+245,4,Pizza congelada,Congelados,12400,28,3,9
+246,3,Zanahorias,Frutas y Verduras,2600,29,4,9
+247,5,Galletitas de chocolate,Galletitas y Snacks,5000,29,4,9
+248,5,Queso rallado,Lacteos,15400,29,4,9
+249,6,Vino tinto,Bebidas,10800,29,4,9
+250,1,Zanahorias,Frutas y Verduras,2600,29,4,9
+251,2,Pan integral,Panaderia,10000,29,4,9
+252,2,Facturas,Panaderia,9900,29,4,9
+253,3,Pan frances,Panaderia,6500,29,4,9
+254,6,Lechugas,Frutas y Verduras,3400,29,4,9
+255,2,Chorizo,Carniceria,9000,29,4,9
+256,3,Agua mineral,Bebidas,5000,1,5,9
+257,3,Atun enlatado,Conservas,5000,1,5,9
+258,3,Agua mineral,Bebidas,5000,1,5,9
+259,1,Yogur,Lacteos,4200,1,5,9
+260,2,Facturas,Panaderia,9900,1,5,9
+261,1,Milanesa,Carniceria,13000,1,5,9
+262,1,Bananas,Frutas y Verduras,5800,1,5,9
+263,5,Tomates,Frutas y Verduras,5200,1,5,9
+264,6,Manteca,Lacteos,4500,1,5,9
+265,5,Papas fritas,Congelados,6600,2,6,9
+266,6,Tomates,Frutas y Verduras,5200,2,6,9
+267,5,Pizza congelada,Congelados,12400,2,6,9
+268,3,Manteca,Lacteos,4500,2,6,9
+269,5,Facturas,Panaderia,9900,3,7,9
+270,5,Milanesa,Carniceria,13000,3,7,9
+271,1,Pan frances,Panaderia,6500,3,7,9
+272,4,Jugos de frutas,Bebidas,7600,3,7,9
+273,3,Atun enlatado,Conservas,5000,3,7,9
+274,1,Hamburgesas congeladas,Congelados,7600,3,7,9
+275,3,Pan frances,Panaderia,6500,3,7,9
+276,1,Manteca,Lacteos,4500,3,7,9
+277,5,Cerveza,Bebidas,9200,3,7,9
+278,6,Papas chips,Galletitas y Snacks,6800,3,7,9
+279,6,Cebolla,Frutas y Verduras,3400,3,7,9
+280,6,Cebolla,Frutas y Verduras,3400,3,7,9
+281,4,Hamburgesas congeladas,Congelados,7600,3,7,9
+282,1,Galletitas de chocolate,Galletitas y Snacks,5000,3,7,9
+283,2,Leche,Lacteos,9800,3,7,9
+284,1,Galletitas de chocolate,Galletitas y Snacks,5000,3,7,9
+285,5,Salchicha,Carniceria,9000,4,1,10
+286,3,Leche,Lacteos,9800,4,1,10
+287,1,Facturas,Panaderia,9900,4,1,10
+288,5,Zanahorias,Frutas y Verduras,2600,4,1,10
+289,5,Yogur,Lacteos,4200,4,1,10
+290,6,Costilla de cerdo,Carniceria,11400,4,1,10
+291,4,Galletitas de agua,Galletitas y Snacks,4200,5,2,10
+292,5,Pan frances,Panaderia,6500,5,2,10
+293,5,Facturas,Panaderia,9900,5,2,10
+294,2,Hamburgesas congeladas,Congelados,7600,5,2,10
+295,5,Manies,Galletitas y Snacks,4400,5,2,10
+296,5,Yogur,Lacteos,4200,5,2,10
+297,3,Papas fritas,Congelados,6600,6,3,10
+298,6,Empanadas,Congelados,10800,6,3,10
+299,3,Manzanas,Frutas y Verduras,5200,6,3,10
+300,2,Manies,Galletitas y Snacks,4400,6,3,10
+301,1,Yogur,Lacteos,4200,6,3,10
+302,1,Chorizo,Carniceria,9000,6,3,10
+303,6,Lechugas,Frutas y Verduras,3400,6,3,10
+304,3,Arroz,Conservas,3400,7,4,10
+305,5,Papas fritas,Congelados,6600,7,4,10
+306,2,Lechugas,Frutas y Verduras,3400,7,4,10
+307,3,Chorizo,Carniceria,9000,7,4,10
+308,2,Cebolla,Frutas y Verduras,3400,7,4,10
+309,4,Pizza congelada,Congelados,12400,7,4,10
+310,5,Pan integral,Panaderia,10000,7,4,10
+311,2,Queso rallado,Lacteos,15400,7,4,10
+312,5,Hamburgesas congeladas,Congelados,7600,7,4,10
+313,1,Queso cremoso,Lacteos,13800,7,4,10
+314,4,Lentejas,Conservas,2600,7,4,10
+315,2,Manzanas,Frutas y Verduras,5200,7,4,10
+316,6,Queso rallado,Lacteos,15400,7,4,10
+317,1,Pan integral,Panaderia,10000,8,5,10
+318,5,Cerveza,Bebidas,9200,8,5,10
+319,6,Zanahorias,Frutas y Verduras,2600,8,5,10
+320,3,Papas fritas,Congelados,6600,8,5,10
+321,6,Arroz,Conservas,3400,8,5,10
+322,4,Manzanas,Frutas y Verduras,5200,8,5,10
+323,5,Hamburgesas congeladas,Congelados,7600,8,5,10
+324,1,Vino tinto,Bebidas,10800,8,5,10
+325,2,Medialunas,Panaderia,2800,9,6,10
+326,6,Pollo,Carniceria,14800,9,6,10
+327,6,Empanadas,Congelados,10800,9,6,10
+328,3,Facturas,Panaderia,9900,9,6,10
+329,2,Yogur,Lacteos,4200,9,6,10
+330,1,Lentejas,Conservas,2600,9,6,10
+331,6,Empanadas,Congelados,10800,9,6,10
+332,6,Pollo,Carniceria,14800,10,7,10
+333,5,Salchicha,Carniceria,9000,10,7,10
+334,6,Pan integral,Panaderia,10000,10,7,10
+335,5,Hamburgesas congeladas,Congelados,7600,10,7,10
+336,2,Garbanzos,Conservas,2900,10,7,10
+337,6,Galletitas de agua,Galletitas y Snacks,4200,10,7,10
+338,1,Yogur,Lacteos,4200,11,1,11
+339,5,Pizza congelada,Congelados,12400,11,1,11
+340,2,Papas fritas,Congelados,6600,11,1,11
+341,2,Pollo,Carniceria,14800,11,1,11
+342,3,Salchicha,Carniceria,9000,11,1,11
+343,2,Yogur,Lacteos,4200,11,1,11
+344,5,Medialunas,Panaderia,2800,12,2,11
+345,6,Cerveza,Bebidas,9200,12,2,11
+346,6,Pan integral,Panaderia,10000,12,2,11
+347,6,Asado,Carniceria,22800,12,2,11
+348,5,Salchicha,Carniceria,9000,12,2,11
+349,6,Queso cremoso,Lacteos,13800,12,2,11
+350,2,Pollo,Carniceria,14800,12,2,11
+351,6,Galletitas de agua,Galletitas y Snacks,4200,12,2,11
+352,4,Manzanas,Frutas y Verduras,5200,13,3,11
+353,6,Queso cremoso,Lacteos,13800,13,3,11
+354,5,Asado,Carniceria,22800,13,3,11
+355,4,Pan frances,Panaderia,6500,13,3,11
+356,5,Queso cremoso,Lacteos,13800,13,3,11
+357,5,Salchicha,Carniceria,9000,13,3,11
+358,1,Costilla de cerdo,Carniceria,11400,13,3,11
+359,5,Bananas,Frutas y Verduras,5800,13,3,11
+360,3,Leche,Lacteos,9800,13,3,11
+361,1,Arroz,Conservas,3400,13,3,11
+362,1,Yogur,Lacteos,4200,14,4,11
+363,5,Pan integral,Panaderia,10000,14,4,11
+364,3,Atun enlatado,Conservas,5000,14,4,11
+365,5,Pollo,Carniceria,14800,14,4,11
+366,2,Manzanas,Frutas y Verduras,5200,14,4,11
+367,3,Leche,Lacteos,9800,14,4,11
+368,6,Leche,Lacteos,9800,14,4,11
+369,1,Garbanzos,Conservas,2900,14,4,11
+370,5,Costilla de cerdo,Carniceria,11400,14,4,11
+371,1,Pan frances,Panaderia,6500,14,4,11
+372,3,Chorizo,Carniceria,9000,14,4,11
+373,2,Queso cremoso,Lacteos,13800,15,5,11
+374,3,Papas fritas,Congelados,6600,15,5,11
+375,4,Manies,Galletitas y Snacks,4400,15,5,11
+376,3,Bananas,Frutas y Verduras,5800,15,5,11
+377,2,Tortas,Panaderia,12200,15,5,11
+378,3,Milanesa,Carniceria,13000,15,5,11
+379,4,Salchicha,Carniceria,9000,15,5,11
+380,5,Queso cremoso,Lacteos,13800,15,5,11
+381,1,Jugos de frutas,Bebidas,7600,15,5,11
+382,6,Chorizo,Carniceria,9000,15,5,11
+383,6,Atun enlatado,Conservas,5000,15,5,11
+384,6,Manies,Galletitas y Snacks,4400,16,6,11
+385,5,Galletitas de chocolate,Galletitas y Snacks,5000,16,6,11
+386,4,Vino tinto,Bebidas,10800,16,6,11
+387,5,Hamburgesas congeladas,Congelados,7600,16,6,11
+388,3,Lechugas,Frutas y Verduras,3400,16,6,11
+389,2,Tortas,Panaderia,12200,16,6,11
+390,1,Zanahorias,Frutas y Verduras,2600,16,6,11
+391,5,Cebolla,Frutas y Verduras,3400,16,6,11
+392,1,Tortas,Panaderia,12200,16,6,11
+393,6,Manies,Galletitas y Snacks,4400,16,6,11
+394,6,Salchicha,Carniceria,9000,16,6,11
+395,5,Vino tinto,Bebidas,10800,16,6,11
+396,5,Chorizo,Carniceria,9000,16,6,11
+397,1,Galletitas de chocolate,Galletitas y Snacks,5000,16,6,11
+398,3,Costilla de cerdo,Carniceria,11400,17,7,11
+399,2,Milanesa,Carniceria,13000,17,7,11
+400,6,Medialunas,Panaderia,2800,17,7,11
+401,5,Tortas,Panaderia,12200,17,7,11
+402,3,Manies,Galletitas y Snacks,4400,17,7,11
+403,6,Galletitas de chocolate,Galletitas y Snacks,5000,17,7,11
+404,5,Pizza congelada,Congelados,12400,17,7,11
+405,4,Atun enlatado,Conservas,5000,17,7,11
+406,3,Zanahorias,Frutas y Verduras,2600,17,7,11
+407,6,Queso rallado,Lacteos,15400,17,7,11
+408,3,Cerveza,Bebidas,9200,17,7,11
+409,3,Arroz,Conservas,3400,18,1,12
+410,4,Galletitas de chocolate,Galletitas y Snacks,5000,18,1,12
+411,3,Yogur,Lacteos,4200,18,1,12
+412,2,Tomates,Frutas y Verduras,5200,18,1,12
+413,6,Galletitas de agua,Galletitas y Snacks,4200,18,1,12
+414,5,Arroz,Conservas,3400,18,1,12
+415,2,Salchicha,Carniceria,9000,18,1,12
+416,2,Vino tinto,Bebidas,10800,19,2,12
+417,3,Cerveza,Bebidas,9200,19,2,12
+418,5,Papas fritas,Congelados,6600,19,2,12
+419,2,Queso cremoso,Lacteos,13800,19,2,12
+420,4,Medialunas,Panaderia,2800,19,2,12
+421,4,Cebolla,Frutas y Verduras,3400,19,2,12
+422,4,Medialunas,Panaderia,2800,19,2,12
+423,1,Tomates,Frutas y Verduras,5200,19,2,12
+424,5,Facturas,Panaderia,9900,19,2,12
+425,4,Pizza congelada,Congelados,12400,20,3,12
+426,6,Galletitas de agua,Galletitas y Snacks,4200,20,3,12
+427,3,Papas fritas,Congelados,6600,20,3,12
+428,6,Facturas,Panaderia,9900,20,3,12
+429,6,Pizza congelada,Congelados,12400,20,3,12
+430,2,Queso rallado,Lacteos,15400,20,3,12
+431,2,Papas chips,Galletitas y Snacks,6800,20,3,12
+432,6,Lentejas,Conservas,2600,20,3,12
+433,2,Atun enlatado,Conservas,5000,20,3,12
+434,3,Garbanzos,Conservas,2900,20,3,12
+435,4,Chorizo,Carniceria,9000,20,3,12
+436,1,Tomates,Frutas y Verduras,5200,21,4,12
+437,5,Garbanzos,Conservas,2900,21,4,12
+438,3,Pizza congelada,Congelados,12400,21,4,12
+439,1,Bananas,Frutas y Verduras,5800,21,4,12
+440,6,Agua mineral,Bebidas,5000,21,4,12
+441,1,Galletitas de agua,Galletitas y Snacks,4200,21,4,12
+442,2,Bananas,Frutas y Verduras,5800,21,4,12
+443,2,Galletitas de chocolate,Galletitas y Snacks,5000,21,4,12
+444,2,Cerveza,Bebidas,9200,22,5,12
+445,5,Facturas,Panaderia,9900,22,5,12
+446,3,Galletitas de agua,Galletitas y Snacks,4200,22,5,12
+447,2,Pan integral,Panaderia,10000,22,5,12
+448,4,Asado,Carniceria,22800,22,5,12
+449,4,Queso cremoso,Lacteos,13800,22,5,12
+450,4,Pizza congelada,Congelados,12400,22,5,12
+451,3,Galletitas de agua,Galletitas y Snacks,4200,22,5,12
+452,5,Pan frances,Panaderia,6500,22,5,12
+453,4,Lentejas,Conservas,2600,22,5,12
+454,1,Milanesa,Carniceria,13000,22,5,12
+455,2,Asado,Carniceria,22800,22,5,12
+456,2,Tortas,Panaderia,12200,23,6,12
+457,6,Tortas,Panaderia,12200,23,6,12
+458,6,Pan frances,Panaderia,6500,23,6,12
+459,4,Queso rallado,Lacteos,15400,23,6,12
+460,3,Papas chips,Galletitas y Snacks,6800,23,6,12
+461,3,Queso rallado,Lacteos,15400,23,6,12
+462,6,Leche,Lacteos,9800,23,6,12
+463,5,Pollo,Carniceria,14800,24,7,12
+464,1,Manzanas,Frutas y Verduras,5200,24,7,12
+465,1,Galletitas de agua,Galletitas y Snacks,4200,24,7,12
+466,2,Cerveza,Bebidas,9200,24,7,12
+467,4,Medialunas,Panaderia,2800,24,7,12
+468,5,Zanahorias,Frutas y Verduras,2600,24,7,12
+469,1,Tomates,Frutas y Verduras,5200,25,1,13
+470,3,Lechugas,Frutas y Verduras,3400,25,1,13
+471,1,Pizza congelada,Congelados,12400,25,1,13
+472,5,Lentejas,Conservas,2600,25,1,13
+473,2,Agua mineral,Bebidas,5000,25,1,13
+474,1,Agua mineral,Bebidas,5000,25,1,13
+475,5,Manteca,Lacteos,4500,25,1,13
+476,5,Lentejas,Conservas,2600,25,1,13
+477,2,Papas chips,Galletitas y Snacks,6800,25,1,13
+478,2,Queso rallado,Lacteos,15400,25,1,13
+479,4,Manteca,Lacteos,4500,26,2,13
+480,4,Manzanas,Frutas y Verduras,5200,26,2,13
+481,3,Medialunas,Panaderia,2800,26,2,13
+482,5,Hamburgesas congeladas,Congelados,7600,26,2,13
+483,4,Asado,Carniceria,22800,26,2,13
+484,2,Milanesa,Carniceria,13000,26,2,13
+485,6,Empanadas,Congelados,10800,26,2,13
+486,6,Yogur,Lacteos,4200,26,2,13
+487,6,Chorizo,Carniceria,9000,26,2,13
+488,5,Queso cremoso,Lacteos,13800,26,2,13
+489,1,Jugos de frutas,Bebidas,7600,26,2,13
+490,6,Empanadas,Congelados,10800,27,3,13
+491,6,Galletitas de chocolate,Galletitas y Snacks,5000,27,3,13
+492,5,Empanadas,Congelados,10800,27,3,13
+493,1,Vino tinto,Bebidas,10800,27,3,13
+494,5,Cerveza,Bebidas,9200,27,3,13
+495,5,Arroz,Conservas,3400,27,3,13
+496,1,Pan integral,Panaderia,10000,27,3,13
+497,1,Pizza congelada,Congelados,12400,27,3,13
+498,4,Atun enlatado,Conservas,5000,27,3,13
+499,3,Pizza congelada,Congelados,12400,27,3,13
+500,1,Manies,Galletitas y Snacks,4400,27,3,13
+501,5,Tomates,Frutas y Verduras,5200,27,3,13
+502,2,Galletitas de agua,Galletitas y Snacks,4200,28,4,13
+503,4,Costilla de cerdo,Carniceria,11400,28,4,13
+504,4,Arroz,Conservas,3400,28,4,13
+505,4,Tomates,Frutas y Verduras,5200,28,4,13
+506,5,Zanahorias,Frutas y Verduras,2600,28,4,13
+507,6,Cebolla,Frutas y Verduras,3400,28,4,13
+508,6,Agua mineral,Bebidas,5000,28,4,13
+509,3,Papas chips,Galletitas y Snacks,6800,28,4,13
+510,2,Vino tinto,Bebidas,10800,29,5,13
+511,1,Vino tinto,Bebidas,10800,29,5,13
+512,5,Manzanas,Frutas y Verduras,5200,29,5,13
+513,6,Galletitas de agua,Galletitas y Snacks,4200,29,5,13
+514,4,Lentejas,Conservas,2600,29,5,13
+515,5,Jugos de frutas,Bebidas,7600,29,5,13
+516,6,Facturas,Panaderia,9900,29,5,13
+517,2,Facturas,Panaderia,9900,29,5,13
+518,2,Papas fritas,Congelados,6600,29,5,13
+519,1,Jugos de frutas,Bebidas,7600,30,6,13
+520,5,Pizza congelada,Congelados,12400,30,6,13
+521,2,Leche,Lacteos,9800,30,6,13
+522,4,Cebolla,Frutas y Verduras,3400,30,6,13
+523,5,Leche,Lacteos,9800,30,6,13
+524,1,Chorizo,Carniceria,9000,30,6,13
+525,3,Arroz,Conservas,3400,31,7,13
+526,3,Arroz,Conservas,3400,31,7,13
+527,6,Cerveza,Bebidas,9200,31,7,13
+528,6,Pan integral,Panaderia,10000,31,7,13
+529,2,Arroz,Conservas,3400,31,7,13
+530,3,Galletitas de chocolate,Galletitas y Snacks,5000,31,7,13
+531,4,Bananas,Frutas y Verduras,5800,31,7,13
+532,6,Bananas,Frutas y Verduras,5800,31,7,13
+533,4,Tomates,Frutas y Verduras,5200,31,7,13
+534,1,Yogur,Lacteos,4200,1,1,14
+535,3,Hamburgesas congeladas,Congelados,7600,1,1,14
+536,4,Pan frances,Panaderia,6500,1,1,14
+537,4,Leche,Lacteos,9800,1,1,14
+538,6,Cebolla,Frutas y Verduras,3400,1,1,14
+539,6,Pizza congelada,Congelados,12400,2,2,14
+540,3,Queso rallado,Lacteos,15400,2,2,14
+541,3,Queso rallado,Lacteos,15400,2,2,14
+542,5,Cebolla,Frutas y Verduras,3400,2,2,14
+543,2,Pan frances,Panaderia,6500,2,2,14
+544,5,Galletitas de agua,Galletitas y Snacks,4200,2,2,14
+545,3,Pollo,Carniceria,14800,2,2,14
+546,5,Manies,Galletitas y Snacks,4400,2,2,14
+547,3,Empanadas,Congelados,10800,3,3,14
+548,1,Zanahorias,Frutas y Verduras,2600,3,3,14
+549,2,Cebolla,Frutas y Verduras,3400,3,3,14
+550,6,Papas fritas,Congelados,6600,3,3,14
+551,4,Queso cremoso,Lacteos,13800,3,3,14
+552,5,Papas chips,Galletitas y Snacks,6800,3,3,14
+553,5,Pan integral,Panaderia,10000,3,3,14
+554,5,Bananas,Frutas y Verduras,5800,3,3,14
+555,3,Milanesa,Carniceria,13000,3,3,14
+556,5,Milanesa,Carniceria,13000,3,3,14
+557,6,Agua mineral,Bebidas,5000,3,3,14
+558,2,Pizza congelada,Congelados,12400,3,3,14
+559,4,Agua mineral,Bebidas,5000,4,4,14
+560,5,Manteca,Lacteos,4500,4,4,14
+561,3,Manzanas,Frutas y Verduras,5200,4,4,14
+562,5,Pan integral,Panaderia,10000,4,4,14
+563,2,Pan integral,Panaderia,10000,4,4,14
+564,6,Tortas,Panaderia,12200,4,4,14
+565,3,Cebolla,Frutas y Verduras,3400,4,4,14
+566,5,Queso cremoso,Lacteos,13800,4,4,14
+567,4,Galletitas de chocolate,Galletitas y Snacks,5000,5,5,14
+568,1,Tomates,Frutas y Verduras,5200,5,5,14
+569,2,Queso cremoso,Lacteos,13800,5,5,14
+570,3,Tortas,Panaderia,12200,5,5,14
+571,6,Papas fritas,Congelados,6600,5,5,14
+572,3,Galletitas de chocolate,Galletitas y Snacks,5000,5,5,14
+573,1,Lechugas,Frutas y Verduras,3400,5,5,14
+574,5,Manies,Galletitas y Snacks,4400,5,5,14
+575,2,Garbanzos,Conservas,2900,6,6,14
+576,3,Asado,Carniceria,22800,6,6,14
+577,3,Vino tinto,Bebidas,10800,6,6,14
+578,1,Galletitas de chocolate,Galletitas y Snacks,5000,6,6,14
+579,5,Galletitas de chocolate,Galletitas y Snacks,5000,7,7,14
+580,2,Pan frances,Panaderia,6500,7,7,14
+581,1,Lentejas,Conservas,2600,7,7,14
+582,5,Atun enlatado,Conservas,5000,7,7,14
+583,4,Papas chips,Galletitas y Snacks,6800,7,7,14
+584,6,Manzanas,Frutas y Verduras,5200,7,7,14
+585,3,Manteca,Lacteos,4500,7,7,14
+586,4,Manzanas,Frutas y Verduras,5200,8,1,15
+587,1,Asado,Carniceria,22800,8,1,15
+588,5,Empanadas,Congelados,10800,8,1,15
+589,1,Chorizo,Carniceria,9000,8,1,15
+590,6,Pan frances,Panaderia,6500,8,1,15
+591,1,Pollo,Carniceria,14800,8,1,15
+592,1,Empanadas,Congelados,10800,8,1,15
+593,6,Pizza congelada,Congelados,12400,9,2,15
+594,2,Facturas,Panaderia,9900,9,2,15
+595,2,Milanesa,Carniceria,13000,9,2,15
+596,2,Salchicha,Carniceria,9000,9,2,15
+597,1,Pollo,Carniceria,14800,9,2,15
+598,3,Costilla de cerdo,Carniceria,11400,9,2,15
+599,4,Medialunas,Panaderia,2800,9,2,15
+600,2,Arroz,Conservas,3400,9,2,15
+601,1,Hamburgesas congeladas,Congelados,7600,10,3,15
+602,6,Garbanzos,Conservas,2900,10,3,15
+603,3,Leche,Lacteos,9800,10,3,15
+604,5,Leche,Lacteos,9800,10,3,15
+605,4,Lechugas,Frutas y Verduras,3400,10,3,15
+606,4,Pan frances,Panaderia,6500,10,3,15
+607,3,Hamburgesas congeladas,Congelados,7600,10,3,15
+608,2,Papas fritas,Congelados,6600,10,3,15
+609,6,Manzanas,Frutas y Verduras,5200,10,3,15
+610,6,Cerveza,Bebidas,9200,11,4,15
+611,3,Costilla de cerdo,Carniceria,11400,11,4,15
+612,1,Hamburgesas congeladas,Congelados,7600,11,4,15
+613,2,Pan frances,Panaderia,6500,11,4,15
+614,4,Lentejas,Conservas,2600,11,4,15
+615,3,Tomates,Frutas y Verduras,5200,11,4,15
+616,4,Yogur,Lacteos,4200,12,5,15
+617,4,Tomates,Frutas y Verduras,5200,12,5,15
+618,2,Lechugas,Frutas y Verduras,3400,12,5,15
+619,5,Empanadas,Congelados,10800,12,5,15
+620,4,Salchicha,Carniceria,9000,12,5,15
+621,3,Tortas,Panaderia,12200,12,5,15
+622,4,Pollo,Carniceria,14800,12,5,15
+623,5,Queso cremoso,Lacteos,13800,12,5,15
+624,4,Agua mineral,Bebidas,5000,12,5,15
+625,1,Manteca,Lacteos,4500,12,5,15
+626,2,Agua mineral,Bebidas,5000,12,5,15
+627,6,Yogur,Lacteos,4200,12,5,15
+628,5,Hamburgesas congeladas,Congelados,7600,12,5,15
+629,2,Hamburgesas congeladas,Congelados,7600,12,5,15
+630,3,Papas fritas,Congelados,6600,13,6,15
+631,1,Papas chips,Galletitas y Snacks,6800,13,6,15
+632,5,Lechugas,Frutas y Verduras,3400,13,6,15
+633,2,Cebolla,Frutas y Verduras,3400,13,6,15
+634,5,Chorizo,Carniceria,9000,13,6,15
+635,3,Tomates,Frutas y Verduras,5200,13,6,15
+636,5,Pan frances,Panaderia,6500,13,6,15
+637,2,Milanesa,Carniceria,13000,13,6,15
+638,1,Empanadas,Congelados,10800,13,6,15
+639,5,Queso cremoso,Lacteos,13800,14,7,15
+640,2,Tomates,Frutas y Verduras,5200,14,7,15
+641,2,Manteca,Lacteos,4500,14,7,15
+642,3,Manzanas,Frutas y Verduras,5200,14,7,15
+643,5,Zanahorias,Frutas y Verduras,2600,14,7,15
+644,6,Tomates,Frutas y Verduras,5200,14,7,15
+645,1,Galletitas de agua,Galletitas y Snacks,4200,14,7,15
+646,2,Vino tinto,Bebidas,10800,14,7,15
+647,2,Jugos de frutas,Bebidas,7600,14,7,15
+648,4,Manies,Galletitas y Snacks,4400,15,1,16
+649,3,Agua mineral,Bebidas,5000,15,1,16
+650,5,Galletitas de chocolate,Galletitas y Snacks,5000,15,1,16
+651,6,Lechugas,Frutas y Verduras,3400,15,1,16
+652,1,Papas chips,Galletitas y Snacks,6800,15,1,16
+653,6,Milanesa,Carniceria,13000,15,1,16
+654,4,Queso rallado,Lacteos,15400,15,1,16
+655,5,Zanahorias,Frutas y Verduras,2600,15,1,16
+656,4,Garbanzos,Conservas,2900,15,1,16
+657,6,Jugos de frutas,Bebidas,7600,15,1,16
+658,4,Atun enlatado,Conservas,5000,16,2,16
+659,5,Leche,Lacteos,9800,16,2,16
+660,2,Galletitas de agua,Galletitas y Snacks,4200,16,2,16
+661,4,Jugos de frutas,Bebidas,7600,16,2,16
+662,3,Leche,Lacteos,9800,16,2,16
+663,1,Queso cremoso,Lacteos,13800,16,2,16
+664,5,Papas chips,Galletitas y Snacks,6800,16,2,16
+665,4,Jugos de frutas,Bebidas,7600,16,2,16
+666,5,Manies,Galletitas y Snacks,4400,16,2,16
+667,2,Cebolla,Frutas y Verduras,3400,17,3,16
+668,1,Cebolla,Frutas y Verduras,3400,17,3,16
+669,1,Papas chips,Galletitas y Snacks,6800,17,3,16
+670,6,Yogur,Lacteos,4200,17,3,16
+671,3,Jugos de frutas,Bebidas,7600,18,4,16
+672,4,Bananas,Frutas y Verduras,5800,18,4,16
+673,1,Galletitas de agua,Galletitas y Snacks,4200,18,4,16
+674,6,Empanadas,Congelados,10800,18,4,16
+675,1,Bananas,Frutas y Verduras,5800,18,4,16
+676,6,Milanesa,Carniceria,13000,18,4,16
+677,6,Galletitas de agua,Galletitas y Snacks,4200,18,4,16
+678,3,Cerveza,Bebidas,9200,18,4,16
+679,6,Jugos de frutas,Bebidas,7600,18,4,16
+680,2,Cebolla,Frutas y Verduras,3400,19,5,16
+681,1,Queso cremoso,Lacteos,13800,19,5,16
+682,6,Agua mineral,Bebidas,5000,19,5,16
+683,4,Queso cremoso,Lacteos,13800,19,5,16
+684,3,Lentejas,Conservas,2600,19,5,16
+685,2,Queso rallado,Lacteos,15400,20,6,16
+686,3,Cerveza,Bebidas,9200,20,6,16
+687,3,Queso rallado,Lacteos,15400,20,6,16
+688,6,Lechugas,Frutas y Verduras,3400,20,6,16
+689,2,Vino tinto,Bebidas,10800,20,6,16
+690,1,Papas fritas,Congelados,6600,20,6,16
+691,2,Queso rallado,Lacteos,15400,20,6,16
+692,5,Jugos de frutas,Bebidas,7600,20,6,16
+693,5,Pan frances,Panaderia,6500,20,6,16
+694,5,Manies,Galletitas y Snacks,4400,20,6,16
+695,2,Atun enlatado,Conservas,5000,21,7,16
+696,3,Galletitas de chocolate,Galletitas y Snacks,5000,21,7,16
+697,1,Queso rallado,Lacteos,15400,21,7,16
+698,2,Manzanas,Frutas y Verduras,5200,21,7,16
+699,6,Manzanas,Frutas y Verduras,5200,21,7,16
+700,4,Bananas,Frutas y Verduras,5800,21,7,16
+701,1,Bananas,Frutas y Verduras,5800,21,7,16
+702,4,Galletitas de chocolate,Galletitas y Snacks,5000,21,7,16
+703,4,Garbanzos,Conservas,2900,21,7,16
+704,3,Manteca,Lacteos,4500,21,7,16
+705,1,Salchicha,Carniceria,9000,21,7,16
+706,1,Tomates,Frutas y Verduras,5200,21,7,16
+707,2,Vino tinto,Bebidas,10800,21,7,16
+708,1,Empanadas,Congelados,10800,21,7,16
+709,2,Papas fritas,Congelados,6600,21,7,16
+710,2,Pan frances,Panaderia,6500,22,1,17
+711,6,Galletitas de chocolate,Galletitas y Snacks,5000,22,1,17
+712,6,Atun enlatado,Conservas,5000,22,1,17
+713,1,Papas fritas,Congelados,6600,22,1,17
+714,4,Arroz,Conservas,3400,22,1,17
+715,5,Manteca,Lacteos,4500,22,1,17
+716,3,Bananas,Frutas y Verduras,5800,22,1,17
+717,2,Asado,Carniceria,22800,23,2,17
+718,2,Galletitas de agua,Galletitas y Snacks,4200,23,2,17
+719,2,Queso rallado,Lacteos,15400,23,2,17
+720,1,Manteca,Lacteos,4500,23,2,17
+721,1,Garbanzos,Conservas,2900,23,2,17
+722,5,Atun enlatado,Conservas,5000,23,2,17
+723,4,Garbanzos,Conservas,2900,23,2,17
+724,4,Zanahorias,Frutas y Verduras,2600,24,3,17
+725,1,Galletitas de agua,Galletitas y Snacks,4200,24,3,17
+726,4,Manzanas,Frutas y Verduras,5200,24,3,17
+727,2,Salchicha,Carniceria,9000,24,3,17
+728,2,Papas fritas,Congelados,6600,24,3,17
+729,4,Pan frances,Panaderia,6500,24,3,17
+730,4,Manteca,Lacteos,4500,24,3,17
+731,6,Galletitas de chocolate,Galletitas y Snacks,5000,24,3,17
+732,6,Hamburgesas congeladas,Congelados,7600,25,4,17
+733,1,Queso rallado,Lacteos,15400,25,4,17
+734,2,Papas fritas,Congelados,6600,25,4,17
+735,1,Leche,Lacteos,9800,25,4,17
+736,3,Chorizo,Carniceria,9000,25,4,17
+737,5,Cerveza,Bebidas,9200,25,4,17
+738,2,Vino tinto,Bebidas,10800,25,4,17
+739,5,Pan frances,Panaderia,6500,25,4,17
+740,2,Empanadas,Congelados,10800,25,4,17
+741,6,Pollo,Carniceria,14800,25,4,17
+742,6,Empanadas,Congelados,10800,25,4,17
+743,4,Tortas,Panaderia,12200,25,4,17
+744,4,Manzanas,Frutas y Verduras,5200,25,4,17
+745,6,Milanesa,Carniceria,13000,26,5,17
+746,2,Agua mineral,Bebidas,5000,26,5,17
+747,5,Hamburgesas congeladas,Congelados,7600,26,5,17
+748,1,Manies,Galletitas y Snacks,4400,26,5,17
+749,2,Yogur,Lacteos,4200,26,5,17
+750,5,Costilla de cerdo,Carniceria,11400,26,5,17
+751,2,Pan frances,Panaderia,6500,26,5,17
+752,1,Lentejas,Conservas,2600,26,5,17
+753,5,Pizza congelada,Congelados,12400,26,5,17
+754,4,Facturas,Panaderia,9900,27,6,17
+755,2,Manzanas,Frutas y Verduras,5200,27,6,17
+756,3,Lechugas,Frutas y Verduras,3400,27,6,17
+757,6,Zanahorias,Frutas y Verduras,2600,27,6,17
+758,5,Milanesa,Carniceria,13000,27,6,17
+759,1,Empanadas,Congelados,10800,27,6,17
+760,6,Atun enlatado,Conservas,5000,27,6,17
+761,4,Cebolla,Frutas y Verduras,3400,27,6,17
+762,5,Costilla de cerdo,Carniceria,11400,27,6,17
+763,6,Manteca,Lacteos,4500,28,7,17
+764,4,Leche,Lacteos,9800,28,7,17
+765,4,Papas chips,Galletitas y Snacks,6800,28,7,17
+766,2,Zanahorias,Frutas y Verduras,2600,28,7,17
+767,1,Arroz,Conservas,3400,28,7,17
+768,4,Garbanzos,Conservas,2900,28,7,17
+769,1,Yogur,Lacteos,4200,28,7,17
+770,4,Papas chips,Galletitas y Snacks,6800,28,7,17
+771,6,Queso rallado,Lacteos,15400,28,7,17
+772,4,Manzanas,Frutas y Verduras,5200,29,1,18
+773,6,Atun enlatado,Conservas,5000,29,1,18
+774,6,Leche,Lacteos,9800,29,1,18
+775,4,Salchicha,Carniceria,9000,29,1,18
+776,5,Queso rallado,Lacteos,15400,29,1,18
+777,6,Asado,Carniceria,22800,29,1,18
+778,4,Leche,Lacteos,9800,29,1,18
+779,4,Tomates,Frutas y Verduras,5200,29,1,18
+780,1,Pan frances,Panaderia,6500,29,1,18
+781,6,Chorizo,Carniceria,9000,29,1,18
+782,3,Salchicha,Carniceria,9000,29,1,18
+783,4,Costilla de cerdo,Carniceria,11400,30,2,18
+784,1,Bananas,Frutas y Verduras,5800,30,2,18
+785,6,Pollo,Carniceria,14800,30,2,18
+786,2,Asado,Carniceria,22800,30,2,18
+787,2,Asado,Carniceria,22800,30,2,18
+788,4,Tomates,Frutas y Verduras,5200,30,2,18
+789,1,Zanahorias,Frutas y Verduras,2600,30,2,18
+790,6,Tortas,Panaderia,12200,30,2,18
+791,4,Chorizo,Carniceria,9000,30,2,18
+792,2,Yogur,Lacteos,4200,1,3,18
+793,2,Leche,Lacteos,9800,1,3,18
+794,6,Garbanzos,Conservas,2900,1,3,18
+795,6,Pizza congelada,Congelados,12400,1,3,18
+796,2,Pan frances,Panaderia,6500,1,3,18
+797,3,Arroz,Conservas,3400,1,3,18
+798,6,Manzanas,Frutas y Verduras,5200,1,3,18
+799,5,Pan integral,Panaderia,10000,1,3,18
+800,5,Milanesa,Carniceria,13000,1,3,18
+801,4,Empanadas,Congelados,10800,2,4,18
+802,6,Papas fritas,Congelados,6600,2,4,18
+803,5,Queso cremoso,Lacteos,13800,2,4,18
+804,3,Medialunas,Panaderia,2800,2,4,18
+805,1,Papas chips,Galletitas y Snacks,6800,2,4,18
+806,2,Pan frances,Panaderia,6500,2,4,18
+807,1,Manies,Galletitas y Snacks,4400,2,4,18
+808,1,Manteca,Lacteos,4500,2,4,18
+809,5,Galletitas de agua,Galletitas y Snacks,4200,2,4,18
+810,5,Lechugas,Frutas y Verduras,3400,3,5,18
+811,6,Milanesa,Carniceria,13000,3,5,18
+812,4,Papas chips,Galletitas y Snacks,6800,3,5,18
+813,4,Manzanas,Frutas y Verduras,5200,3,5,18
+814,5,Agua mineral,Bebidas,5000,3,5,18
+815,3,Milanesa,Carniceria,13000,3,5,18
+816,2,Leche,Lacteos,9800,3,5,18
+817,2,Garbanzos,Conservas,2900,3,5,18
+818,5,Leche,Lacteos,9800,3,5,18
+819,3,Manzanas,Frutas y Verduras,5200,3,5,18
+820,3,Manzanas,Frutas y Verduras,5200,4,6,18
+821,2,Yogur,Lacteos,4200,4,6,18
+822,6,Queso rallado,Lacteos,15400,4,6,18
+823,6,Milanesa,Carniceria,13000,4,6,18
+824,5,Queso cremoso,Lacteos,13800,4,6,18
+825,4,Leche,Lacteos,9800,4,6,18
+826,2,Medialunas,Panaderia,2800,4,6,18
+827,6,Empanadas,Congelados,10800,4,6,18
+828,1,Yogur,Lacteos,4200,5,7,18
+829,4,Costilla de cerdo,Carniceria,11400,5,7,18
+830,2,Papas chips,Galletitas y Snacks,6800,5,7,18
+831,5,Garbanzos,Conservas,2900,5,7,18
+832,1,Vino tinto,Bebidas,10800,5,7,18
+833,3,Arroz,Conservas,3400,5,7,18
+834,6,Yogur,Lacteos,4200,5,7,18
+835,2,Pizza congelada,Congelados,12400,5,7,18
+836,4,Agua mineral,Bebidas,5000,6,1,19
+837,3,Manies,Galletitas y Snacks,4400,6,1,19
+838,2,Manteca,Lacteos,4500,6,1,19
+839,1,Arroz,Conservas,3400,6,1,19
+840,1,Tortas,Panaderia,12200,6,1,19
+841,5,Galletitas de agua,Galletitas y Snacks,4200,6,1,19
+842,5,Pan integral,Panaderia,10000,6,1,19
+843,1,Garbanzos,Conservas,2900,6,1,19
+844,4,Hamburgesas congeladas,Congelados,7600,6,1,19
+845,3,Cerveza,Bebidas,9200,7,2,19
+846,1,Tortas,Panaderia,12200,7,2,19
+847,1,Milanesa,Carniceria,13000,7,2,19
+848,3,Milanesa,Carniceria,13000,7,2,19
+849,4,Yogur,Lacteos,4200,7,2,19
+850,6,Vino tinto,Bebidas,10800,7,2,19
+851,5,Cerveza,Bebidas,9200,7,2,19
+852,6,Pan frances,Panaderia,6500,7,2,19
+853,4,Papas chips,Galletitas y Snacks,6800,7,2,19
+854,5,Papas fritas,Congelados,6600,8,3,19
+855,2,Chorizo,Carniceria,9000,8,3,19
+856,6,Tortas,Panaderia,12200,8,3,19
+857,6,Cerveza,Bebidas,9200,8,3,19
+858,1,Galletitas de agua,Galletitas y Snacks,4200,8,3,19
+859,4,Zanahorias,Frutas y Verduras,2600,8,3,19
+860,5,Arroz,Conservas,3400,8,3,19
+861,4,Hamburgesas congeladas,Congelados,7600,9,4,19
+862,6,Empanadas,Congelados,10800,9,4,19
+863,5,Vino tinto,Bebidas,10800,9,4,19
+864,5,Galletitas de chocolate,Galletitas y Snacks,5000,9,4,19
+865,5,Asado,Carniceria,22800,9,4,19
+866,3,Tortas,Panaderia,12200,10,5,19
+867,2,Pan integral,Panaderia,10000,10,5,19
+868,1,Queso cremoso,Lacteos,13800,10,5,19
+869,2,Salchicha,Carniceria,9000,10,5,19
+870,4,Chorizo,Carniceria,9000,10,5,19
+871,1,Asado,Carniceria,22800,10,5,19
+872,4,Costilla de cerdo,Carniceria,11400,10,5,19
+873,4,Milanesa,Carniceria,13000,10,5,19
+874,4,Pan integral,Panaderia,10000,10,5,19
+875,6,Agua mineral,Bebidas,5000,10,5,19
+876,2,Garbanzos,Conservas,2900,10,5,19
+877,1,Queso rallado,Lacteos,15400,10,5,19
+878,3,Hamburgesas congeladas,Congelados,7600,10,5,19
+879,3,Jugos de frutas,Bebidas,7600,10,5,19
+880,2,Bananas,Frutas y Verduras,5800,10,5,19
+881,2,Atun enlatado,Conservas,5000,10,5,19
+882,1,Papas chips,Galletitas y Snacks,6800,11,6,19
+883,2,Milanesa,Carniceria,13000,11,6,19
+884,1,Empanadas,Congelados,10800,11,6,19
+885,3,Agua mineral,Bebidas,5000,11,6,19
+886,1,Papas fritas,Congelados,6600,11,6,19
+887,5,Queso rallado,Lacteos,15400,11,6,19
+888,4,Medialunas,Panaderia,2800,11,6,19
+889,5,Bananas,Frutas y Verduras,5800,11,6,19
+890,6,Queso cremoso,Lacteos,13800,11,6,19
+891,2,Queso cremoso,Lacteos,13800,11,6,19
+892,5,Costilla de cerdo,Carniceria,11400,11,6,19
+893,3,Agua mineral,Bebidas,5000,11,6,19
+894,3,Agua mineral,Bebidas,5000,11,6,19
+895,3,Hamburgesas congeladas,Congelados,7600,12,7,19
+896,3,Manies,Galletitas y Snacks,4400,12,7,19
+897,1,Salchicha,Carniceria,9000,12,7,19
+898,3,Manteca,Lacteos,4500,12,7,19
+899,5,Bananas,Frutas y Verduras,5800,12,7,19
+900,4,Manzanas,Frutas y Verduras,5200,12,7,19
+901,6,Galletitas de chocolate,Galletitas y Snacks,5000,12,7,19
+902,6,Pan frances,Panaderia,6500,12,7,19
+903,4,Manies,Galletitas y Snacks,4400,13,1,20
+904,3,Hamburgesas congeladas,Congelados,7600,13,1,20
+905,6,Garbanzos,Conservas,2900,13,1,20
+906,3,Agua mineral,Bebidas,5000,13,1,20
+907,3,Galletitas de agua,Galletitas y Snacks,4200,13,1,20
+908,3,Vino tinto,Bebidas,10800,13,1,20
+909,1,Asado,Carniceria,22800,13,1,20
+910,2,Queso cremoso,Lacteos,13800,13,1,20
+911,6,Asado,Carniceria,22800,13,1,20
+912,5,Lentejas,Conservas,2600,14,2,20
+913,1,Jugos de frutas,Bebidas,7600,14,2,20
+914,1,Pollo,Carniceria,14800,14,2,20
+915,4,Garbanzos,Conservas,2900,14,2,20
+916,6,Garbanzos,Conservas,2900,14,2,20
+917,2,Galletitas de agua,Galletitas y Snacks,4200,14,2,20
+918,3,Galletitas de chocolate,Galletitas y Snacks,5000,14,2,20
+919,5,Pan frances,Panaderia,6500,14,2,20
+920,2,Milanesa,Carniceria,13000,14,2,20
+921,4,Hamburgesas congeladas,Congelados,7600,14,2,20
+922,4,Zanahorias,Frutas y Verduras,2600,14,2,20
+923,5,Atun enlatado,Conservas,5000,15,3,20
+924,2,Cerveza,Bebidas,9200,15,3,20
+925,1,Pollo,Carniceria,14800,15,3,20
+926,5,Jugos de frutas,Bebidas,7600,15,3,20
+927,2,Manteca,Lacteos,4500,15,3,20
+928,1,Garbanzos,Conservas,2900,15,3,20
+929,3,Pollo,Carniceria,14800,15,3,20
+930,3,Lechugas,Frutas y Verduras,3400,16,4,20
+931,1,Papas fritas,Congelados,6600,16,4,20
+932,2,Tomates,Frutas y Verduras,5200,16,4,20
+933,6,Salchicha,Carniceria,9000,16,4,20
+934,3,Hamburgesas congeladas,Congelados,7600,16,4,20
+935,3,Cerveza,Bebidas,9200,16,4,20
+936,6,Lechugas,Frutas y Verduras,3400,16,4,20
+937,6,Zanahorias,Frutas y Verduras,2600,16,4,20
+938,1,Yogur,Lacteos,4200,16,4,20
+939,4,Chorizo,Carniceria,9000,17,5,20
+940,1,Jugos de frutas,Bebidas,7600,17,5,20
+941,5,Milanesa,Carniceria,13000,17,5,20
+942,5,Papas chips,Galletitas y Snacks,6800,17,5,20
+943,2,Queso rallado,Lacteos,15400,17,5,20
+944,1,Pan frances,Panaderia,6500,17,5,20
+945,2,Lechugas,Frutas y Verduras,3400,17,5,20
+946,2,Pizza congelada,Congelados,12400,17,5,20
+947,6,Jugos de frutas,Bebidas,7600,18,6,20
+948,4,Asado,Carniceria,22800,18,6,20
+949,3,Cerveza,Bebidas,9200,18,6,20
+950,3,Garbanzos,Conservas,2900,18,6,20
+951,1,Tortas,Panaderia,12200,18,6,20
+952,6,Manteca,Lacteos,4500,19,7,20
+953,1,Yogur,Lacteos,4200,19,7,20
+954,1,Medialunas,Panaderia,2800,19,7,20
+955,1,Manies,Galletitas y Snacks,4400,19,7,20
+956,2,Cerveza,Bebidas,9200,19,7,20
+957,5,Hamburgesas congeladas,Congelados,7600,19,7,20
+958,1,Manzanas,Frutas y Verduras,5200,19,7,20
+959,1,Lechugas,Frutas y Verduras,3400,19,7,20
+960,3,Pizza congelada,Congelados,12400,20,1,21
+961,6,Chorizo,Carniceria,9000,20,1,21
+962,1,Tortas,Panaderia,12200,20,1,21
+963,1,Atun enlatado,Conservas,5000,20,1,21
+964,1,Galletitas de agua,Galletitas y Snacks,4200,20,1,21
+965,6,Facturas,Panaderia,9900,20,1,21
+966,1,Queso rallado,Lacteos,15400,20,1,21
+967,4,Costilla de cerdo,Carniceria,11400,20,1,21
+968,3,Lentejas,Conservas,2600,20,1,21
+969,2,Papas fritas,Congelados,6600,20,1,21
+970,1,Medialunas,Panaderia,2800,20,1,21
+971,5,Manteca,Lacteos,4500,21,2,21
+972,1,Papas fritas,Congelados,6600,21,2,21
+973,3,Costilla de cerdo,Carniceria,11400,21,2,21
+974,3,Yogur,Lacteos,4200,21,2,21
+975,3,Empanadas,Congelados,10800,21,2,21
+976,5,Hamburgesas congeladas,Congelados,7600,21,2,21
+977,5,Galletitas de chocolate,Galletitas y Snacks,5000,21,2,21
+978,5,Vino tinto,Bebidas,10800,21,2,21
+979,3,Manteca,Lacteos,4500,22,3,21
+980,2,Pan integral,Panaderia,10000,22,3,21
+981,1,Leche,Lacteos,9800,22,3,21
+982,3,Zanahorias,Frutas y Verduras,2600,22,3,21
+983,6,Manteca,Lacteos,4500,22,3,21
+984,6,Agua mineral,Bebidas,5000,22,3,21
+985,2,Bananas,Frutas y Verduras,5800,23,4,21
+986,4,Cebolla,Frutas y Verduras,3400,23,4,21
+987,4,Pan frances,Panaderia,6500,23,4,21
+988,4,Vino tinto,Bebidas,10800,23,4,21
+989,1,Facturas,Panaderia,9900,23,4,21
+990,1,Cerveza,Bebidas,9200,23,4,21
+991,2,Galletitas de agua,Galletitas y Snacks,4200,23,4,21
+992,3,Empanadas,Congelados,10800,23,4,21
+993,3,Zanahorias,Frutas y Verduras,2600,23,4,21
+994,4,Cerveza,Bebidas,9200,23,4,21
+995,6,Pan integral,Panaderia,10000,23,4,21
+996,6,Medialunas,Panaderia,2800,23,4,21
+997,4,Yogur,Lacteos,4200,24,5,21
+998,5,Manteca,Lacteos,4500,24,5,21
+999,6,Milanesa,Carniceria,13000,24,5,21
+1000,4,Jugos de frutas,Bebidas,7600,24,5,21
+1001,4,Pollo,Carniceria,14800,24,5,21
+1002,5,Hamburgesas congeladas,Congelados,7600,24,5,21
+1003,3,Tomates,Frutas y Verduras,5200,24,5,21
+1004,3,Lentejas,Conservas,2600,24,5,21
+1005,5,Tortas,Panaderia,12200,24,5,21
+1006,5,Garbanzos,Conservas,2900,24,5,21
+1007,1,Vino tinto,Bebidas,10800,25,6,21
+1008,6,Costilla de cerdo,Carniceria,11400,25,6,21
+1009,2,Facturas,Panaderia,9900,25,6,21
+1010,5,Cebolla,Frutas y Verduras,3400,25,6,21
+1011,4,Pizza congelada,Congelados,12400,25,6,21
+1012,6,Chorizo,Carniceria,9000,25,6,21
+1013,6,Salchicha,Carniceria,9000,25,6,21
+1014,6,Manies,Galletitas y Snacks,4400,25,6,21
+1015,1,Papas fritas,Congelados,6600,26,7,21
+1016,6,Queso rallado,Lacteos,15400,26,7,21
+1017,4,Galletitas de chocolate,Galletitas y Snacks,5000,26,7,21
+1018,3,Manteca,Lacteos,4500,26,7,21
+1019,1,Cebolla,Frutas y Verduras,3400,26,7,21
+1020,6,Manteca,Lacteos,4500,26,7,21
+1021,3,Manteca,Lacteos,4500,26,7,21
+1022,5,Papas fritas,Congelados,6600,26,7,21
+1023,2,Atun enlatado,Conservas,5000,26,7,21
+1024,4,Papas chips,Galletitas y Snacks,6800,27,1,22
+1025,1,Lechugas,Frutas y Verduras,3400,27,1,22
+1026,1,Tortas,Panaderia,12200,27,1,22
+1027,2,Tomates,Frutas y Verduras,5200,27,1,22
+1028,3,Arroz,Conservas,3400,27,1,22
+1029,3,Milanesa,Carniceria,13000,27,1,22
+1030,2,Galletitas de agua,Galletitas y Snacks,4200,27,1,22
+1031,1,Yogur,Lacteos,4200,27,1,22
+1032,3,Manzanas,Frutas y Verduras,5200,27,1,22
+1033,2,Vino tinto,Bebidas,10800,27,1,22
+1034,3,Pollo,Carniceria,14800,27,1,22
+1035,4,Pan frances,Panaderia,6500,28,2,22
+1036,5,Cerveza,Bebidas,9200,28,2,22
+1037,3,Manzanas,Frutas y Verduras,5200,28,2,22
+1038,5,Pizza congelada,Congelados,12400,28,2,22
+1039,2,Queso cremoso,Lacteos,13800,28,2,22
+1040,4,Arroz,Conservas,3400,28,2,22
+1041,1,Atun enlatado,Conservas,5000,28,2,22
+1042,5,Vino tinto,Bebidas,10800,29,3,22
+1043,5,Hamburgesas congeladas,Congelados,7600,29,3,22
+1044,5,Atun enlatado,Conservas,5000,29,3,22
+1045,3,Manzanas,Frutas y Verduras,5200,29,3,22
+1046,2,Jugos de frutas,Bebidas,7600,29,3,22
+1047,6,Hamburgesas congeladas,Congelados,7600,29,3,22
+1048,2,Hamburgesas congeladas,Congelados,7600,29,3,22
+1049,5,Medialunas,Panaderia,2800,29,3,22
+1050,5,Agua mineral,Bebidas,5000,30,4,22
+1051,5,Jugos de frutas,Bebidas,7600,30,4,22
+1052,1,Hamburgesas congeladas,Congelados,7600,30,4,22
+1053,2,Costilla de cerdo,Carniceria,11400,30,4,22
+1054,6,Galletitas de chocolate,Galletitas y Snacks,5000,30,4,22
+1055,4,Agua mineral,Bebidas,5000,30,4,22
+1056,2,Manteca,Lacteos,4500,30,4,22
+1057,4,Milanesa,Carniceria,13000,30,4,22
+1058,4,Agua mineral,Bebidas,5000,30,4,22
+1059,5,Milanesa,Carniceria,13000,31,5,22
+1060,3,Pollo,Carniceria,14800,31,5,22
+1061,2,Pan frances,Panaderia,6500,31,5,22
+1062,3,Agua mineral,Bebidas,5000,31,5,22
+1063,4,Galletitas de chocolate,Galletitas y Snacks,5000,31,5,22
+1064,5,Empanadas,Congelados,10800,31,5,22
+1065,4,Tortas,Panaderia,12200,31,5,22
+1066,5,Manies,Galletitas y Snacks,4400,31,5,22
+1067,3,Queso cremoso,Lacteos,13800,31,5,22
+1068,1,Cebolla,Frutas y Verduras,3400,31,5,22
+1069,3,Medialunas,Panaderia,2800,1,6,22
+1070,6,Salchicha,Carniceria,9000,1,6,22
+1071,3,Pizza congelada,Congelados,12400,1,6,22
+1072,6,Galletitas de agua,Galletitas y Snacks,4200,1,6,22
+1073,6,Medialunas,Panaderia,2800,1,6,22
+1074,4,Arroz,Conservas,3400,1,6,22
+1075,1,Agua mineral,Bebidas,5000,1,6,22
+1076,5,Galletitas de agua,Galletitas y Snacks,4200,1,6,22
+1077,1,Cerveza,Bebidas,9200,1,6,22
+1078,5,Galletitas de agua,Galletitas y Snacks,4200,1,6,22
+1079,6,Lentejas,Conservas,2600,1,6,22
+1080,2,Cerveza,Bebidas,9200,1,6,22
+1081,5,Agua mineral,Bebidas,5000,1,6,22
+1082,3,Empanadas,Congelados,10800,1,6,22
+1083,4,Pollo,Carniceria,14800,1,6,22
+1084,3,Vino tinto,Bebidas,10800,2,7,22
+1085,5,Zanahorias,Frutas y Verduras,2600,2,7,22
+1086,5,Manteca,Lacteos,4500,2,7,22
+1087,2,Manzanas,Frutas y Verduras,5200,2,7,22
+1088,4,Pizza congelada,Congelados,12400,2,7,22
+1089,5,Empanadas,Congelados,10800,2,7,22
+1090,2,Queso rallado,Lacteos,15400,2,7,22
+1091,5,Manteca,Lacteos,4500,2,7,22
+1092,3,Asado,Carniceria,22800,2,7,22
+1093,6,Atun enlatado,Conservas,5000,2,7,22
+1094,3,Milanesa,Carniceria,13000,2,7,22
+1095,6,Leche,Lacteos,9800,2,7,22
+1096,2,Papas fritas,Congelados,6600,2,7,22
+1097,3,Jugos de frutas,Bebidas,7600,2,7,22
+1098,4,Vino tinto,Bebidas,10800,2,7,22
+1099,3,Milanesa,Carniceria,13000,2,7,22
+1100,4,Manzanas,Frutas y Verduras,5200,2,7,22
+1101,5,Lentejas,Conservas,2600,3,1,23
+1102,3,Yogur,Lacteos,4200,3,1,23
+1103,5,Milanesa,Carniceria,13000,3,1,23
+1104,5,Pollo,Carniceria,14800,3,1,23
+1105,6,Agua mineral,Bebidas,5000,3,1,23
+1106,6,Facturas,Panaderia,9900,3,1,23
+1107,2,Cerveza,Bebidas,9200,3,1,23
+1108,5,Zanahorias,Frutas y Verduras,2600,3,1,23
+1109,4,Manies,Galletitas y Snacks,4400,3,1,23
+1110,1,Manies,Galletitas y Snacks,4400,3,1,23
+1111,2,Zanahorias,Frutas y Verduras,2600,3,1,23
+1112,4,Pollo,Carniceria,14800,4,2,23
+1113,1,Galletitas de chocolate,Galletitas y Snacks,5000,4,2,23
+1114,1,Jugos de frutas,Bebidas,7600,4,2,23
+1115,5,Pan integral,Panaderia,10000,4,2,23
+1116,3,Garbanzos,Conservas,2900,4,2,23
+1117,3,Manteca,Lacteos,4500,4,2,23
+1118,1,Pollo,Carniceria,14800,4,2,23
+1119,3,Galletitas de chocolate,Galletitas y Snacks,5000,4,2,23
+1120,6,Facturas,Panaderia,9900,4,2,23
+1121,2,Tomates,Frutas y Verduras,5200,4,2,23
+1122,6,Zanahorias,Frutas y Verduras,2600,5,3,23
+1123,1,Zanahorias,Frutas y Verduras,2600,5,3,23
+1124,6,Agua mineral,Bebidas,5000,5,3,23
+1125,3,Pan frances,Panaderia,6500,5,3,23
+1126,5,Cerveza,Bebidas,9200,5,3,23
+1127,3,Arroz,Conservas,3400,5,3,23
+1128,2,Pollo,Carniceria,14800,5,3,23
+1129,1,Manies,Galletitas y Snacks,4400,5,3,23
+1130,2,Queso rallado,Lacteos,15400,5,3,23
+1131,2,Bananas,Frutas y Verduras,5800,5,3,23
+1132,6,Pizza congelada,Congelados,12400,5,3,23
+1133,5,Papas fritas,Congelados,6600,5,3,23
+1134,1,Facturas,Panaderia,9900,6,4,23
+1135,3,Yogur,Lacteos,4200,6,4,23
+1136,1,Facturas,Panaderia,9900,6,4,23
+1137,6,Arroz,Conservas,3400,6,4,23
+1138,2,Medialunas,Panaderia,2800,6,4,23
+1139,2,Manteca,Lacteos,4500,6,4,23
+1140,1,Empanadas,Congelados,10800,6,4,23
+1141,5,Salchicha,Carniceria,9000,6,4,23
+1142,6,Chorizo,Carniceria,9000,6,4,23
+1143,3,Empanadas,Congelados,10800,6,4,23
+1144,1,Vino tinto,Bebidas,10800,6,4,23
+1145,4,Pollo,Carniceria,14800,7,5,23
+1146,1,Lechugas,Frutas y Verduras,3400,7,5,23
+1147,6,Bananas,Frutas y Verduras,5800,7,5,23
+1148,5,Pan integral,Panaderia,10000,7,5,23
+1149,2,Medialunas,Panaderia,2800,7,5,23
+1150,2,Galletitas de agua,Galletitas y Snacks,4200,7,5,23
+1151,3,Vino tinto,Bebidas,10800,7,5,23
+1152,2,Tomates,Frutas y Verduras,5200,7,5,23
+1153,4,Zanahorias,Frutas y Verduras,2600,7,5,23
+1154,1,Bananas,Frutas y Verduras,5800,7,5,23
+1155,5,Chorizo,Carniceria,9000,7,5,23
+1156,6,Galletitas de agua,Galletitas y Snacks,4200,8,6,23
+1157,4,Vino tinto,Bebidas,10800,8,6,23
+1158,2,Facturas,Panaderia,9900,8,6,23
+1159,2,Atun enlatado,Conservas,5000,8,6,23
+1160,5,Arroz,Conservas,3400,8,6,23
+1161,4,Medialunas,Panaderia,2800,8,6,23
+1162,1,Jugos de frutas,Bebidas,7600,8,6,23
+1163,4,Lechugas,Frutas y Verduras,3400,8,6,23
+1164,1,Zanahorias,Frutas y Verduras,2600,8,6,23
+1165,5,Cebolla,Frutas y Verduras,3400,8,6,23
+1166,6,Hamburgesas congeladas,Congelados,7600,8,6,23
+1167,5,Vino tinto,Bebidas,10800,8,6,23
+1168,4,Zanahorias,Frutas y Verduras,2600,9,7,23
+1169,6,Cebolla,Frutas y Verduras,3400,9,7,23
+1170,3,Papas fritas,Congelados,6600,9,7,23
+1171,6,Chorizo,Carniceria,9000,9,7,23
+1172,4,Lechugas,Frutas y Verduras,3400,9,7,23
+1173,3,Pan integral,Panaderia,10000,9,7,23
+1174,2,Jugos de frutas,Bebidas,7600,9,7,23
+1175,6,Queso cremoso,Lacteos,13800,9,7,23
+1176,3,Facturas,Panaderia,9900,9,7,23
+1177,1,Galletitas de agua,Galletitas y Snacks,4200,10,1,24
+1178,1,Milanesa,Carniceria,13000,10,1,24
+1179,1,Pan frances,Panaderia,6500,10,1,24
+1180,3,Arroz,Conservas,3400,11,2,24
+1181,2,Lechugas,Frutas y Verduras,3400,11,2,24
+1182,1,Hamburgesas congeladas,Congelados,7600,11,2,24
+1183,4,Cerveza,Bebidas,9200,11,2,24
+1184,3,Queso rallado,Lacteos,15400,11,2,24
+1185,1,Bananas,Frutas y Verduras,5800,11,2,24
+1186,3,Jugos de frutas,Bebidas,7600,11,2,24
+1187,1,Bananas,Frutas y Verduras,5800,11,2,24
+1188,1,Jugos de frutas,Bebidas,7600,11,2,24
+1189,2,Salchicha,Carniceria,9000,11,2,24
+1190,5,Manzanas,Frutas y Verduras,5200,11,2,24
+1191,6,Costilla de cerdo,Carniceria,11400,12,3,24
+1192,4,Manteca,Lacteos,4500,12,3,24
+1193,2,Garbanzos,Conservas,2900,12,3,24
+1194,5,Pollo,Carniceria,14800,12,3,24
+1195,3,Tortas,Panaderia,12200,12,3,24
+1196,1,Salchicha,Carniceria,9000,12,3,24
+1197,5,Pan frances,Panaderia,6500,12,3,24
+1198,3,Queso cremoso,Lacteos,13800,12,3,24
+1199,3,Lechugas,Frutas y Verduras,3400,12,3,24
+1200,6,Costilla de cerdo,Carniceria,11400,12,3,24
+1201,4,Cebolla,Frutas y Verduras,3400,12,3,24
+1202,2,Atun enlatado,Conservas,5000,12,3,24
+1203,5,Tomates,Frutas y Verduras,5200,12,3,24
+1204,6,Tortas,Panaderia,12200,12,3,24
+1205,3,Galletitas de agua,Galletitas y Snacks,4200,12,3,24
+1206,2,Pizza congelada,Congelados,12400,13,4,24
+1207,1,Lechugas,Frutas y Verduras,3400,13,4,24
+1208,1,Hamburgesas congeladas,Congelados,7600,13,4,24
+1209,3,Galletitas de chocolate,Galletitas y Snacks,5000,13,4,24
+1210,1,Salchicha,Carniceria,9000,13,4,24
+1211,6,Yogur,Lacteos,4200,13,4,24
+1212,2,Queso rallado,Lacteos,15400,13,4,24
+1213,6,Lentejas,Conservas,2600,13,4,24
+1214,1,Lechugas,Frutas y Verduras,3400,13,4,24
+1215,4,Lechugas,Frutas y Verduras,3400,13,4,24
+1216,2,Medialunas,Panaderia,2800,13,4,24
+1217,6,Pizza congelada,Congelados,12400,13,4,24
+1218,3,Papas chips,Galletitas y Snacks,6800,14,5,24
+1219,4,Leche,Lacteos,9800,14,5,24
+1220,2,Arroz,Conservas,3400,14,5,24
+1221,3,Garbanzos,Conservas,2900,14,5,24
+1222,2,Galletitas de chocolate,Galletitas y Snacks,5000,14,5,24
+1223,6,Zanahorias,Frutas y Verduras,2600,14,5,24
+1224,5,Cerveza,Bebidas,9200,14,5,24
+1225,5,Lechugas,Frutas y Verduras,3400,14,5,24
+1226,3,Facturas,Panaderia,9900,15,6,24
+1227,3,Galletitas de chocolate,Galletitas y Snacks,5000,15,6,24
+1228,5,Chorizo,Carniceria,9000,15,6,24
+1229,3,Costilla de cerdo,Carniceria,11400,15,6,24
+1230,5,Tomates,Frutas y Verduras,5200,15,6,24
+1231,5,Bananas,Frutas y Verduras,5800,15,6,24
+1232,1,Pollo,Carniceria,14800,15,6,24
+1233,2,Asado,Carniceria,22800,15,6,24
+1234,1,Asado,Carniceria,22800,15,6,24
+1235,5,Agua mineral,Bebidas,5000,15,6,24
+1236,5,Garbanzos,Conservas,2900,15,6,24
+1237,4,Papas chips,Galletitas y Snacks,6800,15,6,24
+1238,2,Hamburgesas congeladas,Congelados,7600,15,6,24
+1239,5,Arroz,Conservas,3400,15,6,24
+1240,3,Garbanzos,Conservas,2900,15,6,24
+1241,6,Agua mineral,Bebidas,5000,16,7,24
+1242,1,Papas fritas,Congelados,6600,16,7,24
+1243,1,Vino tinto,Bebidas,10800,16,7,24
+1244,3,Queso cremoso,Lacteos,13800,16,7,24
+1245,3,Cerveza,Bebidas,9200,16,7,24
+1246,4,Queso rallado,Lacteos,15400,16,7,24
+1247,1,Asado,Carniceria,22800,16,7,24
+1248,2,Atun enlatado,Conservas,5000,16,7,24
+1249,3,Tomates,Frutas y Verduras,5200,16,7,24
+1250,1,Leche,Lacteos,9800,16,7,24
+1251,1,Leche,Lacteos,9800,16,7,24
+1252,6,Chorizo,Carniceria,9000,16,7,24
+1253,3,Pan frances,Panaderia,6500,16,7,24
+1254,2,Arroz,Conservas,3400,16,7,24
+1255,4,Hamburgesas congeladas,Congelados,7600,16,7,24
+1256,5,Empanadas,Congelados,10800,16,7,24
+1257,2,Tomates,Frutas y Verduras,5200,17,1,25
+1258,4,Chorizo,Carniceria,9000,17,1,25
+1259,5,Pizza congelada,Congelados,12400,17,1,25
+1260,1,Bananas,Frutas y Verduras,5800,17,1,25
+1261,2,Lentejas,Conservas,2600,17,1,25
+1262,4,Milanesa,Carniceria,13000,17,1,25
+1263,6,Cerveza,Bebidas,9200,17,1,25
+1264,6,Lentejas,Conservas,2600,17,1,25
+1265,6,Bananas,Frutas y Verduras,5800,17,1,25
+1266,5,Queso rallado,Lacteos,15400,18,2,25
+1267,1,Atun enlatado,Conservas,5000,18,2,25
+1268,6,Hamburgesas congeladas,Congelados,7600,18,2,25
+1269,6,Queso cremoso,Lacteos,13800,18,2,25
+1270,5,Medialunas,Panaderia,2800,18,2,25
+1271,4,Empanadas,Congelados,10800,18,2,25
+1272,1,Cerveza,Bebidas,9200,19,3,25
+1273,4,Papas fritas,Congelados,6600,19,3,25
+1274,5,Yogur,Lacteos,4200,19,3,25
+1275,3,Chorizo,Carniceria,9000,19,3,25
+1276,2,Cebolla,Frutas y Verduras,3400,19,3,25
+1277,4,Manies,Galletitas y Snacks,4400,19,3,25
+1278,2,Chorizo,Carniceria,9000,19,3,25
+1279,2,Queso cremoso,Lacteos,13800,19,3,25
+1280,3,Pan integral,Panaderia,10000,20,4,25
+1281,5,Bananas,Frutas y Verduras,5800,20,4,25
+1282,4,Manzanas,Frutas y Verduras,5200,20,4,25
+1283,2,Empanadas,Congelados,10800,20,4,25
+1284,5,Medialunas,Panaderia,2800,20,4,25
+1285,3,Medialunas,Panaderia,2800,20,4,25
+1286,2,Galletitas de agua,Galletitas y Snacks,4200,20,4,25
+1287,4,Tomates,Frutas y Verduras,5200,20,4,25
+1288,6,Papas chips,Galletitas y Snacks,6800,21,5,25
+1289,2,Manteca,Lacteos,4500,21,5,25
+1290,2,Vino tinto,Bebidas,10800,21,5,25
+1291,1,Queso cremoso,Lacteos,13800,21,5,25
+1292,3,Arroz,Conservas,3400,21,5,25
+1293,4,Medialunas,Panaderia,2800,21,5,25
+1294,6,Agua mineral,Bebidas,5000,21,5,25
+1295,4,Cebolla,Frutas y Verduras,3400,21,5,25
+1296,1,Hamburgesas congeladas,Congelados,7600,21,5,25
+1297,1,Lechugas,Frutas y Verduras,3400,22,6,25
+1298,2,Queso rallado,Lacteos,15400,22,6,25
+1299,5,Manteca,Lacteos,4500,22,6,25
+1300,2,Jugos de frutas,Bebidas,7600,22,6,25
+1301,4,Chorizo,Carniceria,9000,22,6,25
+1302,1,Queso rallado,Lacteos,15400,22,6,25
+1303,2,Yogur,Lacteos,4200,22,6,25
+1304,4,Milanesa,Carniceria,13000,23,7,25
+1305,6,Pan integral,Panaderia,10000,23,7,25
+1306,3,Atun enlatado,Conservas,5000,23,7,25
+1307,3,Lechugas,Frutas y Verduras,3400,23,7,25
+1308,6,Atun enlatado,Conservas,5000,23,7,25
+1309,5,Leche,Lacteos,9800,23,7,25
+1310,6,Pan integral,Panaderia,10000,23,7,25
+1311,6,Arroz,Conservas,3400,24,1,26
+1312,4,Empanadas,Congelados,10800,24,1,26
+1313,5,Agua mineral,Bebidas,5000,24,1,26
+1314,3,Leche,Lacteos,9800,24,1,26
+1315,1,Hamburgesas congeladas,Congelados,7600,24,1,26
+1316,2,Milanesa,Carniceria,13000,24,1,26
+1317,6,Asado,Carniceria,22800,24,1,26
+1318,1,Pizza congelada,Congelados,12400,25,2,26
+1319,2,Papas fritas,Congelados,6600,25,2,26
+1320,3,Hamburgesas congeladas,Congelados,7600,25,2,26
+1321,4,Agua mineral,Bebidas,5000,25,2,26
+1322,5,Milanesa,Carniceria,13000,25,2,26
+1323,6,Leche,Lacteos,9800,25,2,26
+1324,6,Queso cremoso,Lacteos,13800,25,2,26
+1325,4,Hamburgesas congeladas,Congelados,7600,25,2,26
+1326,1,Facturas,Panaderia,9900,25,2,26
+1327,6,Galletitas de agua,Galletitas y Snacks,4200,25,2,26
+1328,2,Cebolla,Frutas y Verduras,3400,25,2,26
+1329,3,Cerveza,Bebidas,9200,25,2,26
+1330,4,Jugos de frutas,Bebidas,7600,25,2,26
+1331,5,Tomates,Frutas y Verduras,5200,26,3,26
+1332,4,Arroz,Conservas,3400,26,3,26
+1333,5,Queso rallado,Lacteos,15400,26,3,26
+1334,2,Facturas,Panaderia,9900,26,3,26
+1335,1,Salchicha,Carniceria,9000,27,4,26
+1336,3,Agua mineral,Bebidas,5000,27,4,26
+1337,2,Medialunas,Panaderia,2800,27,4,26
+1338,2,Vino tinto,Bebidas,10800,27,4,26
+1339,6,Queso rallado,Lacteos,15400,27,4,26
+1340,2,Empanadas,Congelados,10800,27,4,26
+1341,4,Manzanas,Frutas y Verduras,5200,27,4,26
+1342,1,Empanadas,Congelados,10800,27,4,26
+1343,5,Pollo,Carniceria,14800,27,4,26
+1344,5,Galletitas de chocolate,Galletitas y Snacks,5000,28,5,26
+1345,4,Yogur,Lacteos,4200,28,5,26
+1346,2,Papas chips,Galletitas y Snacks,6800,28,5,26
+1347,5,Tortas,Panaderia,12200,28,5,26
+1348,6,Salchicha,Carniceria,9000,28,5,26
+1349,5,Medialunas,Panaderia,2800,28,5,26
+1350,4,Vino tinto,Bebidas,10800,28,5,26
+1351,4,Pan frances,Panaderia,6500,28,5,26
+1352,6,Salchicha,Carniceria,9000,28,5,26
+1353,2,Agua mineral,Bebidas,5000,29,6,26
+1354,4,Papas fritas,Congelados,6600,29,6,26
+1355,6,Cerveza,Bebidas,9200,29,6,26
+1356,6,Agua mineral,Bebidas,5000,29,6,26
+1357,4,Vino tinto,Bebidas,10800,29,6,26
+1358,1,Lechugas,Frutas y Verduras,3400,29,6,26
+1359,5,Salchicha,Carniceria,9000,29,6,26
+1360,3,Leche,Lacteos,9800,29,6,26
+1361,2,Asado,Carniceria,22800,29,6,26
+1362,6,Queso rallado,Lacteos,15400,29,6,26
+1363,3,Vino tinto,Bebidas,10800,29,6,26
+1364,2,Garbanzos,Conservas,2900,29,6,26
+1365,2,Lechugas,Frutas y Verduras,3400,29,6,26
+1366,4,Empanadas,Congelados,10800,30,7,26
+1367,6,Garbanzos,Conservas,2900,30,7,26
+1368,1,Papas chips,Galletitas y Snacks,6800,30,7,26
+1369,2,Pizza congelada,Congelados,12400,30,7,26
+1370,5,Arroz,Conservas,3400,30,7,26
+1371,1,Manzanas,Frutas y Verduras,5200,30,7,26
+1372,6,Jugos de frutas,Bebidas,7600,30,7,26
+1373,3,Yogur,Lacteos,4200,30,7,26
+1374,4,Garbanzos,Conservas,2900,30,7,26
+1375,6,Pan frances,Panaderia,6500,30,7,26
+1376,4,Salchicha,Carniceria,9000,30,7,26
+1377,1,Garbanzos,Conservas,2900,30,7,26
+1378,6,Atun enlatado,Conservas,5000,1,1,27
+1379,2,Costilla de cerdo,Carniceria,11400,1,1,27
+1380,1,Bananas,Frutas y Verduras,5800,1,1,27
+1381,2,Zanahorias,Frutas y Verduras,2600,1,1,27
+1382,6,Papas fritas,Congelados,6600,1,1,27
+1383,4,Medialunas,Panaderia,2800,1,1,27
+1384,6,Empanadas,Congelados,10800,1,1,27
+1385,3,Facturas,Panaderia,9900,2,2,27
+1386,6,Papas fritas,Congelados,6600,2,2,27
+1387,2,Atun enlatado,Conservas,5000,2,2,27
+1388,3,Bananas,Frutas y Verduras,5800,2,2,27
+1389,6,Queso rallado,Lacteos,15400,2,2,27
+1390,4,Manteca,Lacteos,4500,2,2,27
+1391,6,Arroz,Conservas,3400,2,2,27
+1392,2,Garbanzos,Conservas,2900,2,2,27
+1393,5,Pizza congelada,Congelados,12400,2,2,27
+1394,2,Milanesa,Carniceria,13000,2,2,27
+1395,3,Jugos de frutas,Bebidas,7600,2,2,27
+1396,4,Jugos de frutas,Bebidas,7600,2,2,27
+1397,6,Manzanas,Frutas y Verduras,5200,2,2,27
+1398,2,Garbanzos,Conservas,2900,3,3,27
+1399,1,Empanadas,Congelados,10800,3,3,27
+1400,6,Zanahorias,Frutas y Verduras,2600,3,3,27
+1401,3,Leche,Lacteos,9800,3,3,27
+1402,4,Queso cremoso,Lacteos,13800,3,3,27
+1403,3,Yogur,Lacteos,4200,3,3,27
+1404,4,Manzanas,Frutas y Verduras,5200,3,3,27
+1405,4,Garbanzos,Conservas,2900,4,4,27
+1406,3,Galletitas de chocolate,Galletitas y Snacks,5000,4,4,27
+1407,1,Manies,Galletitas y Snacks,4400,4,4,27
+1408,3,Milanesa,Carniceria,13000,4,4,27
+1409,2,Yogur,Lacteos,4200,4,4,27
+1410,2,Vino tinto,Bebidas,10800,4,4,27
+1411,1,Queso rallado,Lacteos,15400,4,4,27
+1412,6,Tomates,Frutas y Verduras,5200,4,4,27
+1413,6,Bananas,Frutas y Verduras,5800,4,4,27
+1414,4,Pan frances,Panaderia,6500,4,4,27
+1415,1,Queso rallado,Lacteos,15400,4,4,27
+1416,6,Manies,Galletitas y Snacks,4400,5,5,27
+1417,6,Leche,Lacteos,9800,5,5,27
+1418,4,Papas fritas,Congelados,6600,5,5,27
+1419,6,Arroz,Conservas,3400,5,5,27
+1420,3,Papas fritas,Congelados,6600,5,5,27
+1421,1,Galletitas de agua,Galletitas y Snacks,4200,5,5,27
+1422,3,Queso cremoso,Lacteos,13800,5,5,27
+1423,3,Agua mineral,Bebidas,5000,5,5,27
+1424,2,Bananas,Frutas y Verduras,5800,6,6,27
+1425,4,Cerveza,Bebidas,9200,6,6,27
+1426,6,Manies,Galletitas y Snacks,4400,6,6,27
+1427,5,Pollo,Carniceria,14800,6,6,27
+1428,2,Queso rallado,Lacteos,15400,6,6,27
+1429,5,Medialunas,Panaderia,2800,6,6,27
+1430,3,Queso rallado,Lacteos,15400,6,6,27
+1431,3,Lentejas,Conservas,2600,6,6,27
+1432,5,Bananas,Frutas y Verduras,5800,6,6,27
+1433,4,Pollo,Carniceria,14800,6,6,27
+1434,5,Pan frances,Panaderia,6500,6,6,27
+1435,5,Cerveza,Bebidas,9200,6,6,27
+1436,4,Galletitas de chocolate,Galletitas y Snacks,5000,7,7,27
+1437,1,Tortas,Panaderia,12200,7,7,27
+1438,6,Chorizo,Carniceria,9000,7,7,27
+1439,6,Papas fritas,Congelados,6600,7,7,27
+1440,5,Manzanas,Frutas y Verduras,5200,7,7,27
+1441,6,Manies,Galletitas y Snacks,4400,7,7,27
+1442,6,Manzanas,Frutas y Verduras,5200,7,7,27
+1443,3,Empanadas,Congelados,10800,7,7,27
+1444,1,Atun enlatado,Conservas,5000,7,7,27
+1445,1,Arroz,Conservas,3400,7,7,27
+1446,1,Pan integral,Panaderia,10000,7,7,27
+1447,2,Galletitas de agua,Galletitas y Snacks,4200,7,7,27
+1448,6,Pan frances,Panaderia,6500,7,7,27
+1449,2,Bananas,Frutas y Verduras,5800,8,1,28
+1450,4,Galletitas de chocolate,Galletitas y Snacks,5000,8,1,28
+1451,5,Pollo,Carniceria,14800,8,1,28
+1452,6,Leche,Lacteos,9800,8,1,28
+1453,2,Manzanas,Frutas y Verduras,5200,8,1,28
+1454,5,Galletitas de agua,Galletitas y Snacks,4200,8,1,28
+1455,1,Tomates,Frutas y Verduras,5200,9,2,28
+1456,2,Pollo,Carniceria,14800,9,2,28
+1457,3,Leche,Lacteos,9800,9,2,28
+1458,5,Galletitas de agua,Galletitas y Snacks,4200,9,2,28
+1459,3,Milanesa,Carniceria,13000,9,2,28
+1460,5,Empanadas,Congelados,10800,9,2,28
+1461,6,Manies,Galletitas y Snacks,4400,9,2,28
+1462,6,Manies,Galletitas y Snacks,4400,9,2,28
+1463,5,Papas chips,Galletitas y Snacks,6800,9,2,28
+1464,2,Pan integral,Panaderia,10000,9,2,28
+1465,2,Vino tinto,Bebidas,10800,9,2,28
+1466,2,Pan integral,Panaderia,10000,9,2,28
+1467,5,Vino tinto,Bebidas,10800,9,2,28
+1468,2,Lechugas,Frutas y Verduras,3400,9,2,28
+1469,3,Cerveza,Bebidas,9200,9,2,28
+1470,1,Tomates,Frutas y Verduras,5200,9,2,28
+1471,5,Arroz,Conservas,3400,9,2,28
+1472,1,Manzanas,Frutas y Verduras,5200,9,2,28
+1473,3,Pizza congelada,Congelados,12400,9,2,28
+1474,1,Facturas,Panaderia,9900,9,2,28
+1475,5,Agua mineral,Bebidas,5000,10,3,28
+1476,2,Arroz,Conservas,3400,10,3,28
+1477,3,Tomates,Frutas y Verduras,5200,10,3,28
+1478,3,Pizza congelada,Congelados,12400,10,3,28
+1479,3,Leche,Lacteos,9800,11,4,28
+1480,3,Manteca,Lacteos,4500,11,4,28
+1481,1,Facturas,Panaderia,9900,11,4,28
+1482,2,Milanesa,Carniceria,13000,11,4,28
+1483,2,Costilla de cerdo,Carniceria,11400,11,4,28
+1484,5,Arroz,Conservas,3400,11,4,28
+1485,3,Tomates,Frutas y Verduras,5200,11,4,28
+1486,3,Manteca,Lacteos,4500,11,4,28
+1487,4,Vino tinto,Bebidas,10800,11,4,28
+1488,1,Papas fritas,Congelados,6600,11,4,28
+1489,4,Tortas,Panaderia,12200,11,4,28
+1490,1,Papas fritas,Congelados,6600,12,5,28
+1491,5,Agua mineral,Bebidas,5000,12,5,28
+1492,4,Manies,Galletitas y Snacks,4400,12,5,28
+1493,2,Zanahorias,Frutas y Verduras,2600,12,5,28
+1494,5,Garbanzos,Conservas,2900,12,5,28
+1495,3,Hamburgesas congeladas,Congelados,7600,12,5,28
+1496,5,Lentejas,Conservas,2600,12,5,28
+1497,6,Papas chips,Galletitas y Snacks,6800,12,5,28
+1498,4,Tortas,Panaderia,12200,12,5,28
+1499,1,Pan integral,Panaderia,10000,12,5,28
+1500,6,Galletitas de agua,Galletitas y Snacks,4200,13,6,28
+1501,6,Asado,Carniceria,22800,13,6,28
+1502,1,Tortas,Panaderia,12200,13,6,28
+1503,4,Tomates,Frutas y Verduras,5200,13,6,28
+1504,5,Manteca,Lacteos,4500,13,6,28
+1505,3,Hamburgesas congeladas,Congelados,7600,14,7,28
+1506,3,Tortas,Panaderia,12200,14,7,28
+1507,4,Cerveza,Bebidas,9200,14,7,28
+1508,2,Arroz,Conservas,3400,14,7,28
+1509,2,Pan integral,Panaderia,10000,14,7,28
+1510,2,Galletitas de chocolate,Galletitas y Snacks,5000,14,7,28
+1511,4,Tomates,Frutas y Verduras,5200,14,7,28
+1512,6,Cebolla,Frutas y Verduras,3400,14,7,28
+1513,1,Tomates,Frutas y Verduras,5200,14,7,28
+1514,6,Vino tinto,Bebidas,10800,15,1,29
+1515,2,Asado,Carniceria,22800,15,1,29
+1516,3,Salchicha,Carniceria,9000,15,1,29
+1517,2,Queso rallado,Lacteos,15400,16,2,29
+1518,4,Tomates,Frutas y Verduras,5200,16,2,29
+1519,6,Arroz,Conservas,3400,16,2,29
+1520,4,Cerveza,Bebidas,9200,16,2,29
+1521,1,Agua mineral,Bebidas,5000,16,2,29
+1522,4,Cebolla,Frutas y Verduras,3400,16,2,29
+1523,1,Lechugas,Frutas y Verduras,3400,16,2,29
+1524,3,Atun enlatado,Conservas,5000,16,2,29
+1525,1,Pollo,Carniceria,14800,17,3,29
+1526,1,Cebolla,Frutas y Verduras,3400,17,3,29
+1527,5,Tomates,Frutas y Verduras,5200,17,3,29
+1528,2,Papas fritas,Congelados,6600,17,3,29
+1529,3,Lentejas,Conservas,2600,17,3,29
+1530,4,Jugos de frutas,Bebidas,7600,17,3,29
+1531,2,Salchicha,Carniceria,9000,17,3,29
+1532,4,Lechugas,Frutas y Verduras,3400,17,3,29
+1533,2,Vino tinto,Bebidas,10800,17,3,29
+1534,6,Pan integral,Panaderia,10000,17,3,29
+1535,6,Bananas,Frutas y Verduras,5800,17,3,29
+1536,6,Lechugas,Frutas y Verduras,3400,17,3,29
+1537,6,Agua mineral,Bebidas,5000,18,4,29
+1538,3,Atun enlatado,Conservas,5000,18,4,29
+1539,3,Queso rallado,Lacteos,15400,18,4,29
+1540,6,Papas fritas,Congelados,6600,18,4,29
+1541,1,Atun enlatado,Conservas,5000,18,4,29
+1542,4,Medialunas,Panaderia,2800,18,4,29
+1543,3,Lentejas,Conservas,2600,18,4,29
+1544,3,Galletitas de chocolate,Galletitas y Snacks,5000,18,4,29
+1545,6,Pollo,Carniceria,14800,19,5,29
+1546,5,Chorizo,Carniceria,9000,19,5,29
+1547,2,Salchicha,Carniceria,9000,19,5,29
+1548,1,Pan frances,Panaderia,6500,19,5,29
+1549,4,Queso cremoso,Lacteos,13800,19,5,29
+1550,1,Costilla de cerdo,Carniceria,11400,19,5,29
+1551,3,Tomates,Frutas y Verduras,5200,19,5,29
+1552,1,Chorizo,Carniceria,9000,19,5,29
+1553,1,Papas fritas,Congelados,6600,19,5,29
+1554,4,Milanesa,Carniceria,13000,19,5,29
+1555,6,Hamburgesas congeladas,Congelados,7600,19,5,29
+1556,1,Agua mineral,Bebidas,5000,19,5,29
+1557,4,Garbanzos,Conservas,2900,19,5,29
+1558,2,Zanahorias,Frutas y Verduras,2600,19,5,29
+1559,3,Arroz,Conservas,3400,20,6,29
+1560,5,Atun enlatado,Conservas,5000,20,6,29
+1561,2,Manzanas,Frutas y Verduras,5200,20,6,29
+1562,4,Milanesa,Carniceria,13000,20,6,29
+1563,1,Pollo,Carniceria,14800,20,6,29
+1564,4,Yogur,Lacteos,4200,20,6,29
+1565,4,Manteca,Lacteos,4500,20,6,29
+1566,2,Zanahorias,Frutas y Verduras,2600,20,6,29
+1567,2,Pizza congelada,Congelados,12400,20,6,29
+1568,3,Asado,Carniceria,22800,21,7,29
+1569,3,Costilla de cerdo,Carniceria,11400,21,7,29
+1570,2,Empanadas,Congelados,10800,21,7,29
+1571,2,Queso rallado,Lacteos,15400,21,7,29
+1572,6,Manzanas,Frutas y Verduras,5200,21,7,29
+1573,2,Tomates,Frutas y Verduras,5200,21,7,29
+1574,2,Medialunas,Panaderia,2800,21,7,29
+1575,2,Papas fritas,Congelados,6600,21,7,29
+1576,2,Costilla de cerdo,Carniceria,11400,22,1,30
+1577,6,Garbanzos,Conservas,2900,22,1,30
+1578,5,Agua mineral,Bebidas,5000,22,1,30
+1579,3,Hamburgesas congeladas,Congelados,7600,22,1,30
+1580,6,Cerveza,Bebidas,9200,22,1,30
+1581,5,Yogur,Lacteos,4200,22,1,30
+1582,4,Tortas,Panaderia,12200,22,1,30
+1583,6,Arroz,Conservas,3400,22,1,30
+1584,1,Facturas,Panaderia,9900,22,1,30
+1585,1,Yogur,Lacteos,4200,23,2,30
+1586,1,Garbanzos,Conservas,2900,23,2,30
+1587,5,Manzanas,Frutas y Verduras,5200,23,2,30
+1588,6,Pizza congelada,Congelados,12400,23,2,30
+1589,4,Vino tinto,Bebidas,10800,23,2,30
+1590,5,Papas fritas,Congelados,6600,23,2,30
+1591,1,Zanahorias,Frutas y Verduras,2600,23,2,30
+1592,1,Yogur,Lacteos,4200,23,2,30
+1593,4,Arroz,Conservas,3400,23,2,30
+1594,2,Bananas,Frutas y Verduras,5800,23,2,30
+1595,6,Pan integral,Panaderia,10000,23,2,30
+1596,2,Cebolla,Frutas y Verduras,3400,24,3,30
+1597,3,Papas chips,Galletitas y Snacks,6800,24,3,30
+1598,3,Asado,Carniceria,22800,24,3,30
+1599,6,Galletitas de agua,Galletitas y Snacks,4200,24,3,30
+1600,1,Jugos de frutas,Bebidas,7600,24,3,30
+1601,3,Lentejas,Conservas,2600,24,3,30
+1602,1,Pan integral,Panaderia,10000,24,3,30
+1603,1,Galletitas de agua,Galletitas y Snacks,4200,24,3,30
+1604,3,Asado,Carniceria,22800,24,3,30
+1605,2,Zanahorias,Frutas y Verduras,2600,25,4,30
+1606,2,Facturas,Panaderia,9900,25,4,30
+1607,6,Arroz,Conservas,3400,25,4,30
+1608,3,Manies,Galletitas y Snacks,4400,25,4,30
+1609,1,Pan frances,Panaderia,6500,25,4,30
+1610,6,Pollo,Carniceria,14800,25,4,30
+1611,3,Manies,Galletitas y Snacks,4400,25,4,30
+1612,2,Arroz,Conservas,3400,25,4,30
+1613,4,Atun enlatado,Conservas,5000,25,4,30
+1614,6,Galletitas de agua,Galletitas y Snacks,4200,26,5,30
+1615,3,Cebolla,Frutas y Verduras,3400,26,5,30
+1616,5,Medialunas,Panaderia,2800,26,5,30
+1617,5,Manies,Galletitas y Snacks,4400,26,5,30
+1618,3,Pan integral,Panaderia,10000,26,5,30
+1619,3,Papas chips,Galletitas y Snacks,6800,26,5,30
+1620,1,Pollo,Carniceria,14800,26,5,30
+1621,5,Cerveza,Bebidas,9200,26,5,30
+1622,6,Pan frances,Panaderia,6500,26,5,30
+1623,4,Tortas,Panaderia,12200,26,5,30
+1624,6,Galletitas de chocolate,Galletitas y Snacks,5000,26,5,30
+1625,5,Tortas,Panaderia,12200,26,5,30
+1626,3,Hamburgesas congeladas,Congelados,7600,26,5,30
+1627,5,Pan integral,Panaderia,10000,26,5,30
+1628,4,Salchicha,Carniceria,9000,26,5,30
+1629,2,Tomates,Frutas y Verduras,5200,27,6,30
+1630,5,Lentejas,Conservas,2600,27,6,30
+1631,4,Galletitas de chocolate,Galletitas y Snacks,5000,27,6,30
+1632,2,Facturas,Panaderia,9900,27,6,30
+1633,2,Hamburgesas congeladas,Congelados,7600,27,6,30
+1634,5,Atun enlatado,Conservas,5000,27,6,30
+1635,6,Asado,Carniceria,22800,27,6,30
+1636,3,Asado,Carniceria,22800,27,6,30
+1637,5,Papas fritas,Congelados,6600,28,7,30
+1638,3,Atun enlatado,Conservas,5000,28,7,30
+1639,1,Cerveza,Bebidas,9200,28,7,30
+1640,1,Zanahorias,Frutas y Verduras,2600,29,1,31
+1641,5,Jugos de frutas,Bebidas,7600,29,1,31
+1642,2,Agua mineral,Bebidas,5000,29,1,31
+1643,2,Zanahorias,Frutas y Verduras,2600,29,1,31
+1644,3,Queso cremoso,Lacteos,13800,29,1,31
+1645,4,Medialunas,Panaderia,2800,29,1,31
+1646,3,Manzanas,Frutas y Verduras,5200,29,1,31
+1647,4,Atun enlatado,Conservas,5000,30,2,31
+1648,5,Asado,Carniceria,22800,30,2,31
+1649,2,Cerveza,Bebidas,9200,30,2,31
+1650,4,Cerveza,Bebidas,9200,30,2,31
+1651,1,Pan integral,Panaderia,10000,30,2,31
+1652,6,Chorizo,Carniceria,9000,30,2,31
+1653,1,Yogur,Lacteos,4200,30,2,31
+1654,2,Galletitas de chocolate,Galletitas y Snacks,5000,30,2,31
+1655,4,Leche,Lacteos,9800,30,2,31
+1656,1,Galletitas de chocolate,Galletitas y Snacks,5000,30,2,31
+1657,5,Milanesa,Carniceria,13000,30,2,31
+1658,3,Tortas,Panaderia,12200,30,2,31
+1659,5,Leche,Lacteos,9800,30,2,31
+1660,4,Facturas,Panaderia,9900,30,2,31
+1661,4,Medialunas,Panaderia,2800,30,2,31
+1662,2,Hamburgesas congeladas,Congelados,7600,30,2,31
+1663,2,Milanesa,Carniceria,13000,31,3,31
+1664,6,Manteca,Lacteos,4500,31,3,31
+1665,4,Papas chips,Galletitas y Snacks,6800,31,3,31
+1666,2,Empanadas,Congelados,10800,31,3,31
+1667,3,Yogur,Lacteos,4200,31,3,31
+1668,6,Chorizo,Carniceria,9000,31,3,31
+1669,4,Galletitas de agua,Galletitas y Snacks,4200,1,4,31
+1670,1,Lechugas,Frutas y Verduras,3400,1,4,31
+1671,5,Galletitas de agua,Galletitas y Snacks,4200,1,4,31
+1672,3,Queso cremoso,Lacteos,13800,1,4,31
+1673,3,Lechugas,Frutas y Verduras,3400,1,4,31
+1674,2,Chorizo,Carniceria,9000,1,4,31
+1675,2,Manteca,Lacteos,4500,1,4,31
+1676,3,Queso rallado,Lacteos,15400,1,4,31
+1677,1,Medialunas,Panaderia,2800,1,4,31
+1678,5,Galletitas de agua,Galletitas y Snacks,4200,1,4,31
+1679,1,Pan integral,Panaderia,10000,2,5,31
+1680,1,Vino tinto,Bebidas,10800,2,5,31
+1681,1,Arroz,Conservas,3400,2,5,31
+1682,6,Lechugas,Frutas y Verduras,3400,2,5,31
+1683,6,Yogur,Lacteos,4200,2,5,31
+1684,5,Queso rallado,Lacteos,15400,2,5,31
+1685,6,Galletitas de agua,Galletitas y Snacks,4200,2,5,31
+1686,4,Asado,Carniceria,22800,2,5,31
+1687,5,Pollo,Carniceria,14800,2,5,31
+1688,6,Asado,Carniceria,22800,2,5,31
+1689,6,Vino tinto,Bebidas,10800,2,5,31
+1690,5,Zanahorias,Frutas y Verduras,2600,2,5,31
+1691,6,Salchicha,Carniceria,9000,3,6,31
+1692,4,Pan integral,Panaderia,10000,3,6,31
+1693,1,Pizza congelada,Congelados,12400,3,6,31
+1694,1,Cebolla,Frutas y Verduras,3400,3,6,31
+1695,2,Pizza congelada,Congelados,12400,3,6,31
+1696,5,Hamburgesas congeladas,Congelados,7600,3,6,31
+1697,2,Galletitas de chocolate,Galletitas y Snacks,5000,4,7,31
+1698,2,Queso cremoso,Lacteos,13800,4,7,31
+1699,5,Garbanzos,Conservas,2900,4,7,31
+1700,4,Papas chips,Galletitas y Snacks,6800,4,7,31
+1701,2,Agua mineral,Bebidas,5000,4,7,31
+1702,4,Queso cremoso,Lacteos,13800,5,1,32
+1703,2,Leche,Lacteos,9800,5,1,32
+1704,3,Arroz,Conservas,3400,5,1,32
+1705,2,Lentejas,Conservas,2600,5,1,32
+1706,4,Salchicha,Carniceria,9000,5,1,32
+1707,5,Garbanzos,Conservas,2900,5,1,32
+1708,6,Cerveza,Bebidas,9200,5,1,32
+1709,2,Yogur,Lacteos,4200,5,1,32
+1710,2,Cerveza,Bebidas,9200,5,1,32
+1711,3,Lentejas,Conservas,2600,5,1,32
+1712,4,Bananas,Frutas y Verduras,5800,5,1,32
+1713,1,Medialunas,Panaderia,2800,5,1,32
+1714,1,Cerveza,Bebidas,9200,5,1,32
+1715,5,Galletitas de chocolate,Galletitas y Snacks,5000,5,1,32
+1716,3,Leche,Lacteos,9800,5,1,32
+1717,4,Lentejas,Conservas,2600,5,1,32
+1718,4,Galletitas de agua,Galletitas y Snacks,4200,5,1,32
+1719,1,Galletitas de agua,Galletitas y Snacks,4200,6,2,32
+1720,2,Queso cremoso,Lacteos,13800,6,2,32
+1721,2,Pollo,Carniceria,14800,6,2,32
+1722,1,Cebolla,Frutas y Verduras,3400,6,2,32
+1723,6,Hamburgesas congeladas,Congelados,7600,6,2,32
+1724,5,Lentejas,Conservas,2600,6,2,32
+1725,4,Pollo,Carniceria,14800,6,2,32
+1726,4,Hamburgesas congeladas,Congelados,7600,6,2,32
+1727,2,Medialunas,Panaderia,2800,7,3,32
+1728,6,Papas fritas,Congelados,6600,7,3,32
+1729,5,Hamburgesas congeladas,Congelados,7600,7,3,32
+1730,6,Pan frances,Panaderia,6500,7,3,32
+1731,5,Manies,Galletitas y Snacks,4400,7,3,32
+1732,5,Medialunas,Panaderia,2800,7,3,32
+1733,6,Medialunas,Panaderia,2800,7,3,32
+1734,5,Cerveza,Bebidas,9200,7,3,32
+1735,3,Papas fritas,Congelados,6600,7,3,32
+1736,4,Medialunas,Panaderia,2800,7,3,32
+1737,3,Arroz,Conservas,3400,7,3,32
+1738,1,Papas fritas,Congelados,6600,8,4,32
+1739,6,Milanesa,Carniceria,13000,8,4,32
+1740,6,Agua mineral,Bebidas,5000,8,4,32
+1741,2,Jugos de frutas,Bebidas,7600,8,4,32
+1742,1,Pollo,Carniceria,14800,8,4,32
+1743,4,Tortas,Panaderia,12200,8,4,32
+1744,4,Galletitas de chocolate,Galletitas y Snacks,5000,9,5,32
+1745,6,Asado,Carniceria,22800,9,5,32
+1746,5,Pollo,Carniceria,14800,9,5,32
+1747,2,Papas chips,Galletitas y Snacks,6800,9,5,32
+1748,1,Papas fritas,Congelados,6600,10,6,32
+1749,4,Manteca,Lacteos,4500,10,6,32
+1750,5,Empanadas,Congelados,10800,10,6,32
+1751,3,Pollo,Carniceria,14800,10,6,32
+1752,1,Vino tinto,Bebidas,10800,10,6,32
+1753,2,Agua mineral,Bebidas,5000,10,6,32
+1754,5,Manies,Galletitas y Snacks,4400,11,7,32
+1755,3,Hamburgesas congeladas,Congelados,7600,11,7,32
+1756,5,Salchicha,Carniceria,9000,11,7,32
+1757,3,Cerveza,Bebidas,9200,11,7,32
+1758,6,Milanesa,Carniceria,13000,11,7,32
+1759,2,Pollo,Carniceria,14800,11,7,32
+1760,2,Arroz,Conservas,3400,11,7,32
+1761,2,Pollo,Carniceria,14800,11,7,32
+1762,3,Pan frances,Panaderia,6500,11,7,32
+1763,2,Pan integral,Panaderia,10000,11,7,32
+1764,1,Queso cremoso,Lacteos,13800,11,7,32
+1765,1,Galletitas de agua,Galletitas y Snacks,4200,12,1,33
+1766,2,Facturas,Panaderia,9900,12,1,33
+1767,2,Hamburgesas congeladas,Congelados,7600,12,1,33
+1768,4,Atun enlatado,Conservas,5000,12,1,33
+1769,1,Galletitas de chocolate,Galletitas y Snacks,5000,12,1,33
+1770,1,Tortas,Panaderia,12200,12,1,33
+1771,1,Manies,Galletitas y Snacks,4400,12,1,33
+1772,1,Zanahorias,Frutas y Verduras,2600,12,1,33
+1773,2,Costilla de cerdo,Carniceria,11400,12,1,33
+1774,1,Leche,Lacteos,9800,12,1,33
+1775,6,Chorizo,Carniceria,9000,12,1,33
+1776,6,Pan integral,Panaderia,10000,13,2,33
+1777,6,Chorizo,Carniceria,9000,13,2,33
+1778,2,Yogur,Lacteos,4200,13,2,33
+1779,2,Pan frances,Panaderia,6500,13,2,33
+1780,2,Tomates,Frutas y Verduras,5200,13,2,33
+1781,3,Zanahorias,Frutas y Verduras,2600,13,2,33
+1782,1,Salchicha,Carniceria,9000,13,2,33
+1783,1,Vino tinto,Bebidas,10800,13,2,33
+1784,4,Agua mineral,Bebidas,5000,13,2,33
+1785,3,Cebolla,Frutas y Verduras,3400,13,2,33
+1786,3,Galletitas de agua,Galletitas y Snacks,4200,14,3,33
+1787,6,Hamburgesas congeladas,Congelados,7600,14,3,33
+1788,5,Papas chips,Galletitas y Snacks,6800,14,3,33
+1789,6,Manteca,Lacteos,4500,14,3,33
+1790,5,Lechugas,Frutas y Verduras,3400,14,3,33
+1791,1,Pan integral,Panaderia,10000,14,3,33
+1792,2,Asado,Carniceria,22800,14,3,33
+1793,4,Galletitas de agua,Galletitas y Snacks,4200,14,3,33
+1794,3,Lechugas,Frutas y Verduras,3400,14,3,33
+1795,1,Manzanas,Frutas y Verduras,5200,14,3,33
+1796,2,Empanadas,Congelados,10800,14,3,33
+1797,3,Cebolla,Frutas y Verduras,3400,14,3,33
+1798,2,Hamburgesas congeladas,Congelados,7600,14,3,33
+1799,5,Tomates,Frutas y Verduras,5200,14,3,33
+1800,4,Agua mineral,Bebidas,5000,14,3,33
+1801,6,Arroz,Conservas,3400,15,4,33
+1802,1,Queso cremoso,Lacteos,13800,15,4,33
+1803,5,Pizza congelada,Congelados,12400,15,4,33
+1804,1,Hamburgesas congeladas,Congelados,7600,15,4,33
+1805,5,Manteca,Lacteos,4500,15,4,33
+1806,6,Medialunas,Panaderia,2800,15,4,33
+1807,2,Pizza congelada,Congelados,12400,15,4,33
+1808,2,Facturas,Panaderia,9900,16,5,33
+1809,5,Asado,Carniceria,22800,16,5,33
+1810,1,Queso cremoso,Lacteos,13800,16,5,33
+1811,3,Galletitas de agua,Galletitas y Snacks,4200,16,5,33
+1812,4,Tortas,Panaderia,12200,16,5,33
+1813,1,Asado,Carniceria,22800,16,5,33
+1814,2,Costilla de cerdo,Carniceria,11400,16,5,33
+1815,6,Queso rallado,Lacteos,15400,16,5,33
+1816,6,Tortas,Panaderia,12200,16,5,33
+1817,4,Medialunas,Panaderia,2800,16,5,33
+1818,4,Milanesa,Carniceria,13000,17,6,33
+1819,6,Atun enlatado,Conservas,5000,17,6,33
+1820,5,Costilla de cerdo,Carniceria,11400,17,6,33
+1821,3,Yogur,Lacteos,4200,17,6,33
+1822,5,Milanesa,Carniceria,13000,17,6,33
+1823,1,Papas fritas,Congelados,6600,17,6,33
+1824,4,Arroz,Conservas,3400,17,6,33
+1825,3,Atun enlatado,Conservas,5000,18,7,33
+1826,5,Yogur,Lacteos,4200,18,7,33
+1827,3,Pan frances,Panaderia,6500,18,7,33
+1828,3,Milanesa,Carniceria,13000,18,7,33
+1829,3,Lechugas,Frutas y Verduras,3400,18,7,33
+1830,2,Lentejas,Conservas,2600,18,7,33
+1831,5,Galletitas de chocolate,Galletitas y Snacks,5000,18,7,33
+1832,3,Garbanzos,Conservas,2900,18,7,33
+1833,6,Lentejas,Conservas,2600,18,7,33
+1834,4,Hamburgesas congeladas,Congelados,7600,18,7,33
+1835,3,Jugos de frutas,Bebidas,7600,19,1,34
+1836,1,Cerveza,Bebidas,9200,19,1,34
+1837,2,Tomates,Frutas y Verduras,5200,19,1,34
+1838,2,Milanesa,Carniceria,13000,19,1,34
+1839,1,Yogur,Lacteos,4200,19,1,34
+1840,3,Cerveza,Bebidas,9200,19,1,34
+1841,2,Lechugas,Frutas y Verduras,3400,19,1,34
+1842,4,Galletitas de chocolate,Galletitas y Snacks,5000,19,1,34
+1843,2,Manzanas,Frutas y Verduras,5200,19,1,34
+1844,6,Leche,Lacteos,9800,20,2,34
+1845,6,Salchicha,Carniceria,9000,20,2,34
+1846,5,Milanesa,Carniceria,13000,20,2,34
+1847,6,Vino tinto,Bebidas,10800,20,2,34
+1848,5,Pan frances,Panaderia,6500,20,2,34
+1849,1,Tomates,Frutas y Verduras,5200,20,2,34
+1850,6,Queso rallado,Lacteos,15400,21,3,34
+1851,3,Agua mineral,Bebidas,5000,21,3,34
+1852,3,Cerveza,Bebidas,9200,21,3,34
+1853,3,Empanadas,Congelados,10800,21,3,34
+1854,2,Galletitas de agua,Galletitas y Snacks,4200,21,3,34
+1855,3,Manteca,Lacteos,4500,21,3,34
+1856,5,Arroz,Conservas,3400,21,3,34
+1857,2,Garbanzos,Conservas,2900,21,3,34
+1858,1,Papas chips,Galletitas y Snacks,6800,21,3,34
+1859,3,Galletitas de agua,Galletitas y Snacks,4200,21,3,34
+1860,6,Galletitas de chocolate,Galletitas y Snacks,5000,22,4,34
+1861,4,Manies,Galletitas y Snacks,4400,22,4,34
+1862,4,Jugos de frutas,Bebidas,7600,22,4,34
+1863,6,Lechugas,Frutas y Verduras,3400,22,4,34
+1864,1,Tomates,Frutas y Verduras,5200,22,4,34
+1865,2,Zanahorias,Frutas y Verduras,2600,22,4,34
+1866,4,Hamburgesas congeladas,Congelados,7600,22,4,34
+1867,6,Manies,Galletitas y Snacks,4400,22,4,34
+1868,1,Milanesa,Carniceria,13000,22,4,34
+1869,3,Facturas,Panaderia,9900,22,4,34
+1870,3,Hamburgesas congeladas,Congelados,7600,23,5,34
+1871,3,Lechugas,Frutas y Verduras,3400,23,5,34
+1872,3,Manies,Galletitas y Snacks,4400,23,5,34
+1873,6,Asado,Carniceria,22800,23,5,34
+1874,2,Arroz,Conservas,3400,23,5,34
+1875,6,Garbanzos,Conservas,2900,23,5,34
+1876,3,Bananas,Frutas y Verduras,5800,23,5,34
+1877,4,Cebolla,Frutas y Verduras,3400,24,6,34
+1878,6,Pan integral,Panaderia,10000,24,6,34
+1879,2,Pizza congelada,Congelados,12400,24,6,34
+1880,4,Facturas,Panaderia,9900,24,6,34
+1881,5,Arroz,Conservas,3400,24,6,34
+1882,6,Manies,Galletitas y Snacks,4400,25,7,34
+1883,2,Zanahorias,Frutas y Verduras,2600,25,7,34
+1884,4,Papas chips,Galletitas y Snacks,6800,25,7,34
+1885,3,Cerveza,Bebidas,9200,25,7,34
+1886,6,Pan integral,Panaderia,10000,25,7,34
+1887,4,Pizza congelada,Congelados,12400,25,7,34
+1888,3,Cerveza,Bebidas,9200,25,7,34
+1889,6,Papas fritas,Congelados,6600,25,7,34
+1890,3,Lechugas,Frutas y Verduras,3400,25,7,34
+1891,3,Facturas,Panaderia,9900,25,7,34
+1892,2,Papas chips,Galletitas y Snacks,6800,25,7,34
+1893,3,Galletitas de chocolate,Galletitas y Snacks,5000,26,1,35
+1894,1,Jugos de frutas,Bebidas,7600,26,1,35
+1895,6,Manzanas,Frutas y Verduras,5200,26,1,35
+1896,4,Asado,Carniceria,22800,26,1,35
+1897,3,Cebolla,Frutas y Verduras,3400,26,1,35
+1898,3,Manteca,Lacteos,4500,26,1,35
+1899,3,Lentejas,Conservas,2600,26,1,35
+1900,6,Milanesa,Carniceria,13000,26,1,35
+1901,5,Empanadas,Congelados,10800,26,1,35
+1902,5,Vino tinto,Bebidas,10800,27,2,35
+1903,2,Lechugas,Frutas y Verduras,3400,27,2,35
+1904,3,Asado,Carniceria,22800,27,2,35
+1905,5,Manteca,Lacteos,4500,27,2,35
+1906,2,Garbanzos,Conservas,2900,27,2,35
+1907,1,Manzanas,Frutas y Verduras,5200,28,3,35
+1908,3,Yogur,Lacteos,4200,28,3,35
+1909,2,Medialunas,Panaderia,2800,28,3,35
+1910,6,Pizza congelada,Congelados,12400,29,4,35
+1911,3,Chorizo,Carniceria,9000,29,4,35
+1912,3,Salchicha,Carniceria,9000,29,4,35
+1913,6,Manteca,Lacteos,4500,29,4,35
+1914,5,Asado,Carniceria,22800,29,4,35
+1915,5,Manies,Galletitas y Snacks,4400,29,4,35
+1916,4,Facturas,Panaderia,9900,29,4,35
+1917,1,Vino tinto,Bebidas,10800,29,4,35
+1918,3,Papas fritas,Congelados,6600,29,4,35
+1919,4,Papas chips,Galletitas y Snacks,6800,29,4,35
+1920,3,Pizza congelada,Congelados,12400,29,4,35
+1921,3,Queso cremoso,Lacteos,13800,30,5,35
+1922,2,Jugos de frutas,Bebidas,7600,30,5,35
+1923,2,Papas chips,Galletitas y Snacks,6800,30,5,35
+1924,3,Lentejas,Conservas,2600,30,5,35
+1925,2,Manies,Galletitas y Snacks,4400,30,5,35
+1926,4,Galletitas de chocolate,Galletitas y Snacks,5000,31,6,35
+1927,5,Costilla de cerdo,Carniceria,11400,31,6,35
+1928,5,Manies,Galletitas y Snacks,4400,31,6,35
+1929,2,Queso cremoso,Lacteos,13800,31,6,35
+1930,1,Lentejas,Conservas,2600,31,6,35
+1931,3,Manies,Galletitas y Snacks,4400,31,6,35
+1932,6,Costilla de cerdo,Carniceria,11400,31,6,35
+1933,4,Garbanzos,Conservas,2900,31,6,35
+1934,1,Costilla de cerdo,Carniceria,11400,1,7,35
+1935,6,Galletitas de agua,Galletitas y Snacks,4200,1,7,35
+1936,3,Milanesa,Carniceria,13000,1,7,35
+1937,5,Lentejas,Conservas,2600,1,7,35
+1938,5,Pizza congelada,Congelados,12400,1,7,35
+1939,3,Arroz,Conservas,3400,1,7,35
+1940,1,Cerveza,Bebidas,9200,1,7,35
+1941,4,Tortas,Panaderia,12200,1,7,35
+1942,6,Milanesa,Carniceria,13000,1,7,35
+1943,3,Pollo,Carniceria,14800,1,7,35
+1944,6,Galletitas de chocolate,Galletitas y Snacks,5000,1,7,35
+1945,2,Tortas,Panaderia,12200,2,1,36
+1946,4,Pollo,Carniceria,14800,2,1,36
+1947,3,Tortas,Panaderia,12200,2,1,36
+1948,5,Lechugas,Frutas y Verduras,3400,2,1,36
+1949,2,Pizza congelada,Congelados,12400,2,1,36
+1950,6,Empanadas,Congelados,10800,2,1,36
+1951,4,Cerveza,Bebidas,9200,2,1,36
+1952,5,Atun enlatado,Conservas,5000,2,1,36
+1953,5,Vino tinto,Bebidas,10800,2,1,36
+1954,4,Tortas,Panaderia,12200,2,1,36
+1955,1,Lentejas,Conservas,2600,3,2,36
+1956,4,Lentejas,Conservas,2600,3,2,36
+1957,5,Pizza congelada,Congelados,12400,3,2,36
+1958,2,Galletitas de agua,Galletitas y Snacks,4200,3,2,36
+1959,4,Atun enlatado,Conservas,5000,3,2,36
+1960,3,Galletitas de agua,Galletitas y Snacks,4200,3,2,36
+1961,6,Tortas,Panaderia,12200,4,3,36
+1962,3,Yogur,Lacteos,4200,4,3,36
+1963,2,Tomates,Frutas y Verduras,5200,4,3,36
+1964,3,Facturas,Panaderia,9900,4,3,36
+1965,1,Cebolla,Frutas y Verduras,3400,4,3,36
+1966,2,Milanesa,Carniceria,13000,4,3,36
+1967,2,Hamburgesas congeladas,Congelados,7600,4,3,36
+1968,3,Tomates,Frutas y Verduras,5200,4,3,36
+1969,5,Vino tinto,Bebidas,10800,4,3,36
+1970,6,Galletitas de chocolate,Galletitas y Snacks,5000,5,4,36
+1971,5,Atun enlatado,Conservas,5000,5,4,36
+1972,2,Vino tinto,Bebidas,10800,5,4,36
+1973,4,Asado,Carniceria,22800,5,4,36
+1974,1,Queso rallado,Lacteos,15400,5,4,36
+1975,4,Queso rallado,Lacteos,15400,6,5,36
+1976,3,Atun enlatado,Conservas,5000,6,5,36
+1977,5,Manzanas,Frutas y Verduras,5200,6,5,36
+1978,5,Tomates,Frutas y Verduras,5200,6,5,36
+1979,1,Queso rallado,Lacteos,15400,6,5,36
+1980,1,Atun enlatado,Conservas,5000,6,5,36
+1981,4,Lechugas,Frutas y Verduras,3400,6,5,36
+1982,2,Leche,Lacteos,9800,6,5,36
+1983,3,Papas fritas,Congelados,6600,7,6,36
+1984,2,Jugos de frutas,Bebidas,7600,7,6,36
+1985,4,Manzanas,Frutas y Verduras,5200,7,6,36
+1986,3,Pan integral,Panaderia,10000,7,6,36
+1987,5,Galletitas de chocolate,Galletitas y Snacks,5000,7,6,36
+1988,3,Zanahorias,Frutas y Verduras,2600,7,6,36
+1989,5,Salchicha,Carniceria,9000,7,6,36
+1990,5,Asado,Carniceria,22800,7,6,36
+1991,6,Papas chips,Galletitas y Snacks,6800,7,6,36
+1992,6,Yogur,Lacteos,4200,8,7,36
+1993,3,Manies,Galletitas y Snacks,4400,8,7,36
+1994,6,Costilla de cerdo,Carniceria,11400,8,7,36
+1995,6,Manies,Galletitas y Snacks,4400,8,7,36
+1996,3,Lentejas,Conservas,2600,8,7,36
+1997,6,Medialunas,Panaderia,2800,8,7,36
+1998,1,Jugos de frutas,Bebidas,7600,8,7,36
+1999,5,Milanesa,Carniceria,13000,8,7,36
+2000,6,Pollo,Carniceria,14800,9,1,37
+2001,1,Pizza congelada,Congelados,12400,9,1,37
+2002,3,Zanahorias,Frutas y Verduras,2600,9,1,37
+2003,1,Tortas,Panaderia,12200,9,1,37
+2004,2,Galletitas de chocolate,Galletitas y Snacks,5000,10,2,37
+2005,1,Arroz,Conservas,3400,10,2,37
+2006,3,Lentejas,Conservas,2600,10,2,37
+2007,2,Garbanzos,Conservas,2900,11,3,37
+2008,5,Queso rallado,Lacteos,15400,11,3,37
+2009,3,Hamburgesas congeladas,Congelados,7600,11,3,37
+2010,3,Manies,Galletitas y Snacks,4400,11,3,37
+2011,1,Jugos de frutas,Bebidas,7600,11,3,37
+2012,5,Milanesa,Carniceria,13000,11,3,37
+2013,4,Agua mineral,Bebidas,5000,11,3,37
+2014,3,Salchicha,Carniceria,9000,12,4,37
+2015,1,Manzanas,Frutas y Verduras,5200,12,4,37
+2016,2,Facturas,Panaderia,9900,12,4,37
+2017,6,Hamburgesas congeladas,Congelados,7600,12,4,37
+2018,5,Cerveza,Bebidas,9200,12,4,37
+2019,1,Cebolla,Frutas y Verduras,3400,13,5,37
+2020,4,Manzanas,Frutas y Verduras,5200,13,5,37
+2021,6,Pizza congelada,Congelados,12400,13,5,37
+2022,2,Pan frances,Panaderia,6500,14,6,37
+2023,2,Cebolla,Frutas y Verduras,3400,14,6,37
+2024,2,Cerveza,Bebidas,9200,14,6,37
+2025,2,Papas fritas,Congelados,6600,14,6,37
+2026,3,Zanahorias,Frutas y Verduras,2600,14,6,37
+2027,2,Vino tinto,Bebidas,10800,14,6,37
+2028,4,Hamburgesas congeladas,Congelados,7600,15,7,37
+2029,5,Leche,Lacteos,9800,15,7,37
+2030,5,Milanesa,Carniceria,13000,15,7,37
+2031,4,Tortas,Panaderia,12200,15,7,37
+2032,4,Galletitas de chocolate,Galletitas y Snacks,5000,15,7,37
+2033,2,Papas fritas,Congelados,6600,16,1,38
+2034,6,Atun enlatado,Conservas,5000,16,1,38
+2035,6,Yogur,Lacteos,4200,16,1,38
+2036,6,Queso cremoso,Lacteos,13800,16,1,38
+2037,6,Cebolla,Frutas y Verduras,3400,16,1,38
+2038,2,Hamburgesas congeladas,Congelados,7600,16,1,38
+2039,5,Atun enlatado,Conservas,5000,16,1,38
+2040,1,Yogur,Lacteos,4200,17,2,38
+2041,5,Agua mineral,Bebidas,5000,17,2,38
+2042,5,Hamburgesas congeladas,Congelados,7600,17,2,38
+2043,2,Papas fritas,Congelados,6600,17,2,38
+2044,5,Queso cremoso,Lacteos,13800,17,2,38
+2045,3,Yogur,Lacteos,4200,17,2,38
+2046,4,Pan integral,Panaderia,10000,17,2,38
+2047,5,Manzanas,Frutas y Verduras,5200,17,2,38
+2048,5,Asado,Carniceria,22800,17,2,38
+2049,4,Zanahorias,Frutas y Verduras,2600,17,2,38
+2050,1,Queso cremoso,Lacteos,13800,18,3,38
+2051,3,Milanesa,Carniceria,13000,18,3,38
+2052,6,Manteca,Lacteos,4500,18,3,38
+2053,4,Manies,Galletitas y Snacks,4400,18,3,38
+2054,6,Papas chips,Galletitas y Snacks,6800,18,3,38
+2055,2,Papas fritas,Congelados,6600,18,3,38
+2056,1,Tortas,Panaderia,12200,18,3,38
+2057,1,Garbanzos,Conservas,2900,18,3,38
+2058,1,Papas chips,Galletitas y Snacks,6800,18,3,38
+2059,4,Arroz,Conservas,3400,18,3,38
+2060,6,Lentejas,Conservas,2600,18,3,38
+2061,2,Tortas,Panaderia,12200,18,3,38
+2062,1,Pan frances,Panaderia,6500,19,4,38
+2063,3,Hamburgesas congeladas,Congelados,7600,19,4,38
+2064,2,Garbanzos,Conservas,2900,19,4,38
+2065,4,Milanesa,Carniceria,13000,19,4,38
+2066,4,Jugos de frutas,Bebidas,7600,19,4,38
+2067,1,Arroz,Conservas,3400,19,4,38
+2068,3,Manteca,Lacteos,4500,19,4,38
+2069,1,Pan frances,Panaderia,6500,19,4,38
+2070,2,Vino tinto,Bebidas,10800,19,4,38
+2071,6,Zanahorias,Frutas y Verduras,2600,20,5,38
+2072,6,Agua mineral,Bebidas,5000,20,5,38
+2073,4,Chorizo,Carniceria,9000,20,5,38
+2074,2,Bananas,Frutas y Verduras,5800,20,5,38
+2075,5,Galletitas de agua,Galletitas y Snacks,4200,20,5,38
+2076,2,Galletitas de agua,Galletitas y Snacks,4200,20,5,38
+2077,1,Pan integral,Panaderia,10000,20,5,38
+2078,1,Manzanas,Frutas y Verduras,5200,21,6,38
+2079,3,Costilla de cerdo,Carniceria,11400,21,6,38
+2080,3,Yogur,Lacteos,4200,21,6,38
+2081,6,Yogur,Lacteos,4200,21,6,38
+2082,2,Asado,Carniceria,22800,21,6,38
+2083,3,Manies,Galletitas y Snacks,4400,21,6,38
+2084,6,Salchicha,Carniceria,9000,21,6,38
+2085,6,Manzanas,Frutas y Verduras,5200,21,6,38
+2086,5,Garbanzos,Conservas,2900,21,6,38
+2087,1,Asado,Carniceria,22800,21,6,38
+2088,6,Papas fritas,Congelados,6600,21,6,38
+2089,2,Papas chips,Galletitas y Snacks,6800,21,6,38
+2090,3,Garbanzos,Conservas,2900,21,6,38
+2091,3,Galletitas de chocolate,Galletitas y Snacks,5000,21,6,38
+2092,6,Hamburgesas congeladas,Congelados,7600,22,7,38
+2093,6,Vino tinto,Bebidas,10800,22,7,38
+2094,2,Milanesa,Carniceria,13000,22,7,38
+2095,1,Zanahorias,Frutas y Verduras,2600,22,7,38
+2096,1,Pan integral,Panaderia,10000,22,7,38
+2097,1,Salchicha,Carniceria,9000,22,7,38
+2098,3,Garbanzos,Conservas,2900,22,7,38
+2099,3,Queso cremoso,Lacteos,13800,22,7,38
+2100,2,Asado,Carniceria,22800,22,7,38
+2101,5,Costilla de cerdo,Carniceria,11400,22,7,38
+2102,2,Cerveza,Bebidas,9200,22,7,38
+2103,6,Queso rallado,Lacteos,15400,23,1,39
+2104,4,Galletitas de chocolate,Galletitas y Snacks,5000,23,1,39
+2105,4,Pan frances,Panaderia,6500,23,1,39
+2106,5,Leche,Lacteos,9800,23,1,39
+2107,3,Galletitas de agua,Galletitas y Snacks,4200,23,1,39
+2108,1,Costilla de cerdo,Carniceria,11400,23,1,39
+2109,3,Queso cremoso,Lacteos,13800,23,1,39
+2110,2,Cebolla,Frutas y Verduras,3400,23,1,39
+2111,3,Manies,Galletitas y Snacks,4400,24,2,39
+2112,2,Galletitas de chocolate,Galletitas y Snacks,5000,24,2,39
+2113,5,Galletitas de chocolate,Galletitas y Snacks,5000,24,2,39
+2114,6,Papas chips,Galletitas y Snacks,6800,24,2,39
+2115,1,Arroz,Conservas,3400,24,2,39
+2116,5,Hamburgesas congeladas,Congelados,7600,24,2,39
+2117,2,Lentejas,Conservas,2600,24,2,39
+2118,4,Queso rallado,Lacteos,15400,25,3,39
+2119,1,Galletitas de agua,Galletitas y Snacks,4200,25,3,39
+2120,2,Manteca,Lacteos,4500,25,3,39
+2121,2,Hamburgesas congeladas,Congelados,7600,25,3,39
+2122,2,Hamburgesas congeladas,Congelados,7600,25,3,39
+2123,2,Jugos de frutas,Bebidas,7600,25,3,39
+2124,1,Papas chips,Galletitas y Snacks,6800,25,3,39
+2125,2,Pizza congelada,Congelados,12400,25,3,39
+2126,3,Leche,Lacteos,9800,25,3,39
+2127,6,Cerveza,Bebidas,9200,25,3,39
+2128,1,Bananas,Frutas y Verduras,5800,25,3,39
+2129,2,Medialunas,Panaderia,2800,25,3,39
+2130,2,Hamburgesas congeladas,Congelados,7600,25,3,39
+2131,5,Manzanas,Frutas y Verduras,5200,25,3,39
+2132,5,Lentejas,Conservas,2600,25,3,39
+2133,5,Garbanzos,Conservas,2900,26,4,39
+2134,5,Costilla de cerdo,Carniceria,11400,26,4,39
+2135,6,Costilla de cerdo,Carniceria,11400,26,4,39
+2136,3,Asado,Carniceria,22800,26,4,39
+2137,1,Pollo,Carniceria,14800,26,4,39
+2138,4,Medialunas,Panaderia,2800,26,4,39
+2139,1,Papas fritas,Congelados,6600,26,4,39
+2140,4,Manteca,Lacteos,4500,26,4,39
+2141,1,Pizza congelada,Congelados,12400,26,4,39
+2142,6,Lechugas,Frutas y Verduras,3400,27,5,39
+2143,1,Galletitas de agua,Galletitas y Snacks,4200,27,5,39
+2144,3,Asado,Carniceria,22800,27,5,39
+2145,3,Chorizo,Carniceria,9000,27,5,39
+2146,5,Tomates,Frutas y Verduras,5200,27,5,39
+2147,6,Tomates,Frutas y Verduras,5200,27,5,39
+2148,6,Manteca,Lacteos,4500,27,5,39
+2149,3,Vino tinto,Bebidas,10800,27,5,39
+2150,5,Queso rallado,Lacteos,15400,27,5,39
+2151,4,Costilla de cerdo,Carniceria,11400,27,5,39
+2152,5,Yogur,Lacteos,4200,27,5,39
+2153,5,Queso cremoso,Lacteos,13800,27,5,39
+2154,2,Asado,Carniceria,22800,27,5,39
+2155,5,Costilla de cerdo,Carniceria,11400,28,6,39
+2156,1,Cerveza,Bebidas,9200,28,6,39
+2157,6,Chorizo,Carniceria,9000,28,6,39
+2158,6,Milanesa,Carniceria,13000,28,6,39
+2159,6,Yogur,Lacteos,4200,28,6,39
+2160,5,Costilla de cerdo,Carniceria,11400,28,6,39
+2161,6,Pan frances,Panaderia,6500,28,6,39
+2162,3,Manzanas,Frutas y Verduras,5200,28,6,39
+2163,1,Manzanas,Frutas y Verduras,5200,28,6,39
+2164,2,Costilla de cerdo,Carniceria,11400,28,6,39
+2165,1,Empanadas,Congelados,10800,28,6,39
+2166,4,Zanahorias,Frutas y Verduras,2600,28,6,39
+2167,6,Tortas,Panaderia,12200,29,7,39
+2168,6,Asado,Carniceria,22800,29,7,39
+2169,6,Hamburgesas congeladas,Congelados,7600,29,7,39
+2170,1,Empanadas,Congelados,10800,29,7,39
+2171,4,Asado,Carniceria,22800,29,7,39
+2172,1,Tortas,Panaderia,12200,29,7,39
+2173,5,Pollo,Carniceria,14800,29,7,39
+2174,3,Atun enlatado,Conservas,5000,29,7,39
+2175,3,Galletitas de chocolate,Galletitas y Snacks,5000,29,7,39
+2176,4,Agua mineral,Bebidas,5000,29,7,39
+2177,3,Tortas,Panaderia,12200,29,7,39
+2178,4,Bananas,Frutas y Verduras,5800,29,7,39
+2179,2,Empanadas,Congelados,10800,29,7,39
+2180,5,Zanahorias,Frutas y Verduras,2600,29,7,39
+2181,3,Papas chips,Galletitas y Snacks,6800,29,7,39
+2182,4,Queso cremoso,Lacteos,13800,29,7,39
+2183,3,Agua mineral,Bebidas,5000,30,1,40
+2184,2,Arroz,Conservas,3400,30,1,40
+2185,3,Garbanzos,Conservas,2900,30,1,40
+2186,6,Manteca,Lacteos,4500,30,1,40
+2187,3,Tortas,Panaderia,12200,30,1,40
+2188,6,Pan integral,Panaderia,10000,30,1,40
+2189,1,Papas chips,Galletitas y Snacks,6800,30,1,40
+2190,1,Milanesa,Carniceria,13000,30,1,40
+2191,1,Salchicha,Carniceria,9000,30,1,40
+2192,2,Facturas,Panaderia,9900,30,1,40
+2193,4,Manteca,Lacteos,4500,30,1,40
+2194,5,Asado,Carniceria,22800,30,1,40
+2195,2,Queso rallado,Lacteos,15400,30,1,40
+2196,3,Hamburgesas congeladas,Congelados,7600,30,1,40
+2197,4,Lentejas,Conservas,2600,30,1,40
+2198,3,Pan integral,Panaderia,10000,30,1,40
+2199,2,Tortas,Panaderia,12200,1,2,40
+2200,3,Salchicha,Carniceria,9000,1,2,40
+2201,2,Arroz,Conservas,3400,1,2,40
+2202,4,Empanadas,Congelados,10800,1,2,40
+2203,5,Agua mineral,Bebidas,5000,1,2,40
+2204,5,Atun enlatado,Conservas,5000,2,3,40
+2205,4,Garbanzos,Conservas,2900,2,3,40
+2206,6,Papas fritas,Congelados,6600,2,3,40
+2207,4,Costilla de cerdo,Carniceria,11400,2,3,40
+2208,1,Manzanas,Frutas y Verduras,5200,2,3,40
+2209,1,Milanesa,Carniceria,13000,2,3,40
+2210,4,Galletitas de agua,Galletitas y Snacks,4200,2,3,40
+2211,5,Asado,Carniceria,22800,3,4,40
+2212,5,Papas fritas,Congelados,6600,3,4,40
+2213,2,Galletitas de agua,Galletitas y Snacks,4200,3,4,40
+2214,4,Manies,Galletitas y Snacks,4400,3,4,40
+2215,6,Hamburgesas congeladas,Congelados,7600,3,4,40
+2216,6,Medialunas,Panaderia,2800,3,4,40
+2217,6,Garbanzos,Conservas,2900,3,4,40
+2218,1,Pan integral,Panaderia,10000,3,4,40
+2219,1,Yogur,Lacteos,4200,3,4,40
+2220,6,Asado,Carniceria,22800,3,4,40
+2221,5,Jugos de frutas,Bebidas,7600,3,4,40
+2222,3,Cebolla,Frutas y Verduras,3400,3,4,40
+2223,5,Lechugas,Frutas y Verduras,3400,3,4,40
+2224,6,Agua mineral,Bebidas,5000,3,4,40
+2225,6,Pizza congelada,Congelados,12400,3,4,40
+2226,3,Pollo,Carniceria,14800,3,4,40
+2227,1,Queso cremoso,Lacteos,13800,3,4,40
+2228,4,Cerveza,Bebidas,9200,4,5,40
+2229,4,Facturas,Panaderia,9900,4,5,40
+2230,3,Papas chips,Galletitas y Snacks,6800,4,5,40
+2231,5,Galletitas de agua,Galletitas y Snacks,4200,4,5,40
+2232,3,Galletitas de chocolate,Galletitas y Snacks,5000,4,5,40
+2233,1,Galletitas de agua,Galletitas y Snacks,4200,4,5,40
+2234,5,Asado,Carniceria,22800,4,5,40
+2235,4,Arroz,Conservas,3400,4,5,40
+2236,2,Hamburgesas congeladas,Congelados,7600,5,6,40
+2237,1,Milanesa,Carniceria,13000,5,6,40
+2238,5,Galletitas de agua,Galletitas y Snacks,4200,5,6,40
+2239,6,Yogur,Lacteos,4200,5,6,40
+2240,4,Jugos de frutas,Bebidas,7600,5,6,40
+2241,2,Cebolla,Frutas y Verduras,3400,5,6,40
+2242,3,Agua mineral,Bebidas,5000,5,6,40
+2243,5,Lechugas,Frutas y Verduras,3400,5,6,40
+2244,5,Tomates,Frutas y Verduras,5200,5,6,40
+2245,4,Leche,Lacteos,9800,5,6,40
+2246,4,Bananas,Frutas y Verduras,5800,5,6,40
+2247,2,Lechugas,Frutas y Verduras,3400,6,7,40
+2248,2,Bananas,Frutas y Verduras,5800,6,7,40
+2249,1,Asado,Carniceria,22800,6,7,40
+2250,4,Bananas,Frutas y Verduras,5800,6,7,40
+2251,1,Queso rallado,Lacteos,15400,6,7,40
+2252,2,Cerveza,Bebidas,9200,6,7,40
+2253,5,Pollo,Carniceria,14800,6,7,40
+2254,1,Vino tinto,Bebidas,10800,6,7,40
+2255,3,Manteca,Lacteos,4500,6,7,40
+2256,6,Galletitas de chocolate,Galletitas y Snacks,5000,6,7,40
+2257,1,Medialunas,Panaderia,2800,7,1,41
+2258,6,Chorizo,Carniceria,9000,7,1,41
+2259,4,Garbanzos,Conservas,2900,7,1,41
+2260,6,Bananas,Frutas y Verduras,5800,7,1,41
+2261,3,Cebolla,Frutas y Verduras,3400,7,1,41
+2262,5,Yogur,Lacteos,4200,7,1,41
+2263,1,Lentejas,Conservas,2600,7,1,41
+2264,4,Galletitas de chocolate,Galletitas y Snacks,5000,7,1,41
+2265,4,Pizza congelada,Congelados,12400,7,1,41
+2266,5,Zanahorias,Frutas y Verduras,2600,8,2,41
+2267,4,Manies,Galletitas y Snacks,4400,8,2,41
+2268,4,Medialunas,Panaderia,2800,9,3,41
+2269,5,Manzanas,Frutas y Verduras,5200,9,3,41
+2270,2,Leche,Lacteos,9800,9,3,41
+2271,1,Costilla de cerdo,Carniceria,11400,9,3,41
+2272,2,Salchicha,Carniceria,9000,9,3,41
+2273,3,Milanesa,Carniceria,13000,9,3,41
+2274,6,Facturas,Panaderia,9900,9,3,41
+2275,4,Galletitas de chocolate,Galletitas y Snacks,5000,9,3,41
+2276,2,Papas fritas,Congelados,6600,10,4,41
+2277,2,Pizza congelada,Congelados,12400,10,4,41
+2278,4,Zanahorias,Frutas y Verduras,2600,10,4,41
+2279,1,Arroz,Conservas,3400,10,4,41
+2280,3,Manzanas,Frutas y Verduras,5200,10,4,41
+2281,6,Atun enlatado,Conservas,5000,10,4,41
+2282,4,Empanadas,Congelados,10800,10,4,41
+2283,6,Manzanas,Frutas y Verduras,5200,10,4,41
+2284,5,Arroz,Conservas,3400,10,4,41
+2285,3,Papas chips,Galletitas y Snacks,6800,10,4,41
+2286,2,Agua mineral,Bebidas,5000,11,5,41
+2287,1,Pan integral,Panaderia,10000,11,5,41
+2288,2,Medialunas,Panaderia,2800,11,5,41
+2289,5,Costilla de cerdo,Carniceria,11400,11,5,41
+2290,3,Asado,Carniceria,22800,11,5,41
+2291,2,Queso cremoso,Lacteos,13800,11,5,41
+2292,3,Jugos de frutas,Bebidas,7600,11,5,41
+2293,5,Medialunas,Panaderia,2800,11,5,41
+2294,2,Milanesa,Carniceria,13000,11,5,41
+2295,5,Cebolla,Frutas y Verduras,3400,11,5,41
+2296,3,Pizza congelada,Congelados,12400,12,6,41
+2297,1,Bananas,Frutas y Verduras,5800,12,6,41
+2298,6,Empanadas,Congelados,10800,12,6,41
+2299,4,Galletitas de chocolate,Galletitas y Snacks,5000,12,6,41
+2300,1,Manies,Galletitas y Snacks,4400,12,6,41
+2301,1,Zanahorias,Frutas y Verduras,2600,12,6,41
+2302,2,Galletitas de chocolate,Galletitas y Snacks,5000,12,6,41
+2303,4,Cebolla,Frutas y Verduras,3400,12,6,41
+2304,4,Zanahorias,Frutas y Verduras,2600,13,7,41
+2305,4,Milanesa,Carniceria,13000,13,7,41
+2306,5,Bananas,Frutas y Verduras,5800,13,7,41
+2307,6,Garbanzos,Conservas,2900,13,7,41
+2308,5,Jugos de frutas,Bebidas,7600,13,7,41
+2309,6,Galletitas de chocolate,Galletitas y Snacks,5000,13,7,41
+2310,5,Arroz,Conservas,3400,14,1,42
+2311,2,Tomates,Frutas y Verduras,5200,14,1,42
+2312,6,Tortas,Panaderia,12200,14,1,42
+2313,2,Zanahorias,Frutas y Verduras,2600,14,1,42
+2314,6,Lechugas,Frutas y Verduras,3400,14,1,42
+2315,1,Tortas,Panaderia,12200,14,1,42
+2316,2,Pollo,Carniceria,14800,14,1,42
+2317,5,Zanahorias,Frutas y Verduras,2600,14,1,42
+2318,5,Yogur,Lacteos,4200,14,1,42
+2319,1,Yogur,Lacteos,4200,14,1,42
+2320,4,Pizza congelada,Congelados,12400,15,2,42
+2321,1,Queso cremoso,Lacteos,13800,15,2,42
+2322,2,Salchicha,Carniceria,9000,15,2,42
+2323,5,Vino tinto,Bebidas,10800,15,2,42
+2324,1,Garbanzos,Conservas,2900,15,2,42
+2325,4,Atun enlatado,Conservas,5000,15,2,42
+2326,2,Pizza congelada,Congelados,12400,15,2,42
+2327,6,Cerveza,Bebidas,9200,15,2,42
+2328,6,Galletitas de agua,Galletitas y Snacks,4200,15,2,42
+2329,2,Vino tinto,Bebidas,10800,15,2,42
+2330,2,Medialunas,Panaderia,2800,15,2,42
+2331,1,Agua mineral,Bebidas,5000,16,3,42
+2332,4,Manteca,Lacteos,4500,16,3,42
+2333,1,Queso cremoso,Lacteos,13800,16,3,42
+2334,6,Tomates,Frutas y Verduras,5200,16,3,42
+2335,3,Facturas,Panaderia,9900,16,3,42
+2336,6,Galletitas de chocolate,Galletitas y Snacks,5000,16,3,42
+2337,3,Agua mineral,Bebidas,5000,16,3,42
+2338,2,Yogur,Lacteos,4200,16,3,42
+2339,2,Zanahorias,Frutas y Verduras,2600,16,3,42
+2340,4,Jugos de frutas,Bebidas,7600,16,3,42
+2341,3,Lechugas,Frutas y Verduras,3400,16,3,42
+2342,6,Manies,Galletitas y Snacks,4400,16,3,42
+2343,6,Lechugas,Frutas y Verduras,3400,17,4,42
+2344,3,Galletitas de chocolate,Galletitas y Snacks,5000,17,4,42
+2345,1,Zanahorias,Frutas y Verduras,2600,17,4,42
+2346,3,Galletitas de agua,Galletitas y Snacks,4200,17,4,42
+2347,3,Jugos de frutas,Bebidas,7600,17,4,42
+2348,4,Pizza congelada,Congelados,12400,17,4,42
+2349,2,Hamburgesas congeladas,Congelados,7600,17,4,42
+2350,1,Cerveza,Bebidas,9200,17,4,42
+2351,5,Pan integral,Panaderia,10000,17,4,42
+2352,2,Vino tinto,Bebidas,10800,17,4,42
+2353,3,Tomates,Frutas y Verduras,5200,17,4,42
+2354,1,Queso cremoso,Lacteos,13800,17,4,42
+2355,5,Bananas,Frutas y Verduras,5800,18,5,42
+2356,1,Agua mineral,Bebidas,5000,18,5,42
+2357,3,Asado,Carniceria,22800,18,5,42
+2358,1,Cebolla,Frutas y Verduras,3400,18,5,42
+2359,5,Manteca,Lacteos,4500,18,5,42
+2360,5,Medialunas,Panaderia,2800,18,5,42
+2361,4,Leche,Lacteos,9800,18,5,42
+2362,2,Lentejas,Conservas,2600,19,6,42
+2363,6,Galletitas de agua,Galletitas y Snacks,4200,19,6,42
+2364,3,Tomates,Frutas y Verduras,5200,19,6,42
+2365,3,Manies,Galletitas y Snacks,4400,19,6,42
+2366,1,Cebolla,Frutas y Verduras,3400,19,6,42
+2367,3,Salchicha,Carniceria,9000,19,6,42
+2368,4,Cerveza,Bebidas,9200,19,6,42
+2369,5,Lechugas,Frutas y Verduras,3400,19,6,42
+2370,3,Asado,Carniceria,22800,19,6,42
+2371,1,Queso rallado,Lacteos,15400,19,6,42
+2372,4,Pizza congelada,Congelados,12400,19,6,42
+2373,4,Hamburgesas congeladas,Congelados,7600,20,7,42
+2374,3,Empanadas,Congelados,10800,20,7,42
+2375,6,Facturas,Panaderia,9900,20,7,42
+2376,2,Salchicha,Carniceria,9000,20,7,42
+2377,5,Empanadas,Congelados,10800,20,7,42
+2378,6,Queso rallado,Lacteos,15400,20,7,42
+2379,2,Cebolla,Frutas y Verduras,3400,20,7,42
+2380,5,Manies,Galletitas y Snacks,4400,20,7,42
+2381,3,Queso cremoso,Lacteos,13800,20,7,42
+2382,5,Costilla de cerdo,Carniceria,11400,20,7,42
+2383,4,Chorizo,Carniceria,9000,20,7,42
+2384,4,Agua mineral,Bebidas,5000,20,7,42
+2385,1,Queso cremoso,Lacteos,13800,20,7,42
+2386,5,Pizza congelada,Congelados,12400,20,7,42
+2387,1,Agua mineral,Bebidas,5000,21,1,43
+2388,5,Medialunas,Panaderia,2800,21,1,43
+2389,6,Costilla de cerdo,Carniceria,11400,21,1,43
+2390,1,Leche,Lacteos,9800,21,1,43
+2391,4,Pan frances,Panaderia,6500,21,1,43
+2392,5,Jugos de frutas,Bebidas,7600,22,2,43
+2393,2,Galletitas de chocolate,Galletitas y Snacks,5000,22,2,43
+2394,4,Yogur,Lacteos,4200,22,2,43
+2395,6,Chorizo,Carniceria,9000,22,2,43
+2396,3,Jugos de frutas,Bebidas,7600,22,2,43
+2397,6,Pan integral,Panaderia,10000,22,2,43
+2398,4,Papas fritas,Congelados,6600,22,2,43
+2399,1,Lentejas,Conservas,2600,23,3,43
+2400,1,Agua mineral,Bebidas,5000,23,3,43
+2401,5,Costilla de cerdo,Carniceria,11400,23,3,43
+2402,6,Manies,Galletitas y Snacks,4400,23,3,43
+2403,2,Chorizo,Carniceria,9000,23,3,43
+2404,5,Cerveza,Bebidas,9200,23,3,43
+2405,5,Cebolla,Frutas y Verduras,3400,23,3,43
+2406,6,Empanadas,Congelados,10800,23,3,43
+2407,1,Facturas,Panaderia,9900,24,4,43
+2408,2,Arroz,Conservas,3400,24,4,43
+2409,4,Cerveza,Bebidas,9200,24,4,43
+2410,6,Bananas,Frutas y Verduras,5800,24,4,43
+2411,3,Cebolla,Frutas y Verduras,3400,24,4,43
+2412,2,Queso cremoso,Lacteos,13800,25,5,43
+2413,3,Leche,Lacteos,9800,25,5,43
+2414,3,Agua mineral,Bebidas,5000,25,5,43
+2415,2,Pizza congelada,Congelados,12400,25,5,43
+2416,1,Atun enlatado,Conservas,5000,25,5,43
+2417,1,Garbanzos,Conservas,2900,25,5,43
+2418,4,Salchicha,Carniceria,9000,26,6,43
+2419,6,Agua mineral,Bebidas,5000,26,6,43
+2420,1,Papas chips,Galletitas y Snacks,6800,26,6,43
+2421,3,Papas fritas,Congelados,6600,26,6,43
+2422,5,Tomates,Frutas y Verduras,5200,26,6,43
+2423,5,Zanahorias,Frutas y Verduras,2600,26,6,43
+2424,2,Leche,Lacteos,9800,26,6,43
+2425,2,Papas fritas,Congelados,6600,27,7,43
+2426,3,Milanesa,Carniceria,13000,27,7,43
+2427,4,Costilla de cerdo,Carniceria,11400,27,7,43
+2428,1,Galletitas de chocolate,Galletitas y Snacks,5000,27,7,43
+2429,2,Queso rallado,Lacteos,15400,27,7,43
+2430,4,Cebolla,Frutas y Verduras,3400,27,7,43
+2431,1,Queso cremoso,Lacteos,13800,27,7,43
+2432,2,Cerveza,Bebidas,9200,27,7,43
+2433,6,Arroz,Conservas,3400,27,7,43
+2434,4,Costilla de cerdo,Carniceria,11400,27,7,43
+2435,6,Vino tinto,Bebidas,10800,27,7,43
+2436,6,Medialunas,Panaderia,2800,28,1,44
+2437,4,Medialunas,Panaderia,2800,28,1,44
+2438,6,Galletitas de agua,Galletitas y Snacks,4200,28,1,44
+2439,1,Tortas,Panaderia,12200,28,1,44
+2440,6,Bananas,Frutas y Verduras,5800,28,1,44
+2441,5,Costilla de cerdo,Carniceria,11400,28,1,44
+2442,5,Papas chips,Galletitas y Snacks,6800,28,1,44
+2443,4,Manzanas,Frutas y Verduras,5200,28,1,44
+2444,1,Milanesa,Carniceria,13000,28,1,44
+2445,4,Papas fritas,Congelados,6600,28,1,44
+2446,6,Bananas,Frutas y Verduras,5800,28,1,44
+2447,3,Yogur,Lacteos,4200,28,1,44
+2448,3,Queso cremoso,Lacteos,13800,28,1,44
+2449,6,Garbanzos,Conservas,2900,29,2,44
+2450,2,Arroz,Conservas,3400,29,2,44
+2451,3,Pollo,Carniceria,14800,29,2,44
+2452,2,Salchicha,Carniceria,9000,29,2,44
+2453,6,Chorizo,Carniceria,9000,29,2,44
+2454,5,Pollo,Carniceria,14800,29,2,44
+2455,6,Hamburgesas congeladas,Congelados,7600,29,2,44
+2456,3,Galletitas de chocolate,Galletitas y Snacks,5000,29,2,44
+2457,5,Papas fritas,Congelados,6600,29,2,44
+2458,4,Bananas,Frutas y Verduras,5800,29,2,44
+2459,3,Pan frances,Panaderia,6500,29,2,44
+2460,4,Atun enlatado,Conservas,5000,29,2,44
+2461,6,Queso cremoso,Lacteos,13800,30,3,44
+2462,4,Bananas,Frutas y Verduras,5800,30,3,44
+2463,6,Manteca,Lacteos,4500,30,3,44
+2464,5,Papas fritas,Congelados,6600,30,3,44
+2465,1,Leche,Lacteos,9800,30,3,44
+2466,1,Leche,Lacteos,9800,30,3,44
+2467,3,Facturas,Panaderia,9900,30,3,44
+2468,1,Medialunas,Panaderia,2800,30,3,44
+2469,6,Manies,Galletitas y Snacks,4400,31,4,44
+2470,5,Garbanzos,Conservas,2900,31,4,44
+2471,4,Tomates,Frutas y Verduras,5200,31,4,44
+2472,4,Milanesa,Carniceria,13000,31,4,44
+2473,1,Jugos de frutas,Bebidas,7600,31,4,44
+2474,2,Facturas,Panaderia,9900,31,4,44
+2475,1,Galletitas de agua,Galletitas y Snacks,4200,31,4,44
+2476,6,Galletitas de chocolate,Galletitas y Snacks,5000,31,4,44
+2477,5,Cebolla,Frutas y Verduras,3400,31,4,44
+2478,6,Galletitas de chocolate,Galletitas y Snacks,5000,31,4,44
+2479,1,Manzanas,Frutas y Verduras,5200,1,5,44
+2480,2,Galletitas de agua,Galletitas y Snacks,4200,1,5,44
+2481,4,Manzanas,Frutas y Verduras,5200,1,5,44
+2482,1,Manteca,Lacteos,4500,1,5,44
+2483,3,Leche,Lacteos,9800,1,5,44
+2484,3,Zanahorias,Frutas y Verduras,2600,1,5,44
+2485,6,Atun enlatado,Conservas,5000,1,5,44
+2486,5,Pan frances,Panaderia,6500,1,5,44
+2487,4,Papas fritas,Congelados,6600,1,5,44
+2488,4,Hamburgesas congeladas,Congelados,7600,2,6,44
+2489,5,Zanahorias,Frutas y Verduras,2600,2,6,44
+2490,1,Lechugas,Frutas y Verduras,3400,2,6,44
+2491,6,Zanahorias,Frutas y Verduras,2600,2,6,44
+2492,2,Pan frances,Panaderia,6500,2,6,44
+2493,4,Tortas,Panaderia,12200,2,6,44
+2494,3,Pan frances,Panaderia,6500,2,6,44
+2495,6,Manzanas,Frutas y Verduras,5200,3,7,44
+2496,4,Pizza congelada,Congelados,12400,3,7,44
+2497,5,Chorizo,Carniceria,9000,3,7,44
+2498,1,Cerveza,Bebidas,9200,3,7,44
+2499,6,Hamburgesas congeladas,Congelados,7600,3,7,44
+2500,1,Pollo,Carniceria,14800,3,7,44
+2501,4,Milanesa,Carniceria,13000,3,7,44
+2502,4,Tomates,Frutas y Verduras,5200,3,7,44
+2503,6,Milanesa,Carniceria,13000,3,7,44
+2504,1,Galletitas de chocolate,Galletitas y Snacks,5000,3,7,44
+2505,3,Manteca,Lacteos,4500,3,7,44
+2506,6,Chorizo,Carniceria,9000,4,1,45
+2507,5,Lentejas,Conservas,2600,4,1,45
+2508,2,Hamburgesas congeladas,Congelados,7600,4,1,45
+2509,3,Hamburgesas congeladas,Congelados,7600,4,1,45
+2510,3,Tomates,Frutas y Verduras,5200,4,1,45
+2511,3,Chorizo,Carniceria,9000,4,1,45
+2512,4,Empanadas,Congelados,10800,4,1,45
+2513,1,Cebolla,Frutas y Verduras,3400,4,1,45
+2514,5,Vino tinto,Bebidas,10800,4,1,45
+2515,2,Galletitas de chocolate,Galletitas y Snacks,5000,5,2,45
+2516,5,Arroz,Conservas,3400,5,2,45
+2517,3,Papas chips,Galletitas y Snacks,6800,5,2,45
+2518,5,Agua mineral,Bebidas,5000,5,2,45
+2519,6,Leche,Lacteos,9800,5,2,45
+2520,3,Facturas,Panaderia,9900,5,2,45
+2521,1,Garbanzos,Conservas,2900,5,2,45
+2522,2,Zanahorias,Frutas y Verduras,2600,5,2,45
+2523,4,Costilla de cerdo,Carniceria,11400,5,2,45
+2524,3,Tortas,Panaderia,12200,5,2,45
+2525,6,Manies,Galletitas y Snacks,4400,5,2,45
+2526,5,Yogur,Lacteos,4200,6,3,45
+2527,2,Pan frances,Panaderia,6500,6,3,45
+2528,4,Asado,Carniceria,22800,6,3,45
+2529,1,Bananas,Frutas y Verduras,5800,6,3,45
+2530,6,Papas fritas,Congelados,6600,6,3,45
+2531,2,Pan frances,Panaderia,6500,6,3,45
+2532,3,Cebolla,Frutas y Verduras,3400,6,3,45
+2533,4,Papas fritas,Congelados,6600,6,3,45
+2534,6,Cebolla,Frutas y Verduras,3400,6,3,45
+2535,3,Cebolla,Frutas y Verduras,3400,6,3,45
+2536,3,Lechugas,Frutas y Verduras,3400,6,3,45
+2537,1,Lentejas,Conservas,2600,7,4,45
+2538,6,Agua mineral,Bebidas,5000,7,4,45
+2539,3,Atun enlatado,Conservas,5000,7,4,45
+2540,5,Tortas,Panaderia,12200,7,4,45
+2541,6,Manzanas,Frutas y Verduras,5200,7,4,45
+2542,1,Garbanzos,Conservas,2900,7,4,45
+2543,5,Lentejas,Conservas,2600,7,4,45
+2544,3,Papas chips,Galletitas y Snacks,6800,7,4,45
+2545,3,Empanadas,Congelados,10800,8,5,45
+2546,3,Tomates,Frutas y Verduras,5200,8,5,45
+2547,4,Garbanzos,Conservas,2900,8,5,45
+2548,6,Manies,Galletitas y Snacks,4400,8,5,45
+2549,6,Lechugas,Frutas y Verduras,3400,8,5,45
+2550,4,Vino tinto,Bebidas,10800,8,5,45
+2551,3,Costilla de cerdo,Carniceria,11400,8,5,45
+2552,4,Cerveza,Bebidas,9200,8,5,45
+2553,5,Atun enlatado,Conservas,5000,8,5,45
+2554,6,Papas chips,Galletitas y Snacks,6800,9,6,45
+2555,5,Lentejas,Conservas,2600,9,6,45
+2556,3,Pizza congelada,Congelados,12400,9,6,45
+2557,6,Hamburgesas congeladas,Congelados,7600,9,6,45
+2558,2,Vino tinto,Bebidas,10800,9,6,45
+2559,3,Leche,Lacteos,9800,9,6,45
+2560,5,Agua mineral,Bebidas,5000,9,6,45
+2561,4,Garbanzos,Conservas,2900,9,6,45
+2562,2,Tortas,Panaderia,12200,9,6,45
+2563,3,Pan integral,Panaderia,10000,9,6,45
+2564,4,Lechugas,Frutas y Verduras,3400,9,6,45
+2565,2,Manteca,Lacteos,4500,9,6,45
+2566,5,Empanadas,Congelados,10800,10,7,45
+2567,2,Pan integral,Panaderia,10000,10,7,45
+2568,2,Milanesa,Carniceria,13000,10,7,45
+2569,5,Manzanas,Frutas y Verduras,5200,10,7,45
+2570,3,Tortas,Panaderia,12200,10,7,45
+2571,1,Hamburgesas congeladas,Congelados,7600,10,7,45
+2572,3,Asado,Carniceria,22800,10,7,45
+2573,3,Arroz,Conservas,3400,10,7,45
+2574,2,Galletitas de chocolate,Galletitas y Snacks,5000,10,7,45
+2575,2,Papas fritas,Congelados,6600,10,7,45
+2576,3,Medialunas,Panaderia,2800,10,7,45
+2577,6,Asado,Carniceria,22800,11,1,46
+2578,3,Galletitas de chocolate,Galletitas y Snacks,5000,11,1,46
+2579,4,Cerveza,Bebidas,9200,11,1,46
+2580,3,Manzanas,Frutas y Verduras,5200,11,1,46
+2581,5,Milanesa,Carniceria,13000,11,1,46
+2582,5,Lechugas,Frutas y Verduras,3400,12,2,46
+2583,2,Atun enlatado,Conservas,5000,12,2,46
+2584,5,Pan frances,Panaderia,6500,12,2,46
+2585,1,Costilla de cerdo,Carniceria,11400,12,2,46
+2586,5,Hamburgesas congeladas,Congelados,7600,12,2,46
+2587,4,Atun enlatado,Conservas,5000,12,2,46
+2588,1,Bananas,Frutas y Verduras,5800,12,2,46
+2589,1,Lechugas,Frutas y Verduras,3400,12,2,46
+2590,6,Manzanas,Frutas y Verduras,5200,12,2,46
+2591,6,Leche,Lacteos,9800,12,2,46
+2592,3,Medialunas,Panaderia,2800,12,2,46
+2593,6,Queso cremoso,Lacteos,13800,12,2,46
+2594,5,Empanadas,Congelados,10800,13,3,46
+2595,6,Hamburgesas congeladas,Congelados,7600,13,3,46
+2596,4,Manies,Galletitas y Snacks,4400,13,3,46
+2597,6,Zanahorias,Frutas y Verduras,2600,13,3,46
+2598,2,Yogur,Lacteos,4200,13,3,46
+2599,4,Cebolla,Frutas y Verduras,3400,13,3,46
+2600,4,Queso rallado,Lacteos,15400,13,3,46
+2601,4,Pollo,Carniceria,14800,13,3,46
+2602,3,Bananas,Frutas y Verduras,5800,13,3,46
+2603,1,Queso rallado,Lacteos,15400,13,3,46
+2604,1,Agua mineral,Bebidas,5000,13,3,46
+2605,2,Tomates,Frutas y Verduras,5200,13,3,46
+2606,2,Papas chips,Galletitas y Snacks,6800,13,3,46
+2607,1,Hamburgesas congeladas,Congelados,7600,13,3,46
+2608,5,Pizza congelada,Congelados,12400,13,3,46
+2609,2,Empanadas,Congelados,10800,14,4,46
+2610,2,Chorizo,Carniceria,9000,14,4,46
+2611,4,Yogur,Lacteos,4200,14,4,46
+2612,4,Agua mineral,Bebidas,5000,14,4,46
+2613,3,Atun enlatado,Conservas,5000,14,4,46
+2614,4,Galletitas de chocolate,Galletitas y Snacks,5000,14,4,46
+2615,3,Chorizo,Carniceria,9000,14,4,46
+2616,6,Manteca,Lacteos,4500,15,5,46
+2617,4,Pizza congelada,Congelados,12400,15,5,46
+2618,4,Papas chips,Galletitas y Snacks,6800,15,5,46
+2619,4,Galletitas de agua,Galletitas y Snacks,4200,15,5,46
+2620,2,Asado,Carniceria,22800,15,5,46
+2621,1,Jugos de frutas,Bebidas,7600,15,5,46
+2622,6,Milanesa,Carniceria,13000,15,5,46
+2623,1,Zanahorias,Frutas y Verduras,2600,16,6,46
+2624,2,Garbanzos,Conservas,2900,16,6,46
+2625,1,Manzanas,Frutas y Verduras,5200,16,6,46
+2626,4,Garbanzos,Conservas,2900,16,6,46
+2627,1,Manzanas,Frutas y Verduras,5200,16,6,46
+2628,3,Jugos de frutas,Bebidas,7600,16,6,46
+2629,6,Pizza congelada,Congelados,12400,17,7,46
+2630,6,Papas chips,Galletitas y Snacks,6800,17,7,46
+2631,1,Pan integral,Panaderia,10000,17,7,46
+2632,1,Galletitas de agua,Galletitas y Snacks,4200,17,7,46
+2633,6,Queso rallado,Lacteos,15400,17,7,46
+2634,1,Garbanzos,Conservas,2900,17,7,46
+2635,5,Agua mineral,Bebidas,5000,18,1,47
+2636,2,Medialunas,Panaderia,2800,18,1,47
+2637,2,Pollo,Carniceria,14800,18,1,47
+2638,2,Pizza congelada,Congelados,12400,18,1,47
+2639,4,Cerveza,Bebidas,9200,18,1,47
+2640,4,Pan frances,Panaderia,6500,18,1,47
+2641,4,Asado,Carniceria,22800,18,1,47
+2642,3,Tomates,Frutas y Verduras,5200,18,1,47
+2643,5,Facturas,Panaderia,9900,18,1,47
+2644,6,Papas fritas,Congelados,6600,18,1,47
+2645,1,Salchicha,Carniceria,9000,18,1,47
+2646,1,Queso cremoso,Lacteos,13800,18,1,47
+2647,6,Atun enlatado,Conservas,5000,19,2,47
+2648,6,Tortas,Panaderia,12200,19,2,47
+2649,4,Facturas,Panaderia,9900,19,2,47
+2650,3,Papas chips,Galletitas y Snacks,6800,19,2,47
+2651,1,Manteca,Lacteos,4500,19,2,47
+2652,2,Costilla de cerdo,Carniceria,11400,19,2,47
+2653,1,Queso cremoso,Lacteos,13800,20,3,47
+2654,1,Manzanas,Frutas y Verduras,5200,20,3,47
+2655,2,Lechugas,Frutas y Verduras,3400,20,3,47
+2656,3,Arroz,Conservas,3400,20,3,47
+2657,3,Pollo,Carniceria,14800,20,3,47
+2658,5,Hamburgesas congeladas,Congelados,7600,20,3,47
+2659,2,Cerveza,Bebidas,9200,20,3,47
+2660,1,Hamburgesas congeladas,Congelados,7600,20,3,47
+2661,5,Manies,Galletitas y Snacks,4400,21,4,47
+2662,4,Pan frances,Panaderia,6500,21,4,47
+2663,2,Leche,Lacteos,9800,21,4,47
+2664,4,Empanadas,Congelados,10800,21,4,47
+2665,3,Hamburgesas congeladas,Congelados,7600,21,4,47
+2666,6,Salchicha,Carniceria,9000,21,4,47
+2667,1,Papas chips,Galletitas y Snacks,6800,21,4,47
+2668,4,Leche,Lacteos,9800,21,4,47
+2669,1,Asado,Carniceria,22800,21,4,47
+2670,5,Salchicha,Carniceria,9000,21,4,47
+2671,6,Empanadas,Congelados,10800,21,4,47
+2672,4,Facturas,Panaderia,9900,21,4,47
+2673,5,Cerveza,Bebidas,9200,22,5,47
+2674,4,Leche,Lacteos,9800,22,5,47
+2675,5,Pan frances,Panaderia,6500,22,5,47
+2676,5,Manteca,Lacteos,4500,22,5,47
+2677,2,Papas fritas,Congelados,6600,22,5,47
+2678,3,Leche,Lacteos,9800,23,6,47
+2679,3,Galletitas de agua,Galletitas y Snacks,4200,23,6,47
+2680,4,Manteca,Lacteos,4500,23,6,47
+2681,1,Galletitas de chocolate,Galletitas y Snacks,5000,23,6,47
+2682,3,Manteca,Lacteos,4500,23,6,47
+2683,2,Garbanzos,Conservas,2900,23,6,47
+2684,3,Agua mineral,Bebidas,5000,23,6,47
+2685,1,Chorizo,Carniceria,9000,23,6,47
+2686,5,Milanesa,Carniceria,13000,24,7,47
+2687,5,Milanesa,Carniceria,13000,24,7,47
+2688,1,Pan integral,Panaderia,10000,24,7,47
+2689,4,Atun enlatado,Conservas,5000,24,7,47
+2690,1,Galletitas de chocolate,Galletitas y Snacks,5000,24,7,47
+2691,5,Papas fritas,Congelados,6600,24,7,47
+2692,2,Tomates,Frutas y Verduras,5200,24,7,47
+2693,6,Lentejas,Conservas,2600,24,7,47
+2694,4,Atun enlatado,Conservas,5000,25,1,48
+2695,1,Vino tinto,Bebidas,10800,25,1,48
+2696,5,Hamburgesas congeladas,Congelados,7600,25,1,48
+2697,6,Vino tinto,Bebidas,10800,25,1,48
+2698,6,Hamburgesas congeladas,Congelados,7600,25,1,48
+2699,3,Pan frances,Panaderia,6500,25,1,48
+2700,4,Zanahorias,Frutas y Verduras,2600,25,1,48
+2701,6,Pollo,Carniceria,14800,25,1,48
+2702,4,Pizza congelada,Congelados,12400,25,1,48
+2703,2,Manzanas,Frutas y Verduras,5200,25,1,48
+2704,4,Zanahorias,Frutas y Verduras,2600,26,2,48
+2705,6,Arroz,Conservas,3400,26,2,48
+2706,5,Arroz,Conservas,3400,26,2,48
+2707,3,Hamburgesas congeladas,Congelados,7600,26,2,48
+2708,2,Lechugas,Frutas y Verduras,3400,26,2,48
+2709,6,Vino tinto,Bebidas,10800,26,2,48
+2710,5,Jugos de frutas,Bebidas,7600,26,2,48
+2711,3,Manteca,Lacteos,4500,26,2,48
+2712,1,Manies,Galletitas y Snacks,4400,26,2,48
+2713,5,Costilla de cerdo,Carniceria,11400,27,3,48
+2714,2,Bananas,Frutas y Verduras,5800,27,3,48
+2715,6,Manies,Galletitas y Snacks,4400,27,3,48
+2716,2,Vino tinto,Bebidas,10800,27,3,48
+2717,1,Cebolla,Frutas y Verduras,3400,27,3,48
+2718,2,Queso rallado,Lacteos,15400,28,4,48
+2719,4,Pan frances,Panaderia,6500,28,4,48
+2720,3,Manies,Galletitas y Snacks,4400,28,4,48
+2721,4,Leche,Lacteos,9800,28,4,48
+2722,6,Manteca,Lacteos,4500,28,4,48
+2723,6,Chorizo,Carniceria,9000,28,4,48
+2724,3,Manies,Galletitas y Snacks,4400,28,4,48
+2725,2,Arroz,Conservas,3400,28,4,48
+2726,5,Galletitas de chocolate,Galletitas y Snacks,5000,28,4,48
+2727,5,Facturas,Panaderia,9900,29,5,48
+2728,6,Vino tinto,Bebidas,10800,29,5,48
+2729,4,Galletitas de chocolate,Galletitas y Snacks,5000,29,5,48
+2730,4,Hamburgesas congeladas,Congelados,7600,29,5,48
+2731,4,Lentejas,Conservas,2600,29,5,48
+2732,4,Empanadas,Congelados,10800,29,5,48
+2733,2,Hamburgesas congeladas,Congelados,7600,29,5,48
+2734,2,Queso cremoso,Lacteos,13800,29,5,48
+2735,2,Manzanas,Frutas y Verduras,5200,29,5,48
+2736,5,Jugos de frutas,Bebidas,7600,30,6,48
+2737,4,Bananas,Frutas y Verduras,5800,30,6,48
+2738,6,Chorizo,Carniceria,9000,30,6,48
+2739,3,Papas chips,Galletitas y Snacks,6800,30,6,48
+2740,2,Empanadas,Congelados,10800,30,6,48
+2741,1,Leche,Lacteos,9800,30,6,48
+2742,3,Lentejas,Conservas,2600,30,6,48
+2743,2,Lechugas,Frutas y Verduras,3400,1,7,48
+2744,4,Agua mineral,Bebidas,5000,1,7,48
+2745,4,Hamburgesas congeladas,Congelados,7600,1,7,48
+2746,3,Cerveza,Bebidas,9200,1,7,48
+2747,4,Agua mineral,Bebidas,5000,1,7,48
+2748,2,Manzanas,Frutas y Verduras,5200,1,7,48
+2749,3,Costilla de cerdo,Carniceria,11400,1,7,48
+2750,4,Cerveza,Bebidas,9200,1,7,48
+2751,4,Papas chips,Galletitas y Snacks,6800,1,7,48
+2752,2,Vino tinto,Bebidas,10800,1,7,48
+2753,6,Tortas,Panaderia,12200,1,7,48
+2754,3,Pan frances,Panaderia,6500,1,7,48
+2755,4,Leche,Lacteos,9800,1,7,48
+2756,2,Hamburgesas congeladas,Congelados,7600,1,7,48
+2757,6,Pizza congelada,Congelados,12400,2,1,49
+2758,1,Papas chips,Galletitas y Snacks,6800,2,1,49
+2759,2,Leche,Lacteos,9800,2,1,49
+2760,6,Agua mineral,Bebidas,5000,2,1,49
+2761,2,Leche,Lacteos,9800,2,1,49
+2762,3,Cerveza,Bebidas,9200,2,1,49
+2763,5,Papas chips,Galletitas y Snacks,6800,2,1,49
+2764,5,Lentejas,Conservas,2600,2,1,49
+2765,2,Galletitas de agua,Galletitas y Snacks,4200,2,1,49
+2766,6,Papas fritas,Congelados,6600,3,2,49
+2767,4,Chorizo,Carniceria,9000,3,2,49
+2768,3,Empanadas,Congelados,10800,3,2,49
+2769,4,Pizza congelada,Congelados,12400,3,2,49
+2770,3,Tortas,Panaderia,12200,3,2,49
+2771,1,Chorizo,Carniceria,9000,3,2,49
+2772,2,Bananas,Frutas y Verduras,5800,3,2,49
+2773,4,Empanadas,Congelados,10800,4,3,49
+2774,5,Facturas,Panaderia,9900,4,3,49
+2775,3,Cerveza,Bebidas,9200,4,3,49
+2776,2,Milanesa,Carniceria,13000,4,3,49
+2777,4,Queso rallado,Lacteos,15400,4,3,49
+2778,2,Papas fritas,Congelados,6600,4,3,49
+2779,5,Pollo,Carniceria,14800,4,3,49
+2780,6,Pollo,Carniceria,14800,4,3,49
+2781,5,Yogur,Lacteos,4200,5,4,49
+2782,3,Yogur,Lacteos,4200,5,4,49
+2783,3,Facturas,Panaderia,9900,5,4,49
+2784,1,Jugos de frutas,Bebidas,7600,5,4,49
+2785,3,Queso rallado,Lacteos,15400,5,4,49
+2786,1,Pizza congelada,Congelados,12400,5,4,49
+2787,6,Asado,Carniceria,22800,5,4,49
+2788,4,Empanadas,Congelados,10800,5,4,49
+2789,2,Medialunas,Panaderia,2800,6,5,49
+2790,5,Medialunas,Panaderia,2800,6,5,49
+2791,5,Salchicha,Carniceria,9000,6,5,49
+2792,1,Costilla de cerdo,Carniceria,11400,6,5,49
+2793,5,Pan frances,Panaderia,6500,6,5,49
+2794,2,Queso cremoso,Lacteos,13800,6,5,49
+2795,4,Pan integral,Panaderia,10000,7,6,49
+2796,4,Empanadas,Congelados,10800,7,6,49
+2797,3,Tomates,Frutas y Verduras,5200,7,6,49
+2798,4,Queso rallado,Lacteos,15400,7,6,49
+2799,4,Papas chips,Galletitas y Snacks,6800,7,6,49
+2800,4,Papas fritas,Congelados,6600,7,6,49
+2801,4,Pan frances,Panaderia,6500,7,6,49
+2802,4,Jugos de frutas,Bebidas,7600,8,7,49
+2803,2,Salchicha,Carniceria,9000,8,7,49
+2804,3,Cebolla,Frutas y Verduras,3400,8,7,49
+2805,1,Queso cremoso,Lacteos,13800,8,7,49
+2806,1,Medialunas,Panaderia,2800,8,7,49
+2807,2,Atun enlatado,Conservas,5000,8,7,49
+2808,4,Pollo,Carniceria,14800,8,7,49
+2809,1,Yogur,Lacteos,4200,8,7,49
+2810,3,Pan integral,Panaderia,10000,8,7,49
+2811,2,Medialunas,Panaderia,2800,8,7,49
+2812,1,Leche,Lacteos,9800,9,1,50
+2813,1,Costilla de cerdo,Carniceria,11400,9,1,50
+2814,4,Garbanzos,Conservas,2900,9,1,50
+2815,3,Leche,Lacteos,9800,9,1,50
+2816,2,Zanahorias,Frutas y Verduras,2600,9,1,50
+2817,4,Lentejas,Conservas,2600,9,1,50
+2818,4,Agua mineral,Bebidas,5000,9,1,50
+2819,1,Zanahorias,Frutas y Verduras,2600,9,1,50
+2820,3,Jugos de frutas,Bebidas,7600,9,1,50
+2821,1,Lentejas,Conservas,2600,9,1,50
+2822,2,Pollo,Carniceria,14800,9,1,50
+2823,6,Yogur,Lacteos,4200,9,1,50
+2824,1,Hamburgesas congeladas,Congelados,7600,9,1,50
+2825,5,Leche,Lacteos,9800,10,2,50
+2826,4,Zanahorias,Frutas y Verduras,2600,10,2,50
+2827,4,Queso rallado,Lacteos,15400,10,2,50
+2828,2,Salchicha,Carniceria,9000,10,2,50
+2829,6,Asado,Carniceria,22800,10,2,50
+2830,2,Papas chips,Galletitas y Snacks,6800,10,2,50
+2831,6,Asado,Carniceria,22800,11,3,50
+2832,6,Atun enlatado,Conservas,5000,11,3,50
+2833,6,Cerveza,Bebidas,9200,11,3,50
+2834,5,Pan integral,Panaderia,10000,11,3,50
+2835,2,Medialunas,Panaderia,2800,11,3,50
+2836,4,Galletitas de chocolate,Galletitas y Snacks,5000,11,3,50
+2837,5,Facturas,Panaderia,9900,12,4,50
+2838,2,Queso cremoso,Lacteos,13800,12,4,50
+2839,6,Salchicha,Carniceria,9000,12,4,50
+2840,5,Pan frances,Panaderia,6500,12,4,50
+2841,2,Asado,Carniceria,22800,12,4,50
+2842,2,Jugos de frutas,Bebidas,7600,12,4,50
+2843,5,Cerveza,Bebidas,9200,13,5,50
+2844,3,Pollo,Carniceria,14800,13,5,50
+2845,6,Agua mineral,Bebidas,5000,13,5,50
+2846,5,Pizza congelada,Congelados,12400,13,5,50
+2847,1,Cebolla,Frutas y Verduras,3400,13,5,50
+2848,1,Milanesa,Carniceria,13000,13,5,50
+2849,5,Galletitas de chocolate,Galletitas y Snacks,5000,13,5,50
+2850,6,Atun enlatado,Conservas,5000,13,5,50
+2851,2,Arroz,Conservas,3400,13,5,50
+2852,3,Medialunas,Panaderia,2800,14,6,50
+2853,2,Papas fritas,Congelados,6600,14,6,50
+2854,4,Queso rallado,Lacteos,15400,14,6,50
+2855,5,Manzanas,Frutas y Verduras,5200,14,6,50
+2856,1,Tomates,Frutas y Verduras,5200,14,6,50
+2857,4,Pan integral,Panaderia,10000,15,7,50
+2858,1,Arroz,Conservas,3400,15,7,50
+2859,6,Agua mineral,Bebidas,5000,15,7,50
+2860,3,Jugos de frutas,Bebidas,7600,15,7,50
+2861,1,Garbanzos,Conservas,2900,15,7,50
+2862,1,Lentejas,Conservas,2600,15,7,50
+2863,5,Queso cremoso,Lacteos,13800,15,7,50
+2864,5,Tomates,Frutas y Verduras,5200,16,1,51
+2865,3,Facturas,Panaderia,9900,16,1,51
+2866,4,Empanadas,Congelados,10800,16,1,51
+2867,6,Pizza congelada,Congelados,12400,16,1,51
+2868,5,Pizza congelada,Congelados,12400,16,1,51
+2869,1,Pan frances,Panaderia,6500,16,1,51
+2870,4,Chorizo,Carniceria,9000,16,1,51
+2871,6,Bananas,Frutas y Verduras,5800,16,1,51
+2872,4,Tortas,Panaderia,12200,16,1,51
+2873,3,Medialunas,Panaderia,2800,16,1,51
+2874,6,Pan integral,Panaderia,10000,16,1,51
+2875,5,Jugos de frutas,Bebidas,7600,16,1,51
+2876,3,Manies,Galletitas y Snacks,4400,16,1,51
+2877,2,Chorizo,Carniceria,9000,17,2,51
+2878,4,Asado,Carniceria,22800,17,2,51
+2879,4,Pollo,Carniceria,14800,17,2,51
+2880,1,Medialunas,Panaderia,2800,17,2,51
+2881,2,Lentejas,Conservas,2600,17,2,51
+2882,1,Bananas,Frutas y Verduras,5800,18,3,51
+2883,3,Jugos de frutas,Bebidas,7600,18,3,51
+2884,5,Arroz,Conservas,3400,18,3,51
+2885,6,Yogur,Lacteos,4200,18,3,51
+2886,3,Chorizo,Carniceria,9000,18,3,51
+2887,4,Papas fritas,Congelados,6600,18,3,51
+2888,6,Salchicha,Carniceria,9000,18,3,51
+2889,2,Manteca,Lacteos,4500,18,3,51
+2890,6,Yogur,Lacteos,4200,18,3,51
+2891,4,Salchicha,Carniceria,9000,19,4,51
+2892,4,Zanahorias,Frutas y Verduras,2600,19,4,51
+2893,3,Pan frances,Panaderia,6500,19,4,51
+2894,6,Queso cremoso,Lacteos,13800,19,4,51
+2895,1,Pan frances,Panaderia,6500,19,4,51
+2896,2,Tortas,Panaderia,12200,19,4,51
+2897,4,Atun enlatado,Conservas,5000,19,4,51
+2898,1,Manies,Galletitas y Snacks,4400,19,4,51
+2899,3,Facturas,Panaderia,9900,19,4,51
+2900,4,Cebolla,Frutas y Verduras,3400,19,4,51
+2901,1,Manzanas,Frutas y Verduras,5200,19,4,51
+2902,6,Cerveza,Bebidas,9200,19,4,51
+2903,5,Cerveza,Bebidas,9200,19,4,51
+2904,1,Jugos de frutas,Bebidas,7600,19,4,51
+2905,5,Leche,Lacteos,9800,20,5,51
+2906,3,Asado,Carniceria,22800,20,5,51
+2907,5,Agua mineral,Bebidas,5000,20,5,51
+2908,5,Pizza congelada,Congelados,12400,20,5,51
+2909,5,Asado,Carniceria,22800,20,5,51
+2910,6,Atun enlatado,Conservas,5000,20,5,51
+2911,6,Zanahorias,Frutas y Verduras,2600,21,6,51
+2912,1,Pan integral,Panaderia,10000,21,6,51
+2913,5,Costilla de cerdo,Carniceria,11400,21,6,51
+2914,3,Garbanzos,Conservas,2900,21,6,51
+2915,4,Manteca,Lacteos,4500,21,6,51
+2916,4,Salchicha,Carniceria,9000,21,6,51
+2917,1,Medialunas,Panaderia,2800,21,6,51
+2918,4,Atun enlatado,Conservas,5000,21,6,51
+2919,6,Leche,Lacteos,9800,21,6,51
+2920,1,Empanadas,Congelados,10800,21,6,51
+2921,5,Cerveza,Bebidas,9200,21,6,51
+2922,5,Cebolla,Frutas y Verduras,3400,21,6,51
+2923,1,Costilla de cerdo,Carniceria,11400,22,7,51
+2924,2,Cerveza,Bebidas,9200,22,7,51
+2925,5,Yogur,Lacteos,4200,22,7,51
+2926,3,Vino tinto,Bebidas,10800,22,7,51
+2927,1,Medialunas,Panaderia,2800,22,7,51
+2928,3,Manteca,Lacteos,4500,22,7,51
+2929,1,Manteca,Lacteos,4500,22,7,51
+2930,2,Manzanas,Frutas y Verduras,5200,23,1,52
+2931,4,Vino tinto,Bebidas,10800,23,1,52
+2932,5,Arroz,Conservas,3400,23,1,52
+2933,4,Facturas,Panaderia,9900,23,1,52
+2934,5,Tortas,Panaderia,12200,23,1,52
+2935,6,Pan integral,Panaderia,10000,23,1,52
+2936,3,Pizza congelada,Congelados,12400,23,1,52
+2937,4,Arroz,Conservas,3400,24,2,52
+2938,2,Queso rallado,Lacteos,15400,24,2,52
+2939,3,Facturas,Panaderia,9900,24,2,52
+2940,2,Atun enlatado,Conservas,5000,24,2,52
+2941,1,Asado,Carniceria,22800,24,2,52
+2942,5,Salchicha,Carniceria,9000,24,2,52
+2943,4,Papas fritas,Congelados,6600,24,2,52
+2944,6,Manteca,Lacteos,4500,24,2,52
+2945,5,Queso cremoso,Lacteos,13800,24,2,52
+2946,5,Pan integral,Panaderia,10000,24,2,52
+2947,2,Atun enlatado,Conservas,5000,24,2,52
+2948,5,Hamburgesas congeladas,Congelados,7600,24,2,52
+2949,4,Costilla de cerdo,Carniceria,11400,24,2,52
+2950,3,Chorizo,Carniceria,9000,24,2,52
+2951,1,Empanadas,Congelados,10800,24,2,52
+2952,5,Tortas,Panaderia,12200,25,3,52
+2953,5,Pan frances,Panaderia,6500,25,3,52
+2954,6,Zanahorias,Frutas y Verduras,2600,25,3,52
+2955,3,Arroz,Conservas,3400,25,3,52
+2956,6,Atun enlatado,Conservas,5000,25,3,52
+2957,2,Milanesa,Carniceria,13000,25,3,52
+2958,6,Queso cremoso,Lacteos,13800,25,3,52
+2959,4,Vino tinto,Bebidas,10800,25,3,52
+2960,5,Atun enlatado,Conservas,5000,25,3,52
+2961,6,Agua mineral,Bebidas,5000,25,3,52
+2962,6,Costilla de cerdo,Carniceria,11400,25,3,52
+2963,1,Manies,Galletitas y Snacks,4400,26,4,52
+2964,4,Milanesa,Carniceria,13000,26,4,52
+2965,2,Salchicha,Carniceria,9000,26,4,52
+2966,3,Jugos de frutas,Bebidas,7600,26,4,52
+2967,3,Leche,Lacteos,9800,26,4,52
+2968,4,Pollo,Carniceria,14800,26,4,52
+2969,6,Jugos de frutas,Bebidas,7600,26,4,52
+2970,1,Yogur,Lacteos,4200,27,5,52
+2971,4,Vino tinto,Bebidas,10800,27,5,52
+2972,5,Chorizo,Carniceria,9000,28,6,52
+2973,6,Arroz,Conservas,3400,28,6,52
+2974,3,Cebolla,Frutas y Verduras,3400,28,6,52
+2975,5,Pollo,Carniceria,14800,28,6,52
+2976,4,Asado,Carniceria,22800,28,6,52
+2977,2,Milanesa,Carniceria,13000,28,6,52
+2978,2,Galletitas de agua,Galletitas y Snacks,4200,28,6,52
+2979,1,Lentejas,Conservas,2600,28,6,52
+2980,4,Hamburgesas congeladas,Congelados,7600,28,6,52
+2981,1,Vino tinto,Bebidas,10800,28,6,52
+2982,2,Agua mineral,Bebidas,5000,28,6,52
+2983,3,Asado,Carniceria,22800,29,7,52
+2984,6,Pan frances,Panaderia,6500,29,7,52
+2985,2,Tortas,Panaderia,12200,29,7,52
+2986,1,Galletitas de agua,Galletitas y Snacks,4200,29,7,52
+2987,4,Papas chips,Galletitas y Snacks,6800,29,7,52
+2988,5,Galletitas de agua,Galletitas y Snacks,4200,29,7,52
+2989,1,Manteca,Lacteos,4500,29,7,52
+2990,4,Milanesa,Carniceria,13000,29,7,52
+2991,5,Pan frances,Panaderia,6500,29,7,52
+2992,4,Manies,Galletitas y Snacks,4400,29,7,52
+2993,5,Pizza congelada,Congelados,12400,30,1,1
+2994,5,Costilla de cerdo,Carniceria,11400,30,1,1
+2995,6,Pan frances,Panaderia,6500,30,1,1
+2996,3,Galletitas de agua,Galletitas y Snacks,4200,30,1,1
+2997,3,Salchicha,Carniceria,9000,30,1,1
+2998,2,Cebolla,Frutas y Verduras,3400,30,1,1
+2999,3,Manzanas,Frutas y Verduras,5200,30,1,1
