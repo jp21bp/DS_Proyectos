@@ -23,8 +23,6 @@ from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import Lasso #Lasso regresion
 from sklearn.ensemble import RandomForestRegressor # RF
 from sklearn.model_selection import GridSearchCV
-# import tensorflow as tf
-
 
 #### Cambiando directorio (si es necesario)
 if os.getcwd().split('\\')[-1] != '3_SegmentacionClientes': 
