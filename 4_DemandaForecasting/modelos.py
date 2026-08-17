@@ -137,9 +137,12 @@ df_lasso_results
 #### Buscando los mejores parametros
 rf = RandomForestRegressor()
 params = {
-    'n_estimators': range(10,300,10),
+    'n_estimators': range(10,300,50),
+    'max_depth':range(5,11,5),
+    'min_samples_split': range(1,6,1),
     'criterion': ('squared_error','absolute_error'),
-    'max_features': ('auto', 'sqrt', 'log2')
+    'max_features': ('auto', 'sqrt', 'log2'),
+    'random_state': [42]
 }
 gs = GridSearchCV(rf, params, scoring='neg_root_mean_squared_error', cv = 3, verbose=2)
 gs.fit(X_train,y_train.reshape(-1))
@@ -189,7 +192,8 @@ df_org_topX.groupby(by='nombre',as_index=False)\
 
 ##### Modelo y prediccion
 #### Cargando el modelo y scaler
-modelo = joblib.load('./model.pkl')
+modelo = gs.best_estimator_
+# modelo = joblib.load('./model.pkl')
 scaler = joblib.load('./scaler.pkl')
 #### Invocando modelo
 y_pred = modelo.predict(df_enc_topX.drop(columns='cantidad'))
