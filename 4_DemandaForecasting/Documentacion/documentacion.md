@@ -61,30 +61,34 @@ asfsfsa
 
 asgsagsag
 
-### Promedio Mensual de 88.8% de Productos Perdidos
-asfsfsa
-
-asgsagsag
-
-### Categoria 'Carniceria' Contribuye 27.13% de Ingresos Mensuales
-asfsfsa
-
-asgsagsag
 
 ### ARPU picos en Marzo, Junio, Septiembre, y Diciembre
-asfsfsa
+La metrica ARPU mide el ingreso promedio por cliente, y se notan algunas tendencias en su analisis mensual.
 
-asgsagsag
+* **Junio tiene un aumento en la cantidad de clientes**: Este hecho señala un aumento en las transacciones y ventas del mes. Adicionalmente se registra un aumento en el ARPU, la cual se refleja en el max ingreso mensual dentro Junio. 
+
+* **ARPU picos en Mar, Sep, y Dic**: Estos tres meses tambien tiene un aumento en su ARPU mensual, pero no se debe a un aumento en la cantidad de clientes como occurio en Junio. De lo contrario, estos meses tienen una cantidad promedio de clientes, la cual significa que cada cliente compra mas productos que lo normal. 
+
+* **Octubre: cantidad vs ARPU**: Aunque Octubre tiene una cantidad de clientes un poco sobre el promedio, se registra una reduccion en el ARPU. Esta combinacion demuestra que Octubre tiene mas clientes quienes hacen menos compras. 
 
 
-## Modelos, Predicciones y sus Impactos
-asfsafsa
+### Categoria 'Carniceria' Contribuye 27.13% de Ingresos Mensuales
+De las 8 categorias de productos, existen un gran constraste entre los productos que generan mas ingreso a la micro-empresa. 
 
-### Modelo 1
-asfsaf
+* **27.13% de Ingresos Mesuales Provienen de la Carniceria**: Productos de la cariniceria consistentemente proveen la mayoria de los ingresos mensuales. Esto demuestra que Paraguay es un pais que tiene la carne dentro su dieta cotidiana. 
 
-### Modelo 2
-asfsafsaf
+* **Conservas vs Congelados**: Las conservas consiste de productos enlatados o envasados, pero los productos congelados tiene un promedio mas alto. Este hecho implica que los Paraguayos prefieren comprar comida visible y no dentro una lata, aunque la comida no sea fresca.
+
+* **Lacteos son los segundos contribuyentes a los ingresos mensuales**: Integrando esta informacion con el alto consumo de carnes se deduce que Paraguay es un pais con un sector grande de ganaderia, donde la vacas pueden proveen a las categorias de carniceria e lacteos.
+
+
+### Promedio Mensual de 88.8% de Productos Perdidos
+Reconociendo las limitaciones electricas en pueblos de Paraguya, se esperaba que la mayoria de productos se desperdicien por falta de refrigeracion. El porcentaje de los productos que se pierden revelo datos alarmantes.
+
+* **88.8% de Perdidas mensuales**: Un promedio de 88.8% de los productos almacenados se pierden mensualmente al no venderse.
+
+* **Consistencia Mensual**: Cada mes tiene una diferente cantidad de ventas, analizado en la seccion de la ARPU, pero la cantidad de productos perdidos es casi igual en todos los meses. Esto indica que los gerentes hacen un buen trabajo en capturando las tendencias clientes mensuales, pero siempre sobre-estiman las ventas que se haran dentro del mes.
+
 
 ## Recomendaciones
 asfasfa
