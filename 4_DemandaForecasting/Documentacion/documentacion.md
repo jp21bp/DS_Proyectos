@@ -66,7 +66,7 @@ asfsfsa
 
 asgsagsag
 
-### Diferencias entre Productos: mas Populares vs. mas Ingresos
+### Categoria 'Carniceria' Contribuye 27.13% de Ingresos Mensuales
 asfsfsa
 
 asgsagsag
@@ -76,10 +76,6 @@ asfsfsa
 
 asgsagsag
 
-### Cuarto
-asfsfsa
-
-asgsagsag
 
 ## Modelos, Predicciones y sus Impactos
 asfsafsa
