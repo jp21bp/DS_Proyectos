@@ -71,7 +71,7 @@ asfsfsa
 
 asgsagsag
 
-### ARPU picos en Marzo, Septiembre, y Diciembre
+### ARPU picos en Marzo, Junio, Septiembre, y Diciembre
 asfsfsa
 
 asgsagsag
