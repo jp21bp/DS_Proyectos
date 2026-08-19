@@ -106,11 +106,15 @@ asgagsa
 ggagag
 
 ## KPIs
+### 1. ARPU = Ingreso Promedio por Usuario
+Total Ingreso / Numero de Clientes
 
-### 1. Porcentaje de Productos Perdidos
+Objetivo: aumentar el ingreso prome
+
+### 2. Porcentaje de Productos Perdidos
 ((Stock Disponible - Productos Vendidos)/Stock Disponible) * 100
 
-Objetivo: Para disminuir la cantidad de productos desperdiciados, la meta sera de disminuir la perdidad de XX (80) % de os productos mensuales a 65% de los productos.
+Objetivo: Para disminuir la cantidad de productos desperdiciados, la meta sera de disminuir la perdidad de 88.8% de los productos mensuales a 65% de los productos.
 - CUANDO SACAR CADA ALIMENTO??
 
 ### 2. Popularidad de un Producto
@@ -119,10 +123,7 @@ Objetivo: Para disminuir la cantidad de productos desperdiciados, la meta sera d
 Enfoque: Para evitar el gasto envano de alimentos no utilizados, los 10 productos menos populares se van a eliminar de la tienda. 
 - O hacer promociones entre top 10 y bottom 10 productos populares
 
-### 3. ARPU = Ingreso Promedio por Usuario
-Total Ingreso / Numero de Clientes
-
-Objetivo: aumentar el ingreso promedio de cada cliente de XX a YY al implementar promociones de productos populares
+dio de cada cliente de XX a YY al implementar promociones de productos populares
 - CUALES PROMOCIONES? CUANDO?
 
 ### 4. Porcentage de Ingresos de Producto X
