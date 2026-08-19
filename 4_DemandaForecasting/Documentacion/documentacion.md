@@ -42,26 +42,16 @@ assafasf
 asfsagaga
 
 ## Resumen Ejecutivo
-assaas
-
-afsagsag
 
 ### Resumen de Descubrimientos
-asafasf
-
-asgsagsa
+Esta microempresa de Paraguay es una representacion de las boedgas familiares comunes en el interior del pais. Debido a la escasez de electricidad, muchos de sus productos de ventas se pierden a traves del anio. Esto conlleva a una realidad donde la mayoria de los productos vendidos se desperdician. Adicionalmente, la cultura Paraguaya influye en la compra de los clientes, donde una reduccion en Abril se atribuye a Semana y las fiestas del fin del anio contribuyen un aumento en ARPU. Estas tradiciones tambien afectan los ingresos generales de la microempresa. Estos patrones se pueden analizar para crear cambios accionables que proveen mejoramientos a los KPIs de la empresa. 
 
 ### Tendencia de los Descubrimientos
-asfsfsa
-
-asgsagsag
+**Meses con menos compras por clientes** : Los 4 meses de Abril, Agosto, y Octubre tienen un ARPU mucho menos del promedio, pero la microempresa tienen un promedio de cliente, implicando que los clientes compran menos cantidades de productos. 
+**Una gran mayoria de productos se pierden**: un 53.12% de productos almacenados se pierden anualmente. Se detalla que la categoria 'Galletitas y Snacks' y el mes de Diciembre tienen las mas peridades a traves del anio. 
+**'Carniceria' y 'Lacetos' aportan los mas ingresos mensuales**: Estas categorias obtienen los mas ingresos de sus ventas, produciendo un promedio de 27.13% y 15.61% del ingreso mensual, resptivamente. De lo contrario, 'Conservas', 'Frutas y Verduras', y 'Galletitas y Snack' son las categorias con menos aportes. 
 
 ## Detalles de las Perspicacias 
-asfsfsa
-
-asgsagsag
-
-
 ### ARPU picos en Marzo, Junio, Septiembre, y Diciembre
 La metrica ARPU mide el ingreso promedio por cliente, y se notan algunas tendencias en su analisis mensual.
 
