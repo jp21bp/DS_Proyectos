@@ -93,47 +93,40 @@ Reconociendo las limitaciones electricas en pueblos de Paraguya, se esperaba que
 
 
 ## Recomendaciones
-asfasfa
+### 1. Disminuir almacen de todos los productos por 15%
+Considerando que ninguno de los productos llego al punto de agotamiento en ninguno de los meses, se puede deducir que todos los productos pueden dismiuir su perdidas al reducir su almacenamiento. Adicionalmente, el punto minimo de todas las peridads era un 19.27%, en la categoria 'Congelados' en el mes de Noviembre. Por ende, una reduccion de 15% no resultaria en agotamiento de esta categoria. Todas las otras perdidas no bajan de 24.31%, a traves todas las categorias y todos los meses. 
 
-### Primero
-sfsafas
+### 2. Ofrecer descuentos en Febrero y Noviembre
+Estos meses obtuvieron una menor cantidad de clientes de lo promedio mensual, significando que los clientes hacen menos compras durante estos meses. Aunque la razon detras esta reduccion es desconocida, la micro empresa puede crear una iniciativa para atraer mas clientes durante estos meses. Una forma de crear motivacion es a traves de descuentos generales en sus productos, la cual atraeria a mas clientes para que ellos no pierden de esa oportunidad.
 
-### Segundo
-sdgsagag
+### 3. Promociones de 'Carniceria' y 'Galletitas y Snack'
+'Carniceria' era la categoria con mas ingresos mensuales (27.13% de ingresos) y la tercera mas popular (con 47.9% de perdidas anuales). De lo contrario, 'Galletitas y Snack' es la categoria con mas perdidas anuales (de 68.22% de su almacen). Considerando que las 'Galletitas y Snack' tiene una perdidad mas de 70% en Febrero, Junio, Noviembre, y Diciembre, esta promocion se puede activar durante estos meses para reduccir los productos perdidos y aumentar la venta de 'Carniceria'. 
 
-### Tercero
-asgagsa
-
-### Cuarto
-ggagag
 
 ## KPIs
 ### 1. ARPU = Ingreso Promedio por Usuario
 Total Ingreso / Numero de Clientes
 
-Objetivo: aumentar el ingreso prome
+Objetivo: aumentar el ingreso promedio de cada cliente de XX a YY al implementar promociones de productos populares
+- CUALES PROMOCIONES? CUANDO?
+- PARA AUMENTAR INGRESO:Como: Aumentar el numero de promociones en Febrero y Noviembre, los meses que tienen los menos clientes.
+- PARA AUMENTAR ARPU: Aumnetar la ventas de las categorias con mas ingresos (carniceria y Lacteos) al hacerles promociones con productos con menos ingresos (galletiats, conservas, y frutas)
+
 
 ### 2. Porcentaje de Productos Perdidos
 ((Stock Disponible - Productos Vendidos)/Stock Disponible) * 100
 
-Objetivo: Para disminuir la cantidad de productos desperdiciados, la meta sera de disminuir la perdidad de 88.8% de los productos mensuales a 65% de los productos.
-- CUANDO SACAR CADA ALIMENTO??
+Objetivo: Para disminuir la cantidad de productos desperdiciados, la meta sera de disminuir la perdidad de 53.12% anuales de todos los productos a 45%. 
+- Como: Ofrecer promociones de galletitas y snacks en febrero y diciembre con la categoria que atrae mas ingresos (carniceria)
 
-### 2. Popularidad de un Producto
-(Cantidad Producto Vendido/ Cantidad de Todas las Ventas) * 100
 
-Enfoque: Para evitar el gasto envano de alimentos no utilizados, los 10 productos menos populares se van a eliminar de la tienda. 
-- O hacer promociones entre top 10 y bottom 10 productos populares
 
-dio de cada cliente de XX a YY al implementar promociones de productos populares
-- CUALES PROMOCIONES? CUANDO?
-
-### 4. Porcentage de Ingresos de Producto X
+### 3. Porcentage de Ingresos de Producto
 (Ingresos de un Product/ Ingresos Totales) * 100
 
 Enfoque: Aumentar la venta de los productos que generen mas ingresos
 
-- Aumentar a cuanto? Como (haciendo promocion con alimetnos populares y que les complemente)?
+- Promociones: categorias con mas ingresos y categorias con mas perdidas
 
 ## Suposiciones y Avisos
 dgonin
