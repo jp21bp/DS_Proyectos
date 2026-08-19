@@ -82,12 +82,14 @@ De las 8 categorias de productos, existen un gran constraste entre los productos
 * **Lacteos son los segundos contribuyentes a los ingresos mensuales**: Integrando esta informacion con el alto consumo de carnes se deduce que Paraguay es un pais con un sector grande de ganaderia, donde la vacas pueden proveen a las categorias de carniceria e lacteos.
 
 
-### Promedio Mensual de 88.8% de Productos Perdidos
+### Promedio Mensual de 53.12% de Productos Anuales Perdidos
 Reconociendo las limitaciones electricas en pueblos de Paraguya, se esperaba que la mayoria de productos se desperdicien por falta de refrigeracion. El porcentaje de los productos que se pierden revelo datos alarmantes.
 
-* **88.8% de Perdidas mensuales**: Un promedio de 88.8% de los productos almacenados se pierden mensualmente al no venderse.
+* **53.12% de Perdidas mensuales**: Un promedio de 53.12% de los productos almacenados se pierden anualmente al no venderse.
 
-* **Consistencia Mensual**: Cada mes tiene una diferente cantidad de ventas, analizado en la seccion de la ARPU, pero la cantidad de productos perdidos es casi igual en todos los meses. Esto indica que los gerentes hacen un buen trabajo en capturando las tendencias clientes mensuales, pero siempre sobre-estiman las ventas que se haran dentro del mes.
+* **El Mes de Febrero tiene la mas perdidas**: Febrero pierde 58.1% de sus productos almacenados al no venderlos. 
+
+* **'Galletitas y Snacks' son los productos con mas perdidas**: Esta categoria pierde 68.22% de sus productos a traves todo el anio. Esta cifra se empeora en Febrero y Diciembre, con perdidas de 80.06% y 83.89% respetivamente.
 
 
 ## Recomendaciones
