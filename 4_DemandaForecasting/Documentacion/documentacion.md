@@ -27,9 +27,11 @@
 
 
 ## Contexto del Proyecto
-asasfsaf
+Bodega Ña Maria es una micro empresa en el interior de Paraguay y la micro empresaria sostiene a su familia con las ventas y ganancias. La dueña ha notado que hay meses con mas ingresos y otros con menos, pero le gustaria concretar los detalles sobre cuando occuren y cual es la **diferencia entre los meses altos y bajos**. Tambien menciona que generalmente termina botando la mayoria de sus productos, pero no sabe cuantos menos comprar sin que los clientes se queden sin productos. 
 
-asfsafaf
+Paraguay es un pais con un sector de ganaderia fuerte, contribuyendo a su alto consumo de carnes. Maria reconoce que los productos de **carnes traen un alto porcentaje de ingresos**, y tambien le gustaria saber como los otros productos contribuyen a las ganancias mensuales. 
+
+El siguiente analisis revela los meses con bajo ingresos y como crear promociones especificas durante esos meses para generar mas ingresos. Adicionalmente, se destaca los productos con mas perdidas mensuales y como poder convertirlas en ganacias en vez de botarlas.
 
 ### Perspicacias, Recomendaciones y sus Enfoques
 **ARPU y su tendencia ciclica**: la metrica ARPU (Promedio de Ingreso por Usuario) tiene un patron de oscilacion predecible en los meses del anio. Cada 3 meses se encuentra con ARPUs altos, seguidos por dos meses de bajo ARPU. El promedio ARPU de los meses altos es 41,940 Gs., mientras el promedio de los meses bajos es 39,384 Gs. Esta dinamica se utiliza en las recomendaciones para crear promociones en los meses con bajos ARPUs.  
@@ -39,6 +41,11 @@ asfsafaf
 
 
 **Mayor perdidad de productos almacenados**: un 53.12% de los productos almacenados se desperdician anualmente. La categoria de 'Galletitas y Snack' tienen la mayores perdidas anuales, con un 68.22% del almacenamiento perdido. De lo contrario, la categoria 'Congelados' tiene un  Este hecho se puede considerar en la creacion de promociones para disminuir la cantidad de productos que se pierden sin venta. 
+
+<br><br>
+La queries de SQL se encuentran AQUI
+
+El analisis de datos se encontran AQUI
 
 
 
