@@ -32,14 +32,24 @@ asasfsaf
 asfsafaf
 
 ### Perspicacias, Recomendaciones y sus Enfoques
-asfafaf
+**ARPU y su tendencia ciclica**: la metrica ARPU (Promedio de Ingreso por Usuario) tiene un patron de oscilacion predecible en los meses del anio. Cada 3 meses se encuentra con ARPUs altos, seguidos por dos meses de bajo ARPU. El promedio ARPU de los meses altos es 41,940 Gs., mientras el promedio de los meses bajos es 39,384 Gs. Esta dinamica se utiliza en las recomendaciones para crear promociones en los meses con bajos ARPUs.  
 
-assafaf
+
+**Categorias con alta y baja contribucion a los ingresos mensuales**: Existen 8 categorias, y cada producto disponible se encuentra en una de estas categorias. 'Carniceria' y 'Lacteos' tiene el impacto mas grande a los ingresos mensuales, con un valor de 27.13% y 15.61% respetivamente. De lo contrario, 'Conservas', 'Frutas y Verduras', y 'Galletitas y Snacks' tienen un imapcto minimo. Estas dinamicas se utilizan para crear combos de promociones sin asumir mayores perdidas. 
+
+
+**Mayor perdidad de productos almacenados**: un 53.12% de los productos almacenados se desperdician anualmente. La categoria de 'Galletitas y Snack' tienen la mayores perdidas anuales, con un 68.22% del almacenamiento perdido. De lo contrario, la categoria 'Congelados' tiene un  Este hecho se puede considerar en la creacion de promociones para disminuir la cantidad de productos que se pierden sin venta. 
+
+
 
 ## Estructura de los Datos y su Verificaciones
-assafasf
+4 tables dentro una base de datos se utilizo para realizar este analisis, sus formatos CSVs se pueden encontrar AQUI. Los componentes de cada tabla son los siguientes:
 
-asfsagaga
+1. Tabla: categorias - llaves: id_categoria (primary), categoria (text), descripcion (text)
+2. Tabla: clientes - llaves: id_cliente (primary), nombre (text), appelido (text), email (text), fecha_registro (text)
+3. Tabla: productos - llaves: id_producto (primary), nombre (text), categoria (text), precio (smallint), stock (smallint)
+4. Tabla: ventas - llaves: id_venta (primary), fecha (text), id_cliente (foreign), id_producto (foreign), cantidad (smallint)
+
 
 ## Resumen Ejecutivo
 
@@ -83,40 +93,35 @@ Reconociendo las limitaciones electricas en pueblos de Paraguya, se esperaba que
 
 
 ## Recomendaciones
-### 1. Disminuir almacen de todos los productos por 15%
+### 1. Promociones de 'Carniceria' y 'Galletitas y Snack'
+'Carniceria' era la categoria con mas ingresos mensuales (27.13% de ingresos) y la tercera mas popular (con 47.9% de perdidas anuales). De lo contrario, 'Galletitas y Snack' es la categoria con mas perdidas anuales (de 68.22% de su almacen). Considerando que las 'Galletitas y Snack' tiene una perdidad mas de 70% en Febrero, Junio, Noviembre, y Diciembre, esta promocion se puede activar durante estos meses para reduccir los productos perdidos y aumentar la venta de 'Carniceria'. 
+
+
+### 2. Disminuir almacen de todos los productos por 15%
 Considerando que ninguno de los productos llego al punto de agotamiento en ninguno de los meses, se puede deducir que todos los productos pueden dismiuir su perdidas al reducir su almacenamiento. Adicionalmente, el punto minimo de todas las peridads era un 19.27%, en la categoria 'Congelados' en el mes de Noviembre. Por ende, una reduccion de 15% no resultaria en agotamiento de esta categoria. Todas las otras perdidas no bajan de 24.31%, a traves todas las categorias y todos los meses. 
 
-### 2. Ofrecer descuentos en Febrero y Noviembre
+### 1. Ofrecer descuentos en Febrero y Noviembre
 Estos meses obtuvieron una menor cantidad de clientes de lo promedio mensual, significando que los clientes hacen menos compras durante estos meses. Aunque la razon detras esta reduccion es desconocida, la micro empresa puede crear una iniciativa para atraer mas clientes durante estos meses. Una forma de crear motivacion es a traves de descuentos generales en sus productos, la cual atraeria a mas clientes para que ellos no pierden de esa oportunidad.
 
-### 3. Promociones de 'Carniceria' y 'Galletitas y Snack'
-'Carniceria' era la categoria con mas ingresos mensuales (27.13% de ingresos) y la tercera mas popular (con 47.9% de perdidas anuales). De lo contrario, 'Galletitas y Snack' es la categoria con mas perdidas anuales (de 68.22% de su almacen). Considerando que las 'Galletitas y Snack' tiene una perdidad mas de 70% en Febrero, Junio, Noviembre, y Diciembre, esta promocion se puede activar durante estos meses para reduccir los productos perdidos y aumentar la venta de 'Carniceria'. 
 
 
 ## KPIs
 ### 1. ARPU = Ingreso Promedio por Usuario
 Total Ingreso / Numero de Clientes
 
-Objetivo: aumentar el ingreso promedio de cada cliente de XX a YY al implementar promociones de productos populares
-- CUALES PROMOCIONES? CUANDO?
-- PARA AUMENTAR INGRESO:Como: Aumentar el numero de promociones en Febrero y Noviembre, los meses que tienen los menos clientes.
-- PARA AUMENTAR ARPU: Aumnetar la ventas de las categorias con mas ingresos (carniceria y Lacteos) al hacerles promociones con productos con menos ingresos (galletiats, conservas, y frutas)
+Objetivo: aumentar el ARPU promedio de 40,314 Gs. a 45,000 Gs. mensuales. 
 
 
 ### 2. Porcentaje de Productos Perdidos
 ((Stock Disponible - Productos Vendidos)/Stock Disponible) * 100
 
 Objetivo: Para disminuir la cantidad de productos desperdiciados, la meta sera de disminuir la perdidad de 53.12% anuales de todos los productos a 45%. 
-- Como: Ofrecer promociones de galletitas y snacks en febrero y diciembre con la categoria que atrae mas ingresos (carniceria)
-
 
 
 ### 3. Porcentage de Ingresos de Producto
 (Ingresos de un Product/ Ingresos Totales) * 100
 
-Enfoque: Aumentar la venta de los productos que generen mas ingresos
-
-- Promociones: categorias con mas ingresos y categorias con mas perdidas
+Enfoque: Aumentar la venta de la categoria que generen mas ingresos de un promedio de 27.13% a 30%. Esto se lograra a traves promociones con otras categoria que tengan un alto desperidicio
 
 ## Suposiciones y Avisos
 dgonin
