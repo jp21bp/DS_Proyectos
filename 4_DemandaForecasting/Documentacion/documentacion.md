@@ -6,23 +6,18 @@
     * [Resumen de Descubrimientos ](#resumen-de-descubrimientos)
     * [Tendencia de los Descubrimientos](#tendencia-de-los-descubrimientos)
 4. [Detalles de las Perspicacias](#detalles-de-las-perspicacias)
-    * primero
-    * segundo
-    * tercero
-    * cuarto
-5. [Modelos, Predicciones y sus Impactos](#modelos-predicciones-y-sus-impactos)
-    * modelo 1
-    * modelo 2
-6. [Recomendaciones](#recomendaciones)
-    * primero
-    * segundo
-    * tercero
-    * cuarto
-7. [KPIs](#kpis)
-    * Porcentaje de 
-    * segundo
-    * tercero
-8. [Suposiciones y Avisos](#suposiciones-y-avisos)
+    * [ARPU picos en Marzo, Junio, Septiembre, y Diciembre](#arpu-picos-en-marzo-junio-septiembre-y-diciembre)
+    * [Categoria 'Carniceria' Contribuye 27.13% de Ingresos Mensuales](#categoria-carniceria-contribuye-2713-de-ingresos-mensuales)
+    * [Promedio Mensual de 53.12% de Productos Anuales Perdidos](#promedio-mensual-de-5312-de-productos-anuales-perdidos)
+5. [Recomendaciones](#recomendaciones)
+    * [Promociones de 'Carniceria' y 'Galletitas y Snack'](#1-promociones-de-carniceria-y-galletitas-y-snack)
+    * [Disminuir almacen de todos los productos por 15%](#2-disminuir-almacen-de-todos-los-productos-por-15)
+    * [Ofrecer descuentos en Febrero y Noviembre](#3-ofrecer-descuentos-en-febrero-y-noviembre)
+6. [KPIs](#kpis)
+    * [ARPU = Ingreso Promedio por Usuario](#1-arpu--ingreso-promedio-por-usuario)
+    * [Porcentaje de Productos Perdidos](#2-porcentaje-de-productos-perdidos)
+    * [Porcentage de Ingresos de Producto](#3-porcentage-de-ingresos-de-producto)
+7. [Suposiciones y Avisos](#suposiciones-y-avisos)
 
 
 
@@ -32,6 +27,8 @@ Bodega Ña Maria es una micro empresa en el interior de Paraguay y la micro empr
 Paraguay es un pais con un sector de ganaderia fuerte, contribuyendo a su alto consumo de carnes. Maria reconoce que los productos de **carnes traen un alto porcentaje de ingresos**, y tambien le gustaria saber como los otros productos contribuyen a las ganancias mensuales. 
 
 El siguiente analisis revela los meses con bajo ingresos y como crear promociones especificas durante esos meses para generar mas ingresos. Adicionalmente, se destaca los productos con mas perdidas mensuales y como poder convertirlas en ganacias en vez de botarlas.
+
+<br><br><br>
 
 ### Perspicacias, Recomendaciones y sus Enfoques
 **ARPU y su tendencia ciclica**: la metrica ARPU (Promedio de Ingreso por Usuario) tiene un patron de oscilacion predecible en los meses del anio. Cada 3 meses se encuentra con ARPUs altos, seguidos por dos meses de bajo ARPU. El promedio ARPU de los meses altos es 41,940 Gs., mientras el promedio de los meses bajos es 39,384 Gs. Esta dinamica se utiliza en las recomendaciones para crear promociones en los meses con bajos ARPUs.  
@@ -78,6 +75,9 @@ La metrica ARPU mide el ingreso promedio por cliente, y se notan algunas tendenc
 
 * **Octubre: cantidad vs ARPU**: Aunque Octubre tiene una cantidad de clientes un poco sobre el promedio, se registra una reduccion en el ARPU. Esta combinacion demuestra que Octubre tiene mas clientes quienes hacen menos compras. 
 
+![ARPUs por Mes](arpu.png)
+
+<br><br><br>
 
 ### Categoria 'Carniceria' Contribuye 27.13% de Ingresos Mensuales
 De las 8 categorias de productos, existen un gran constraste entre los productos que generan mas ingreso a la micro-empresa. 
@@ -89,6 +89,10 @@ De las 8 categorias de productos, existen un gran constraste entre los productos
 * **Lacteos son los segundos contribuyentes a los ingresos mensuales**: Integrando esta informacion con el alto consumo de carnes se deduce que Paraguay es un pais con un sector grande de ganaderia, donde la vacas pueden proveen a las categorias de carniceria e lacteos.
 
 
+![Categorias e Ingresos Mensuales](categorias_ingresos.png)
+
+<br><br><br>
+
 ### Promedio Mensual de 53.12% de Productos Anuales Perdidos
 Reconociendo las limitaciones electricas en pueblos de Paraguya, se esperaba que la mayoria de productos se desperdicien por falta de refrigeracion. El porcentaje de los productos que se pierden revelo datos alarmantes.
 
@@ -98,16 +102,22 @@ Reconociendo las limitaciones electricas en pueblos de Paraguya, se esperaba que
 
 * **'Galletitas y Snacks' son los productos con mas perdidas**: Esta categoria pierde 68.22% de sus productos a traves todo el anio. Esta cifra se empeora en Febrero y Diciembre, con perdidas de 80.06% y 83.89% respetivamente.
 
+![Promedio de Perdidas](perdidas.png)
+
+<br><br><br>
 
 ## Recomendaciones
 ### 1. Promociones de 'Carniceria' y 'Galletitas y Snack'
 'Carniceria' era la categoria con mas ingresos mensuales (27.13% de ingresos) y la tercera mas popular (con 47.9% de perdidas anuales). De lo contrario, 'Galletitas y Snack' es la categoria con mas perdidas anuales (de 68.22% de su almacen). Considerando que las 'Galletitas y Snack' tiene una perdidad mas de 70% en Febrero, Junio, Noviembre, y Diciembre, esta promocion se puede activar durante estos meses para reduccir los productos perdidos y aumentar la venta de 'Carniceria'. 
 
+<br><br><br>
 
 ### 2. Disminuir almacen de todos los productos por 15%
 Considerando que ninguno de los productos llego al punto de agotamiento en ninguno de los meses, se puede deducir que todos los productos pueden dismiuir su perdidas al reducir su almacenamiento. Adicionalmente, el punto minimo de todas las peridads era un 19.27%, en la categoria 'Congelados' en el mes de Noviembre. Por ende, una reduccion de 15% no resultaria en agotamiento de esta categoria. Todas las otras perdidas no bajan de 24.31%, a traves todas las categorias y todos los meses. 
 
-### 1. Ofrecer descuentos en Febrero y Noviembre
+<br><br><br>
+
+### 3. Ofrecer descuentos en Febrero y Noviembre
 Estos meses obtuvieron una menor cantidad de clientes de lo promedio mensual, significando que los clientes hacen menos compras durante estos meses. Aunque la razon detras esta reduccion es desconocida, la micro empresa puede crear una iniciativa para atraer mas clientes durante estos meses. Una forma de crear motivacion es a traves de descuentos generales en sus productos, la cual atraeria a mas clientes para que ellos no pierden de esa oportunidad.
 
 
@@ -118,12 +128,13 @@ Total Ingreso / Numero de Clientes
 
 Objetivo: aumentar el ARPU promedio de 40,314 Gs. a 45,000 Gs. mensuales. 
 
+<br><br><br>
 
 ### 2. Porcentaje de Productos Perdidos
 ((Stock Disponible - Productos Vendidos)/Stock Disponible) * 100
 
 Objetivo: Para disminuir la cantidad de productos desperdiciados, la meta sera de disminuir la perdidad de 53.12% anuales de todos los productos a 45%. 
-
+<br><br><br>
 
 ### 3. Porcentage de Ingresos de Producto
 (Ingresos de un Product/ Ingresos Totales) * 100
@@ -131,6 +142,9 @@ Objetivo: Para disminuir la cantidad de productos desperdiciados, la meta sera d
 Enfoque: Aumentar la venta de la categoria que generen mas ingresos de un promedio de 27.13% a 30%. Esto se lograra a traves promociones con otras categoria que tengan un alto desperidicio
 
 ## Suposiciones y Avisos
-dgonin
+Este analisis tiene las sigueintes suposiciones:
 
-
+* Para mantener confidencialidad, estos datos son una combinacion de datos encontrados en linea (de Argentina) y datos de clientes personales (de Paraguay).
+* Para simplificar el analisis, los costos y las devoluciones de productos no se consideran. 
+* La cantidad de almacen en cada producto es el valor anual, la cual se divide equitativemente en cada mes.
+* Los productos que no se venden al fin del mes de desperdician. 
