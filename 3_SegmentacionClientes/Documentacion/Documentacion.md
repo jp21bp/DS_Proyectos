@@ -26,69 +26,70 @@
 
 ## Contexto del Proyecto
 
-PeruTur es una compania pequena que provee servicios turisticos a visitantes internacionales ingresando al Peru. Actualmente operan en la ciudad de Lima y quieren expandir hacia todo el pais pero no saben la mejor estrategia para promocionar sus servicios al nivel nacional. Este proyecto utiliza datos publicos Peruanos que contienen informacion sobre los turistas internacionales y sitios turisiticos en su entorno durantes los anios de **2019 - 2025**.
+PeruTur es una compañía pequeña que provee servicios turísticos a visitantes internacionales que ingresan al Perú. Actualmente operan en la ciudad de Lima y quieren expandir hacia todo el país, pero no saben la mejor estrategia para promocionar sus servicios al nivel nacional. Este proyecto utiliza datos públicos peruanos que contienen información sobre los turistas internacionales y sitios turísticos en su entorno durante los años de **2019-2025**.
 
-El analisis y los modelos demuestran que los turistas se pueden agrupar dependiendo en la **Oficina Control Migratio(OCM)** de su entrada, con las cuales se puede generar targeted marketing para optimizar la atracciones promocionales. Adicionalmente se revela que las visitas turisticas tienen una tendencia mensual a traves todo el anio, turistas **minimos en Febrero** y **maximos en Julio y Agosto**. Finalmente, existen una variedad de sitios turistico sin costo al ingresar, creando una oportunidad para minimizar los costos de sus viajes turisticos. 
+El análisis y los modelos demuestran que los turistas se pueden agrupar dependiendo de la **Oficina de Control Migratorio (OCM)** de su entrada, con las cuales se puede generar targeted marketing para optimizar las atracciones promocionales. Adicionalmente, se revela que las visitas turísticas tienen una tendencia mensual a través de todo el año, donde la cantidad de turistas es mínima en febrero** y **máxima en julio y agosto. Finalmente, existen una variedad de sitios turísticos sin costo al ingresar, creando una oportunidad para minimizar los costos de sus viajes turísticos. 
 
-Se destacan los enfoques en targeted marketing, presupuesto dinamico, y los sitios gratis al crear una estrategia para ayudar a PeruTur expander a un nivel nacional. 
-
-
-### Perspicacias, Recomendaciones y sus Enfoques
-**Concentracion de Visitantes y sus Paises de Origen**: 95% de los visitantes internacionales provienen de **25 paises**, con los top 6 paises culminando en 70.6%. Adicionalmente, 5 de estos 6 paises son Sur Americanos. Esto crea una oportunidad para limitar los paises para enfocarse y hacer targeted marketing hacia cada uno de estos paises. 
+Se destacan los enfoques en targeted marketing, presupuesto dinámico y los sitios gratis al crear una estrategia para ayudar a PeruTur a expandirse a un nivel nacional. 
 
 
-**Oficinas de Control Migratorio (OCMs) y los Paises Vecinos**: 4 de los 81 OCMs nacionales registran el **94.67%** de todos los ingresos internacionales hacia Peru. Adicionalmente, la mayoria de los ingrensantes en cada uno de estos 4 OCMs provienen del pais vecino mas cercano (con la excepcion del Aeropuerto internacional en Lima). Al desarrollar promociones alrededor estos OCMs, se recomienda enfocar en atraer turistas de los paises vecinos mas cercanos. 
+### Informes Internos, Recomendaciones y sus Enfoques
+**Concentración de Visitantes y sus Países de Origen**: 95% de los visitantes internacionales provienen de **25 países**, con los top 6 países culminando en 70.6%. Adicionalmente, 5 de estos 6 países son suramericanos. Esto crea una oportunidad para limitar los países para enfocarse y hacer targeted marketing hacia cada uno de estos países. 
 
 
-**Disponibilidad de Sitios Turisticos sin Ingresos**: Machu Picchu, siendo una de las maravillas del mundo, es el sitio turistico mas popular en Peru, implicando que la mayoria de los clientes de PeruTur van a tener deseos de viajar ahi. El analis demostro que existen 16 sitios turisticos **gratis** dentro un radio de 25 kilometros de Machu Picchu. Este hecho crea una oportunidad de crear promociones que incluyan esos sitios sin incurrir costos adicionales (aparte de la gasolina). 
+**Oficinas de Control Migratorio (OCMs) y los Países Vecinos: 4 de los 81 OCMs nacionales registran el **94.67%** de todos los ingresos internacionales hacia Perú. Adicionalmente, la mayoría de los ingresantes en cada uno de estos 4 OCMs provienen del país vecino más cercano (con la excepción del Aeropuerto Internacional en Lima). Al desarrollar promociones alrededor de estos OCMs, se recomienda enfocar en atraer turistas de los países vecinos más cercanos. 
+
+
+**Disponibilidad de Sitios Turísticos sin Ingresos**: Machu Picchu, siendo una de las maravillas del mundo, es el sitio turístico más popular en Perú, implicando que la mayoría de los clientes de PeruTur van a tener deseos de viajar ahí. El análisis demostró que existen 16 sitios turísticos **gratis** dentro de un radio de 25 kilómetros de Machu Picchu. Este hecho crea una oportunidad de crear promociones que incluyan esos sitios sin incurrir en costos adicionales (aparte de la gasolina). 
 
 
 <br><br>
-El proceso de web scrapping y limpieza de datos se encuentra AQUI -link
+El proceso de web scraping y limpieza de datos se encuentra AQUÍ -link
 
-Los analisis de los datos coleccionados se encuentran AQUI -link
+Los análisis de los datos coleccionados se encuentran AQUÍ -link
 
-La creacion y evaluacion de los modelos se encuentran AQUI - link
+La creación y evaluación de los modelos se encuentran AQUÍ - link
 
-## Estructura de los Datos y su Verificaciones
-3 conjuntos de datos diferentes se utilizaron para desarrollar los analises necesarios, y sus componentes son los siguientes:
-1. Visitantes internacionales: anio, mes, pais, continente, ocm, y numero de visitantes
-2. Visitantes en sitios turisticos: anio, mes, departamento, sitio turistico, y numero de visitantes
-3. Inventario de recursos turisticos: region, categoria, url, latitud, y longitud
+## Estructura de los Datos y sus Verificaciones
+3 conjuntos de datos diferentes se utilizaron para desarrollar los análisis necesarios, y sus componentes son los siguientes:
+1. Visitantes internacionales: año, mes, país, continente, OCM y número de visitantes
+2. Visitantes en sitios turísticos: año, mes, departamento, sitio turístico y número de visitantes
+3. Inventario de recursos turísticos: región, categoría, URL, latitud y longitud
 
-Antes de empezar el analisis se comprobaron la integridad y estructura de los conjuntos a traves organizacion y limpieza.
+Antes de empezar el análisis, se comprobó la integridad y estructura de los conjuntos a través de organización y limpieza.
 
 
 ## Resumen Ejecutivo
 ### Resumen de Descubrimientos
 
-La mayoria de visitantes internacional al Peru se concentran dentro de 25 paises, donde Chile, EE.UU, y Ecuador ocupan 56.4% de los visitantes anuales. Esto presenta una oportunidad a PeruTur para que se enfoque en una pequena cantidad de paises y desarrolle targeted marketing. Adicionalmente,  los OCMs de entrada de estos visitantes se parte entre 55.76% y 28.41% para el Aeropuerto de Lima y Santa Rosa, respetivamente. Este hecho sugerie que las ubicaciones de marketing se tienen que enfocar en el entorno de estos OCMs para llegar a la mayoria de sus clientes potenciales. En otro punto, Julio y Agosto reciben 21.75% de los visitantes anuales, y son los meses donde PeruTur puede invertir mas para poder complacer la demanda de servicios turisticos. Finalmente, Machu Picchu es el sitio turistico mas popular y tiene en su alredeor otros sitios sin costos al ingresas. PeruTur puede aprovechar de esta oportunidad financiera para ampliar sus paquetes promocionales sin incurrir gastos adicionales (aparte de la gasolina). 
+La mayoría de visitantes internacionales al Perú se concentran dentro de 25 países, donde Chile, EE. UU. y Ecuador ocupan 56.4% de los visitantes anuales. Esto presenta una oportunidad a PeruTur para que se enfoque en una pequeña cantidad de países y desarrolle targeted marketing. Adicionalmente,  los OCMs de entrada de estos visitantes se parten entre 55.76% y 28.41% para el Aeropuerto de Lima y Santa Rosa, respectivamente. Este hecho sugiere que las ubicaciones de marketing se tienen que enfocar en el entorno de estos OCMs para llegar a la mayoría de sus clientes potenciales. En otro punto, julio y agosto reciben 21.75% de los visitantes anuales, y son los meses donde PeruTur puede invertir más para poder complacer la demanda de servicios turísticos. Finalmente, Machu Picchu es el sitio turístico más popular y tiene en su alrededor otros sitios sin costo al ingresar. PeruTur puede aprovechar esta oportunidad financiera para ampliar sus paquetes promocionales sin tener gastos adicionales (aparte de la gasolina). 
 
 
 ### Tendencia de los Descubrimientos
-**Sur America y Vecinos Peruanos**: 5 de los top 6 paises con visitantes internacionales son los vecinos del Peru, y todos los paises suramericanos se encuentran dentro los 25 paises con la mayor contribucion. 
+**Suramérica y Vecinos Peruanos**: 5 de los top 6 países con visitantes internacionales son los vecinos del Perú, y todos los países suramericanos se encuentran dentro de los 25 países con la mayor contribución. 
 
-**Temporadas de Turismo**: En todos los anios, Julio y Agosto tienen la mayor cantidad de visitantes internacionales, mientras Febrero tienen la minima cantidad con solo 4.84* de todos los visitantes anuales. 
+**Temporadas de Turismo**: En todos los años, julio y agosto tienen la mayor cantidad de visitantes internacionales, mientras febrero tiene la mínima cantidad con solo 4.84* de todos los visitantes anuales. 
 
-**Sitios gratis alrededor Machu Picchu**: Dentro un radio de 25 kilometeros de Machu Picchu se encuentran 16 sitios con ingresos gratis, con la mayoria de ellos ubicados a su norte. 
+**Sitios gratis alrededor de Machu Picchu**: Dentro de un radio de 25 kilómetros de Machu Picchu se encuentran 16 sitios con ingresos gratis, con la mayoría de ellos ubicados a su norte. 
 
 
-## Detalles de las Perspicacias 
-### Concentracion de 56.4% de Visitantes Internacionales
-Reconociendo que el Peru tiene una abundacia de sitios historicos y culturales, incluyendo una de las maravillas del mundo, se esperaba que haiga un porcentaje equilibrado de los ingresantes de todos los paises. El analisis demostro otras revelaciones.
+----------------------
+## Detalles de los Informes Internos  
+### Concentración de 56.4% de Visitantes Internacionales
+Reconociendo que el Perú tiene una abundancia de sitios históricos y culturales, incluyendo una de las maravillas del mundo, se esperaba que haya un porcentaje equilibrado de los ingresantes de todos los países. El análisis demostró otras revelaciones.
 
 
 * **Chile**: tiene 32.9% de **todos** los visitantes internacionales
-* **Top 3 Paises**: ocupan 56.4% de visitantes internacionales
-* **Top 6 Paises**: ocupan 70.6% de visitantes internacionales
+* **Top 3 Países: ocupan 56.4% de visitantes internacionales
+* **Top 6 Países: ocupan 70.6% de visitantes internacionales
 
 Patrones Destacados:
 * **Consistencia Mensual**
-    - Dentro cada mes, los top 3 paises generalmente son Chile, EE.UU, y Ecuador. Esta consistencia ayudara a crear marketing intencionales en todos los meses del anio. 
-* **Politica fronteriza impacta numero de visitantes internacionales**
-    - 5 de los top 6 paises son **vecinos directos** del Peru. Una gran mayoria de visitantes internacionales depende en las poltica al borde la fronter del Peru. 
-* **Gran concentracion en 25 de los 198 paises**
-    - El 95% de todos los visitantes internacionales provienen de los top 25, de los 198, paises. I.e., 177 paises no tienen un aporte significativo en los visitantes y no hay necesidad de tener un enfoque importante en ellos. 
+    - Dentro de cada mes, los top 3 países generalmente son Chile, EE. UU. y Ecuador. Esta consistencia ayudará a crear marketing intencional en todos los meses del año. 
+* **Política fronteriza impacta número de visitantes internacionales**
+    - 5 de los top 6 países son **vecinos directos** del Perú. Una gran mayoría de visitantes internacionales depende de las políticas al borde de la frontera del Perú. 
+* **Gran concentración en 25 de los 198 países**
+    - El 95% de todos los visitantes internacionales provienen de los top 25 entre los 198 países. I.e., 177 países no tienen un aporte significativo en los visitantes y no hay necesidad de tener un enfoque importante en ellos. 
 
 ![Visitantes Por Mes](VisitantesPorMes.png)
 
