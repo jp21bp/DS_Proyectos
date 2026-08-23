@@ -73,7 +73,7 @@ La mayoría de visitantes internacionales al Perú se concentran dentro de 25 pa
 **Sitios gratis alrededor de Machu Picchu**: Dentro de un radio de 25 kilómetros de Machu Picchu se encuentran 16 sitios con ingresos gratis, con la mayoría de ellos ubicados a su norte. 
 
 
-----------------------
+
 ## Detalles de los Informes Internos  
 ### Concentración de 56.4% de Visitantes Internacionales
 Reconociendo que el Perú tiene una abundancia de sitios históricos y culturales, incluyendo una de las maravillas del mundo, se esperaba que haya un porcentaje equilibrado de los ingresantes de todos los países. El análisis demostró otras revelaciones.
@@ -96,58 +96,58 @@ Patrones Destacados:
 <br><br><br>
 
 ### Control Migratorio entre los top 3 Paises
-Considerando que Chile, EE.UU, y Ecuador ocupan mas de la mitad del total de visitantes, es importante considerara la Oficina de Control Migratorio (OCM) que utilizan para ingresar al Peru.
+Considerando que Chile, EE. UU. y Ecuador ocupan más de la mitad del total de visitantes, es importante considerar la Oficina de Control Migratorio (OCM) que utilizan para ingresar al Perú.
 
 * El 79.47% de Chilenos entran por el OCM **Santa Rosa** en Tacna, Sur del Peru
-* El 96.19% de Estado Unidenses usan el **Aeropuerto Internacional Jorge Chavez**
+* El 96.19% de Estadounidenses usan el **Aeropuerto Internacional Jorge Chávez.**
 * El 67.54% de Ecuatorianos ingresan por el OCM **Cebaf-Tumbes** en Tumbes, Norte del Peru
 
 Patrones Destacados:
 * 81 OCMs ocupan solo un 4.36% de visitantes internacionales.
-    - Existen 86 OCMs en Peru, con 81 de ellas agrupas bajo la misma variable 'OTRAS_OCM'. Solo 4.36% de visitantes internacionales entran por estas otras OCMs, implicando que no tienen un impacto significativo. 
-    <h4 id="ocm"></h4>
-* OCM y su pais vecino mas **cercano**
-    - Cada OCM, excepto el Aeropuerto de Lima, tienen la mayoria de sus ingresantes viniendo del pais vecino mas cercano.
+    - Existen 86 OCMs en Perú, con 81 de ellas agrupadas bajo la misma variable 'OTRAS_OCM'. Solo 4.36% de visitantes internacionales entran por estas otras OCMs, implicando que no tienen un impacto significativo. 
+    <h4 id="ocm"></h4>
+* OCM y su país vecino más **cercano**
+    - Cada OCM, excepto el Aeropuerto de Lima, tiene la mayoría de sus ingresantes viniendo del país vecino más cercano.
 * Santa Rosa y Chilenos
-    - Aunque **28.41%** de todos los visitantes internacionales vienen por OCM Santa Rosa, la mayoria de esos ingresantes vienen de Chile. Esto se deduce del hecho que 1/3 de todos los visitantes internacionales son chilenos, y 79.47% de ellos ingresan por Santa Rosa. 
+    - Aunque **28.41%** de todos los visitantes internacionales vienen por OCM Santa Rosa, la mayoría de esos ingresantes vienen de Chile. Esto se deduce del hecho de que 1/3 de todos los visitantes internacionales son chilenos, y 79.47% de ellos ingresan por Santa Rosa. 
 
 ![OCM Por Pais](OCMPorPais.png)
 
 <br><br><br>
 
 ### Los Meses con 21.75% de Turistas Anuales
-Existen diferentes factores que afectan la cantidad de turistas en un mes, como el clima, eventos historicos, cambios polticos, etc. Algunos de estos factores tienen una temporada anual, impicando que la cantidad de turistas tambien tiene tendencias anuales. 
+Existen diferentes factores que afectan la cantidad de turistas en un mes, como el clima, eventos históricos, cambios políticos, etc. Algunos de estos factores tienen una temporada anual, implicando que la cantidad de turistas también tiene tendencias anuales. 
 
-* Los meses de **Julio y Agosto** obtienen 21.75% de los turistas anuales.
-* El mes de Febrero tiene la **menor** cantidad de turistas.
-* **Machu Picchu**, incluyendo su ciudad, es el sitio mas visitado en todos los meses.
+* Los meses de **julio y agosto** obtienen 21.75% de los turistas anuales.
+* El mes de febrero tiene la **menor** cantidad de turistas.
+* **Machu Picchu**, incluyendo su ciudad, es el sitio más visitado en todos los meses.
 
 Patrones destacados:
 * Tendencia estacional en todos los sitios turisticos
-    - Existe una tendencia estacional en todos los sitios turisticos. En todos los sitios turisticos, Julio y Agosto reciben la mayor cantidad de turistas mientras Febrero tienen la menor cantidad. 
+    - Existe una tendencia estacional en todos los sitios turísticos. En todos los sitios turísticos, julio y Agosto reciben la mayor cantidad de turistas, mientras febrero tiene la menor cantidad. 
 * Prominencia de Machu Picchu
-    - Los top 5 sitios tienen algun enfoque con Machu Picchu. Algunos son servicios con destino a Machu Picchu, y otros son sitios en su alrededor. 
+    - Los top 5 sitios tienen algún enfoque con Machu Picchu. Algunos son servicios con destino a Machu Picchu, y otros son sitios en su alrededor. 
 
 ![Turistas Mensuales](TuristasMensuales.png)
 
 
 <br><br><br>
 
-### 16 sitios gratis dentro 25 kms de Machu Picchu
-Se esperaba que Machu Picchu, siendo una de las maravillas del mundo, es el sitio turistico mas popular. Tambien se encuentran una variedad de sitios turisticos cercanos con cero costo de ingreso, proveyendo una oportunidad que maximiza ganacias a una agencia turistica. 
+### 16 sitios gratis dentro de 25 km de Machu Picchu
+Se esperaba que Machu Picchu, siendo una de las maravillas del mundo, fuera el sitio turístico más popular. También se encuentran una variedad de sitios turísticos cercanos con cero costo de ingreso, proveyendo una oportunidad que maximiza ganancias a una agencia turística. 
 
-* Existen 16 sitios **sin costo al ingresar** dentro 25 kilometeros de Machu Picchu.
-* La mayoria de estos sitios se encuentran hacia el **Norte** y en rutas principales. 
+* Existen 16 sitios **sin costo al ingresar** dentro de 25 kilómetros de Machu Picchu.
+* La mayoría de estos sitios se encuentran hacia el **Norte** y en rutas principales. 
 
 ![Mapa](MP.png)
 
 ## Modelos, Predicciones y sus Impactos
-### Prediciendo los Numero de Turistas Esperados
-Prediciendo la cantidad de visitantes que espera dentro de un mes ayudaria en la optimizacion de recursos para un negocio. Dado el mes, departamento, y nombre del sitio turistico, el modelo de regresion predeci los numero de visitantes esperados en ese sitio turistico. 
+### Prediciendo los Números de Turistas Esperados
+Predecir la cantidad de visitantes que espera dentro de un mes ayudaría en la optimización de recursos para un negocio. Dado el mes, departamento y nombre del sitio turístico, el modelo de regresión predice el número de visitantes esperados en ese sitio turístico. 
 
-Tres modelos candidatos se utilizaron con estos datos: Regresion lineal, regresion lasso, random forest. Con una metrica adecuada aplicada a todos los candidatos, el modelo bosque aleatorio (random forrest) obtuvo los mejores resultados. 
+Tres modelos candidatos se utilizaron con estos datos: Regresión lineal, regresión lasso, random forest. Con una métrica adecuada aplicada a todos los candidatos, el modelo bosque aleatorio (random forest) obtuvo los mejores resultados. 
 
-Al aplicar el modelo con los datos disponibles, se calcula que hay una pequena diferencia promedia de 4,915 turistas entre la prediccion y el valor actual. Los resultados demuestran que el modelo se puede utilizar con confianza para prediccir la cantidad de turistas dentro una temporada mensual.
+Al aplicar el modelo con los datos disponibles, se calcula que hay una pequeña diferencia promedio de 4,915 turistas entre la predicción y el valor actual. Los resultados demuestran que el modelo se puede utilizar con confianza para predecir la cantidad de turistas dentro de una temporada mensual.
 
 ![PredVSActual](PredVSActual.png)
 
@@ -156,47 +156,47 @@ Al aplicar el modelo con los datos disponibles, se calcula que hay una pequena d
 <br><br><br>
 
 ### Los 6 tipos de Visitantes Internacionales
-KMeans es un algoritmo que agrupa puntos de datos en clusters, depediendo en su cercania entre uno al otro. Este proceso revelo los siguientes clusteres:
+KMeans es un algoritmo que agrupa puntos de datos en clusters, dependiendo de su cercanía entre uno y otro. Este proceso reveló los siguientes clústeres:
 
 * Cluster 1: Los ingresantes por OCM Santa Rosa
 * Cluster 2: Los visitantes Chilenos y Estadounidenses 
-* Cluster 3: Los ingresantes por OCMs Aeropuerto internacional de Lima y Cebaf-Tumbres
+* Cluster 3: Los ingresantes por OCMs Aeropuerto Internacional de Lima y Cebaf-Tumbres
 * Cluster 4: Los ingresantes por otros OCMs no considerados
 * Cluster 5: Los ingresantes por OCM Desaguadero
 * Cluster 6: Los ingresantes por OCM Kasani
 
-KMeans pricipalmente agrupo los visitantes internacionales por su OCM de entrada. Considerando que mayoria de visitantes de un OCM son ciudadanos del <a href="#ocm">pais mas cercano</a>, esta separacion es coherente con los datos. 
+KMeans principalmente agrupó a los visitantes internacionales por su OCM de entrada. Considerando que la mayoría de visitantes de un OCM son ciudadanos del <a href="#ocm">país más cercano</a>, esta separación es coherente con los datos. 
 
-El segundo cluster se enfoca completamente en el pais de origen de los visitantes, especialmente de Chile y EE.UU. Reconociendo que estos dos paises forman [48.5% de todos los visitantes internacionales](#concentracion-de-564-de-visitantes-internacionales), se determina que este cluster es coherente con los datos. 
+El segundo clúster se enfoca completamente en el país de origen de los visitantes, especialmente de Chile y EE. UU. Reconociendo que estos dos países forman [48.5% de todos los visitantes internacionales](#concentracion-de-564-de-visitantes-internacionales), se determina que este clúster es coherente con los datos. 
 
-En practica, se puede desarrollar un targeted marketing a cada uno de los clusteres. Al llegar un nuevo vistante, se le puede asignar un cluster al notar de que OCM ingreso. Al unirse con un cluster, se le puede mostrar las mismas promociones de marketing que a otras personas del mismo grupo.
+En la práctica, se puede desarrollar un marketing dirigido a cada uno de los clústeres. Al llegar un nuevo visitante, se le puede asignar un clúster al notar de qué OCM ingresó. Al unirse con un clúster, se le pueden mostrar las mismas promociones de marketing que a otras personas del mismo grupo.
 
 
 
 ## Recomendaciones
-Considerando las perspicacias y resultados de los modelos, se recomienda al **equipo de Marketing** de PeruTur los siguiente puntos:
+Considerando las perspicacias y resultados de los modelos, se recomienda al **equipo de Marketing** de PeruTur los siguientes puntos:
 
-### Targeted Marketing basado en Pais y OCM de Entrada
-Los top 10 paises con visitantes internacionales ocupan 82.5% de **todos** los visitantes internacionales, con Chile obteniendo casi 1/3 de toda esa poblacion y 6 de los 10 paises siendo de Suramerica. Adicionalmente, se descubrio que a mayoria de ingresantes en cada OCM son del **vecino pais mas cercano**, creando un enlace entre punto de entrada y pais de origin. Este hecho fue fortalecido por los clusteres creados por el algoritmo KMeans, agrupando a todos los visitantes por el OCM de entrada. 
+### Marketing Dirigido basado en País y OCM de Entrada
+Los top 10 países con visitantes internacionales ocupan 82.5% de **todos** los visitantes internacionales, con Chile obteniendo casi 1/3 de toda esa población y 6 de los 10 países siendo de Suramérica. Adicionalmente, se descubrió que la mayoría de ingresantes en cada OCM son del **vecino país más cercano**, creando un enlace entre punto de entrada y país de origen. Este hecho fue fortalecido por los clústeres creados por el algoritmo KMeans, agrupando a todos los visitantes por el OCM de entrada. 
 
-Por ende, se recomienda que el equipo de Marketing se enfoque en los siguiente targeted marketing:
+Por ende, se recomienda que el equipo de Marketing se enfoque en el siguiente targeted marketing:
 * OCM Aeropuerto de Lima: Enfoque a un nivel internacional, sin enfocarse tanto en paises surmaericanos.
 * OCM Santa Rosa: Enfoque en Chile.
 * OCM Cebaf-Tumbes: Enfoque en Ecuador.
 * OCM Desaguadero: Enfoque en Bolivia.
-* Todos los otros OCMs: inversion minima y general. 
+* Todos los otros OCMs: inversión mínima y general. 
 
 <br><br><br>
 
 ### Gestionar un Presupuesto que cambie Fluidamente por cada Mes
-Los sitios turisticos tienen sus temporadas altas, en Julio y Agosto, y bajas, en Febrero. Para optimizar el uso de un presupuesto anual, se recomienda crear un **presupuesto dinamico** que asigne un valor alto durante Julio y Agosto mientras Febrero recibe un valor bajo. 
+Los sitios turísticos tienen sus temporadas altas, en julio y agosto, y bajas, en febrero. Para optimizar el uso de un presupuesto anual, se recomienda crear un **presupuesto dinámico** que asigne un valor alto durante julio y agosto, mientras febrero recibe un valor bajo. 
 
-Esta dinamica tambien afectaria a las campanas que se desarollan, pero las tendencias de los paises origines es consistente en todos los meses. Considerando que la mayoria de visitantes internacionales tiene origines en Chile en todos los meses, seria mejor enfocarse en marketing hacia los Chilenos durante temporada baja. De lo contrario, durante temporada alta, y con mas mas presupuesto, se puede expander las campanas hacia Estado Unidenses, Ecuatorianos, y otros, dependiendo en la suma de presupuesto. 
+Esta dinámica también afectaría a las campañas que se desarrollan, pero las tendencias de los países de origen son consistentes en todos los meses. Considerando que la mayoría de visitantes internacionales tiene orígenes en Chile en todos los meses, sería mejor enfocarse en marketing hacia los Chilenos durante temporada baja. De lo contrario, durante temporada alta, y con más presupuesto, se pueden expandir las campañas hacia Estadounidenses, Ecuatorianos y otros, dependiendo de la suma de presupuesto. 
 
 <br><br><br>
 
 ### Incorporar Sitios sin Ingresos en Paquetes Promocionales para Machu Picchu
-Machu Picchu, siendo una de las maravillas del mundo, es el sitio turistico mas popular en Peru. Lo que tambien se decubrio es que existen una variedad de otros sitios en su alrededor sin costo para ingresar. Dentro de 25 kilometros de Machu Picchu se encuentran 16 de estos sitios **gratis**. Con la inversion de gasolina, para llevar a turistas dentro 25 kilometros, este hecho se puede incorporar con paquetes promocionales para generar mas atraccion. 
+Machu Picchu, siendo una de las maravillas del mundo, es el sitio turístico más popular en Perú. Lo que también se descubrió es que existen una variedad de otros sitios en su alrededor sin costo para ingresar. Dentro de 25 kilómetros de Machu Picchu se encuentran 16 de estos sitios **gratis**. Con la inversión de gasolina para llevar a turistas dentro de 25 kilómetros, este hecho se puede incorporar con paquetes promocionales para generar más atracción. 
 
 
 ## KPIs
@@ -204,27 +204,27 @@ Machu Picchu, siendo una de las maravillas del mundo, es el sitio turistico mas 
 ### 1. Cambio porcentual de Clientes
 (Clientes Nuevos - Clientes Viejos)/Clientes Viejos x 100
 
-Enfoque: Para medir la eficacia de las campanas de targeted marketing, se medira esta metrica en cada OCM que obtengo una promocion de marketing.  
+Enfoque: Para medir la eficacia de las campañas de targeted marketing, se medirá esta métrica en cada OCM que obtenga una promoción de marketing.  
 
 <br><br><br>
 
 ### 2. Presupuesto Dinamico
-Presupuesto Anual x (Turistas Mensual / Turistas Anual)
+Presupuesto Anual x (Turistas Mensuales / Turistas Anuales)
 
-Objetivo: Asignar un presupuesto proporcional al porcentaje de turistas que se manifestan mensualmente.
+Objetivo: Asignar un presupuesto proporcional al porcentaje de turistas que se manifiestan mensualmente.
 
 
 <br><br><br>
 
 ### 3. Ratio de Sitios
-Sitios gratis : Sitios no-gratis
+Sitios gratis: Sitios no-gratis
 
-Enfoque: este ratio mostrara el efecto al incorporar sitio gratis en promociones, con el objetivo de aumentar el valor. 
+Enfoque: este ratio mostrará el efecto al incorporar sitio gratis en promociones, con el objetivo de aumentar el valor. 
 
 ## Suposiciones y Avisos
-Este analisis desarrollo las siguientes asunciones para poder superar multiple desafios:
-* Turistas vs Excursionistas: Considerando los datos limitados, no se diferencio entre un turista y excursionista en estos datos. Por igual, es posible que un excursionista visite un sitio turistico o que un turista no visite ningun sitio. Ambas categorias se consideraron bajo "visitantes internacionales"
-* Clima: Aunque el clima es un factor importante en el movimiento turistico, se omitieron estos datos por la gran diferencia entre la costa, sierra, y selva del Peru. Este punto se le informo a la empresa y ellos decidieron empezar registrar climas en todos los sitios turisticos. En un proyecto futuro se pudiera integrar esta informacion para mejorar la predicciones del modelo de regresion. 
+Este análisis desarrolló las siguientes asunciones para poder superar múltiples desafíos:
+* Turistas vs Excursionistas: Considerando los datos limitados, no se diferenció entre un turista y un excursionista en estos datos. Por igual, es posible que un excursionista visite un sitio turístico o que un turista no visite ningún sitio. Ambas categorías se consideraron bajo "visitantes internacionales"
+* Clima: Aunque el clima es un factor importante en el movimiento turístico, se omitieron estos datos por la gran diferencia entre la costa, sierra y selva del Perú. Este punto se le informó a la empresa y ellos decidieron empezar a registrar climas en todos los sitios turísticos. En un proyecto futuro se podría integrar esta información para mejorar las predicciones del modelo de regresión. 
 
 
 
