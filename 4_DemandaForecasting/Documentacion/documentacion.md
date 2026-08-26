@@ -1,22 +1,22 @@
-# Table of Contents
+# Tabla de Contenidos
 1. [Contexto del Proyecto](#contexto-del-proyecto)
-    * [Perspicacias, Recomendaciones y sus Enfoques](#perspicacias-recomendaciones-y-sus-enfoques)
+    * [Hallazgos Insights, Recomendaciones y sus Enfoques](#hallazgos-insights-recomendaciones-y-sus-enfoques)
 2. [Estructura de los Datos y su Verificaciones](#estructura-de-los-datos-y-su-verificaciones)
 3. [Resumen Ejecutivo](#resumen-ejecutivo)
     * [Resumen de Descubrimientos ](#resumen-de-descubrimientos)
     * [Tendencia de los Descubrimientos](#tendencia-de-los-descubrimientos)
-4. [Detalles de las Perspicacias](#detalles-de-las-perspicacias)
+4. [Detalles de las Hallazgos Insights](#detalles-de-las-hallazgos-insights)
     * [ARPU picos en Marzo, Junio, Septiembre, y Diciembre](#arpu-picos-en-marzo-junio-septiembre-y-diciembre)
-    * [Categoria 'Carniceria' Contribuye 27.13% de Ingresos Mensuales](#categoria-carniceria-contribuye-2713-de-ingresos-mensuales)
+    * [Categoría 'Carniceria' Contribuye 27.13% de Ingresos Mensuales](#categoría-carniceria-contribuye-2713-de-ingresos-mensuales)
     * [Promedio Mensual de 53.12% de Productos Anuales Perdidos](#promedio-mensual-de-5312-de-productos-anuales-perdidos)
 5. [Recomendaciones](#recomendaciones)
     * [Promociones de 'Carniceria' y 'Galletitas y Snack'](#1-promociones-de-carniceria-y-galletitas-y-snack)
-    * [Disminuir almacen de todos los productos por 15%](#2-disminuir-almacen-de-todos-los-productos-por-15)
+    * [Disminuir almacén de todos los productos por 15%](#2-disminuir-almacén-de-todos-los-productos-por-15)
     * [Ofrecer descuentos en Febrero y Noviembre](#3-ofrecer-descuentos-en-febrero-y-noviembre)
 6. [KPIs](#kpis)
     * [ARPU = Ingreso Promedio por Usuario](#1-arpu--ingreso-promedio-por-usuario)
     * [Porcentaje de Productos Perdidos](#2-porcentaje-de-productos-perdidos)
-    * [Porcentage de Ingresos de Producto](#3-porcentage-de-ingresos-de-producto)
+    * [Porcentaje de Ingresos de Producto](#3-porcentaje-de-ingresos-de-producto)
 7. [Suposiciones y Avisos](#suposiciones-y-avisos)
 
 
@@ -30,7 +30,7 @@ El siguiente análisis revela los meses con bajos ingresos y cómo crear promoci
 
 <br><br><br>
 
-### Perspicacias, Recomendaciones y sus Enfoques
+### Hallazgos Insights, Recomendaciones y sus Enfoques
 **ARPU y su tendencia cíclica**: La métrica ARPU (Promedio de Ingreso por Usuario) tiene un patrón de oscilación predecible en los meses del año. Cada 3 meses se encuentra con ARPU altos, seguidos por dos meses de bajo ARPU. El promedio ARPU de los meses altos es 41,940 Gs., mientras el promedio de los meses bajos es 39,384 Gs. Esta dinámica se utiliza en las recomendaciones para crear promociones en los meses con bajo ARPU.  
 
 
@@ -54,6 +54,9 @@ El análisis de datos se encuentra AQUÍ
 3. Tabla: productos - llaves: id_producto (primary), nombre (text), categoria (text), precio (smallint), stock (smallint)
 4. Tabla: ventas - llaves: id_venta (primary), fecha (text), id_cliente (foreign), id_producto (foreign), cantidad (smallint)
 
+Detalles:
+* El mes de enero esta incompleto, entonces se descarto. 
+* La ultima semana en Diciembre es la primera semana del proximo año, entonces se descarto. 
 
 ## Resumen Ejecutivo
 
@@ -65,7 +68,7 @@ Esta microempresa de Paraguay es una representación de las bodegas familiares c
 **Una gran mayoría de productos se pierden**: un 53.12% de productos almacenados se pierden anualmente. Se detalla que la categoria 'Galletitas y Snacks' y el mes de diciembre tienen las mayores pérdidas a través del año. 
 **'Carniceria' y 'Lacetos' aportan los más ingresos mensuales**: Estas categorías obtienen los más ingresos de sus ventas, produciendo un promedio de 27.13% y 15.61% del ingreso mensual, respectivamente. De lo contrario, 'Conservas', 'Frutas y Verduras', y 'Galletitas y Snack' son las categorías con menos aportes. 
 
-## Detalles de las Perspicacias 
+## Detalles de las Hallazgos Insights 
 ### ARPU picos en marzo, junio, septiembre y Diciembre
 La métrica ARPU mide el ingreso promedio por cliente, y se notan algunas tendencias en su análisis mensual.
 

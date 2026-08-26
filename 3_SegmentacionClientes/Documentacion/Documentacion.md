@@ -1,20 +1,20 @@
 # Tabla de Contenidos
 1. [Contexto del Proyecto](#contexto-del-proyecto)
-    * [Perspicacias, Recomendaciones y sus Enfoques](#perspicacias-recomendaciones-y-sus-enfoques)
-2. [Estructura de los Datos y su Verificaciones](#estructura-de-los-datos-y-su-verificaciones)
+    * [Hallazgos Insights, Recomendaciones y sus Enfoques](#hallazgos-insights-recomendaciones-y-sus-enfoques)
+2. [Estructura de los Datos y sus Verificaciones](#estructura-de-los-datos-y-sus-verificaciones)
 3. [Resumen Ejecutivo](#resumen-ejecutivo)
     * [Resumen de Descubrimientos ](#resumen-de-descubrimientos)
     * [Tendencia de los Descubrimientos](#tendencia-de-los-descubrimientos)
-4. [Detalles de las Perspicacias](#detalles-de-las-perspicacias)
-    * [Concentracion de 56.4% de Visitantes Internacionaless](#concentracion-de-564-de-visitantes-internacionales)
+4. [Detalles de las Hallazgos Insights](#detalles-de-los-hallazgos-insights)
+    * [Concentración de 56.4% de Visitantes Internacionaless](#concentración-de-564-de-visitantes-internacionales)
     * [Control Migratorio entre los Top 3 Paises](#control-migratorio-entre-los-top-3-paises)
     * [Los Meses con 21.75% de Turistas Anuales](#los-meses-con-2175-de-turistas-anuales)
-    * [16 sitios gratis dentro 25 kms de Machu Picchu](#16-sitios-gratis-dentro-25-kms-de-machu-picchu)
+    * [16 sitios gratis dentro 25 kms de Machu Picchu](#16-sitios-gratis-dentro-de-25-km-de-machu-picchu)
 5. [Modelos, Predicciones y sus Impactos](#modelos-predicciones-y-sus-impactos)
-    * [Prediciendo los Numero de Turistas Esperados](#prediciendo-los-numero-de-turistas-esperados)
+    * [Prediciendo los Número de Turistas Esperados](#prediciendo-los-números-de-turistas-esperados)
     * [Los 6 tipos de Visitantes Internacionales](#los-6-tipos-de-visitantes-internacionales)
 6. [Recomendaciones](#recomendaciones)
-    * [Targeted Marketing basado en Pais y OCM de Entrada](#targeted-marketing-basado-en-pais-y-ocm-de-entrada)
+    * [Marketing Dirigido basado en País y OCM de Entrada](#marketing-dirigido-basado-en-país-y-ocm-de-entrada)
     * [Gestionar un Presupuesto Dinamico por cada Mes](#gestionar-un-presupuesto-que-cambie-fluidamente-por-cada-mes)
     * [Incorporar Sitios sin Ingresos en Paquetes Promocionales para Machu Picchu](#incorporar-sitios-sin-ingresos-en-paquetes-promocionales-para-machu-picchu)
 7. [KPIs](#kpis)
@@ -33,7 +33,7 @@ El análisis y los modelos demuestran que los turistas se pueden agrupar dependi
 Se destacan los enfoques en targeted marketing, presupuesto dinámico y los sitios gratis al crear una estrategia para ayudar a PeruTur a expandirse a un nivel nacional. 
 
 
-### Informes Internos, Recomendaciones y sus Enfoques
+### Hallazgos Insights, Recomendaciones y sus Enfoques
 **Concentración de Visitantes y sus Países de Origen**: 95% de los visitantes internacionales provienen de **25 países**, con los top 6 países culminando en 70.6%. Adicionalmente, 5 de estos 6 países son suramericanos. Esto crea una oportunidad para limitar los países para enfocarse y hacer targeted marketing hacia cada uno de estos países. 
 
 
@@ -50,7 +50,7 @@ Los análisis de los datos coleccionados se encuentran AQUÍ -link
 
 La creación y evaluación de los modelos se encuentran AQUÍ - link
 
-## Estructura de los Datos y sus Verificaciones
+## Estructura de los Datos y sus Verificaciones
 3 conjuntos de datos diferentes se utilizaron para desarrollar los análisis necesarios, y sus componentes son los siguientes:
 1. Visitantes internacionales: año, mes, país, continente, OCM y número de visitantes
 2. Visitantes en sitios turísticos: año, mes, departamento, sitio turístico y número de visitantes
@@ -74,7 +74,7 @@ La mayoría de visitantes internacionales al Perú se concentran dentro de 25 pa
 
 
 
-## Detalles de los Informes Internos  
+## Detalles de los Hallazgos Insights  
 ### Concentración de 56.4% de Visitantes Internacionales
 Reconociendo que el Perú tiene una abundancia de sitios históricos y culturales, incluyendo una de las maravillas del mundo, se esperaba que haya un porcentaje equilibrado de los ingresantes de todos los países. El análisis demostró otras revelaciones.
 
@@ -174,7 +174,7 @@ En la práctica, se puede desarrollar un marketing dirigido a cada uno de los cl
 
 
 ## Recomendaciones
-Considerando las perspicacias y resultados de los modelos, se recomienda al **equipo de Marketing** de PeruTur los siguientes puntos:
+Considerando los insights y resultados de los modelos, se recomienda al **equipo de Marketing** de PeruTur los siguientes puntos:
 
 ### Marketing Dirigido basado en País y OCM de Entrada
 Los top 10 países con visitantes internacionales ocupan 82.5% de **todos** los visitantes internacionales, con Chile obteniendo casi 1/3 de toda esa población y 6 de los 10 países siendo de Suramérica. Adicionalmente, se descubrió que la mayoría de ingresantes en cada OCM son del **vecino país más cercano**, creando un enlace entre punto de entrada y país de origen. Este hecho fue fortalecido por los clústeres creados por el algoritmo KMeans, agrupando a todos los visitantes por el OCM de entrada. 

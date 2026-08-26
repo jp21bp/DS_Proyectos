@@ -1,7 +1,6 @@
 '''
-Este archivo va a guardar los datos en UTF-8, sin acentos
-
-Para que pueden ser leidas por PSQL
+Este archivo hace una limpieza preliminar de los datos
+antes de subirlos a PostgreSQL.
 '''
 
 ##### Importando modulos
