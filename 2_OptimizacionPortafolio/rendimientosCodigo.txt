@@ -1,0 +1,82 @@
+import yfinance as yf
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# ==============================
+# CONFIGURACIÓN DEL PORTAFOLIO
+# ==============================
+# Tickers de tus activos (ejemplo)
+mis_activos = ["AAPL", "MSFT", "GOOGL", "AMZN", "TSLA"]
+
+# Pesos de cada activo (deben sumar 1.0)
+pesos = [0.25, 0.25, 0.20, 0.20, 0.10]
+
+# Ticker del S&P 500 (ETF SPY)
+benchmark = "SPY"
+
+# Rango de fechas
+fecha_inicio = "2021-01-01"
+fecha_fin = "2024-12-31"
+
+# ==============================
+# DESCARGA DE DATOS
+# ==============================
+try:
+    precios = yf.download(mis_activos + [benchmark], start=fecha_inicio, end=fecha_fin)["Adj Close"]
+except Exception as e:
+    print(f"Error al descargar datos: {e}")
+    exit()
+
+# Validación de datos
+if precios.isnull().values.any():
+    precios = precios.fillna(method="ffill").fillna(method="bfill")
+
+# ==============================
+# CÁLCULO DE RETORNOS
+# ==============================
+# Retornos diarios
+retornos = precios.pct_change().dropna()
+
+# Retorno diario del portafolio
+retorno_portafolio = (retornos[mis_activos] @ pesos)
+
+# Retorno diario del benchmark
+retorno_sp500 = retornos[benchmark]
+
+# ==============================
+# CÁLCULO DE CRECIMIENTO ACUMULADO
+# ==============================
+crecimiento_portafolio = (1 + retorno_portafolio).cumprod()
+crecimiento_sp500 = (1 + retorno_sp500).cumprod()
+
+# ==============================
+# MÉTRICAS DE RENDIMIENTO
+# ==============================
+def calcular_metricas(retornos_diarios):
+    rendimiento_anual = retornos_diarios.mean() * 252
+    volatilidad_anual = retornos_diarios.std() * (252 ** 0.5)
+    sharpe_ratio = rendimiento_anual / volatilidad_anual if volatilidad_anual != 0 else 0
+    return rendimiento_anual, volatilidad_anual, sharpe_ratio
+
+rend_port, vol_port, sharpe_port = calcular_metricas(retorno_portafolio)
+rend_sp, vol_sp, sharpe_sp = calcular_metricas(retorno_sp500)
+
+# ==============================
+# RESULTADOS
+# ==============================
+print("📊 MÉTRICAS DE RENDIMIENTO")
+print(f"Portafolio - Rendimiento anual: {rend_port:.2%}, Volatilidad: {vol_port:.2%}, Sharpe: {sharpe_port:.2f}")
+print(f"S&P 500    - Rendimiento anual: {rend_sp:.2%}, Volatilidad: {vol_sp:.2%}, Sharpe: {sharpe_sp:.2f}")
+
+# ==============================
+# GRÁFICO COMPARATIVO
+# ==============================
+plt.figure(figsize=(10, 6))
+plt.plot(crecimiento_portafolio, label="Mi Portafolio", linewidth=2)
+plt.plot(crecimiento_sp500, label="S&P 500 (SPY)", linewidth=2)
+plt.title("Comparación de Crecimiento Acumulado")
+plt.xlabel("Fecha")
+plt.ylabel("Crecimiento (Base 1.0)")
+plt.legend()
+plt.grid(True)
+plt.show()
