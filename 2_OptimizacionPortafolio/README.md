@@ -25,47 +25,49 @@ Existen 5 componentes para transformar un problema empresarial en problema CD:
 Para clasificiar dentro del indice SPLAC, la empresa tiene que estar dentro uno de los siguiente paises:
 * Brasil, Chile, Colombia, Mexico, o Peru
 
-Los top 40 Tickers son:
-NU
-VALE
-ITUB
-PBRA
-GMEXICOB
-PBR
-GFNORTEO
-BAP
-AMXB
-FEMSAUBD
-BBD
-CEMEXCPO
-ITSA4
-B3SA3
-SCCO
-WALMEX*
-WEGE3
-ABEV
-SBSP3
-BBAS3
-AXIA3
-CIB
-CHILE
-SQM
-TIGO
-PAC
-RDOR3
-LTM
-RENT3
-GGB
-AC*
-FALABELLA
-BSAC
-FUNO11
-BIMBOA
-VIV
-GCARSOA1
-ISA
-EC
-CENCOSUD
+Los top 40 Tickers, en 31/7/26, son:
+|Ticker Name| YFinance Ticker Name|
+|:---------:|:-------------------:|
+|NU | 
+|VALE|
+|ITUB|
+|PBRA|PBRAN.MX
+|GMEXICOB|GMEXICOB.MX
+|PBR|
+|GFNORTEO|GFNORTEO.MX
+|BAP|
+|AMXB| AMXB.MX
+|FEMSAUBD| FEMSAUBD.MX
+|BBD|
+|CEMEXCPO|CEMEXCPO.MX
+|ITSA4|ITSA4.SA
+|B3SA3|B3SA3.SA
+|SCCO|
+|WALMEX*|WALMEX.MX
+|WEGE3|WEGE3.SA
+|ABEV|
+|SBSP3|SBSP3.SA
+|BBAS3| BBAS3.SA
+|AXIA3|AXIA3.SA
+|CIB|
+|CHILE| CHILE.SN
+|SQM|
+|TIGO|
+|PAC|
+|RDOR3|RDOR3.SA
+|LTM|
+|RENT3| RENT3.SA
+|GGB|
+|AC*|AC.MX
+|FALABELLA|FALABELLA.SN
+|BSAC|
+|FUNO11| FUNO11.MX
+|BIMBOA| BIMBOA.MX
+|VIV|
+|GCARSOA1| GCARSOA1.MX
+|ISA| ISA.CL
+|EC|
+|CENCOSUD| CENCOSUD.SN
 
 
 
