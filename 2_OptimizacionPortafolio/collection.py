@@ -46,7 +46,7 @@ start_date = "2000-01-01"
     #Launch data = September 30, 1999
 end_date = "2026-07-31"
     #Top 40 recorded on 7/31/26
-df_raw = yf.download(tickers, start=start_date, end=end_date, auto_adjust=False, multi_level_index=False)
+df_raw = yf.download(tickers, start=start_date, end=end_date, auto_adjust=False)
 
 ##### Filter to only save 'Adj Close' and dates
 df_raw_AC = df_raw.xs('Adj Close', axis=1, level=0)

@@ -15,7 +15,7 @@ data_path = os.path.join(
 
 ##### Reading data
 df = pd.read_csv(
-    f'{data_path}/raw_splac.csv',
+    f'{data_path}/raw_top40.csv',
     parse_dates=['Date'],
     index_col='Date'
 )
@@ -47,7 +47,7 @@ df = df.drop_duplicates()
 ##########################################
     # Saving #
 df.to_csv(
-    f'{data_path}/clean_splac.csv',
+    f'{data_path}/clean_top40.csv',
     index=True,
     encoding='utf-8')
 
