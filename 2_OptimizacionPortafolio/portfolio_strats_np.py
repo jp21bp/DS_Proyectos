@@ -43,11 +43,10 @@ all_port_results = {}
 #################################################
     # Performance Metrics #
 ##### Function
-def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) -> dict:
-    # "ds_port_returns".shape = (num_days,)
-    assert type(ds_port_returns) == pd.Series
+def performance_metrics(np_port_returns: np.ndarray, periodic_rate: int = 252) -> dict:
+    # "np_port_returns".shape = (num_days,)
     # Base Case
-    if ds_port_returns.size == 0:
+    if np_port_returns.size == 0:
         return {
             "Annualized Return": 0.0,
             "Annualized Volatility": 0.0,
@@ -61,19 +60,19 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
         }
     
     # Annualize return
-    mean_daily_ret = ds_port_returns.mean()
+    mean_daily_ret = np.mean(np_port_returns)
     annualized_ret = mean_daily_ret * periodic_rate
 
     # Annualized volatility
-    vol_daily_ret = ds_port_returns.std()
+    vol_daily_ret = np.std(np_port_returns)
     annualized_vol = vol_daily_ret * np.sqrt(periodic_rate)
     
     # Sharpe ratio
     annualized_sharpe = annualized_ret/(annualized_vol + 1e-8)
 
     # Downside deviation
-    neg_rets = ds_port_returns[ds_port_returns < 0]
-    annualized_downside_dev = neg_rets.std() * np.sqrt(periodic_rate)\
+    neg_rets = np_port_returns[np_port_returns < 0]
+    annualized_downside_dev = np.std(neg_rets) * np.sqrt(periodic_rate)\
         if len(neg_rets) > 0 else 0.0
 
     # Sortino ratio
@@ -81,22 +80,22 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
         if annualized_downside_dev > 0.0 else 0.0
 
     # Cumulative returns
-    cumulative_rets = (1 + ds_port_returns).cumprod()
+    cumulative_rets = np.cumprod(1 + np_port_returns)
 
     # Max Drawdown
-    peak = np.maximum.accumulate(cumulative_rets.values)
+    peak = np.maximum.accumulate(cumulative_rets)
     drawdown = (cumulative_rets - peak)/(peak + 1e-8)
     max_drawdown = np.min(drawdown) if len(drawdown) > 0 else 0.0
 
     # Percentage of positive returns
-    per_pos_rets = (len(ds_port_returns[ds_port_returns > 0])/ ds_port_returns.shape[0]) * 100 \
-        if len(ds_port_returns) > 0 else 0.0
+    per_pos_rets = (len(np_port_returns[np_port_returns > 0])/ np_port_returns.shape[0]) * 100 \
+        if len(np_port_returns) > 0 else 0.0
 
     # P/L Ratio
-    pos_rets = ds_port_returns[ds_port_returns > 0]
-    neg_rets = ds_port_returns[ds_port_returns < 0]
-    avg_profit = pos_rets.mean() if len(pos_rets) > 0 else 0.0
-    avg_loss = neg_rets.mean() if len(neg_rets) > 0 else 0.0
+    pos_rets = np_port_returns[np_port_returns > 0]
+    neg_rets = np_port_returns[np_port_returns < 0]
+    avg_profit = np.mean(pos_rets) if len(pos_rets) > 0 else 0.0
+    avg_loss = np.mean(neg_rets) if len(neg_rets) > 0 else 0.0
     pl_ratio = abs(avg_profit/(avg_loss + 1e-8)) if avg_loss < 0.0 else 0.0
 
     # Results
@@ -117,31 +116,28 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
     # Fixed allocation strategy #
     # Allocations will be based on sector #
 #### Function
-def fixed_alloc(df_asset_returns: pd.DataFrame, fixed_weights: np.ndarray) -> pd.Series:
-    # "df_asset_returns".shape = (num_days, num_assets)
+def fixed_alloc(np_asset_returns: np.ndarray, fixed_weights: np.ndarray) -> np.ndarray:
+    # "np_asset_returns".shape = (num_days, num_assets)
     # "fixed_weights".shape = (num_assets,)
         # These weights are fixed for the entire portfolio
     # return: np_port_rets, with shape = (num_days)
-    assert df_asset_returns.shape[1] == fixed_weights.shape[0]
+    assert np_asset_returns.shape[1] == fixed_weights.shape[0]
 
-    np_port_rets = np.matmul(df_asset_returns, fixed_weights.T)
+    np_port_rets = np.matmul(np_asset_returns, fixed_weights.T)
         # In numpy: if "tmp" is 1d vector, then no difference
                 # between "tmp" and "tmp.T"
             # Only putting "fixed_weights.T" for notation consistency
-        
-    assert type(np_port_rets) == pd.Series
-    np_port_rets.name = 'FA_returns'
         
     return np_port_rets
 
 #### Identifying sectors
 ### Reading csv with all info about each stock
-df_all_assets_info = pd.read_csv(
+df_assets_raw = pd.read_csv(
     f"{data_path}/top40_alphabetized_EN.csv"
 )
 ### Selecting the stocks that passed the filter
-df_asset_infos = df_all_assets_info[
-    df_all_assets_info['Ticker'].isin(df_prices.columns)
+df_asset_infos = df_assets_raw[
+    df_assets_raw['Ticker'].isin(df_prices.columns)
 ]
 
 #### Setup: Stock and Sector relationship
@@ -178,7 +174,7 @@ for sector in top4_sectors:
     weights = np.array(weights)
     assert np.sum(weights).round(2) == 1.00
     # Implement strategy
-    np_port_ret = fixed_alloc(df_simple_rets, weights)
+    np_port_ret = fixed_alloc(df_simple_rets.values, weights)
     np_port_ret = np_port_ret[~np.isnan(np_port_ret)]   #Erasing NaNs
     result = performance_metrics(np_port_ret)
     all_port_results[f'{sector}'] = result
@@ -208,9 +204,9 @@ for sector in top4_sectors:
 ######################################################
     # Mean-Variance Optimization #
 #### Function definition
-def MVO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
-    # "df_asset_returns".shape = (num_days, num_assets)
-    df_port_returns = pd.Series(name='MVO_returns')
+def MVO(df_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
+    # "np_asset_returns".shape = (num_days, num_assets)
+    port_returns = []
 
     for t in tqdm(range(window, df_asset_returns.shape[0])):
         # Setup
@@ -219,6 +215,7 @@ def MVO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
         # win_cov_rets = risk_models.sample_cov(window_rets)
         win_mean_rets = window_rets.mean(axis=0)
         win_cov_rets = window_rets.cov()
+            # "np.cov": rows = variables/stock, cols = observations
         # MVO
         ef = EfficientFrontier(win_mean_rets, win_cov_rets)
         try:
@@ -226,15 +223,13 @@ def MVO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
             clean_weights = ef.clean_weights()
                 # "clean_weights".shape ~ (num_assets,)
         except:
-            clean_weights = np.ones(df_asset_returns.shape[1])/ df_asset_returns.shape[1]
-        print('asfsaf')
+            weights = np.ones(df_asset_returns.shape[1])/ df_asset_returns.shape[1]
         np_clean_weights = np.array(list(clean_weights.values()))
-        print('aaaaa')
         # Portfolio return
         port_ret = np.dot(df_asset_returns.iloc[t].values, np_clean_weights)
-        df_port_returns.loc[df_asset_returns.iloc[t].name] = port_ret
+        port_returns.append(port_ret)
 
-    return df_port_returns
+    return np.array(port_returns)
 
 #### Implementation
 np_mvo_port_ret = MVO(df_simple_rets)
@@ -246,22 +241,22 @@ all_port_results['MVO'] = result
 ######################################################
     # Maximum Diversification Optimization #
 #### Function definition
-def MDO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
+def MDO(np_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
     # "np_asset_returns".shape = (num_days, num_assets)
-    num_assets = df_asset_returns.shape[1]
-    df_port_returns = pd.Series(name='MDO_returns')
+    num_assets = np_asset_returns.shape[1]
+    port_returns = []
     last_weights = np.ones(num_assets)/num_assets
 
-    for t in tqdm(range(window, df_asset_returns.shape[0])):
+    for t in tqdm(range(window, np_asset_returns.shape[0])):
         # Setup
-        window_rets = df_asset_returns.iloc[t-window:t]
-        win_cov_rets = window_rets.cov()
-        win_asset_vol = window_rets.std(axis=0)
+        window_rets = np_asset_returns[t-window:t]
+        win_cov_rets = np.cov(window_rets.T)
+        win_asset_vol = np.std(np_asset_returns, axis = 0)
         win_asset_vol = np.maximum(win_asset_vol, 1e-6)
             #Ensure win_asset_vol > 0
         # Objective function
-        def objective(weights : np.ndarray):
-            port_vol = np.sqrt(np.dot(weights.T, np.matmul(win_cov_rets, weights)))
+        def objective(weights):
+            port_vol = np.sqrt(np.dot(weights.T, np.dot(win_cov_rets, weights)))
             weighted_asset_vol = np.dot(win_asset_vol, weights)
             diversification_ratio = weighted_asset_vol / (port_vol + 1e-8)
             return -diversification_ratio
@@ -285,10 +280,10 @@ def MDO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
             weights = weights/np.sum(weights)   #Normalize
         last_weights = weights
         # Portfolio return
-        port_ret = np.dot(df_asset_returns.iloc[t], weights)
-        df_port_returns.loc[df_asset_returns.iloc[t].name] = port_ret
+        port_ret = np.dot(np_asset_returns[t], weights)
+        port_returns.append(port_ret)
 
-    return df_port_returns
+    return np.array(port_returns) 
 
 #### Implementation
 np_mdo_port_ret = MDO(df_simple_rets.values)
