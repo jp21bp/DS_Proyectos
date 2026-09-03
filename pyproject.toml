@@ -17,6 +17,7 @@ dependencies = [
     "seaborn>=0.13.2",
     "selenium>=4.46.0",
     "statsmodels>=0.14.6",
+    "tdqm>=0.0.1",
     "tensorflow>=2.21.0",
     "yfinance>=1.5.1",
 ]

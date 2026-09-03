@@ -16,10 +16,11 @@ import numpy as np
 from pypfopt.efficient_frontier import EfficientFrontier
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MultipleLocator
-# from pypfopt import risk_models
-# from pypfopt import expected_returns
+from pypfopt import risk_models
+from pypfopt import expected_returns
 from scipy.optimize import minimize
 import os
+from tqdm import tqdm
 
 #### Reading data
 data_path = os.path.join(
@@ -33,7 +34,7 @@ df_prices = pd.read_csv(
     index_col='Date'
 )
 
-df_simple_rets = (df_prices/df_prices.shift(1)) - 1
+df_simple_rets = ((df_prices/df_prices.shift(1)) - 1).dropna()
 
 #################################################
     # Performance Metrics #
@@ -166,57 +167,78 @@ for sector in top4_sectors:
     np_port_ret = np_port_ret[~np.isnan(np_port_ret)]   #Erasing NaNs
     alloc_strat_returns.append(np_port_ret)
 
-#### Evaluation
-dict_performance_results = {}
-# fig, axs = plt.subplots(ncols=2, nrows=2, figsize = (8,6))
-# axs_arr = [axs[0,0], axs[0,1], axs[1,0], axs[1,1]]
+
+######################################################
+    # Mean-Variance Optimization #
+def MVO(df_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
+    # "np_asset_returns".shape = (num_days, num_assets)
+    port_returns = []
+
+    for t in tqdm(range(window, df_asset_returns.shape[0])):
+        # Setup
+        window_rets = df_asset_returns.iloc[t-window:t]
+        # win_mean_rets = expected_returns.mean_historical_return(window_rets)
+        # win_cov_rets = risk_models.sample_cov(window_rets)
+        win_mean_rets = window_rets.mean(axis=0)
+        win_cov_rets = window_rets.cov()
+            # "np.cov": rows = variables/stock, cols = observations
+        # MVO
+        ef = EfficientFrontier(win_mean_rets, win_cov_rets)
+        try:
+            weights = ef.max_sharpe(risk_free_rate=0.0)
+            clean_weights = ef.clean_weights()
+                # "clean_weights".shape ~ (num_assets,)
+        except:
+            weights = np.ones(df_asset_returns.shape[1])/ df_asset_returns.shape[1]
+        np_clean_weights = np.array(list(clean_weights.values()))
+        # Portfolio return
+        port_ret = np.dot(df_asset_returns.iloc[t].values, np_clean_weights)
+        port_returns.append(port_ret)
+
+    return np.array(port_returns)
+
+np_mvo_port_ret = MVO(df_simple_rets)
+
+
 fig, ax = plt.subplots(figsize=(8,6))
-colors = ['green', 'blue', 'orange', 'red']
 dates = df_simple_rets\
-    .iloc[-alloc_strat_returns[0].shape[0]:]\
+    .iloc[-np_mvo_port_ret.shape[0]:]\
     .index.date
-for i, np_port_ret in enumerate(alloc_strat_returns):
-    results = performance_metrics(np_port_ret)
-    dict_performance_results[f'{top4_sectors[i]} Heavy'] = results
-    # axs_arr[i].plot(results["Cumulative Returns"])
-    ax.plot(
-        range(len(dates)),
-        results["Cumulative Returns"],
-        color = colors[i],
-        label = f'{top4_sectors[i]} Heavy'
-    )
+results = performance_metrics(np_mvo_port_ret)
+ax.plot(
+    range(len(dates)),
+    results["Cumulative Returns"],
+    # color = colors[i],
+    label = 'mvo'
+)
 ax.set_xticks(range(len(dates)))
 ax.set_xticklabels(dates, rotation=45)
 ax.xaxis.set_major_locator(MultipleLocator(500))
 ax.legend()
 plt.show()
 
-
-######################################################
-    # Mean-Variance Optimization #
-def mvo(np_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
-    # "np_asset_returns".shape = (num_days, num_assets)
-    port_returns = []
-
-    for t in range(window, np_asset_returns.shape[0]):
-        # Setup
-        window_rets = np_asset_returns[t-window:t]
-        win_mean_rets = np.mean(window_rets)
-        win_cov_rets = np.cov(window_rets.T)
-            # "np.cov": rows = variables/stock, cols = observations
-        # MVO
-        ef = EfficientFrontier(win_mean_rets, win_cov_rets)
-        weights = ef.max_sharpe()
-        clean_weights = ef.clean_weights()
-            # "clean_weights".shape ~ (num_assets,)
-        np_clean_weights = np.array(list(clean_weights.values()))
-        # QUESTION: is it in same order as cols of "np_asset_returns"?
-        # Portfolio return
-        port_ret = np.dot(np_asset_returns[t], np_clean_weights)
-        port_returns.append(port_ret)
-
-    return np.array(port_returns)
-    
+#### Evaluation
+# dict_performance_results = {}
+# fig, ax = plt.subplots(figsize=(8,6))
+# colors = ['green', 'blue', 'orange', 'red'], 'purple'
+# dates = df_simple_rets\
+#     .iloc[-alloc_strat_returns[0].shape[0]:]\
+#     .index.date
+# for i, np_port_ret in enumerate(alloc_strat_returns):
+#     results = performance_metrics(np_port_ret)
+#     dict_performance_results[f'{top4_sectors[i]} Heavy'] = results
+#     # axs_arr[i].plot(results["Cumulative Returns"])
+#     ax.plot(
+#         range(len(dates)),
+#         results["Cumulative Returns"],
+#         color = colors[i],
+#         label = f'{top4_sectors[i]} Heavy'
+#     )
+# ax.set_xticks(range(len(dates)))
+# ax.set_xticklabels(dates, rotation=45)
+# ax.xaxis.set_major_locator(MultipleLocator(500))
+# ax.legend()
+# plt.show()
 
 ######################################################
     # Maximum Diversification Optimization #
@@ -263,6 +285,9 @@ def MDO(np_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
         port_returns.append(port_ret)
 
     return np.array(port_returns) 
+
+
+np_mdo_port_ret = MDO(df_simple_rets.values)
 
 ###############################################33
     # Loading data #
