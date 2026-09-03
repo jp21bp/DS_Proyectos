@@ -14,9 +14,26 @@ https://github.com/hskad/Deep-Learning-Based-Portfolio-Optimization/blob/f082b74
 import pandas as pd
 import numpy as np
 from pypfopt.efficient_frontier import EfficientFrontier
+import matplotlib.pyplot as plt
+from matplotlib.ticker import MultipleLocator
 # from pypfopt import risk_models
 # from pypfopt import expected_returns
 from scipy.optimize import minimize
+import os
+
+#### Reading data
+data_path = os.path.join(
+    os.getcwd(),
+    '2_OptimizacionPortafolio',
+    'Data'
+)
+df_prices = pd.read_csv(
+    f"{data_path}/filtered_top40.csv",
+    parse_dates=['Date'],
+    index_col='Date'
+)
+
+df_simple_rets = (df_prices/df_prices.shift(1)) - 1
 
 #################################################
     # Performance Metrics #
@@ -92,6 +109,8 @@ def performance_metrics(np_port_returns: np.ndarray, periodic_rate: int = 252) -
 
 #################################################
     # Fixed allocation strategy #
+    # Allocations will be based on sector #
+#### Function
 def fixed_alloc(np_asset_returns: np.ndarray, fixed_weights: np.ndarray) -> np.ndarray:
     # "np_asset_returns".shape = (num_days, num_assets)
     # "fixed_weights".shape = (num_assets,)
@@ -105,6 +124,73 @@ def fixed_alloc(np_asset_returns: np.ndarray, fixed_weights: np.ndarray) -> np.n
             # Only putting "fixed_weights.T" for notation consistency
         
     return np_port_rets
+
+#### Identifying sectors
+df_assets_raw = pd.read_csv(
+    f"{data_path}/top40_alphabetized_EN.csv"
+)
+df_asset_infos = df_assets_raw[
+    df_assets_raw['Ticker'].isin(df_prices.columns)
+]
+
+#### Setup: Ticker and Sector relaton
+top4_sectors = df_asset_infos['Sector']\
+    .value_counts(sort=True, ascending=False)\
+    .index.tolist()[:4]
+dict_sector_stock_count = df_asset_infos['Sector']\
+    .value_counts().to_dict()
+dict_stock_to_sector = dict(zip(
+    df_asset_infos['Ticker'],
+    df_asset_infos['Sector']
+))
+
+#### Implementation
+    # Create a separate allocations for each of the top 4
+    # In each allocation, the chosen sector = 60%, rest = 40%
+alloc_strat_returns = []
+for sector in top4_sectors:
+    # Dividing stocks
+    num_sect_stock = dict_sector_stock_count[sector]
+    num_nonsect_stock = len(df_prices.columns) - num_sect_stock
+    # Weight alloc
+    sect_weight_alloc = 0.6/num_sect_stock
+    nonsect_weight_alloc = 0.4/num_nonsect_stock
+    # Creating weight
+    weights = []
+    for sect in dict_stock_to_sector.values():
+        weights.append(
+            sect_weight_alloc if sect == sector else nonsect_weight_alloc
+        )
+    # Implement strategy
+    np_port_ret = fixed_alloc(df_simple_rets.values, np.array(weights))
+    np_port_ret = np_port_ret[~np.isnan(np_port_ret)]   #Erasing NaNs
+    alloc_strat_returns.append(np_port_ret)
+
+#### Evaluation
+dict_performance_results = {}
+# fig, axs = plt.subplots(ncols=2, nrows=2, figsize = (8,6))
+# axs_arr = [axs[0,0], axs[0,1], axs[1,0], axs[1,1]]
+fig, ax = plt.subplots(figsize=(8,6))
+colors = ['green', 'blue', 'orange', 'red']
+dates = df_simple_rets\
+    .iloc[-alloc_strat_returns[0].shape[0]:]\
+    .index.date
+for i, np_port_ret in enumerate(alloc_strat_returns):
+    results = performance_metrics(np_port_ret)
+    dict_performance_results[f'{top4_sectors[i]} Heavy'] = results
+    # axs_arr[i].plot(results["Cumulative Returns"])
+    ax.plot(
+        range(len(dates)),
+        results["Cumulative Returns"],
+        color = colors[i],
+        label = f'{top4_sectors[i]} Heavy'
+    )
+ax.set_xticks(range(len(dates)))
+ax.set_xticklabels(dates, rotation=45)
+ax.xaxis.set_major_locator(MultipleLocator(500))
+ax.legend()
+plt.show()
+
 
 ######################################################
     # Mean-Variance Optimization #
@@ -177,6 +263,9 @@ def MDO(np_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
         port_returns.append(port_ret)
 
     return np.array(port_returns) 
+
+###############################################33
+    # Loading data #
 
 
 
