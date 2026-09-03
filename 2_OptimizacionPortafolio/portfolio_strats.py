@@ -13,15 +13,16 @@ https://github.com/hskad/Deep-Learning-Based-Portfolio-Optimization/blob/f082b74
 ##### Import libraries
 import pandas as pd
 import numpy as np
-# Importing libraries for portfolio optimization
 from pypfopt.efficient_frontier import EfficientFrontier
 # from pypfopt import risk_models
 # from pypfopt import expected_returns
+from scipy.optimize import minimize
 
 #################################################
     # Performance Metrics #
 ##### Function
 def performance_metrics(np_port_returns: np.ndarray, periodic_rate: int = 252) -> dict:
+    # "np_port_returns".shape = (num_days,)
     # Base Case
     if np_port_returns.size == 0:
         return {
@@ -91,14 +92,14 @@ def performance_metrics(np_port_returns: np.ndarray, periodic_rate: int = 252) -
 
 #################################################
     # Fixed allocation strategy #
-def fixed_alloc(np_stock_returns: np.ndarray, fixed_weights: np.ndarray) -> np.ndarray:
-    # "np_returns".shape = (num_days, num_stocks)
-    # "fixed_weights".shape = (num_stocks,)
+def fixed_alloc(np_asset_returns: np.ndarray, fixed_weights: np.ndarray) -> np.ndarray:
+    # "np_asset_returns".shape = (num_days, num_assets)
+    # "fixed_weights".shape = (num_assets,)
         # These weights are fixed for the entire portfolio
-    # return: np_port_rets, con shape = (num_days)
-    assert np_stock_returns.shape[1] == fixed_weights.shape[0]
+    # return: np_port_rets, with shape = (num_days)
+    assert np_asset_returns.shape[1] == fixed_weights.shape[0]
 
-    np_port_rets = np.matmul(np_stock_returns, fixed_weights.T)
+    np_port_rets = np.matmul(np_asset_returns, fixed_weights.T)
         # In numpy: if "tmp" is 1d vector, then no difference
                 # between "tmp" and "tmp.T"
             # Only putting "fixed_weights.T" for notation consistency
@@ -107,14 +108,13 @@ def fixed_alloc(np_stock_returns: np.ndarray, fixed_weights: np.ndarray) -> np.n
 
 ######################################################
     # Mean-Variance Optimization #
-def mvo(np_stock_returns: np.ndarray, window : int = 50) -> np.ndarray:
-    # "np_returns".shape = (num_days, num_stocks)
-    num_stocks = np_stock_returns.shape[1]
+def mvo(np_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
+    # "np_asset_returns".shape = (num_days, num_assets)
     port_returns = []
 
-    for t in range(window, np_stock_returns.shape[0]):
+    for t in range(window, np_asset_returns.shape[0]):
         # Setup
-        window_rets = np_stock_returns[t-window:t]
+        window_rets = np_asset_returns[t-window:t]
         win_mean_rets = np.mean(window_rets)
         win_cov_rets = np.cov(window_rets.T)
             # "np.cov": rows = variables/stock, cols = observations
@@ -122,11 +122,61 @@ def mvo(np_stock_returns: np.ndarray, window : int = 50) -> np.ndarray:
         ef = EfficientFrontier(win_mean_rets, win_cov_rets)
         weights = ef.max_sharpe()
         clean_weights = ef.clean_weights()
-        np_port_rets = np.array(list(clean_weights.values()))
+            # "clean_weights".shape ~ (num_assets,)
+        np_clean_weights = np.array(list(clean_weights.values()))
+        # QUESTION: is it in same order as cols of "np_asset_returns"?
+        # Portfolio return
+        port_ret = np.dot(np_asset_returns[t], np_clean_weights)
+        port_returns.append(port_ret)
 
-        return np_port_rets
+    return np.array(port_returns)
     
 
+######################################################
+    # Maximum Diversification Optimization #
+def MDO(np_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
+    # "np_asset_returns".shape = (num_days, num_assets)
+    num_assets = np_asset_returns.shape[1]
+    port_returns = []
+    last_weights = np.ones(num_assets)/num_assets
+
+    for t in range(window, np_asset_returns.shape[0]):
+        # Setup
+        window_rets = np_asset_returns[t-window:t]
+        win_cov_rets = np.cov(window_rets.T)
+        win_asset_vol = np.std(np_asset_returns, axis = 0)
+        win_asset_vol = np.maximum(win_asset_vol, 1e-6)
+            #Ensure win_asset_vol > 0
+        # Objective function
+        def objective(weights):
+            port_vol = np.sqrt(np.dot(weights.T, np.dot(win_cov_rets, weights)))
+            weighted_asset_vol = np.dot(win_asset_vol, weights)
+            diversification_ratio = weighted_asset_vol / (port_vol + 1e-8)
+            return -diversification_ratio
+        # Constraints
+        constraints = ({'type': 'eq', 'fun': lambda w: np.sum(w) - 1}) # Sum of weights = 1
+        bounds = tuple((0, 1) for _ in range(num_assets)) # Weights between 0 and 1
+        # Solve optimization problem
+        optimal_weights = minimize(
+            objective,
+            last_weights,
+            method='SLSQP',
+            bounds=bounds,
+            constraints=constraints
+        )
+        # Ensure valid weights
+        if (not optimal_weights.success) or \
+            (np.any(np.isnan(optimal_weights.x))):
+            weights = np.ones(num_assets)/ num_assets
+        else:
+            weights = optimal_weights.x
+            weights = weights/np.sum(weights)   #Normalize
+        last_weights = weights
+        # Portfolio return
+        port_ret = np.dot(np_asset_returns[t], weights)
+        port_returns.append(port_ret)
+
+    return np.array(port_returns) 
 
 
 
