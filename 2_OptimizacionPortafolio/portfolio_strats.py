@@ -217,28 +217,6 @@ ax.xaxis.set_major_locator(MultipleLocator(500))
 ax.legend()
 plt.show()
 
-#### Evaluation
-# dict_performance_results = {}
-# fig, ax = plt.subplots(figsize=(8,6))
-# colors = ['green', 'blue', 'orange', 'red'], 'purple'
-# dates = df_simple_rets\
-#     .iloc[-alloc_strat_returns[0].shape[0]:]\
-#     .index.date
-# for i, np_port_ret in enumerate(alloc_strat_returns):
-#     results = performance_metrics(np_port_ret)
-#     dict_performance_results[f'{top4_sectors[i]} Heavy'] = results
-#     # axs_arr[i].plot(results["Cumulative Returns"])
-#     ax.plot(
-#         range(len(dates)),
-#         results["Cumulative Returns"],
-#         color = colors[i],
-#         label = f'{top4_sectors[i]} Heavy'
-#     )
-# ax.set_xticks(range(len(dates)))
-# ax.set_xticklabels(dates, rotation=45)
-# ax.xaxis.set_major_locator(MultipleLocator(500))
-# ax.legend()
-# plt.show()
 
 ######################################################
     # Maximum Diversification Optimization #
@@ -248,7 +226,7 @@ def MDO(np_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
     port_returns = []
     last_weights = np.ones(num_assets)/num_assets
 
-    for t in range(window, np_asset_returns.shape[0]):
+    for t in tqdm(range(window, np_asset_returns.shape[0])):
         # Setup
         window_rets = np_asset_returns[t-window:t]
         win_cov_rets = np.cov(window_rets.T)
@@ -289,11 +267,51 @@ def MDO(np_asset_returns: np.ndarray, window : int = 50) -> np.ndarray:
 
 np_mdo_port_ret = MDO(df_simple_rets.values)
 
+
+fig, ax = plt.subplots(figsize=(8,6))
+dates = df_simple_rets\
+    .iloc[-np_mdo_port_ret.shape[0]:]\
+    .index.date
+results = performance_metrics(np_mdo_port_ret)
+ax.plot(
+    range(len(dates)),
+    results["Cumulative Returns"],
+    # color = colors[i],
+    label = 'mvo'
+)
+ax.set_xticks(range(len(dates)))
+ax.set_xticklabels(dates, rotation=45)
+ax.xaxis.set_major_locator(MultipleLocator(500))
+ax.legend()
+plt.show()
+
 ###############################################33
-    # Loading data #
+    # Evaluation #
+#### Loading benchmark
 
 
-
+#### Evaluation
+# dict_performance_results = {}
+# fig, ax = plt.subplots(figsize=(8,6))
+# colors = ['green', 'blue', 'orange', 'red'], 'purple'
+# dates = df_simple_rets\
+#     .iloc[-alloc_strat_returns[0].shape[0]:]\
+#     .index.date
+# for i, np_port_ret in enumerate(alloc_strat_returns):
+#     results = performance_metrics(np_port_ret)
+#     dict_performance_results[f'{top4_sectors[i]} Heavy'] = results
+#     # axs_arr[i].plot(results["Cumulative Returns"])
+#     ax.plot(
+#         range(len(dates)),
+#         results["Cumulative Returns"],
+#         color = colors[i],
+#         label = f'{top4_sectors[i]} Heavy'
+#     )
+# ax.set_xticks(range(len(dates)))
+# ax.set_xticklabels(dates, rotation=45)
+# ax.xaxis.set_major_locator(MultipleLocator(500))
+# ax.legend()
+# plt.show()
 
 
 
