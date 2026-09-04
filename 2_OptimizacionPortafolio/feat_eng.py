@@ -35,13 +35,21 @@ import os
 #### Glocal hyperparams
 WINDOW_SIZE = 50
 
-#### Reading data
+#### Data path
 data_path = os.path.join(
     os.getcwd(),
     '2_OptimizacionPortafolio',
     'Data'
 )
-### Tecnical indicator 1 : Prices
+
+#### Reading top 40 all info
+df_all = pd.read_csv(
+    f"{data_path}/filtered_top40_complete.csv",
+    parse_dates=['Date'],
+    index_col='Date'
+)
+
+#### Tecnical indicator 1 : Prices
 df_prices = pd.read_csv(
     f"{data_path}/filtered_top40.csv",
     parse_dates=['Date'],
@@ -74,13 +82,6 @@ df_tema = 3*df_ema_1 - 3*df_ema_2 + df_ema_3
 
 ######################################################
     # Complete Top 40 Dataset #
-#### Reading full dataset
-df_all = pd.read_csv(
-    f"{data_path}/raw_top40_complete.csv",
-    parse_dates=['Date'],
-    index_col='Date'
-)
 
-
-
-
+#### 
+df_prices.columns
