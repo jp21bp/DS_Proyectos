@@ -50,8 +50,8 @@ WINDOW_SIZE = 50
 #### Calculating EWMSD
     # EWMSD = Exponentially Weighted Moving Std. Dev.
 df_ewmsd_daily = df_simple_rets\
-    .ewm(span=WINDOW_SIZE, adjust=False)\
-    .std()
+    .ewm(span=WINDOW_SIZE, adjust=False)\   
+    .std()  #adjust = True?? = EWMA vs False => EMA
 df_ewmsd_annual = df_ewmsd_daily * np.sqrt(252)
 
 #### Scaling EWMSD

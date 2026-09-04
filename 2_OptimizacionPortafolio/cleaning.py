@@ -1,5 +1,7 @@
 """
-This file will clean the raw data downloaded.
+This file will clean the following two raw datas:
+* raw_top40.csv: the "Adj Close" of the top 40 companies in SPLAC
+* raw_top40_complete.csv: all components of the top 40 companies in SPLAC
 """
 
 ##### Importing libraries
@@ -13,29 +15,36 @@ data_path = os.path.join(
     'Data'
 )
 
-##### Reading data
+##### Reading datas
 df = pd.read_csv(
     f'{data_path}/raw_top40.csv',
     parse_dates=['Date'],
     index_col='Date'
 )
 
+df_complete = pd.read_csv(
+    f'{data_path}/raw_top40_complete.csv',
+    parse_dates=['Date'],
+    index_col='Date'
+)
+
 
 #######################################
-    # Nulls #
+    # raw_top40.csv - Nulls #
 #### Forward fill (for weekends) before full null-analysis
 df = df.ffill()
 
 #### Capturing 2008 crisis and build up
     # Erasing all companies with NaN after 2006-3-31
 df_erase = df[df.index > "2006-3-31"].isna().sum()
-df = df.drop(columns=df_erase[df_erase > 0].index.to_list())
+cols_to_erase = df_erase[df_erase > 0].index.to_list()
+df = df.drop(columns=cols_to_erase)
 
 #### Creating dataframe where ALL rows have some value
 df = df[df.notna().all(axis=1)]
 
 ##########################################
-    # Duplicates #
+    # raw_top40.csv - Duplicates #
 #### Counting number of duplicates
 df[df.duplicated()].shape
     # There are 47 repeated rows
@@ -45,15 +54,37 @@ df = df.drop_duplicates()
 
 
 ##########################################
-    # Saving #
+    # raw_top40.csv - Saving #
 df.to_csv(
     f'{data_path}/clean_top40.csv',
     index=True,
     encoding='utf-8')
 
+#########################################
+    # raw_top40_complete.csv #    
+#### Forward fill
+df_complete = df_complete.ffill()
 
+#### Working with the same dates as above
+df_complete = df_complete[df_complete.index.isin(df.index)]
 
+#### Dropping cols/stocks that aren't same as above
+### GAther stockes that passed the filter
+filtered_stocks = df.columns
+cols_to_delete = []
+### Looping to find cols that need to be deleted
+for col in df_complete.columns:
+    stock = col.split('_')[1]
+    if stock not in filtered_stocks: 
+        cols_to_delete.append(col)
+### Dropping cols/stocks 
+df_complete = df_complete.drop(columns=cols_to_delete)
 
+#### Saving
+df_complete.to_csv(
+    f'{data_path}/clean_top40_complete.csv',
+    index=True,
+    encoding='utf-8')
 
 
 

@@ -35,7 +35,6 @@ df_raw_AC.to_csv(f'{data_path}/Data/raw_top40.csv', index=True, encoding='utf-8'
 df_raw.columns = ['_'.join(col).strip() for col in df_raw.columns.values]
 df_raw.to_csv(f'{data_path}/Data/raw_top40_complete.csv', index=True, encoding='utf-8')
 
-
 #######################################################################
     # SPLAC index #
 ##### Getting the ticker

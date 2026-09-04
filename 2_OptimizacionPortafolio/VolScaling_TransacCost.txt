@@ -1,0 +1,225 @@
+Claro. Para replicar la metodología de Zhang, Zohren y Roberts, puedes implementar el volatility scaling en tres pasos:
+
+Calcular la volatilidad EWMA de 50 días.
+Calcular el factor target_vol / estimated_vol.
+Multiplicar los pesos del modelo por ese factor.
+Implementación básica
+import pandas as pd
+import numpy as np
+
+
+def volatility_scaling(
+    returns,
+    weights,
+    target_vol=0.10,
+    span=50
+):
+    """
+    Volatility scaling basado en Zhang, Zohren & Roberts.
+
+    Parameters
+    ----------
+    returns : pd.DataFrame
+        Retornos diarios de los activos.
+        Index = fechas
+        Columns = activos
+
+    weights : pd.DataFrame
+        Pesos producidos por el modelo.
+        Index = fechas
+        Columns = activos
+
+    target_vol : float
+        Volatilidad objetivo anualizada.
+        Ejemplo: 0.10 = 10%
+
+    span : int
+        Span de la EWMA para estimar volatilidad.
+
+    Returns
+    -------
+    scaled_weights : pd.DataFrame
+        Pesos después de volatility scaling.
+    """
+
+    # 1. Volatilidad EWMA diaria
+    vol_daily = returns.ewm(
+        span=span,
+        adjust=False
+    ).std()
+
+    # 2. Anualizar volatilidad
+    vol_annual = vol_daily * np.sqrt(252)
+
+    # 3. Factor de scaling
+    scaling_factor = target_vol / vol_annual
+
+    # Evitar divisiones por cero
+    scaling_factor = scaling_factor.replace(
+        [np.inf, -np.inf],
+        np.nan
+    )
+
+    # 4. Aplicar scaling
+    scaled_weights = weights * scaling_factor
+
+    return scaled_weights
+
+Ejemplo
+
+Supongamos que tu LSTM genera estos pesos:
+
+weights = pd.DataFrame({
+    "SPY": [0.30],
+    "TLT": [0.40],
+    "GLD": [0.30]
+})
+
+
+Y las volatilidades estimadas son:
+
+SPY = 20%
+TLT = 10%
+GLD = 15%
+
+
+Con un target_vol = 10%:
+
+SPY = 0.30 * (0.10 / 0.20)
+    = 0.15
+
+TLT = 0.40 * (0.10 / 0.10)
+    = 0.40
+
+GLD = 0.30 * (0.10 / 0.15)
+    = 0.20
+
+
+Por tanto:
+
+              LSTM       Scaling       Final
+SPY           30%        0.50          15%
+TLT           40%        1.00          40%
+GLD           30%        0.67          20%
+
+
+Observa algo importante: los pesos finales ya no necesariamente suman 100%.
+
+Eso es intencional. El resultado representa exposición, no necesariamente una cartera fully invested.
+
+Pero hay un detalle importante para replicar el paper
+
+No debes utilizar la volatilidad del mismo día para determinar la posición de ese día, porque estarías introduciendo look-ahead bias.
+
+La lógica correcta es:
+
+𝑤
+𝑡
+𝑠
+𝑐
+𝑎
+𝑙
+𝑒
+𝑑
+=
+𝑤
+𝑡
+−
+1
+𝜎
+𝑡
+𝑎
+𝑟
+𝑔
+𝑒
+𝑡
+𝜎
+𝑡
+−
+1
+
+En Python:
+
+vol = returns.ewm(span=50, adjust=False).std() * np.sqrt(252)
+
+scaling_factor = target_vol / vol
+
+scaled_weights = weights.shift(1) * scaling_factor.shift(1)
+
+
+Aunque dependiendo de cómo estén fechados tus weights, puede bastar con desplazar una sola de las series. La alineación temporal es crítica.
+
+Incorporando transaction costs
+
+El artículo también considera el costo generado por los cambios de posición.
+
+Podemos calcular:
+
+turnover = scaled_weights.diff().abs().sum(axis=1)
+
+
+Si el costo es 1 bp:
+
+transaction_cost = turnover * 0.0001
+
+
+Y si returns es el retorno de cada activo:
+
+portfolio_return = (
+    scaled_weights * returns
+).sum(axis=1)
+
+net_return = portfolio_return - transaction_cost
+
+
+Por tanto:
+
+vol = (
+    returns
+    .ewm(span=50, adjust=False)
+    .std()
+    * np.sqrt(252)
+)
+
+scaling_factor = target_vol / vol
+
+scaled_weights = weights.shift(1) * scaling_factor
+
+turnover = scaled_weights.diff().abs().sum(axis=1)
+
+transaction_cost = turnover * 0.0001
+
+portfolio_return = (
+    scaled_weights * returns
+).sum(axis=1)
+
+net_return = portfolio_return - transaction_cost
+
+La estructura completa queda
+Retornos
+   │
+   ▼
+EWMA volatility (50 días)
+   │
+   ▼
+target volatility / estimated volatility
+   │
+   ▼
+Scaling factor
+   │
+   │
+LSTM weights ─────────┐
+                     ▼
+              Scaled positions
+                     │
+                     ▼
+              Portfolio returns
+                     │
+                     ▼
+             Transaction costs
+                     │
+                     ▼
+                Net returns
+
+
+Una precisión: para reproducir exactamente el paper conviene respetar su convención de anualización, el momento exacto de lag de la volatilidad y cómo normalizan/alinean los pesos. Si me das tu DataFrame de returns y el DataFrame de weights que genera tu LSTM, puedo mostrarte el código exacto aplicado a tus datos, incluyendo un ejemplo numérico día por día.
