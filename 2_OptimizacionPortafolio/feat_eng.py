@@ -128,12 +128,17 @@ df_hlc3.columns = [f'HLC3_{stock}' for stock in df_hlc3.columns]
 df_obv.columns = [f'OBV_{stock}' for stock in df_obv.columns]
 
 #### Joining DFs
-df_tecnical_indicators = pd.concat(
+df_technical_indicators = pd.concat(
     [df_prices, df_log_rets, df_tema, df_hlc3, df_obv],
     axis=1
 )
 
-
+#### SAving tecnical indicators
+df_technical_indicators.to_csv(
+    f"{data_path}/technical_indicators.csv",
+    index=True,
+    encoding='utf-8'
+)
 
 
 
