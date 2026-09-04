@@ -41,6 +41,23 @@ df_simple_rets = ((df_prices/df_prices.shift(1)) - 1).dropna()
 #### Creating dict to capture all portfolio strats
 all_port_returns = {}
 
+################################################
+    # Volatility scaling on Returns #
+    # Used to focus on strategy rather than market volatility
+#### Hyperparams
+VOL_SCALE = 0.1
+WINDOW_SIZE = 50
+#### Calculating EWMSD
+    # EWMSD = Exponentially Weighted Moving Std. Dev.
+df_ewmsd_daily = df_simple_rets\
+    .ewm(span=WINDOW_SIZE, adjust=False)\
+    .std()
+df_ewmsd_annual = df_ewmsd_daily * np.sqrt(252)
+
+#### Scaling EWMSD
+df_ewmsd_scaled = (VOL_SCALE/(df_ewmsd_annual + 1e-8)).shift(1)
+    # "shift(1)" to prevent look-ahead bias
+
 #################################################
     # Performance Metrics #
 ##### Function
@@ -125,11 +142,11 @@ def fixed_alloc(df_asset_returns: pd.DataFrame, fixed_weights: np.ndarray, secto
     # return: np_port_rets, with shape = (num_days)
     assert df_asset_returns.shape[1] == fixed_weights.shape[0]
 
-    np_port_rets = np.matmul(df_asset_returns, fixed_weights.T)
-        # In numpy: if "tmp" is 1d vector, then no difference
-                # between "tmp" and "tmp.T"
-            # Only putting "fixed_weights.T" for notation consistency
-        
+    df_scaled_weights = df_ewmsd_scaled * fixed_weights
+    np_port_rets = (df_asset_returns * df_scaled_weights).sum(axis=1)
+
+    # np_port_rets = np.matmul(df_asset_returns, fixed_weights.T)
+
     assert type(np_port_rets) == pd.Series
     np_port_rets.name = f'FA_{sector}_returns'
         
@@ -182,31 +199,6 @@ for sector in top4_sectors:
     ds_port_ret = fixed_alloc(df_simple_rets, weights, sector).dropna()
     all_port_returns[f'FA_{sector}'] = ds_port_ret
 
-    # result = performance_metrics(np_port_ret)
-    # all_port_results[f'FA_{sector}'] = result
-
-#### Evaluation
-# dict_performance_results = {}
-# fig, ax = plt.subplots(figsize=(8,6))
-# colors = ['green', 'blue', 'orange', 'red'], 'purple'
-# dates = df_simple_rets\
-#     .iloc[-alloc_strat_returns[0].shape[0]:]\
-#     .index.date
-# for i, np_port_ret in enumerate(alloc_strat_returns):
-#     results = performance_metrics(np_port_ret)
-#     dict_performance_results[f'{top4_sectors[i]} Heavy'] = results
-#     # axs_arr[i].plot(results["Cumulative Returns"])
-#     ax.plot(
-#         range(len(dates)),
-#         results["Cumulative Returns"],
-#         color = colors[i],
-#         label = f'{top4_sectors[i]} Heavy'
-#     )
-# ax.set_xticks(range(len(dates)))
-# ax.set_xticklabels(dates, rotation=45)
-# ax.xaxis.set_major_locator(MultipleLocator(500))
-# ax.legend()
-# plt.show()
 ######################################################
     # Mean-Variance Optimization #
 #### Function definition
@@ -217,8 +209,6 @@ def MVO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
     for t in tqdm(range(window, df_asset_returns.shape[0])):
         # Setup
         window_rets = df_asset_returns.iloc[t-window:t]
-        # win_mean_rets = expected_returns.mean_historical_return(window_rets)
-        # win_cov_rets = risk_models.sample_cov(window_rets)
         win_mean_rets = window_rets.mean(axis=0)
         win_cov_rets = window_rets.cov()
         # MVO
@@ -230,8 +220,11 @@ def MVO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
             np_clean_weights = np.array(list(clean_weights.values()))
         except:
             np_clean_weights = np.ones(df_asset_returns.shape[1])/ df_asset_returns.shape[1]
+        scaled_weights = df_ewmsd_scaled.iloc[t] * np_clean_weights
+        # scaled_weights=np_clean_weights
+
         # Portfolio return
-        port_ret = np.dot(df_asset_returns.iloc[t].values, np_clean_weights)
+        port_ret = np.dot(df_asset_returns.iloc[t].values, scaled_weights)
         df_port_returns.loc[df_asset_returns.iloc[t].name] = port_ret
 
     return df_port_returns
@@ -239,10 +232,6 @@ def MVO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
 #### Implementation
 ds_mvo_port_ret = MVO(df_simple_rets).dropna()
 all_port_returns['MVO'] = ds_mvo_port_ret
-# result = performance_metrics(np_mvo_port_ret)
-# all_port_results['MVO'] = result
-
-
 
 ######################################################
     # Maximum Diversification Optimization #
@@ -285,8 +274,11 @@ def MDO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
             weights = optimal_weights.x
             weights = weights/np.sum(weights)   #Normalize
         last_weights = weights
+        scaled_weights = df_ewmsd_scaled.iloc[t] * weights
+        # scaled_weights = weights
+
         # Portfolio return
-        port_ret = np.dot(df_asset_returns.iloc[t], weights)
+        port_ret = np.dot(df_asset_returns.iloc[t], scaled_weights)
         df_port_returns.loc[df_asset_returns.iloc[t].name] = port_ret
 
     return df_port_returns
@@ -294,8 +286,6 @@ def MDO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
 #### Implementation
 ds_mdo_port_ret = MDO(df_simple_rets).dropna()
 all_port_returns['MDO'] = ds_mdo_port_ret
-# result = performance_metrics(np_mdo_port_ret)
-# all_port_results['MDO'] = result
 
 
 ###############################################33
@@ -343,36 +333,6 @@ ax.set_xticklabels(common_dates.date, rotation=90)
 ax.xaxis.set_major_locator(MultipleLocator(200))
 ax.legend()
 plt.show()
-
-
-
-# result = performance_metrics(df_bench_returns.values)
-# all_port_results['Benchmark'] = result
-
-# ### Evaluation
-# dict_performance_results = {}
-# fig, ax = plt.subplots(figsize=(8,6))
-# colors = ["#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0"]
-# for i, (strat, result) in enumerate(all_port_results.items()):
-#     df_cum_rets = result["Cumulative Returns"]
-#     df_cum_rets_filtered = df_cum_rets[df_cum_rets.index.isin(dates)]
-#     ax.plot(
-#         range(len(dates)),
-#         df_cum_rets_filtered,
-#         color = colors[i],
-#         label = strat
-#     )
-# ax.set_xticks(range(len(dates)))
-# ax.set_xticklabels(dates_only, rotation=45)
-# ax.xaxis.set_major_locator(MultipleLocator(500))
-# ax.legend()
-# plt.show()
-
-
-
-# all_port_results['MDO']
-
-
 
 
 
