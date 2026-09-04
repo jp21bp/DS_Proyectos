@@ -81,7 +81,65 @@ df_tema = 3*df_ema_1 - 3*df_ema_2 + df_ema_3
 
 
 ######################################################
-    # Complete Top 40 Dataset #
+    # HLC3 #
+#### Creating DF 
+df_hlc3 = pd.DataFrame(
+    columns=df_prices.columns,
+    index=df_prices.index
+)
 
-#### 
-df_prices.columns
+#### Calculating HLC3 for each stock
+for stock in df_prices.columns:
+    df_stock_hlc3 = df_all[[f'High_{stock}', f'Low_{stock}', f'Close_{stock}']]
+    assert df_stock_hlc3.shape[1] == 3
+    df_hlc3[f'{stock}'] = (df_stock_hlc3.sum(axis=1))/3
+
+###########################################################
+    # OBV #
+#### Creating OBV
+df_obv = pd.DataFrame(
+    columns=df_prices.columns,
+    index=df_prices.index
+)
+
+#### Calculating OBV for each stock
+for stock in df_prices.columns:
+    # Seleccing necessary info 
+    df_stock_obv = df_all[[f'Volume_{stock}', f'Close_{stock}']]
+    assert df_stock_obv.shape[1] == 2
+    # Caculating OBV
+    obv = [0]
+    for i in range(1,len(df_stock_obv)):
+        if df_stock_obv[f'Close_{stock}'].iloc[i] > df_stock_obv[f'Close_{stock}'].iloc[i - 1]:
+            obv.append(obv[-1] + df_stock_obv[f'Volume_{stock}'].iloc[i])
+        elif df_stock_obv[f'Close_{stock}'].iloc[i] < df_stock_obv[f'Close_{stock}'].iloc[i - 1]:
+            obv.append(obv[-1] - df_stock_obv[f'Volume_{stock}'].iloc[i])
+        else:
+            obv.append(obv[-1])  
+    df_obv[f'{stock}'] = obv
+
+###########################################################
+    # Aggregating all Data #
+#### Renaming each DF
+df_prices.columns = [f'Price_{stock}' for stock in df_prices.columns]
+df_log_rets.columns = [f'LogRet_{stock}' for stock in df_log_rets.columns]
+df_tema.columns = [f'TEMA_{stock}' for stock in df_tema.columns]
+df_hlc3.columns = [f'HLC3_{stock}' for stock in df_hlc3.columns]
+df_obv.columns = [f'OBV_{stock}' for stock in df_obv.columns]
+
+#### Joining DFs
+df_tecnical_indicators = pd.concat(
+    [df_prices, df_log_rets, df_tema, df_hlc3, df_obv],
+    axis=1
+)
+
+
+
+
+
+
+
+
+
+
+
