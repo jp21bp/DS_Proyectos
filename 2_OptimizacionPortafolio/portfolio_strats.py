@@ -21,6 +21,7 @@ from pypfopt import expected_returns
 from scipy.optimize import minimize
 import os
 from tqdm import tqdm
+from functools import reduce
 
 #### Reading data
 data_path = os.path.join(
@@ -38,7 +39,7 @@ df_prices = pd.read_csv(
 df_simple_rets = ((df_prices/df_prices.shift(1)) - 1).dropna()
 
 #### Creating dict to capture all portfolio strats
-all_port_results = {}
+all_port_returns = {}
 
 #################################################
     # Performance Metrics #
@@ -117,7 +118,7 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
     # Fixed allocation strategy #
     # Allocations will be based on sector #
 #### Function
-def fixed_alloc(df_asset_returns: pd.DataFrame, fixed_weights: np.ndarray) -> pd.Series:
+def fixed_alloc(df_asset_returns: pd.DataFrame, fixed_weights: np.ndarray, sector: str) -> pd.Series:
     # "df_asset_returns".shape = (num_days, num_assets)
     # "fixed_weights".shape = (num_assets,)
         # These weights are fixed for the entire portfolio
@@ -130,7 +131,7 @@ def fixed_alloc(df_asset_returns: pd.DataFrame, fixed_weights: np.ndarray) -> pd
             # Only putting "fixed_weights.T" for notation consistency
         
     assert type(np_port_rets) == pd.Series
-    np_port_rets.name = 'FA_returns'
+    np_port_rets.name = f'FA_{sector}_returns'
         
     return np_port_rets
 
@@ -178,10 +179,11 @@ for sector in top4_sectors:
     weights = np.array(weights)
     assert np.sum(weights).round(2) == 1.00
     # Implement strategy
-    np_port_ret = fixed_alloc(df_simple_rets, weights)
-    np_port_ret = np_port_ret[~np.isnan(np_port_ret)]   #Erasing NaNs
-    result = performance_metrics(np_port_ret)
-    all_port_results[f'{sector}'] = result
+    ds_port_ret = fixed_alloc(df_simple_rets, weights, sector).dropna()
+    all_port_returns[f'FA_{sector}'] = ds_port_ret
+
+    # result = performance_metrics(np_port_ret)
+    # all_port_results[f'FA_{sector}'] = result
 
 #### Evaluation
 # dict_performance_results = {}
@@ -225,11 +227,9 @@ def MVO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
             weights = ef.max_sharpe(risk_free_rate=0.0)
             clean_weights = ef.clean_weights()
                 # "clean_weights".shape ~ (num_assets,)
+            np_clean_weights = np.array(list(clean_weights.values()))
         except:
-            clean_weights = np.ones(df_asset_returns.shape[1])/ df_asset_returns.shape[1]
-        print('asfsaf')
-        np_clean_weights = np.array(list(clean_weights.values()))
-        print('aaaaa')
+            np_clean_weights = np.ones(df_asset_returns.shape[1])/ df_asset_returns.shape[1]
         # Portfolio return
         port_ret = np.dot(df_asset_returns.iloc[t].values, np_clean_weights)
         df_port_returns.loc[df_asset_returns.iloc[t].name] = port_ret
@@ -237,9 +237,10 @@ def MVO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
     return df_port_returns
 
 #### Implementation
-np_mvo_port_ret = MVO(df_simple_rets)
-result = performance_metrics(np_mvo_port_ret)
-all_port_results['MVO'] = result
+ds_mvo_port_ret = MVO(df_simple_rets).dropna()
+all_port_returns['MVO'] = ds_mvo_port_ret
+# result = performance_metrics(np_mvo_port_ret)
+# all_port_results['MVO'] = result
 
 
 
@@ -291,9 +292,10 @@ def MDO(df_asset_returns: pd.DataFrame, window : int = 50) -> pd.Series:
     return df_port_returns
 
 #### Implementation
-np_mdo_port_ret = MDO(df_simple_rets.values)
-result = performance_metrics(np_mdo_port_ret)
-all_port_results['MDO'] = result
+ds_mdo_port_ret = MDO(df_simple_rets).dropna()
+all_port_returns['MDO'] = ds_mdo_port_ret
+# result = performance_metrics(np_mdo_port_ret)
+# all_port_results['MDO'] = result
 
 
 ###############################################33
@@ -305,53 +307,70 @@ df_bench = pd.read_csv(
     parse_dates=['Date'],
     index_col='Date'
 )
-df_bench_prices = df_bench['Close']
-df_bench_returns = ((df_bench_prices/df_bench_prices.shift(1)) - 1).dropna()
+ds_bench_prices = df_bench['Close']
+ds_bench_returns = ((ds_bench_prices/ds_bench_prices.shift(1)) - 1).dropna()
+### Transformando el index del benchmark
+ds_bench_returns.index = ds_bench_returns.index.normalize()
 
-### Benchmark performance
-result = performance_metrics(df_bench_returns.values)
-all_port_results['Benchmark'] = result
+#### Joining data
+all_port_returns['Benchmark'] = ds_bench_returns
 
-### Creating dates using intersection
-bench_dates = pd.to_datetime(
-        df_bench.index, 
-        yearfirst=False, 
-        dayfirst=False
-    ).normalize()
-stocks_dates = pd.to_datetime(
-        df_simple_rets.index, 
-        yearfirst=True
-    ).normalize()
-dates = stocks_dates.intersection(bench_dates)
+#### Identifying comons dates
+common_dates = reduce(
+    lambda x,y: x.intersection(y), 
+    [ds.index for ds in all_port_returns.values()]
+)
 
-df_bench.shape
+all_port_returns['MDO'].loc[common_dates]
 
-#### Evaluation
+#### All portfolio returns: performance results and graph
+### Setup
+all_port_results = {}
+fig, ax = plt.subplots(figsize=(8,6))
+colors = ["#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0"]
+### Graph
+for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
+    performance = performance_metrics(ds_port_ret.loc[common_dates])
+    all_port_results[strat] = performance
+    ax.plot(
+        range(len(common_dates)),
+        performance['Cumulative Returns'],
+        color = colors[i],
+        label = strat
+    )
+ax.set_xticks(range(len(common_dates)))
+ax.set_xticklabels(common_dates.date, rotation=90)
+ax.xaxis.set_major_locator(MultipleLocator(200))
+ax.legend()
+plt.show()
+
+
+
+# result = performance_metrics(df_bench_returns.values)
+# all_port_results['Benchmark'] = result
+
+# ### Evaluation
 # dict_performance_results = {}
 # fig, ax = plt.subplots(figsize=(8,6))
-# colors = ['green', 'blue', 'orange', 'red'], 'purple'
-# dates = df_simple_rets\
-#     .iloc[-alloc_strat_returns[0].shape[0]:]\
-#     .index.date
-# for i, np_port_ret in enumerate(alloc_strat_returns):
-#     results = performance_metrics(np_port_ret)
-#     dict_performance_results[f'{top4_sectors[i]} Heavy'] = results
-#     # axs_arr[i].plot(results["Cumulative Returns"])
+# colors = ["#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0"]
+# for i, (strat, result) in enumerate(all_port_results.items()):
+#     df_cum_rets = result["Cumulative Returns"]
+#     df_cum_rets_filtered = df_cum_rets[df_cum_rets.index.isin(dates)]
 #     ax.plot(
 #         range(len(dates)),
-#         results["Cumulative Returns"],
+#         df_cum_rets_filtered,
 #         color = colors[i],
-#         label = f'{top4_sectors[i]} Heavy'
+#         label = strat
 #     )
 # ax.set_xticks(range(len(dates)))
-# ax.set_xticklabels(dates, rotation=45)
+# ax.set_xticklabels(dates_only, rotation=45)
 # ax.xaxis.set_major_locator(MultipleLocator(500))
 # ax.legend()
 # plt.show()
 
 
 
-
+# all_port_results['MDO']
 
 
 
