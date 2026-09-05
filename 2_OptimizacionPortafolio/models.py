@@ -57,6 +57,7 @@ def window_split(
         )
         # print(df_test_train_set.iloc[t].name)
 
+    # print('DONE')
     return np.array(splits)
 
 #### Sliding window function
@@ -74,7 +75,7 @@ def sliding_window_split(
         - test_days - train_days
     for train_start in tqdm(
         range(0, last_day_for_full_set, test_days),
-        desc='TrainTestSplit',
+        desc='SlidingTrainTestSplit',
         position=0
     ):
         # Data start dates
@@ -102,10 +103,9 @@ def sliding_window_split(
         # )
 
         # Appending data
-        combined_data = np.array([np_train_data_splits, np_test_data_splits])
-        train_val_test_sets.append(combined_data)
+        train_val_test_sets.append((np_train_data_splits, np_test_data_splits))
 
-    # return np.array(train_val_test_sets)
+    return train_val_test_sets
 
 sliding_window_split(df_tech_indicators)
 
@@ -123,7 +123,11 @@ def expanding_window_split(
     train_val_test_sets = []
     last_day_for_full_set = df_features.shape[0] \
         - test_days 
-    for train_end in tqdm(range(train_days, last_day_for_full_set, test_days)):    
+    for train_end in tqdm(
+        range(train_days, last_day_for_full_set, test_days),
+        desc='ExpandingTrainTestSplit',
+        position=0
+    ):    
         # Data start dates
         test_start = train_end
 
@@ -132,10 +136,14 @@ def expanding_window_split(
             break   # last set runs past avaialble days
 
         # Extracting data
-        train_data = df_features\
+        df_train_data = df_features\
             .iloc[:train_end]
-        test_data = df_features\
+        df_test_data = df_features\
             .iloc[test_start: test_start + test_days]
+
+        # Splitting each set
+        np_train_data_splits = window_split(df_train_data)
+        np_test_data_splits = window_split(df_test_data)
 
         # print(
         #     train_data.iloc[0].name,
@@ -145,12 +153,11 @@ def expanding_window_split(
         # )
 
         # Appending data
-        combined_data = np.array([train_data.values, test_data.values])
-        train_val_test_sets.append(combined_data)
+        train_val_test_sets.append((np_train_data_splits, np_test_data_splits))
 
-    return np.array(train_val_test_sets)
+    return train_val_test_sets
 
-# expanding_window_split(df_tech_indicators)
+expanding_window_split(df_tech_indicators)
 
 
 
