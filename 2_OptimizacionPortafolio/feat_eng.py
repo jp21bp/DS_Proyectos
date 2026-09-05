@@ -133,6 +133,9 @@ df_technical_indicators = pd.concat(
     axis=1
 )
 
+#### Deleting NaNs
+df_technical_indicators = df_technical_indicators.dropna(axis=0)
+
 #### SAving tecnical indicators
 df_technical_indicators.to_csv(
     f"{data_path}/technical_indicators.csv",

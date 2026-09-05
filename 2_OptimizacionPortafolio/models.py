@@ -46,16 +46,33 @@ def window_split(
 
     # Splits
     for t in tqdm(
-        range(WINDOW_SIZE,df_test_train_set.shape[0]),
+        range(WINDOW_SIZE, df_test_train_set.shape[0] - 1),
         desc='IndividualSplits',
         position=1,
         leave=False
     ):
-        splits.append(
-            df_test_train_set\
-                .iloc[t-WINDOW_SIZE: t]\
-                .values
-        )
+        # Extracting Data input
+        X = df_test_train_set\
+            .iloc[t-WINDOW_SIZE: t]\
+            .bfill()\
+            .values
+        # Normalizing data input
+        norm_X = (X - np.mean(X)) / (np.std(X) + np.finfo(float).eps)
+        print(X)
+        print(type(X))
+        print(X.dtype)
+        print(X.shape)
+        print(df_test_train_set.iloc[t-WINDOW_SIZE: t].mean().mean())
+        print(np.mean(X))
+        print(np.std(X))
+        print(norm_X)
+        print(f'mean: {np.mean(norm_X)}')
+        print(f'std: {np.std(norm_X)}')
+        # Extracting label = future stock final prices of a given day
+        y = df_test_train_set.iloc[t].values
+        # Concatenation
+        combined = np.array([norm_X, y])
+        splits.append(combined)
         # print(df_test_train_set.iloc[t].name)
 
     # print('DONE')
@@ -108,7 +125,7 @@ def sliding_window_split(
 
     return train_val_test_sets
 
-# sliding_window_split(df_tech_indicators)
+sliding_window_split(df_tech_indicators)
 
 
 #### Expanding window split
