@@ -33,6 +33,8 @@ df_tech_indicators = pd.read_csv(
 
 #### Global hyperparams
 WINDOW_SIZE = 50
+NUM_INDICATORS = 5
+NUM_STOCKS = df_tech_indicators.shape[1] / NUM_INDICATORS
 
 #####################################
     # Pre-processing #
@@ -54,20 +56,10 @@ def window_split(
         # Extracting Data input
         X = df_test_train_set\
             .iloc[t-WINDOW_SIZE: t]\
-            .bfill()\
             .values
         # Normalizing data input
+            #TODO: normalize across EACH indicator, for all stocks
         norm_X = (X - np.mean(X)) / (np.std(X) + np.finfo(float).eps)
-        print(X)
-        print(type(X))
-        print(X.dtype)
-        print(X.shape)
-        print(df_test_train_set.iloc[t-WINDOW_SIZE: t].mean().mean())
-        print(np.mean(X))
-        print(np.std(X))
-        print(norm_X)
-        print(f'mean: {np.mean(norm_X)}')
-        print(f'std: {np.std(norm_X)}')
         # Extracting label = future stock final prices of a given day
         y = df_test_train_set.iloc[t].values
         # Concatenation
