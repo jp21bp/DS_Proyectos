@@ -207,3 +207,23 @@ dummy_input = np.random.rand(1, WINDOW_SIZE, 2*21).astype(np.float32)
 model(dummy_input)
 model.summary()
 model.compile()
+
+##########################################################
+    # TF Loss Function #
+#### Creating model class
+class MinRS(tf.keras.losses.Loss):
+    def __init__(self, name = None, reduction = "sum_over_batch_size", dtype=None):
+        super(MinRS, self).__init__(name, reduction, dtype)
+
+    def call(self, y_true, y_pred):
+        # Convert to TF objects
+        tf_y_true =tf.convert_to_tensor(y_true, dtype=tf.float32)
+        tf_y_pred =tf.convert_to_tensor(y_pred, dtype=tf.float32)
+        tf_stock_returns = y_true * y_pred
+
+        # Calculating ratio sharpe
+        day_return = tf.reduce_sum(tf_stock_returns)
+        day_std = tf.math.reduce_std(tf_stock_returns)
+        day_rs = day_return/(day_std + tf.keras.backend.epsilon())
+
+        return -day_rs
