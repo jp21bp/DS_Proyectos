@@ -12,6 +12,7 @@ Reason for maximizing ratio sharpe and not returns:
 #### Importing libraries
 import pandas as pd
 import numpy as np
+import tensorflow as tf
 import matplotlib.pyplot as plt
 import os
 from tqdm import tqdm
@@ -107,7 +108,7 @@ def sliding_window_split(
 
     return train_val_test_sets
 
-sliding_window_split(df_tech_indicators)
+# sliding_window_split(df_tech_indicators)
 
 
 #### Expanding window split
@@ -157,8 +158,52 @@ def expanding_window_split(
 
     return train_val_test_sets
 
-expanding_window_split(df_tech_indicators)
+# expanding_window_split(df_tech_indicators)
 
+#####################################################
+    # TF Model#
+##### Creating Model class
+class LSTMModel(tf.keras.Model):
+    def __init__(
+        self, 
+        num_indicators, 
+        num_assets, 
+        **kwargs
+    ):
+        super(LSTMModel, self).__init__(**kwargs)
+        self.input_layer = tf.keras.layers.InputLayer(
+            shape=(WINDOW_SIZE, num_indicators * num_assets),
+            name=f'({num_indicators}*{num_assets})_input'
+        )
+        self.lstm1 = tf.keras.layers.LSTM(
+            2 ** int(np.floor(np.log2(num_assets * 10))),
+            input_shape = (WINDOW_SIZE, num_indicators * num_assets),
+            return_sequences=True,
+            dropout=0.2,
+            recurrent_dropout=0.2,
+            name="lstm_1"
+        )
+        self.lstm2 = tf.keras.layers.LSTM(
+            2 ** int(np.floor(np.log2(num_assets * 5))),
+            return_sequences=False,
+            dropout=0.2,
+            recurrent_dropout=0.2,
+            name="lstm_2"
+        )
+        self.dense = tf.keras.layers.Dense(
+            num_assets,
+            activation='linear',
+            name='dense'
+        )
 
+    def call(self, inputs):
+        x = self.lstm1(inputs)
+        x = self.lstm2(x)
+        x = self.dense(x)
+        return x
 
-
+model = LSTMModel(num_indicators=2, num_assets=21)
+dummy_input = np.random.rand(1, WINDOW_SIZE, 2*21).astype(np.float32)
+model(dummy_input)
+model.summary()
+model.compile()
