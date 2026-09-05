@@ -173,7 +173,7 @@ class LSTMModel(tf.keras.Model):
         super(LSTMModel, self).__init__(**kwargs)
         self.input_layer = tf.keras.layers.InputLayer(
             shape=(WINDOW_SIZE, num_indicators * num_assets),
-            name=f'({num_indicators}*{num_assets})_input'
+            name=f'({WINDOW_SIZE}, {num_indicators}*{num_assets})_input'
         )
         self.lstm1 = tf.keras.layers.LSTM(
             2 ** int(np.floor(np.log2(num_assets * 10))),
@@ -227,3 +227,18 @@ class MinRS(tf.keras.losses.Loss):
         day_rs = day_return/(day_std + tf.keras.backend.epsilon())
 
         return -day_rs
+
+#########################################################
+    # Callback #
+#### Creating Callback class
+class CustomCallback(tf.keras.callbacks.Callback):
+    def __init__(self):
+        super(CustomCallback, self).__init__()
+
+    def on_predict_batch_end(self, batch, logs = None):
+        print(f'Batch: {batch}')
+        return
+
+    def on_predict_end(self, logs = None):
+        print('PREDICT')
+        return 
