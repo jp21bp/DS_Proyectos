@@ -41,9 +41,10 @@ NUM_STOCKS = df_tech_indicators.shape[1] / NUM_INDICATORS
 #### General window split
 def window_split(
         df_test_train_set: pd.DataFrame,
+        type: str
 ) -> np.ndarray:
     # Set up
-    splits = []
+    splits = {}
     # print(f'First {df_test_train_set.iloc[0].name}')
 
     # Splits
@@ -63,8 +64,7 @@ def window_split(
         # Extracting label = future stock final prices of a given day
         y = df_test_train_set.iloc[t].values
         # Concatenation
-        combined = np.array([norm_X, y])
-        splits.append(combined)
+        splits[f'{type}_input_label_tup_np'] = (norm_X, y)
         # print(df_test_train_set.iloc[t].name)
 
     # print('DONE')
@@ -80,7 +80,8 @@ def sliding_window_split(
     days_per_year = 252
     train_days = int(train_years * days_per_year)
     test_days = int(test_years * days_per_year)
-    train_val_test_sets = []
+    train_test_sets = {}
+    count_full_set = 0
     last_day_for_full_set = df_features.shape[0] \
         - test_days - train_days
     for train_start in tqdm(
@@ -102,8 +103,8 @@ def sliding_window_split(
             .iloc[test_start: test_start + test_days]
 
         # Splitting each set
-        np_train_data_splits = window_split(df_train_data)
-        np_test_data_splits = window_split(df_test_data)
+        np_train_data_splits = window_split(df_train_data, "train")
+        np_test_data_splits = window_split(df_test_data, "test")
 
         # print(
         #     train_data.iloc[0].name,
@@ -113,12 +114,17 @@ def sliding_window_split(
         # )
 
         # Appending data
-        train_val_test_sets.append((np_train_data_splits, np_test_data_splits))
+        train_test_sets[f'{count_full_set}_test_train_tup'] = (np_train_data_splits, np_test_data_splits)
+        count_full_set += 1
 
-    return train_val_test_sets
+    return train_test_sets
 
-sliding_window_split(df_tech_indicators)
+dict_spliding_window = sliding_window_split(df_tech_indicators)
 
+len(dict_spliding_window)
+print(dict_spliding_window.keys())
+
+dict_spliding_window['0_test_train_tup']
 
 #### Expanding window split
 def expanding_window_split(
