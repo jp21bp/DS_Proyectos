@@ -137,42 +137,7 @@ def sliding_window_split(
 
     return train_test_sets
 
-dict_spliding_window = sliding_window_split(df_tech_indicators)
-
-
-#### Analyzing levels
-### Level 1: Type = dict, 
-    # Values = tuples of (dict_trainset, dict_testset)
-    # Key = targeted fullset desired
-level_1 = dict_spliding_window  # All fullsets
-type(level_1)  # dict
-type(level_1['fullset0_train_test_tup'])   # 2-tuple (of dicts)
-type(level_1['fullset0_train_test_tup'][0])   # dict - trainset of first fullset "fullset0"
-type(level_1['fullset0_train_test_tup'][1])   # dict - testset of first fullset "fullset0"
-### Level 2: Type = dict
-    # Values = tuple of (np_window_inputs, np_window_label)
-    # keys = targeted window desired 
-level_2 = level_1['fullset0_train_test_tup'][0] #Trainset of fullset0
-type(level_2)   # dict
-type(level_2['trainset_win0_input_label_tup'])  #2-tuple (of ndarrays)
-type(level_2['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
-type(level_2['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
-### Level 3.1: Type = ndarray
-    # Inputs of first window
-level_3_1 = level_2['trainset_win0_input_label_tup'][0]
-type(level_3_1)   #ndarray
-level_3_1.shape   #(50, 105)
-    # shape[0] = specific day in the window
-        # Doesn't include the last "t" day
-    # shape[1] = specific indicator/stock combo
-### Level 3.2: Type = ndarray
-    # Label of first window
-level_3_2 = level_2['trainset_win0_input_label_tup'][1]
-type(level_3_2)
-level_3_2.shape #(21,)
-    # Prices of the 21 stocks on the last "t" day
-        # Will be used to calculate the ratio sharpe
-
+# dict_spliding_window = sliding_window_split(df_tech_indicators)
 
 #### Expanding window split
 def expanding_window_split(
@@ -223,11 +188,63 @@ def expanding_window_split(
 
     return train_test_sets
 
-dict_expanding_window = expanding_window_split(df_tech_indicators)
+# dict_expanding_window = expanding_window_split(df_tech_indicators)
 
-#### Saving both split strategies
-pickle.dump(dict_spliding_window, open(f'{data_path}/dict_sliding_strat.pkl', 'wb'))
-pickle.dump(dict_expanding_window, open(f'{data_path}/dict_expanding_strat.pkl', 'wb'))
+################################################
+    # Implementing splits #
+#### Implementation
+### Sliding strat
+sliding_start_path = f'{data_path}/dict_sliding_strat.pkl'
+if os.path.isfile(sliding_start_path):
+    dict_spliding_fullsets = pickle.load(sliding_start_path)
+else:
+    dict_spliding_fullsets = sliding_window_split(df_tech_indicators)
+    pickle.dump(dict_spliding_fullsets, open(sliding_start_path, 'wb'))
+
+
+### Expanding strat
+expanding_strat_path = f'{data_path}/dict_expanding_strat.pkl'
+if os.path.isfile(expanding_strat_path):
+    dict_expanding_fullsets = pickle.load(expanding_strat_path)
+else:
+    dict_expanding_fullsets = expanding_window_split(df_tech_indicators)
+    pickle.dump(dict_expanding_fullsets, open(expanding_strat_path, 'wb'))
+
+
+
+#### Analyzing levels
+### Level 1: Type = dict, 
+    # Values = tuples of (dict_trainset, dict_testset)
+    # Key = targeted fullset desired
+level_1 = dict_spliding_fullsets  # All fullsets
+type(level_1)  # dict
+type(level_1['fullset0_train_test_tup'])   # 2-tuple (of dicts)
+type(level_1['fullset0_train_test_tup'][0])   # dict - trainset of first fullset "fullset0"
+type(level_1['fullset0_train_test_tup'][1])   # dict - testset of first fullset "fullset0"
+### Level 2: Type = dict
+    # Values = tuple of (np_window_inputs, np_window_label)
+    # keys = targeted window desired 
+level_2 = level_1['fullset0_train_test_tup'][0] #Trainset of fullset0
+type(level_2)   # dict
+type(level_2['trainset_win0_input_label_tup'])  #2-tuple (of ndarrays)
+type(level_2['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
+type(level_2['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
+### Level 3.1: Type = ndarray
+    # Inputs of first window
+level_3_1 = level_2['trainset_win0_input_label_tup'][0]
+type(level_3_1)   #ndarray
+level_3_1.shape   #(50, 105)
+    # shape[0] = specific day in the window
+        # Doesn't include the last "t" day
+    # shape[1] = specific indicator/stock combo
+### Level 3.2: Type = ndarray
+    # Label of first window
+level_3_2 = level_2['trainset_win0_input_label_tup'][1]
+type(level_3_2)
+level_3_2.shape #(21,)
+    # Prices of the 21 stocks on the last "t" day
+        # Will be used to calculate the ratio sharpe
+
 
 
 
@@ -261,8 +278,6 @@ class LSTMModel(tf.keras.Model):
         self.dense = tf.keras.layers.Dense(
             num_assets,
             activation='softmax',
-            kernel_initializer=\
-                tf.keras.initializers.GlorotUniform(seed=SEED),
             name='dense'
         )
 
@@ -281,6 +296,50 @@ model = LSTMModel(num_indicators=2, num_assets=21)
 model.build()
 model.layers[-1].get_weights()
 model.summary()
+
+#### Resetting all model weights
+# https://stackoverflow.com/questions/63435679/reset-all-weights-of-keras-model
+# def seed_reset_weights(model):
+#     tf.keras.backend.clear_session(free_memory=True)
+#     for layer in model.layers:
+#         if hasattr(layer, 'kernel_initializer'):
+#             layer.set_weights(
+#                 layer.kernel_initializer(
+#                     shape=tf.shape(layer.kernel),
+#                     seed=SEED
+#                 )
+#             )
+#         if hasattr(layer, 'recurrent_initializer'):
+#             layer.set_weights(
+#                 layer.recurrent_initializer(
+#                     tf.shape(layer.recurrent_kernel),
+#                     seed=SEED
+#                 )
+#             )
+#         if hasattr(layer, 'bias_initializer'):
+#             layer.set_weights(
+#                 layer.bias_initializer(
+#                     tf.shape(layer.bias),
+#                     seed=SEED
+#                 )
+#             )
+
+
+# def seed_reset_weights(model):
+#     tf.keras.backend.clear_session(free_memory=True)
+#     for layer in model.layers:
+#         for weight in layer.weights:
+
+
+# layers = model.layers
+# weights_0 = layers[0].weights
+# config = layers[0].get_config()
+# weights_0_1 = weights_0[1]
+# weights_0_1.shape
+# weights_0_1.name
+# weights_0_1.assign(tf.random.uniform(shape=weights_0_1.shape))
+# dir(weights_0_1)
+
 
 ##########################################################
     # TF Loss Function #
@@ -322,9 +381,7 @@ class CustomCallback(tf.keras.callbacks.Callback):
 #########################################################
     # Training - Sliding Technique #
 ##### Model 1 Indicators: Price and Log returns
-slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS)
-
-
+slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS, name='two_indicators')
 
 
 
