@@ -55,9 +55,10 @@ def window_split(
     # if type == 'test': # Debug continuity
     #     print(f'start: {df_test_train_set.iloc[0].name}; end: {df_test_train_set.iloc[-1].name}')
 
+
     # Splits
     for t in tqdm(
-        range(WINDOW_SIZE, df_test_train_set.shape[0] - 1),
+        range(WINDOW_SIZE, df_test_train_set.shape[0]),
         desc=f'IndividualSplits - {type}',
         position=1,
         leave=False
@@ -81,13 +82,18 @@ def window_split(
         #     print('MEAN', X_norm[X_norm.columns[i*21:(i+1)*21]].mean(axis=None))
         #     print('STD', X_norm[X_norm.columns[i*21:(i+1)*21]].std(axis=None))
         # Extracting label = future stock final prices of a given day
-        y = y_all_prices.iloc[t]
+        y = y_all_prices.iloc[t] 
         # Concatenation
         splits[f'{type}set_win{window_counter}_input_label_tup'] = (X_norm.values, y.values)
         window_counter += 1
 
+    # Recording dates
+        # Useful when graphing model results
+    split_label_dates = df_test_train_set.iloc[WINDOW_SIZE: df_test_train_set.shape[0]].index
+    if type =='test': print(split_label_dates[0], split_label_dates[-1])
+
     # print('DONE')
-    return splits
+    return splits, split_label_dates
 
 #### Sliding window function
 def sliding_window_split(
@@ -104,7 +110,7 @@ def sliding_window_split(
     last_day_for_full_set = df_features.shape[0] \
         - test_days - train_days
     for train_start in tqdm(
-        range(0, last_day_for_full_set, test_days),
+        range(0, last_day_for_full_set, test_days - WINDOW_SIZE),
         desc='SlidingTrainTestSplit',
         position=0
     ):
@@ -138,7 +144,7 @@ def sliding_window_split(
 
     return train_test_sets
 
-# dict_spliding_window = sliding_window_split(df_tech_indicators)
+dict_spliding_fullsets = sliding_window_split(df_tech_indicators)
 
 #### Expanding window split
 def expanding_window_split(
@@ -155,7 +161,7 @@ def expanding_window_split(
     last_day_for_full_set = df_features.shape[0] \
         - test_days 
     for train_end in tqdm(
-        range(train_days, last_day_for_full_set, test_days),
+        range(train_days, last_day_for_full_set, test_days - WINDOW_SIZE),
         desc='ExpandingTrainTestSplit',
         position=0
     ):    
@@ -189,7 +195,7 @@ def expanding_window_split(
 
     return train_test_sets
 
-# dict_expanding_window = expanding_window_split(df_tech_indicators)
+# dict_expanding_fullsets = expanding_window_split(df_tech_indicators)
 
 ################################################
     # Implementing splits #
@@ -220,15 +226,15 @@ else:
     # Key = targeted fullset desired
 level_1 = dict_spliding_fullsets  # All fullsets
 type(level_1)  # dict
-type(level_1['fullset0_train_test_tup'])   # 2-tuple (of dicts)
-type(level_1['fullset0_train_test_tup'][0])   # dict - trainset of first fullset "fullset0"
-type(level_1['fullset0_train_test_tup'][1])   # dict - testset of first fullset "fullset0"
+type(level_1['fullset0_train_test_tup'])   # 2-tuple (of 3-tuples) of first fullset "fullset0"
+type(level_1['fullset0_train_test_tup'][0])   # tuple - trainset of first fullset "fullset0"
+type(level_1['fullset0_train_test_tup'][1])   # tuple - testset of first fullset "fullset0"
 ### Level 2: Type = dict
     # Values = tuple of (np_window_inputs, np_window_label)
     # keys = targeted window desired 
-level_2 = level_1['fullset0_train_test_tup'][0] #Trainset of fullset0
-type(level_2)   # dict
-type(level_2['trainset_win0_input_label_tup'])  #2-tuple (of ndarrays)
+level_2 = level_1['fullset0_train_test_tup'][0] #Trainset 3-tuple of fullset0
+type(level_2)   # 3-tuple
+type(level_2['trainset_win0_input_label_tup'])  #3-tuple (of ndarrays) of first window
 type(level_2['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
 type(level_2['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
 ### Level 3.1: Type = ndarray
@@ -448,11 +454,18 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
 #########################################################
     # Training - Sliding Technique #
 ##### Model 1 Indicators: Price and Log returns
+#### Setup corresponding data
+
+#### Setup Model
 slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS, name='two_indicators')
 slide_model_1.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
     loss=MinRS
 )
+slide_model_1_results = []
+
+
+
 
 
 #####  Model 2 Indicators: HLC3, TEMA, OBV
@@ -463,9 +476,21 @@ slide_model_2 = LSTMModel(num_indicators=3, num_assets=NUM_STOCKS, name='three_i
 
 
 #####  Model 3 Indicators: All 5 
+#### Setup corresponding data
+dict_spliding_fullsets = dict_spliding_fullsets
+#### Setup model
 slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_indicators')
-
-
+slide_model_3.compile(
+    optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
+    loss=MinRS
+)
+slide_model_3_results = []
+#### Training
+    # FS = FullSet
+for FS_name, FS_train_test_tup in dict_spliding_fullsets.items():
+    seed_reset_weights(slide_model_3)
+    trainset = FS_train_test_tup[0]
+    slide_model_3
 
 
 
