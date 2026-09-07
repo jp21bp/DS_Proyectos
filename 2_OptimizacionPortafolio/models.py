@@ -45,7 +45,9 @@ def window_split(
     # Set up
     splits = {}
     num_indicators = int(df_test_train_set.shape[1]/NUM_STOCKS)
-
+    window_counter = 0
+    y_all_prices = df_test_train_set.filter(regex="^Price")
+        # Will be used for the y-label of ech window
     # if type == 'test': # Debug continuity
     #     print(f'start: {df_test_train_set.iloc[0].name}; end: {df_test_train_set.iloc[-1].name}')
 
@@ -75,9 +77,10 @@ def window_split(
         #     print('MEAN', X_norm[X_norm.columns[i*21:(i+1)*21]].mean(axis=None))
         #     print('STD', X_norm[X_norm.columns[i*21:(i+1)*21]].std(axis=None))
         # Extracting label = future stock final prices of a given day
-        y = df_test_train_set.iloc[t]
+        y = y_all_prices.iloc[t]
         # Concatenation
-        splits[f'{type}set_input_label_tup'] = (X_norm.values, y.values)
+        splits[f'{type}set_win{window_counter}_input_label_tup'] = (X_norm.values, y.values)
+        window_counter += 1
 
     # print('DONE')
     return splits
@@ -93,7 +96,7 @@ def sliding_window_split(
     train_days = int(train_years * days_per_year)
     test_days = int(test_years * days_per_year)
     train_test_sets = {}
-    count_full_set = 0
+    fullset_counter = 0
     last_day_for_full_set = df_features.shape[0] \
         - test_days - train_days
     for train_start in tqdm(
@@ -126,8 +129,8 @@ def sliding_window_split(
         # )
 
         # Appending data
-        train_test_sets[f'fullset{count_full_set}_train_test_tup'] = (train_data_splits, test_data_splits)
-        count_full_set += 1
+        train_test_sets[f'fullset{fullset_counter}_train_test_tup'] = (train_data_splits, test_data_splits)
+        fullset_counter += 1
 
     return train_test_sets
 
@@ -137,13 +140,34 @@ dict_spliding_window = sliding_window_split(df_tech_indicators)
 ### Level 1: Type = dict, 
     # Values = tuples of (dict_trainset, dict_testset)
     # Key = targeted fullset desired
-type(dict_spliding_window)  # dict
-type(dict_spliding_window['fullset0_train_test_tup'])   # tuple
-type(dict_spliding_window['fullset0_train_test_tup'][0])   # dict
+level_1 = dict_spliding_window  # All fullsets
+type(level_1)  # dict
+type(level_1['fullset0_train_test_tup'])   # 2-tuple (of dicts)
+type(level_1['fullset0_train_test_tup'][0])   # dict - trainset of fullset0
+type(level_1['fullset0_train_test_tup'][1])   # dict - testset of fullset0
 ### Level 2: Type = dict
-    # Values = tuple of (np_trainset_splits, np_testset_splits)
-    # keys = targeted split desired 
-
+    # Values = tuple of (np_window_inputs, np_window_label)
+    # keys = targeted window desired 
+level_2 = level_1['fullset0_train_test_tup'][0] #Trainset of fullset0
+type(level_2)   # dict
+type(level_2['trainset_win0_input_label_tup'])  #2-tuple (of ndarrays)
+type(level_2['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window
+type(level_2['trainset_win0_input_label_tup'][1])  #ndarray - label of first window
+### Level 3.1: Type = ndarray
+    # Inputs of first window
+level_3_1 = level_2['trainset_win0_input_label_tup'][0]
+type(level_3_1)   #ndarray
+level_3_1.shape   #(50, 105)
+    # shape[0] = specific day in the window
+        # Doesn't include the last "t" day
+    # shape[1] = specific indicator/stock combo
+### Level 3.2: Type = ndarray
+    # Label of first window
+level_3_2 = level_2['trainset_win0_input_label_tup'][1]
+type(level_3_2)
+level_3_2.shape #(21,)
+    # Prices of the 21 stocks on the last "t" day
+        # Will be used to calculate the ratio sharpe
 
 #### Expanding window split
 def expanding_window_split(
