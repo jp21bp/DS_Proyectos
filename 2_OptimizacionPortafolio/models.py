@@ -136,6 +136,7 @@ def sliding_window_split(
 
 dict_spliding_window = sliding_window_split(df_tech_indicators)
 
+
 #### Analyzing levels
 ### Level 1: Type = dict, 
     # Values = tuples of (dict_trainset, dict_testset)
@@ -169,6 +170,7 @@ level_3_2.shape #(21,)
     # Prices of the 21 stocks on the last "t" day
         # Will be used to calculate the ratio sharpe
 
+
 #### Expanding window split
 def expanding_window_split(
         df_features: pd.DataFrame,
@@ -179,7 +181,8 @@ def expanding_window_split(
     days_per_year = 252
     train_days = int(train_years * days_per_year)
     test_days = int(test_years * days_per_year)
-    train_val_test_sets = []
+    train_test_sets = {}
+    fullset_counter = 0
     last_day_for_full_set = df_features.shape[0] \
         - test_days 
     for train_end in tqdm(
@@ -201,8 +204,8 @@ def expanding_window_split(
             .iloc[test_start: test_start + test_days]
 
         # Splitting each set
-        np_train_data_splits = window_split(df_train_data)
-        np_test_data_splits = window_split(df_test_data)
+        train_data_splits = window_split(df_train_data, "train")
+        test_data_splits = window_split(df_test_data, "test")
 
         # print(
         #     train_data.iloc[0].name,
@@ -212,11 +215,12 @@ def expanding_window_split(
         # )
 
         # Appending data
-        train_val_test_sets.append((np_train_data_splits, np_test_data_splits))
+        train_test_sets[f'fullset{fullset_counter}_train_test_tup'] = (train_data_splits, test_data_splits)
+        fullset_counter += 1
 
-    return train_val_test_sets
+    return train_test_sets
 
-# expanding_window_split(df_tech_indicators)
+expanding_window_split(df_tech_indicators)
 
 #####################################################
     # TF Model#
