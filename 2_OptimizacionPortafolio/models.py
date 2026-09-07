@@ -194,18 +194,20 @@ def expanding_window_split(
     # Implementing splits #
 #### Implementation
 ### Sliding strat
-sliding_start_path = f'{data_path}/dict_sliding_strat.pkl'
-if os.path.isfile(sliding_start_path):
-    dict_spliding_fullsets = pickle.load(sliding_start_path)
+sliding_strat_path = f'{data_path}/dict_sliding_strat.pkl'
+if os.path.isfile(sliding_strat_path):
+    with open(sliding_strat_path, 'rb') as file:
+        dict_spliding_fullsets = pickle.load(file)
 else:
     dict_spliding_fullsets = sliding_window_split(df_tech_indicators)
-    pickle.dump(dict_spliding_fullsets, open(sliding_start_path, 'wb'))
+    pickle.dump(dict_spliding_fullsets, open(sliding_strat_path, 'wb'))
 
 
 ### Expanding strat
 expanding_strat_path = f'{data_path}/dict_expanding_strat.pkl'
 if os.path.isfile(expanding_strat_path):
-    dict_expanding_fullsets = pickle.load(expanding_strat_path)
+    with open(expanding_strat_path, 'rb') as file:
+        dict_expanding_fullsets = pickle.load(file)
 else:
     dict_expanding_fullsets = expanding_window_split(df_tech_indicators)
     pickle.dump(dict_expanding_fullsets, open(expanding_strat_path, 'wb'))
@@ -251,7 +253,12 @@ level_3_2.shape #(21,)
 
 #####################################################
     # TF Model#
-##### Creating Model class
+#### Creating initializers
+glorot_init = tf.keras.initializers.GlorotUniform(seed=SEED)
+orthogonal_init = tf.keras.initializers.Orthogonal(seed=SEED)
+zero_init = tf.keras.initializers.Zeros()
+
+#### Creating Model class
 class LSTMModel(tf.keras.Model):
     def __init__(
         self, 
@@ -263,6 +270,9 @@ class LSTMModel(tf.keras.Model):
         self.lstm1 = tf.keras.layers.LSTM(
             2 ** int(np.floor(np.log2(num_assets * 10))),
             input_shape = (WINDOW_SIZE, num_indicators * num_assets),
+            kernel_initializer = glorot_init,
+            recurrent_initializer = orthogonal_init,
+            bias_initializer = zero_init,
             return_sequences=True,
             dropout=0.2,
             recurrent_dropout=0.2,
@@ -270,6 +280,9 @@ class LSTMModel(tf.keras.Model):
         )
         self.lstm2 = tf.keras.layers.LSTM(
             2 ** int(np.floor(np.log2(num_assets * 5))),
+            kernel_initializer = glorot_init,
+            recurrent_initializer = orthogonal_init,
+            bias_initializer = zero_init,
             return_sequences=False,
             dropout=0.2,
             recurrent_dropout=0.2,
@@ -278,6 +291,8 @@ class LSTMModel(tf.keras.Model):
         self.dense = tf.keras.layers.Dense(
             num_assets,
             activation='softmax',
+            kernel_initializer = glorot_init,
+            bias_initializer = zero_init,
             name='dense'
         )
 
@@ -291,59 +306,41 @@ class LSTMModel(tf.keras.Model):
         dummy_input = tf.zeros((1, WINDOW_SIZE, 2*21))
         self.call(dummy_input)
         return
+    
 
+#### Creating weight resetter
+def seed_reset_weights(model):
+    tf.keras.backend.clear_session(free_memory=True)
+    for layer in model.layers:
+        for weight in layer.weights:
+            if weight.name == 'kernel':
+                print('ONE')
+                weight.assign(glorot_init(shape=weight.shape))
+                # weight.assign(tf.ones(shape=weight.shape))
+            elif weight.name == 'recurrent_kernel':
+                print('TWO')
+                weight.assign(orthogonal_init(shape=weight.shape))
+                # weight.assign(tf.ones(shape=weight.shape))
+            elif weight.name == 'bias':
+                print('THREE')
+                weight.assign(zero_init(shape=weight.shape))
+                # weight.assign(tf.ones(shape=weight.shape))
+            else:
+                print('OTHER WEIGHT TYPE')
+
+#### Checking all functions above
+### Creating model
 model = LSTMModel(num_indicators=2, num_assets=21)
 model.build()
-model.layers[-1].get_weights()
 model.summary()
-
-#### Resetting all model weights
-# https://stackoverflow.com/questions/63435679/reset-all-weights-of-keras-model
-# def seed_reset_weights(model):
-#     tf.keras.backend.clear_session(free_memory=True)
-#     for layer in model.layers:
-#         if hasattr(layer, 'kernel_initializer'):
-#             layer.set_weights(
-#                 layer.kernel_initializer(
-#                     shape=tf.shape(layer.kernel),
-#                     seed=SEED
-#                 )
-#             )
-#         if hasattr(layer, 'recurrent_initializer'):
-#             layer.set_weights(
-#                 layer.recurrent_initializer(
-#                     tf.shape(layer.recurrent_kernel),
-#                     seed=SEED
-#                 )
-#             )
-#         if hasattr(layer, 'bias_initializer'):
-#             layer.set_weights(
-#                 layer.bias_initializer(
-#                     tf.shape(layer.bias),
-#                     seed=SEED
-#                 )
-#             )
-
-
-# def seed_reset_weights(model):
-#     tf.keras.backend.clear_session(free_memory=True)
-#     for layer in model.layers:
-#         for weight in layer.weights:
-
-
-# layers = model.layers
-# weights_0 = layers[0].weights
-# config = layers[0].get_config()
-# weights_0_1 = weights_0[1]
-# weights_0_1.shape
-# weights_0_1.name
-# weights_0_1.assign(tf.random.uniform(shape=weights_0_1.shape))
-# dir(weights_0_1)
-
+### Changing weights
+model.layers[-1].get_weights()
+seed_reset_weights(model)
+model.layers[-1].get_weights()
 
 ##########################################################
     # TF Loss Function #
-#### Creating model class
+#### Creating loss class
 class MinRS(tf.keras.losses.Loss):
     def __init__(self, name = None, reduction = "sum_over_batch_size", dtype=None):
         super(MinRS, self).__init__(name, reduction, dtype)
