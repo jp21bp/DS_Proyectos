@@ -13,3 +13,4 @@ wheels/
 
 # Too much memory
 2_OptimizacionPortafolio/Data/dict_expanding_strat.pkl
+2_OptimizacionPortafolio/Data/dict_sliding_strat.pkl

@@ -37,6 +37,7 @@ NUM_STOCKS = 21
 SEED = 42
 np.random.seed(SEED)
 tf.random.set_seed(SEED)
+LEARN_RATE = 0.001
 
 #####################################
     # Pre-processing #
@@ -213,7 +214,6 @@ else:
     pickle.dump(dict_expanding_fullsets, open(expanding_strat_path, 'wb'))
 
 
-
 #### Analyzing levels
 ### Level 1: Type = dict, 
     # Values = tuples of (dict_trainset, dict_testset)
@@ -314,29 +314,26 @@ def seed_reset_weights(model):
     for layer in model.layers:
         for weight in layer.weights:
             if weight.name == 'kernel':
-                print('ONE')
                 weight.assign(glorot_init(shape=weight.shape))
                 # weight.assign(tf.ones(shape=weight.shape))
             elif weight.name == 'recurrent_kernel':
-                print('TWO')
                 weight.assign(orthogonal_init(shape=weight.shape))
                 # weight.assign(tf.ones(shape=weight.shape))
             elif weight.name == 'bias':
-                print('THREE')
                 weight.assign(zero_init(shape=weight.shape))
                 # weight.assign(tf.ones(shape=weight.shape))
             else:
                 print('OTHER WEIGHT TYPE')
 
-#### Checking all functions above
-### Creating model
-model = LSTMModel(num_indicators=2, num_assets=21)
-model.build()
-model.summary()
-### Changing weights
-model.layers[-1].get_weights()
-seed_reset_weights(model)
-model.layers[-1].get_weights()
+# #### Checking all functions above
+# ### Creating model
+# model = LSTMModel(num_indicators=2, num_assets=21)
+# model.build()
+# model.summary()
+# ### Changing weights
+# model.layers[-1].get_weights()
+# seed_reset_weights(model)
+# model.layers[-1].get_weights()
 
 ##########################################################
     # TF Loss Function #
@@ -375,24 +372,98 @@ class CustomCallback(tf.keras.callbacks.Callback):
         return 
 
 
+#################################################
+    # Performance Metrics #
+##### Function
+def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) -> dict:
+    # "ds_port_returns".shape = (num_days,)
+    assert type(ds_port_returns) == pd.Series
+    # Base Case
+    if ds_port_returns.size == 0:
+        return {
+            "Annualized Return": 0.0,
+            "Annualized Volatility": 0.0,
+            "Sharpe Ratio": 0.0,
+            "Downside Deviation": 0.0,
+            "Sortino Ratio": 0.0,
+            "Max Drawdown": 0.0,
+            "Percent Positive Returns": 0.0,
+            "Profit Loss Ratio": 0.0,
+            "Cumulative Returns": np.array([1.0])
+        }
+    
+    # Annualize return
+    mean_daily_ret = ds_port_returns.mean()
+    annualized_ret = mean_daily_ret * periodic_rate
+
+    # Annualized volatility
+    vol_daily_ret = ds_port_returns.std()
+    annualized_vol = vol_daily_ret * np.sqrt(periodic_rate)
+    
+    # Sharpe ratio
+    annualized_sharpe = annualized_ret/(annualized_vol + 1e-8)
+
+    # Downside deviation
+    neg_rets = ds_port_returns[ds_port_returns < 0]
+    annualized_downside_dev = neg_rets.std() * np.sqrt(periodic_rate)\
+        if len(neg_rets) > 0 else 0.0
+
+    # Sortino ratio
+    annualized_sortino = annualized_ret/(annualized_downside_dev + 1e-8)\
+        if annualized_downside_dev > 0.0 else 0.0
+
+    # Cumulative returns
+    cumulative_rets = (1 + ds_port_returns).cumprod()
+
+    # Max Drawdown
+    peak = np.maximum.accumulate(cumulative_rets.values)
+    drawdown = (cumulative_rets - peak)/(peak + 1e-8)
+    max_drawdown = np.min(drawdown) if len(drawdown) > 0 else 0.0
+
+    # Percentage of positive returns
+    per_pos_rets = (len(ds_port_returns[ds_port_returns > 0])/ ds_port_returns.shape[0]) * 100 \
+        if len(ds_port_returns) > 0 else 0.0
+
+    # P/L Ratio
+    pos_rets = ds_port_returns[ds_port_returns > 0]
+    neg_rets = ds_port_returns[ds_port_returns < 0]
+    avg_profit = pos_rets.mean() if len(pos_rets) > 0 else 0.0
+    avg_loss = neg_rets.mean() if len(neg_rets) > 0 else 0.0
+    pl_ratio = abs(avg_profit/(avg_loss + 1e-8)) if avg_loss < 0.0 else 0.0
+
+    # Results
+    return {
+        "Annualized Return": annualized_ret,
+        "Annualized Volatility": annualized_vol,
+        "Sharpe Ratio": annualized_sharpe,
+        "Downside Deviation": annualized_downside_dev,
+        "Sortino Ratio": annualized_sortino,
+        "Max Drawdown": max_drawdown,
+        "Percent Positive Returns": per_pos_rets,
+        "Profit Loss Ratio": pl_ratio,
+        "Cumulative Returns": cumulative_rets
+    }
+
+
 #########################################################
     # Training - Sliding Technique #
 ##### Model 1 Indicators: Price and Log returns
 slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS, name='two_indicators')
-
+slide_model_1.compile(
+    optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
+    loss=MinRS
+)
 
 
 #####  Model 2 Indicators: HLC3, TEMA, OBV
-slide_model_2 = LSTMModel(num_indicators=3, num_assets=NUM_STOCKS)
-
-
+slide_model_2 = LSTMModel(num_indicators=3, num_assets=NUM_STOCKS, name='three_indicators')
 
 
 
 
 
 #####  Model 3 Indicators: All 5 
-slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS)
+slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_indicators')
 
 
 
