@@ -144,7 +144,7 @@ def sliding_window_split(
 
     return train_test_sets
 
-dict_spliding_fullsets = sliding_window_split(df_tech_indicators)
+dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
 
 #### Expanding window split
 def expanding_window_split(
@@ -204,10 +204,10 @@ def expanding_window_split(
 sliding_strat_path = f'{data_path}/dict_sliding_strat.pkl'
 if os.path.isfile(sliding_strat_path):
     with open(sliding_strat_path, 'rb') as file:
-        dict_spliding_fullsets = pickle.load(file)
+        dict_sliding_fullsets = pickle.load(file)
 else:
-    dict_spliding_fullsets = sliding_window_split(df_tech_indicators)
-    pickle.dump(dict_spliding_fullsets, open(sliding_strat_path, 'wb'))
+    dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
+    pickle.dump(dict_sliding_fullsets, open(sliding_strat_path, 'wb'))
 
 
 ### Expanding strat
@@ -224,32 +224,37 @@ else:
 ### Level 1: Type = dict, 
     # Values = tuples of (dict_trainset, dict_testset)
     # Key = targeted fullset desired
-level_1 = dict_spliding_fullsets  # All fullsets
+level_1 = dict_sliding_fullsets  # All fullsets
 type(level_1)  # dict
-type(level_1['fullset0_train_test_tup'])   # 2-tuple (of 3-tuples) of first fullset "fullset0"
+type(level_1['fullset0_train_test_tup'])   # 2-tuple of first fullset "fullset0"
 type(level_1['fullset0_train_test_tup'][0])   # tuple - trainset of first fullset "fullset0"
 type(level_1['fullset0_train_test_tup'][1])   # tuple - testset of first fullset "fullset0"
-### Level 2: Type = dict
+### Level 2: Type = 2-tuple
+level_2 = level_1['fullset0_train_test_tup'][0]
+type(level_2)   #2-tuple
+type(level_2[0])    # dict - inputs and labels split for this train set
+type(level_2[1])    # pd.DatetimeIndex - dates for the labels in this trainset
+### Level 3: Type = dict
     # Values = tuple of (np_window_inputs, np_window_label)
     # keys = targeted window desired 
-level_2 = level_1['fullset0_train_test_tup'][0] #Trainset 3-tuple of fullset0
-type(level_2)   # 3-tuple
-type(level_2['trainset_win0_input_label_tup'])  #3-tuple (of ndarrays) of first window
-type(level_2['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
-type(level_2['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
-### Level 3.1: Type = ndarray
+level_3 = level_2[0]
+type(level_3)   #dict
+type(level_3['trainset_win0_input_label_tup'])  #2-tuple (of ndarrays) of first window
+type(level_3['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
+type(level_3['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
+### Level 4.1: Type = ndarray
     # Inputs of first window
-level_3_1 = level_2['trainset_win0_input_label_tup'][0]
-type(level_3_1)   #ndarray
-level_3_1.shape   #(50, 105)
+level_4_1 = level_3['trainset_win0_input_label_tup'][0]
+type(level_4_1)   #ndarray
+level_4_1.shape   #(50, 105)
     # shape[0] = specific day in the window
         # Doesn't include the last "t" day
     # shape[1] = specific indicator/stock combo
-### Level 3.2: Type = ndarray
+### Level 4.2: Type = ndarray
     # Label of first window
-level_3_2 = level_2['trainset_win0_input_label_tup'][1]
-type(level_3_2)
-level_3_2.shape #(21,)
+level_4_2 = level_3['trainset_win0_input_label_tup'][1]
+type(level_4_2)
+level_4_2.shape #(21,)
     # Prices of the 21 stocks on the last "t" day
         # Will be used to calculate the ratio sharpe
 
