@@ -14,7 +14,7 @@ import pandas as pd
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
-import os
+import os, pickle
 from tqdm import tqdm
 
 #### Data path
@@ -220,7 +220,14 @@ def expanding_window_split(
 
     return train_test_sets
 
-expanding_window_split(df_tech_indicators)
+dict_expanding_window = expanding_window_split(df_tech_indicators)
+
+#### Saving both split strategies
+import pickle
+pickle.dump(dict_spliding_window, 'dict_sliding_strat.pkl')
+pickle.dump(dict_expanding_window, 'dict_expanding_strat.pkl')
+
+
 
 #####################################################
     # TF Model#
