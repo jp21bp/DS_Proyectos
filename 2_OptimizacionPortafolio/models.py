@@ -33,8 +33,7 @@ df_tech_indicators = pd.read_csv(
 
 #### Global hyperparams
 WINDOW_SIZE = 50
-NUM_INDICATORS = 5
-NUM_STOCKS = df_tech_indicators.shape[1] / NUM_INDICATORS
+NUM_STOCKS = 21
 
 #####################################
     # Pre-processing #
@@ -45,30 +44,43 @@ def window_split(
 ) -> np.ndarray:
     # Set up
     splits = {}
-    # print(f'First {df_test_train_set.iloc[0].name}')
+    num_indicators = int(df_test_train_set.shape[1]/NUM_STOCKS)
+
+    # if type == 'test': # Debug continuity
+    #     print(f'start: {df_test_train_set.iloc[0].name}; end: {df_test_train_set.iloc[-1].name}')
 
     # Splits
     for t in tqdm(
         range(WINDOW_SIZE, df_test_train_set.shape[0] - 1),
-        desc='IndividualSplits',
+        desc=f'IndividualSplits - {type}',
         position=1,
         leave=False
     ):
         # Extracting Data input
         X = df_test_train_set\
-            .iloc[t-WINDOW_SIZE: t]\
-            .values
-        # Normalizing data input
-            #TODO: normalize across EACH indicator, for all stocks
-        norm_X = (X - np.mean(X)) / (np.std(X) + np.finfo(float).eps)
+            .iloc[t-WINDOW_SIZE: t]
+        # Normalizing data input across each technical indicator
+        X_norm = pd.DataFrame(
+            columns=X.columns,
+            index=X.index
+        )
+        for i in range(num_indicators):
+            cols = X.columns[i*NUM_STOCKS: (i+1)*NUM_STOCKS]
+            indicator_subset = X[cols]
+            subset_vals = indicator_subset.values
+            X_norm[cols] = (subset_vals - np.mean(subset_vals)) / \
+                (np.std(subset_vals) + np.finfo(float).eps)
+        # for i in range(num_indicators):
+        #     print('IDXS', X_norm.iloc[0].name, X_norm.iloc[-1].name)
+        #     print('MEAN', X_norm[X_norm.columns[i*21:(i+1)*21]].mean(axis=None))
+        #     print('STD', X_norm[X_norm.columns[i*21:(i+1)*21]].std(axis=None))
         # Extracting label = future stock final prices of a given day
-        y = df_test_train_set.iloc[t].values
+        y = df_test_train_set.iloc[t]
         # Concatenation
-        splits[f'{type}_input_label_tup_np'] = (norm_X, y)
-        # print(df_test_train_set.iloc[t].name)
+        splits[f'{type}set_input_label_tup'] = (X_norm.values, y.values)
 
     # print('DONE')
-    return np.array(splits)
+    return splits
 
 #### Sliding window function
 def sliding_window_split(
@@ -103,8 +115,8 @@ def sliding_window_split(
             .iloc[test_start: test_start + test_days]
 
         # Splitting each set
-        np_train_data_splits = window_split(df_train_data, "train")
-        np_test_data_splits = window_split(df_test_data, "test")
+        train_data_splits = window_split(df_train_data, "train")
+        test_data_splits = window_split(df_test_data, "test")
 
         # print(
         #     train_data.iloc[0].name,
@@ -114,17 +126,24 @@ def sliding_window_split(
         # )
 
         # Appending data
-        train_test_sets[f'{count_full_set}_test_train_tup'] = (np_train_data_splits, np_test_data_splits)
+        train_test_sets[f'fullset{count_full_set}_train_test_tup'] = (train_data_splits, test_data_splits)
         count_full_set += 1
 
     return train_test_sets
 
 dict_spliding_window = sliding_window_split(df_tech_indicators)
 
-len(dict_spliding_window)
-print(dict_spliding_window.keys())
+#### Analyzing levels
+### Level 1: Type = dict, 
+    # Values = tuples of (dict_trainset, dict_testset)
+    # Key = targeted fullset desired
+type(dict_spliding_window)  # dict
+type(dict_spliding_window['fullset0_train_test_tup'])   # tuple
+type(dict_spliding_window['fullset0_train_test_tup'][0])   # dict
+### Level 2: Type = dict
+    # Values = tuple of (np_trainset_splits, np_testset_splits)
+    # keys = targeted split desired 
 
-dict_spliding_window['0_test_train_tup']
 
 #### Expanding window split
 def expanding_window_split(
