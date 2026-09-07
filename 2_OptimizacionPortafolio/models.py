@@ -34,6 +34,9 @@ df_tech_indicators = pd.read_csv(
 #### Global hyperparams
 WINDOW_SIZE = 50
 NUM_STOCKS = 21
+SEED = 42
+np.random.seed(SEED)
+tf.random.set_seed(SEED)
 
 #####################################
     # Pre-processing #
@@ -144,16 +147,16 @@ dict_spliding_window = sliding_window_split(df_tech_indicators)
 level_1 = dict_spliding_window  # All fullsets
 type(level_1)  # dict
 type(level_1['fullset0_train_test_tup'])   # 2-tuple (of dicts)
-type(level_1['fullset0_train_test_tup'][0])   # dict - trainset of fullset0
-type(level_1['fullset0_train_test_tup'][1])   # dict - testset of fullset0
+type(level_1['fullset0_train_test_tup'][0])   # dict - trainset of first fullset "fullset0"
+type(level_1['fullset0_train_test_tup'][1])   # dict - testset of first fullset "fullset0"
 ### Level 2: Type = dict
     # Values = tuple of (np_window_inputs, np_window_label)
     # keys = targeted window desired 
 level_2 = level_1['fullset0_train_test_tup'][0] #Trainset of fullset0
 type(level_2)   # dict
 type(level_2['trainset_win0_input_label_tup'])  #2-tuple (of ndarrays)
-type(level_2['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window
-type(level_2['trainset_win0_input_label_tup'][1])  #ndarray - label of first window
+type(level_2['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
+type(level_2['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
 ### Level 3.1: Type = ndarray
     # Inputs of first window
 level_3_1 = level_2['trainset_win0_input_label_tup'][0]
@@ -223,9 +226,9 @@ def expanding_window_split(
 dict_expanding_window = expanding_window_split(df_tech_indicators)
 
 #### Saving both split strategies
-import pickle
-pickle.dump(dict_spliding_window, 'dict_sliding_strat.pkl')
-pickle.dump(dict_expanding_window, 'dict_expanding_strat.pkl')
+pickle.dump(dict_spliding_window, open(f'{data_path}/dict_sliding_strat.pkl', 'wb'))
+pickle.dump(dict_expanding_window, open(f'{data_path}/dict_expanding_strat.pkl', 'wb'))
+
 
 
 
@@ -240,10 +243,6 @@ class LSTMModel(tf.keras.Model):
         **kwargs
     ):
         super(LSTMModel, self).__init__(**kwargs)
-        self.input_layer = tf.keras.layers.InputLayer(
-            shape=(WINDOW_SIZE, num_indicators * num_assets),
-            name=f'({WINDOW_SIZE}, {num_indicators}*{num_assets})_input'
-        )
         self.lstm1 = tf.keras.layers.LSTM(
             2 ** int(np.floor(np.log2(num_assets * 10))),
             input_shape = (WINDOW_SIZE, num_indicators * num_assets),
@@ -261,7 +260,9 @@ class LSTMModel(tf.keras.Model):
         )
         self.dense = tf.keras.layers.Dense(
             num_assets,
-            activation='linear',
+            activation='softmax',
+            kernel_initializer=\
+                tf.keras.initializers.GlorotUniform(seed=SEED),
             name='dense'
         )
 
@@ -271,11 +272,15 @@ class LSTMModel(tf.keras.Model):
         x = self.dense(x)
         return x
 
+    def build(self):
+        dummy_input = tf.zeros((1, WINDOW_SIZE, 2*21))
+        self.call(dummy_input)
+        return
+
 model = LSTMModel(num_indicators=2, num_assets=21)
-dummy_input = np.random.rand(1, WINDOW_SIZE, 2*21).astype(np.float32)
-model(dummy_input)
+model.build()
+model.layers[-1].get_weights()
 model.summary()
-model.compile()
 
 ##########################################################
     # TF Loss Function #
@@ -290,7 +295,8 @@ class MinRS(tf.keras.losses.Loss):
         tf_y_pred =tf.convert_to_tensor(y_pred, dtype=tf.float32)
         tf_stock_returns = y_true * y_pred
 
-        # Calculating ratio sharpe
+        # Calculating daily ratio sharpe
+            # Reason for daily: labels are daily
         day_return = tf.reduce_sum(tf_stock_returns)
         day_std = tf.math.reduce_std(tf_stock_returns)
         day_rs = day_return/(day_std + tf.keras.backend.epsilon())
@@ -311,3 +317,30 @@ class CustomCallback(tf.keras.callbacks.Callback):
     def on_predict_end(self, logs = None):
         print('PREDICT')
         return 
+
+
+#########################################################
+    # Training - Sliding Technique #
+##### Model 1 Indicators: Price and Log returns
+slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS)
+
+
+
+
+
+#####  Model 2 Indicators: HLC3, TEMA, OBV
+slide_model_2 = LSTMModel(num_indicators=3, num_assets=NUM_STOCKS)
+
+
+
+
+
+
+
+#####  Model 3 Indicators: All 5 
+slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS)
+
+
+
+
+

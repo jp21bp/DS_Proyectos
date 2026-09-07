@@ -10,3 +10,6 @@ wheels/
 .venv
 .env
 .vscode 
+
+# Too much memory
+2_OptimizacionPortafolio/Data/dict_expanding_strat.pkl
