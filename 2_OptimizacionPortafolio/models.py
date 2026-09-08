@@ -581,25 +581,31 @@ class MinRS(tf.keras.losses.Loss):
         # Daily returns
         days_per_year = float(252)
         day_returns = tf.reduce_sum(tf_stock_returns, axis=1)
-        tf.print(tf.shape(tf_stock_returns), tf.shape(day_returns))
+        # tf.print(tf.shape(tf_stock_returns), tf.shape(day_returns))
         # Expected returns
-        returns_mean = tf.reduce_mean(day_returns)
-        annualized_returns_mean = returns_mean * days_per_year
+        daily_returns_mean = tf.reduce_mean(day_returns)
+        annualized_returns_mean = daily_returns_mean * days_per_year
+        # tf.print('rets:',daily_returns_mean, annualized_returns_mean)
         # Volatility
-        returns_std = tf.math.reduce_std(day_returns)
-        annualized_returns_std = returns_std * tf.math.sqrt(days_per_year)
+        daily_returns_std = tf.math.reduce_std(day_returns)
+        annualized_returns_std = daily_returns_std * tf.math.sqrt(days_per_year)
+        # tf.print('std:',daily_returns_std, annualized_returns_std)
+        # tf.print('\n')
         # tf.print(day_return)
         # tf.print(day_std)
 
-        batch_annualized_rs = returns_mean/(returns_std + tf.keras.backend.epsilon())
+        batch_diario_rs = daily_returns_mean/(daily_returns_std + tf.keras.backend.epsilon())
+        batch_annualized_rs = annualized_returns_mean/(annualized_returns_std + tf.keras.backend.epsilon())
+            # Mucho sesgo por la baja cantidad de dias
+        # tf.print(batch_diario_rs, batch_annualized_rs)
 
-        return -batch_annualized_rs
+        return -batch_diario_rs
 
 #########################################################
     # Callback #
 #### Creating Callback class
 class CustomCallback(tf.keras.callbacks.Callback):
-    def __init__(self, valset, patience = 3, overfit_thresh = 8000):
+    def __init__(self, valset, patience = 3, overfit_thresh = 5):
         super(CustomCallback, self).__init__()
         self.valset = valset
         self.patience = patience
@@ -613,10 +619,11 @@ class CustomCallback(tf.keras.callbacks.Callback):
         y_pred = self.model(self.valset[0], training=False)
         stock_returns = y_pred * self.valset[1]
         day_ret = np.sum(stock_returns, axis=1)
-        day_std = np.std(stock_returns, axis=1)
-        rs = day_ret/(day_std + 1e-8)
+        daily_mean_ret = np.mean(day_ret)
+        daily_std_ret = np.std(day_ret)
+        rs = daily_mean_ret/(daily_std_ret + 1e-8)
         # print(rs)
-        print(f'VAL MEAN: {np.mean(rs)}')
+        # print(f'VAL MEAN: {np.mean(rs)}')
 
         # Extracting the losses
         logs = logs or {}
