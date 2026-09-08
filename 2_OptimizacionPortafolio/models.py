@@ -31,6 +31,11 @@ df_tech_indicators = pd.read_csv(
     index_col='Date'
 )
 
+#### Creating simple return
+    # NOT one of the indicators
+y_all_prices = df_tech_indicators.filter(regex="^Price")
+y_all_simple_rets = y_all_prices.pct_change()
+
 
 #### Global hyperparams
 WINDOW_SIZE = 50
@@ -126,7 +131,6 @@ def window_split(
     all_inputs = []
     all_labels = []
     num_indicators = int(df_test_train_set.shape[1]/NUM_STOCKS)
-    y_all_prices = df_test_train_set.filter(regex="^Price")
         # Will be used for the y-label of ech window
     # if type == 'test': # Debug continuity
     #     print(f'start: {df_test_train_set.iloc[0].name}; end: {df_test_train_set.iloc[-1].name}')
@@ -158,7 +162,7 @@ def window_split(
         #     print('MEAN', X_norm[X_norm.columns[i*21:(i+1)*21]].mean(axis=None))
         #     print('STD', X_norm[X_norm.columns[i*21:(i+1)*21]].std(axis=None))
         # Extracting label = future stock final prices of a given day
-        y = y_all_prices.iloc[t] 
+        y = y_all_simple_rets.iloc[t] 
         # Concatenation
         all_inputs.append(X_norm.values)
         all_labels.append(y.values)
@@ -226,7 +230,7 @@ def sliding_window_split(
 
     return train_test_sets
 
-# dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
+dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
 
 #### Expanding window split
 def expanding_window_split(
@@ -572,17 +576,24 @@ class MinRS(tf.keras.losses.Loss):
         # tf.print(tf.shape(y_pred), tf.shape(y_true), tf.shape(tf_stock_returns))
 
 
-        # Calculating daily ratio sharpe
+        ## Calculating daily ratio sharpe
             # Reason for daily: labels are daily
-        day_return = tf.reduce_sum(tf_stock_returns, axis=1)
-        day_std = tf.math.reduce_std(tf_stock_returns, axis=1)
+        # Daily returns
+        days_per_year = float(252)
+        day_returns = tf.reduce_sum(tf_stock_returns, axis=1)
+        tf.print(tf.shape(tf_stock_returns), tf.shape(day_returns))
+        # Expected returns
+        returns_mean = tf.reduce_mean(day_returns)
+        annualized_returns_mean = returns_mean * days_per_year
+        # Volatility
+        returns_std = tf.math.reduce_std(day_returns)
+        annualized_returns_std = returns_std * tf.math.sqrt(days_per_year)
         # tf.print(day_return)
         # tf.print(day_std)
 
-        day_rs = day_return/(day_std + tf.keras.backend.epsilon())
-        # tf.print(tf.shape(day_return), tf.shape(day_std), tf.shape(day_rs))
+        batch_annualized_rs = returns_mean/(returns_std + tf.keras.backend.epsilon())
 
-        return -day_rs
+        return -batch_annualized_rs
 
 #########################################################
     # Callback #
@@ -606,13 +617,6 @@ class CustomCallback(tf.keras.callbacks.Callback):
         rs = day_ret/(day_std + 1e-8)
         # print(rs)
         print(f'VAL MEAN: {np.mean(rs)}')
-        # for val_inputs, val_labels in self.valset:
-        #     y_pred = self.model(val_inputs, training=False)
-        #     stock_returns = y_pred * val_labels
-        #     day_ret = np.sum(stock_returns)
-        #     day_std = np.std(stock_returns)
-        #     rs = day_ret/(day_std + 1e-8)
-        #     print(rs)
 
         # Extracting the losses
         logs = logs or {}
