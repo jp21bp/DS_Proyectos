@@ -101,23 +101,26 @@ def window_split(
 def sliding_window_split(
         df_features: pd.DataFrame,
         train_years: float = 1.0,
+        val_years: float = 0.25,
         test_years: float = 1.0,
 ) -> np.ndarray:
     # Set up
     days_per_year = 252
     train_days = int(train_years * days_per_year)
+    val_days = int(val_years * days_per_year)
     test_days = int(test_years * days_per_year)
     train_test_sets = {}
     fullset_counter = 0
     last_day_for_full_set = df_features.shape[0] \
-        - test_days - train_days
+        - test_days - val_days - train_days
     for train_start in tqdm(
         range(0, last_day_for_full_set, test_days - WINDOW_SIZE),
         desc='SlidingTrainTestSplit',
         position=0
     ):
         # Data start dates
-        test_start = train_start + train_days
+        val_start = train_start + train_days
+        test_start = val_start + val_days
 
         # Edge case
         if (test_start + test_days) >  df_features.shape[0]:
@@ -126,11 +129,14 @@ def sliding_window_split(
         # Extracting data
         df_train_data = df_features\
             .iloc[train_start: train_start + train_days]
+        df_val_data = df_features\
+            .iloc[val_start: val_start + val_days]
         df_test_data = df_features\
             .iloc[test_start: test_start + test_days]
 
         # Splitting each set
         train_data_splits = window_split(df_train_data, "train")
+        val_data_splits = window_split(df_val_data, "val")
         test_data_splits = window_split(df_test_data, "test")
 
         # print(
@@ -141,7 +147,7 @@ def sliding_window_split(
         # )
 
         # Appending data
-        train_test_sets[f'fullset{fullset_counter}_train_test_list'] = [train_data_splits, test_data_splits]
+        train_test_sets[f'fullset{fullset_counter}_train_val_test_list'] = [train_data_splits, val_data_splits, test_data_splits]
         fullset_counter += 1
 
     return train_test_sets
@@ -152,23 +158,26 @@ def sliding_window_split(
 def expanding_window_split(
         df_features: pd.DataFrame,
         train_years: float = 1.0,
+        val_years: float = 0.25,
         test_years: float = 1.0,
 ) -> np.ndarray:
     # Set up
     days_per_year = 252
     train_days = int(train_years * days_per_year)
+    val_days = int(val_years * days_per_year)
     test_days = int(test_years * days_per_year)
     train_test_sets = {}
     fullset_counter = 0
     last_day_for_full_set = df_features.shape[0] \
-        - test_days 
+        - val_days - test_days 
     for train_end in tqdm(
         range(train_days, last_day_for_full_set, test_days - WINDOW_SIZE),
         desc='ExpandingTrainTestSplit',
         position=0
     ):    
         # Data start dates
-        test_start = train_end
+        val_start = train_end
+        test_start = val_start + val_days
 
         # Edge case
         if (test_start + test_days) >  df_features.shape[0]:
@@ -177,11 +186,14 @@ def expanding_window_split(
         # Extracting data
         df_train_data = df_features\
             .iloc[:train_end]
+        df_val_data = df_features\
+            .iloc[val_start: val_start + val_days]
         df_test_data = df_features\
             .iloc[test_start: test_start + test_days]
 
         # Splitting each set
         train_data_splits = window_split(df_train_data, "train")
+        val_data_splits = window_split(df_val_data, "val")
         test_data_splits = window_split(df_test_data, "test")
 
         # print(
@@ -192,7 +204,7 @@ def expanding_window_split(
         # )
 
         # Appending data
-        train_test_sets[f'fullset{fullset_counter}_train_test_list'] = [train_data_splits, test_data_splits]
+        train_test_sets[f'fullset{fullset_counter}_train_val_test_list'] = [train_data_splits, val_data_splits, test_data_splits]
         fullset_counter += 1
 
     return train_test_sets
@@ -279,22 +291,15 @@ def indicator_selection(list_indicators: list, split_strat: dict):
     )
 
     ### Selecting indicators
-    for fullset_key, train_test_tup_value in tqdm(
+    for fullset_key, train_val_test_list in tqdm(
         split_strat_cpy.items(),
         total=len(split_strat_cpy),
         desc='FullsetDict',
         position=0
     ):
-        # print('ONE')
-        # print(type(train_test_tup_value))
-        for wind_datetime_tup in train_test_tup_value:
-            # print('two')
-            # print(type(wind_datetime_tup))
-            # print(type(wind_datetime_tup[0]))
-            for wind_key, wind_tup in wind_datetime_tup[0].items():
-                # print('three')
-                # print(type(wind_tup))
-                wind_tup[0] = wind_tup[0][:, cols]
+        for tvt_set in train_val_test_list:
+            # Each tvt_set = [np_inputs, np_labels, np_dates]
+            tvt_set[0] = tvt_set[0][:,:,cols]
 
     return split_strat_cpy
 
@@ -311,22 +316,6 @@ else:
     dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
     pickle.dump(dict_sliding_fullsets, open(sliding_strat_path, 'wb'))
 
-#### SAmple indictor select
-# indicators = ['Price', 'HLC3']
-# fullsets_price_HLC3_dict = \
-#     indicator_selection(indicators, dict_sliding_fullsets)
-# ## Checking
-# first_fullset = fullsets_price_HLC3_dict['fullset0_train_test_list']
-# trainset = first_fullset[0]
-# winds_dict = trainset[0]
-# first_wind_inputs_labels = winds_dict['trainset_win0_input_label_list']
-# first_win_inputs = first_wind_inputs_labels[0]
-# first_win_inputs.shape  #(50, 42) - confirmed
-
-
-
-
-
 ### Expanding strat
 expanding_strat_path = f'{data_path}/dict_expanding_strat.pkl'
 if os.path.isfile(expanding_strat_path):
@@ -336,7 +325,11 @@ else:
     dict_expanding_fullsets = expanding_window_split(df_tech_indicators)
     pickle.dump(dict_expanding_fullsets, open(expanding_strat_path, 'wb'))
 
-
+### Checking dates
+for key, set in dict_expanding_fullsets.items():
+    testset = set[2]
+    np_dates = testset[2]
+    print(np_dates[0], np_dates[-1])
 
 
 
@@ -364,10 +357,8 @@ dict_fullsets_all_expand = dict_expanding_fullsets
 dict_fullsets_H_T_O_expand.keys()
 first_fullset = dict_fullsets_H_T_O_expand['fullset0_train_test_tup']
 trainset = first_fullset[0]
-winds_dict = trainset[0]
-first_wind_inputs_labels = winds_dict['trainset_win0_input_label_list']
-first_win_inputs = first_wind_inputs_labels[0]
-first_win_inputs.shape  #(50, 63) - confirmed
+np_inputs = trainset[0]
+np_inputs.shape  #(50, 63) - confirmed
 
 
 
@@ -380,13 +371,14 @@ first_win_inputs.shape  #(50, 63) - confirmed
     # Key = targeted fullset desired
 level_1 = dict_sliding_fullsets  # All fullsets
 type(level_1)  # dict
-len(level_1)    # 24 keys, each value being a 2-list [trainset, testset]
-type(level_1['fullset0_train_test_list'])   # 2-list of first fullset "fullset0"
-type(level_1['fullset0_train_test_list'][0])   # list - trainset of first fullset "fullset0"
-type(level_1['fullset0_train_test_list'][1])   # list - testset of first fullset "fullset0"
+len(level_1)    # 24 keys, each value being a 3-list [trainset, valset, testset]
+type(level_1['fullset0_train_val_test_list'])   # 3-list of first fullset "fullset0"
+type(level_1['fullset0_train_val_test_list'][0])   # list - trainset of first fullset "fullset0"
+type(level_1['fullset0_train_val_test_list'][1])   # list - valset of first fullset "fullset0"
+type(level_1['fullset0_train_val_test_list'][2])   # list - testset of first fullset "fullset0"
 ### Level 2: Type = 2-list
-level_2 = level_1['fullset0_train_test_list'][0]
-type(level_2)   #2-list
+level_2 = level_1['fullset0_train_val_test_list'][0]
+type(level_2)   #3-list
 len(level_2)    #3, for the 3-list [np_all_window_inputs, np_all_window_labels, np_pdDateTime]
 type(level_2[0])    # ndarray - all the window inputs
 level_2[0].shape    #(202, 50, 105)
@@ -632,11 +624,12 @@ df_slide_model_3_weight_results = pd.DataFrame(columns=[f'all_indic_{stock}' for
 df_slide_model_3_weight_results.index = pd.to_datetime(df_slide_model_3_weight_results.index)
 #### Training
     # FS = FullSet
-for FS_name, FS_train_test_list in dict_fullsets_all_sliding.items():
+for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
     # Setup
     slide_model_3 = seed_reset_weights(slide_model_3)
-    trainset = FS_train_test_list[0]    #Contains [np_all_inputs, np_all_labels, np_datetime]
-    testset = FS_train_test_list[1]
+    trainset = FS_train_val_test_list[0]    #Contains [np_all_inputs, np_all_labels, np_datetime]
+    valset = FS_train_val_test_list[1]
+    testset = FS_train_val_test_list[2]
 
     # Training
     history = slide_model_3.fit(
