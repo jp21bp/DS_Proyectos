@@ -31,15 +31,16 @@ df_tech_indicators = pd.read_csv(
     index_col='Date'
 )
 
+
 #### Global hyperparams
 WINDOW_SIZE = 50
 NUM_STOCKS = 21
-STOCK_NAMES = df_tech_indicators.columns[:21].
+STOCK_NAMES = [stock for indicator, stock in \
+               df_tech_indicators.columns[:21].str.split("_")]
 SEED = 42
 np.random.seed(SEED)
 tf.random.set_seed(SEED)
 LEARN_RATE = 0.001
-
 #####################################
     # Pre-processing #
 #### General window split
@@ -638,7 +639,13 @@ for FS_name, FS_train_test_list in dict_fullsets_all_sliding.items():
     testset = FS_train_test_list[1]
 
     # Training
-    slide_model_3.fit()
+    history = slide_model_3.fit(
+        trainset[0],    # All windows' inputs
+        trainset[1],    # All windows' labels
+        verbose=2,
+        shuffle=False,
+        epochs=100,
+    )
 
 
 
