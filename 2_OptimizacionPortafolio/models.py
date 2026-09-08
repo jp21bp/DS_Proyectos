@@ -144,7 +144,7 @@ def sliding_window_split(
 
     return train_test_sets
 
-dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
+# dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
 
 #### Expanding window split
 def expanding_window_split(
@@ -197,6 +197,90 @@ def expanding_window_split(
 
 # dict_expanding_fullsets = expanding_window_split(df_tech_indicators)
 
+#### Technical indicator selection
+    # Choosing specific indicators instead of all 5
+    # Each indicator is 21 cols/stocks long
+    # Selection will happen post splits from above
+def indicator_selection(list_indicators: list, split_strat: dict):
+    ### Mapping: indicator -> corresponding cols
+    ## Creating map
+        # Price: 0(inc) - 21(excl)
+        # Log Ret: 21 - 42
+        # TEMA: 42 - 63
+        # HLC3: 63 - 84
+        # OBV: 84 - 105
+    ranges = []
+    for indicator in list_indicators:
+        if indicator == 'Price':
+            ranges.append((0,21))
+        elif indicator == 'LogRet':
+            ranges.append((21,42))
+        elif indicator == 'TEMA':
+            ranges.append((42,63))
+        elif indicator == 'HLC3':
+            ranges.append((63,84))
+        elif indicator == 'OBV':
+            ranges.append((84,105))
+        else:
+            raise TypeError('Indicator no written correctly')
+    ## Creating col indices
+    cols = np.concatenate(
+        [np.arange(start, end) for start, end in ranges]
+    )
+
+
+    ### Selecting indicators
+    # for key, value in split_strat.items():
+
+    return split_strat[:, cols]
+
+
+arr = np.arange(315).reshape(3, 105)  # 6 filas x 10 columnas
+indicators = ['Price', 'HLC3']
+indicator_selection(indicators, arr)
+
+
+
+
+
+
+
+
+def tmp(arr, ranges):
+    """
+    Selecciona columnas de un np.ndarray según rangos dados.
+    
+    Parámetros:
+        arr (np.ndarray): Matriz de entrada.
+        ranges (list of tuple): Lista de tuplas (inicio, fin) en base 1.
+                                 El rango incluye inicio y fin.
+    Retorna:
+        np.ndarray: Submatriz con las columnas seleccionadas.
+    """
+    if not isinstance(arr, np.ndarray):
+        raise TypeError("El argumento 'arr' debe ser un np.ndarray.")
+    if arr.ndim != 2:
+        raise ValueError("La matriz debe ser bidimensional.")
+
+    # Convertir rangos base-1 a índices base-0 y combinarlos
+    print('START')
+    # indices = np.r_[[np.arange(start, end) for start, end in ranges]].flatten()
+    indices = np.concatenate([np.arange(start, end) for start, end in ranges])
+    # indices=np.array([0,1,2,3,6,7,8])
+    print(indices)
+
+
+    # Validar que los índices estén dentro del rango
+    if np.any(indices < 0) or np.any(indices >= arr.shape[1]):
+        raise IndexError("Algún índice de columna está fuera de rango.")
+
+    return arr[:, indices]
+
+# Ejemplo de uso
+arr = np.arange(60).reshape(6, 10)  # 6 filas x 10 columnas
+rangos = [(0, 2), (6, 9)]  # 2nda a 4ta y 7ma a 9na columna
+resultado = tmp(arr, rangos)
+
 ################################################
     # Implementing splits #
 #### Implementation
@@ -226,22 +310,26 @@ else:
     # Key = targeted fullset desired
 level_1 = dict_sliding_fullsets  # All fullsets
 type(level_1)  # dict
+len(level_1)    # 24 keys, each value being a 2-tuple (trainset, testset)
 type(level_1['fullset0_train_test_tup'])   # 2-tuple of first fullset "fullset0"
 type(level_1['fullset0_train_test_tup'][0])   # tuple - trainset of first fullset "fullset0"
 type(level_1['fullset0_train_test_tup'][1])   # tuple - testset of first fullset "fullset0"
 ### Level 2: Type = 2-tuple
 level_2 = level_1['fullset0_train_test_tup'][0]
 type(level_2)   #2-tuple
+len(level_2)    #2, for the 2-tuple (dict_window_splits, pd.Datetime)
 type(level_2[0])    # dict - inputs and labels split for this train set
-type(level_2[1])    # pd.DatetimeIndex - dates for the labels in this trainset
+type(level_2[1])    # pd.DateTimeIndex - the dates for the labels in this trainset/testset
 ### Level 3: Type = dict
     # Values = tuple of (np_window_inputs, np_window_label)
     # keys = targeted window desired 
 level_3 = level_2[0]
 type(level_3)   #dict
+len(level_3)    #202 windows, each holding 2-tuple (inputs_ndarray_shape(50,105), label_ndarray_shape(21,))
 type(level_3['trainset_win0_input_label_tup'])  #2-tuple (of ndarrays) of first window
 type(level_3['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
 type(level_3['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
+level_3.keys()
 ### Level 4.1: Type = ndarray
     # Inputs of first window
 level_4_1 = level_3['trainset_win0_input_label_tup'][0]
