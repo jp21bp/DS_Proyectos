@@ -84,7 +84,7 @@ def window_split(
         # Extracting label = future stock final prices of a given day
         y = y_all_prices.iloc[t] 
         # Concatenation
-        splits[f'{type}set_win{window_counter}_input_label_tup'] = (X_norm.values, y.values)
+        splits[f'{type}set_win{window_counter}_input_label_tup'] = [X_norm.values, y.values]
         window_counter += 1
 
     # Recording dates
@@ -93,7 +93,7 @@ def window_split(
     if type =='test': print(split_label_dates[0], split_label_dates[-1])
 
     # print('DONE')
-    return splits, split_label_dates
+    return [splits, split_label_dates]
 
 #### Sliding window function
 def sliding_window_split(
@@ -139,12 +139,12 @@ def sliding_window_split(
         # )
 
         # Appending data
-        train_test_sets[f'fullset{fullset_counter}_train_test_tup'] = (train_data_splits, test_data_splits)
+        train_test_sets[f'fullset{fullset_counter}_train_test_tup'] = [train_data_splits, test_data_splits]
         fullset_counter += 1
 
     return train_test_sets
 
-# dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
+dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
 
 #### Expanding window split
 def expanding_window_split(
