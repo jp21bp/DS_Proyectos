@@ -14,7 +14,7 @@ import pandas as pd
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
-import os, pickle
+import os, pickle, copy
 from tqdm import tqdm
 
 #### Data path
@@ -84,13 +84,13 @@ def window_split(
         # Extracting label = future stock final prices of a given day
         y = y_all_prices.iloc[t] 
         # Concatenation
-        splits[f'{type}set_win{window_counter}_input_label_tup'] = [X_norm.values, y.values]
+        splits[f'{type}set_win{window_counter}_input_label_list'] = [X_norm.values, y.values]
         window_counter += 1
 
     # Recording dates
         # Useful when graphing model results
     split_label_dates = df_test_train_set.iloc[WINDOW_SIZE: df_test_train_set.shape[0]].index
-    if type =='test': print(split_label_dates[0], split_label_dates[-1])
+    # if type =='test': print(split_label_dates[0], split_label_dates[-1])
 
     # print('DONE')
     return [splits, split_label_dates]
@@ -139,12 +139,12 @@ def sliding_window_split(
         # )
 
         # Appending data
-        train_test_sets[f'fullset{fullset_counter}_train_test_tup'] = [train_data_splits, test_data_splits]
+        train_test_sets[f'fullset{fullset_counter}_train_test_list'] = [train_data_splits, test_data_splits]
         fullset_counter += 1
 
     return train_test_sets
 
-dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
+# dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
 
 #### Expanding window split
 def expanding_window_split(
@@ -190,7 +190,7 @@ def expanding_window_split(
         # )
 
         # Appending data
-        train_test_sets[f'fullset{fullset_counter}_train_test_tup'] = (train_data_splits, test_data_splits)
+        train_test_sets[f'fullset{fullset_counter}_train_test_tup'] = [train_data_splits, test_data_splits]
         fullset_counter += 1
 
     return train_test_sets
@@ -237,9 +237,9 @@ def tmp(arr, ranges):
     return arr[:, indices]
 
 # Ejemplo de uso
-arr = np.arange(60).reshape(6, 10)  # 6 filas x 10 columnas
-rangos = [(0, 2), (6, 9)]  # 2nda a 4ta y 7ma a 9na columna
-resultado = tmp(arr, rangos)
+# arr = np.arange(60).reshape(6, 10)  # 6 filas x 10 columnas
+# rangos = [(0, 2), (6, 9)]  # 2nda a 4ta y 7ma a 9na columna
+# resultado = tmp(arr, rangos)
 
 
 
@@ -248,6 +248,8 @@ resultado = tmp(arr, rangos)
     # Each indicator is 21 cols/stocks long
     # Selection will happen post splits from above
 def indicator_selection(list_indicators: list, split_strat: dict):
+    ### MAking deep copy
+    split_strat_cpy = copy.deepcopy(split_strat)
     ### Mapping: indicator -> corresponding cols
         # Price: 0(inc) - 21(excl)
         # Log Ret: 21 - 42
@@ -275,19 +277,24 @@ def indicator_selection(list_indicators: list, split_strat: dict):
     )
 
     ### Selecting indicators
-    for fullset_key, train_test_tup_value in split_strat.items():
-        print('ONE')
-        print(type(train_test_tup_value))
+    for fullset_key, train_test_tup_value in tqdm(
+        split_strat_cpy.items(),
+        total=len(split_strat_cpy),
+        desc='FullsetDict',
+        position=0
+    ):
+        # print('ONE')
+        # print(type(train_test_tup_value))
         for wind_datetime_tup in train_test_tup_value:
-            print('two')
-            print(type(wind_datetime_tup))
-            print(type(wind_datetime_tup[0]))
+            # print('two')
+            # print(type(wind_datetime_tup))
+            # print(type(wind_datetime_tup[0]))
             for wind_key, wind_tup in wind_datetime_tup[0].items():
-                print('three')
-                print(type(wind_tup))
+                # print('three')
+                # print(type(wind_tup))
                 wind_tup[0] = wind_tup[0][:, cols]
 
-    return split_strat
+    return split_strat_cpy
 
 
 ################################################
@@ -302,9 +309,20 @@ else:
     dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
     pickle.dump(dict_sliding_fullsets, open(sliding_strat_path, 'wb'))
 
-
+#### SAmple indictor select
 indicators = ['Price', 'HLC3']
-indicator_selection(indicators, dict_sliding_fullsets)
+fullsets_price_HLC3_dict = \
+    indicator_selection(indicators, dict_sliding_fullsets)
+## Checking
+first_fullset = fullsets_price_HLC3_dict['fullset0_train_test_list']
+trainset = first_fullset[0]
+winds_dict = trainset[0]
+first_wind_inputs_labels = winds_dict['trainset_win0_input_label_list']
+first_win_inputs = first_wind_inputs_labels[0]
+first_win_inputs.shape  #(50, 42) - confirmed
+
+
+
 
 
 ### Expanding strat
@@ -317,20 +335,50 @@ else:
     pickle.dump(dict_expanding_fullsets, open(expanding_strat_path, 'wb'))
 
 
+
+
+
+#### Indicator selections
+### Sliding window
+dict_fullsets_P_L_sliding = \
+    indicator_selection(['Price', 'LogRet'], dict_sliding_fullsets)
+
+dict_fullsets_H_T_O_sliding = \
+    indicator_selection(['TEMA', 'HLC3', 'OBV'], dict_sliding_fullsets)
+
+dict_fullsets_all_sliding = dict_sliding_fullsets
+
+### Expanding window
+dict_fullsets_P_L_expand = \
+    indicator_selection(['Price', 'LogRet'], dict_expanding_fullsets)
+
+dict_fullsets_H_T_O_expand = \
+    indicator_selection(['TEMA', 'HLC3', 'OBV'], dict_expanding_fullsets)
+
+dict_fullsets_all_expand = dict_expanding_fullsets
+
+
+
+
+
+
+
+
+
 #### Analyzing levels
 ### Level 1: Type = dict, 
-    # Values = tuples of (dict_trainset, dict_testset)
+    # Values = 2-list of [dict_trainset, dict_testset]
     # Key = targeted fullset desired
 level_1 = dict_sliding_fullsets  # All fullsets
 type(level_1)  # dict
-len(level_1)    # 24 keys, each value being a 2-tuple (trainset, testset)
-type(level_1['fullset0_train_test_tup'])   # 2-tuple of first fullset "fullset0"
-type(level_1['fullset0_train_test_tup'][0])   # tuple - trainset of first fullset "fullset0"
-type(level_1['fullset0_train_test_tup'][1])   # tuple - testset of first fullset "fullset0"
-### Level 2: Type = 2-tuple
+len(level_1)    # 24 keys, each value being a 2-list [trainset, testset]
+type(level_1['fullset0_train_test_tup'])   # 2-list of first fullset "fullset0"
+type(level_1['fullset0_train_test_tup'][0])   # list - trainset of first fullset "fullset0"
+type(level_1['fullset0_train_test_tup'][1])   # list - testset of first fullset "fullset0"
+### Level 2: Type = 2-list
 level_2 = level_1['fullset0_train_test_tup'][0]
-type(level_2)   #2-tuple
-len(level_2)    #2, for the 2-tuple (dict_window_splits, pd.Datetime)
+type(level_2)   #2-list
+len(level_2)    #2, for the 2-list [dict_window_splits, pd.Datetime]
 type(level_2[0])    # dict - inputs and labels split for this train set
 type(level_2[1])    # pd.DateTimeIndex - the dates for the labels in this trainset/testset
 ### Level 3: Type = dict
@@ -338,8 +386,8 @@ type(level_2[1])    # pd.DateTimeIndex - the dates for the labels in this trains
     # keys = targeted window desired 
 level_3 = level_2[0]
 type(level_3)   #dict
-len(level_3)    #202 windows, each holding 2-tuple (inputs_ndarray_shape(50,105), label_ndarray_shape(21,))
-type(level_3['trainset_win0_input_label_tup'])  #2-tuple (of ndarrays) of first window
+len(level_3)    #202 windows, each holding 2-list [inputs_ndarray_shape(50,105), label_ndarray_shape(21,)]
+type(level_3['trainset_win0_input_label_tup'])  #2-list (of ndarrays) of first window
 type(level_3['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
 type(level_3['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
 level_3.keys()
