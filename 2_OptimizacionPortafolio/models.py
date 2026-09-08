@@ -34,6 +34,7 @@ df_tech_indicators = pd.read_csv(
 #### Global hyperparams
 WINDOW_SIZE = 50
 NUM_STOCKS = 21
+STOCK_NAMES = df_tech_indicators.columns[:21].
 SEED = 42
 np.random.seed(SEED)
 tf.random.set_seed(SEED)
@@ -47,9 +48,9 @@ def window_split(
         type: str
 ) -> np.ndarray:
     # Set up
-    splits = {}
+    all_inputs = []
+    all_labels = []
     num_indicators = int(df_test_train_set.shape[1]/NUM_STOCKS)
-    window_counter = 0
     y_all_prices = df_test_train_set.filter(regex="^Price")
         # Will be used for the y-label of ech window
     # if type == 'test': # Debug continuity
@@ -84,8 +85,8 @@ def window_split(
         # Extracting label = future stock final prices of a given day
         y = y_all_prices.iloc[t] 
         # Concatenation
-        splits[f'{type}set_win{window_counter}_input_label_list'] = [X_norm.values, y.values]
-        window_counter += 1
+        all_inputs.append(X_norm.values)
+        all_labels.append(y.values)
 
     # Recording dates
         # Useful when graphing model results
@@ -93,7 +94,7 @@ def window_split(
     # if type =='test': print(split_label_dates[0], split_label_dates[-1])
 
     # print('DONE')
-    return [splits, split_label_dates]
+    return [np.array(all_inputs), np.array(all_labels), split_label_dates.values]
 
 #### Sliding window function
 def sliding_window_split(
@@ -190,7 +191,7 @@ def expanding_window_split(
         # )
 
         # Appending data
-        train_test_sets[f'fullset{fullset_counter}_train_test_tup'] = [train_data_splits, test_data_splits]
+        train_test_sets[f'fullset{fullset_counter}_train_test_list'] = [train_data_splits, test_data_splits]
         fullset_counter += 1
 
     return train_test_sets
@@ -310,16 +311,16 @@ else:
     pickle.dump(dict_sliding_fullsets, open(sliding_strat_path, 'wb'))
 
 #### SAmple indictor select
-indicators = ['Price', 'HLC3']
-fullsets_price_HLC3_dict = \
-    indicator_selection(indicators, dict_sliding_fullsets)
-## Checking
-first_fullset = fullsets_price_HLC3_dict['fullset0_train_test_list']
-trainset = first_fullset[0]
-winds_dict = trainset[0]
-first_wind_inputs_labels = winds_dict['trainset_win0_input_label_list']
-first_win_inputs = first_wind_inputs_labels[0]
-first_win_inputs.shape  #(50, 42) - confirmed
+# indicators = ['Price', 'HLC3']
+# fullsets_price_HLC3_dict = \
+#     indicator_selection(indicators, dict_sliding_fullsets)
+# ## Checking
+# first_fullset = fullsets_price_HLC3_dict['fullset0_train_test_list']
+# trainset = first_fullset[0]
+# winds_dict = trainset[0]
+# first_wind_inputs_labels = winds_dict['trainset_win0_input_label_list']
+# first_win_inputs = first_wind_inputs_labels[0]
+# first_win_inputs.shape  #(50, 42) - confirmed
 
 
 
@@ -359,6 +360,13 @@ dict_fullsets_all_expand = dict_expanding_fullsets
 
 
 
+dict_fullsets_H_T_O_expand.keys()
+first_fullset = dict_fullsets_H_T_O_expand['fullset0_train_test_tup']
+trainset = first_fullset[0]
+winds_dict = trainset[0]
+first_wind_inputs_labels = winds_dict['trainset_win0_input_label_list']
+first_win_inputs = first_wind_inputs_labels[0]
+first_win_inputs.shape  #(50, 63) - confirmed
 
 
 
@@ -372,40 +380,19 @@ dict_fullsets_all_expand = dict_expanding_fullsets
 level_1 = dict_sliding_fullsets  # All fullsets
 type(level_1)  # dict
 len(level_1)    # 24 keys, each value being a 2-list [trainset, testset]
-type(level_1['fullset0_train_test_tup'])   # 2-list of first fullset "fullset0"
-type(level_1['fullset0_train_test_tup'][0])   # list - trainset of first fullset "fullset0"
-type(level_1['fullset0_train_test_tup'][1])   # list - testset of first fullset "fullset0"
+type(level_1['fullset0_train_test_list'])   # 2-list of first fullset "fullset0"
+type(level_1['fullset0_train_test_list'][0])   # list - trainset of first fullset "fullset0"
+type(level_1['fullset0_train_test_list'][1])   # list - testset of first fullset "fullset0"
 ### Level 2: Type = 2-list
-level_2 = level_1['fullset0_train_test_tup'][0]
+level_2 = level_1['fullset0_train_test_list'][0]
 type(level_2)   #2-list
-len(level_2)    #2, for the 2-list [dict_window_splits, pd.Datetime]
-type(level_2[0])    # dict - inputs and labels split for this train set
-type(level_2[1])    # pd.DateTimeIndex - the dates for the labels in this trainset/testset
-### Level 3: Type = dict
-    # Values = tuple of (np_window_inputs, np_window_label)
-    # keys = targeted window desired 
-level_3 = level_2[0]
-type(level_3)   #dict
-len(level_3)    #202 windows, each holding 2-list [inputs_ndarray_shape(50,105), label_ndarray_shape(21,)]
-type(level_3['trainset_win0_input_label_tup'])  #2-list (of ndarrays) of first window
-type(level_3['trainset_win0_input_label_tup'][0])  #ndarray - inputs of first window "win0"
-type(level_3['trainset_win0_input_label_tup'][1])  #ndarray - label of first window "win0"
-level_3.keys()
-### Level 4.1: Type = ndarray
-    # Inputs of first window
-level_4_1 = level_3['trainset_win0_input_label_tup'][0]
-type(level_4_1)   #ndarray
-level_4_1.shape   #(50, 105)
-    # shape[0] = specific day in the window
-        # Doesn't include the last "t" day
-    # shape[1] = specific indicator/stock combo
-### Level 4.2: Type = ndarray
-    # Label of first window
-level_4_2 = level_3['trainset_win0_input_label_tup'][1]
-type(level_4_2)
-level_4_2.shape #(21,)
-    # Prices of the 21 stocks on the last "t" day
-        # Will be used to calculate the ratio sharpe
+len(level_2)    #3, for the 3-list [np_all_window_inputs, np_all_window_labels, np_pdDateTime]
+type(level_2[0])    # ndarray - all the window inputs
+level_2[0].shape    #(202, 50, 105)
+type(level_2[1])    # ndarray - 
+level_2[1].shape    #(202, 21)
+type(level_2[2])    # ndarray(DateTime) - the dates for the labels in this trainset/testset
+level_2[2].shape    #(202, )
 
 
 
@@ -484,6 +471,7 @@ def seed_reset_weights(model):
                 # weight.assign(tf.ones(shape=weight.shape))
             else:
                 print('OTHER WEIGHT TYPE')
+    return model
 
 # #### Checking all functions above
 # ### Creating model
@@ -631,20 +619,26 @@ slide_model_2 = LSTMModel(num_indicators=3, num_assets=NUM_STOCKS, name='three_i
 
 #####  Model 3 Indicators: All 5 
 #### Setup corresponding data
-dict_spliding_fullsets = dict_spliding_fullsets
+dict_fullsets_all_sliding = dict_sliding_fullsets
 #### Setup model
 slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_indicators')
 slide_model_3.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
     loss=MinRS
 )
-slide_model_3_results = []
+#### Setup resulting pandas
+df_slide_model_3_weight_results = pd.DataFrame(columns=[f'all_indic_{stock}' for stock in STOCK_NAMES])
+df_slide_model_3_weight_results.index = pd.to_datetime(df_slide_model_3_weight_results.index)
 #### Training
     # FS = FullSet
-for FS_name, FS_train_test_tup in dict_spliding_fullsets.items():
-    seed_reset_weights(slide_model_3)
-    trainset = FS_train_test_tup[0]
-    slide_model_3
+for FS_name, FS_train_test_list in dict_fullsets_all_sliding.items():
+    # Setup
+    slide_model_3 = seed_reset_weights(slide_model_3)
+    trainset = FS_train_test_list[0]    #Contains [np_all_inputs, np_all_labels, np_datetime]
+    testset = FS_train_test_list[1]
+
+    # Training
+    slide_model_3.fit()
 
 
 
