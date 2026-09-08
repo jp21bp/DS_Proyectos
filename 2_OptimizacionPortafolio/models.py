@@ -197,47 +197,7 @@ def expanding_window_split(
 
 # dict_expanding_fullsets = expanding_window_split(df_tech_indicators)
 
-#### Technical indicator selection
-    # Choosing specific indicators instead of all 5
-    # Each indicator is 21 cols/stocks long
-    # Selection will happen post splits from above
-def indicator_selection(list_indicators: list, split_strat: dict):
-    ### Mapping: indicator -> corresponding cols
-    ## Creating map
-        # Price: 0(inc) - 21(excl)
-        # Log Ret: 21 - 42
-        # TEMA: 42 - 63
-        # HLC3: 63 - 84
-        # OBV: 84 - 105
-    ranges = []
-    for indicator in list_indicators:
-        if indicator == 'Price':
-            ranges.append((0,21))
-        elif indicator == 'LogRet':
-            ranges.append((21,42))
-        elif indicator == 'TEMA':
-            ranges.append((42,63))
-        elif indicator == 'HLC3':
-            ranges.append((63,84))
-        elif indicator == 'OBV':
-            ranges.append((84,105))
-        else:
-            raise TypeError('Indicator no written correctly')
-    ## Creating col indices
-    cols = np.concatenate(
-        [np.arange(start, end) for start, end in ranges]
-    )
 
-
-    ### Selecting indicators
-    # for key, value in split_strat.items():
-
-    return split_strat[:, cols]
-
-
-arr = np.arange(315).reshape(3, 105)  # 6 filas x 10 columnas
-indicators = ['Price', 'HLC3']
-indicator_selection(indicators, arr)
 
 
 
@@ -281,6 +241,55 @@ arr = np.arange(60).reshape(6, 10)  # 6 filas x 10 columnas
 rangos = [(0, 2), (6, 9)]  # 2nda a 4ta y 7ma a 9na columna
 resultado = tmp(arr, rangos)
 
+
+
+#### Technical indicator selection
+    # Choosing specific indicators instead of all 5
+    # Each indicator is 21 cols/stocks long
+    # Selection will happen post splits from above
+def indicator_selection(list_indicators: list, split_strat: dict):
+    ### Mapping: indicator -> corresponding cols
+        # Price: 0(inc) - 21(excl)
+        # Log Ret: 21 - 42
+        # TEMA: 42 - 63
+        # HLC3: 63 - 84
+        # OBV: 84 - 105
+    ranges = []
+    for indicator in list_indicators:
+        if indicator == 'Price':
+            ranges.append((0,21))
+        elif indicator == 'LogRet':
+            ranges.append((21,42))
+        elif indicator == 'TEMA':
+            ranges.append((42,63))
+        elif indicator == 'HLC3':
+            ranges.append((63,84))
+        elif indicator == 'OBV':
+            ranges.append((84,105))
+        else:
+            raise TypeError('Indicator not written correctly')
+        
+    ### Creating col indices
+    cols = np.concatenate(
+        [np.arange(start, end) for start, end in ranges]
+    )
+
+    ### Selecting indicators
+    for fullset_key, train_test_tup_value in split_strat.items():
+        print('ONE')
+        print(type(train_test_tup_value))
+        for wind_datetime_tup in train_test_tup_value:
+            print('two')
+            print(type(wind_datetime_tup))
+            print(type(wind_datetime_tup[0]))
+            for wind_key, wind_tup in wind_datetime_tup[0].items():
+                print('three')
+                print(type(wind_tup))
+                wind_tup[0] = wind_tup[0][:, cols]
+
+    return split_strat
+
+
 ################################################
     # Implementing splits #
 #### Implementation
@@ -292,6 +301,10 @@ if os.path.isfile(sliding_strat_path):
 else:
     dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
     pickle.dump(dict_sliding_fullsets, open(sliding_strat_path, 'wb'))
+
+
+indicators = ['Price', 'HLC3']
+indicator_selection(indicators, dict_sliding_fullsets)
 
 
 ### Expanding strat
