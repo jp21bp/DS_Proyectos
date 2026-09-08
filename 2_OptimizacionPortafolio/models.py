@@ -41,6 +41,80 @@ SEED = 42
 np.random.seed(SEED)
 tf.random.set_seed(SEED)
 LEARN_RATE = 0.001
+
+#################################################
+    # Performance Metrics #
+##### Function
+def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) -> dict:
+    # "ds_port_returns".shape = (num_days,)
+    assert type(ds_port_returns) == pd.Series
+    # Base Case
+    if ds_port_returns.size == 0:
+        return {
+            "Annualized Return": 0.0,
+            "Annualized Volatility": 0.0,
+            "Sharpe Ratio": 0.0,
+            "Downside Deviation": 0.0,
+            "Sortino Ratio": 0.0,
+            "Max Drawdown": 0.0,
+            "Percent Positive Returns": 0.0,
+            "Profit Loss Ratio": 0.0,
+            "Cumulative Returns": np.array([1.0])
+        }
+    
+    # Annualize return
+    mean_daily_ret = ds_port_returns.mean()
+    annualized_ret = mean_daily_ret * periodic_rate
+
+    # Annualized volatility
+    vol_daily_ret = ds_port_returns.std()
+    annualized_vol = vol_daily_ret * np.sqrt(periodic_rate)
+    
+    # Sharpe ratio
+    annualized_sharpe = annualized_ret/(annualized_vol + 1e-8)
+
+    # Downside deviation
+    neg_rets = ds_port_returns[ds_port_returns < 0]
+    annualized_downside_dev = neg_rets.std() * np.sqrt(periodic_rate)\
+        if len(neg_rets) > 0 else 0.0
+
+    # Sortino ratio
+    annualized_sortino = annualized_ret/(annualized_downside_dev + 1e-8)\
+        if annualized_downside_dev > 0.0 else 0.0
+
+    # Cumulative returns
+    cumulative_rets = (1 + ds_port_returns).cumprod()
+
+    # Max Drawdown
+    peak = np.maximum.accumulate(cumulative_rets.values)
+    drawdown = (cumulative_rets - peak)/(peak + 1e-8)
+    max_drawdown = np.min(drawdown) if len(drawdown) > 0 else 0.0
+
+    # Percentage of positive returns
+    per_pos_rets = (len(ds_port_returns[ds_port_returns > 0])/ ds_port_returns.shape[0]) * 100 \
+        if len(ds_port_returns) > 0 else 0.0
+
+    # P/L Ratio
+    pos_rets = ds_port_returns[ds_port_returns > 0]
+    neg_rets = ds_port_returns[ds_port_returns < 0]
+    avg_profit = pos_rets.mean() if len(pos_rets) > 0 else 0.0
+    avg_loss = neg_rets.mean() if len(neg_rets) > 0 else 0.0
+    pl_ratio = abs(avg_profit/(avg_loss + 1e-8)) if avg_loss < 0.0 else 0.0
+
+    # Results
+    return {
+        "Annualized Return": annualized_ret,
+        "Annualized Volatility": annualized_vol,
+        "Sharpe Ratio": annualized_sharpe,
+        "Downside Deviation": annualized_downside_dev,
+        "Sortino Ratio": annualized_sortino,
+        "Max Drawdown": max_drawdown,
+        "Percent Positive Returns": per_pos_rets,
+        "Profit Loss Ratio": pl_ratio,
+        "Cumulative Returns": cumulative_rets
+    }
+
+
 #####################################
     # Pre-processing #
 #### General window split
@@ -334,31 +408,31 @@ for key, set in dict_expanding_fullsets.items():
 
 
 #### Indicator selections
-### Sliding window
-dict_fullsets_P_L_sliding = \
-    indicator_selection(['Price', 'LogRet'], dict_sliding_fullsets)
+# ### Sliding window
+# dict_fullsets_P_L_sliding = \
+#     indicator_selection(['Price', 'LogRet'], dict_sliding_fullsets)
 
-dict_fullsets_H_T_O_sliding = \
-    indicator_selection(['TEMA', 'HLC3', 'OBV'], dict_sliding_fullsets)
+# dict_fullsets_H_T_O_sliding = \
+#     indicator_selection(['TEMA', 'HLC3', 'OBV'], dict_sliding_fullsets)
 
 dict_fullsets_all_sliding = dict_sliding_fullsets
 
-### Expanding window
-dict_fullsets_P_L_expand = \
-    indicator_selection(['Price', 'LogRet'], dict_expanding_fullsets)
+# ### Expanding window
+# dict_fullsets_P_L_expand = \
+#     indicator_selection(['Price', 'LogRet'], dict_expanding_fullsets)
 
-dict_fullsets_H_T_O_expand = \
-    indicator_selection(['TEMA', 'HLC3', 'OBV'], dict_expanding_fullsets)
+# dict_fullsets_H_T_O_expand = \
+#     indicator_selection(['TEMA', 'HLC3', 'OBV'], dict_expanding_fullsets)
 
 dict_fullsets_all_expand = dict_expanding_fullsets
 
 
-
-dict_fullsets_H_T_O_expand.keys()
-first_fullset = dict_fullsets_H_T_O_expand['fullset0_train_test_tup']
-trainset = first_fullset[0]
-np_inputs = trainset[0]
-np_inputs.shape  #(50, 63) - confirmed
+#### Chekcing
+# dict_fullsets_H_T_O_expand.keys()
+# first_fullset = dict_fullsets_H_T_O_expand['fullset0_train_test_tup']
+# trainset = first_fullset[0]
+# np_inputs = trainset[0]
+# np_inputs.shape  #(50, 63) - confirmed
 
 
 
@@ -407,6 +481,8 @@ class LSTMModel(tf.keras.Model):
         **kwargs
     ):
         super(LSTMModel, self).__init__(**kwargs)
+        self.num_indicators = num_indicators
+        self.num_assets=num_assets
         self.lstm1 = tf.keras.layers.LSTM(
             2 ** int(np.floor(np.log2(num_assets * 10))),
             input_shape = (WINDOW_SIZE, num_indicators * num_assets),
@@ -443,7 +519,7 @@ class LSTMModel(tf.keras.Model):
         return x
 
     def build(self):
-        dummy_input = tf.zeros((1, WINDOW_SIZE, 2*21))
+        dummy_input = tf.zeros((1, WINDOW_SIZE, self.num_indicators * self.num_assets))
         self.call(dummy_input)
         return
     
@@ -480,20 +556,31 @@ def seed_reset_weights(model):
     # TF Loss Function #
 #### Creating loss class
 class MinRS(tf.keras.losses.Loss):
-    def __init__(self, name = None, reduction = "sum_over_batch_size", dtype=None):
+    def __init__(self, name = None, reduction = "mean", dtype=None):
+        # Reductions: {None, 'mean_with_sample_weight', 'none', 'sum_over_batch_size', 'mean', 'sum'}
         super(MinRS, self).__init__(name, reduction, dtype)
 
     def call(self, y_true, y_pred):
         # Convert to TF objects
-        tf_y_true =tf.convert_to_tensor(y_true, dtype=tf.float32)
-        tf_y_pred =tf.convert_to_tensor(y_pred, dtype=tf.float32)
+        # tf.print(y_pred.shape)
+        # tf.print(tf.shape(y_pred))
+        # tf.print('Suma',tf.shape(tf.reduce_sum(y_pred, axis=1)))
+
+        tf_y_true =tf.convert_to_tensor(y_true, dtype=tf.float32)   # Stock prices
+        tf_y_pred =tf.convert_to_tensor(y_pred, dtype=tf.float32)   # Predicted weights
         tf_stock_returns = y_true * y_pred
+        # tf.print(tf.shape(y_pred), tf.shape(y_true), tf.shape(tf_stock_returns))
+
 
         # Calculating daily ratio sharpe
             # Reason for daily: labels are daily
-        day_return = tf.reduce_sum(tf_stock_returns)
-        day_std = tf.math.reduce_std(tf_stock_returns)
+        day_return = tf.reduce_sum(tf_stock_returns, axis=1)
+        day_std = tf.math.reduce_std(tf_stock_returns, axis=1)
+        # tf.print(day_return)
+        # tf.print(day_std)
+
         day_rs = day_return/(day_std + tf.keras.backend.epsilon())
+        # tf.print(tf.shape(day_return), tf.shape(day_std), tf.shape(day_rs))
 
         return -day_rs
 
@@ -501,89 +588,48 @@ class MinRS(tf.keras.losses.Loss):
     # Callback #
 #### Creating Callback class
 class CustomCallback(tf.keras.callbacks.Callback):
-    def __init__(self):
+    def __init__(self, valset, patience = 3, overfit_thresh = 8000):
         super(CustomCallback, self).__init__()
+        self.valset = valset
+        self.patience = patience
+        self.overfit_thresh = overfit_thresh
+        self.wait = 0
+        self.best_val_loss = np.inf
 
-    def on_predict_batch_end(self, batch, logs = None):
-        print(f'Batch: {batch}')
-        return
+    def on_epoch_end(self, epoch, logs = None):
+        # Probando Valset calculaciones directas
+        # print('EPOCH END')
+        y_pred = self.model(self.valset[0], training=False)
+        stock_returns = y_pred * self.valset[1]
+        day_ret = np.sum(stock_returns, axis=1)
+        day_std = np.std(stock_returns, axis=1)
+        rs = day_ret/(day_std + 1e-8)
+        # print(rs)
+        print(f'VAL MEAN: {np.mean(rs)}')
+        # for val_inputs, val_labels in self.valset:
+        #     y_pred = self.model(val_inputs, training=False)
+        #     stock_returns = y_pred * val_labels
+        #     day_ret = np.sum(stock_returns)
+        #     day_std = np.std(stock_returns)
+        #     rs = day_ret/(day_std + 1e-8)
+        #     print(rs)
 
-    def on_predict_end(self, logs = None):
-        print('PREDICT')
-        return 
+        # Extracting the losses
+        logs = logs or {}
+        val_loss = logs.get('val_loss')
+        train_loss = logs.get('loss')
+        # Calculating loss diff
+        loss_diff = val_loss - train_loss
+        print(f'Epoch {epoch}: train_loss={train_loss:.4f}, val_loss={val_loss:.4f}, loss_diff={loss_diff:.4f}')
+        # Actions
+        if loss_diff > self.overfit_thresh:
+            self.wait += 1
+            if self.wait >= self.patience:
+                print('Early Stopping')
+                self.wait = 0
+                self.model.stop_training = True
+        else: self.wait = 0
 
-
-#################################################
-    # Performance Metrics #
-##### Function
-def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) -> dict:
-    # "ds_port_returns".shape = (num_days,)
-    assert type(ds_port_returns) == pd.Series
-    # Base Case
-    if ds_port_returns.size == 0:
-        return {
-            "Annualized Return": 0.0,
-            "Annualized Volatility": 0.0,
-            "Sharpe Ratio": 0.0,
-            "Downside Deviation": 0.0,
-            "Sortino Ratio": 0.0,
-            "Max Drawdown": 0.0,
-            "Percent Positive Returns": 0.0,
-            "Profit Loss Ratio": 0.0,
-            "Cumulative Returns": np.array([1.0])
-        }
-    
-    # Annualize return
-    mean_daily_ret = ds_port_returns.mean()
-    annualized_ret = mean_daily_ret * periodic_rate
-
-    # Annualized volatility
-    vol_daily_ret = ds_port_returns.std()
-    annualized_vol = vol_daily_ret * np.sqrt(periodic_rate)
-    
-    # Sharpe ratio
-    annualized_sharpe = annualized_ret/(annualized_vol + 1e-8)
-
-    # Downside deviation
-    neg_rets = ds_port_returns[ds_port_returns < 0]
-    annualized_downside_dev = neg_rets.std() * np.sqrt(periodic_rate)\
-        if len(neg_rets) > 0 else 0.0
-
-    # Sortino ratio
-    annualized_sortino = annualized_ret/(annualized_downside_dev + 1e-8)\
-        if annualized_downside_dev > 0.0 else 0.0
-
-    # Cumulative returns
-    cumulative_rets = (1 + ds_port_returns).cumprod()
-
-    # Max Drawdown
-    peak = np.maximum.accumulate(cumulative_rets.values)
-    drawdown = (cumulative_rets - peak)/(peak + 1e-8)
-    max_drawdown = np.min(drawdown) if len(drawdown) > 0 else 0.0
-
-    # Percentage of positive returns
-    per_pos_rets = (len(ds_port_returns[ds_port_returns > 0])/ ds_port_returns.shape[0]) * 100 \
-        if len(ds_port_returns) > 0 else 0.0
-
-    # P/L Ratio
-    pos_rets = ds_port_returns[ds_port_returns > 0]
-    neg_rets = ds_port_returns[ds_port_returns < 0]
-    avg_profit = pos_rets.mean() if len(pos_rets) > 0 else 0.0
-    avg_loss = neg_rets.mean() if len(neg_rets) > 0 else 0.0
-    pl_ratio = abs(avg_profit/(avg_loss + 1e-8)) if avg_loss < 0.0 else 0.0
-
-    # Results
-    return {
-        "Annualized Return": annualized_ret,
-        "Annualized Volatility": annualized_vol,
-        "Sharpe Ratio": annualized_sharpe,
-        "Downside Deviation": annualized_downside_dev,
-        "Sortino Ratio": annualized_sortino,
-        "Max Drawdown": max_drawdown,
-        "Percent Positive Returns": per_pos_rets,
-        "Profit Loss Ratio": pl_ratio,
-        "Cumulative Returns": cumulative_rets
-    }
 
 
 #########################################################
@@ -592,19 +638,19 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
 #### Setup corresponding data
 
 #### Setup Model
-slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS, name='two_indicators')
-slide_model_1.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
-    loss=MinRS
-)
-slide_model_1_results = []
+# slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS, name='two_indicators')
+# slide_model_1.compile(
+#     optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
+#     loss=MinRS
+# )
+# slide_model_1_results = []
 
 
 
 
 
 #####  Model 2 Indicators: HLC3, TEMA, OBV
-slide_model_2 = LSTMModel(num_indicators=3, num_assets=NUM_STOCKS, name='three_indicators')
+# slide_model_2 = LSTMModel(num_indicators=3, num_assets=NUM_STOCKS, name='three_indicators')
 
 
 
@@ -630,15 +676,18 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
     trainset = FS_train_val_test_list[0]    #Contains [np_all_inputs, np_all_labels, np_datetime]
     valset = FS_train_val_test_list[1]
     testset = FS_train_val_test_list[2]
-
+    # Callback
+    custom_cb = CustomCallback(valset=(valset[0], valset[1]))
     # Training
     history = slide_model_3.fit(
-        trainset[0],    # All windows' inputs
-        trainset[1],    # All windows' labels
-        verbose=2,
-        shuffle=False,
+        x=trainset[0],    # All windows' inputs
+        y=trainset[1],    # All windows' labels
+        batch_size=32,
         epochs=100,
+        verbose=2,
+        callbacks=custom_cb,
+        validation_data=(valset[0], valset[1]),
+        shuffle=False,
     )
-
 
 
