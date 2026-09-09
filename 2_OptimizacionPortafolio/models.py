@@ -640,9 +640,9 @@ class CustomCallback(tf.keras.callbacks.Callback):
         # self.valset = valset
         self.lr_patience = lr_patience
         self.stop_patience = stop_patience
+        self.thresh = thresh
         self.lr_wait = 0
         self.stop_wait = 0
-        self.thresh = thresh
         self.prev_val_rs = None
         self.prev_train_rs = None
 
@@ -714,19 +714,24 @@ class CustomCallback(tf.keras.callbacks.Callback):
         if diff_train_rs < self.thresh:
             self.lr_wait += 1
             if self.lr_wait > self.lr_patience:
-                print('CHANGE LR')
                 self.lr_wait = 0
                 curr_lr = float(tf.keras.backend.get_value(self.model.optimizer.learning_rate))
                 self.model.optimizer.learning_rate.assign(curr_lr*0.5)
-                print(f"Old: {curr_lr}, new: {curr_lr*0.5}")
-            else:
-                self.lr_wait = 0
+                print(f"Change LR - Old: {curr_lr}, new: {curr_lr*0.5}")
+        else:
+            self.lr_wait = 0
 
         # Updating previous records
         self.prev_val_rs = val_rs
         self.prev_train_rs = train_rs
 
-        print(f'STATS {epoch + 1}:', diff_val_rs, self.lr_wait, self.stop_wait)
+        stats = (
+            f"Stats {epoch + 1}: valset diff {diff_val_rs.round(5)},"
+            f" stop counter {self.stop_wait}/{self.stop_patience},"
+            f" trainset diff {diff_train_rs.round(5)}, lr counter"
+            f" {self.lr_wait}/{self.lr_patience}"
+        )
+        print(stats)
         
         # Examinando self.valset
 
@@ -828,6 +833,41 @@ class RatioSharpe(tf.keras.metrics.Metric):
 
 
 #########################################################
+    # Plotting training history #
+#### Function
+def plot_history(history, strat_type: str, indicators: list[str]):
+    fig, ax = plt.subplots(figsize=(12,5))
+    # Train RS
+    ax.plot(
+        history.history['RS'],
+        label = 'Training RS',
+        color = 'blue'
+    )
+    # Val RS
+    ax.plot(
+        history.history['val_RS'],
+        label='Val RS',
+        color = 'orange'
+    )
+    ax.title(f'Strat: {strat_type}, Indicators: {indicators}')
+    ax.set_ylabel('Ratio Sharpe Value')
+    ax.set_xlabel('Epoch')
+    ax.legend()
+    plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+#########################################################
     # Training - Sliding Technique #
 ##### Model 1 Indicators: Price and Log returns
 #### Setup corresponding data
@@ -906,5 +946,8 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
         shuffle=False,
         # validation_batch_size=8,
     )
+
+    plot_history(history)
+
 
 
