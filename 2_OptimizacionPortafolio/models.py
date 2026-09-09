@@ -515,10 +515,13 @@ class LSTMModel(tf.keras.Model):
             bias_initializer = zero_init,
             name='dense'
         )
+        self.dropout = tf.keras.layers.Dropout(0.2)
 
     def call(self, inputs):
         x = self.lstm1(inputs)
+        x = self.dropout(x)
         x = self.lstm2(x)
+        x = self.dropout(x)
         x = self.dense(x)
         return x
 
@@ -668,28 +671,49 @@ class CustomCallback(tf.keras.callbacks.Callback):
 
         diff_val_rs = val_rs - self.prev_val_rs
 
+        # Case: validation ratio sharpe isn't improving
+        if diff_val_rs < 1e-5:
+            self.lr_wait += 1
+            self.stop_wait += 1
+            if self.lr_wait >self.lr_patience:
+                print('CHANGE LR')
+                self.lr_wait = 0
+                curr_lr = float(tf.keras.backend.get_value(self.model.optimizer.learning_rate))
+                self.model.optimizer.learning_rate.assign(curr_lr*0.5)
+                print(f"Old: {curr_lr}, new: {curr_lr*0.5}")
+            if self.stop_wait > self.stop_patience:
+                print('EARLY STOP')
+                self.stop_wait = 0
+                self.model.stop_training = True
+        else: 
+            self.lr_wait = 0
+            self.stop_wait = 0
+
+        self.prev_val_rs = val_rs
+
+        print(f'STATS {epoch + 1}:', diff_val_rs, self.lr_wait, self.stop_wait)
         
         # Examinando self.valset
 
         
 
-        # Extracting the losses
-        logs = logs or {}
-        val_loss = logs.get('val_loss')
-        train_loss = logs.get('loss')
-        # print('LOGS')
-        # print(logs)
-        # Calculating loss diff
-        loss_diff = val_loss - train_loss
-        print(f'Epoch {epoch}: train_loss={train_loss:.4f}, val_loss={val_loss:.4f}, loss_diff={loss_diff:.4f}')
-        # Actions
-        if loss_diff > self.overfit_thresh:
-            self.wait += 1
-            if self.wait >= self.patience:
-                print('Early Stopping')
-                self.wait = 0
-                self.model.stop_training = True
-        else: self.wait = 0
+        # # Extracting the losses
+        # logs = logs or {}
+        # val_loss = logs.get('val_loss')
+        # train_loss = logs.get('loss')
+        # # print('LOGS')
+        # # print(logs)
+        # # Calculating loss diff
+        # loss_diff = val_loss - train_loss
+        # print(f'Epoch {epoch}: train_loss={train_loss:.4f}, val_loss={val_loss:.4f}, loss_diff={loss_diff:.4f}')
+        # # Actions
+        # if loss_diff > self.overfit_thresh:
+        #     self.wait += 1
+        #     if self.wait >= self.patience:
+        #         print('Early Stopping')
+        #         self.wait = 0
+        #         self.model.stop_training = True
+        # else: self.wait = 0
 
 #########################################################
     # Custom Metrics #
@@ -797,22 +821,30 @@ class RatioSharpe(tf.keras.metrics.Metric):
 dict_fullsets_all_sliding = dict_sliding_fullsets
 #### Setup model
 slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_indicators')
-slide_model_3.compile(
-    optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
-    loss=MinRS,
-    metrics=[RatioSharpe]
-        # NEeds to be 'RatioSharpe' and NOT 'RatioSharpe()'
-            # The former creates different object for the trainset and valset
-            # The latter uses the SAME object for the trainset and valset
-)
+# slide_model_3.compile(
+#     optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
+#     loss=MinRS,
+#     metrics=[RatioSharpe]
+#         # NEeds to be 'RatioSharpe' and NOT 'RatioSharpe()'
+#             # The former creates different object for the trainset and valset
+#             # The latter uses the SAME object for the trainset and valset
+# )
 #### Setup resulting pandas
 df_slide_model_3_weight_results = pd.DataFrame(columns=[f'all_indic_{stock}' for stock in STOCK_NAMES])
 df_slide_model_3_weight_results.index = pd.to_datetime(df_slide_model_3_weight_results.index)
 #### Training
     # FS = FullSet
 for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
+    # Compile model
+    slide_model_3.compile(
+        optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
+        loss=MinRS,
+        metrics=[RatioSharpe]
+            # NEeds to be 'RatioSharpe' and NOT 'RatioSharpe()'
+                # The former creates different object for the trainset and valset
+                # The latter uses the SAME object for the trainset and valset
+    )
     # Setup
-    slide_model_3 = seed_reset_weights(slide_model_3)
     trainset = FS_train_val_test_list[0]    #Contains [np_all_inputs, np_all_labels, np_datetime]
     valset = FS_train_val_test_list[1]
     testset = FS_train_val_test_list[2]
