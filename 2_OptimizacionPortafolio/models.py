@@ -479,10 +479,11 @@ level_2[2].shape    #(202, )
 
 #####################################################
     # TF Model#
-#### Creating initializers
+#### Creating initializers y regularizer
 glorot_init = tf.keras.initializers.GlorotUniform(seed=SEED)
 orthogonal_init = tf.keras.initializers.Orthogonal(seed=SEED)
 zero_init = tf.keras.initializers.Zeros()
+regularizer = tf.keras.regularizers.l2(1e-5)
 
 #### Creating Model class
 class LSTMModel(tf.keras.Model):
@@ -495,25 +496,30 @@ class LSTMModel(tf.keras.Model):
         super(LSTMModel, self).__init__(**kwargs)
         self.num_indicators = num_indicators
         self.num_assets=num_assets
+        self.projection = tf.keras.layers.Dense(
+            128,
+            activation='relu',
+            kernel_regularizer=regularizer
+        )
         self.lstm1 = tf.keras.layers.LSTM(
-            2 ** int(np.floor(np.log2(num_assets * 10))),
+            64,
             input_shape = (WINDOW_SIZE, num_indicators * num_assets),
             kernel_initializer = glorot_init,
             recurrent_initializer = orthogonal_init,
             bias_initializer = zero_init,
             return_sequences=True,
-            dropout=0.2,
-            recurrent_dropout=0.2,
+            dropout=0.1,
+            kernel_regularizer = regularizer,
             name="lstm_1"
         )
         self.lstm2 = tf.keras.layers.LSTM(
-            2 ** int(np.floor(np.log2(num_assets * 5))),
+            32,
             kernel_initializer = glorot_init,
             recurrent_initializer = orthogonal_init,
             bias_initializer = zero_init,
             return_sequences=False,
-            dropout=0.2,
-            recurrent_dropout=0.2,
+            dropout=0.1,
+            kernel_regularizer = regularizer,
             name="lstm_2"
         )
         self.dense = tf.keras.layers.Dense(
@@ -521,6 +527,7 @@ class LSTMModel(tf.keras.Model):
             activation='softmax',
             kernel_initializer = glorot_init,
             bias_initializer = zero_init,
+            kernel_regularizer = regularizer,
             name='dense'
         )
         self.dropout = tf.keras.layers.Dropout(
@@ -528,11 +535,13 @@ class LSTMModel(tf.keras.Model):
             name='dropout'
         )
 
-    def call(self, inputs):
-        x = self.lstm1(inputs)
-        x = self.dropout(x)
-        x = self.lstm2(x)
-        x = self.dropout(x)
+    def call(self, inputs, training=False):
+        # Add training to all layers with dropouts
+        # x = self.projection(inputs)
+        x = self.lstm1(inputs, training=training)
+        x = self.dropout(x, training=training)
+        x = self.lstm2(x, training=training)
+        x = self.dropout(x, training=training)
         x = self.dense(x)
         return x
 
