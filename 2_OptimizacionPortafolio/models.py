@@ -230,7 +230,7 @@ def sliding_window_split(
 
     return train_test_sets
 
-dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
+# dict_sliding_fullsets = sliding_window_split(df_tech_indicators)
 
 #### Expanding window split
 def expanding_window_split(
@@ -560,44 +560,42 @@ def seed_reset_weights(model):
     # TF Loss Function #
 #### Creating loss class
 class MinRS(tf.keras.losses.Loss):
-    def __init__(self, name = None, reduction = "mean", dtype=None):
+    def __init__(self, name = None, reduction = "mean", dtype=None, **kwargs):
         # Reductions: {None, 'mean_with_sample_weight', 'none', 'sum_over_batch_size', 'mean', 'sum'}
-        super(MinRS, self).__init__(name, reduction, dtype)
+        super(MinRS, self).__init__(name, reduction, dtype, **kwargs)
 
     def call(self, y_true, y_pred):
+        # Recall: y_true_t = smple returns of the 21 stocks in day t
+        # tf.print(type(y_true), type(y_pred))
+            #Both: <class 'tensorflow.python.framework.ops.SymbolicTensor'>
+        # tf.print(tf.shape(y_true), tf.shape(y_pred))  
+            #Both: Shape = (batch_size, num_stocks); affected by val_batch_size
+        
         # Convert to TF objects
-        # tf.print(y_pred.shape)
-        # tf.print(tf.shape(y_pred))
-        # tf.print('Suma',tf.shape(tf.reduce_sum(y_pred, axis=1)))
-
         tf_y_true =tf.convert_to_tensor(y_true, dtype=tf.float32)   # Stock prices
         tf_y_pred =tf.convert_to_tensor(y_pred, dtype=tf.float32)   # Predicted weights
-        tf_stock_returns = y_true * y_pred
-        # tf.print(tf.shape(y_pred), tf.shape(y_true), tf.shape(tf_stock_returns))
-
+        tf_batch_all_stock_returns = tf.multiply(tf_y_true, tf_y_pred)
+        # tf.print(tf.shape(tf_batch_all_stock_returns))  # Shape: (batch_size, num_stocks)
 
         ## Calculating daily ratio sharpe
             # Reason for daily: labels are daily
         # Daily returns
         days_per_year = float(252)
-        day_returns = tf.reduce_sum(tf_stock_returns, axis=1)
-        # tf.print(tf.shape(tf_stock_returns), tf.shape(day_returns))
+        batch_port_daily_returns = tf.reduce_sum(tf_batch_all_stock_returns, axis=1)
+        # tf.print(tf.shape(day_returns)) #Shape: (batch_size,)
         # Expected returns
-        daily_returns_mean = tf.reduce_mean(day_returns)
+        daily_returns_mean = tf.reduce_mean(batch_port_daily_returns)
         annualized_returns_mean = daily_returns_mean * days_per_year
-        # tf.print('rets:',daily_returns_mean, annualized_returns_mean)
+        # tf.print(tf.shape(daily_returns_mean))  #Shape: (,) -> scalar
         # Volatility
-        daily_returns_std = tf.math.reduce_std(day_returns)
+        daily_returns_std = tf.math.reduce_std(batch_port_daily_returns)
         annualized_returns_std = daily_returns_std * tf.math.sqrt(days_per_year)
-        # tf.print('std:',daily_returns_std, annualized_returns_std)
-        # tf.print('\n')
-        # tf.print(day_return)
-        # tf.print(day_std)
+        # tf.print(tf.shape(daily_returns_std))  #Shape: (,) -> scalar
 
         batch_diario_rs = daily_returns_mean/(daily_returns_std + tf.keras.backend.epsilon())
+        # tf.print(batch_diario_rs)
         batch_annualized_rs = annualized_returns_mean/(annualized_returns_std + tf.keras.backend.epsilon())
-            # Mucho sesgo por la baja cantidad de dias
-        # tf.print(batch_diario_rs, batch_annualized_rs)
+            # Mucho sesgo por la baja cantidad de batch_size
 
         return -batch_diario_rs
 
@@ -605,30 +603,82 @@ class MinRS(tf.keras.losses.Loss):
     # Callback #
 #### Creating Callback class
 class CustomCallback(tf.keras.callbacks.Callback):
-    def __init__(self, valset, patience = 3, overfit_thresh = 5):
+    # MOdelcheckpoint, LearnRateScheduler, ReduceLROnPlateau?, CSVLogger
+    # Algo como: 
+        # Every 20 epochs:
+            # Check if val_loss is lower than 20 epochs ago
+                # If yes: continue
+                # If no: reduce learn rate
+    # Pra model checkpoint:
+        # When ctrl + p is pressed: save the current weights, epoch, and fullset num
+    def __init__(self, valset, lr_patience = 3, stop_patience = 10, overfit_thresh = 5):
         super(CustomCallback, self).__init__()
-        self.valset = valset
-        self.patience = patience
+        # self.valset = valset
+        self.lr_patience = lr_patience
+        self.stop_patience = stop_patience
+        self.lr_wait = 0
+        self.stop_wait = 0
         self.overfit_thresh = overfit_thresh
-        self.wait = 0
-        self.best_val_loss = np.inf
+        self.prev_val_rs = None
 
-    def on_epoch_end(self, epoch, logs = None):
-        # Probando Valset calculaciones directas
-        # print('EPOCH END')
-        y_pred = self.model(self.valset[0], training=False)
-        stock_returns = y_pred * self.valset[1]
-        day_ret = np.sum(stock_returns, axis=1)
-        daily_mean_ret = np.mean(day_ret)
-        daily_std_ret = np.std(day_ret)
-        rs = daily_mean_ret/(daily_std_ret + 1e-8)
-        # print(rs)
+    def on_epoch_begin(self, epoch: int, logs = None):
+        ### Cambiar el learn rate
+        return
+
+
+    def on_train_batch_end(self, batch: int, logs = None):
+        #### HAcer acumulacion de todos los trainset
+        return 
+    
+    def on_test_batch_end(self, batch: int, logs = None):
+        ### Hacer acumulacion de todos los valsets???
+        # print(type(valset)) 
+            #3-list: [ndarr_inputs.shape = (val_windows, 50, 105), ndarr_labels.shape = (val_windows, 21), ndarr_dates]
+        # print(valset[0].shape)
+            # (13, 50, 105), even though val_batch_size = 8
+            # Thus, val_batch_size affects tf.Loss but not tf.Callback
+                # Makes sense, cause in tf.Callback the entire valset is fed
+        # print('EXAMINANSDO')
+        # print(type(batch))
+        # print(batch)
+        # Probando Valset calculaciones directamente
+        # y_pred = self.model(self.valset[0], training=False)
+        # stock_returns = y_pred * self.valset[1]
+        # day_ret = np.sum(stock_returns, axis=1)
+        # daily_mean_ret = np.mean(day_ret)
+        # daily_std_ret = np.std(day_ret)
+        # rs = daily_mean_ret/(daily_std_ret + 1e-8)
         # print(f'VAL MEAN: {np.mean(rs)}')
+        return
+
+
+
+    def on_epoch_end(self, epoch: int, logs = None):
+        ### Hacer acumulacion de resultados
+            # PAra ver si/no cambiar el learn rate
+            # Tambien se puede hacer early stopping?
+
+        ##### Hacer val_RS verdadero
+        logs = logs or {}
+        val_rs = logs.get('val_RS')
+
+        if not self.prev_val_rs:
+            self.prev_val_rs = val_rs
+            return
+
+        diff_val_rs = val_rs - self.prev_val_rs
+
+        
+        # Examinando self.valset
+
+        
 
         # Extracting the losses
         logs = logs or {}
         val_loss = logs.get('val_loss')
         train_loss = logs.get('loss')
+        # print('LOGS')
+        # print(logs)
         # Calculating loss diff
         loss_diff = val_loss - train_loss
         print(f'Epoch {epoch}: train_loss={train_loss:.4f}, val_loss={val_loss:.4f}, loss_diff={loss_diff:.4f}')
@@ -640,6 +690,81 @@ class CustomCallback(tf.keras.callbacks.Callback):
                 self.wait = 0
                 self.model.stop_training = True
         else: self.wait = 0
+
+#########################################################
+    # Custom Metrics #
+#### Creating custom RatioSharpe Metric class
+class RatioSharpe(tf.keras.metrics.Metric):
+    def __init__(self, dtype = None, name = 'RS'):
+        super().__init__(dtype, name)
+        # self.returns = self.add_weight(
+        #     name='port_returns',
+        #     shape=(64,),
+        #     # initializer=tf.keras.initializers.Constant([]),
+        #     initializer='zeros',
+        #     dtype=tf.float32
+        # )
+        # self.returns = []
+        self.batch_rs = self.add_weight(
+            name='batch_rs', 
+            initializer='zeros',
+            dtype=tf.float32
+        )
+        self.count = self.add_weight(
+            name='count_batch_iterations', 
+            initializer='zeros',
+            dtype=tf.float32
+        )
+
+    def update_state(self, y_true, y_pred, sample_weight = None):
+        # Method is invoked at end of EACH batch
+        # tf.print(type(y_true), type(y_pred))
+            # Both: <class 'tensorflow.python.framework.ops.SymbolicTensor'>
+        # tf.print(tf.shape(y_true), tf.shape(y_pred))
+            # Both: (batch_size, num_stocks) ; affected by val_batch_size
+        batch_stock_ret_daily = y_pred * y_true
+            # Shape: (batch_size, num_stocks)
+        batch_port_ret_daily = tf.reduce_sum(batch_stock_ret_daily, axis=1)
+            # Shape: (batch_size,)
+        batch_rets_mean = tf.reduce_mean(batch_port_ret_daily)
+            # Shape: (,)
+        batch_rets_std = tf.math.reduce_std(batch_port_ret_daily)
+            # Shape: (,)
+        batch_rets_rs = batch_rets_mean/(batch_rets_std + tf.keras.backend.epsilon())
+
+        # Update
+        # batch_1d_port_ret_daily = tf.reshape(
+        #     tf.cast(
+        #         batch_port_ret_daily, tf.float32
+        #     ), [-1] # Ensure 1d vector
+        # )
+        # tf.print(batch_1d_port_ret_daily)
+
+        # concat = tf.concat([self.returns, batch_1d_port_ret_daily], axis=0)
+        # tf.print(concat.value_index)
+
+        # self.returns.extend(
+        #     tf.reshape(concat, [-1]).numpy().tolist()
+        # )
+        # self.returns.assign(concat)
+        # self.returns[(self.count * 32):((self.count + 1.0) * 32)].assign(batch_1d_port_ret_daily)
+        # tf.print(self.returns)
+
+
+        self.batch_rs.assign_add(batch_rets_rs)
+        self.count.assign_add(1)
+
+    def result(self):
+        # Method is only executed at end of EACH batch
+        return self.batch_rs/self.count
+            # Por alguna razon es similar, pero no igual, al loss del modelo
+                # A pesar de que los 2 tienen las mismas operaciones
+
+    def reset_state(self):
+        # Method is invoked at END of training part and validation/test part
+        # self.returns.assign(tf.zeros((32,), dtype=tf.float32))
+        self.batch_rs.assign(0.0)
+        self.count.assign(0.0)
 
 
 
@@ -674,7 +799,11 @@ dict_fullsets_all_sliding = dict_sliding_fullsets
 slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_indicators')
 slide_model_3.compile(
     optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
-    loss=MinRS
+    loss=MinRS,
+    metrics=[RatioSharpe]
+        # NEeds to be 'RatioSharpe' and NOT 'RatioSharpe()'
+            # The former creates different object for the trainset and valset
+            # The latter uses the SAME object for the trainset and valset
 )
 #### Setup resulting pandas
 df_slide_model_3_weight_results = pd.DataFrame(columns=[f'all_indic_{stock}' for stock in STOCK_NAMES])
@@ -699,6 +828,7 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
         callbacks=custom_cb,
         validation_data=(valset[0], valset[1]),
         shuffle=False,
+        # validation_batch_size=8,
     )
 
 
