@@ -14,7 +14,7 @@ import pandas as pd
 import numpy as np
 import tensorflow as tf
 import matplotlib.pyplot as plt
-import os, pickle, copy
+import os, pickle, copy, keyboard
 from tqdm import tqdm
 
 #### Data path
@@ -46,6 +46,14 @@ SEED = 42
 np.random.seed(SEED)
 tf.random.set_seed(SEED)
 LEARN_RATE = 0.001
+
+#### Hotkey
+global_stop_training = False
+def hotkey():
+    print('pressed')
+    global_stop_training = True
+    return
+keyboard.add_hotkey('ctrl+e', hotkey)
 
 #################################################
     # Performance Metrics #
@@ -515,7 +523,10 @@ class LSTMModel(tf.keras.Model):
             bias_initializer = zero_init,
             name='dense'
         )
-        self.dropout = tf.keras.layers.Dropout(0.2)
+        self.dropout = tf.keras.layers.Dropout(
+            0.2,
+            name='dropout'
+        )
 
     def call(self, inputs):
         x = self.lstm1(inputs)
@@ -628,8 +639,14 @@ class CustomCallback(tf.keras.callbacks.Callback):
         ### Cambiar el learn rate
         return
 
+    def on_batch_end(self, batch, logs = None):
+        return
 
     def on_train_batch_end(self, batch: int, logs = None):
+        print('FLAG:', global_stop_training)
+        if global_stop_training:
+            print('EPOCH STOP', batch)
+            self.model.stop_training = True
         #### HAcer acumulacion de todos los trainset
         return 
     
@@ -653,8 +670,6 @@ class CustomCallback(tf.keras.callbacks.Callback):
         # rs = daily_mean_ret/(daily_std_ret + 1e-8)
         # print(f'VAL MEAN: {np.mean(rs)}')
         return
-
-
 
     def on_epoch_end(self, epoch: int, logs = None):
         ### Hacer acumulacion de resultados
@@ -816,6 +831,13 @@ class RatioSharpe(tf.keras.metrics.Metric):
 
 
 
+#### Hotkey
+global_stop_training = False
+def hotkey():
+    print('pressed')
+    global_stop_training = True
+    return
+keyboard.add_hotkey('ctrl+e', hotkey)
 #####  Model 3 Indicators: All 5 
 #### Setup corresponding data
 dict_fullsets_all_sliding = dict_sliding_fullsets
@@ -836,6 +858,7 @@ df_slide_model_3_weight_results.index = pd.to_datetime(df_slide_model_3_weight_r
     # FS = FullSet
 for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
     # Compile model
+    if global_stop_training: break
     slide_model_3.compile(
         optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
         loss=MinRS,
