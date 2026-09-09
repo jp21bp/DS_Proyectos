@@ -51,6 +51,7 @@ LEARN_RATE = 0.001
 global_stop_training = False
 def hotkey():
     print('pressed')
+    global global_stop_training
     global_stop_training = True
     return
 keyboard.add_hotkey('ctrl+e', hotkey)
@@ -634,15 +635,16 @@ class CustomCallback(tf.keras.callbacks.Callback):
                 # If no: reduce learn rate
     # Pra model checkpoint:
         # When ctrl + p is pressed: save the current weights, epoch, and fullset num
-    def __init__(self, valset, lr_patience = 3, stop_patience = 10, overfit_thresh = 5):
+    def __init__(self, valset, lr_patience = 3, stop_patience = 10, thresh = 1e-5):
         super(CustomCallback, self).__init__()
         # self.valset = valset
         self.lr_patience = lr_patience
         self.stop_patience = stop_patience
         self.lr_wait = 0
         self.stop_wait = 0
-        self.overfit_thresh = overfit_thresh
+        self.thresh = thresh
         self.prev_val_rs = None
+        self.prev_train_rs = None
 
     def on_epoch_begin(self, epoch: int, logs = None):
         ### Cambiar el learn rate
@@ -652,7 +654,7 @@ class CustomCallback(tf.keras.callbacks.Callback):
         return
 
     def on_train_batch_end(self, batch: int, logs = None):
-        print('FLAG:', global_stop_training)
+        # print('FLAG:', global_stop_training)
         if global_stop_training:
             print('EPOCH STOP', batch)
             self.model.stop_training = True
@@ -688,32 +690,41 @@ class CustomCallback(tf.keras.callbacks.Callback):
         ##### Hacer val_RS verdadero
         logs = logs or {}
         val_rs = logs.get('val_RS')
+        train_rs = logs.get('RS')
 
         if not self.prev_val_rs:
             self.prev_val_rs = val_rs
+            self.prev_train_rs = train_rs
             return
 
         diff_val_rs = val_rs - self.prev_val_rs
+        diff_train_rs = train_rs - self.prev_train_rs
 
-        # Case: validation ratio sharpe isn't improving
-        if diff_val_rs < 1e-5:
-            self.lr_wait += 1
+        # Case: validation ratio sharpe isn't improving -> case for early stopping
+        if diff_val_rs < self.thresh:
             self.stop_wait += 1
-            if self.lr_wait >self.lr_patience:
-                print('CHANGE LR')
-                self.lr_wait = 0
-                curr_lr = float(tf.keras.backend.get_value(self.model.optimizer.learning_rate))
-                self.model.optimizer.learning_rate.assign(curr_lr*0.5)
-                print(f"Old: {curr_lr}, new: {curr_lr*0.5}")
             if self.stop_wait > self.stop_patience:
                 print('EARLY STOP')
                 self.stop_wait = 0
                 self.model.stop_training = True
         else: 
-            self.lr_wait = 0
             self.stop_wait = 0
 
+        # Case: train ratio isn't improving -> case for changing learn rate
+        if diff_train_rs < self.thresh:
+            self.lr_wait += 1
+            if self.lr_wait > self.lr_patience:
+                print('CHANGE LR')
+                self.lr_wait = 0
+                curr_lr = float(tf.keras.backend.get_value(self.model.optimizer.learning_rate))
+                self.model.optimizer.learning_rate.assign(curr_lr*0.5)
+                print(f"Old: {curr_lr}, new: {curr_lr*0.5}")
+            else:
+                self.lr_wait = 0
+
+        # Updating previous records
         self.prev_val_rs = val_rs
+        self.prev_train_rs = train_rs
 
         print(f'STATS {epoch + 1}:', diff_val_rs, self.lr_wait, self.stop_wait)
         
@@ -844,6 +855,7 @@ class RatioSharpe(tf.keras.metrics.Metric):
 global_stop_training = False
 def hotkey():
     print('pressed')
+    global global_stop_training
     global_stop_training = True
     return
 keyboard.add_hotkey('ctrl+e', hotkey)
@@ -887,7 +899,7 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
         x=trainset[0],    # All windows' inputs
         y=trainset[1],    # All windows' labels
         batch_size=32,
-        epochs=100,
+        epochs=500,
         verbose=2,
         callbacks=custom_cb,
         validation_data=(valset[0], valset[1]),
