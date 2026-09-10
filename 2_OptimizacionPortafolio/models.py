@@ -634,16 +634,25 @@ class CustomCallback(tf.keras.callbacks.Callback):
                 # If no: reduce learn rate
     # Pra model checkpoint:
         # When ctrl + p is pressed: save the current weights, epoch, and fullset num
-    def __init__(self, valset, lr_patience = 3, stop_patience = 10, thresh = 1e-5):
+    def __init__(self, train_details_path: str, lr_patience = 3, stop_patience = 10, thresh = 1e-5):
         super(CustomCallback, self).__init__()
-        # self.valset = valset
-        self.lr_patience = lr_patience
-        self.stop_patience = stop_patience
+        self.train_details_path = train_details_path
+        # Threshold
         self.thresh = thresh
+        # Changing learning rate
         self.lr_wait = 0
+        self.lr_patience = lr_patience
+        # Early stopping
+        self.stop_patience = stop_patience
         self.stop_wait = 0
+        # Previous values  
+            # Used at end of every epoch
         self.prev_val_rs = None
         self.prev_train_rs = None
+        self.sum_val_rs = 0
+        self.sum_train_rs = 0
+        self.sum_diff_val_rs = 0
+        self.sum_diff_train_rs = 0
 
     def on_epoch_begin(self, epoch: int, logs = None):
         ### Cambiar el learn rate
@@ -679,61 +688,6 @@ class CustomCallback(tf.keras.callbacks.Callback):
         # daily_std_ret = np.std(day_ret)
         # rs = daily_mean_ret/(daily_std_ret + 1e-8)
         # print(f'VAL MEAN: {np.mean(rs)}')
-        return
-
-    def on_epoch_end(self, epoch: int, logs = None):
-        ### Hacer acumulacion de resultados
-            # PAra ver si/no cambiar el learn rate
-            # Tambien se puede hacer early stopping?
-
-        ##### Hacer val_RS verdadero
-        logs = logs or {}
-        val_rs = logs.get('val_RS')
-        train_rs = logs.get('RS')
-
-        if not self.prev_val_rs:
-            self.prev_val_rs = val_rs
-            self.prev_train_rs = train_rs
-            return
-
-        diff_val_rs = val_rs - self.prev_val_rs
-        diff_train_rs = train_rs - self.prev_train_rs
-
-        # Case: validation ratio sharpe isn't improving -> case for early stopping
-        if diff_val_rs < self.thresh:
-            self.stop_wait += 1
-            if self.stop_wait > self.stop_patience:
-                print('EARLY STOP')
-                self.stop_wait = 0
-                self.model.stop_training = True
-        else: 
-            self.stop_wait = 0
-
-        # Case: train ratio isn't improving -> case for changing learn rate
-        if diff_train_rs < self.thresh:
-        # if diff_val_rs < self.thresh:
-            self.lr_wait += 1
-            if self.lr_wait > self.lr_patience:
-                self.lr_wait = 0
-                curr_lr = float(tf.keras.backend.get_value(self.model.optimizer.learning_rate))
-                self.model.optimizer.learning_rate.assign(curr_lr*0.5)
-                print(f"Change LR - Old: {curr_lr}, new: {curr_lr*0.5}")
-        else:
-            self.lr_wait = 0
-
-        # Updating previous records
-        self.prev_val_rs = val_rs
-        self.prev_train_rs = train_rs
-
-        stats = (
-            f"Stats {epoch + 1}: valset diff {round(diff_val_rs,5)},"
-            f" stop counter {self.stop_wait}/{self.stop_patience},"
-            f" trainset diff {round(diff_train_rs,5)}, lr counter"
-            f" {self.lr_wait}/{self.lr_patience}"
-        )
-        print(stats)
-        
-        # Examinando self.valset
 
         
 
@@ -754,6 +708,89 @@ class CustomCallback(tf.keras.callbacks.Callback):
         #         self.wait = 0
         #         self.model.stop_training = True
         # else: self.wait = 0
+        return
+
+    def on_epoch_end(self, epoch: int, logs = None):
+        ### Hacer acumulacion de resultados
+            # PAra ver si/no cambiar el learn rate
+            # Tambien se puede hacer early stopping?
+
+        ##### Hacer val_RS verdadero
+        logs = logs or {}
+        val_rs = logs.get('val_RS')
+        train_rs = logs.get('RS')
+
+        # Sum for running average
+        self.sum_val_rs += val_rs
+        self.sum_train_rs += train_rs
+
+        # Registering first epoch values
+        if not self.prev_val_rs:
+            self.prev_val_rs = val_rs
+            self.prev_train_rs = train_rs
+            return
+
+        # Calculating differences
+        diff_val_rs = val_rs - self.prev_val_rs
+        diff_train_rs = train_rs - self.prev_train_rs
+        self.sum_diff_val_rs += diff_val_rs
+        self.sum_diff_train_rs += diff_train_rs
+
+        # Case: validation ratio sharpe isn't improving -> case for early stopping
+        if diff_val_rs < self.thresh:
+            self.stop_wait += 1
+            if self.stop_wait > self.stop_patience:
+                print('EARLY STOP')
+                self.stop_wait = 0
+                self.model.stop_training = True
+        else: 
+            self.stop_wait = 0
+
+        # Case: train ratio isn't improving -> case for changing learn rate
+        if diff_train_rs < self.thresh:
+        # if diff_val_rs < self.thresh:
+            self.lr_wait += 1
+            if self.lr_wait > self.lr_patience:
+                self.lr_wait = 0
+                curr_lr = float(tf.keras.backend.get_value(self.model.optimizer.learning_rate))
+                self.model.optimizer.learning_rate.assign(curr_lr*0.5)
+                print(f"Change LR -- Old: {curr_lr}, new: {curr_lr*0.5}")
+        else:
+            self.lr_wait = 0
+
+        # Updating previous records
+        self.prev_val_rs = val_rs
+        self.prev_train_rs = train_rs
+
+        avg_stats = (
+            f"Avg Stats {epoch + 1} --"
+            f" avg val RS: {round(self.sum_val_rs/epoch,5)},"
+            f" avg train RS: {round(self.sum_train_rs/epoch,5)},"
+            f" avg val RS change: {round(self.sum_diff_val_rs/epoch,5)}"
+            f" avg train RS change: {round(self.sum_diff_train_rs/epoch,5)}"
+        )
+
+        lr_stop_stats = (
+            f"LR/Stop Stats {epoch + 1} --"
+            f" valset diff: {round(diff_val_rs,5)},"
+            f" stop counter: {self.stop_wait}/{self.stop_patience},"
+            f" trainset diff: {round(diff_train_rs,5)},"
+            f" lr counter: {self.lr_wait}/{self.lr_patience},"
+        )
+        print(avg_stats)
+        print(lr_stop_stats)
+        with open(self.train_details_path, 'a') as file:
+            file.write(f'{avg_stats}\n')
+
+        # Appending results
+
+
+
+        
+
+
+
+
 
 #########################################################
     # Custom Metrics #
@@ -835,10 +872,10 @@ class RatioSharpe(tf.keras.metrics.Metric):
 #########################################################
     # Plotting training history #
 #### Path for images
-imgs_path = os.path.join(
+developed_path = os.path.join(
     os.getcwd(),
     '2_OptimizacionPortafolio',
-    'HistoryPlots'
+    'DevelopedModels'
 )
 #### Function
 def plot_history(history, model_num: int, fullset: str, strat_type: str, indicators: list[str]):
@@ -861,7 +898,7 @@ def plot_history(history, model_num: int, fullset: str, strat_type: str, indicat
     ax.legend()
 
     # Guardando imagen
-    plt.savefig(f'{imgs_path}/Model{model_num}/{fullset}_{strat_type}_{"_".join(indicators)}.png', dpi=300)
+    plt.savefig(f'{developed_path}/Model{model_num}/Plots/{fullset}_{strat_type}_{"_".join(indicators)}.png', dpi=300)
     plt.close()
 
 
@@ -901,15 +938,21 @@ keyboard.add_hotkey('ctrl+e', hotkey)
 dict_fullsets_all_sliding = dict_sliding_fullsets
 #### Setup model
 slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_indicators')
-os.makedirs(f'{imgs_path}/Model3', exist_ok=True)
+model_path = f'{developed_path}/Model3'
+os.makedirs(model_path, exist_ok=True)  # General Usage
+os.makedirs(f'{model_path}/Plots', exist_ok=True)    # For plots
+os.makedirs(f'{model_path}/TrainDetails', exist_ok=True)    # For training details
 #### Setup resulting pandas
 df_slide_model_3_weight_results = pd.DataFrame(columns=[f'Weight_{stock}' for stock in STOCK_NAMES] + ['daily_ret'])
 df_slide_model_3_weight_results.index = pd.to_datetime(df_slide_model_3_weight_results.index)
 #### Training
     # FS = FullSet
 FS_start = 'fullset0'
+started_flag = False
 for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
-    if FS_name.split("_")[0] != FS_start: continue
+    FS_only_name = FS_name.split("_")[0]
+    if (FS_only_name != FS_start) and (not started_flag): continue
+    started_flag = True # Mark training as started
     # Compile model
     if global_stop_training: break
     slide_model_3.compile(
@@ -922,19 +965,40 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
     valset = FS_train_val_test_list[1]
     testset = FS_train_val_test_list[2]
     # Callback
-    custom_cb = CustomCallback(valset=(valset[0], valset[1]))
+    custom_cb = CustomCallback(train_details_path=f'{model_path}/TrainDetails/{FS_only_name}_train_details.txt')
     # Training
     history = slide_model_3.fit(
         x=trainset[0],    # All windows' inputs
         y=trainset[1],    # All windows' labels
         batch_size=32,
-        epochs=500,
+        epochs=100,
         verbose=2,
         callbacks=custom_cb,
         validation_data=(valset[0], valset[1]),
         shuffle=False,
         # validation_batch_size=8,
     )
+
+    # Interrupt
+    if global_stop_training: 
+        # Save all previous info
+        # Up to, but not including, the current fullset
+        df_slide_model_3_weight_results.to_csv(
+            f'{model_path}/INCOMPLETE_weight_results.csv',
+            index=True,
+            encoding='utf-8'
+        )
+        break
+
+    # Recording the train average of the curr fullset
+    with open(f'{model_path}/TrainDetails/{FS_only_name}_train_details.txt', 'r') as origin,\
+        open(f'{model_path}/TrainDetails/all_fs_avgs.txt', 'a') as dest:
+        last_avg = origin.readlines()[-1]
+        last_avg_info = last_avg.split("--")[1]
+        fs_avg = FS_only_name + " --" + last_avg_info
+        dest.write(fs_avg)
+        
+
 
     # Saving RS during training
     plot_history(
@@ -961,6 +1025,13 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
         tmp
     ])
 
+# Saving model test results
+if FS_only_name != 'fullset23':
+    df_slide_model_3_weight_results.to_csv(
+        f'{model_path}/weight_results.csv',
+        index=True,
+        encoding='utf-8'
+    )
 
 
 # plt.figure(figsize=(12,6))
