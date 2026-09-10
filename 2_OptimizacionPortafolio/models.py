@@ -483,8 +483,8 @@ level_2[2].shape    #(202, )
 glorot_init = tf.keras.initializers.GlorotUniform(seed=SEED)
 orthogonal_init = tf.keras.initializers.Orthogonal(seed=SEED)
 zero_init = tf.keras.initializers.Zeros()
-regularizer = tf.keras.regularizers.l2(1e-5)
-
+regularizer = tf.keras.regularizers.l2(1e-3)
+DROPOUT = 0.2
 #### Creating Model class
 class LSTMModel(tf.keras.Model):
     def __init__(
@@ -496,11 +496,11 @@ class LSTMModel(tf.keras.Model):
         super(LSTMModel, self).__init__(**kwargs)
         self.num_indicators = num_indicators
         self.num_assets=num_assets
-        self.projection = tf.keras.layers.Dense(
-            64,
-            activation='relu',
-            kernel_regularizer=regularizer
-        )
+        # self.projection = tf.keras.layers.Dense(
+        #     64,
+        #     activation='relu',
+        #     kernel_regularizer=regularizer
+        # )
         self.lstm1 = tf.keras.layers.LSTM(
             64,
             input_shape = (WINDOW_SIZE, num_indicators * num_assets),
@@ -508,7 +508,7 @@ class LSTMModel(tf.keras.Model):
             recurrent_initializer = orthogonal_init,
             bias_initializer = zero_init,
             return_sequences=True,
-            dropout=0.1,
+            dropout=DROPOUT,
             kernel_regularizer = regularizer,
             name="lstm_1"
         )
@@ -518,7 +518,7 @@ class LSTMModel(tf.keras.Model):
             recurrent_initializer = orthogonal_init,
             bias_initializer = zero_init,
             return_sequences=False,
-            dropout=0.1,
+            dropout=DROPOUT,
             kernel_regularizer = regularizer,
             name="lstm_2"
         )
@@ -531,14 +531,14 @@ class LSTMModel(tf.keras.Model):
             name='dense'
         )
         self.dropout = tf.keras.layers.Dropout(
-            0.2,
+            DROPOUT,
             name='dropout'
         )
 
     def call(self, inputs, training=False):
         # Add training to all layers with dropouts
-        x = self.projection(inputs)
-        x = self.lstm1(x, training=training)
+        # x = self.projection(inputs)
+        x = self.lstm1(inputs, training=training)
         x = self.dropout(x, training=training)
         x = self.lstm2(x, training=training)
         x = self.dropout(x, training=training)
@@ -764,10 +764,11 @@ class CustomCallback(tf.keras.callbacks.Callback):
 
         avg_stats = (
             f"Avg Stats {epoch + 1} --"
-            f" avg val RS: {round(self.sum_val_rs/epoch,5)},"
-            f" avg train RS: {round(self.sum_train_rs/epoch,5)},"
-            f" avg val RS change: {round(self.sum_diff_val_rs/epoch,5)}"
-            f" avg train RS change: {round(self.sum_diff_train_rs/epoch,5)}"
+            f" avg val RS: {round(self.sum_val_rs/(epoch + 1),5)},"
+            f" avg train RS: {round(self.sum_train_rs/(epoch + 1),5)},"
+            f" avg val RS change: {round(self.sum_diff_val_rs/(epoch + 1),5)},"
+            f" avg train RS change: {round(self.sum_diff_train_rs/(epoch + 1),5)},"
+            f" epoch: {epoch + 1}"
         )
 
         lr_stop_stats = (
@@ -903,9 +904,130 @@ def plot_history(history, model_num: int, fullset: str, strat_type: str, indicat
 
 
 #########################################################
+    # Training function #
+##### General models' path
+developed_path = os.path.join(
+    os.getcwd(),
+    '2_OptimizacionPortafolio',
+    'DevelopedModels'
+)
+##### Function
+def train(
+    data: dict, 
+    indicators: list[str], 
+    model_num: int, 
+    strat: str,
+    fs_start: str = 'fullset0'
+):
+    # Creating model
+    model = LSTMModel(
+        num_indicators = len(indicators),
+        num_assets = NUM_STOCKS,
+        name=f'{strat}_{len(indicators)}_indicators'
+    )
+    # Creating paths
+    model_path = f'{developed_path}/Model{model_num}'
+    os.makedirs(model_path, exist_ok=True)  # General Usage
+    os.makedirs(f'{model_path}/Plots', exist_ok=True)    # For plots
+    os.makedirs(f'{model_path}/TrainDetails', exist_ok=True)    # For training details
+    # Creating resulting pandas
+    df_weight_results = pd.DataFrame(
+        columns = [f'Weight_{stock}' for stock in STOCK_NAMES] \
+            + ['daily_ret']
+    )
+    df_weight_results.index = pd.to_datetime(df_weight_results.index)
+    # Training 
+    started_flag = False
+    for FS_name, FS_train_val_test_list in data.items():
+        # Choosing starting point
+        FS_only_name = FS_name.split("_")[0]
+        if (FS_only_name != fs_start) and (not started_flag): continue
+        started_flag = True
+        # Compile model
+        model.compile(
+            optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
+            loss=MinRS,
+            metrics=[RatioSharpe()]
+        )
+        # Setup data for current fullset
+        trainset = FS_train_val_test_list[0]
+        valset = FS_train_val_test_list[1]
+        testset = FS_train_val_test_list[2]
+        # Callback
+        custom_cb = CustomCallback(train_details_path=f'{model_path}/TrainDetails/{FS_only_name}_train_details.txt')
+        # Training
+        history = model.fit(
+            x=trainset[0],    # All windows' inputs
+            y=trainset[1],    # All windows' labels
+            batch_size=32,
+            epochs=100,
+            verbose=2,
+            callbacks=custom_cb,
+            validation_data=(valset[0], valset[1]),
+            shuffle=False,
+        )
+        # Interrupt
+        if global_stop_training: 
+            # Save all previous info
+            # Up to, but not including, the current fullset
+            df_slide_model_3_weight_results.to_csv(
+                f'{model_path}/INCOMPLETE_weight_results.csv',
+                index=True,
+                encoding='utf-8'
+            )
+            break
+        # Recording averages of curr fullset
+        with open(f'{model_path}/TrainDetails/{FS_only_name}_train_details.txt', 'r') as origin,\
+            open(f'{model_path}/TrainDetails/all_fs_avgs.txt', 'a') as dest:
+            last_avg = origin.readlines()[-1]
+            last_avg_info = last_avg.split(" -- ")[1]
+            fs_avg = FS_only_name + " -- " + last_avg_info
+            dest.write(fs_avg)
+        # Graphing history
+        plot_history(
+            history, 
+            model_num=model_num, 
+            fullset=FS_only_name.capitalize(), 
+            strat_type=strat, 
+            indicators=indicators
+        )
+        # Testing model
+        y_pred = model.predict(testset[0])
+        daily_rets = np.sum(y_pred * testset[1], axis=1).reshape(-1,1)
+        full_results = np.concatenate([y_pred, daily_rets], axis=1)
+        # Recording test results
+        df_curr_fs_results = pd.DataFrame(
+            full_results, 
+            columns=[f'Weight_{stock}' for stock in STOCK_NAMES] + ['daily_ret'],
+            index=testset[2]
+        )
+        df_weight_results = pd.concat([
+            df_weight_results,
+            df_curr_fs_results
+        ], axis=0)
+    # Saving all fullsets' completed results
+    if FS_only_name == 'fullset23':
+        df_weight_results.to_csv(
+            f'{model_path}/weight_results.csv',
+            index=True,
+            encoding='utf-8'
+        )
+
+#########################################################
     # Training - Sliding Technique #
+##### Stopping hotkey
+global_stop_training = False
+def hotkey():
+    global global_stop_training
+    global_stop_training = True
+    return
+keyboard.add_hotkey('ctrl+e', hotkey)
+
+
 ##### Model 1 Indicators: Price and Log returns
 #### Setup corresponding data
+# dict_fullsets_P_L_sliding = \
+#     indicator_selection(['Price', 'LogRet'], dict_sliding_fullsets)
 
 #### Setup Model
 # slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS, name='two_indicators')
@@ -920,19 +1042,14 @@ def plot_history(history, model_num: int, fullset: str, strat_type: str, indicat
 
 
 #####  Model 2 Indicators: HLC3, TEMA, OBV
-# slide_model_2 = LSTMModel(num_indicators=3, num_assets=NUM_STOCKS, name='three_indicators')
+#### Setup corresponding data
+# dict_fullsets_H_T_O_sliding = \
+#     indicator_selection(['TEMA', 'HLC3', 'OBV'], dict_sliding_fullsets)
+
+#### Setup model
 
 
 
-
-
-#### Hotkey
-global_stop_training = False
-def hotkey():
-    global global_stop_training
-    global_stop_training = True
-    return
-keyboard.add_hotkey('ctrl+e', hotkey)
 #####  Model 3 Indicators: All 5 
 #### Setup corresponding data
 dict_fullsets_all_sliding = dict_sliding_fullsets
@@ -1026,7 +1143,7 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
     ])
 
 # Saving model test results
-if FS_only_name != 'fullset23':
+if FS_only_name == 'fullset23':
     df_slide_model_3_weight_results.to_csv(
         f'{model_path}/weight_results.csv',
         index=True,
