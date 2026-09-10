@@ -320,3 +320,103 @@ ax.legend(
     fontsize=7.5, 
     )
 plt.show()
+
+
+##########################################################################################
+    # Hypothesis testing #
+##### Seleccionando datos adecuados
+#### Seleccionando top 5 sitios
+top_X = 5
+top_X_sitios = df_2_original.groupby(by='SITIO_TURISTICO', as_index=False)\
+    ['NUMERO_VISITANTES'].agg('mean')\
+    .sort_values(by='NUMERO_VISITANTES', ascending=False)\
+    ['SITIO_TURISTICO'][:top_X].values.tolist()
+
+#### Seleccionando los indices
+idxs = df_2_original[df_2_original['SITIO_TURISTICO'].isin(top_X_sitios)].index
+df_org_topX = df_2_original.iloc[idxs]
+df_enc_topX = df_2_encoded.iloc[idxs].drop(columns='NUMERO_VISITANTES')
+
+
+##### Modelo y prediccion
+#### Cargando el modelo y scaler
+rf = joblib.load('./App/model.pkl')
+scaler = joblib.load('./App/scaler.pkl')
+#### Invocando modelo
+y_pred = rf.predict(df_enc_topX)
+#### Denormalizando
+y_pred_denorm = scaler.inverse_transform(y_pred.reshape(-1,1))
+#### Aregando preds a datos originales
+df_org_topX['NUM_PRED'] = y_pred_denorm
+
+##### Hipotesis
+        # Vm = Visitantes del modelo
+        # Va = Visitantes actuales
+    # HO = Modelo no captura los visitantes de los sitios turisticos
+        # Vm - Va != 0
+    # HA = Modelo si captura los visitantes de los sitios turisticos
+        # Vm - Va = 0
+from scipy import stats
+##### Prueba de hipotesis
+    # Determinar normalidad de todos sitios (valores actuales y del modelo)
+    # Usar Shapiro-Wilk por su baja cantidad de muestra
+
+for sitio in top_X_sitios:
+    # Extrayendo datos
+    num_actual = df_org_topX[df_org_topX['SITIO_TURISTICO'] == sitio]['NUMERO_VISITANTES']
+    num_predecido = df_org_topX[df_org_topX['SITIO_TURISTICO'] == sitio]['NUM_PRED']
+    # Prueba de normalidad
+    _, num_act_pvalor = stats.shapiro(num_actual.values)
+    _, num_pred_pvalor = stats.shapiro(num_predecido.values)
+    # Formalizando
+    num_act_normal = True if num_act_pvalor > 0.05 else False
+    num_pred_normal = True if num_pred_pvalor > 0.05 else False
+    print(f'Sitio {sitio} Normalidad - valores actuales {num_act_normal}; valores predecidos {num_pred_normal}')
+    # Prueba de hipotesis
+    if num_act_normal and num_pred_normal:
+        # Ambos necesitan ser normales para usar ttest
+        var_igual = True if num_actual.std() == num_predecido.std() else False
+        _, t_pvalor = stats.ttest_ind(
+            num_actual.values,
+            num_predecido.values,
+            equal_var=var_igual,
+            alternative='two-sided'
+        )
+        if t_pvalor < 0.05:
+            print(f'T-test p-valor {t_pvalor}: se acepta la hipotesis nula, las dos muestras son diferentes')
+        else:
+            print(f'T-test p-valor {t_pvalor}: no se rechaza la hipotesis nula, las dos muestras no son diferentes')
+    else: 
+        _, w_pvalor = stats.wilcoxon(
+            num_actual.values,
+            num_predecido.values,
+            alternative='two-sided'
+        )
+        if t_pvalor < 0.05:
+            print(f'Wilcoxon p-valor {t_pvalor}: se acepta la hipotesis nula, las dos muestras son diferentes')
+        else:
+            print(f'Wilcoxon p-valor {t_pvalor}: no se rechaza la hipotesis nula, las dos muestras no son diferentes')
+
+    # Resultados:
+        # Los valores del modelo y los valores actuales no son diferentes
+        # I.e., el modelo es una buena representacion para predecir los numero de visitantes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
