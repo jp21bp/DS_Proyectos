@@ -483,7 +483,7 @@ level_2[2].shape    #(202, )
 glorot_init = tf.keras.initializers.GlorotUniform(seed=SEED)
 orthogonal_init = tf.keras.initializers.Orthogonal(seed=SEED)
 zero_init = tf.keras.initializers.Zeros()
-regularizer = tf.keras.regularizers.l2(1e-3)
+regularizer = tf.keras.regularizers.l2(1e-5)
 DROPOUT = 0.2
 #### Creating Model class
 class LSTMModel(tf.keras.Model):
@@ -496,11 +496,6 @@ class LSTMModel(tf.keras.Model):
         super(LSTMModel, self).__init__(**kwargs)
         self.num_indicators = num_indicators
         self.num_assets=num_assets
-        # self.projection = tf.keras.layers.Dense(
-        #     64,
-        #     activation='relu',
-        #     kernel_regularizer=regularizer
-        # )
         self.lstm1 = tf.keras.layers.LSTM(
             64,
             input_shape = (WINDOW_SIZE, num_indicators * num_assets),
@@ -537,7 +532,6 @@ class LSTMModel(tf.keras.Model):
 
     def call(self, inputs, training=False):
         # Add training to all layers with dropouts
-        # x = self.projection(inputs)
         x = self.lstm1(inputs, training=training)
         x = self.dropout(x, training=training)
         x = self.lstm2(x, training=training)
@@ -960,7 +954,7 @@ def train(
             x=trainset[0],    # All windows' inputs
             y=trainset[1],    # All windows' labels
             batch_size=32,
-            epochs=100,
+            epochs=500,
             verbose=2,
             callbacks=custom_cb,
             validation_data=(valset[0], valset[1]),
@@ -970,7 +964,7 @@ def train(
         if global_stop_training: 
             # Save all previous info
             # Up to, but not including, the current fullset
-            df_slide_model_3_weight_results.to_csv(
+            df_weight_results.to_csv(
                 f'{model_path}/INCOMPLETE_weight_results.csv',
                 index=True,
                 encoding='utf-8'
@@ -1024,131 +1018,105 @@ def hotkey():
 keyboard.add_hotkey('ctrl+e', hotkey)
 
 
-##### Model 1 Indicators: Price and Log returns
+##### Model 1 - Sliding - Indicators: Price and Log returns
 #### Setup corresponding data
-# dict_fullsets_P_L_sliding = \
-#     indicator_selection(['Price', 'LogRet'], dict_sliding_fullsets)
+indicators = ['Price', 'LogRet']
+dict_fullsets_P_L_sliding = \
+    indicator_selection(indicators, dict_sliding_fullsets)
 
-#### Setup Model
-# slide_model_1 = LSTMModel(num_indicators=2, num_assets=NUM_STOCKS, name='two_indicators')
-# slide_model_1.compile(
-#     optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
-#     loss=MinRS
-# )
-# slide_model_1_results = []
-
-
-
+#### Train Model
+train(
+    data = dict_fullsets_P_L_sliding, 
+    indicators = indicators, 
+    model_num = 1, 
+    strat = 'Sliding',
+)
 
 
-#####  Model 2 Indicators: HLC3, TEMA, OBV
+
+
+#####  Model 2 - Sliding - Indicators: HLC3, TEMA, OBV
 #### Setup corresponding data
-# dict_fullsets_H_T_O_sliding = \
-#     indicator_selection(['TEMA', 'HLC3', 'OBV'], dict_sliding_fullsets)
+indicators = ['TEMA', 'HLC3', 'OBV']
+dict_fullsets_H_T_O_sliding = \
+    indicator_selection(indicators, dict_sliding_fullsets)
 
-#### Setup model
+#### Train model
+train(
+    data = dict_fullsets_H_T_O_sliding, 
+    indicators = indicators, 
+    model_num = 2, 
+    strat = 'Sliding',
+)
 
 
-
-#####  Model 3 Indicators: All 5 
+#####  Model 3 - Sliding - Indicators: All 5 
 #### Setup corresponding data
+indicators = ['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV']
 dict_fullsets_all_sliding = dict_sliding_fullsets
-#### Setup model
-slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_indicators')
-model_path = f'{developed_path}/Model3'
-os.makedirs(model_path, exist_ok=True)  # General Usage
-os.makedirs(f'{model_path}/Plots', exist_ok=True)    # For plots
-os.makedirs(f'{model_path}/TrainDetails', exist_ok=True)    # For training details
-#### Setup resulting pandas
-df_slide_model_3_weight_results = pd.DataFrame(columns=[f'Weight_{stock}' for stock in STOCK_NAMES] + ['daily_ret'])
-df_slide_model_3_weight_results.index = pd.to_datetime(df_slide_model_3_weight_results.index)
-#### Training
-    # FS = FullSet
-FS_start = 'fullset0'
-started_flag = False
-for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
-    FS_only_name = FS_name.split("_")[0]
-    if (FS_only_name != FS_start) and (not started_flag): continue
-    started_flag = True # Mark training as started
-    # Compile model
-    if global_stop_training: break
-    slide_model_3.compile(
-        optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
-        loss=MinRS,
-        metrics=[RatioSharpe()]
-    )
-    # Setup
-    trainset = FS_train_val_test_list[0]    #Contains [np_all_inputs, np_all_labels, np_datetime]
-    valset = FS_train_val_test_list[1]
-    testset = FS_train_val_test_list[2]
-    # Callback
-    custom_cb = CustomCallback(train_details_path=f'{model_path}/TrainDetails/{FS_only_name}_train_details.txt')
-    # Training
-    history = slide_model_3.fit(
-        x=trainset[0],    # All windows' inputs
-        y=trainset[1],    # All windows' labels
-        batch_size=32,
-        epochs=100,
-        verbose=2,
-        callbacks=custom_cb,
-        validation_data=(valset[0], valset[1]),
-        shuffle=False,
-        # validation_batch_size=8,
-    )
 
-    # Interrupt
-    if global_stop_training: 
-        # Save all previous info
-        # Up to, but not including, the current fullset
-        df_slide_model_3_weight_results.to_csv(
-            f'{model_path}/INCOMPLETE_weight_results.csv',
-            index=True,
-            encoding='utf-8'
-        )
-        break
-
-    # Recording the train average of the curr fullset
-    with open(f'{model_path}/TrainDetails/{FS_only_name}_train_details.txt', 'r') as origin,\
-        open(f'{model_path}/TrainDetails/all_fs_avgs.txt', 'a') as dest:
-        last_avg = origin.readlines()[-1]
-        last_avg_info = last_avg.split("--")[1]
-        fs_avg = FS_only_name + " --" + last_avg_info
-        dest.write(fs_avg)
-        
+#### Train model
+train(
+    data = dict_fullsets_all_sliding, 
+    indicators = indicators, 
+    model_num = 3, 
+    strat = 'Sliding',
+)
 
 
-    # Saving RS during training
-    plot_history(
-        history, 
-        model_num=3, 
-        fullset=FS_name.split('_')[0].capitalize(), 
-        strat_type='Sliding', 
-        indicators=['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV']
-    )
 
-    # Testing model 
-    y_pred = slide_model_3.predict(testset[0])
-    daily_rets = np.sum(y_pred * testset[1], axis=1).reshape(-1,1)
-    full_results = np.concatenate([y_pred, daily_rets], axis=1)
 
-    # Update pandas results
-    tmp = pd.DataFrame(
-        full_results, 
-        columns=[f'Weight_{stock}' for stock in STOCK_NAMES] + ['daily_ret'],
-        index=testset[2]
-    )
-    df_slide_model_3_weight_results = pd.concat([
-        df_slide_model_3_weight_results,
-        tmp
-    ])
 
-# Saving model test results
-if FS_only_name == 'fullset23':
-    df_slide_model_3_weight_results.to_csv(
-        f'{model_path}/weight_results.csv',
-        index=True,
-        encoding='utf-8'
-    )
+#####  Model 4 - Expanding - Indicators: Price, LogRet
+#### Setup corresponding data
+indicators = ['Price', 'LogRet']
+dict_fullsets_P_L_expand = \
+    indicator_selection(indicators, dict_expanding_fullsets)
+
+#### Train model
+train(
+    data = dict_fullsets_P_L_expand, 
+    indicators = indicators, 
+    model_num = 4, 
+    strat = 'Expand',
+)
+
+
+
+
+
+
+#####  Model 5 - Expanding - Indicators: Price, LogRet
+#### Setup corresponding data
+indicators = ['TEMA', 'HLC3', 'OBV']
+dict_fullsets_H_T_O_expand = \
+    indicator_selection(indicators, dict_expanding_fullsets)
+
+#### Train model
+train(
+    data = dict_fullsets_H_T_O_expand, 
+    indicators = indicators, 
+    model_num = 5, 
+    strat = 'Expand',
+)
+
+
+
+
+
+#####  Model 6 - Expanding - Indicators: Price, LogRet
+#### Setup corresponding data
+indicators = ['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV']
+dict_fullsets_all_expand = dict_expanding_fullsets
+
+#### Train model
+train(
+    data = dict_fullsets_all_expand, 
+    indicators = indicators, 
+    model_num = 6, 
+    strat = 'Expand',
+)
+
 
 
 # plt.figure(figsize=(12,6))
