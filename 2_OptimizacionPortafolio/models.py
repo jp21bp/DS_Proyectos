@@ -50,7 +50,6 @@ LEARN_RATE = 0.001
 #### Hotkey
 global_stop_training = False
 def hotkey():
-    print('pressed')
     global global_stop_training
     global_stop_training = True
     return
@@ -498,7 +497,7 @@ class LSTMModel(tf.keras.Model):
         self.num_indicators = num_indicators
         self.num_assets=num_assets
         self.projection = tf.keras.layers.Dense(
-            128,
+            64,
             activation='relu',
             kernel_regularizer=regularizer
         )
@@ -538,8 +537,8 @@ class LSTMModel(tf.keras.Model):
 
     def call(self, inputs, training=False):
         # Add training to all layers with dropouts
-        # x = self.projection(inputs)
-        x = self.lstm1(inputs, training=training)
+        x = self.projection(inputs)
+        x = self.lstm1(x, training=training)
         x = self.dropout(x, training=training)
         x = self.lstm2(x, training=training)
         x = self.dropout(x, training=training)
@@ -842,7 +841,7 @@ imgs_path = os.path.join(
     'HistoryPlots'
 )
 #### Function
-def plot_history(history, fullset: str, strat_type: str, indicators: list[str]):
+def plot_history(history, model_num: int, fullset: str, strat_type: str, indicators: list[str]):
     fig, ax = plt.subplots(figsize=(12,5))
     # Train RS
     ax.plot(
@@ -860,7 +859,9 @@ def plot_history(history, fullset: str, strat_type: str, indicators: list[str]):
     ax.set_ylabel('Ratio Sharpe Value')
     ax.set_xlabel('Epoch')
     ax.legend()
-    plt.savefig(f'{imgs_path}/{fullset}_{strat_type}_{"_".join(indicators)}.png', dpi=300)
+
+    # Guardando imagen
+    plt.savefig(f'{imgs_path}/Model{model_num}/{fullset}_{strat_type}_{"_".join(indicators)}.png', dpi=300)
     plt.close()
 
 
@@ -891,7 +892,6 @@ def plot_history(history, fullset: str, strat_type: str, indicators: list[str]):
 #### Hotkey
 global_stop_training = False
 def hotkey():
-    print('pressed')
     global global_stop_training
     global_stop_training = True
     return
@@ -901,29 +901,21 @@ keyboard.add_hotkey('ctrl+e', hotkey)
 dict_fullsets_all_sliding = dict_sliding_fullsets
 #### Setup model
 slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_indicators')
-# slide_model_3.compile(
-#     optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
-#     loss=MinRS,
-#     metrics=[RatioSharpe]
-#         # NEeds to be 'RatioSharpe' and NOT 'RatioSharpe()'
-#             # The former creates different object for the trainset and valset
-#             # The latter uses the SAME object for the trainset and valset
-# )
+os.makedirs(f'{imgs_path}/Model3', exist_ok=True)
 #### Setup resulting pandas
 df_slide_model_3_weight_results = pd.DataFrame(columns=[f'Weight_{stock}' for stock in STOCK_NAMES] + ['daily_ret'])
 df_slide_model_3_weight_results.index = pd.to_datetime(df_slide_model_3_weight_results.index)
 #### Training
     # FS = FullSet
+FS_start = 'fullset0'
 for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
+    if FS_name.split("_")[0] != FS_start: continue
     # Compile model
     if global_stop_training: break
     slide_model_3.compile(
         optimizer=tf.keras.optimizers.Adam(learning_rate=LEARN_RATE),
         loss=MinRS,
-        metrics=[RatioSharpe]
-            # NEeds to be 'RatioSharpe' and NOT 'RatioSharpe()'
-                # The former creates different object for the trainset and valset
-                # The latter uses the SAME object for the trainset and valset
+        metrics=[RatioSharpe()]
     )
     # Setup
     trainset = FS_train_val_test_list[0]    #Contains [np_all_inputs, np_all_labels, np_datetime]
@@ -945,7 +937,13 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
     )
 
     # Saving RS during training
-    plot_history(history, FS_name.split('_')[0].capitalize(), 'Sliding', ['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV'])
+    plot_history(
+        history, 
+        model_num=3, 
+        fullset=FS_name.split('_')[0].capitalize(), 
+        strat_type='Sliding', 
+        indicators=['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV']
+    )
 
     # Testing model 
     y_pred = slide_model_3.predict(testset[0])
@@ -963,8 +961,10 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
         tmp
     ])
 
-plt.figure(figsize=(12,6))
-plt.plot(
-    (1 + df_slide_model_3_weight_results['daily_ret']).cumprod()
-)
-plt.show()
+
+
+# plt.figure(figsize=(12,6))
+# plt.plot(
+#     (1 + df_slide_model_3_weight_results['daily_ret']).cumprod()
+# )
+# plt.show()
