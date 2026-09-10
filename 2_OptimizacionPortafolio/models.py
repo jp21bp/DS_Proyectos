@@ -656,7 +656,7 @@ class CustomCallback(tf.keras.callbacks.Callback):
     def on_train_batch_end(self, batch: int, logs = None):
         # print('FLAG:', global_stop_training)
         if global_stop_training:
-            print('EPOCH STOP', batch)
+            print('STOPPING AT', batch)
             self.model.stop_training = True
         #### HAcer acumulacion de todos los trainset
         return 
@@ -712,6 +712,7 @@ class CustomCallback(tf.keras.callbacks.Callback):
 
         # Case: train ratio isn't improving -> case for changing learn rate
         if diff_train_rs < self.thresh:
+        # if diff_val_rs < self.thresh:
             self.lr_wait += 1
             if self.lr_wait > self.lr_patience:
                 self.lr_wait = 0
@@ -726,9 +727,9 @@ class CustomCallback(tf.keras.callbacks.Callback):
         self.prev_train_rs = train_rs
 
         stats = (
-            f"Stats {epoch + 1}: valset diff {diff_val_rs.round(5)},"
+            f"Stats {epoch + 1}: valset diff {round(diff_val_rs,5)},"
             f" stop counter {self.stop_wait}/{self.stop_patience},"
-            f" trainset diff {diff_train_rs.round(5)}, lr counter"
+            f" trainset diff {round(diff_train_rs,5)}, lr counter"
             f" {self.lr_wait}/{self.lr_patience}"
         )
         print(stats)
@@ -834,8 +835,14 @@ class RatioSharpe(tf.keras.metrics.Metric):
 
 #########################################################
     # Plotting training history #
+#### Path for images
+imgs_path = os.path.join(
+    os.getcwd(),
+    '2_OptimizacionPortafolio',
+    'HistoryPlots'
+)
 #### Function
-def plot_history(history, strat_type: str, indicators: list[str]):
+def plot_history(history, fullset: str, strat_type: str, indicators: list[str]):
     fig, ax = plt.subplots(figsize=(12,5))
     # Train RS
     ax.plot(
@@ -849,22 +856,12 @@ def plot_history(history, strat_type: str, indicators: list[str]):
         label='Val RS',
         color = 'orange'
     )
-    ax.title(f'Strat: {strat_type}, Indicators: {indicators}')
+    ax.set_title(f'{fullset} - Strat: {strat_type}, Indicators: {", ".join(indicators)}')
     ax.set_ylabel('Ratio Sharpe Value')
     ax.set_xlabel('Epoch')
     ax.legend()
-    plt.show()
-
-
-
-
-
-
-
-
-
-
-
+    plt.savefig(f'{imgs_path}/{fullset}_{strat_type}_{"_".join(indicators)}.png', dpi=300)
+    plt.close()
 
 
 #########################################################
@@ -913,7 +910,7 @@ slide_model_3 = LSTMModel(num_indicators=5, num_assets=NUM_STOCKS, name='all_ind
 #             # The latter uses the SAME object for the trainset and valset
 # )
 #### Setup resulting pandas
-df_slide_model_3_weight_results = pd.DataFrame(columns=[f'all_indic_{stock}' for stock in STOCK_NAMES])
+df_slide_model_3_weight_results = pd.DataFrame(columns=[f'Weight_{stock}' for stock in STOCK_NAMES] + ['daily_ret'])
 df_slide_model_3_weight_results.index = pd.to_datetime(df_slide_model_3_weight_results.index)
 #### Training
     # FS = FullSet
@@ -947,7 +944,27 @@ for FS_name, FS_train_val_test_list in dict_fullsets_all_sliding.items():
         # validation_batch_size=8,
     )
 
-    plot_history(history)
+    # Saving RS during training
+    plot_history(history, FS_name.split('_')[0].capitalize(), 'Sliding', ['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV'])
 
+    # Testing model 
+    y_pred = slide_model_3.predict(testset[0])
+    daily_rets = np.sum(y_pred * testset[1], axis=1).reshape(-1,1)
+    full_results = np.concatenate([y_pred, daily_rets], axis=1)
 
+    # Update pandas results
+    tmp = pd.DataFrame(
+        full_results, 
+        columns=[f'Weight_{stock}' for stock in STOCK_NAMES] + ['daily_ret'],
+        index=testset[2]
+    )
+    df_slide_model_3_weight_results = pd.concat([
+        df_slide_model_3_weight_results,
+        tmp
+    ])
 
+plt.figure(figsize=(12,6))
+plt.plot(
+    (1 + df_slide_model_3_weight_results['daily_ret']).cumprod()
+)
+plt.show()
