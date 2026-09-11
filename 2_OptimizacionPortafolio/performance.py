@@ -216,10 +216,8 @@ for sector in top4_sectors:
 #### Function definition
 def MVO(df_asset_returns: pd.DataFrame, vol_scaling: bool) -> pd.Series:
     # "df_asset_returns".shape = (num_days, num_assets)
-
     # Creating dataframe
-    ds_port_returns = pd.Series(name='MVO_returns')
-    ds_port_returns.index = df_asset_returns.index
+    ds_port_returns = pd.Series(name='MVO_returns', index = df_asset_returns.index)
 
     for t in tqdm(range(WINDOW_SIZE, df_asset_returns.shape[0])):
         # Setup
@@ -262,8 +260,7 @@ def MDO(df_asset_returns: pd.DataFrame, vol_scaling: bool) -> pd.Series:
     # "np_asset_returns".shape = (num_days, num_assets)
 
     # Creating data Series
-    ds_port_returns = pd.Series(name='MDO_returns')
-    ds_port_returns.index = df_asset_returns.index
+    ds_port_returns = pd.Series(name='MDO_returns', index = df_asset_returns.index)
 
     # Initializing weights
     num_assets = df_asset_returns.shape[1]
@@ -331,19 +328,9 @@ developed_path = os.path.join(
     'DevelopedModels'
 )
 
-#### Iterating through all models
-vol_scaling = True
-for i in range(1,4):
-    # Extracting weight predictions from current model
-    path = f'{developed_path}/Model{i}'
-    df_weights_results = pd.read_csv(
-        f'{path}/weight_results.csv',
-        parse_dates=[0],
-        index_col=0
-    )
-    df_weights_only = df_weights_results[df_weights_results.columns[:-1]]
-
-    # Vaolatility scaling
+#### Function for processing
+def ml_rets(df_weights: pd.DataFrame, vol_scaling: bool):
+    # Volatility scaling
     if vol_scaling: 
         df_ewmsd_scaled_model = df_ewmsd_scaled.loc[df_weights_only.index]
         df_scaled_weights = df_ewmsd_scaled_model * df_weights_only.values
@@ -355,23 +342,26 @@ for i in range(1,4):
     # Calculating portfolio returns
     ds_port_rets = (df_simple_rets_models * df_scaled_weights).sum(axis=1)
 
+    return ds_port_rets
 
 
-iter = 0
-for root, dirs, files in os.walk(developed_path):
-    print(iter)
-    print(root, dirs)
-    iter += 1
-tmp = pd.read_csv(
-    f'{developed_path}/Model1/weight_results.csv',
-    parse_dates=[0],
-    index_col=0
-)
+#### Iterating through all models
+for i in range(1,4):
+    # Extracting weight predictions from current model
+    path = f'{developed_path}/Model{i}'
+    df_weights_results = pd.read_csv(
+        f'{path}/weight_results.csv',
+        parse_dates=[0],
+        index_col=0
+    )
+    df_weights_only = df_weights_results[df_weights_results.columns[:-1]]
 
-df_simple_rets.loc[tmp.index]
+    # Getting returns
+    model_rets_noVS = ml_rets(df_weights_only, False)
+    all_port_returns[f'Model{i}_noVS'] = model_rets_noVS
 
-(df_simple_rets.loc[tmp.index] * tmp[tmp.columns[:-1]].values).sum(axis=1)
-
+    model_rets_VS = ml_rets(df_weights_only, True)
+    all_port_returns[f'Model{i}_VS'] = model_rets_VS
 
 
 ###############################################
@@ -409,18 +399,21 @@ colors = ["#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46
 for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
     performance = performance_metrics(ds_port_ret.loc[common_dates])
     all_port_results[strat] = performance
-    if strat.split("_")[-1] == 'noVS':
-        axs[0,0].plot(
-            range(len(common_dates)),
-            performance['Cumulative Returns'],
-            color = colors[i],
-            label = strat
-        )
-    
-    ax.set_xticks(range(len(common_dates)))
-    ax.set_xticklabels(common_dates.date, rotation=90)
-    ax.xaxis.set_major_locator(MultipleLocator(200))
-    ax.legend()
+    strat_split = strat.split("_")
+    if strat_split[0].startswith('Model'):  # ML strats
+        print('model')
+    else:   # nonML strats
+        if strat.split("_")[-1] == 'noVS':
+            axs[0,0].plot(
+                range(len(common_dates)),
+                performance['Cumulative Returns'],
+                color = colors[i],
+                label = strat
+            )
+            axs[0,0].set_xticks(range(len(common_dates)))
+            axs[0,0].set_xticklabels(common_dates.date, rotation=90)
+            axs[0,0].xaxis.set_major_locator(MultipleLocator(200))
+            axs[0,0].legend()
 plt.show()
 
 
