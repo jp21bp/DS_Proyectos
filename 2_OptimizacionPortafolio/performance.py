@@ -332,15 +332,17 @@ developed_path = os.path.join(
 def ml_rets(df_weights: pd.DataFrame, vol_scaling: bool):
     # Volatility scaling
     if vol_scaling: 
-        df_ewmsd_scaled_model = df_ewmsd_scaled.loc[df_weights_only.index]
-        df_scaled_weights = df_ewmsd_scaled_model * df_weights_only.values
-    else: df_scaled_weights = df_weights_only
+        df_ewmsd_scaled_model = df_ewmsd_scaled.loc[df_weights.index]
+        df_scaled_weights = df_ewmsd_scaled_model * df_weights.values
+    else:
+        df_scaled_weights = df_weights
 
     # Selecting simple returns
     df_simple_rets_models = df_simple_rets.loc[df_scaled_weights.index]
 
     # Calculating portfolio returns
-    ds_port_rets = (df_simple_rets_models * df_scaled_weights).sum(axis=1)
+    ds_port_rets = (df_simple_rets_models * df_scaled_weights.values).sum(axis=1)
+
 
     return ds_port_rets
 
@@ -364,6 +366,7 @@ for i in range(1,4):
     all_port_returns[f'Model{i}_VS'] = model_rets_VS
 
 
+all_port_returns['Model1_VS'].index
 ###############################################
     # Evaluation #
 #### Benchmarking
@@ -381,6 +384,8 @@ ds_bench_returns.index = ds_bench_returns.index.normalize()
 #### Joining data
 all_port_returns['Benchmark_noVS'] = ds_bench_returns
 all_port_returns['Benchmark_VS'] = ds_bench_returns
+all_port_returns['Model_Benchmark_noVS'] = ds_bench_returns
+all_port_returns['Model_Benchmark_VS'] = ds_bench_returns
 
 #### Identifying comons dates
 common_dates = reduce(
@@ -388,32 +393,61 @@ common_dates = reduce(
     [ds.index for ds in all_port_returns.values()]
 )
 
-# all_port_returns['MDO'].loc[common_dates]
-
 #### All portfolio returns: performance results and graph
 ### Setup
 all_port_results = {}
 fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(8,6))
-colors = ["#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0"]
+colors = ["#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0", "#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0",
+          "#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0", "#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0"]
 ### Graph
 for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
+    print(strat)
     performance = performance_metrics(ds_port_ret.loc[common_dates])
+    print(performance['Cumulative Returns'].shape)
+    print(len(common_dates))
     all_port_results[strat] = performance
     strat_split = strat.split("_")
     if strat_split[0].startswith('Model'):  # ML strats
-        print('model')
-    else:   # nonML strats
-        if strat.split("_")[-1] == 'noVS':
+        if strat_split[-1] == 'noVS':
+            print('aqui')
             axs[0,0].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
                 color = colors[i],
                 label = strat
             )
-            axs[0,0].set_xticks(range(len(common_dates)))
-            axs[0,0].set_xticklabels(common_dates.date, rotation=90)
-            axs[0,0].xaxis.set_major_locator(MultipleLocator(200))
-            axs[0,0].legend()
+        else:
+            axs[0,1].plot(
+                range(len(common_dates)),
+                performance['Cumulative Returns'],
+                color = colors[i],
+                label = strat
+            )
+    else:   # nonML strats
+        if strat_split[-1] == 'noVS':
+            axs[1,0].plot(
+                range(len(common_dates)),
+                performance['Cumulative Returns'],
+                color = colors[i],
+                label = strat
+            )
+        else:
+            axs[1,1].plot(
+                range(len(common_dates)),
+                performance['Cumulative Returns'],
+                color = colors[i],
+                label = strat
+            )
+# Final configs
+for ax in axs:
+    ax.set_xticks(range(len(common_dates)))
+    ax.set_xticklabels(common_dates.date, rotation=90)
+    ax.xaxis.set_major_locator(MultipleLocator(256))
+    ax.legend()
+axs[0,0].set_title('ML_noVS')
+axs[0,1].set_title('ML_VS')
+axs[1,0].set_title('noML_noVS')
+axs[1,1].set_title('noMl_VS')
 plt.show()
 
 
