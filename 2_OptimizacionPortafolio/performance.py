@@ -20,6 +20,7 @@ from scipy.optimize import minimize
 import os
 from tqdm import tqdm
 from functools import reduce
+import copy
 
 #### Reading data
 ### Data path
@@ -79,17 +80,28 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
     assert type(ds_port_returns) == pd.Series
     # Base Case
     if ds_port_returns.size == 0:
+        # return {
+        #     "Annualized Return": 0.0,
+        #     "Annualized Volatility": 0.0,
+        #     "Sharpe Ratio": 0.0,
+        #     "Downside Deviation": 0.0,
+        #     "Sortino Ratio": 0.0,
+        #     "Max Drawdown": 0.0,
+        #     "Percent Positive Returns": 0.0,
+        #     "Profit Loss Ratio": 0.0,
+        #     "Cumulative Returns": np.array([1.0])
+        # }
         return {
-            "Annualized Return": 0.0,
-            "Annualized Volatility": 0.0,
-            "Sharpe Ratio": 0.0,
-            "Downside Deviation": 0.0,
-            "Sortino Ratio": 0.0,
-            "Max Drawdown": 0.0,
-            "Percent Positive Returns": 0.0,
-            "Profit Loss Ratio": 0.0,
+            "E(R)": 0.0,
+            "Std(R)": 0.0,
+            "Sharpe": 0.0,
+            "DD": 0.0,
+            "Sortino": 0.0,
+            "MD": 0.0,
+            "% Pos.(R)": 0.0,
+            "P/L Ratio": 0.0,
             "Cumulative Returns": np.array([1.0])
-        }
+        }                       
     
     # Annualize return
     mean_daily_ret = ds_port_returns.mean()
@@ -110,7 +122,7 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
     # Sortino ratio
     annualized_sortino = annualized_ret/(annualized_downside_dev + 1e-8)\
         if annualized_downside_dev > 0.0 else 0.0
-
+    
     # Cumulative returns
     cumulative_rets = (1 + ds_port_returns).cumprod()
 
@@ -132,14 +144,14 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
 
     # Results
     return {
-        "Annualized Return": annualized_ret,
-        "Annualized Volatility": annualized_vol,
-        "Sharpe Ratio": annualized_sharpe,
-        "Downside Deviation": annualized_downside_dev,
-        "Sortino Ratio": annualized_sortino,
-        "Max Drawdown": max_drawdown,
-        "Percent Positive Returns": per_pos_rets,
-        "Profit Loss Ratio": pl_ratio,
+        "E(R)": annualized_ret,
+        "Std(R)": annualized_vol,
+        "Sharpe": annualized_sharpe,
+        "DD": annualized_downside_dev,
+        "Sortino": annualized_sortino,
+        "MD": max_drawdown,
+        "% Pos.(R)": per_pos_rets,
+        "P/L Ratio": pl_ratio,
         "Cumulative Returns": cumulative_rets
     }
 
@@ -368,8 +380,7 @@ for i in range(1,7):
 
 all_port_returns['Model1_VS'].index
 ###############################################
-    # Evaluation #
-#### Benchmarking
+    # Benchmark #
 ### Reading data
 df_bench = pd.read_csv(
     f'{data_path}/raw_splac_prices.csv',
@@ -385,6 +396,7 @@ ds_bench_returns.index = ds_bench_returns.index.normalize()
 all_port_returns['Benchmark_noVS'] = ds_bench_returns
 all_port_returns['Benchmark_VS'] = ds_bench_returns
 all_port_returns['Model_Benchmark_noVS'] = ds_bench_returns
+all_port_returns['Model_Benchmark_VS'] = ds_bench_returns
 #### Identifying comons dates
 common_dates = reduce(
     lambda x,y: x.intersection(y), 
@@ -392,10 +404,15 @@ common_dates = reduce(
 )
 str_common_dates = [f'{date.day:02d}-{date.month:02d}\n-{date.year}' for date in common_dates]
 
-
-#### All portfolio returns: performance results and graph
+###############################################
+    # Evaluation #
+#### Graphic visual 
 ### Setup
-all_port_results = {}
+# all_port_results = {}
+per_results_ML_VS = []
+per_results_ML_noVS = []
+per_results_noML_VS = []
+per_results_noML_noVS = []
 fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(16,12))
 colors = ['#1f77b4','#1f77b4', "#ff7f0e", "#ff7f0e", "#2ca02c", "#2ca02c", 
           "#d62728","#d62728",  "#9467bd","#9467bd", "#8c564b", "#8c564b",
@@ -403,54 +420,425 @@ colors = ['#1f77b4','#1f77b4', "#ff7f0e", "#ff7f0e", "#2ca02c", "#2ca02c",
           "#17becf", "#17becf", "#ffbb78","#ffbb78",  "#98df8a", "#98df8a"]
 ### Graph
 for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
-    # print(strat)
+    # Calculating return performance
     performance = performance_metrics(ds_port_ret.loc[common_dates])
-    # print(performance['Cumulative Returns'].shape)
-    # print(len(common_dates))
-    all_port_results[strat] = performance
+    # all_port_results[strat] = performance
     strat_split = strat.split("_")
+    performance['Strategy'] = "_".join([word for word in strat_split[:-1]])
+    if 'Benchmark' in strat_split: performance['Strategy'] = 'Benchmark'
     if strat_split[0].startswith('Model'):  # ML strats
         if strat_split[-1] == 'noVS':
-            print('aqui')
             axs[0,0].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
                 color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
-                label = strat if strat_split[-2] != 'Benchmark' else 'Benchmark_noVS'
+                label = performance['Strategy']
             )
+            # Appropriately store performance
+            del performance['Cumulative Returns']
+            per_results_ML_noVS.append(performance)
         else:
             axs[0,1].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
                 color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
-                label = strat if strat_split[-2] != 'Benchmark' else 'Benchmark_VS'
+                label = performance['Strategy']
             )
+            # Appropriately store performance
+            del performance['Cumulative Returns']
+            per_results_ML_VS.append(performance)
     else:   # nonML strats
         if strat_split[-1] == 'noVS':
             axs[1,0].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
                 color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
-                label = strat if strat_split[-2] != 'Benchmark' else 'Benchmark_noVS'
+                label = performance['Strategy']
             )
+            # Appropriately store performance
+            del performance['Cumulative Returns']
+            per_results_noML_noVS.append(performance)
         else:
             axs[1,1].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
                 color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
-                label = strat if strat_split[-2] != 'Benchmark' else 'Benchmark_VS'
+                label = performance['Strategy']
             )
+            # Appropriately store performance
+            del performance['Cumulative Returns']
+            per_results_noML_VS.append(performance)
 # Final configs
 for ax in axs.flatten():
     ax.set_xticks(range(len(common_dates)))
     ax.set_xticklabels(str_common_dates, rotation=90)
     ax.xaxis.set_major_locator(MultipleLocator(400))
     ax.legend(fontsize = 6.5)
-axs[0,0].set_title('ML Models without Vol. Scaling')
-axs[0,1].set_title('ML Models with Vol. Scaling')
-axs[1,0].set_title('Non-ML Models without Vol. Scaling')
-axs[1,1].set_title('Non-ML Models with Vol. Scaling')
-fig.supxlabel('Dates', x = 0.5, y=0)
-fig.supylabel('Cumulative Return', x = 0.075, y = 0.5)
+axs[0,0].set_title('ML Models without Vol. Scaling', fontweight='bold')
+axs[0,1].set_title('ML Models with Vol. Scaling', fontweight='bold')
+axs[1,0].set_title('Non-ML Models without Vol. Scaling', fontweight='bold')
+axs[1,1].set_title('Non-ML Models with Vol. Scaling', fontweight='bold')
+fig.supxlabel('Dates', x = 0.5, y=0, fontweight='bold')
+fig.supylabel('Cumulative Return', x = 0.075, y = 0.5, fontweight='bold')
 plt.subplots_adjust(hspace=0.4)
+plt.show()
+
+
+
+#### Numeric visual
+## Creating dataframes
+metrics = ['Strategy', 'E(R)', 'Std(R)', 'Sharpe',
+           'DD', 'Sortino', 'MD',
+           '% Pos.(R)', 'P/L Ratio']
+df_results_ML_noVS = pd.DataFrame(per_results_ML_noVS, columns=metrics)
+df_results_ML_VS = pd.DataFrame(per_results_ML_VS, columns=metrics)
+df_results_noML_noVS = pd.DataFrame(per_results_noML_noVS, columns=metrics)
+df_results_noML_VS = pd.DataFrame(per_results_noML_VS, columns=metrics)
+
+# df_results.sort_values(by='Ratio Sharpe', ascending=False)
+
+### Creating numeric visual
+## Setup
+fig, axs = plt.subplots(ncols=2, nrows=2, figsize = (8,8))
+dfs = [df_results_ML_noVS, df_results_ML_VS, df_results_noML_noVS, df_results_noML_VS]
+titles = ['ML Models without Vol. Scaling', 'ML Models with Vol. Scaling',
+          'non-ML Models without Vol. Scaling', 'non-ML Models with Vol. Scaling']
+
+## Creating tables
+for ax, df_data, title in zip (axs.flat, dfs, titles):
+    ax.axis('off')
+    table = ax.table(
+        cellText=df_data.round(3).values,
+        colLabels=df_data.columns,
+        loc='center',
+        cellLoc='center'
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2)
+    for row in range(len(df_data) + 1):  # +1 para incluir encabezado
+        table[(row, 0)].set_width(0.35)  
+        table[(row, 1)].set_width(0.1) 
+        table[(row, 2)].set_width(0.1) 
+        table[(row, 3)].set_width(0.12) 
+        table[(row, 4)].set_width(0.1) 
+        table[(row, 5)].set_width(0.12) 
+        table[(row, 6)].set_width(0.1) 
+        table[(row, 7)].set_width(0.15) 
+        table[(row, 8)].set_width(0.15) 
+    ax.text(0.5, 0.8, title, ha="center", va="bottom",
+        fontsize=14, fontweight="bold", transform=ax.transAxes)
+# plt.subplots_adjust(hspace=2)
+plt.tight_layout()
+plt.show()
+
+
+# ## Creating table
+# tabla = ax.table(
+#     cellText=df_results_noVS.round(3).values,
+#     colLabels=df_results_noVS.columns,
+#     cellLoc='center', 
+#     loc='center'
+# )
+# ## Table configs
+# tabla.auto_set_font_size(False)
+# tabla.set_fontsize(10)
+# tabla.scale(1.2, 1.2)
+# plt.show()
+
+
+
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+
+# Datos de ejemplo
+column_labels = ["Producto", "Cantidad", "Precio"]
+# Cada sublista es una fila
+data = [
+    ["Sección A", "", ""],  # Fila de título de sección
+    ["Manzanas", 10, "$5"],
+    ["Peras", 8, "$4"],
+    ["Sección B", "", ""],  # Otra sección
+    ["Leche", 5, "$3"],
+    ["Queso", 2, "$8"]
+]
+
+# Crear figura y ejes
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.axis("off")  # Ocultar ejes
+
+# Crear tabla
+table = ax.table(
+    cellText=data,
+    colLabels=column_labels,
+    loc="center",
+    cellLoc="center"
+)
+
+# Ajustar estilos
+table.auto_set_font_size(False)
+table.set_fontsize(10)
+table.scale(1, 1.2)  # Escalar tabla
+
+# Colorear encabezados
+for col in range(len(column_labels)):
+    table[(0, col)].set_facecolor("#40466e")
+    table[(0, col)].set_text_props(color="w", weight="bold")
+
+# Colorear secciones
+for row in range(1, len(data)):
+    if "Sección" in str(data[row][0]):
+        for col in range(len(column_labels)):
+            table[(row, col)].set_facecolor("#d0e1f9")
+            table[(row, col)].set_text_props(weight="bold")
+
+# Mostrar
+plt.tight_layout()
+plt.show()
+
+
+
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+
+# Datos
+column_labels = ["Producto", "Cantidad", "Precio"]
+data = [
+    ["Manzanas", 10, "$5"],
+    ["Peras", 8, "$4"],
+    ["Leche", 5, "$3"],
+    ["Queso", 2, "$8"]
+]
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.axis("off")
+
+# Dibujar título de sección A
+ax.add_patch(plt.Rectangle((0, 0.85), 1, 0.05, color="#d0e1f9", transform=ax.transAxes))
+ax.text(0.5, 0.875, "Sección A", ha="center", va="center", fontsize=11, weight="bold", transform=ax.transAxes)
+
+# Dibujar título de sección B
+ax.add_patch(plt.Rectangle((0, 0.55), 1, 0.05, color="#d0e1f9", transform=ax.transAxes))
+ax.text(0.5, 0.575, "Sección B", ha="center", va="center", fontsize=11, weight="bold", transform=ax.transAxes)
+
+# Crear tabla normal debajo
+table = ax.table(
+    cellText=data,
+    colLabels=column_labels,
+    loc="center",
+    cellLoc="center"
+)
+
+table.auto_set_font_size(False)
+table.set_fontsize(10)
+table.scale(1, 1.2)
+
+# Colorear encabezados
+for col in range(len(column_labels)):
+    table[(0, col)].set_facecolor("#40466e")
+    table[(0, col)].set_text_props(color="w", weight="bold")
+
+plt.tight_layout()
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+
+# Datos
+secciones = {
+    "Sección A": [
+        ["Producto", "Cantidad", "Precio"],  # Encabezado
+        ["Manzanas", 10, "$5"],
+        ["Peras", 8, "$4"]
+    ],
+    "Sección B": [
+        ["Producto", "Cantidad", "Precio"],  # Encabezado
+        ["Leche", 5, "$3"],
+        ["Queso", 2, "$8"]
+    ]
+}
+
+# Crear figura
+fig = plt.figure(figsize=(6, 4))
+gs = gridspec.GridSpec(len(secciones) * 4, 1, figure=fig)  # 4 filas por sección
+ax = fig.add_subplot(gs[:, :])
+ax.axis("off")
+
+# Parámetros visuales
+color_header = "#40466e"
+color_header_text = "white"
+color_section = "#d0e1f9"
+cell_height = 0.08
+cell_widths = [0.5, 0.25, 0.25]
+
+# Posición inicial (y)
+y_pos = 1.0
+
+for nombre_seccion, filas in secciones.items():
+    # Fila de título de sección (celda unificada)
+    ax.add_patch(plt.Rectangle((0, y_pos - cell_height), 1, cell_height,
+                               facecolor=color_section, transform=ax.transAxes))
+    ax.text(0.5, y_pos - cell_height / 2, nombre_seccion,
+            ha="center", va="center", fontsize=11, weight="bold", transform=ax.transAxes)
+    y_pos -= cell_height
+
+    # Filas de la sección
+    for i, fila in enumerate(filas):
+        # Color de encabezado
+        if i == 0:
+            bg_color = color_header
+            text_color = color_header_text
+            font_weight = "bold"
+        else:
+            bg_color = "white"
+            text_color = "black"
+            font_weight = "normal"
+
+        # Dibujar celdas
+        x_pos = 0
+        for j, valor in enumerate(fila):
+            ax.add_patch(plt.Rectangle((x_pos, y_pos - cell_height), cell_widths[j], cell_height,
+                                       facecolor=bg_color, edgecolor="black", transform=ax.transAxes))
+            ax.text(x_pos + cell_widths[j] / 2, y_pos - cell_height / 2, str(valor),
+                    ha="center", va="center", fontsize=10, weight=font_weight,
+                    color=text_color, transform=ax.transAxes)
+            x_pos += cell_widths[j]
+
+        y_pos -= cell_height
+
+plt.tight_layout()
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Datos de ejemplo para las 4 tablas
+data1 = [["A", 10], ["B", 20], ["C", 30]]
+data2 = [["X", 5], ["Y", 15], ["Z", 25]]
+data3 = [["P", 100], ["Q", 200], ["R", 300]]
+data4 = [["M", 7], ["N", 14], ["O", 21]]
+
+# Encabezados
+columns = ["Item", "Valor"]
+
+# Crear figura y ejes en formato 2x2
+fig, axs = plt.subplots(2, 2, figsize=(8, 6))
+
+# Lista de datos para iterar
+all_data = [data1, data2, data3, data4]
+
+# Recorremos cada subplot y añadimos la tabla
+for ax, table_data in zip(axs.flat, all_data):
+    ax.axis("off")  # Ocultar ejes
+    table = ax.table(
+        cellText=table_data,
+        colLabels=columns,
+        loc="center",
+        cellLoc="center"
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2)  # Escalar tabla para mejor visualización
+
+# Ajustar espacios entre subplots
+plt.tight_layout()
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+
+# Datos de ejemplo para las 4 tablas
+data1 = [["A", 10], ["B", 20], ["C", 30]]
+data2 = [["X", 5], ["Y", 15], ["Z", 25]]
+data3 = [["P", 100], ["Q", 200], ["R", 300]]
+data4 = [["M", 7], ["N", 14], ["O", 21]]
+
+# Encabezados
+columns = ["Item", "Valor"]
+
+# Títulos para cada tabla
+titles = ["Tabla 1: Ventas", "Tabla 2: Inventario", "Tabla 3: Producción", "Tabla 4: Distribución"]
+
+# Crear figura y ejes en formato 2x2
+fig, axs = plt.subplots(2, 2, figsize=(8, 6))
+
+# Lista de datos para iterar
+all_data = [data1, data2, data3, data4]
+
+# Recorremos cada subplot y añadimos la tabla y el título
+for ax, table_data, title in zip(axs.flat, all_data, titles):
+    ax.axis("off")  # Ocultar ejes
+    ax.set_title(title, fontsize=12, fontweight="bold", pad=10)  # Título encima de la tabla
+    table = ax.table(
+        cellText=table_data,
+        colLabels=columns,
+        loc="center",
+        cellLoc="center"
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1.2, 1.2)  # Escalar tabla para mejor visualización
+
+# Ajustar espacios entre subplots
+plt.tight_layout()
 plt.show()
