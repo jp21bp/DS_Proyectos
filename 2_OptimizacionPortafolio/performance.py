@@ -348,7 +348,7 @@ def ml_rets(df_weights: pd.DataFrame, vol_scaling: bool):
 
 
 #### Iterating through all models
-for i in range(1,4):
+for i in range(1,7):
     # Extracting weight predictions from current model
     path = f'{developed_path}/Model{i}'
     df_weights_results = pd.read_csv(
@@ -385,26 +385,28 @@ ds_bench_returns.index = ds_bench_returns.index.normalize()
 all_port_returns['Benchmark_noVS'] = ds_bench_returns
 all_port_returns['Benchmark_VS'] = ds_bench_returns
 all_port_returns['Model_Benchmark_noVS'] = ds_bench_returns
-all_port_returns['Model_Benchmark_VS'] = ds_bench_returns
-
 #### Identifying comons dates
 common_dates = reduce(
     lambda x,y: x.intersection(y), 
     [ds.index for ds in all_port_returns.values()]
 )
+str_common_dates = [f'{date.day:02d}-{date.month:02d}\n-{date.year}' for date in common_dates]
+
 
 #### All portfolio returns: performance results and graph
 ### Setup
 all_port_results = {}
-fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(8,6))
-colors = ["#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0", "#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0",
-          "#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0", "#E6194B","#3CB44B", "#FFE119", "#0082C8", "#F58231", "#911EB4",  "#46F0F0"]
+fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(16,12))
+colors = ['#1f77b4','#1f77b4', "#ff7f0e", "#ff7f0e", "#2ca02c", "#2ca02c", 
+          "#d62728","#d62728",  "#9467bd","#9467bd", "#8c564b", "#8c564b",
+          "#e377c2","#e377c2",  "#7f7f7f", "#7f7f7f", "#bcbd22","#bcbd22",
+          "#17becf", "#17becf", "#ffbb78","#ffbb78",  "#98df8a", "#98df8a"]
 ### Graph
 for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
-    print(strat)
+    # print(strat)
     performance = performance_metrics(ds_port_ret.loc[common_dates])
-    print(performance['Cumulative Returns'].shape)
-    print(len(common_dates))
+    # print(performance['Cumulative Returns'].shape)
+    # print(len(common_dates))
     all_port_results[strat] = performance
     strat_split = strat.split("_")
     if strat_split[0].startswith('Model'):  # ML strats
@@ -413,42 +415,42 @@ for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
             axs[0,0].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
-                color = colors[i],
-                label = strat
+                color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
+                label = strat if strat_split[-2] != 'Benchmark' else 'Benchmark_noVS'
             )
         else:
             axs[0,1].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
-                color = colors[i],
-                label = strat
+                color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
+                label = strat if strat_split[-2] != 'Benchmark' else 'Benchmark_VS'
             )
     else:   # nonML strats
         if strat_split[-1] == 'noVS':
             axs[1,0].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
-                color = colors[i],
-                label = strat
+                color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
+                label = strat if strat_split[-2] != 'Benchmark' else 'Benchmark_noVS'
             )
         else:
             axs[1,1].plot(
                 range(len(common_dates)),
                 performance['Cumulative Returns'],
-                color = colors[i],
-                label = strat
+                color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
+                label = strat if strat_split[-2] != 'Benchmark' else 'Benchmark_VS'
             )
 # Final configs
-for ax in axs:
+for ax in axs.flatten():
     ax.set_xticks(range(len(common_dates)))
-    ax.set_xticklabels(common_dates.date, rotation=90)
-    ax.xaxis.set_major_locator(MultipleLocator(256))
-    ax.legend()
-axs[0,0].set_title('ML_noVS')
-axs[0,1].set_title('ML_VS')
-axs[1,0].set_title('noML_noVS')
-axs[1,1].set_title('noMl_VS')
+    ax.set_xticklabels(str_common_dates, rotation=90)
+    ax.xaxis.set_major_locator(MultipleLocator(400))
+    ax.legend(fontsize = 6.5)
+axs[0,0].set_title('ML Models without Vol. Scaling')
+axs[0,1].set_title('ML Models with Vol. Scaling')
+axs[1,0].set_title('Non-ML Models without Vol. Scaling')
+axs[1,1].set_title('Non-ML Models with Vol. Scaling')
+fig.supxlabel('Dates', x = 0.5, y=0)
+fig.supylabel('Cumulative Return', x = 0.075, y = 0.5)
+plt.subplots_adjust(hspace=0.4)
 plt.show()
-
-
-
