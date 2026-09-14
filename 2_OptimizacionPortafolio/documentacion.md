@@ -28,7 +28,7 @@
 
 ## Contexto del Proyecto
 asasfsaf
-
+** ML - Machine Learning
 asfsafaf
 
 ### Perspicacias, Recomendaciones y sus Enfoques
@@ -65,12 +65,19 @@ asfsfsa
 
 asgsagsag
 
-### Primero
+### Ratio Sharpe de 0.966 en el Sector Industrial
+Dentros las estrategias de asignacion fija, enfocandose en el sector industrial construyo el portafolio mas fuerte entre todos las estrategias sin ML. 
+
+* **Ratio Sharpe**: esta estrategia obtuvo el ratio sharpe mas alto de 0.966 y 0.929 (sin escalar la volatilidad).
+* **Retorno Esperado**: al igual, esta estrategia obtiene los mejores retornos esperados annuales, con 0.184 y 0.055 (sin escalar la volatilidad)
+
+
+
 asfsfsa
 
 asgsagsag
 
-### Segundo
+### Impacto de COVID
 asfsfsa
 
 asgsagsag
@@ -97,8 +104,8 @@ asfsafsaf
 ## Recomendaciones
 asfasfa
 
-### Primero
-sfsafas
+### Enfoque en el Sector Industrial
+El sector Industrial tiene una gran corrida, obteniendo alrededor de **250% retorno cumulativo** en la inversion inicial. En corto plazo, se recomienda invertiendo una gran mayoria de los recursos en el sector industrial, siempre y cuando se diversifique con otras acciones. A largo plazo, se recomienda seguir investigando los movimientos del sector, considerando que un cambio del mercado pueda empezar a fortalecer otro sector. 
 
 ### Segundo
 sdgsagag
