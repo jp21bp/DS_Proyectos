@@ -17,10 +17,9 @@ from matplotlib.ticker import MultipleLocator
 from pypfopt import risk_models
 from pypfopt import expected_returns
 from scipy.optimize import minimize
-import os
+import os, copy, pickle
 from tqdm import tqdm
 from functools import reduce
-import copy
 
 #### Reading data
 ### Data path
@@ -258,10 +257,30 @@ def MVO(df_asset_returns: pd.DataFrame, vol_scaling: bool) -> pd.Series:
     return ds_port_returns
 
 #### Implementation
-ds_mvo_port_ret_noVS = MVO(df_simple_rets, False)
-all_port_returns['MVO_noVS'] = ds_mvo_port_ret_noVS
+pickle_path = os.path.join(
+    os.getcwd(),
+    '2_OptimizacionPortafolio',
+    'Pickles'
+)
+### MVO no Vol. Scaling
+path = f'{pickle_path}/MVO_port_ret_noVS.pkl'
+if os.path.isfile(path):
+    with open(path, 'rb') as file:
+        ds_mvo_port_ret_noVS = pickle.load(file)
+else:
+    ds_mvo_port_ret_noVS = MVO(df_simple_rets, False)
+    pickle.dump(ds_mvo_port_ret_noVS, open(path, 'wb'))
 
-ds_mvo_port_ret_VS = MVO(df_simple_rets, True)
+### MVO with Vol. Scaling
+path = f'{pickle_path}/MVO_port_ret_VS.pkl'
+if os.path.isfile(path):
+    with open(path, 'rb') as file:
+        ds_mvo_port_ret_VS = pickle.load(file)
+else:
+    ds_mvo_port_ret_VS = MVO(df_simple_rets, False)
+    pickle.dump(ds_mvo_port_ret_VS, open(path, 'wb'))
+### Collection
+all_port_returns['MVO_noVS'] = ds_mvo_port_ret_noVS
 all_port_returns['MVO_VS'] = ds_mvo_port_ret_VS
 
 
@@ -324,12 +343,31 @@ def MDO(df_asset_returns: pd.DataFrame, vol_scaling: bool) -> pd.Series:
     return ds_port_returns
 
 #### Implementation
-ds_mdo_port_ret_noVS = MDO(df_simple_rets, False)
+pickle_path = os.path.join(
+    os.getcwd(),
+    '2_OptimizacionPortafolio',
+    'Pickles'
+)
+### MDO no Vol. Scaling
+path = f'{pickle_path}/MDO_port_ret_noVS.pkl'
+if os.path.isfile(path):
+    with open(path, 'rb') as file:
+        ds_mdo_port_ret_noVS = pickle.load(file)
+else:
+    ds_mdo_port_ret_noVS = MVO(df_simple_rets, False)
+    pickle.dump(ds_mdo_port_ret_noVS, open(path, 'wb'))
+
+### MVO with Vol. Scaling
+path = f'{pickle_path}/MDO_port_ret_VS.pkl'
+if os.path.isfile(path):
+    with open(path, 'rb') as file:
+        ds_mdo_port_ret_VS = pickle.load(file)
+else:
+    ds_mdo_port_ret_VS = MVO(df_simple_rets, False)
+    pickle.dump(ds_mdo_port_ret_VS, open(path, 'wb'))
+### Collection
 all_port_returns['MDO_noVS'] = ds_mdo_port_ret_noVS
-
-ds_mdo_port_ret_VS = MDO(df_simple_rets, True)
 all_port_returns['MDO_VS'] = ds_mdo_port_ret_VS
-
 
 ###############################################
     # ML strats #
