@@ -502,7 +502,7 @@ df_results_noML_VS = pd.DataFrame(per_results_noML_VS, columns=metrics)
 fig, axs = plt.subplots(ncols=2, nrows=2, figsize = (8,8))
 dfs = [df_results_ML_noVS, df_results_ML_VS, df_results_noML_noVS, df_results_noML_VS]
 titles = ['ML Models without Vol. Scaling', 'ML Models with Vol. Scaling',
-          'non-ML Models without Vol. Scaling', 'non-ML Models with Vol. Scaling']
+          'Non-ML Models without Vol. Scaling', 'Non-ML Models with Vol. Scaling']
 
 ## Creating tables
 for ax, df_data, title in zip (axs.flat, dfs, titles):
@@ -510,12 +510,14 @@ for ax, df_data, title in zip (axs.flat, dfs, titles):
     table = ax.table(
         cellText=df_data.round(3).values,
         colLabels=df_data.columns,
+        rowLabels = None,
         loc='center',
         cellLoc='center'
     )
     table.auto_set_font_size(False)
     table.set_fontsize(10)
     table.scale(1.2, 1.2)
+    # Ajusting the col widths
     for row in range(len(df_data) + 1):  # +1 para incluir encabezado
         table[(row, 0)].set_width(0.35)  
         table[(row, 1)].set_width(0.1) 
@@ -526,319 +528,24 @@ for ax, df_data, title in zip (axs.flat, dfs, titles):
         table[(row, 6)].set_width(0.1) 
         table[(row, 7)].set_width(0.15) 
         table[(row, 8)].set_width(0.15) 
+    # Finding optimal values
+    max_vals = []
+    for col in df_data.columns:
+        if col == 'Strategy': continue
+        if (col == 'Std(R)') or (col == 'DD'):
+            max_vals.append(df_data[col].min())
+        else: max_vals.append(df_data[col].max())
+    # Highlighting
+    for j in range(1, df_data.shape[1]):
+        for i in range(df_data.shape[0]):
+            cell = table[i+1, j]
+            if df_data.iat[i, j] == max_vals[j-1]:
+                cell.set_facecolor('yellow')
+    # Adding title
     ax.text(0.5, 0.8, title, ha="center", va="bottom",
         fontsize=14, fontweight="bold", transform=ax.transAxes)
+
+
 # plt.subplots_adjust(hspace=2)
-plt.tight_layout()
-plt.show()
-
-
-# ## Creating table
-# tabla = ax.table(
-#     cellText=df_results_noVS.round(3).values,
-#     colLabels=df_results_noVS.columns,
-#     cellLoc='center', 
-#     loc='center'
-# )
-# ## Table configs
-# tabla.auto_set_font_size(False)
-# tabla.set_fontsize(10)
-# tabla.scale(1.2, 1.2)
-# plt.show()
-
-
-
-
-
-
-
-
-
-import matplotlib.pyplot as plt
-
-# Datos de ejemplo
-column_labels = ["Producto", "Cantidad", "Precio"]
-# Cada sublista es una fila
-data = [
-    ["Sección A", "", ""],  # Fila de título de sección
-    ["Manzanas", 10, "$5"],
-    ["Peras", 8, "$4"],
-    ["Sección B", "", ""],  # Otra sección
-    ["Leche", 5, "$3"],
-    ["Queso", 2, "$8"]
-]
-
-# Crear figura y ejes
-fig, ax = plt.subplots(figsize=(6, 4))
-ax.axis("off")  # Ocultar ejes
-
-# Crear tabla
-table = ax.table(
-    cellText=data,
-    colLabels=column_labels,
-    loc="center",
-    cellLoc="center"
-)
-
-# Ajustar estilos
-table.auto_set_font_size(False)
-table.set_fontsize(10)
-table.scale(1, 1.2)  # Escalar tabla
-
-# Colorear encabezados
-for col in range(len(column_labels)):
-    table[(0, col)].set_facecolor("#40466e")
-    table[(0, col)].set_text_props(color="w", weight="bold")
-
-# Colorear secciones
-for row in range(1, len(data)):
-    if "Sección" in str(data[row][0]):
-        for col in range(len(column_labels)):
-            table[(row, col)].set_facecolor("#d0e1f9")
-            table[(row, col)].set_text_props(weight="bold")
-
-# Mostrar
-plt.tight_layout()
-plt.show()
-
-
-
-
-
-
-
-
-
-import matplotlib.pyplot as plt
-
-# Datos
-column_labels = ["Producto", "Cantidad", "Precio"]
-data = [
-    ["Manzanas", 10, "$5"],
-    ["Peras", 8, "$4"],
-    ["Leche", 5, "$3"],
-    ["Queso", 2, "$8"]
-]
-
-fig, ax = plt.subplots(figsize=(6, 4))
-ax.axis("off")
-
-# Dibujar título de sección A
-ax.add_patch(plt.Rectangle((0, 0.85), 1, 0.05, color="#d0e1f9", transform=ax.transAxes))
-ax.text(0.5, 0.875, "Sección A", ha="center", va="center", fontsize=11, weight="bold", transform=ax.transAxes)
-
-# Dibujar título de sección B
-ax.add_patch(plt.Rectangle((0, 0.55), 1, 0.05, color="#d0e1f9", transform=ax.transAxes))
-ax.text(0.5, 0.575, "Sección B", ha="center", va="center", fontsize=11, weight="bold", transform=ax.transAxes)
-
-# Crear tabla normal debajo
-table = ax.table(
-    cellText=data,
-    colLabels=column_labels,
-    loc="center",
-    cellLoc="center"
-)
-
-table.auto_set_font_size(False)
-table.set_fontsize(10)
-table.scale(1, 1.2)
-
-# Colorear encabezados
-for col in range(len(column_labels)):
-    table[(0, col)].set_facecolor("#40466e")
-    table[(0, col)].set_text_props(color="w", weight="bold")
-
-plt.tight_layout()
-plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
-
-# Datos
-secciones = {
-    "Sección A": [
-        ["Producto", "Cantidad", "Precio"],  # Encabezado
-        ["Manzanas", 10, "$5"],
-        ["Peras", 8, "$4"]
-    ],
-    "Sección B": [
-        ["Producto", "Cantidad", "Precio"],  # Encabezado
-        ["Leche", 5, "$3"],
-        ["Queso", 2, "$8"]
-    ]
-}
-
-# Crear figura
-fig = plt.figure(figsize=(6, 4))
-gs = gridspec.GridSpec(len(secciones) * 4, 1, figure=fig)  # 4 filas por sección
-ax = fig.add_subplot(gs[:, :])
-ax.axis("off")
-
-# Parámetros visuales
-color_header = "#40466e"
-color_header_text = "white"
-color_section = "#d0e1f9"
-cell_height = 0.08
-cell_widths = [0.5, 0.25, 0.25]
-
-# Posición inicial (y)
-y_pos = 1.0
-
-for nombre_seccion, filas in secciones.items():
-    # Fila de título de sección (celda unificada)
-    ax.add_patch(plt.Rectangle((0, y_pos - cell_height), 1, cell_height,
-                               facecolor=color_section, transform=ax.transAxes))
-    ax.text(0.5, y_pos - cell_height / 2, nombre_seccion,
-            ha="center", va="center", fontsize=11, weight="bold", transform=ax.transAxes)
-    y_pos -= cell_height
-
-    # Filas de la sección
-    for i, fila in enumerate(filas):
-        # Color de encabezado
-        if i == 0:
-            bg_color = color_header
-            text_color = color_header_text
-            font_weight = "bold"
-        else:
-            bg_color = "white"
-            text_color = "black"
-            font_weight = "normal"
-
-        # Dibujar celdas
-        x_pos = 0
-        for j, valor in enumerate(fila):
-            ax.add_patch(plt.Rectangle((x_pos, y_pos - cell_height), cell_widths[j], cell_height,
-                                       facecolor=bg_color, edgecolor="black", transform=ax.transAxes))
-            ax.text(x_pos + cell_widths[j] / 2, y_pos - cell_height / 2, str(valor),
-                    ha="center", va="center", fontsize=10, weight=font_weight,
-                    color=text_color, transform=ax.transAxes)
-            x_pos += cell_widths[j]
-
-        y_pos -= cell_height
-
-plt.tight_layout()
-plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-# Datos de ejemplo para las 4 tablas
-data1 = [["A", 10], ["B", 20], ["C", 30]]
-data2 = [["X", 5], ["Y", 15], ["Z", 25]]
-data3 = [["P", 100], ["Q", 200], ["R", 300]]
-data4 = [["M", 7], ["N", 14], ["O", 21]]
-
-# Encabezados
-columns = ["Item", "Valor"]
-
-# Crear figura y ejes en formato 2x2
-fig, axs = plt.subplots(2, 2, figsize=(8, 6))
-
-# Lista de datos para iterar
-all_data = [data1, data2, data3, data4]
-
-# Recorremos cada subplot y añadimos la tabla
-for ax, table_data in zip(axs.flat, all_data):
-    ax.axis("off")  # Ocultar ejes
-    table = ax.table(
-        cellText=table_data,
-        colLabels=columns,
-        loc="center",
-        cellLoc="center"
-    )
-    table.auto_set_font_size(False)
-    table.set_fontsize(10)
-    table.scale(1.2, 1.2)  # Escalar tabla para mejor visualización
-
-# Ajustar espacios entre subplots
-plt.tight_layout()
-plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-import matplotlib.pyplot as plt
-
-# Datos de ejemplo para las 4 tablas
-data1 = [["A", 10], ["B", 20], ["C", 30]]
-data2 = [["X", 5], ["Y", 15], ["Z", 25]]
-data3 = [["P", 100], ["Q", 200], ["R", 300]]
-data4 = [["M", 7], ["N", 14], ["O", 21]]
-
-# Encabezados
-columns = ["Item", "Valor"]
-
-# Títulos para cada tabla
-titles = ["Tabla 1: Ventas", "Tabla 2: Inventario", "Tabla 3: Producción", "Tabla 4: Distribución"]
-
-# Crear figura y ejes en formato 2x2
-fig, axs = plt.subplots(2, 2, figsize=(8, 6))
-
-# Lista de datos para iterar
-all_data = [data1, data2, data3, data4]
-
-# Recorremos cada subplot y añadimos la tabla y el título
-for ax, table_data, title in zip(axs.flat, all_data, titles):
-    ax.axis("off")  # Ocultar ejes
-    ax.set_title(title, fontsize=12, fontweight="bold", pad=10)  # Título encima de la tabla
-    table = ax.table(
-        cellText=table_data,
-        colLabels=columns,
-        loc="center",
-        cellLoc="center"
-    )
-    table.auto_set_font_size(False)
-    table.set_fontsize(10)
-    table.scale(1.2, 1.2)  # Escalar tabla para mejor visualización
-
-# Ajustar espacios entre subplots
 plt.tight_layout()
 plt.show()
