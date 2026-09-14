@@ -105,16 +105,18 @@ Los modelos de las ventanas deslizantes obtuvieron un **promedio ratio Sharpe de
 
 Por lo contrario, se registra que en ambas estrategias los modelos que utilizaban todos los indicadores obtuvieron un ratio Sharpe **mas que 1.39 (ventanas deslizantes) y 1.19 (ventas expansivas) veces** de que todos los demas. Incluso, el modelo con ventana deslizante que utilizaba todos los indicadores obtuvo mejores resultados que los modelos de ventanas expansivas que no utilizaban todos los indicadores. 
 
-Adicionalmente, el **modelo con ventanas expansivas** tiene mejores resultados al **no escalar la volatailidad** (con un ratios de 0.905 y 1.254). De lo contrario, el **modelo con ventanas deslizante** tiene los mejores resultados cuando **si se escala la volatilidad** (con ratios de 0.844 y 1.252)
+Adicionalmente, el **modelo con ventanas expansivas** tiene mejores resultados al **no escalar la volatailidad** (con un ratios de 0.905 y 1.254). De lo contrario, el **modelo con ventanas deslizante** tiene los mejores resultados cuando **si se escala la volatilidad** (con ratios de 0.844 y 1.252).
 
 ## Recomendaciones
-asfasfa
-
-### Estrategia Corresponde al Usuario
+### Estrategia Adecuada le Corresponde al Usuario
 Todas las estrategias presentadas se destacan con 10 diferentes metricas, pero ninguna estrategia es la mejor en todas estas metricas. La estrategia mas adecuada para desenvolver depende en las caracteristicas del usuario. 
+
+Las estrategias de asignacion fija tiene los mejores ratios (con y sin escalar la volatilidad), pero estan sujetos a tendencias del mercado 
 
 ### Enfoque en el Sector Industrial
 El sector Industrial tiene una gran corrida, obteniendo alrededor de **250% retorno cumulativo** en la inversion inicial. En corto plazo, se recomienda invertiendo una gran mayoria de los recursos en el sector industrial, siempre y cuando se diversifique con otras acciones. A largo plazo, se recomienda seguir investigando los movimientos del sector, considerando que un cambio del mercado pueda empezar a fortalecer otro sector. 
+
+
 
 ### Utilizacion de mas Indicadores
 Se registra que los ML modelos, en ambas estrategias de ventanilla (deslizante y expansiva), obtuvieron mejores rendimientos al utilizar **todos los indicadores**. 
@@ -130,8 +132,10 @@ ggagag
 ## KPIs
 sgaga
 
-### Primero
-dgdgaga
+### Ratio Sharpe
+(Retoros Esperados)/(Volatilidad de Retornos)
+
+Objetivo: aumentar el ratio Sharpe del portafolio actual por 67%. Para adquerir estos resultados se utilizaran los 4 mejores modelos para determinar los pesos del las acciones que tengan los mejores rendimientos sin aumentar la volatilidad. 
 
 ### Segundo
 sdagaga

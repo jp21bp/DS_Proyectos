@@ -88,7 +88,7 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
         #     "Max Drawdown": 0.0,
         #     "Percent Positive Returns": 0.0,
         #     "Profit Loss Ratio": 0.0,
-        #     "Cumulative Returns": np.array([1.0])
+        #     "Compounded Returns": np.array([1.0])
         # }
         return {
             "E(R)": 0.0,
@@ -99,7 +99,7 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
             "MD": 0.0,
             "% Pos.(R)": 0.0,
             "P/L Ratio": 0.0,
-            "Cumulative Returns": np.array([1.0])
+            "Compounded Returns": np.array([1.0])
         }                       
     
     # Annualize return
@@ -122,12 +122,12 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
     annualized_sortino = annualized_ret/(annualized_downside_dev + 1e-8)\
         if annualized_downside_dev > 0.0 else 0.0
     
-    # Cumulative returns
-    cumulative_rets = (1 + ds_port_returns).cumprod()
+    # Compounded returns
+    compounded_rets = (1 + ds_port_returns).cumprod()
 
     # Max Drawdown
-    peak = np.maximum.accumulate(cumulative_rets.values)
-    drawdown = (cumulative_rets - peak)/(peak + 1e-8)
+    peak = np.maximum.accumulate(compounded_rets.values)
+    drawdown = (compounded_rets - peak)/(peak + 1e-8)
     max_drawdown = np.min(drawdown) if len(drawdown) > 0 else 0.0
 
     # Percentage of positive returns
@@ -151,7 +151,7 @@ def performance_metrics(ds_port_returns: pd.Series, periodic_rate: int = 252) ->
         "MD": max_drawdown,
         "% Pos.(R)": per_pos_rets,
         "P/L Ratio": pl_ratio,
-        "Cumulative Returns": cumulative_rets
+        "Compounded Returns": compounded_rets
     }
 
 
@@ -469,43 +469,43 @@ for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
         if strat_split[-1] == 'noVS':
             axs[0,0].plot(
                 range(len(common_dates)),
-                performance['Cumulative Returns'],
+                performance['Compounded Returns'],
                 color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
                 label = performance['Strategy']
             )
             # Appropriately store performance
-            del performance['Cumulative Returns']
+            del performance['Compounded Returns']
             per_results_ML_noVS.append(performance)
         else:
             axs[0,1].plot(
                 range(len(common_dates)),
-                performance['Cumulative Returns'],
+                performance['Compounded Returns'],
                 color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
                 label = performance['Strategy']
             )
             # Appropriately store performance
-            del performance['Cumulative Returns']
+            del performance['Compounded Returns']
             per_results_ML_VS.append(performance)
     else:   # nonML strats
         if strat_split[-1] == 'noVS':
             axs[1,0].plot(
                 range(len(common_dates)),
-                performance['Cumulative Returns'],
+                performance['Compounded Returns'],
                 color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
                 label = performance['Strategy']
             )
             # Appropriately store performance
-            del performance['Cumulative Returns']
+            del performance['Compounded Returns']
             per_results_noML_noVS.append(performance)
         else:
             axs[1,1].plot(
                 range(len(common_dates)),
-                performance['Cumulative Returns'],
+                performance['Compounded Returns'],
                 color = colors[i] if strat_split[-2] != 'Benchmark' else 'black',
                 label = performance['Strategy']
             )
             # Appropriately store performance
-            del performance['Cumulative Returns']
+            del performance['Compounded Returns']
             per_results_noML_VS.append(performance)
 # Final configs
 for ax in axs.flatten():
@@ -518,7 +518,7 @@ axs[0,1].set_title('ML Models with Vol. Scaling', fontweight='bold')
 axs[1,0].set_title('Non-ML Models without Vol. Scaling', fontweight='bold')
 axs[1,1].set_title('Non-ML Models with Vol. Scaling', fontweight='bold')
 fig.supxlabel('Dates', x = 0.5, y=0, fontweight='bold')
-fig.supylabel('Cumulative Return', x = 0.075, y = 0.5, fontweight='bold')
+fig.supylabel('Compounded Return', x = 0.075, y = 0.5, fontweight='bold')
 plt.subplots_adjust(hspace=0.4)
 plt.show()
 
