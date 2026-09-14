@@ -398,6 +398,8 @@ def ml_rets(df_weights: pd.DataFrame, vol_scaling: bool):
 
 
 #### Iterating through all models
+names = ['Slide_P_LR', 'Slide_T_H_O', 'Slide_All', 
+         'Expand_P_LR', 'Expand_T_H_O', 'Expand_All']
 for i in range(1,7):
     # Extracting weight predictions from current model
     path = f'{developed_path}/Model{i}'
@@ -410,13 +412,12 @@ for i in range(1,7):
 
     # Getting returns
     model_rets_noVS = ml_rets(df_weights_only, False)
-    all_port_returns[f'Model{i}_noVS'] = model_rets_noVS
+    all_port_returns[f'Model_{names[i-1]}_noVS'] = model_rets_noVS
 
     model_rets_VS = ml_rets(df_weights_only, True)
-    all_port_returns[f'Model{i}_VS'] = model_rets_VS
+    all_port_returns[f'Model_{names[i-1]}_VS'] = model_rets_VS
 
 
-all_port_returns['Model1_VS'].index
 ###############################################
     # Benchmark #
 ### Reading data
@@ -463,7 +464,7 @@ for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
     # all_port_results[strat] = performance
     strat_split = strat.split("_")
     performance['Strategy'] = "_".join([word for word in strat_split[:-1]])
-    if 'Benchmark' in strat_split: performance['Strategy'] = 'Benchmark'
+    if strat_split[0] == 'Model': performance['Strategy'] = "_".join([word for word in strat_split[1:-1]])
     if strat_split[0].startswith('Model'):  # ML strats
         if strat_split[-1] == 'noVS':
             axs[0,0].plot(
