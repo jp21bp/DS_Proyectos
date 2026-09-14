@@ -1,11 +1,11 @@
 # Table of Contents
 1. [Contexto del Proyecto](#contexto-del-proyecto)
-    * [Perspicacias, Recomendaciones y sus Enfoques](#perspicacias-recomendaciones-y-sus-enfoques)
+    * [Hallazgos Insights, Recomendaciones y sus Enfoques](#hallazgos-insights-recomendaciones-y-sus-enfoques)
 2. [Estructura de los Datos y su Verificaciones](#estructura-de-los-datos-y-su-verificaciones)
 3. [Resumen Ejecutivo](#resumen-ejecutivo)
     * [Resumen de Descubrimientos ](#resumen-de-descubrimientos)
     * [Tendencia de los Descubrimientos](#tendencia-de-los-descubrimientos)
-4. [Detalles de las Perspicacias](#detalles-de-las-perspicacias)
+4. [Detalles de las Hallazgos Insights](#detalles-de-los-hallazgos-insights)
     * primero
     * segundo
     * tercero
@@ -31,7 +31,7 @@ asasfsaf
 ** ML - Machine Learning
 asfsafaf
 
-### Perspicacias, Recomendaciones y sus Enfoques
+### Hallazgos Insights, Recomendaciones y sus Enfoques
 asfafaf
 
 assafaf
@@ -60,11 +60,7 @@ asfsfsa
 
 asgsagsag
 
-## Detalles de las Perspicacias 
-asfsfsa
-
-asgsagsag
-
+## Detalles de las Hallazgos Insights 
 ### Ratio Sharpe de 0.966 en el Sector Industrial
 Dentros las estrategias de asignacion fija, enfocandose en el sector industrial construyo el portafolio mas fuerte entre todos las estrategias sin ML. 
 
@@ -76,7 +72,7 @@ La pandemia del COVID se sinitio en todos aspectos globales, incluyendo al secto
 
 * **Todas las estrategia**, sea con o sin ML, pueden capturar los impactos drasticos del COVID 19
 * Las estrategias **con volatilidad escalada** fueron **menos afectados** por estos impactos, al tener una caida mas mesurada y con menos perdidas.
-* Todas las estrategias, incluyendo el benchmark, pudieron re-saltar sus ganancias al terminar la pandemia. 
+* Todas las estrategias, incluyendo el benchmark, pudieron re-saltar sus perdidas al terminar la pandemia. 
 
 ### Tercero
 asfsfsa
@@ -89,7 +85,7 @@ asfsfsa
 asgsagsag
 
 ## Modelos, Predicciones y sus Impactos
-Existen varias formas para crear un modelo que capture las dependencias temporales dentro un conjunto de datos. En este caso, dos estrategias principales se estudiaron: ventanas deslizantes y ventanas expansivas. Adicionalmente, diferentes combinaciones de las siguientes metricas financieras, de cada accion, se investigaron: Precio de Cierre (P), Retornos Logaritmicos (RL), TEMA (T), HLC3 (H), y OBV (O). 
+Existen varias formas para crear un modelo que capture las dependencias temporales dentro un conjunto de datos. En este caso, dos estrategias principales se estudiaron: ventanas deslizantes y ventanas expansivas. Adicionalmente, diferentes combinaciones de las siguientes metricas financieras, de cada accion, se investigaron: Precio de Cierre (P), Retornos Logaritmicos (LR), TEMA (T), HLC3 (H), y OBV (O). 
 
 ### Modelos con Ventanas Deslizantes
 En esta estrategia las ventanas de los datos de deslizaban anualmente, senalando que solo los datos dentro de dos anos se utilizaban para entranar el modelo. Se crearon tres diferentes modelos con esta estrategia. La arquitecturas eras iguales, pero los datos procesados tenian las siguientes diferecias: datos 1 usaban los indicadores P y RL; datos 2 usaban los indicadores T, H, y O; datos 3 usaban todos los inicadores. 
@@ -109,29 +105,24 @@ Adicionalmente, el **modelo con ventanas expansivas** tiene mejores resultados a
 
 ## Recomendaciones
 ### Estrategia Adecuada le Corresponde al Usuario
-Todas las estrategias presentadas se destacan con 10 diferentes metricas, pero ninguna estrategia es la mejor en todas estas metricas. La estrategia mas adecuada para desenvolver depende en las caracteristicas del usuario. 
+Todas las estrategias presentadas se destacan con 10 diferentes metricas, pero ninguna estrategia es la mejor en todas estas metricas. Para desarrollar la mejor estrategia de recomienda identificar las caracteristicas y preferencias del usuario.
 
-Las estrategias de asignacion fija tiene los mejores ratios (con y sin escalar la volatilidad), pero estan sujetos a tendencias del mercado 
+Las estrategias de **asignacion fija tiene los mejores ratios** (con y sin escalar la volatilidad), pero tiene uno de los mas MD con -0.436. Un usuario que intenta minimizar los asustes que tiene al enfrentarse con una caida de precios no va a preferir esta estrategia. 
+
+Por otro lado, un usuario puede priorizar el ratio de la ganancias a perdidas ("P/L Ratio"), teniendo en cuenta qque es posible sacrificar un optimo ratio Sharpe. Existe diferentes combinaciones que se pueden formar al considerar las metas del usuario. 
 
 ### Enfoque en el Sector Industrial
-El sector Industrial tiene una gran corrida, obteniendo alrededor de **250% retorno cumulativo** en la inversion inicial. En corto plazo, se recomienda invertiendo una gran mayoria de los recursos en el sector industrial, siempre y cuando se diversifique con otras acciones. A largo plazo, se recomienda seguir investigando los movimientos del sector, considerando que un cambio del mercado pueda empezar a fortalecer otro sector. 
+El sector Industrial tiene una gran corrida, obteniendo alrededor de **250% retorno compuesto** en la inversion inicial. En corto plazo, se recomienda invertiendo una gran mayoria de los recursos en el sector industrial, siempre y cuando se diversifique con otras acciones. A largo plazo, se recomienda seguir investigando los movimientos del sector, considerando que un cambio del mercado pueda empezar a fortalecer otro sector. 
 
 
 
-### Utilizacion de mas Indicadores
-Se registra que los ML modelos, en ambas estrategias de ventanilla (deslizante y expansiva), obtuvieron mejores rendimientos al utilizar **todos los indicadores**. 
+### ML con Mejores Resultados
+Se registra que los ML modelos, en ambas estrategias de ventanilla (deslizante y expansiva), obtuvieron mejores rendimientos al utilizar **todos los indicadores**. Se recomienda coleccionar mas indicadores para mejorar las predicciones de los modelos.
 
-sdgsagag
+Adicionalmente se nota que las ventanas expansivas obtuvieron mejores resultados las ventanas deslizantes. En otra palabras, teniendo mas informacion historica de las acciones mejora los rendimientos del modelo.
 
-### Tercero
-asgagsa
-
-### Cuarto
-ggagag
 
 ## KPIs
-sgaga
-
 ### Ratio Sharpe
 (Retoros Esperados)/(Volatilidad de Retornos)
 
@@ -148,6 +139,10 @@ Enfoque: mejorar el retorno compuesto del portafolio. Esto se modificar por si m
 Enfoque: Esta metrica afecta el bienestar psicologico del usuario ya que es la bajada mas alta dentro la historia de los retornos. Aunque una bajada del pasado no se puede borrar, si se puede utilizar como una referencia para evitar. 
 
 ## Suposiciones y Avisos
-dgonin
+Este analisis desrrollo las siguientes asunciones:
+
+* El "Cierre Ajustado" del YFinance refleja el valor de las acciones que es utilizado por los inversionistas.
+* Los datos del mercado bursatil no tienen estacionaridad y son naturalmente impredecibles. 
+
 
 
