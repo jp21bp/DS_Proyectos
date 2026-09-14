@@ -137,11 +137,15 @@ sgaga
 
 Objetivo: aumentar el ratio Sharpe del portafolio actual por 67%. Para adquerir estos resultados se utilizaran los 4 mejores modelos para determinar los pesos del las acciones que tengan los mejores rendimientos sin aumentar la volatilidad. 
 
-### Segundo
-sdagaga
+### Retorno Compuesto
+\prod{i=1}^t (1 + retorno_simple_i)
 
-### Tercero
-asgasgsa
+Enfoque: mejorar el retorno compuesto del portafolio. Esto se modificar por si mismo al mejorar los rendimientos del portafolio. 
+
+### Drawdown Maximo
+(Pico Maximo - Valle Minima)/(Pico Maxima)
+
+Enfoque: Esta metrica afecta el bienestar psicologico del usuario ya que es la bajada mas alta dentro la historia de los retornos. Aunque una bajada del pasado no se puede borrar, si se puede utilizar como una referencia para evitar. 
 
 ## Suposiciones y Avisos
 dgonin
