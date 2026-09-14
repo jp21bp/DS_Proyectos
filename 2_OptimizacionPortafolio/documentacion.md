@@ -74,15 +74,9 @@ La pandemia del COVID se sinitio en todos aspectos globales, incluyendo al secto
 * Las estrategias **con volatilidad escalada** fueron **menos afectados** por estos impactos, al tener una caida mas mesurada y con menos perdidas.
 * Todas las estrategias, incluyendo el benchmark, pudieron re-saltar sus perdidas al terminar la pandemia. 
 
-### Tercero
-asfsfsa
+### Debilidad del Benchmark
+En benchmark indice SPLAC obtuvo los mejores resultados detro el primer año del rango de fechas, pero a traves del tiempo fue superado por todos los otros modelos. Considerando que el **todos** los otros modelos le superan al indice, se identifica que este benchmark no tiene las mejores estrategias para manejar los movimientos de las 40 mejores empresas de suramerica. 
 
-asgsagsag
-
-### Cuarto
-asfsfsa
-
-asgsagsag
 
 ## Modelos, Predicciones y sus Impactos
 Existen varias formas para crear un modelo que capture las dependencias temporales dentro un conjunto de datos. En este caso, dos estrategias principales se estudiaron: ventanas deslizantes y ventanas expansivas. Adicionalmente, diferentes combinaciones de las siguientes metricas financieras, de cada accion, se investigaron: Precio de Cierre (P), Retornos Logaritmicos (LR), TEMA (T), HLC3 (H), y OBV (O). 
@@ -119,7 +113,7 @@ El sector Industrial tiene una gran corrida, obteniendo alrededor de **250% reto
 ### ML con Mejores Resultados
 Se registra que los ML modelos, en ambas estrategias de ventanilla (deslizante y expansiva), obtuvieron mejores rendimientos al utilizar **todos los indicadores**. Se recomienda coleccionar mas indicadores para mejorar las predicciones de los modelos.
 
-Adicionalmente se nota que las ventanas expansivas obtuvieron mejores resultados las ventanas deslizantes. En otra palabras, teniendo mas informacion historica de las acciones mejora los rendimientos del modelo.
+Adicionalmente se nota que las ventanas expansivas obtuvieron mejores resultados las ventanas deslizantes. Este patron ayudaria a capturar cambios historicamente drasticos, senalando al modelo que cambie sus predicciones. En otra palabras, teniendo mas informacion historica de las acciones mejora los rendimientos del modelo.
 
 
 ## KPIs
