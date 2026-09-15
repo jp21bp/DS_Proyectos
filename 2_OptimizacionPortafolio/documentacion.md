@@ -27,14 +27,12 @@
 
 
 ## Contexto del Proyecto
-asasfsaf
-** ML - Machine Learning
-asfsafaf
+Capital Andina (CA) es un empresa que gestion activos en Peru y se especaliza en inversiones de renta varaible y portafolios en el sector financiero de sudamerica. Su estrategia de diversificacion incluye a empresas financieras que cotizan en mercados dentro Brasil, Chile, Colombia, y Peru. Ellos principalmente se guian del indice SPLAC, la cual contiene las 40 empresas mas grandes en Ameica latina, y la usan como benchmark. 
+
+CA reconoce los impactos positivos del Machine Learning (ML) y lo quiere integrar en sus estrategias de portafolios. Adicionalmente, ellos presienten que el benchmark actual no es el mas adecuado para los movimientos financieros, ya que sus estrategias actuales lo superan consistentemente. CA desea desarrollar un marco de analisi de portafolios basado en datos que permita detallar decisiones informadas en el uso de ML contra estrategias tradicionales. 
 
 ### Hallazgos Insights, Recomendaciones y sus Enfoques
-asfafaf
-
-assafaf
+** Fuer
 
 ## Estructura de los Datos y su Verificaciones
 SPLAC es un indice financiero que consiste de las 40 empresas suramericanas tamano y liquidez mas alta. Estas companias varian a traves del tiempo, entonces las empresas seleccionadas fuerons las que estaban dentro de estas 40 empresas el 31 de Agosto, 2026. Reconociendo que no todas estas companias empezaron al mismo tiempo, se aplico un filtracion para seleccionar a la companias que estaban activos el 28 de Febrero del 2006. Esta fecha se escojio para poder incluir la crisis del 2008 dentro los datos. 
