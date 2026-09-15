@@ -31,8 +31,16 @@ Capital Andina (CA) es un empresa que gestion activos en Peru y se especaliza en
 
 CA reconoce los impactos positivos del Machine Learning (ML) y lo quiere integrar en sus estrategias de portafolios. Adicionalmente, ellos presienten que el benchmark actual no es el mas adecuado para los movimientos financieros, ya que sus estrategias actuales lo superan consistentemente. CA desea desarrollar un marco de analisi de portafolios basado en datos que permita detallar decisiones informadas en el uso de ML contra estrategias tradicionales. 
 
+Considerando la complejidad de inversiones, las estrategias de portafolio se evaluaran a traves las siguientes metricas financieras: retorno esperado (E(R)), Volatilidad (Std(R)), ratio Sharpe, Downside Deviation (DD), ratio Sortino, Max Drawdown (MD), Porcentaje de retornos positivos (% Pos.(R)), y ratio de Ganancias/Perdidas (P/L Ratio). Adicionalmente, se **escalara la volatilidad** para poder eliminar la volatilidad del mercado y enfocarse en las caracteristicas de cada estrategia. 
+
 ### Hallazgos Insights, Recomendaciones y sus Enfoques
-** Fuer
+**Sectores Empresariales**: Unas de las estrategias utilizadas por CA se enfoque en asignancion fija (de pesos) a traves todo el tiempo. Ellos determinan esta asignacion basado en el sector de cada empresa, y algunos candidatos son: Energia, Financiero, Salud, MAteriales, Utilidades, etc. El analisis demuestra que la inversion enfocada en el sector Industrial resulta en mejores rendimientos y ratio Sharpe a traves todas las estrategias sin ML.
+
+**ML vs no-ML**: La diferencia entre estas dos estrategias se notan en metricas especificas. Mientras las estrategias ML son superiores en el **ratio Sharpe y retorno acumulado**, las estrategias no-ML son mejores en la **Volatilidad y Porcentaje de retorno positivo**. La estrategia adecuada depende en las preferencias que el usuario quiere implementar en sus inversiones. 
+
+**Benchmark**: La precognicion de CA se convierte en certeza al investigar que todas las estrategias obtuvieron mejores rendimientos que el Benchmark. A pesar de eso, el benchmark es una buena referencia al poder capturar turbulencias en el mercado, como la pandemia del COVID. Cuando estos remolinos aparecen en otras estrategias, se pueden comparar con el benchmark para identificar las raises de estas turbulencias. 
+
+
 
 ## Estructura de los Datos y su Verificaciones
 SPLAC es un indice financiero que consiste de las 40 empresas suramericanas tamano y liquidez mas alta. Estas companias varian a traves del tiempo, entonces las empresas seleccionadas fuerons las que estaban dentro de estas 40 empresas el 31 de Agosto, 2026. Reconociendo que no todas estas companias empezaron al mismo tiempo, se aplico un filtracion para seleccionar a la companias que estaban activos el 28 de Febrero del 2006. Esta fecha se escojio para poder incluir la crisis del 2008 dentro los datos. 
@@ -45,7 +53,7 @@ La informacion historica se descargaron de YFinance, con los siguiente detalles:
 
 ## Resumen Ejecutivo
 ### Resumen de Descubrimientos
-Las estrategias de portafolio se evaluaron a traves las siguientes metricas financieras: retorno esperado (E(R)), Volatilidad (Std(R)), ratio Sharpe, Downside Deviation (DD), ratio Sortino, Max Drawdown (MD), Porcentaje de retornos positivos (% Pos.(R)), y ratio de Ganancias/Perdidas (P/L Ratio). Diferentes sectores de las empresas suramericanas tienen momentos donde son mas fuertes o mas debiles que los otros sectores. A pesar de esta variacion, el **sector Industrial** ha obtenido mas exitos y rendimientos que todos los demas, indicando que es un buen sector para hacer inversiones. 
+Diferentes sectores de las empresas suramericanas tienen momentos donde son mas fuertes o mas debiles que los otros sectores. A pesar de esta variacion, el **sector Industrial** ha obtenido mas exitos y rendimientos que todos los demas, indicando que es un buen sector para hacer inversiones. 
 
 Por otro lado, las estrategias desarrolladas con ML modelos ofrecen una alternativa competitiva a modelos tradicionales. En promedio, los retornos acumulados (al escalar volatilidad) con estrategias de ML obtuvieron **229.17%** de la inversion inicial, mientras que las estrategias sin ML obtuvieron un **172.23%**. Adicionalmente, los ratio Sharpe tambien confirmar esta diferencia, con las estrategias ML obteniendo un promedio de **0.707** mientras que las estrategias sin ML obtuvieron **0.566**.
 
