@@ -584,42 +584,5 @@ for ax, df_data, title in zip (axs.flat, dfs, titles):
     ax.text(0.5, 0.8, title, ha="center", va="bottom",
         fontsize=14, fontweight="bold", transform=ax.transAxes)
 
-
-# plt.subplots_adjust(hspace=2)
 plt.tight_layout()
 plt.show()
-
-
-###### Examinations
-##### How many times more 
-all_port_results.keys()
-industrials = all_port_results['FA_Industrials_noVS']['Compounded Returns'].iloc[-1]
-consumer = all_port_results['FA_Consumer Staples_noVS']['Compounded Returns'].iloc[-1]
-financials = all_port_results['FA_Financials_noVS']['Compounded Returns'].iloc[-1]
-materials = all_port_results['FA_Materials_noVS']['Compounded Returns'].iloc[-1]
-
-avg = (consumer + financials + materials)/3
-
-industrials / avg
-
-tmp = all_port_results['FA_Industrials_noVS']['Compounded Returns'].loc['2020-02-01':'2020-03-30'].values
-all_port_results['FA_Materials_noVS']['Compounded Returns'].loc['2020-03-01':'2020-04-30'].values
-
-tmp[tmp.round(2) == 2.88]
-
-
-
-ml_avg = []
-non_ml_avg = []
-for strat, performance in all_port_results.items():
-    strat_split = strat.split("_")
-    if 'Benchmark' in strat_split: continue
-    if strat_split[-1] == 'VS':
-        ret_acum = performance['Compound Return']
-        ultimo = ret_acum.iloc[-1]
-        # ultimo = ret_acum
-        if strat_split[0] == 'Model': ml_avg.append(ultimo)
-        else: non_ml_avg.append(ultimo)
-
-np.mean(ml_avg)
-np.mean(non_ml_avg)
