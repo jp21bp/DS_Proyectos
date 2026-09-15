@@ -602,6 +602,24 @@ avg = (consumer + financials + materials)/3
 
 industrials / avg
 
-tmp = all_port_results['FA_Industrials_noVS']['Compounded Returns'].loc['2020-02-01':'2020-07-01'].values
+tmp = all_port_results['FA_Industrials_noVS']['Compounded Returns'].loc['2020-02-01':'2020-03-30'].values
+all_port_results['FA_Materials_noVS']['Compounded Returns'].loc['2020-03-01':'2020-04-30'].values
 
 tmp[tmp.round(2) == 2.88]
+
+
+
+ml_avg = []
+non_ml_avg = []
+for strat, performance in all_port_results.items():
+    strat_split = strat.split("_")
+    if 'Benchmark' in strat_split: continue
+    if strat_split[-1] == 'VS':
+        ret_acum = performance['Compound Return']
+        ultimo = ret_acum.iloc[-1]
+        # ultimo = ret_acum
+        if strat_split[0] == 'Model': ml_avg.append(ultimo)
+        else: non_ml_avg.append(ultimo)
+
+np.mean(ml_avg)
+np.mean(non_ml_avg)

@@ -46,14 +46,13 @@ La informacion historica se descargaron de YFinance, con los siguiente detalles:
 
 
 ## Resumen Ejecutivo
-assaas
-
-afsagsag
-
 ### Resumen de Descubrimientos
-asafasf
+Las estrategias de portafolio se evaluaron a traves las siguientes metricas financieras: retorno esperado (E(R)), Volatilidad (Std(R)), ratio Sharpe, Downside Deviation (DD), ratio Sortino, Max Drawdown (MD), Porcentaje de retornos positivos (% Pos.(R)), y ratio de Ganancias/Perdidas (P/L Ratio). Diferentes sectores de las empresas suramericanas tienen momentos donde son mas fuertes o mas debiles que los otros sectores. A pesar de esta variacion, el **sector Industrial** ha obtenido mas exitos y rendimientos que todos los demas, indicando que es un buen sector para hacer inversiones. 
 
-asgsagsa
+Por otro lado, las estrategias desarrolladas con ML modelos ofrecen una alternativa competitiva a modelos tradicionales. En promedio, los retornos acumulados (al escalar volatilidad) con estrategias de ML obtuvieron **229.17%** de la inversion inicial, mientras que las estrategias sin ML obtuvieron un **172.23%**. Adicionalmente, los ratio Sharpe tambien confirmar esta diferencia, con las estrategias ML obteniendo un promedio de **0.707** mientras que las estrategias sin ML obtuvieron **0.566**.
+
+Por lo contrario, las estragias sin ML superan a las estrategias ML en las siguientes categorias: Volatilidad (0.068 vs 0.075) y Porcentaje de retornos positivos (52.86% vs 51.83%). Diferentes metricas tienen diferentes niveles de importancias a cada usuario, senalando que la mejor estrategia depende en las preferencias del usuario. 
+
 
 ### Tendencia de los Descubrimientos
 **Fuerza del Sector Industrial**: Teniendo una inversion fija en las empresas dentro el sector Industrial tiene **1.37 veces**(al escalar volatilidad) y **2.17 veces**(sin escalar volatilidad) mejores redimiento acumulado que los otros sectores: financiero, materiales, y consumo basico. 
