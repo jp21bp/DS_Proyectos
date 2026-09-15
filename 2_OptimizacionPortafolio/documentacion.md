@@ -56,15 +56,19 @@ asafasf
 asgsagsa
 
 ### Tendencia de los Descubrimientos
-asfsfsa
+**Fuerza del Sector Industrial**: Teniendo una inversion fija en las empresas dentro el sector Industrial tiene **1.37 veces**(al escalar volatilidad) y **2.17 veces**(sin escalar volatilidad) mejores redimiento acumulado que los otros sectores: financiero, materiales, y consumo basico. 
 
-asgsagsag
+**Impacto de COVID**: Todas las estrategias sintieron el impacto economico de la pandemia, la cual occurio entro el mes de **Marzo 2020**. A pesar de su influencia negativa, todas las estrategias tambien empezaron a resaltar y superar la pandemia empezando en **Abril 2020**. 
+
+**Referencia del Benchmark**: El benchmark que se utilizo fue el indice SPLAC del sector financiero en SurAmerica. Las comparaciones revelan que **todas** las inversiones directas (en las 40 empresas utilizado por el SPLAC) resultan en mejores resultados que una inversion directa en el indice. 
+
+
 
 ## Detalles de las Hallazgos Insights 
 ### Ratio Sharpe de 0.966 en el Sector Industrial
 Dentros las estrategias de asignacion fija, enfocandose en el sector industrial construyo el portafolio mas fuerte entre todos las estrategias sin ML. 
 
-* **Ratio Sharpe**: esta estrategia obtuvo el ratio sharpe mas alto de 0.966 y 0.929 (sin escalar la volatilidad).
+* **Ratio Sharpe**: esta estrategia obtuvo el ratio sharpe **mas alto de 0.966 y 0.929** (sin escalar la volatilidad).
 * **Retorno Esperado**: al igual, esta estrategia obtiene los mejores retornos esperados annuales, con 0.184 y 0.055 (sin escalar la volatilidad)
 
 ### Impacto de COVID
@@ -75,11 +79,11 @@ La pandemia del COVID se sinitio en todos aspectos globales, incluyendo al secto
 * Todas las estrategias, incluyendo el benchmark, pudieron re-saltar sus perdidas al terminar la pandemia. 
 
 ### Debilidad del Benchmark
-En benchmark indice SPLAC obtuvo los mejores resultados detro el primer año del rango de fechas, pero a traves del tiempo fue superado por todos los otros modelos. Considerando que el **todos** los otros modelos le superan al indice, se identifica que este benchmark no tiene las mejores estrategias para manejar los movimientos de las 40 mejores empresas de suramerica. 
+En benchmark indice SPLAC obtuvo los mejores resultados detro el primer año del rango de fechas, pero a traves del tiempo fue superado por todos los otros modelos. Considerando que **todos** los otros modelos le superan al indice, se identifica que este benchmark no tiene las mejores estrategias para manejar los movimientos de las 40 mejores empresas de suramerica. 
 
 
 ## Modelos, Predicciones y sus Impactos
-Existen varias formas para crear un modelo que capture las dependencias temporales dentro un conjunto de datos. En este caso, dos estrategias principales se estudiaron: ventanas deslizantes y ventanas expansivas. Adicionalmente, diferentes combinaciones de las siguientes metricas financieras, de cada accion, se investigaron: Precio de Cierre (P), Retornos Logaritmicos (LR), TEMA (T), HLC3 (H), y OBV (O). 
+Existen varias formas para crear un modelo que capture las dependencias temporales dentro un conjunto de datos. En este caso, dos estrategias principales se estudiaron: ventanas deslizantes y ventanas expansivas. Adicionalmente, diferentes combinaciones de las siguientes **metricas financieras**, de cada accion, se investigaron: Precio de Cierre (P), Retornos Logaritmicos (LR), TEMA (T), HLC3 (H), y OBV (O). 
 
 ### Modelos con Ventanas Deslizantes
 En esta estrategia las ventanas de los datos de deslizaban anualmente, senalando que solo los datos dentro de dos anos se utilizaban para entranar el modelo. Se crearon tres diferentes modelos con esta estrategia. La arquitecturas eras iguales, pero los datos procesados tenian las siguientes diferecias: datos 1 usaban los indicadores P y RL; datos 2 usaban los indicadores T, H, y O; datos 3 usaban todos los inicadores. 
@@ -113,7 +117,7 @@ El sector Industrial tiene una gran corrida, obteniendo alrededor de **250% reto
 ### ML con Mejores Resultados
 Se registra que los ML modelos, en ambas estrategias de ventanilla (deslizante y expansiva), obtuvieron mejores rendimientos al utilizar **todos los indicadores**. Se recomienda coleccionar mas indicadores para mejorar las predicciones de los modelos.
 
-Adicionalmente se nota que las ventanas expansivas obtuvieron mejores resultados las ventanas deslizantes. Este patron ayudaria a capturar cambios historicamente drasticos, senalando al modelo que cambie sus predicciones. En otra palabras, teniendo mas informacion historica de las acciones mejora los rendimientos del modelo.
+Adicionalmente se nota que las **ventanas expansivas obtuvieron mejores resultados las ventanas deslizantes**. Este patron ayudaria a capturar cambios historicamente drasticos, senalando al modelo que cambie sus predicciones. En otra palabras, teniendo mas informacion historica de las acciones mejora los rendimientos del modelo.
 
 
 ## KPIs

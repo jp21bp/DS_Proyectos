@@ -447,7 +447,7 @@ str_common_dates = [f'{date.day:02d}-{date.month:02d}\n-{date.year}' for date in
     # Evaluation #
 #### Graphic visual 
 ### Setup
-# all_port_results = {}
+all_port_results = {}
 per_results_ML_VS = []
 per_results_ML_noVS = []
 per_results_noML_VS = []
@@ -461,7 +461,7 @@ colors = ['#1f77b4','#1f77b4', "#ff7f0e", "#ff7f0e", "#2ca02c", "#2ca02c",
 for i, (strat, ds_port_ret) in enumerate(all_port_returns.items()):
     # Calculating return performance
     performance = performance_metrics(ds_port_ret.loc[common_dates])
-    # all_port_results[strat] = performance
+    all_port_results[strat] = copy.deepcopy(performance)
     strat_split = strat.split("_")
     performance['Strategy'] = "_".join([word for word in strat_split[:-1]])
     if strat_split[0] == 'Model': performance['Strategy'] = "_".join([word for word in strat_split[1:-1]])
@@ -588,3 +588,20 @@ for ax, df_data, title in zip (axs.flat, dfs, titles):
 # plt.subplots_adjust(hspace=2)
 plt.tight_layout()
 plt.show()
+
+
+###### Examinations
+##### How many times more 
+all_port_results.keys()
+industrials = all_port_results['FA_Industrials_noVS']['Compounded Returns'].iloc[-1]
+consumer = all_port_results['FA_Consumer Staples_noVS']['Compounded Returns'].iloc[-1]
+financials = all_port_results['FA_Financials_noVS']['Compounded Returns'].iloc[-1]
+materials = all_port_results['FA_Materials_noVS']['Compounded Returns'].iloc[-1]
+
+avg = (consumer + financials + materials)/3
+
+industrials / avg
+
+tmp = all_port_results['FA_Industrials_noVS']['Compounded Returns'].loc['2020-02-01':'2020-07-01'].values
+
+tmp[tmp.round(2) == 2.88]
