@@ -1,0 +1,7 @@
+curl -X POST "http://127.0.0.1:8000/predict" -H "Content-Type: application/json" -d "{\"month\": 7, \"region\": \"AMAZONAS\", \"name\":\"RUMIPUNKU\"}"
+
+curl -X GET "http://127.0.0.1:8000/predict" -H "Content-Type: application/json" -d "{\"feat1\": 75.0, \"feat2\": \"aaaa\", \"feat3\":\"bbbb\"}"
+
+
+
+curl -X GET "http://127.0.0.1:8000/" -H "Content-Type: application/json" -d '{"feat1": 75.0, "feat2": "aaaa", "feat3":"bbbb"}'

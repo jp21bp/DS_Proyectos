@@ -11,8 +11,8 @@ import joblib, os, uvicorn
 
 #### Read model and scaler
 try:
-    pipeline = joblib.load('pipeline.pkl')
-    scaler = joblib.load('scaler.pkl')
+    pipeline = joblib.load('App/pipeline.pkl')
+    scaler = joblib.load('App/scaler.pkl')
 except Exception as e:
     raise RuntimeError(f'Loading error: {e}')
 
