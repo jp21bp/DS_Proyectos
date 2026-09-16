@@ -452,7 +452,7 @@ per_results_ML_VS = []
 per_results_ML_noVS = []
 per_results_noML_VS = []
 per_results_noML_noVS = []
-fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(16,12))
+fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(20,15))
 colors = ['#1f77b4','#1f77b4', "#ff7f0e", "#ff7f0e", "#2ca02c", "#2ca02c", 
           "#d62728","#d62728",  "#9467bd","#9467bd", "#8c564b", "#8c564b",
           "#e377c2","#e377c2",  "#7f7f7f", "#7f7f7f", "#bcbd22","#bcbd22",
@@ -513,15 +513,22 @@ for ax in axs.flatten():
     ax.set_xticklabels(str_common_dates, rotation=90)
     ax.xaxis.set_major_locator(MultipleLocator(400))
     ax.legend(fontsize = 6.5)
-axs[0,0].set_title('ML Models without Vol. Scaling', fontweight='bold')
-axs[0,1].set_title('ML Models with Vol. Scaling', fontweight='bold')
-axs[1,0].set_title('Non-ML Models without Vol. Scaling', fontweight='bold')
-axs[1,1].set_title('Non-ML Models with Vol. Scaling', fontweight='bold')
-fig.supxlabel('Dates', x = 0.5, y=0, fontweight='bold')
-fig.supylabel('Compounded Return', x = 0.075, y = 0.5, fontweight='bold')
+## English
+# axs[0,0].set_title('ML Models without Vol. Scaling', fontweight='bold')
+# axs[0,1].set_title('ML Models with Vol. Scaling', fontweight='bold')
+# axs[1,0].set_title('Non-ML Models without Vol. Scaling', fontweight='bold')
+# axs[1,1].set_title('Non-ML Models with Vol. Scaling', fontweight='bold')
+# fig.supxlabel('Dates', x = 0.51, y=0, fontweight='bold')
+# fig.supylabel('Compounded Return', x = 0.075, y = 0.5, fontweight='bold')
+# Espanol
+axs[0,0].set_title('ML Modelos sin Vol. Escalada', fontweight='bold')
+axs[0,1].set_title('ML Modelos con Vol. Escalada', fontweight='bold')
+axs[1,0].set_title('No-ML Modelos sin Vol. Escalada', fontweight='bold')
+axs[1,1].set_title('No-ML Modelos con Vol. Escalada', fontweight='bold')
+fig.supxlabel('Fechas', x = 0.51, y=0, fontweight='bold')
+fig.supylabel('Retorno Acumulado', x = 0.075, y = 0.5, fontweight='bold')
 plt.subplots_adjust(hspace=0.4)
 plt.show()
-
 
 
 #### Numeric visual
@@ -540,8 +547,10 @@ df_results_noML_VS = pd.DataFrame(per_results_noML_VS, columns=metrics)
 ## Setup
 fig, axs = plt.subplots(ncols=2, nrows=2, figsize = (8,8))
 dfs = [df_results_ML_noVS, df_results_ML_VS, df_results_noML_noVS, df_results_noML_VS]
-titles = ['ML Models without Vol. Scaling', 'ML Models with Vol. Scaling',
-          'Non-ML Models without Vol. Scaling', 'Non-ML Models with Vol. Scaling']
+# titles = ['ML Models without Vol. Scaling', 'ML Models with Vol. Scaling',
+#           'Non-ML Models without Vol. Scaling', 'Non-ML Models with Vol. Scaling']
+titles = ['ML Modelos sin Vol. Escalada', 'ML Modelos con Vol. Escalada',
+          'No-ML Modelos sin Vol. Escalada', 'No-ML Modelos con Vol. Escalada']
 
 ## Creating tables
 for ax, df_data, title in zip (axs.flat, dfs, titles):

@@ -174,7 +174,7 @@ df_resultados = pd.concat([
 df_resultados
 
 ##### Guardando el mejor modelo
-joblib.dump(gs.best_estimator_, './App/model.pkl')
+# joblib.dump(gs.best_estimator_, './App/model.pkl')
 
 #################################################################
 
@@ -401,22 +401,123 @@ for sitio in top_X_sitios:
         # Los valores del modelo y los valores actuales no son diferentes
         # I.e., el modelo es una buena representacion para predecir los numero de visitantes
 
+########################################################3
+    # Creando Pipeline #
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.pipeline import Pipeline
+
+
+#### Cargando datos
+df_2_original = pd.read_csv('Datos/FeatEng/visitantes_sitios_turisticos_original.csv')
+df_2_encoded = pd.read_csv('Datos/FeatEng/visitantes_sitios_turisticos_encoded.csv')
+
+#### Cargando el modelo y scaler
+rf = joblib.load('./App/model.pkl')
+scaler = joblib.load('./App/scaler.pkl')
+
+#### OHE
+X = df_2_original[['ID_MES', 'DEPARTAMENTO', 'SITIO_TURISTICO']]
+y = df_2_original['NUMERO_VISITANTES']
+
+### Creando encoder
+ohe = OneHotEncoder(handle_unknown='ignore', sparse_output=False)
+encoder = ohe.fit(X)
+
+### Implementacion
+enc = encoder.transform(X)
+(enc == df_2_encoded.drop(columns = 'NUMERO_VISITANTES')).sum().sum()
+(df_2_encoded.drop(columns = 'NUMERO_VISITANTES') == enc).all(axis=1).all()
+    # confirmacion que OHE: original -> encoded
+
+#### Pipe de OHE
+pip1 = Pipeline([
+    ('encoder', encoder),
+])
+
+enc2 = pip1.transform(X)
+(enc2 == enc).all(axis=1).all()
+    # Confirmacion ue trabaja
+
+
+###### Model prediccion
+#### SEleccionanado top X
+top_X = 5
+top_X_sitios = df_2_original.groupby(by='SITIO_TURISTICO', as_index=False)\
+    ['NUMERO_VISITANTES'].agg('mean')\
+    .sort_values(by='NUMERO_VISITANTES', ascending=False)\
+    ['SITIO_TURISTICO'][:top_X].values.tolist()
+
+#### Seleccionando los indices
+idxs = df_2_original[df_2_original['SITIO_TURISTICO'].isin(top_X_sitios)].index
+
+#### usando rf.predict
+df_org_idxs = df_2_original.iloc[idxs].drop(columns = 'NUMERO_VISITANTES')
+df_enc_idxs = df_2_encoded.iloc[idxs].drop(columns = 'NUMERO_VISITANTES')
+
+idxs_enc = encoder.transform(df_org_idxs)
+
+(idxs_enc == df_enc_idxs).all().all()   # Confirmacion que son iguales
+
+pred_idxs_enc = rf.predict(idxs_enc)
+pred_df_enc = rf.predict(df_enc_idxs)
+
+(pred_idxs_enc == pred_df_enc).all().all()  # son iguales
+
+#### Predicciones usando pipeline
+
+
+
+pipeline = Pipeline([
+    ('encoder', encoder),
+    ('model', rf)
+])
+
+dir(pipeline)
+
+pipeline.get_feature_names_out()
+
+new = pipeline.predict(X.iloc[idxs])
+
+
+encoder.get_feature_names_out()
+encoder.feature_names_in_
+encoder.n_features_in_
+encoded = ohe.transform(X)
+
+nuevo = ohe.transform(X.iloc[0].values.reshape(1,-1))
+
+new = ohe.transform(np.array([np.int64(3),'AMAZONAS', 'RUMIPUNKU'],dtype=object).reshape(1,-1))
+
+X.iloc[0].values.reshape(1,-1)
+
+
+df_2_encoded_tmp = df_2_encoded.drop(columns='NUMERO_VISITANTES')
+
+tmp = pd.DataFrame(
+    encoded,
+    columns=df_2_encoded_tmp.columns
+)
+
+(tmp == df_2_encoded_tmp).all(axis=1).sum()
+
+
+new = ohe.transform()
 
 
 
 
 
 
+idxs = df_2_original[df_2_original['SITIO_TURISTICO'].isin(top_X_sitios)].index
+test_tmp = tmp.iloc[idxs]
+test_df=df_2_encoded_tmp.iloc[idxs]
 
+p1 = rf.predict(test_tmp)
+p2 = rf.predict(test_df)
 
+p1_dn = scaler.inverse_transform(p1.reshape(-1,1))
+p2_dn = scaler.inverse_transform(p2.reshape(-1,1))
 
-
-
-
-
-
-
-
-
-
+p1_dn == p2_dn
 
