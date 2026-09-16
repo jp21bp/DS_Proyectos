@@ -16,6 +16,7 @@ import os, joblib
 #### Paths
 data_path = os.path.join(
     os.getcwd(),
+    '3_SegmentacionClientes',
     'Datos',
     'FeatEng'
 )
@@ -31,12 +32,17 @@ df_2_encoded = pd.read_csv(f'{data_path}/visitantes_sitios_turisticos_encoded.cs
 model = joblib.load(f'{pickle_path}/model.pkl')
 scaler = joblib.load(f'{pickle_path}/scaler.pkl')
 
+set(df_2_original['SITIO_TURISTICO'].values)
 
 ###################################################
     # Creating Pipeline #
 #### Separating data
 X = df_2_original[['ID_MES', 'DEPARTAMENTO', 'SITIO_TURISTICO']]
 y = df_2_original['NUMERO_VISITANTES']
+
+dicc = df_2_original.groupby('DEPARTAMENTO')['SITIO_TURISTICO'].apply(list).to_dict()
+for k,v in dicc.items():
+    print(f"'{k}':{v},")
 
 #### Creating OneHotEncoder
 ### Initialize

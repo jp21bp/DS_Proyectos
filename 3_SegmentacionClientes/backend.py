@@ -55,9 +55,9 @@ app.add_middleware(
 
 #### Setup data entry validation
 class DataInput(BaseModel):
-    feat1: int
-    feat2: str
-    feat3: str
+    month: int
+    region: str
+    name: str
 
 @app.get('/')
 def homepage():
@@ -67,19 +67,27 @@ def homepage():
 @app.post('/predict')
 def predict(data: DataInput):
     try:
-        input = [[data.feat1, data.feat2, data.feat3]]
+        input = [[data.month, data.region, data.name]]
         prediction_norm = pipeline.predict(input)
         prediction = scaler.inverse_transform(
             prediction_norm.reshape(1,-1)
         )
-        print(prediction[0][0])
-        return {'page': int(prediction[0][0])}
+        # print(prediction[0][0])
+        return {'prediction': f'{int(prediction[0][0])}'}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
+
+# new = ohe.transform(np.array([np.int64(3),'AMAZONAS', 'RUMIPUNKU'],dtype=object).reshape(1,-1))
+
+# y_pred_top5_normalized = pipeline.predict(X_top5)
+
+# y_pred_top5= scaler.inverse_transform(
+#     y_pred_top5_normalized.reshape(-1,1)
+# )
 
 
 
