@@ -2,7 +2,9 @@ import streamlit as st
 import requests
 
 ### Backend API
-API_URL = "http://localhost:8000/predict"
+# API_URL = "http://localhost:8000/predict"
+API_URL = "http://backend:8000/predict"
+
 
 
 ### Setup
@@ -255,15 +257,7 @@ names_list = [
 ]
 
 
-### User inputs
-# month = st.number_input(
-#     'Month',
-#     min_value=1,
-#     max_value=12,
-#     step=1,
-#     format="%d"
-# )
-
+### Streamlit boxes
 month = st.selectbox(
     'Month',
     months_list,
@@ -286,13 +280,6 @@ if region:
         index=None,
         placeholder="Choose a tourist site"
     )
-
-# print(month,region, name)
-
-
-### Processing user input
-
-
 
 ### Prediction
 if st.button('Predict Number of Tourists'):
