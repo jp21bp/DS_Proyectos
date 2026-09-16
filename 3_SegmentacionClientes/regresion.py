@@ -466,12 +466,16 @@ pred_df_enc = rf.predict(df_enc_idxs)
 
 #### Predicciones usando pipeline
 
-
-
 pipeline = Pipeline([
     ('encoder', encoder),
     ('model', rf)
 ])
+
+pipe_org = pipeline.predict(df_org_idxs)
+pipe_enc = rf.predict(df_enc_idxs)
+
+(pipe_org == pipe_enc).all().all()
+
 
 dir(pipeline)
 
