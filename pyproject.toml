@@ -23,6 +23,7 @@ dependencies = [
     "statsmodels>=0.14.6",
     "streamlit>=1.64.0",
     "tdqm>=0.0.1",
+    "tensorboard>=2.21.0",
     "tensorflow>=2.21.0",
     "uvicorn>=0.53.0",
     "yfinance>=1.5.1",

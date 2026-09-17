@@ -269,18 +269,28 @@ zero_init = tf.keras.initializers.Zeros()
 regularizer = tf.keras.regularizers.l2(1e-5)
 DROPOUT = 0.2
 #### Creating Model class
-class LSTMModel(tf.keras.Model):
+class MainModel(tf.keras.Model):
     def __init__(
         self, 
         num_indicators, 
         num_assets, 
         **kwargs
     ):
-        super(LSTMModel, self).__init__(**kwargs)
+        super(MainModel, self).__init__(**kwargs)
         self.num_indicators = num_indicators
         self.num_assets=num_assets
+        self.num_filters_units= 64
+        self.cnn = tf.keras.layers.Conv1D(
+            filters = self.num_filters_units,
+            kernel_size=5,
+            padding="same",
+            data_format='channels_last',
+            activation='relu',
+            kernel_initializer = glorot_init,
+            bias_initializer = zero_init,
+        )
         self.lstm1 = tf.keras.layers.LSTM(
-            64,
+            units = self.num_filters_units,
             input_shape = (WINDOW_SIZE, num_indicators * num_assets),
             kernel_initializer = glorot_init,
             recurrent_initializer = orthogonal_init,
@@ -291,8 +301,9 @@ class LSTMModel(tf.keras.Model):
             kernel_regularizer = regularizer,
             name="lstm_1"
         )
+        self.avg = tf.keras.layers.Average()
         self.lstm2 = tf.keras.layers.LSTM(
-            32,
+            units = 32,
             kernel_initializer = glorot_init,
             recurrent_initializer = orthogonal_init,
             bias_initializer = zero_init,
@@ -318,17 +329,41 @@ class LSTMModel(tf.keras.Model):
 
     def call(self, inputs, training=False):
         # Add training to all layers with dropouts
-        x = self.lstm1(inputs, training=training)
-        x = self.dropout(x, training=training)
-        x = self.lstm2(x, training=training)
-        x = self.dropout(x, training=training)
-        x = self.dense(x)
-        return x
+        x = self.cnn(inputs)
+        y = self.lstm1(inputs, training=training)
+        z = self.avg([x,y])
+        z = self.dropout(z, training=training)
+        z = self.lstm2(z, training=training)
+        z = self.dropout(z, training=training)
+        z = self.dense(z)
+        return z
 
     def build(self):
         dummy_input = tf.zeros((1, WINDOW_SIZE, self.num_indicators * self.num_assets))
         self.call(dummy_input)
         return
+
+
+model = MainModel(
+    num_indicators = 5,
+    num_assets = NUM_STOCKS,
+)
+
+model.build()
+model.summary()
+
+@tf.function
+def model_call(x):
+    return model(x)
+
+# Viendo grafo
+example_input = tf.random.uniform((1, WINDOW_SIZE, 5*NUM_STOCKS))
+import datetime
+log_dir = os.path.join("logs", "graph_" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+writer = tf.summary.create_file_writer(log_dir)
+# Escribir el grafo en los logs
+with writer.as_default():
+    tf.summary.graph(model_call.get_concrete_function(example_input).graph)
     
 
 #### Creating weight resetter
@@ -601,7 +636,7 @@ def train(
     fs_start: str = 'fullset0'
 ):
     # Creating model
-    model = LSTMModel(
+    model = MainModel(
         num_indicators = len(indicators),
         num_assets = NUM_STOCKS,
         name=f'{strat}_{len(indicators)}_indicators'
@@ -723,84 +758,84 @@ train(
 
 
 
-#####  Model 2 - Sliding - Indicators: HLC3, TEMA, OBV
-#### Setup corresponding data
-indicators = ['TEMA', 'HLC3', 'OBV']
-dict_fullsets_H_T_O_sliding = \
-    indicator_selection(indicators, dict_sliding_fullsets)
+# #####  Model 2 - Sliding - Indicators: HLC3, TEMA, OBV
+# #### Setup corresponding data
+# indicators = ['TEMA', 'HLC3', 'OBV']
+# dict_fullsets_H_T_O_sliding = \
+#     indicator_selection(indicators, dict_sliding_fullsets)
 
-#### Train model
-train(
-    data = dict_fullsets_H_T_O_sliding, 
-    indicators = indicators, 
-    model_num = 2, 
-    strat = 'Sliding',
-)
-
-
-#####  Model 3 - Sliding - Indicators: All 5 
-#### Setup corresponding data
-indicators = ['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV']
-dict_fullsets_all_sliding = dict_sliding_fullsets
-
-#### Train model
-train(
-    data = dict_fullsets_all_sliding, 
-    indicators = indicators, 
-    model_num = 3, 
-    strat = 'Sliding',
-)
+# #### Train model
+# train(
+#     data = dict_fullsets_H_T_O_sliding, 
+#     indicators = indicators, 
+#     model_num = 2, 
+#     strat = 'Sliding',
+# )
 
 
+# #####  Model 3 - Sliding - Indicators: All 5 
+# #### Setup corresponding data
+# indicators = ['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV']
+# dict_fullsets_all_sliding = dict_sliding_fullsets
 
-
-
-#####  Model 4 - Expanding - Indicators: Price, LogRet
-#### Setup corresponding data
-indicators = ['Price', 'LogRet']
-dict_fullsets_P_L_expand = \
-    indicator_selection(indicators, dict_expanding_fullsets)
-
-#### Train model
-train(
-    data = dict_fullsets_P_L_expand, 
-    indicators = indicators, 
-    model_num = 4, 
-    strat = 'Expand',
-)
+# #### Train model
+# train(
+#     data = dict_fullsets_all_sliding, 
+#     indicators = indicators, 
+#     model_num = 3, 
+#     strat = 'Sliding',
+# )
 
 
 
 
 
+# #####  Model 4 - Expanding - Indicators: Price, LogRet
+# #### Setup corresponding data
+# indicators = ['Price', 'LogRet']
+# dict_fullsets_P_L_expand = \
+#     indicator_selection(indicators, dict_expanding_fullsets)
 
-#####  Model 5 - Expanding - Indicators: 'TEMA', 'HLC3', 'OBV'
-#### Setup corresponding data
-indicators = ['TEMA', 'HLC3', 'OBV']
-dict_fullsets_H_T_O_expand = \
-    indicator_selection(indicators, dict_expanding_fullsets)
-
-#### Train model
-train(
-    data = dict_fullsets_H_T_O_expand, 
-    indicators = indicators, 
-    model_num = 5, 
-    strat = 'Expand',
-)
-
+# #### Train model
+# train(
+#     data = dict_fullsets_P_L_expand, 
+#     indicators = indicators, 
+#     model_num = 4, 
+#     strat = 'Expand',
+# )
 
 
 
 
-#####  Model 6 - Expanding - Indicators: all 5
-#### Setup corresponding data
-indicators = ['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV']
-dict_fullsets_all_expand = dict_expanding_fullsets
 
-#### Train model
-train(
-    data = dict_fullsets_all_expand, 
-    indicators = indicators, 
-    model_num = 6, 
-    strat = 'Expand',
-)
+
+# #####  Model 5 - Expanding - Indicators: 'TEMA', 'HLC3', 'OBV'
+# #### Setup corresponding data
+# indicators = ['TEMA', 'HLC3', 'OBV']
+# dict_fullsets_H_T_O_expand = \
+#     indicator_selection(indicators, dict_expanding_fullsets)
+
+# #### Train model
+# train(
+#     data = dict_fullsets_H_T_O_expand, 
+#     indicators = indicators, 
+#     model_num = 5, 
+#     strat = 'Expand',
+# )
+
+
+
+
+
+# #####  Model 6 - Expanding - Indicators: all 5
+# #### Setup corresponding data
+# indicators = ['Price', 'LogRet', 'TEMA', 'HLC3', 'OBV']
+# dict_fullsets_all_expand = dict_expanding_fullsets
+
+# #### Train model
+# train(
+#     data = dict_fullsets_all_expand, 
+#     indicators = indicators, 
+#     model_num = 6, 
+#     strat = 'Expand',
+# )

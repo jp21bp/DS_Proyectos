@@ -40,9 +40,11 @@ set(df_2_original['SITIO_TURISTICO'].values)
 X = df_2_original[['ID_MES', 'DEPARTAMENTO', 'SITIO_TURISTICO']]
 y = df_2_original['NUMERO_VISITANTES']
 
-dicc = df_2_original.groupby('DEPARTAMENTO')['SITIO_TURISTICO'].apply(list).to_dict()
-for k,v in dicc.items():
-    print(f"'{k}':{v},")
+
+# dic_lista = df_2_original.groupby('DEPARTAMENTO')['SITIO_TURISTICO'].apply(set).apply(list).to_dict()
+# dicc = df_2_original.groupby('DEPARTAMENTO')['SITIO_TURISTICO'].apply(list).to_dict()
+# for k,v in dic_lista.items():
+#     print(f"'{k}':{v},")
 
 #### Creating OneHotEncoder
 ### Initialize
